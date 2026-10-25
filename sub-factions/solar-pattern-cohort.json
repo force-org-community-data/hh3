@@ -1,0 +1,78 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "solar-pattern-cohort",
+    "version": "1.0.0",
+    "name": "Solar Pattern Cohort",
+    "parent": {
+        "faction": "solar-auxilia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "cohort-doctrine",
+    "specialRules": {
+        "shock-assault": {
+            "id": "shock-assault",
+            "name": "Shock Assault",
+            "text": "Models with this Special Rule and the Vanguard (X) Special Rule that Disembark from a Dracosan do not make Disordered Charges. A Unit entirely composed of Models with this Special Rule and the Vanguard (X) Special Rule may have a Charge declared for it in the same Player Turn it Disembarks from a Dracosan Model without that Charge being Disordered."
+        }
+    },
+    "unitModifiers": {
+        "shock-assault": {
+            "id": "shock-assault",
+            "name": "Shock Assault",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "shock-assault"
+                    }
+                }
+            ]
+        }
+    },
+    "detachments": {
+        "veletaris-tercio-solar-pattern-cohort": {
+            "id": "veletaris-tercio-solar-pattern-cohort",
+            "name": "Veletaris Tercio (Solar Pattern Cohort bonus)",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["elites"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": [
+                            "veletaris-storm-section",
+                            "veletaris-vanguard-section"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["elites"],
+                    "units": {
+                        "unitIds": [
+                            "veletaris-storm-section",
+                            "veletaris-vanguard-section"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["support"],
+                    "units": {
+                        "unitIds": ["hermes-veletaris-squadron"]
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"]
+                },
+                {
+                    "roles": ["heavy-transport"]
+                }
+            ],
+            "max": "list.count(group:veletaris-tercio)",
+            "cost": {
+                "auxiliary": 0
+            },
+            "requirementText": "One free Veletaris Tercio for each Veletaris Tercio taken"
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "iron-pattern-cohort",
+    "version": "1.0.0",
+    "name": "Iron Pattern Cohort",
+    "parent": {
+        "faction": "solar-auxilia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "cohort-doctrine",
+    "specialRules": {
+        "iron-over-flesh": {
+            "id": "iron-over-flesh",
+            "name": "Iron over Flesh",
+            "text": "Every Model in a Lasrifle Section Unit in an Army with the Iron Pattern Cohort Doctrine gains the Expendable (1) Special Rule."
+        }
+    },
+    "unitModifiers": {
+        "iron-over-flesh": {
+            "id": "iron-over-flesh",
+            "name": "Iron over Flesh",
+            "selector": {
+                "unitIds": ["lasrifle-section"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "expendable",
+                        "value": "1"
+                    }
+                }
+            ]
+        },
+        "iron-over-flesh-all": {
+            "id": "iron-over-flesh-all",
+            "name": "Iron over Flesh",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "iron-over-flesh"
+                    }
+                }
+            ]
+        }
+    },
+    "detachments": {}
+}

@@ -1,0 +1,77 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "siege-pattern-cohort",
+    "version": "1.0.0",
+    "name": "Siege Pattern Cohort",
+    "parent": {
+        "faction": "solar-auxilia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "cohort-doctrine",
+    "specialRules": {
+        "ceaseless-bombardment": {
+            "id": "ceaseless-bombardment",
+            "name": "Ceaseless Bombardment",
+            "text": "Models with this Special Rule improve the value of the Pinning (X) Special Rule on any Barrage Weapons they have by +1. Models with this Special Rule which have one or more Weapons with both the Barrage (X) Special Rule and the Pinning (X) Special Rule have a +1 Modifier applied to the value of Pinning (X) on any such Weapons."
+        }
+    },
+    "unitModifiers": {
+        "ceaseless-bombardment": {
+            "id": "ceaseless-bombardment",
+            "name": "Ceaseless Bombardment",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "ceaseless-bombardment"
+                    }
+                }
+            ]
+        }
+    },
+    "detachments": {
+        "artillery-tercio-siege-pattern-cohort": {
+            "id": "artillery-tercio-siege-pattern-cohort",
+            "name": "Artillery Tercio (Siege Pattern Cohort bonus)",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["support"],
+                    "units": {
+                        "unitIds": [
+                            "rapier-section",
+                            "basilisk-artillery-tank",
+                            "medusa-artillery-tank"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["support"],
+                    "units": {
+                        "unitIds": [
+                            "rapier-section",
+                            "basilisk-artillery-tank",
+                            "medusa-artillery-tank"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["support"],
+                    "units": {
+                        "unitIds": [
+                            "rapier-section",
+                            "basilisk-artillery-tank",
+                            "medusa-artillery-tank"
+                        ]
+                    }
+                }
+            ],
+            "max": "list.count(group:artillery-tercio)",
+            "cost": {
+                "auxiliary": 0
+            },
+            "requirementText": "One free Artillery Tercio for each Artillery Tercio taken"
+        }
+    }
+}
