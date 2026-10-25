@@ -440,9 +440,9 @@
                                 "points": 0
                             }
                         },
-                        "bolt-pistol-for-free": {
-                            "id": "bolt-pistol-for-free",
-                            "name": "bolt pistol for Free",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "bolt pistol",
                             "cost": {
                                 "points": 0
                             },
@@ -685,9 +685,9 @@
                                 "points": 0
                             }
                         },
-                        "combi-bolter-and-one-power-axe-for-free": {
-                            "id": "combi-bolter-and-one-power-axe-for-free",
-                            "name": "combi-bolter and one power axe for Free",
+                        "combi-bolter-and-one-power-axe": {
+                            "id": "combi-bolter-and-one-power-axe",
+                            "name": "combi-bolter and one power axe",
                             "cost": {
                                 "points": 0
                             },
@@ -762,27 +762,23 @@
                         "legion-combi-weapons": {
                             "id": "legion-combi-weapons",
                             "target": "legion-combi-weapons"
-                        },
-                        "combi-bolter-and-power-axe": {
-                            "id": "combi-bolter-and-power-axe",
-                            "name": "combi-bolter and power axe",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["combi-bolter", "power-axe"]
-                        },
-                        "it-may-have-its-combi-bolter-exchanged-for": {
-                            "id": "it-may-have-its-combi-bolter-exchanged-for",
-                            "name": "it may have its combi-bolter exchanged for",
-                            "cost": {
-                                "points": 0
-                            },
-                            "equipmentRefs": [
-                                "it-may-have-its-combi-bolter-exchanged-for"
-                            ]
                         }
                     },
-                    "default": "none"
+                    "profileId": "devoured",
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "combi-bolter",
+                                "profiles": {
+                                    "anyOf": ["devoured"]
+                                }
+                            }
+                        ],
+                        "requiredAnd": true
+                    }
                 },
                 "option-5": {
                     "id": "option-5",
@@ -804,7 +800,19 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["power-fist"]
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
                         },
                         "chainfist": {
                             "id": "chainfist",
@@ -812,7 +820,19 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["chainfist"]
+                            "weaponRefs": ["chainfist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainfist"
+                                    }
+                                }
+                            ]
                         },
                         "thunder-hammer": {
                             "id": "thunder-hammer",
@@ -820,10 +840,36 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["thunder-hammer"]
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "none"
+                    "profileId": "devoured",
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "combi-bolter",
+                                "profiles": {
+                                    "anyOf": ["devoured"]
+                                }
+                            }
+                        ],
+                        "requiredAnd": true
+                    }
                 },
                 "option-6": {
                     "id": "option-6",
@@ -1954,11 +2000,6 @@
             "id": "caedere-weapons",
             "name": "Caedere Weapons",
             "text": "If a Model has a Caedere weapon as part of its Wargear, you can select one of the following for that Model to have: Meteor hammer Excoriator chainaxe Paired falax blades Barb-hook lash Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one Caedere weapon for +10 Points per Model. Melee Weapon Melee Weapon IM AM SM AP D Special Rules Traits Meteor hammer Meteor hammer I -1 +2 3 2 Impact (IM) Power Excoriator chainaxe Excoriator chainaxe -2 A +2 3 1 Breaching (6+), Shred (6+) Chain Paired falax blades Paired falax blades I +2 S 3 1 - Power Barb-hook lash Barb-hook lash +1 A S 3 1 Critical Hit (6+), Phage (S) Power"
-        },
-        "it-may-have-its-combi-bolter-exchanged-for": {
-            "id": "it-may-have-its-combi-bolter-exchanged-for",
-            "name": "it may have its combi-bolter exchanged for",
-            "text": ""
         },
         "blades-of-the-fighting-pits": {
             "id": "blades-of-the-fighting-pits",

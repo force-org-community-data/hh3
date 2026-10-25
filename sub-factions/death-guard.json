@@ -316,7 +316,17 @@
                             "weaponRefs": ["chain-bayonet"]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    }
                 }
             }
         },
@@ -475,7 +485,17 @@
                             "weaponRefs": ["chain-bayonet"]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    }
                 },
                 "option-3": {
                     "id": "option-3",
@@ -491,9 +511,9 @@
                                 "points": 0
                             }
                         },
-                        "flamer-for-free": {
-                            "id": "flamer-for-free",
-                            "name": "flamer for Free",
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "flamer",
                             "cost": {
                                 "points": 0
                             },
@@ -934,28 +954,6 @@
                         "legion-combi-weapons": {
                             "id": "legion-combi-weapons",
                             "target": "legion-combi-weapons"
-                        },
-                        "for-free-instead-of-the-listed-cost": {
-                            "id": "for-free-instead-of-the-listed-cost",
-                            "name": "for Free instead of the listed cost",
-                            "cost": {
-                                "points": 0
-                            },
-                            "equipmentRefs": [
-                                "for-free-instead-of-the-listed-cost"
-                            ],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "assault-grenade-launcher"
-                                    },
-                                    "to": {
-                                        "kind": "equipment",
-                                        "id": "for-free-instead-of-the-listed-cost"
-                                    }
-                                }
-                            ]
                         }
                     },
                     "profileId": "chem-master",
@@ -1467,11 +1465,6 @@
         }
     },
     "equipment": {
-        "for-free-instead-of-the-listed-cost": {
-            "id": "for-free-instead-of-the-listed-cost",
-            "name": "for Free instead of the listed cost",
-            "text": ""
-        },
         "death-cloud": {
             "id": "death-cloud",
             "name": "Death Cloud",

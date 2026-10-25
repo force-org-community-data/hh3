@@ -1,0 +1,72 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "ultima-pattern-cohort",
+    "version": "1.0.0",
+    "name": "Ultima Pattern Cohort",
+    "parent": {
+        "faction": "solar-auxilia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "cohort-doctrine",
+    "specialRules": {
+        "coordinated-manoeuvres": {
+            "id": "coordinated-manoeuvres",
+            "name": "Coordinated Manoeuvres",
+            "text": "In each of the Active Player’s Movement, Shooting and Assault Phases, a single Lasrifle Section can perform a Reaction for one less point of Reaction Allotment. In each of the Active Player’s Movement, Shooting and Assault Phases, the first Reaction declared in that Phase in which the Reacting Unit is a Lasrifle Section has its Reaction Point cost modified by -1, to a minimum of 0."
+        }
+    },
+    "unitModifiers": {
+        "coordinated-manoeuvres": {
+            "id": "coordinated-manoeuvres",
+            "name": "Coordinated Manoeuvres",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "coordinated-manoeuvres"
+                    }
+                }
+            ]
+        }
+    },
+    "detachments": {
+        "infantry-tercio-ultima-pattern-cohort": {
+            "id": "infantry-tercio-ultima-pattern-cohort",
+            "name": "Infantry Tercio (Ultima Pattern Cohort bonus)",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": ["lasrifle-section"]
+                    }
+                },
+                {
+                    "roles": ["troop"],
+                    "units": {
+                        "unitIds": ["lasrifle-section"]
+                    }
+                },
+                {
+                    "roles": ["recon"],
+                    "units": {
+                        "unitIds": ["hermes-light-sentinel-squadron"]
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"]
+                },
+                {
+                    "roles": ["heavy-transport"]
+                }
+            ],
+            "max": "list.count(group:infantry-tercio)",
+            "cost": {
+                "auxiliary": 0
+            },
+            "requirementText": "One free Infantry Tercio for each Infantry Tercio taken"
+        }
+    }
+}

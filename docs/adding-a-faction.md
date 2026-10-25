@@ -9,7 +9,7 @@
 
 ## Sub-factions
 
-A sub-faction modifies one faction (an order, regiment, sponsor). Put it in `sub-factions/<id>.json` with a `parent` naming the faction, and list it under `subFactions` in the manifest. Records that collide with the parent's replace it only when listed in `overrides`. Details: [authoring guide §6](https://github.com/force-org-community-data/fo_data_validator/blob/v1.0.0/docs/data_authoring_guide.md).
+A sub-faction modifies one faction (an order, regiment, sponsor). Put it in `sub-factions/<id>.json` with a `parent` naming the faction, and list it under `subFactions` in the manifest. Records that collide with the parent's replace it only when listed in `overrides`. Details: [authoring guide §6](https://github.com/force-org-community-data/fo_data_validator/blob/v1.1.0/docs/data_authoring_guide.md).
 
 ## Ids never change
 
@@ -17,6 +17,6 @@ Saved army lists refer to ids. Once merged, don't rename them; add new records i
 
 ## Further reading
 
-- [Data authoring guide](https://github.com/force-org-community-data/fo_data_validator/blob/v1.0.0/docs/data_authoring_guide.md)
-- [Data schema spec](https://github.com/force-org-community-data/fo_data_validator/blob/v1.0.0/docs/specs/data_schema_spec_2026-10-17.md)
-- [Expression language spec](https://github.com/force-org-community-data/fo_data_validator/blob/v1.0.0/docs/specs/expression_language_spec_2026-10-17.md)
+- [Data authoring guide](https://github.com/force-org-community-data/fo_data_validator/blob/v1.1.0/docs/data_authoring_guide.md)
+- [Data schema spec](https://github.com/force-org-community-data/fo_data_validator/blob/v1.1.0/docs/specs/data_schema_spec_2026-10-17.md)
+- [Expression language spec](https://github.com/force-org-community-data/fo_data_validator/blob/v1.1.0/docs/specs/expression_language_spec_2026-10-17.md)

@@ -1,0 +1,77 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "mechanised-pattern-cohort",
+    "version": "1.0.0",
+    "name": "Mechanised Pattern Cohort",
+    "parent": {
+        "faction": "solar-auxilia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "cohort-doctrine",
+    "specialRules": {
+        "rolling-advance": {
+            "id": "rolling-advance",
+            "name": "Rolling Advance",
+            "text": "Models with this Special Rule may Move and still benefit from the Heavy (X) Special Rule. Models with the Vehicle Type (but not the Flyer Sub-Type) and this Special Rule that move no more than 4\" in the Movement Phase and do not Rush gain the following benefit. For the duration of that Player Turn, they count as being Stationary for the purposes of any variant of the Heavy (X) Special Rule on any Weapons they have."
+        }
+    },
+    "unitModifiers": {
+        "rolling-advance": {
+            "id": "rolling-advance",
+            "name": "Rolling Advance",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "rolling-advance"
+                    }
+                }
+            ]
+        }
+    },
+    "detachments": {
+        "armour-tercio-mechanised-pattern-cohort": {
+            "id": "armour-tercio-mechanised-pattern-cohort",
+            "name": "Armour Tercio (Mechanised Pattern Cohort bonus)",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["armour"],
+                    "units": {
+                        "unitIds": [
+                            "leman-russ-strike-tank",
+                            "leman-russ-assault-tank",
+                            "malcador-heavy-tank"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["armour"],
+                    "units": {
+                        "unitIds": [
+                            "leman-russ-strike-tank",
+                            "leman-russ-assault-tank",
+                            "malcador-heavy-tank"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["armour"],
+                    "units": {
+                        "unitIds": [
+                            "leman-russ-strike-tank",
+                            "leman-russ-assault-tank",
+                            "malcador-heavy-tank"
+                        ]
+                    }
+                }
+            ],
+            "max": "list.count(group:armour-tercio)",
+            "cost": {
+                "auxiliary": 0
+            },
+            "requirementText": "One free Armour Tercio for each Armour Tercio taken"
+        }
+    }
+}
