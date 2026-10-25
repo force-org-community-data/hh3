@@ -1,0 +1,1626 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "raven-guard",
+    "version": "1.0.0",
+    "name": "Raven Guard",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "corvus-corax": {
+            "id": "corvus-corax",
+            "name": "Corvus Corax",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 440
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "corvus-corax",
+                    "name": "Corvus Corax",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "7",
+                        "bs": "6",
+                        "s": "6",
+                        "t": "6",
+                        "w": "6",
+                        "i": "6",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-raven-guard"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "the-shadowed-lord"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Raven Guard", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "wrath-justice"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "talionis"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-corvidine-talons"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cameleoline"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "dark-fury-squad": {
+            "id": "dark-fury-squad",
+            "name": "Dark Fury Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "chooser-of-the-slain",
+                    "name": "Chooser of the Slain",
+                    "template": "model",
+                    "stats": {
+                        "m": "14",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "id": "dark-fury",
+                    "name": "Dark Fury",
+                    "template": "model",
+                    "stats": {
+                        "m": "14",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Raven Guard"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 30
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "pair-of-ravens-talons",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "corvid-pattern-jump-pack",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "If this Unit has 10 Models, one Dark Fury may be replaced with a Chooser of the Slain for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chooser-of-the-slain": {
+                            "id": "chooser-of-the-slain",
+                            "name": "Chooser of the Slain",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["chooser-of-the-slain"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Chooser of the Slain in this Unit may have melta bombs selected for it for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "kaedes-nex": {
+            "id": "kaedes-nex",
+            "name": "Kaedes Nex",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "kaedes-nex",
+                    "name": "Kaedes Nex",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "6",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "3+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique", "Specialist"],
+                    "specialRules": [
+                        {
+                            "id": "infiltrate",
+                            "value": "8"
+                        },
+                        {
+                            "id": "the-blood-crow"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Raven Guard"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "fulcrum-hand-cannons"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cameleoline"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "melta-bombs"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "mor-deythan-squad": {
+            "id": "mor-deythan-squad",
+            "name": "Mor Deythan Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "mor-deythan-shade",
+                    "name": "Mor Deythan Shade",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Skirmish"],
+                    "specialRules": [
+                        {
+                            "id": "infiltrate",
+                            "value": "8"
+                        },
+                        {
+                            "id": "fatal-strike"
+                        },
+                        {
+                            "id": "move-through-cover"
+                        },
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "id": "mor-deythan",
+                    "name": "Mor Deythan",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Skirmish"],
+                    "specialRules": [
+                        {
+                            "id": "infiltrate",
+                            "value": "8"
+                        },
+                        {
+                            "id": "fatal-strike"
+                        },
+                        {
+                            "id": "move-through-cover"
+                        },
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Raven Guard"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 30
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "nemesis-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cameleoline",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its Nemesis bolter exchanged for an Astartes shotgun for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "astartes-shotgun-for-free": {
+                            "id": "astartes-shotgun-for-free",
+                            "name": "Astartes shotgun for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["astartes-shotgun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "astartes-shotgun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its Nemesis bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "For every three Models in this Unit, one Model in this Unit may have its Nemesis bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "Plasma pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-gun": {
+                            "id": "plasma-gun",
+                            "name": "Plasma gun",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["plasma-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-gun"
+                                    }
+                                }
+                            ]
+                        },
+                        "meltagun": {
+                            "id": "meltagun",
+                            "name": "Meltagun",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["meltagun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "meltagun"
+                                    }
+                                }
+                            ]
+                        },
+                        "missile-launcher": {
+                            "id": "missile-launcher",
+                            "name": "Missile launcher",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["missile-launcher"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "missile-launcher"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "The Mor Deythan Shade in this Unit may have melta bombs selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "profileId": "mor-deythan-shade",
+                    "default": "none"
+                }
+            }
+        },
+        "raven-guard-deliverers-squad": {
+            "id": "raven-guard-deliverers-squad",
+            "name": "0-1 Raven Guard Deliverers Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 215
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "deliverer-chieftain",
+                    "name": "Deliverer Chieftain",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "coraxs-shame"
+                        }
+                    ]
+                },
+                {
+                    "id": "deliverer",
+                    "name": "Deliverer",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "coraxs-shame"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Raven Guard"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 40
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "power-weapons",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "For every five Models in this Unit, one Model in this Unit may have its combi-bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["heavy-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["multi-melta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "multi-melta"
+                                    }
+                                }
+                            ]
+                        },
+                        "reaper-autocannon": {
+                            "id": "reaper-autocannon",
+                            "name": "Reaper autocannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["reaper-autocannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "reaper-autocannon"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its power weapon exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Any Model in this Unit may have its combi-bolter and power weapon exchanged for one pair of Raven’s Talons for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-ravens-talons": {
+                            "id": "pair-of-ravens-talons",
+                            "name": "pair of Raven’s Talons",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-ravens-talons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-ravens-talons"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "raven-guard-inductii-squad": {
+            "id": "raven-guard-inductii-squad",
+            "name": "Raven Guard Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 90
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "line",
+                            "value": "1"
+                        },
+                        {
+                            "id": "unchained-conviction"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Raven Guard"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "For every ten Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one Nemesis bolter for +5 Points per Model.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "nemesis-bolter": {
+                            "id": "nemesis-bolter",
+                            "name": "Nemesis bolter",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["nemesis-bolter"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        }
+    },
+    "weapons": {
+        "wrath-justice": {
+            "id": "wrath-justice",
+            "name": "Wrath & Justice",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Wrath & Justice",
+                    "stats": {
+                        "r": "14",
+                        "fp": "6",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "talionis": {
+            "id": "talionis",
+            "name": "Talionis",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Talionis",
+                    "stats": {
+                        "im": "+4",
+                        "am": "3",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-corvidine-talons": {
+            "id": "the-corvidine-talons",
+            "name": "The Corvidine Talons",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Corvidine Talons",
+                    "stats": {
+                        "im": "+1",
+                        "am": "+2",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "pair-of-ravens-talons": {
+            "id": "pair-of-ravens-talons",
+            "name": "Pair of Raven’s Talons",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Pair of Raven’s Talons",
+                    "stats": {
+                        "im": "I",
+                        "am": "+2",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "IM"
+                        },
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "fulcrum-hand-cannons": {
+            "id": "fulcrum-hand-cannons",
+            "name": "Fulcrum Hand Cannons",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Fulcrum hand cannons",
+                    "stats": {
+                        "r": "12",
+                        "fp": "5",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching-6-stun",
+                            "value": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "ravens-talon": {
+            "id": "ravens-talon",
+            "name": "Raven’s Talon",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Raven’s Talon",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "IM"
+                        },
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Pair of Raven’s Talons",
+                    "stats": {
+                        "im": "I",
+                        "am": "+2",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "IM"
+                        },
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "cameleoline": {
+            "id": "cameleoline",
+            "name": "Cameleoline",
+            "text": ""
+        },
+        "corvid-pattern-jump-pack": {
+            "id": "corvid-pattern-jump-pack",
+            "name": "Corvid Pattern Jump Pack",
+            "text": "Any Model from the following list with the Raven Guard Trait may have one Corvid pattern jump pack selected for it for +10 Points per Model. Praetor with Jump Pack Centurion with Jump Pack Optae with Jump Pack Moritat A Model with a Corvid pattern jump pack has their Movement Characteristic set to 14 and replaces any instance of the Bulky (X) Special Rule with Bulky (3). Each time a Dangerous Terrain Test is made for a Model with a Corvid pattern jump pack, that Test is automatically passed."
+        },
+        "chooser-of-the-slain": {
+            "id": "chooser-of-the-slain",
+            "name": "Chooser of the Slain",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "raven-guard-ravens-talons": {
+            "id": "raven-guard-ravens-talons",
+            "name": "Raven’s Talons",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "ravens-talons": {
+                    "id": "ravens-talons",
+                    "name": "Raven’s Talons",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["ravens-talon"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "lightning-claw"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "ravens-talon"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "raven-guard-corvid-pattern-jump-pack": {
+            "id": "raven-guard-corvid-pattern-jump-pack",
+            "name": "Corvid Pattern Jump Pack",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "corvid-pattern-jump-pack": {
+                    "id": "corvid-pattern-jump-pack",
+                    "name": "Corvid Pattern Jump Pack",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["corvid-pattern-jump-pack"]
+                }
+            },
+            "default": "none"
+        }
+    },
+    "specialRules": {
+        "sire-of-the-raven-guard": {
+            "id": "sire-of-the-raven-guard",
+            "name": "Sire of the Raven Guard",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Tactical Squad Units and/or Assault Squad Units, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with Infantry Type and the Raven Guard Trait in the same Army: Until the end of the first Battle Turn of the Battle, all Models in this Army with the Infantry Type and the Raven Guard Trait have the Move Through Cover Special Rule."
+        },
+        "the-shadowed-lord": {
+            "id": "the-shadowed-lord",
+            "name": "The Shadowed Lord",
+            "text": "This Gambit allows Corax to fight as if he had not suffered any Wounds. While a Model with this Special Rule is Engaged in a Challenge, its Controlling Player can select the following Gambit : The Shadowed Lord: When this Gambit is selected, the Controlling Player must select Talionis at the start of the Focus Step and ignores any negative modifiers to the Focus Roll for having a Current Wounds Characteristic lower than its Base Wounds Characteristic. Additionally, if the Player that selected this Gambit is the Active Player and scored at least one successful Hit on the opponent with Talionis during the Strike Step, they may choose to move to the Glory Step after both Players have resolved Step 4 of the current Strike Step, even if they do not have Challenge Advantage."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "impact": {
+            "id": "impact",
+            "name": "Impact (X)",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "the-blood-crow": {
+            "id": "the-blood-crow",
+            "name": "The Blood Crow (Advanced Reaction)",
+            "text": "Kaedes Nex always uses his full Ballistic Skill and reduces the effectiveness of an enemy’s Damage Mitigation Rolls. A Model with this Special Rule is never forced to make Shooting Attacks as Snap Shots and may never have its Ballistic Skill modified to less than 6, unless the Target Unit has the Flyer Sub-Type. Additionally, any Shrouded Damage Mitigation Rolls made against wounds inflicted by a Shooting Attack made by a Model with this Special Rule are only successful on a roll of 6+, regardless of the variant of the Shrouded (X) Special Rule the selected Target Model has or any Special Rules to the contrary."
+        },
+        "breaching-6-stun": {
+            "id": "breaching-6-stun",
+            "name": "Breaching (6+) Stun",
+            "text": "",
+            "configurable": true
+        },
+        "fatal-strike": {
+            "id": "fatal-strike",
+            "name": "Fatal Strike",
+            "text": "Fatal Strike temporarily increases the Ballistic Skill Characteristic. Once per Battle, if a Unit with this Special Rule remained Stationary in the previous Movement Phase, the Unit’s Controlling Player may select that Unit to make a Fatal Strike during the Shooting Phase. When making a Fatal Strike, a modifier of +2 is added to the Ballistic Skill Characteristic of all Models with this Special Rule in the selected Unit for the duration of the current Phase."
+        },
+        "coraxs-shame": {
+            "id": "coraxs-shame",
+            "name": "Corax’s Shame",
+            "text": "Models with this Special Rule suffer restrictions when in an Army with Corvus Corax. A Unit that includes any Models with this Special Rule cannot be joined by a Corvus Corax Model. Additionally, Reserves Rolls made for a Unit that includes any Models with this Special Rule are modified by -1 during any Reserves Sub-Phase in which a friendly Corvus Corax Model was also in Reserves at the start of that Sub-Phase."
+        },
+        "unchained-conviction": {
+            "id": "unchained-conviction",
+            "name": "Unchained Conviction",
+            "text": "Models with this Special Rule which would gain the Pinned Tactical Status instead make an immediate Fall Back Move. Whenever Models in a Unit entirely composed of Models with this Special Rule gain the Pinned Tactical Status, that Unit must immediately make a Fall Back Move. Once this Move has been resolved, all Models in that Unit discard the Pinned Tactical Status."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "shadow-walkers": {
+            "id": "shadow-walkers",
+            "name": "Shadow Walkers",
+            "text": "LEGION TACTICA All Models with the Raven Guard Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: Raven Guard Models are harder to hit with Shooting Attacks made at longer range. When a Unit that includes only Models with this Special Rule is the target of a Shooting Attack , all attacks must be made as Snap Shots when the distance between the closest Model in the attacking Unit and the Target Unit is 18\" or greater."
+        },
+        "decapitation-strike": {
+            "id": "decapitation-strike",
+            "name": "Decapitation Strike",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Raven Guard Trait can select Decapitation Strike instead of any others available to that Model: This Gambit allows the Model to make a single attack first, followed by the remainder of their attacks, if the first is successful. This Gambit may be selected once per Challenge . When selected, no Focus Roll is made, instead the Controlling Player of the Model for which this Gambit has been selected makes a single attack at the end of the Focus Step . If the Hit Test and Wound Test made for this attack are both successful (i.e., they meet the required Target Number), the Controlling Player of the Model with this Gambit may then make the remainder of the attacks the Model that this Gambit is selected for is eligible to make in the current Strike Step , minus the single attack already made. If either the Hit Test or Wound Test made for the initial attack are not successful, the Model for which this Gambit is selected may make no further attacks during this Strike Step."
+        },
+        "shadow-veil": {
+            "id": "shadow-veil",
+            "name": "Shadow Veil (Advanced Reaction)",
+            "text": "This Reaction allows the Reacting Unit to make a Move when it is Targeted by a Shooting Attack and gain a Damage Mitigation Roll for the duration of the Shooting Phase. Trigger: Once per Battle, the Reactive Player may declare the Shadow Veil Advanced Reaction when the Active Player targets a Unit under their control which only includes Models with the Raven Guard Trait, that do not have the Vehicle Type, with a Shooting Attack . Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare the Shadow Veil Advanced Reaction, this cost paid as soon as the declaration is made. Target: For a Shadow Veil Advanced Reaction, the Reacting Unit is always the Unit that is the target of the Shooting Attack that triggered this Reaction. Process All Models in the Reacting Unit may be moved a distance equal to their Initiative Characteristic using the normal Rules for Movement, but may not increase this distance by choosing to Rush. If no Model in the Target Unit is determined to be within Line of Sight and/or Range of any Model in the Attacking Unit once this move is resolved, the Active Player may not select an alternative target for that Attacking Unit during the current Shooting Phase. Once the Reacting Player has resolved this Move, all Models in the Reacting Unit gain the Shrouded (5+) Special Rule for the remainder of the current Shooting Phase and the Active Player may move to Step 2 of the Shooting Attack sequence."
+        }
+    },
+    "detachments": {
+        "decapitation-cadre": {
+            "id": "decapitation-cadre",
+            "name": "Decapitation Cadre",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["recon"],
+                    "units": {
+                        "unitIds": ["reconnaissance-squad"]
+                    }
+                },
+                {
+                    "roles": ["recon"],
+                    "units": {
+                        "unitIds": ["reconnaissance-squad"]
+                    }
+                },
+                {
+                    "roles": ["elites"],
+                    "units": {
+                        "unitIds": ["veteran-assault-squad", "dark-fury-squad"]
+                    }
+                },
+                {
+                    "roles": ["elites"],
+                    "units": {
+                        "unitIds": ["veteran-assault-squad", "dark-fury-squad"]
+                    }
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "wraiths": {
+            "id": "wraiths",
+            "name": "Wraiths",
+            "text": "If a Unit which only includes Models with the Raven Guard Trait that has the Troops Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Wraiths Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Wraiths Special Rule. Wraiths: After the Controlling Player makes a Rush Move with a Unit that includes only Models with this Special Rule, they may also choose to make a Willpower Check for that Unit. If the Willpower Check is successful, any Charges targeting the selected Unit in the Assault Phase of the following Player Turn are Disordered . If the Willpower Check is failed, the selected Unit instead gains the Stunned Tactical Status.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "raven-guard-ravens-talons": {
+            "id": "raven-guard-ravens-talons",
+            "name": "Raven’s Talons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "raven-guard-ravens-talons"
+                }
+            ]
+        },
+        "raven-guard-corvid-pattern-jump-pack": {
+            "id": "raven-guard-corvid-pattern-jump-pack",
+            "name": "Corvid Pattern Jump Pack",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "raven-guard-corvid-pattern-jump-pack"
+                }
+            ]
+        },
+        "shadow-walkers-all": {
+            "id": "shadow-walkers-all",
+            "name": "Shadow Walkers",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "shadow-walkers"
+                    }
+                }
+            ]
+        }
+    }
+}

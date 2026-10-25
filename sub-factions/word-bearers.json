@@ -1,0 +1,3620 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "word-bearers",
+    "version": "1.0.0",
+    "name": "Word Bearers",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "argel-tal": {
+            "id": "argel-tal",
+            "name": "Argel Tal",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 240
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "argel-tal",
+                    "name": "Argel Tal",
+                    "template": "model",
+                    "stats": {
+                        "m": "14",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "5",
+                        "i": "5",
+                        "a": "6",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command", "Antigrav", "Malefic"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "daemonic-talons"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "ashen-circle-squad": {
+            "id": "ashen-circle-squad",
+            "name": "Ashen Circle Squad",
+            "role": "fast-attack",
+            "type": "infantry",
+            "cost": {
+                "points": 125
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "iconoclast",
+                    "name": "Iconoclast",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "9",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "harbingers-of-truth"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        }
+                    ]
+                },
+                {
+                    "id": "incendiary",
+                    "name": "Incendiary",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "harbingers-of-truth"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Word Bearers"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 20
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "akkadic-hand-flamer",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "axe-rake",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Iconoclast may have its Akkadic hand flamer exchanged for one inferno pistol for +15 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "inferno-pistol": {
+                            "id": "inferno-pistol",
+                            "name": "inferno pistol",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["inferno-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "akkadic-hand-flamer"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "inferno-pistol"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Iconoclast may have phosphex bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "phosphex-bombs": {
+                            "id": "phosphex-bombs",
+                            "name": "phosphex bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["phosphex-bomb"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Iconoclast in this Unit may have its Akkadic hand flamer exchanged for one plasma pistol for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "plasma pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "akkadic-hand-flamer"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "iconoclast",
+                    "default": "none"
+                }
+            }
+        },
+        "erebus": {
+            "id": "erebus",
+            "name": "Erebus",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "erebus",
+                    "name": "Erebus",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "9",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "anathemata-discipline"
+                        },
+                        {
+                            "id": "lord-of-the-blessed"
+                        },
+                        {
+                            "id": "harbinger-of-chaos"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers", "Psyker", "Anathemata"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "crux-malifica"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "plasma-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "gal-vorbak": {
+            "id": "gal-vorbak",
+            "name": "Gal Vorbak",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 250
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "dark-brethren",
+                    "name": "Dark Brethren",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "5",
+                        "t": "5",
+                        "w": "3",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Malefic"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 50
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "tainted-talons",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "For every five Models in this Unit, one Model in this Unit may have its bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "meltagun": {
+                            "id": "meltagun",
+                            "name": "Meltagun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["meltagun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "meltagun"
+                                    }
+                                }
+                            ]
+                        },
+                        "warpfire-blaster": {
+                            "id": "warpfire-blaster",
+                            "name": "Warpfire blaster",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["warpfire-blaster"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "warpfire-blaster"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every five Models in this Unit, one Model in this Unit may have its tainted talons exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "tainted-talons"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "tainted-talons"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "kor-phaeron": {
+            "id": "kor-phaeron",
+            "name": "Kor Phaeron",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 125
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "kor-phaeron",
+                    "name": "Kor Phaeron",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "3",
+                        "t": "3",
+                        "w": "3",
+                        "i": "3",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "9",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "dark-oratory"
+                        },
+                        {
+                            "id": "jealous-command"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "patriarchs-claws"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "digi-flamer"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "lorgar": {
+            "id": "lorgar",
+            "name": "Lorgar",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 445
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "lorgar",
+                    "name": "Lorgar",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "6",
+                        "bs": "6",
+                        "s": "6",
+                        "t": "6",
+                        "w": "6",
+                        "i": "6",
+                        "a": "5",
+                        "ld": "12",
+                        "cl": "11",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-word-bearers"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "anathemata-discipline"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Loyalist"
+                        },
+                        {
+                            "id": "the-power-of-the-word"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": [
+                "Traitor",
+                "Word Bearers",
+                "Psyker",
+                "Master of the Legion",
+                "Anathemata"
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "illuminarum"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "devotion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "mhara-gal-dreadnought": {
+            "id": "mhara-gal-dreadnought",
+            "name": "Mhara Gal Dreadnought",
+            "role": "war-engine",
+            "type": "walker",
+            "cost": {
+                "points": 210
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "mhara-gal-dreadnought",
+                    "name": "Mhara Gal Dreadnought",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "7",
+                        "t": "7",
+                        "w": "7",
+                        "i": "4",
+                        "a": "4",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "5",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Malefic"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "warpfire-cannon"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "tainted-claw"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "burning-warpfire"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its warpfire cannon exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "gravis-bolt-cannon": {
+                            "id": "gravis-bolt-cannon",
+                            "name": "Gravis bolt cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["gravis-bolt-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "warpfire-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "gravis-bolt-cannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "gravis-melta-cannon": {
+                            "id": "gravis-melta-cannon",
+                            "name": "Gravis melta cannon",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["gravis-melta-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "warpfire-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "gravis-melta-cannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "gravis-autocannon": {
+                            "id": "gravis-autocannon",
+                            "name": "Gravis autocannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["gravis-autocannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "warpfire-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "gravis-autocannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "twin-lascannon": {
+                            "id": "twin-lascannon",
+                            "name": "Twin lascannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["twin-lascannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "warpfire-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-lascannon"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "phaeretus-anointed-conclave": {
+            "id": "phaeretus-anointed-conclave",
+            "name": "Phaeretus Anointed Conclave",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 240
+            },
+            "modelCount": 3,
+            "profiles": [
+                {
+                    "id": "phaetus-disciple",
+                    "name": "Phaetus Disciple",
+                    "template": "model",
+                    "stats": {
+                        "m": "5",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "6",
+                        "w": "3",
+                        "i": "3",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Champion", "Sergeant", "Heavy", "Malefic"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                },
+                {
+                    "id": "phaetus-anointed",
+                    "name": "Phaetus Anointed",
+                    "template": "model",
+                    "stats": {
+                        "m": "5",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "6",
+                        "w": "3",
+                        "i": "3",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy", "Malefic"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "paired-saturnine-disruption-fists",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "warpfire-mantle",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "saturnine-teleport-synchroniser",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its paired Saturnine disruption fists exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "plasma-bombard-and-one-saturnine-disruption-fist": {
+                            "id": "plasma-bombard-and-one-saturnine-disruption-fist",
+                            "name": "Plasma bombard and one Saturnine disruption fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": [
+                                "plasma-bombard",
+                                "saturnine-disruption-fist"
+                            ],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "paired-saturnine-disruption-fists"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-bombard"
+                                    }
+                                }
+                            ]
+                        },
+                        "twin-heavy-disintegrator-and-one-saturnine-disruption-fist": {
+                            "id": "twin-heavy-disintegrator-and-one-saturnine-disruption-fist",
+                            "name": "Twin heavy disintegrator and one Saturnine disruption fist",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": [
+                                "twin-heavy-disintegrator",
+                                "saturnine-disruption-fist"
+                            ],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "paired-saturnine-disruption-fists"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-heavy-disintegrator"
+                                    }
+                                }
+                            ]
+                        },
+                        "saturnine-war-axe-and-one-saturnine-disruption-fist": {
+                            "id": "saturnine-war-axe-and-one-saturnine-disruption-fist",
+                            "name": "Saturnine war axe and one Saturnine disruption fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": [
+                                "saturnine-war-axe",
+                                "saturnine-disruption-fist"
+                            ],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "paired-saturnine-disruption-fists"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "saturnine-war-axe"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "particle-shredder": {
+                            "id": "particle-shredder",
+                            "name": "Particle shredder",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["particle-shredder"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Phaetus Disciple in this Unit may have a Saturnine teleportation transponder selected for it for +60 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "saturnine-teleportation-transponder": {
+                            "id": "saturnine-teleportation-transponder",
+                            "name": "Saturnine teleportation transponder",
+                            "cost": {
+                                "points": 60
+                            },
+                            "equipmentRefs": [
+                                "saturnine-teleportation-transponder"
+                            ]
+                        }
+                    },
+                    "profileId": "phaetus-disciple",
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "word-bearers-diabolist-in-terminator-armour": {
+            "id": "word-bearers-diabolist-in-terminator-armour",
+            "name": "Word Bearers Diabolist in Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 135
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "cataphractii-diabolist",
+                    "name": "Cataphractii Diabolist",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command", "Heavy"]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers", "Psyker", "Diabolist"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "force-weapons"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its combi-bolter exchanged for one volkite charger for Free or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger-for-free": {
+                            "id": "volkite-charger-for-free",
+                            "name": "volkite charger for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "for": {
+                            "id": "for",
+                            "name": "for",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "word-bearers-diabolist": {
+            "id": "word-bearers-diabolist",
+            "name": "Word Bearers Diabolist",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 105
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "diabolist",
+                    "name": "Diabolist",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers", "Psyker", "Diabolist"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "force-weapons"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "word-bearers-inductii-squad": {
+            "id": "word-bearers-inductii-squad",
+            "name": "Word Bearers Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "empty-vessels"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainsword and bolt pistol exchanged for one heavy chainsword for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "charnabal-sabre"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "word-bearers-mounted-diabolist": {
+            "id": "word-bearers-mounted-diabolist",
+            "name": "Word Bearers Mounted Diabolist",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 145
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "outrider-diabolist",
+                    "name": "Outrider Diabolist",
+                    "template": "model",
+                    "stats": {
+                        "m": "14",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "10",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers", "Psyker", "Diabolist"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "twin-bolter-outrider-diabolist-only"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "heavy-bolter-diabolist-on-scimitar-jetbike-only"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "force-weapons"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Outrider Diabolist may have its twin bolter exchanged for one twin plasma gun for +15 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "twin-plasma-gun": {
+                            "id": "twin-plasma-gun",
+                            "name": "twin plasma gun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["twin-plasma-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "This Diabolist on Scimitar Jetbike may have its heavy bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "volkite-culverin": {
+                            "id": "volkite-culverin",
+                            "name": "Volkite culverin",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["volkite-culverin"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-culverin"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-cannon": {
+                            "id": "plasma-cannon",
+                            "name": "Plasma cannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["plasma-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-cannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["multi-melta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "multi-melta"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "word-bearers-procurators-with-jump-packs": {
+            "id": "word-bearers-procurators-with-jump-packs",
+            "name": "Word Bearers Procurators with Jump Packs",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 130
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "procurator-with-jump-pack",
+                    "name": "Procurator with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "flesh-harvester",
+                            "value": "Procurator with Jump Pack only"
+                        },
+                        {
+                            "id": "medic-4",
+                            "value": "Procurator with Jump Pack only"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 20
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "narthecium-procurator-with-jump-pack-only",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Procurator with Jump Pack in this Unit may have its chainsword exchanged for one of the following options:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "Heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every five Models in this Unit, one Procurant with Jump Pack in this Unit may:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "have-its-chainsword-exchanged-for-one-power-fist-for-15-poin": {
+                            "id": "have-its-chainsword-exchanged-for-one-power-fist-for-15-poin",
+                            "name": "Have its chainsword exchanged for one power fist for +15 Points per Model.",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["one-power-fist-for"]
+                        },
+                        "have-its-bolt-pistol-exchanged-for-one-hand-flamer-for-10-po": {
+                            "id": "have-its-bolt-pistol-exchanged-for-one-hand-flamer-for-10-po",
+                            "name": "Have its bolt pistol exchanged for one hand flamer for +10 Points per Model.",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["one-hand-flamer-for"]
+                        },
+                        "have-its-bolt-pistol-exchanged-for-one-plasma-pistol-for-15-": {
+                            "id": "have-its-bolt-pistol-exchanged-for-one-plasma-pistol-for-15-",
+                            "name": "Have its bolt pistol exchanged for one plasma pistol for +15 Points per Model.",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["one-plasma-pistol-for"]
+                        },
+                        "have-its-bolt-pistol-exchanged-for-one-warpfire-pistol-for-1": {
+                            "id": "have-its-bolt-pistol-exchanged-for-one-warpfire-pistol-for-1",
+                            "name": "Have its bolt pistol exchanged for one warpfire pistol for +15 Points per Model.",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["one-warpfire-pistol-for"]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "word-bearers-procurators": {
+            "id": "word-bearers-procurators",
+            "name": "Word Bearers Procurators",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "procurant",
+                    "name": "Procurant",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        },
+                        {
+                            "id": "flesh-harvester",
+                            "value": "Procurator only"
+                        },
+                        {
+                            "id": "medic-4",
+                            "value": "Procurator only"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 15
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "narthecium-procurator-only",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Procurator in this Unit may have its chainsword exchanged for one of the following options:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "Heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every five Models in this Unit, one Procurant in this Unit may:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "have-its-chainsword-exchanged-for-one-power-fist-for-15-poin": {
+                            "id": "have-its-chainsword-exchanged-for-one-power-fist-for-15-poin",
+                            "name": "Have its chainsword exchanged for one power fist for +15 Points per Model.",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["one-power-fist-for"]
+                        },
+                        "have-its-bolt-pistol-exchanged-for-one-hand-flamer-for-10-po": {
+                            "id": "have-its-bolt-pistol-exchanged-for-one-hand-flamer-for-10-po",
+                            "name": "Have its bolt pistol exchanged for one hand flamer for +10 Points per Model.",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["one-hand-flamer-for"]
+                        },
+                        "have-its-bolt-pistol-exchanged-for-one-plasma-pistol-for-15-": {
+                            "id": "have-its-bolt-pistol-exchanged-for-one-plasma-pistol-for-15-",
+                            "name": "Have its bolt pistol exchanged for one plasma pistol for +15 Points per Model.",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["one-plasma-pistol-for"]
+                        },
+                        "have-its-bolt-pistol-exchanged-for-a-warpfire-pistol-for-15-": {
+                            "id": "have-its-bolt-pistol-exchanged-for-a-warpfire-pistol-for-15-",
+                            "name": "Have its bolt pistol exchanged for a warpfire pistol for +15 Points per Model.",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["a-warpfire-pistol-for"]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "zardu-layak": {
+            "id": "zardu-layak",
+            "name": "Zardu Layak",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 180
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "zardu-layak",
+                    "name": "Zardu Layak",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "11",
+                        "cl": "10",
+                        "wp": "9",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command", "Malefic"]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers", "Psyker (Zardu Layak only)"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-azurda-charis"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "the-panoply-of-flame"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "anakatis-blade"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "plasma-pistol"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        }
+    },
+    "weapons": {
+        "daemonic-talons": {
+            "id": "daemonic-talons",
+            "name": "Daemonic Talons",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Daemonic talons",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Psychic"]
+                }
+            ]
+        },
+        "akkadic-hand-flamer": {
+            "id": "akkadic-hand-flamer",
+            "name": "Akkadic Hand Flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Akkadic hand flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "axe-rake": {
+            "id": "axe-rake",
+            "name": "Axe-rake",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Axe-rake",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "M"
+                        }
+                    ]
+                }
+            ]
+        },
+        "inferno-pistol": {
+            "id": "inferno-pistol",
+            "name": "Inferno Pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Inferno pistol",
+                    "stats": {
+                        "r": "6",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Melta"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "melta",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ]
+        },
+        "crux-malifica": {
+            "id": "crux-malifica",
+            "name": "Crux Malifica",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Crux Malifica",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power", "Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "phage",
+                            "value": "S"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tainted-talons": {
+            "id": "tainted-talons",
+            "name": "Tainted Talons",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Tainted talons",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "S"
+                        }
+                    ]
+                }
+            ]
+        },
+        "warpfire-blaster": {
+            "id": "warpfire-blaster",
+            "name": "Warpfire blaster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Warpfire blaster",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "patriarchs-claws": {
+            "id": "patriarchs-claws",
+            "name": "Patriarch’s Claws",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Patriarch’s Claws",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "digi-flamer": {
+            "id": "digi-flamer",
+            "name": "Digi-flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Digi-flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Flame", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        }
+                    ]
+                }
+            ]
+        },
+        "illuminarum": {
+            "id": "illuminarum",
+            "name": "Illuminarum",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Illuminarum",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "S"
+                        },
+                        {
+                            "id": "reaping-blow",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "devotion": {
+            "id": "devotion",
+            "name": "Devotion",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Devotion",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Graviton", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "warpfire-cannon": {
+            "id": "warpfire-cannon",
+            "name": "Warpfire Cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Warpfire cannon",
+                    "stats": {
+                        "r": "36",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "RS"
+                        },
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tainted-claw": {
+            "id": "tainted-claw",
+            "name": "Tainted Claw",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Tainted claw",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Power", "Psychic"]
+                }
+            ]
+        },
+        "burning-warpfire": {
+            "id": "burning-warpfire",
+            "name": "Burning Warpfire",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Burning warpfire",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Flame"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "2"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-azurda-charis": {
+            "id": "the-azurda-charis",
+            "name": "The Azurda Char’is",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Azurda Char’is",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "force",
+                            "value": "D"
+                        }
+                    ]
+                }
+            ]
+        },
+        "anakatis-blade": {
+            "id": "anakatis-blade",
+            "name": "Anakatis Blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Anakatis blade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "S"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tainted-weapon": {
+            "id": "tainted-weapon",
+            "name": "Tainted weapon",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Tainted weapon",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "S"
+                        }
+                    ]
+                }
+            ]
+        },
+        "warpfire-pistol": {
+            "id": "warpfire-pistol",
+            "name": "Warpfire pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Warpfire pistol",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Warpfire blaster",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Warpfire projector",
+                    "stats": {
+                        "r": "36",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "RS"
+                        },
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "warpfire-projector": {
+            "id": "warpfire-projector",
+            "name": "Warpfire projector",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Warpfire projector",
+                    "stats": {
+                        "r": "36",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "RS"
+                        },
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "warpfire-mantle": {
+            "id": "warpfire-mantle",
+            "name": "Warpfire Mantle",
+            "text": ""
+        },
+        "saturnine-teleport-synchroniser": {
+            "id": "saturnine-teleport-synchroniser",
+            "name": "Saturnine teleport synchroniser",
+            "text": ""
+        },
+        "twin-bolter-outrider-diabolist-only": {
+            "id": "twin-bolter-outrider-diabolist-only",
+            "name": "Twin bolter (Outrider Diabolist only)",
+            "text": ""
+        },
+        "heavy-bolter-diabolist-on-scimitar-jetbike-only": {
+            "id": "heavy-bolter-diabolist-on-scimitar-jetbike-only",
+            "name": "Heavy bolter (Diabolist on Scimitar Jetbike only)",
+            "text": ""
+        },
+        "narthecium-procurator-with-jump-pack-only": {
+            "id": "narthecium-procurator-with-jump-pack-only",
+            "name": "Narthecium (Procurator with Jump Pack only)",
+            "text": ""
+        },
+        "one-power-fist-for": {
+            "id": "one-power-fist-for",
+            "name": "one power fist for",
+            "text": ""
+        },
+        "one-hand-flamer-for": {
+            "id": "one-hand-flamer-for",
+            "name": "one hand flamer for",
+            "text": ""
+        },
+        "one-plasma-pistol-for": {
+            "id": "one-plasma-pistol-for",
+            "name": "one plasma pistol for",
+            "text": ""
+        },
+        "one-warpfire-pistol-for": {
+            "id": "one-warpfire-pistol-for",
+            "name": "one warpfire pistol for",
+            "text": ""
+        },
+        "narthecium-procurator-only": {
+            "id": "narthecium-procurator-only",
+            "name": "Narthecium (Procurator only)",
+            "text": ""
+        },
+        "a-warpfire-pistol-for": {
+            "id": "a-warpfire-pistol-for",
+            "name": "a warpfire pistol for",
+            "text": ""
+        },
+        "the-panoply-of-flame": {
+            "id": "the-panoply-of-flame",
+            "name": "The Panoply of Flame",
+            "text": ""
+        },
+        "burning-lore": {
+            "id": "burning-lore",
+            "name": "Burning Lore",
+            "text": "Word Bearers Models may gain the Psyker Trait and a specific Psychic Discipline. Any Model with the High Command Battlefield Role and Word Bearers Trait may be given the Psyker Trait and the Anathemata Psychic Discipline for +40 Points per Model."
+        }
+    },
+    "upgrades": {
+        "word-bearers-tainted-weapon": {
+            "id": "word-bearers-tainted-weapon",
+            "name": "Tainted Weapon",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "tainted-weapon": {
+                    "id": "tainted-weapon",
+                    "name": "Tainted Weapon",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["tainted-weapon"]
+                }
+            },
+            "default": "none"
+        },
+        "word-bearers-warpfire-weapons": {
+            "id": "word-bearers-warpfire-weapons",
+            "name": "Warpfire Weapons",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "warpfire-weapons": {
+                    "id": "warpfire-weapons",
+                    "name": "Warpfire Weapons",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["warpfire-pistol"]
+                }
+            },
+            "default": "none"
+        },
+        "word-bearers-burning-lore": {
+            "id": "word-bearers-burning-lore",
+            "name": "Burning Lore",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "burning-lore": {
+                    "id": "burning-lore",
+                    "name": "Burning Lore",
+                    "cost": {
+                        "points": 40
+                    },
+                    "equipmentRefs": ["burning-lore"]
+                }
+            },
+            "default": "none"
+        },
+        "legion-sergeant-melee-weapons": {
+            "id": "legion-sergeant-melee-weapons",
+            "name": "Legion Sergeant Melee Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainsword"]
+                },
+                "chainaxe": {
+                    "id": "chainaxe",
+                    "name": "Chainaxe",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainaxe"]
+                },
+                "charnabal-sabre": {
+                    "id": "charnabal-sabre",
+                    "name": "Charnabal sabre",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["charnabal-sabre"]
+                },
+                "power-weapon": {
+                    "id": "power-weapon",
+                    "name": "Power weapon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["power-weapons"]
+                },
+                "thunder-hammer": {
+                    "id": "thunder-hammer",
+                    "name": "Thunder hammer",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["thunder-hammer"]
+                },
+                "power-fist": {
+                    "id": "power-fist",
+                    "name": "Power fist",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["power-fist"]
+                },
+                "lightning-claw": {
+                    "id": "lightning-claw",
+                    "name": "Lightning claw",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["lightning-claw"]
+                },
+                "tainted-weapon": {
+                    "id": "tainted-weapon",
+                    "name": "Tainted weapon",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["tainted-weapon"]
+                }
+            }
+        },
+        "legion-pistols": {
+            "id": "legion-pistols",
+            "name": "Legion Pistols",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "plasma-pistol": {
+                    "id": "plasma-pistol",
+                    "name": "Plasma pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["plasma-pistol"]
+                },
+                "hand-flamer": {
+                    "id": "hand-flamer",
+                    "name": "Hand flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["hand-flamer"]
+                },
+                "volkite-serpenta": {
+                    "id": "volkite-serpenta",
+                    "name": "Volkite serpenta",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["volkite-serpenta"]
+                },
+                "warpfire-pistol": {
+                    "id": "warpfire-pistol",
+                    "name": "Warpfire pistol",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["warpfire-pistol"]
+                }
+            }
+        },
+        "legion-heavy-weapons": {
+            "id": "legion-heavy-weapons",
+            "name": "Legion Heavy Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "heavy-bolter": {
+                    "id": "heavy-bolter",
+                    "name": "Heavy bolter",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-bolter"]
+                },
+                "heavy-flamer": {
+                    "id": "heavy-flamer",
+                    "name": "Heavy flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-flamer"]
+                },
+                "autocannon": {
+                    "id": "autocannon",
+                    "name": "Autocannon",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["autocannon"]
+                },
+                "missile-launcher": {
+                    "id": "missile-launcher",
+                    "name": "Missile launcher",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["missile-launcher"]
+                },
+                "multi-melta": {
+                    "id": "multi-melta",
+                    "name": "Multi-melta",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["multi-melta"]
+                },
+                "plasma-cannon": {
+                    "id": "plasma-cannon",
+                    "name": "Plasma cannon",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["plasma-cannon"]
+                },
+                "volkite-culverin": {
+                    "id": "volkite-culverin",
+                    "name": "Volkite culverin",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["volkite-culverin"]
+                },
+                "lascannon": {
+                    "id": "lascannon",
+                    "name": "Lascannon",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["lascannon"]
+                },
+                "warpfire-projector": {
+                    "id": "warpfire-projector",
+                    "name": "Warpfire projector",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["warpfire-projector"]
+                }
+            }
+        },
+        "legion-special-weapons": {
+            "id": "legion-special-weapons",
+            "name": "Legion Special Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "flamer": {
+                    "id": "flamer",
+                    "name": "Flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["flamer"]
+                },
+                "plasma-gun": {
+                    "id": "plasma-gun",
+                    "name": "Plasma gun",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["plasma-gun"]
+                },
+                "meltagun": {
+                    "id": "meltagun",
+                    "name": "Meltagun",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["meltagun"]
+                },
+                "volkite-charger": {
+                    "id": "volkite-charger",
+                    "name": "Volkite charger",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["volkite-charger"]
+                },
+                "volkite-caliver": {
+                    "id": "volkite-caliver",
+                    "name": "Volkite caliver",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["volkite-caliver"]
+                },
+                "rotor-cannon": {
+                    "id": "rotor-cannon",
+                    "name": "Rotor cannon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["rotor-cannon"]
+                },
+                "warpfire-blaster": {
+                    "id": "warpfire-blaster",
+                    "name": "Warpfire blaster",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["warpfire-blaster"]
+                }
+            }
+        },
+        "legion-officer-wargear": {
+            "id": "legion-officer-wargear",
+            "name": "Legion Officer Wargear",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["bolt-pistol"]
+                },
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainsword"]
+                },
+                "bolter": {
+                    "id": "bolter",
+                    "name": "Bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["bolter"]
+                },
+                "volkite-serpenta": {
+                    "id": "volkite-serpenta",
+                    "name": "Volkite serpenta",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["volkite-serpenta"]
+                },
+                "hand-flamer": {
+                    "id": "hand-flamer",
+                    "name": "Hand flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["hand-flamer"]
+                },
+                "plasma-pistol": {
+                    "id": "plasma-pistol",
+                    "name": "Plasma pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["plasma-pistol"]
+                },
+                "disintegrator-pistol": {
+                    "id": "disintegrator-pistol",
+                    "name": "Disintegrator pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["disintegrator-pistol"]
+                },
+                "chainaxe": {
+                    "id": "chainaxe",
+                    "name": "Chainaxe",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainaxe"]
+                },
+                "charnabal-sabre": {
+                    "id": "charnabal-sabre",
+                    "name": "Charnabal sabre",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["charnabal-sabre"]
+                },
+                "power-weapon": {
+                    "id": "power-weapon",
+                    "name": "Power weapon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["power-weapons"]
+                },
+                "power-fist": {
+                    "id": "power-fist",
+                    "name": "Power fist",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["power-fist"]
+                },
+                "lightning-claw": {
+                    "id": "lightning-claw",
+                    "name": "Lightning claw",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["lightning-claw"]
+                },
+                "thunder-hammer": {
+                    "id": "thunder-hammer",
+                    "name": "Thunder hammer",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["thunder-hammer"]
+                },
+                "combat-shield": {
+                    "id": "combat-shield",
+                    "name": "Combat shield",
+                    "cost": {
+                        "points": 0
+                    },
+                    "equipmentRefs": ["combat-shield"]
+                },
+                "boarding-shield": {
+                    "id": "boarding-shield",
+                    "name": "Boarding shield",
+                    "cost": {
+                        "points": 5
+                    },
+                    "equipmentRefs": ["boarding-shield"]
+                },
+                "tainted-weapon": {
+                    "id": "tainted-weapon",
+                    "name": "Tainted weapon",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["tainted-weapon"]
+                },
+                "warpfire-pistol": {
+                    "id": "warpfire-pistol",
+                    "name": "Warpfire pistol",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["warpfire-pistol"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "harbingers-of-truth": {
+            "id": "harbingers-of-truth",
+            "name": "Harbingers of Truth",
+            "text": "Ashen Circle improve the Firepower Characteristic of Akkadic hand flamers in the Volley Step. When a Model with this Special Rule makes Volley Attacks, modify the Firepower Characteristic of that Model’s Akkadic hand flamer by +1."
+        },
+        "lord-of-the-blessed": {
+            "id": "lord-of-the-blessed",
+            "name": "Lord of the Blessed",
+            "text": "Erebus can join Units that have the Malefic Sub-Type. A Model with this Special Rule can join Units with the Malefic Sub-Type as if it had that Sub-Type and while part of such a Unit, is treated as having that Sub-Type."
+        },
+        "harbinger-of-chaos": {
+            "id": "harbinger-of-chaos",
+            "name": "Harbinger of Chaos",
+            "text": "An Army whose Primary Detachment includes a Model with this Special Rule may select Daemonic Manifestation Auxiliary Detachments regardless of how many Command Force Organisation Slots are filled with Esoterist Units."
+        },
+        "dark-oratory": {
+            "id": "dark-oratory",
+            "name": "Dark Oratory",
+            "text": "Kor Phaeron’s Controlling Player may apply additional Special Rules to friendly Units in the Effects Sub-Phase. In this Model’s Controlling Player’s Effects Sub-Phase, this Model’s Controlling Player can select one friendly Unit which only includes Models with the Word Bearers Trait within 6\" of this Model, then select one of the following effects: Cruel Invective: Until the start of the Controlling Player’s next Effects Sub-Phase, all Models in the selected Unit gain the Hatred (Loyalist) Special Rule. Threatening Entreaties: Until the start of the Controlling Player’s next Effects Sub-Phase, modify the Leadership and Cool Characteristics of all Models in the selected Unit by +2."
+        },
+        "jealous-command": {
+            "id": "jealous-command",
+            "name": "Jealous Command",
+            "text": "Kor Phaeron’s Characteristics increase if he is the only Unique Model in the Army. If this Model is the only Model with the Unique Sub-Type in your Army, modify this Model’s Wounds and Leadership Characteristics by +1."
+        },
+        "sire-of-the-word-bearers": {
+            "id": "sire-of-the-word-bearers",
+            "name": "Sire of the Word Bearers",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Despoiler Squad Units and/or Tactical Squad Units, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Word Bearers Trait in the same Army: Until the end of the first Battle Turn of the Battle, each time the Controlling Player of a Model with this Special Rule is required to make a Leadership Check for a Unit that includes only Models with the Word Bearers Trait, that Leadership Check is automatically passed."
+        },
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred (X)",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        },
+        "the-power-of-the-word": {
+            "id": "the-power-of-the-word",
+            "name": "The Power of the Word",
+            "text": "Lorgar can join Units that have the Malefic Sub-Type. A Model with this Special Rule can join Units with the Malefic Sub-Type as if it had that Sub-Type and while part of such a Unit, is treated as having that Sub-Type."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "aflame": {
+            "id": "aflame",
+            "name": "Aflame (X)",
+            "text": "A Weapon with this Special Rule causes additional modifiers to a Target’s Leadership Characteristic. If a Melee Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit, regardless of whether any Damage is inflicted, until the end of the Phase, that Unit is considered to be ‘aflame’. If the Controlling Player of a Unit that is aflame is required to make a Leadership Check during that Phase for a Combat that includes that Unit, the value of X on this Special Rule is applied as an additional negative modifier to the Leadership Characteristic being used for that Check.",
+            "configurable": true
+        },
+        "empty-vessels": {
+            "id": "empty-vessels",
+            "name": "Empty Vessels",
+            "text": "A Unit containing any Models with this Special Rule gains the Malefic Sub-Type and the Feel No Pain (6+) Special Rule once it scores Victory Points due to the Vanguard (X) Special Rule, after suffering D3 wounds. A Unit containing Models with this Special Rule may never be joined by a Model without this Special Rule. Additionally, the first time in a Battle each Unit which includes Models with this Special Rule scores Victory Points due to the Vanguard (X) Special Rule, that Unit immediately suffers D3 automatic wounds with an AP of 2 and a Damage of 1 against which no Saving Throws of any kind may be made. Once these wounds are resolved, every Model in that Unit immediately gains the Malefic Sub-Type and the Feel No Pain (6+) Special Rule for the remainder of the Battle."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "flesh-harvester": {
+            "id": "flesh-harvester",
+            "name": "Flesh Harvester",
+            "text": "A Model with this Special Rule can gain Flesh Harvest Points. A Model with this Special Rule gains 1 Flesh Harvest point each time a Unit that includes that Model is selected to Consolidate, if any enemy Models in that Combat had the Infantry or Cavalry Type. If a Model with the Paragon Type was Removed as a Casualty during that Combat, the Model with this Special Rule gains 2 Flesh Harvest Points instead. If a Model with any Flesh Harvest Points is Removed as a Casualty, any Flesh Harvest Points that Model has are lost. During the Decide Victor Step, at the end of the Battle, the Controlling Player of any Models with the Flesh Harvester Special Rule scores a number of Victory Points equal to the number of Flesh Harvest Points that any one of those Models, selected by the Controlling Player, currently has.",
+            "configurable": true
+        },
+        "medic-4": {
+            "id": "medic-4",
+            "name": "Medic (4+)",
+            "text": "",
+            "configurable": true
+        },
+        "force": {
+            "id": "force",
+            "name": "Force (X)",
+            "text": "A Weapon with this Special Rule may double a Characteristic with a Willpower Check, but may suffer Perils of the Warp. When selected to be used as part of a Combat or Shooting Attack, a Willpower Check may be made for the Model that will use this Weapon to make attacks. If it is successful then the Characteristic listed as X is doubled (if that Characteristic is AP, then the AP is instead changed to AP 2). If a double is rolled when making this Willpower Check then the Model using the Weapon to make attacks suffers Perils of the Warp.",
+            "configurable": true
+        },
+        "unwavering-conviction": {
+            "id": "unwavering-conviction",
+            "name": "Unwavering Conviction",
+            "text": "LEGION TACTICA All Models with the Word Bearers Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: Word Bearers gain additional Combat Resolution Points. When resolving a Combat in the Resolution Sub-Phase of the Assault Phase , score 1 Combat Resolution point if any friendly Models in that Combat have the Word Bearers Trait."
+        },
+        "beseech-the-gods": {
+            "id": "beseech-the-gods",
+            "name": "Beseech the Gods",
+            "text": "GAMBIT When selecting a Gambit, the Controlling Player of a Model with the Word Bearers Trait can select Beseech the Gods instead of any others available to that Model: This Gambit allows the Controlling Player to take a Willpower Check to modify their Characteristics. This Gambit can only be selected during the first Face-Off Step of a Challenge involving this Model. If this Gambit is selected, then the Controlling Player immediately makes a Willpower Check for this Model. If the Check is passed, until the end of this Challenge Sub-Phase , this Model adds +1 to its Strength and Attacks Characteristics. If the Check is failed, this Model suffers 1 Wound with an AP Characteristic of 2 and a Damage Characteristic of 1. No Saves or Damage Mitigation Roll may be made to discard this wound."
+        },
+        "glorious-martyrdom": {
+            "id": "glorious-martyrdom",
+            "name": "Glorious Martyrdom (Advanced Reaction)",
+            "text": "This Reaction allows the Controlling Player to allocate all wounds caused by a Fire Group to a single Model of their choosing. Trigger: Once per Battle, the Reactive Player may declare the Glorious Martyrdom Advanced Reaction in the Shooting Phase , during Step 5 of the Shooting Attack sequence of any Shooting Attack made by the Active Player that targets a Unit that includes only Models with the Word Bearers Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare the Glorious Martyrdom Advanced Reaction, this cost paid as soon as the declaration is made. Target: For the Glorious Martyrdom Advanced Reaction, the Reacting Unit is always the Unit that was the target of the Shooting Attack that triggered the Reaction. Process In Step 5 of the Shooting Attack sequence, the Reactive Player must select one Model from the Reacting Unit. Until the current Fire Group and any Fire Groups that split from it have been resolved, only the selected Model can be selected as the Target Model. If that Model is Removed as a Casualty , the remainder of that Fire Group and any additional Fire Groups that have been created from it are discarded and the Active Player moves to Step 10 of that Shooting Attack."
+        }
+    },
+    "detachments": {
+        "exalted-conclave": {
+            "id": "exalted-conclave",
+            "name": "Exalted Conclave",
+            "type": "apex",
+            "slots": [
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["elites"]
+                },
+                {
+                    "roles": ["elites"]
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor armies only"
+            }
+        }
+    },
+    "slotOptions": {
+        "zealous-assault": {
+            "id": "zealous-assault",
+            "name": "Zealous Assault",
+            "text": "If a Unit which only includes Models with the Word Bearers Trait and the Troops Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Zealous Assault Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Impact (S) Special Rule.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "word-bearers-tainted-weapon": {
+            "id": "word-bearers-tainted-weapon",
+            "name": "Tainted Weapon",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "word-bearers-tainted-weapon"
+                }
+            ]
+        },
+        "word-bearers-warpfire-weapons": {
+            "id": "word-bearers-warpfire-weapons",
+            "name": "Warpfire Weapons",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "word-bearers-warpfire-weapons"
+                }
+            ]
+        },
+        "word-bearers-burning-lore": {
+            "id": "word-bearers-burning-lore",
+            "name": "Burning Lore",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "word-bearers-burning-lore"
+                }
+            ]
+        },
+        "unwavering-conviction-all": {
+            "id": "unwavering-conviction-all",
+            "name": "Unwavering Conviction",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "unwavering-conviction"
+                    }
+                }
+            ]
+        }
+    },
+    "overrides": [
+        {
+            "kind": "upgrades",
+            "id": "legion-sergeant-melee-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-pistols"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-heavy-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-special-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-officer-wargear"
+        },
+        {
+            "kind": "equipment",
+            "id": "saturnine-teleport-synchroniser"
+        }
+    ]
+}

@@ -1,0 +1,2347 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "night-lords",
+    "version": "1.0.0",
+    "name": "Night Lords",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "contekar-terminator-squad": {
+            "id": "contekar-terminator-squad",
+            "name": "Contekar Terminator Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 225
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "dissident",
+                    "name": "Dissident",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "id": "contekar",
+                    "name": "Contekar",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Night Lords"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 40
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "chainblade",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "volkite-cavitor",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Dissident in this Unit may have its chainblade exchanged for one Escaton power claw for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "escaton-power-claw": {
+                            "id": "escaton-power-claw",
+                            "name": "Escaton power claw",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["escaton-power-claw"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainblade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "escaton-power-claw"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "dissident",
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its volkite cavitor exchanged for one heavy flamer for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-flamer-for-free": {
+                            "id": "heavy-flamer-for-free",
+                            "name": "heavy flamer for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["heavy-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-cavitor"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-flamer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "konrad-curze": {
+            "id": "konrad-curze",
+            "name": "Konrad Curze",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 450
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "konrad-curze",
+                    "name": "Konrad Curze",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "7",
+                        "bs": "7",
+                        "s": "6",
+                        "t": "6",
+                        "w": "6",
+                        "i": "7",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-night-lords"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "a-death-long-foreseen"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Night Lords", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "mercy-and-forgiveness"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-widowmakers"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "night-lords-atramentar-flay-clade": {
+            "id": "night-lords-atramentar-flay-clade",
+            "name": "Night Lords Atramentar Flay-clade",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 170
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "atramentar-trucidor",
+                    "name": "Atramentar Trucidor",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "I"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "sworn-loyalty"
+                        },
+                        {
+                            "id": "cloaked-in-murder"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                },
+                {
+                    "id": "atramentar",
+                    "name": "Atramentar",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "I"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "sworn-loyalty"
+                        },
+                        {
+                            "id": "cloaked-in-murder"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Night Lords"],
+            "additionalModels": {
+                "max": 15,
+                "cost": {
+                    "points": 35
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "power-weapons",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "For every five Models in this Unit, one Atramentar may have its combi-bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["heavy-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "reaper-autocannon": {
+                            "id": "reaper-autocannon",
+                            "name": "Reaper autocannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["reaper-autocannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "reaper-autocannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-blaster": {
+                            "id": "plasma-blaster",
+                            "name": "Plasma blaster",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["plasma-blaster"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-blaster"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger for Free, or one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger-for-free": {
+                            "id": "volkite-charger-for-free",
+                            "name": "volkite charger for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "or": {
+                            "id": "or",
+                            "name": "or",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["or"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "or"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its power weapon exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "nostraman-chainglaive": {
+                            "id": "nostraman-chainglaive",
+                            "name": "Nostraman chainglaive",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["nostraman-chainglaive"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["lightning-claw"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Any Model in this Unit may have its power weapon and combi-bolter exchanged for one pair of lightning claws for +15 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "The Atramentar Trucidor in this Unit may have its power weapon exchanged for one Headsman’s axe for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "headsmans-axe": {
+                            "id": "headsmans-axe",
+                            "name": "Headsman’s axe",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["headsmans-axe"]
+                        }
+                    },
+                    "profileId": "atramentar-trucidor",
+                    "default": "none"
+                }
+            }
+        },
+        "night-lords-inductii-squad": {
+            "id": "night-lords-inductii-squad",
+            "name": "Night Lords Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "unscrupulous-murderers"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Night Lords"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "killers-blades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "night-raptor-squad": {
+            "id": "night-raptor-squad",
+            "name": "Night Raptor Squad",
+            "role": "fast-attack",
+            "type": "infantry",
+            "cost": {
+                "points": 150
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "huntmaster",
+                    "name": "Huntmaster",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "I"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "4"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                },
+                {
+                    "id": "night-raptor",
+                    "name": "Night Raptor",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "I"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "4"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Night Lords"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 25
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainsword exchanged for one chainglaive for +5 Points per Model or one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        },
+                        "chainglaive": {
+                            "id": "chainglaive",
+                            "name": "chainglaive",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainglaive"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainglaive"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its chainsword exchanged for one chainblade for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainblade": {
+                            "id": "chainblade",
+                            "name": "chainblade",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainblade"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainblade"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its bolt pistol and chainsword exchanged for one pair of lightning claws for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "For every five Models in this Unit, one Night Raptor in this Unit may have its bolt pistol exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "meltagun": {
+                            "id": "meltagun",
+                            "name": "Meltagun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["meltagun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "meltagun"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-gun": {
+                            "id": "plasma-gun",
+                            "name": "Plasma gun",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-gun"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "Plasma pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-serpenta": {
+                            "id": "volkite-serpenta",
+                            "name": "Volkite serpenta",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-serpenta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "sevatar": {
+            "id": "sevatar",
+            "name": "Sevatar",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 220
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "sevatar",
+                    "name": "Sevatar",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "7",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "2"
+                        },
+                        {
+                            "id": "dirty-fighter"
+                        },
+                        {
+                            "id": "dark-dreams"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Night Lords", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "nights-whisper"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "terror-squad": {
+            "id": "terror-squad",
+            "name": "Terror Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 115
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "headsman",
+                    "name": "Headsman",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "hatred",
+                            "value": "Infantry"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "id": "executioner",
+                    "name": "Executioner",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "hatred",
+                            "value": "Infantry"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Night Lords"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 18
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "rotor-cannon": {
+                            "id": "rotor-cannon",
+                            "name": "Rotor cannon",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["rotor-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "rotor-cannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "chainaxe": {
+                            "id": "chainaxe",
+                            "name": "Chainaxe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainaxe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    }
+                                }
+                            ]
+                        },
+                        "chainglaive": {
+                            "id": "chainglaive",
+                            "name": "Chainglaive",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainglaive"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainglaive"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Headsman in this Unit may have its chainsword exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "headsman",
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Headsman in this Unit may have its bolt pistol exchanged for one disintegrator pistol for +10 Points or one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        },
+                        "disintegrator-pistol": {
+                            "id": "disintegrator-pistol",
+                            "name": "disintegrator pistol",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["disintegrator-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "disintegrator-pistol"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "headsman",
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Executioner in this Unit may have a vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "Any Model in this Unit may have its chainsword exchanged for one chainblade for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainblade": {
+                            "id": "chainblade",
+                            "name": "chainblade",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainblade"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainblade"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        }
+    },
+    "weapons": {
+        "chainblade": {
+            "id": "chainblade",
+            "name": "Chainblade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Chainblade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "volkite-cavitor": {
+            "id": "volkite-cavitor",
+            "name": "Volkite Cavitor",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Volkite cavitor",
+                    "stats": {
+                        "r": "10",
+                        "fp": "4",
+                        "rs": "6",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Volkite", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "deflagrate",
+                            "value": "6"
+                        }
+                    ]
+                }
+            ]
+        },
+        "escaton-power-claw": {
+            "id": "escaton-power-claw",
+            "name": "Escaton Power Claw",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Escaton power claw",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "mercy-and-forgiveness": {
+            "id": "mercy-and-forgiveness",
+            "name": "Mercy and Forgiveness",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Mercy and Forgiveness",
+                    "stats": {
+                        "im": "I",
+                        "am": "+2",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-widowmakers": {
+            "id": "the-widowmakers",
+            "name": "The Widowmakers",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "The Widowmakers",
+                    "stats": {
+                        "r": "12",
+                        "fp": "3",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "headsmans-axe": {
+            "id": "headsmans-axe",
+            "name": "Headsman’s axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Headsman’s axe",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "killers-blades": {
+            "id": "killers-blades",
+            "name": "Killer’s blades",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Killer’s blades",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "chainglaive": {
+            "id": "chainglaive",
+            "name": "Chainglaive",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Chainglaive",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "nights-whisper": {
+            "id": "nights-whisper",
+            "name": "Night’s Whisper",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Night’s Whisper",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "or": {
+            "id": "or",
+            "name": "or",
+            "text": ""
+        },
+        "nostraman-chainglaive": {
+            "id": "nostraman-chainglaive",
+            "name": "Nostraman chainglaive",
+            "text": ""
+        },
+        "trophies-of-judgement": {
+            "id": "trophies-of-judgement",
+            "name": "Trophies Of Judgement",
+            "text": "Any Model with the Command or Champion Sub-Type and the Night Lords Trait may have Trophies of Judgement selected for it for +10 Points per Model. Trophies of Judgement A Model with Trophies of Judgement has the Fear (1) Special Rule."
+        }
+    },
+    "upgrades": {
+        "night-lords-nostraman-chain-weapons": {
+            "id": "night-lords-nostraman-chain-weapons",
+            "name": "Nostraman Chain Weapons",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "nostraman-chain-weapons": {
+                    "id": "nostraman-chain-weapons",
+                    "name": "Nostraman Chain Weapons",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["chainglaive"]
+                }
+            },
+            "default": "none"
+        },
+        "night-lords-escaton-power-claw": {
+            "id": "night-lords-escaton-power-claw",
+            "name": "Escaton Power Claw",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "escaton-power-claw": {
+                    "id": "escaton-power-claw",
+                    "name": "Escaton Power Claw",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["escaton-power-claw"]
+                }
+            },
+            "default": "none"
+        },
+        "night-lords-trophies-of-judgement": {
+            "id": "night-lords-trophies-of-judgement",
+            "name": "Trophies Of Judgement",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "trophies-of-judgement": {
+                    "id": "trophies-of-judgement",
+                    "name": "Trophies Of Judgement",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["trophies-of-judgement"]
+                }
+            },
+            "default": "none"
+        },
+        "legion-officer-wargear": {
+            "id": "legion-officer-wargear",
+            "name": "Legion Officer Wargear",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["bolt-pistol"]
+                },
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainsword"]
+                },
+                "bolter": {
+                    "id": "bolter",
+                    "name": "Bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["bolter"]
+                },
+                "volkite-serpenta": {
+                    "id": "volkite-serpenta",
+                    "name": "Volkite serpenta",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["volkite-serpenta"]
+                },
+                "hand-flamer": {
+                    "id": "hand-flamer",
+                    "name": "Hand flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["hand-flamer"]
+                },
+                "plasma-pistol": {
+                    "id": "plasma-pistol",
+                    "name": "Plasma pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["plasma-pistol"]
+                },
+                "disintegrator-pistol": {
+                    "id": "disintegrator-pistol",
+                    "name": "Disintegrator pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["disintegrator-pistol"]
+                },
+                "chainaxe": {
+                    "id": "chainaxe",
+                    "name": "Chainaxe",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainaxe"]
+                },
+                "charnabal-sabre": {
+                    "id": "charnabal-sabre",
+                    "name": "Charnabal sabre",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["charnabal-sabre"]
+                },
+                "power-weapon": {
+                    "id": "power-weapon",
+                    "name": "Power weapon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["power-weapons"]
+                },
+                "power-fist": {
+                    "id": "power-fist",
+                    "name": "Power fist",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["power-fist"]
+                },
+                "lightning-claw": {
+                    "id": "lightning-claw",
+                    "name": "Lightning claw",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["lightning-claw"]
+                },
+                "thunder-hammer": {
+                    "id": "thunder-hammer",
+                    "name": "Thunder hammer",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["thunder-hammer"]
+                },
+                "combat-shield": {
+                    "id": "combat-shield",
+                    "name": "Combat shield",
+                    "cost": {
+                        "points": 0
+                    },
+                    "equipmentRefs": ["combat-shield"]
+                },
+                "boarding-shield": {
+                    "id": "boarding-shield",
+                    "name": "Boarding shield",
+                    "cost": {
+                        "points": 5
+                    },
+                    "equipmentRefs": ["boarding-shield"]
+                },
+                "escaton-power-claw": {
+                    "id": "escaton-power-claw",
+                    "name": "Escaton power claw",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["escaton-power-claw"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "sire-of-the-night-lords": {
+            "id": "sire-of-the-night-lords",
+            "name": "Sire of the Night Lords",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Terror Squad Units and/or Assault Squad Units, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models in Terror Squad Units in the same Army: All Models in Terror Squad Units in this Army gain the Infiltrate (12) Special Rule."
+        },
+        "a-death-long-foreseen": {
+            "id": "a-death-long-foreseen",
+            "name": "A Death Long Foreseen",
+            "text": "If the Controlling Player succeeds at a Dice Roll, they may select this Gambit instead of any others normally available. When selecting Gambits for a Model with this Special Rule, its Controlling Player can roll one Dice. On a 5+, this Gambit is available to the Controlling Player to be selected for that Model: A Death Long Foreseen When this Gambit is selected, the Controlling Player can make one Willpower Check for each of the following benefits. If the Willpower Check is successful, the corresponding effect applies until the start of the next Face-Off Step : This Model has the Feel No Pain (5+) Special Rule. Modify this Model’s Attacks Characteristic by +1. This Model’s Mercy and Forgiveness have an Initiative Modifier Characteristic of ‘+2’."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "impact": {
+            "id": "impact",
+            "name": "Impact (X)",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "sworn-loyalty": {
+            "id": "sworn-loyalty",
+            "name": "Sworn Loyalty",
+            "text": "When included in an Army in which a Sevatar Unit has been selected as part of the Primary Detachment and is on the Battlefield, when the Controlling Player of a Night Lords Atramentar Flay-clade Unit makes a Leadership Check for that Unit, they may always use Sevatar’s Base Leadership Characteristic instead."
+        },
+        "cloaked-in-murder": {
+            "id": "cloaked-in-murder",
+            "name": "Cloaked in Murder",
+            "text": "When the Controlling Player declares an enemy Unit that is already Locked in Combat as the Target of a Charge made by a Unit made up entirely of Models with this Special Rule, Models with this Special Rule modify their Set-up Move Distance by +1\", to a maximum of 6\" until that Charge Move is resolved."
+        },
+        "unscrupulous-murderers": {
+            "id": "unscrupulous-murderers",
+            "name": "Unscrupulous Murderers",
+            "text": "This Special Rule allows a unique aftermath option to be selected in which every Inductii has a chance to inflict a Precision Hit. A Unit which contains any Models with this Special Rule may have the Art of Murder aftermath option selected for it in Step 4 of the Resolution Sub-Phase of the Assault Phase for any Combat in which that Unit has won or drawn the Combat. The Art of Murder – The Controlling Player rolls a single Dice for every Model in this Unit which has the Unscrupulous Murderers Special Rule. For every unmodified result of ‘6’, the Controlling Player may allocate a single wound to any enemy Model of their choosing from the selected Combat which has had the Hold, Disengage or Fall Back aftermath option selected for its Unit. These wounds have an AP of ‘–’ and a Damage of 1, and are resolved immediately"
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "dirty-fighter": {
+            "id": "dirty-fighter",
+            "name": "Dirty Fighter",
+            "text": "This Gambit allows Sevatar to make an attack outside of the normal sequence. While a Model with this Special Rule is engaged in a Challenge, its Controlling Player can select the following Gambit : Dirty Fighter: This Gambit can only be selected during the first Face-Off Step of a Challenge involving this Model. If this Gambit is selected, at the start of the Focus Step, this Model’s Controlling Player can resolve steps 1 to 4 of the Strike Step once as if this Model had an Attacks Characteristic of 1. The Focus Step is then resolved as normal."
+        },
+        "dark-dreams": {
+            "id": "dark-dreams",
+            "name": "Dark Dreams",
+            "text": "The Controlling Player may attempt to gain a Damage Mitigation Roll for Sevatar. In this Model’s Controlling Player’s Effects Sub-Phase, this Model’s Controlling Player can roll one Dice and consult the following table: RESULT EFFECT 1 Until the start of the Controlling Player’s next Effects Sub-Phase, this Model loses the Command Sub-Type and gains the Specialist Sub-Type. 2-4 No effect. 5+ Until the start of the Controlling Player’s next Effects Sub-Phase, this Model gains the Feel No Pain (5+) Special Rule."
+        },
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred (X)",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        },
+        "a-talent-for-murder": {
+            "id": "a-talent-for-murder",
+            "name": "A Talent for Murder",
+            "text": "LEGION TACTICA All Models with the Night Lords Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: Night Lords have an improved Weapon Skill Characteristic when fighting Units that have Tactical Statuses. When Locked in Combat with any Units which contain at least one Model which has any Tactical Statuses , Models in that Combat with this Special Rule gain an additional modifier of +1 to their Weapon Skill Characteristic until the end of the Phase."
+        },
+        "nostraman-courage": {
+            "id": "nostraman-courage",
+            "name": "Nostraman Courage",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Night Lords Trait can select Nostraman Courage instead of any others available to that Model: This Gambit allows the Controlling Player to switch the Model that fights in a Challenge. This Gambit may only be selected once per Challenge . If selected, at the Start of the Focus Step , this Model’s Controlling Player may immediately return the Model to their Unit as if it was the Resolution Sub-Phase . If the Controlling Player chooses to do this, they must select another Model from this Unit (this can be a Model that is not normally eligible to take part in a Challenge). That Model is removed from the Unit and becomes the Challenger or Challenged Model in place of the original Challenger or Challenged Model that was returned to the Unit."
+        },
+        "better-part-of-valour": {
+            "id": "better-part-of-valour",
+            "name": "Better Part of Valour (Advanced Reaction)",
+            "text": "This Reaction allows a Unit to Fall Back when it is the Target of a Charge. Trigger: The Reactive Player may declare a Better Part of Valour Advanced Reaction during Step 4 of the Charge process of any Charge declared by the Active Player that targets a Unit which only includes Models with the Night Lords Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Better Part of Valour Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Charge triggered the Reaction. The Reacting Unit is always the Unit that was declared as the target of the Charge that triggered this Reaction. Process Once this Reaction is declared, the Reacting Unit must immediately make a Fall Back Move as if it was affected by the Routed Tactical Status. Once this Fall Back Move is completed, the Reacting Unit does not gain the Routed Tactical Status."
+        },
+        "terror-assault": {
+            "id": "terror-assault",
+            "name": "Terror Assault (Advanced Reaction)",
+            "text": "An Army that has a Primary Detachment with the Night Lords Faction may select the following Detachments: TERROR ASSAULT [AUXILIARY DETACHMENT] Troops Slots in this Detachment must be filled with Terror Squad Units."
+        },
+        "atramentar-hunt": {
+            "id": "atramentar-hunt",
+            "name": "Atramentar Hunt (Advanced Reaction)",
+            "text": "ATRAMENTAR HUNT [APEX DETACHMENT] Retinue Slots in this Detachment must be filled with Cataphractii Command Squad Units or Tartaros Command Squad Units. Heavy Assault Slots in this Detachment must be filled with Cataphractii Terminator Squad Units or Tartaros Terminator Squad Units. The only Prime Advantage that can be selected for Battlefield Role Slots in this Detachment is the Atramentar Prime Advantage."
+        }
+    },
+    "detachments": {
+        "terror-assault": {
+            "id": "terror-assault",
+            "name": "Terror Assault",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": ["terror-squad"]
+                    }
+                },
+                {
+                    "roles": ["troop"],
+                    "units": {
+                        "unitIds": ["terror-squad"]
+                    }
+                },
+                {
+                    "roles": ["fast-attack"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                }
+            ]
+        },
+        "atramentar-hunt": {
+            "id": "atramentar-hunt",
+            "name": "Atramentar Hunt",
+            "type": "apex",
+            "slots": [
+                {
+                    "roles": ["retinue"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": [
+                            "cataphractii-terminator-command-squad",
+                            "tartaros-terminator-command-squad"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": [
+                            "cataphractii-terminator-squad",
+                            "tartaros-terminator-squad"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": [
+                            "cataphractii-terminator-squad",
+                            "tartaros-terminator-squad"
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "atramentar": {
+            "id": "atramentar",
+            "name": "Atramentar",
+            "text": "If a Centurion in Terminator Armour , Cataphractii Command Squad , Tartaros Command Squad , Cataphractii Terminator Squad or Tartaros Terminator Squad Unit that has the Night Lords Trait is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Atramentar Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Deep Strike and Impact (I) Special Rules.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "night-lords-nostraman-chain-weapons": {
+            "id": "night-lords-nostraman-chain-weapons",
+            "name": "Nostraman Chain Weapons",
+            "selector": {
+                "profiles": {
+                    "anyOf": [
+                        "night-lords-trait-and-the-command",
+                        "champion",
+                        "sergeant"
+                    ]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-nostraman-chain-weapons"
+                }
+            ]
+        },
+        "night-lords-escaton-power-claw": {
+            "id": "night-lords-escaton-power-claw",
+            "name": "Escaton Power Claw",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-escaton-power-claw"
+                }
+            ]
+        },
+        "night-lords-trophies-of-judgement": {
+            "id": "night-lords-trophies-of-judgement",
+            "name": "Trophies Of Judgement",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-trophies-of-judgement"
+                }
+            ]
+        },
+        "a-talent-for-murder-all": {
+            "id": "a-talent-for-murder-all",
+            "name": "A Talent for Murder",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "a-talent-for-murder"
+                    }
+                }
+            ]
+        }
+    },
+    "overrides": [
+        {
+            "kind": "upgrades",
+            "id": "legion-officer-wargear"
+        }
+    ]
+}

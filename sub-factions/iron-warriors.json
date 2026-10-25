@@ -1,0 +1,2804 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "iron-warriors",
+    "version": "1.0.0",
+    "name": "Iron Warriors",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "iron-circle-maniple": {
+            "id": "iron-circle-maniple",
+            "name": "Iron Circle Maniple",
+            "role": "retinue",
+            "type": "automata",
+            "cost": {
+                "points": 150
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "domitar-ferrum",
+                    "name": "Domitar-ferrum",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "7",
+                        "t": "7",
+                        "w": "4",
+                        "i": "3",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "12",
+                        "wp": "5",
+                        "in": "5",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "shield-of-the-iron-tyrant"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "A"
+                        },
+                        {
+                            "id": "firestorm"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Warriors", "Shield"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 135
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "graviton-crusher"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-shrapnel-cannon"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "karceri-battle-shield"
+                }
+            ]
+        },
+        "iron-warriors-dominator-cohort": {
+            "id": "iron-warriors-dominator-cohort",
+            "name": "0-1 Iron Warriors Dominator Cohort",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 255
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "dominator",
+                    "name": "Dominator",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "expendable",
+                            "value": "1"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Automata"
+                        },
+                        {
+                            "id": "those-once-honoured"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Warriors"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 45
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "thunder-hammer",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "For every five Models in the Unit, one Dominator may have its combi-bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["heavy-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["multi-melta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "multi-melta"
+                                    }
+                                }
+                            ]
+                        },
+                        "reaper-autocannon": {
+                            "id": "reaper-autocannon",
+                            "name": "Reaper autocannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["reaper-autocannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "reaper-autocannon"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its thunder hammer exchanged for one chainfist for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "chainfist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainfist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainfist"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger for Free or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger-for-free": {
+                            "id": "volkite-charger-for-free",
+                            "name": "volkite charger for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "for": {
+                            "id": "for",
+                            "name": "for",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "iron-warriors-inductii-squad": {
+            "id": "iron-warriors-inductii-squad",
+            "name": "Iron Warriors Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 90
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "6",
+                        "in": "5",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "line",
+                            "value": "1"
+                        },
+                        {
+                            "id": "expendable",
+                            "value": "1"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Warriors"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its bolter exchanged for one Astartes shotgun for +2 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "astartes-shotgun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain Bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "iron-warriors-iron-havocs": {
+            "id": "iron-warriors-iron-havocs",
+            "name": "Iron Warriors Iron Havocs",
+            "role": "support",
+            "type": "infantry",
+            "cost": {
+                "points": 135
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "iron-havoc-sergeant",
+                    "name": "Iron Havoc Sergeant",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        },
+                        {
+                            "id": "ferrum-occularis"
+                        }
+                    ]
+                },
+                {
+                    "id": "iron-havoc",
+                    "name": "Iron Havoc",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        },
+                        {
+                            "id": "ferrum-occularis"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Warriors"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 25
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "shrapnel-cannon",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Iron Havoc Sergeant in this Unit may have one item from the Legion Sergeant Melee Weapons list selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "iron-havoc-sergeant",
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "One Iron Havoc in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Up to two Iron Havocs in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Every Model in this Unit may have its shrapnel cannon replaced with one of the following options. Every Model in this Unit must have the same option selected...",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "autocannon": {
+                            "id": "autocannon",
+                            "name": "Autocannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["autocannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "shrapnel-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "autocannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "missile-launcher": {
+                            "id": "missile-launcher",
+                            "name": "Missile launcher",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["missile-launcher"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "shrapnel-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "missile-launcher"
+                                    }
+                                }
+                            ]
+                        },
+                        "lascannon": {
+                            "id": "lascannon",
+                            "name": "Lascannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["lascannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "shrapnel-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lascannon"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "autocannon"
+                }
+            }
+        },
+        "iron-warriors-warsmith-in-artificer-armour": {
+            "id": "iron-warriors-warsmith-in-artificer-armour",
+            "name": "Iron Warriors Warsmith in Artificer Armour",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 140
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "warsmith-in-artificer-armour",
+                    "name": "Warsmith in Artificer Armour",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Warriors", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "servo-arm"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cortex-controller"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cognis-signum"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolter and/or bolt pistol exchanged for one paragon blade for +15 Points, one archaeotech pistol for +15 Points or one item from the ...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        },
+                        "paragon-blade": {
+                            "id": "paragon-blade",
+                            "name": "paragon blade",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["paragon-blade"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "paragon-blade"
+                                    }
+                                }
+                            ]
+                        },
+                        "archaeotech-pistol": {
+                            "id": "archaeotech-pistol",
+                            "name": "archaeotech pistol",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["archaeotech-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "archaeotech-pistol"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have its bolter exchanged for one item from the Legion Combi-weapons list or one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "astartes-shotgun"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "This Model may have its bolter and bolt pistol exchanged for one pair of lightning claws for +20 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "This Model may have melta bombs selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "This Model with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "This Model may have a cyber-familiar selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "cyber-familiar": {
+                            "id": "cyber-familiar",
+                            "name": "cyber-familiar",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cyber-familiar"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "n-rik-dreygur": {
+            "id": "n-rik-dreygur",
+            "name": "Nârik Dreygur",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 115
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "n-rik-dreygur",
+                    "name": "Nârik Dreygur",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique", "Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "1"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "master-of-automata"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Iron Warriors"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "graviton-gauntlet"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cortex-controller"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "perturabo": {
+            "id": "perturabo",
+            "name": "Perturabo",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 425
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "perturabo",
+                    "name": "Perturabo",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "7",
+                        "bs": "7",
+                        "s": "6",
+                        "t": "7",
+                        "w": "6",
+                        "i": "5",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-iron-warriors"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "battlesmith",
+                            "value": "3"
+                        },
+                        {
+                            "id": "the-breaker"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Iron Warriors", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-logos-array"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cortex-controller"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cognis-signum"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have Forgebreaker Desecrated selected for it for +35 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "forgebreaker-desecrated": {
+                            "id": "forgebreaker-desecrated",
+                            "name": "Forgebreaker Desecrated",
+                            "cost": {
+                                "points": 35
+                            },
+                            "weaponRefs": ["forgebreaker-desecrated"]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "the-tormentor": {
+            "id": "the-tormentor",
+            "name": "The Tormentor",
+            "role": "lord-of-war",
+            "type": "vehicle",
+            "cost": {
+                "points": 700
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "the-tormentor",
+                    "name": "The Tormentor",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "10",
+                        "bs": "4",
+                        "front": "14",
+                        "side": "13",
+                        "rear": "12",
+                        "hp": "16",
+                        "transport-capacity": "14"
+                    },
+                    "tags": ["Unique", "Transport", "Super-heavy"],
+                    "specialRules": [
+                        {
+                            "id": "lair-of-the-iron-tyrant"
+                        },
+                        {
+                            "id": "macro-auspex"
+                        },
+                        {
+                            "id": "void-shields",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Iron Warriors", "Smokescreen"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "centreline-mounted-volcano-cannon"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-heavy-bolter"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "two-sponson-mounted-lascannon-and-two-sponson-mounted-twin-h": {
+                            "id": "two-sponson-mounted-lascannon-and-two-sponson-mounted-twin-h",
+                            "name": "Two Sponson Mounted lascannon and two Sponson Mounted twin heavy bolters",
+                            "cost": {
+                                "points": 40
+                            },
+                            "weaponRefs": ["lascannon", "twin-heavy-bolter"]
+                        },
+                        "two-sponson-mounted-lascannon-and-two-sponson-mounted-twin-h-2": {
+                            "id": "two-sponson-mounted-lascannon-and-two-sponson-mounted-twin-h-2",
+                            "name": "Two Sponson Mounted lascannon and two Sponson Mounted twin heavy flamers",
+                            "cost": {
+                                "points": 40
+                            },
+                            "weaponRefs": ["lascannon", "twin-heavy-flamer"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have one item from the Legion Pintle Weapons list selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pintle-weapons": {
+                            "id": "legion-pintle-weapons",
+                            "target": "legion-pintle-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "This Model may have any of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "one-hull-front-mounted-hunter-killer-missile": {
+                            "id": "one-hull-front-mounted-hunter-killer-missile",
+                            "name": "One Hull (Front) Mounted hunter-killer missile",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        },
+                        "searchlights": {
+                            "id": "searchlights",
+                            "name": "Searchlights",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["searchlights"]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "tyrant-siege-terminator-squad": {
+            "id": "tyrant-siege-terminator-squad",
+            "name": "Tyrant Siege Terminator Squad",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 300
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "siege-master",
+                    "name": "Siege Master",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "firing-protocols",
+                            "value": "2"
+                        },
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "id": "tyrant",
+                    "name": "Tyrant",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "firing-protocols",
+                            "value": "2"
+                        },
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Warriors"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 55
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "tyrant-rocket-launcher",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-fist",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Siege Master in this Unit may have one omni-scope selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "omni-scope": {
+                            "id": "omni-scope",
+                            "name": "omni-scope",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["omni-scope"]
+                        }
+                    },
+                    "profileId": "siege-master",
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Siege Master in this Unit may have one grenade harness selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "grenade-harness": {
+                            "id": "grenade-harness",
+                            "name": "grenade harness",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["grenade-harness"]
+                        }
+                    },
+                    "profileId": "siege-master",
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Any Model in this Unit may have its combi-bolter and power fist exchanged for one pair of lightning claws for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Any Model in this Unit may have its power fist exchanged for one chainfist for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainfist-for-free": {
+                            "id": "chainfist-for-free",
+                            "name": "chainfist for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainfist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainfist"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "warsmith": {
+            "id": "warsmith",
+            "name": "Warsmith",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "warsmith",
+                    "name": "Warsmith",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "5",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Warriors", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "graviton-crusher"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "combi-grav"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "servo-arm"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cortex-controller"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cognis-signum"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have a cyber-familiar selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "cyber-familiar": {
+                            "id": "cyber-familiar",
+                            "name": "cyber-familiar",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cyber-familiar"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        }
+    },
+    "weapons": {
+        "graviton-crusher": {
+            "id": "graviton-crusher",
+            "name": "Graviton crusher",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Graviton crusher",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        }
+                    ]
+                }
+            ]
+        },
+        "twin-shrapnel-cannon": {
+            "id": "twin-shrapnel-cannon",
+            "name": "Twin Shrapnel Cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin shrapnel cannon",
+                    "stats": {
+                        "r": "36",
+                        "fp": "6",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "1"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "shrapnel-cannon": {
+            "id": "shrapnel-cannon",
+            "name": "Shrapnel cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Shrapnel cannon",
+                    "stats": {
+                        "r": "36",
+                        "fp": "3",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "graviton-gauntlet": {
+            "id": "graviton-gauntlet",
+            "name": "Graviton Gauntlet",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Graviton gauntlet",
+                    "stats": {
+                        "im": "-3",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Graviton", "Power"],
+                    "specialRules": [
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-logos-array": {
+            "id": "the-logos-array",
+            "name": "The Logos Array",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "The Logos Array",
+                    "stats": {
+                        "r": "30",
+                        "fp": "6",
+                        "rs": "6",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "suppressive",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forgebreaker-desecrated": {
+            "id": "forgebreaker-desecrated",
+            "name": "Forgebreaker Desecrated",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forgebreaker Desecrated",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tyrant-rocket-launcher": {
+            "id": "tyrant-rocket-launcher",
+            "name": "Tyrant Rocket Launcher",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Swarmer",
+                    "stats": {
+                        "r": "48",
+                        "fp": "3",
+                        "rs": "5",
+                        "ap": "6",
+                        "d": "1"
+                    },
+                    "traits": ["Missile"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Breaker",
+                    "stats": {
+                        "r": "48",
+                        "fp": "1",
+                        "rs": "9",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Missile"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "D"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ]
+                }
+            ]
+        },
+        "shrapnel-pistol": {
+            "id": "shrapnel-pistol",
+            "name": "Shrapnel pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Shrapnel pistol",
+                    "stats": {
+                        "r": "10",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        }
+                    ]
+                },
+                {
+                    "name": "Shrapnel bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        }
+                    ]
+                },
+                {
+                    "name": "Shrapnel cannon",
+                    "stats": {
+                        "r": "36",
+                        "fp": "3",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "graviton-mace": {
+            "id": "graviton-mace",
+            "name": "Graviton mace",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Graviton mace",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "karceri-battle-shield": {
+            "id": "karceri-battle-shield",
+            "name": "Karceri Battle Shield",
+            "text": ""
+        },
+        "centreline-mounted-volcano-cannon": {
+            "id": "centreline-mounted-volcano-cannon",
+            "name": "Centreline Mounted volcano cannon",
+            "text": ""
+        },
+        "omni-scope": {
+            "id": "omni-scope",
+            "name": "omni-scope",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "iron-warriors-graviton-crushers": {
+            "id": "iron-warriors-graviton-crushers",
+            "name": "Graviton Crushers",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "graviton-crushers": {
+                    "id": "graviton-crushers",
+                    "name": "Graviton Crushers",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["graviton-crusher"]
+                }
+            },
+            "default": "none"
+        },
+        "iron-warriors-shrapnel-weapons": {
+            "id": "iron-warriors-shrapnel-weapons",
+            "name": "Shrapnel Weapons",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "shrapnel-weapons": {
+                    "id": "shrapnel-weapons",
+                    "name": "Shrapnel Weapons",
+                    "cost": {
+                        "points": 2
+                    },
+                    "weaponRefs": ["shrapnel-pistol"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "shrapnel-pistol"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "legion-sergeant-melee-weapons": {
+            "id": "legion-sergeant-melee-weapons",
+            "name": "Legion Sergeant Melee Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainsword"]
+                },
+                "chainaxe": {
+                    "id": "chainaxe",
+                    "name": "Chainaxe",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainaxe"]
+                },
+                "charnabal-sabre": {
+                    "id": "charnabal-sabre",
+                    "name": "Charnabal sabre",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["charnabal-sabre"]
+                },
+                "power-weapon": {
+                    "id": "power-weapon",
+                    "name": "Power weapon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["power-weapons"]
+                },
+                "thunder-hammer": {
+                    "id": "thunder-hammer",
+                    "name": "Thunder hammer",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["thunder-hammer"]
+                },
+                "power-fist": {
+                    "id": "power-fist",
+                    "name": "Power fist",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["power-fist"]
+                },
+                "lightning-claw": {
+                    "id": "lightning-claw",
+                    "name": "Lightning claw",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["lightning-claw"]
+                },
+                "graviton-mace": {
+                    "id": "graviton-mace",
+                    "name": "Graviton mace",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["graviton-mace"]
+                }
+            }
+        },
+        "legion-heavy-weapons": {
+            "id": "legion-heavy-weapons",
+            "name": "Legion Heavy Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "heavy-bolter": {
+                    "id": "heavy-bolter",
+                    "name": "Heavy bolter",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-bolter"]
+                },
+                "heavy-flamer": {
+                    "id": "heavy-flamer",
+                    "name": "Heavy flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-flamer"]
+                },
+                "autocannon": {
+                    "id": "autocannon",
+                    "name": "Autocannon",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["autocannon"]
+                },
+                "missile-launcher": {
+                    "id": "missile-launcher",
+                    "name": "Missile launcher",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["missile-launcher"]
+                },
+                "multi-melta": {
+                    "id": "multi-melta",
+                    "name": "Multi-melta",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["multi-melta"]
+                },
+                "plasma-cannon": {
+                    "id": "plasma-cannon",
+                    "name": "Plasma cannon",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["plasma-cannon"]
+                },
+                "volkite-culverin": {
+                    "id": "volkite-culverin",
+                    "name": "Volkite culverin",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["volkite-culverin"]
+                },
+                "lascannon": {
+                    "id": "lascannon",
+                    "name": "Lascannon",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["lascannon"]
+                },
+                "shrapnel-cannon": {
+                    "id": "shrapnel-cannon",
+                    "name": "Shrapnel cannon",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["shrapnel-cannon"]
+                }
+            }
+        },
+        "legion-pintle-weapons": {
+            "id": "legion-pintle-weapons",
+            "name": "Legion Pintle Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "pintle-mounted-combi-bolter": {
+                    "id": "pintle-mounted-combi-bolter",
+                    "name": "Pintle Mounted combi-bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["combi-bolter"]
+                },
+                "pintle-mounted-combi-flamer": {
+                    "id": "pintle-mounted-combi-flamer",
+                    "name": "Pintle Mounted combi-flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-flamer"]
+                },
+                "pintle-mounted-combi-plasma": {
+                    "id": "pintle-mounted-combi-plasma",
+                    "name": "Pintle Mounted combi-plasma",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-plasma"]
+                },
+                "pintle-mounted-combi-melta": {
+                    "id": "pintle-mounted-combi-melta",
+                    "name": "Pintle Mounted combi-melta",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-melta"]
+                },
+                "pintle-mounted-combi-volkite": {
+                    "id": "pintle-mounted-combi-volkite",
+                    "name": "Pintle Mounted combi-volkite",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-volkite"]
+                },
+                "pintle-mounted-havoc-launcher": {
+                    "id": "pintle-mounted-havoc-launcher",
+                    "name": "Pintle Mounted havoc launcher",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["havoc-launcher"]
+                },
+                "pintle-mounted-heavy-bolter": {
+                    "id": "pintle-mounted-heavy-bolter",
+                    "name": "Pintle Mounted heavy bolter",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-bolter"]
+                },
+                "pintle-mounted-heavy-flamer": {
+                    "id": "pintle-mounted-heavy-flamer",
+                    "name": "Pintle Mounted heavy flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-flamer"]
+                },
+                "pintle-mounted-multi-melta": {
+                    "id": "pintle-mounted-multi-melta",
+                    "name": "Pintle Mounted multi-melta",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["multi-melta"]
+                },
+                "pintle-mounted-shrapnel-cannon": {
+                    "id": "pintle-mounted-shrapnel-cannon",
+                    "name": "Pintle Mounted shrapnel cannon",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["shrapnel-cannon"]
+                }
+            }
+        },
+        "legion-sponson-weapons": {
+            "id": "legion-sponson-weapons",
+            "name": "Legion Sponson Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "two-sponson-mounted-heavy-bolters": {
+                    "id": "two-sponson-mounted-heavy-bolters",
+                    "name": "Two Sponson Mounted heavy bolters",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["heavy-bolter"]
+                },
+                "two-sponson-mounted-heavy-flamers": {
+                    "id": "two-sponson-mounted-heavy-flamers",
+                    "name": "Two Sponson Mounted heavy flamers",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["heavy-flamer"]
+                },
+                "two-sponson-mounted-lascannons": {
+                    "id": "two-sponson-mounted-lascannons",
+                    "name": "Two Sponson Mounted lascannons",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["lascannon"]
+                },
+                "two-sponson-mounted-volkite-culverins": {
+                    "id": "two-sponson-mounted-volkite-culverins",
+                    "name": "Two Sponson Mounted volkite culverins",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["volkite-culverin"]
+                },
+                "two-sponson-mounted-shrapnel-cannon": {
+                    "id": "two-sponson-mounted-shrapnel-cannon",
+                    "name": "Two Sponson Mounted shrapnel cannon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["shrapnel-cannon"]
+                }
+            }
+        },
+        "legion-officer-wargear": {
+            "id": "legion-officer-wargear",
+            "name": "Legion Officer Wargear",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["bolt-pistol"]
+                },
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainsword"]
+                },
+                "bolter": {
+                    "id": "bolter",
+                    "name": "Bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["bolter"]
+                },
+                "volkite-serpenta": {
+                    "id": "volkite-serpenta",
+                    "name": "Volkite serpenta",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["volkite-serpenta"]
+                },
+                "hand-flamer": {
+                    "id": "hand-flamer",
+                    "name": "Hand flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["hand-flamer"]
+                },
+                "plasma-pistol": {
+                    "id": "plasma-pistol",
+                    "name": "Plasma pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["plasma-pistol"]
+                },
+                "disintegrator-pistol": {
+                    "id": "disintegrator-pistol",
+                    "name": "Disintegrator pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["disintegrator-pistol"]
+                },
+                "chainaxe": {
+                    "id": "chainaxe",
+                    "name": "Chainaxe",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainaxe"]
+                },
+                "charnabal-sabre": {
+                    "id": "charnabal-sabre",
+                    "name": "Charnabal sabre",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["charnabal-sabre"]
+                },
+                "power-weapon": {
+                    "id": "power-weapon",
+                    "name": "Power weapon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["power-weapons"]
+                },
+                "power-fist": {
+                    "id": "power-fist",
+                    "name": "Power fist",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["power-fist"]
+                },
+                "lightning-claw": {
+                    "id": "lightning-claw",
+                    "name": "Lightning claw",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["lightning-claw"]
+                },
+                "thunder-hammer": {
+                    "id": "thunder-hammer",
+                    "name": "Thunder hammer",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["thunder-hammer"]
+                },
+                "combat-shield": {
+                    "id": "combat-shield",
+                    "name": "Combat shield",
+                    "cost": {
+                        "points": 0
+                    },
+                    "equipmentRefs": ["combat-shield"]
+                },
+                "boarding-shield": {
+                    "id": "boarding-shield",
+                    "name": "Boarding shield",
+                    "cost": {
+                        "points": 5
+                    },
+                    "equipmentRefs": ["boarding-shield"]
+                },
+                "graviton-mace": {
+                    "id": "graviton-mace",
+                    "name": "Graviton mace",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["graviton-mace"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "shield-of-the-iron-tyrant": {
+            "id": "shield-of-the-iron-tyrant",
+            "name": "Shield of the Iron Tyrant",
+            "text": "Perturabo cannot be targeted by Precision attacks when he has joined a Unit with this Special Rule. Only a Model with the Iron Warriors Trait and the Paragon Type or Command Sub-Type can join a Unit that includes Models with this Special Rule. While a Model with the Iron Warriors Trait and the Paragon Type is part of a Unit that includes any Models with this Special Rule, Precision wounds caused as part of a Shooting Attack cannot be allocated to that Model."
+        },
+        "impact": {
+            "id": "impact",
+            "name": "Impact (X)",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred (X)",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        },
+        "those-once-honoured": {
+            "id": "those-once-honoured",
+            "name": "Those Once Honoured",
+            "text": "A Unit that includes any Models with this Special Rule can never be joined by a Perturabo Model."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "ferrum-occularis": {
+            "id": "ferrum-occularis",
+            "name": "Ferrum Occularis",
+            "text": "Wounds caused by a Model with this Special Rule may ignore Cover Saves. Cover Saves may not be taken against unsaved wounds caused by a Shooting Attack made by a Model with this Special Rule, if the Model with this Special Rule was part of a Unit that remained Stationary in its Controlling Player’s previous Movement Phase."
+        },
+        "sire-of-the-iron-warriors": {
+            "id": "sire-of-the-iron-warriors",
+            "name": "Sire of the Iron Warriors",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Tactical Squad and/or Breacher Squad Units, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Infantry Type and the Iron Warriors Trait in the same Army: Until the end of the first Battle Turn of the Battle, all Models in this Army with the Infantry Type and the Iron Warriors Trait have the Expendable (1) Special Rule. If they already have the Expendable (X) Special Rule, increase its value by 1."
+        },
+        "the-breaker": {
+            "id": "the-breaker",
+            "name": "The Breaker",
+            "text": "This Gambit allows a friendly Unit to make a Shooting Attack targeting a Model that Perturabo is in a Challenge with. While a Model with this Special Rule is in a Challenge, its Controlling Player can select the following Gambit : The Breaker: This Gambit can only be selected during the first Face-Off Step of a Challenge. If this Gambit is selected, this Model does not make attacks during the subsequent Strike Step. Instead, this Model’s Controlling Player can select a single friendly Unit composed of Models with the Iron Warriors Trait that is within 12\" of any enemy Model in that Combat and not Locked in Combat and make a Shooting Attack with that Unit. All such attacks are resolved as Snap Shots with the exception that Weapons with the Blast (X) Special Rule or the Template Range Characteristic may not be used, and wounds from this Shooting Attack can only be allocated to the enemy Model in the Challenge."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "lair-of-the-iron-tyrant": {
+            "id": "lair-of-the-iron-tyrant",
+            "name": "Lair of the Iron Tyrant",
+            "text": "Only Perturabo or Domitar-ferrum Models may Embark on a Model with this Special Rule."
+        },
+        "macro-auspex": {
+            "id": "macro-auspex",
+            "name": "Macro-auspex",
+            "text": "When not attacking Titans, Knights or Super-heavies, a Weapon with this Special Rule must make Snap Shots. If the target of a Shooting Attack is not a Unit entirely composed of Models with the Titan, Knight or Super-heavy Sub-Type or other Models with a Base Wounds Characteristic of 10 or more, then all attacks made for a Weapon with this Special Rule must be made as Snap Shots."
+        },
+        "the-bitter-end": {
+            "id": "the-bitter-end",
+            "name": "The Bitter End",
+            "text": "LEGION TACTICA All Models with the Iron Warriors Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: If the Controlling Player is making a Leadership Check or Cool Check for a Unit that includes a majority of Models with this Special Rule, they may ignore negative modifiers applied by the Panic (X) , Pinning (X) , Stun (X) or Suppressive (X) Special Rules."
+        },
+        "spiteful-demise": {
+            "id": "spiteful-demise",
+            "name": "Spiteful Demise",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Iron Warriors Trait can select Spiteful Demise instead of any others available to that Model: A Model using this Gambit can inflict Hits on its opponent if it dies. When this Gambit is selected, if this Model loses its last Wound during the following Strike Step , the Controlling Player may choose to immediately inflict a single automatic Hit on the opposing Model, resolved as if it was made with the following Weapon:"
+        },
+        "bitter-fury": {
+            "id": "bitter-fury",
+            "name": "Bitter Fury (Advanced Reaction)",
+            "text": "This Reaction allows the Reacting Unit to make an improved Shooting Attack in the manner of Return Fire. Trigger: Once per Battle, the Reactive Player may declare the Bitter Fury Advanced Reaction in the Shooting Phase , during Step 3 of the Shooting Attack sequence of any Shooting Attack made by the Active Player, that Targets a Unit which only includes Models with the Iron Warriors Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Bitter Fury Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Shooting Attack triggered the Reaction. The Reacting Unit is always the Unit that was the target of the Shooting Attack that triggered the Reaction. Process Once the Bitter Fury Advanced Reaction has been declared, the Active Player must resolve all remaining Steps of the Shooting Attack process as normal, up to the start of Step 11. Before resolving Step 11, the Reactive Player makes a Shooting Attack with the Reacting Unit (including with any Models that have been reduced to 0 Wounds) targeting only the Target Unit. While making this Shooting Attack, Weapons selected for it have their Firepower Characteristic modified by +1 and gain the Overload (1) Special Rule. If that Weapon already has the Overload (X) Special Rule, modify the value of X on that Special Rule by +1. Once the Shooting Attack made as part of this Reaction has been completely resolved, including removing any Casualties, the Active Player must then finish resolving Step 11 of the original Shooting Attack that triggered the Reaction."
+        },
+        "the-ironfire-cohort": {
+            "id": "the-ironfire-cohort",
+            "name": "The Ironfire Cohort (Advanced Reaction)",
+            "text": "THE IRONFIRE COHORT [AUXILIARY DETACHMENT] Armour Slots in this Detachment must be filled with Arquitor Bombard Units."
+        },
+        "the-hammer-of-olympia": {
+            "id": "the-hammer-of-olympia",
+            "name": "The Hammer of Olympia (Advanced Reaction)",
+            "text": "THE HAMMER OF OLYMPIA [APEX DETACHMENT] This Detachment may only be selected if your Army also contains a Warsmith or Perturabo Unit."
+        }
+    },
+    "detachments": {
+        "the-ironfire-cohort": {
+            "id": "the-ironfire-cohort",
+            "name": "The Ironfire Cohort",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["armour"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": ["arquitor-bombard"]
+                    }
+                },
+                {
+                    "roles": ["armour"],
+                    "units": {
+                        "unitIds": ["arquitor-bombard"]
+                    }
+                },
+                {
+                    "roles": ["support"]
+                },
+                {
+                    "roles": ["support"]
+                }
+            ]
+        },
+        "the-hammer-of-olympia": {
+            "id": "the-hammer-of-olympia",
+            "name": "The Hammer of Olympia",
+            "type": "apex",
+            "slots": [
+                {
+                    "roles": ["heavy-assault"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                },
+                {
+                    "roles": ["heavy-transport"]
+                },
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["troop"]
+                }
+            ],
+            "requires": [
+                {
+                    "units": {
+                        "unitIds": ["warsmith", "perturabo"]
+                    },
+                    "count": 1
+                }
+            ],
+            "requirementText": "Requires perturabo / warsmith"
+        }
+    },
+    "slotOptions": {
+        "the-unfavoured": {
+            "id": "the-unfavoured",
+            "name": "The Unfavoured",
+            "text": "If a Unit that has the Iron Warriors Trait that includes only Models with the Infantry Type is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: The Unfavoured All Models in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Expendable (1) Special Rule.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "iron-warriors-graviton-crushers": {
+            "id": "iron-warriors-graviton-crushers",
+            "name": "Graviton Crushers",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["iron-warriors-trait-and-the-command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-warriors-graviton-crushers"
+                }
+            ]
+        },
+        "iron-warriors-shrapnel-weapons": {
+            "id": "iron-warriors-shrapnel-weapons",
+            "name": "Shrapnel Weapons",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-warriors-shrapnel-weapons"
+                }
+            ]
+        },
+        "the-bitter-end-all": {
+            "id": "the-bitter-end-all",
+            "name": "The Bitter End",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "the-bitter-end"
+                    }
+                }
+            ]
+        }
+    },
+    "overrides": [
+        {
+            "kind": "upgrades",
+            "id": "legion-sergeant-melee-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-heavy-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-pintle-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-sponson-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-officer-wargear"
+        }
+    ]
+}

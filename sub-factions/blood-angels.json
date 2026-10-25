@@ -1,0 +1,3119 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "blood-angels",
+    "version": "1.0.0",
+    "name": "Blood Angels",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "aster-crohne": {
+            "id": "aster-crohne",
+            "name": "Aster Crohne",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 155
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "aster-crohne",
+                    "name": "Aster Crohne",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        },
+                        {
+                            "id": "the-ghost-of-saiph"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Blood Angels"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "hand-flamer"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "hand-flamer"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "saiphan-shard-axe"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "blood-angels-inductii-squad": {
+            "id": "blood-angels-inductii-squad",
+            "name": "Blood Angels Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eaters-of-the-dead"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Blood Angels"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainsword and bolt pistol exchanged for one heavy chainaxe for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainaxe": {
+                            "id": "heavy-chainaxe",
+                            "name": "heavy chainaxe",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainaxe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainaxe"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "Heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "charnabal-sabre"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "blood-angels-ofanim-court-with-jump-packs": {
+            "id": "blood-angels-ofanim-court-with-jump-packs",
+            "name": "0-1 Blood Angels Ofanim Court with Jump Packs",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 160
+            },
+            "modelCount": 3,
+            "profiles": [
+                {
+                    "id": "ofanim-with-jump-pack",
+                    "name": "Ofanim with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "tags": ["Champion", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "shadows-of-judgement"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Blood Angels"],
+            "additionalModels": {
+                "max": 2,
+                "cost": {
+                    "points": 50
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "blade-of-judgement",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "combat-shield",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "blood-angels-ofanim-court": {
+            "id": "blood-angels-ofanim-court",
+            "name": "0-1 Blood Angels Ofanim Court",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 130
+            },
+            "modelCount": 3,
+            "profiles": [
+                {
+                    "id": "ofanim",
+                    "name": "Ofanim",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "tags": ["Champion"],
+                    "specialRules": [
+                        {
+                            "id": "shadows-of-judgement"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Blood Angels"],
+            "additionalModels": {
+                "max": 2,
+                "cost": {
+                    "points": 40
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "blade-of-judgement",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "combat-shield",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "blood-angels-sanguinary-guard": {
+            "id": "blood-angels-sanguinary-guard",
+            "name": "Blood Angels Sanguinary Guard",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 205
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "sanguinary-guard",
+                    "name": "Sanguinary Guard",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Blood Angels"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 40
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "perdition-weapons",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one combat shield for +2 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "combat shield",
+                            "cost": {
+                                "points": 2
+                            },
+                            "equipmentRefs": ["combat-shield"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "combat-shield"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one inferno pistol for +10 Points per Model or for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        },
+                        "inferno-pistol": {
+                            "id": "inferno-pistol",
+                            "name": "inferno pistol",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["inferno-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "inferno-pistol"
+                                    }
+                                }
+                            ]
+                        },
+                        "for": {
+                            "id": "for",
+                            "name": "for",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Every Model in this Unit may have melta bombs selected for them for +25 Points.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "For every five Models in this Unit, one Model in this Unit may have its perdition weapon exchanged for one paragon blade for +15 Points per Model.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "paragon-blade": {
+                            "id": "paragon-blade",
+                            "name": "paragon blade",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["paragon-blade"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "One Model in this Unit may have its perdition weapon and bolt pistol exchanged for one Legion standard and one power weapon for +15 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-standard-and-one-power-weapon": {
+                            "id": "legion-standard-and-one-power-weapon",
+                            "name": "Legion standard and one power weapon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": [
+                                "legion-standard",
+                                "power-weapons"
+                            ],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "legion-standard"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "chapter-master-raldoron": {
+            "id": "chapter-master-raldoron",
+            "name": "Chapter Master Raldoron",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 180
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "raldoron",
+                    "name": "Raldoron",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "7",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "archein-of-wisdom"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Blood Angels", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-encarmine-warblade"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "combi-flamer"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "contemptor-incaendius-dreadnought": {
+            "id": "contemptor-incaendius-dreadnought",
+            "name": "Contemptor-Incaendius Dreadnought",
+            "role": "war-engine",
+            "type": "walker",
+            "cost": {
+                "points": 200
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "contemptor-incaendius",
+                    "name": "Contemptor-Incaendius",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "7",
+                        "t": "7",
+                        "w": "6",
+                        "i": "4",
+                        "a": "4",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "7",
+                        "in": "5",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "7"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "incaendius-boost-pack"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Blood Angels"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "paired-talons-of-perdition"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "heavy-flamer"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "heavy-flamer"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Both of this Model’s heavy flamers may be exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "two-meltaguns": {
+                            "id": "two-meltaguns",
+                            "name": "Two meltaguns",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["meltagun"]
+                        },
+                        "two-iliastus-assault-cannon": {
+                            "id": "two-iliastus-assault-cannon",
+                            "name": "Two Iliastus assault cannon",
+                            "cost": {
+                                "points": 30
+                            },
+                            "weaponRefs": ["iliastus-assault-cannon"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "crimson-paladins": {
+            "id": "crimson-paladins",
+            "name": "Crimson Paladins",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 225
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "crimson-exemplar",
+                    "name": "Crimson Exemplar",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "line",
+                            "value": "1"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "the-blood-is-forever"
+                        }
+                    ]
+                },
+                {
+                    "id": "crimson-paladin",
+                    "name": "Crimson Paladin",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "line",
+                            "value": "1"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "the-blood-is-forever"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Blood Angels"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 40
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "coriolis-pattern-power-shield",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Crimson Exemplar in this Unit may have its power sword and Coriolis pattern power shield exchanged for one Perdition weapon for Free.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "perdition-weapon-for-free": {
+                            "id": "perdition-weapon-for-free",
+                            "name": "Perdition weapon for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["perdition-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-sword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "perdition-weapons"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "crimson-exemplar",
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every five Models in this Unit, one Crimson Paladin in this Unit may have its Coriolis pattern power shield exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-flamer"]
+                        },
+                        "iliastus-assault-cannon": {
+                            "id": "iliastus-assault-cannon",
+                            "name": "Iliastus assault cannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["iliastus-assault-cannon"]
+                        },
+                        "plasma-blaster": {
+                            "id": "plasma-blaster",
+                            "name": "Plasma blaster",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-blaster"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Up to two Crimson Paladins in this Unit may have their power sword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-sword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-sword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainfist"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Crimson Exemplar in this Unit may have one grenade harness selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "grenade-harness": {
+                            "id": "grenade-harness",
+                            "name": "grenade harness",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["grenade-harness"]
+                        }
+                    },
+                    "profileId": "crimson-exemplar",
+                    "default": "none"
+                }
+            }
+        },
+        "dawnbreaker-cohort": {
+            "id": "dawnbreaker-cohort",
+            "name": "Dawnbreaker Cohort",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 150
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "dawnbreaker-champion",
+                    "name": "Dawnbreaker Champion",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "set-the-sky-aflame"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                },
+                {
+                    "id": "dawnbreaker",
+                    "name": "Dawnbreaker",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "set-the-sky-aflame"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Blood Angels"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 25
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "falling-star-power-spear",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "grenade-discharger",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Dawnbreaker Champion in this Unit may have its Falling-star power spear exchanged for one Perdition weapon for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "perdition-weapon": {
+                            "id": "perdition-weapon",
+                            "name": "Perdition weapon",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["perdition-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "falling-star-power-spear"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "perdition-weapons"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "dawnbreaker-champion",
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Every Model in this Unit may have melta bombs selected for them for +25 Points per Unit.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its falling-star power spear exchanged for one pair of equinox blades for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-equinox-blades-for-free": {
+                            "id": "pair-of-equinox-blades-for-free",
+                            "name": "pair of equinox blades for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["pair-of-equinox-blades"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "falling-star-power-spear"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-equinox-blades"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "dominion-zephon": {
+            "id": "dominion-zephon",
+            "name": "Dominion Zephon",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 185
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "dominion-zephon",
+                    "name": "Dominion Zephon",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Blood Angels"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "lament-grief"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-spiritum-sanguis"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "sanguinius": {
+            "id": "sanguinius",
+            "name": "Sanguinius",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 485
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "sanguinius",
+                    "name": "Sanguinius",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "8",
+                        "bs": "6",
+                        "s": "6",
+                        "t": "6",
+                        "w": "6",
+                        "i": "6",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-blood-angels"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "angelic-descent"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Blood Angels", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "infernus"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-blade-encarmine"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its The Blade Encarmine exchanged for one Spear of Telesto and one Moonsilver Blade for Free.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "spear-of-telesto-and-one-moonsilver-blade-for-free": {
+                            "id": "spear-of-telesto-and-one-moonsilver-blade-for-free",
+                            "name": "Spear of Telesto and one Moonsilver Blade for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": [
+                                "spear-of-telesto",
+                                "moonsilver-blade"
+                            ],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "the-blade-encarmine"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "spear-of-telesto"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "the-angels-tears": {
+            "id": "the-angels-tears",
+            "name": "The Angel’s Tears",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 150
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "arch-erelim",
+                    "name": "Arch-Erelim",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        },
+                        {
+                            "id": "firestorm"
+                        }
+                    ]
+                },
+                {
+                    "id": "erelim",
+                    "name": "Erelim",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        },
+                        {
+                            "id": "firestorm"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Blood Angels"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 20
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "volkite-serpenta",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "volkite-serpenta",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its two volkite serpenta s exchanged for one Erelim grenade launcher for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "erelim-grenade-launcher": {
+                            "id": "erelim-grenade-launcher",
+                            "name": "Erelim grenade launcher",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["erelim-grenade-launcher"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its two volkite serpentas exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "Heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["heavy-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "rotor-cannon": {
+                            "id": "rotor-cannon",
+                            "name": "Rotor cannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["rotor-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "rotor-cannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "iliastus-assault-cannon": {
+                            "id": "iliastus-assault-cannon",
+                            "name": "Iliastus assault cannon",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["iliastus-assault-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "iliastus-assault-cannon"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Arch-Erelim in this Unit may have one of its volkite serpentas exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "arch-erelim",
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Arch-Erelim in this Unit may have one of its volkite serpentas exchanged for one plasma pistol for Free.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "plasma-pistol-for-free": {
+                            "id": "plasma-pistol-for-free",
+                            "name": "plasma pistol for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["plasma-pistol"]
+                        }
+                    },
+                    "profileId": "arch-erelim",
+                    "default": "none"
+                }
+            }
+        }
+    },
+    "weapons": {
+        "saiphan-shard-axe": {
+            "id": "saiphan-shard-axe",
+            "name": "Saiphan Shard-axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Saiphan Shard-axe",
+                    "stats": {
+                        "im": "I",
+                        "am": "+1",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "blade-of-judgement": {
+            "id": "blade-of-judgement",
+            "name": "Blade of Judgement",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Blade of judgement",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "inferno-pistol": {
+            "id": "inferno-pistol",
+            "name": "Inferno Pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Inferno pistol",
+                    "stats": {
+                        "r": "6",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Melta"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "melta",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-encarmine-warblade": {
+            "id": "the-encarmine-warblade",
+            "name": "The Encarmine Warblade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Encarmine Warblade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        },
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "paired-talons-of-perdition": {
+            "id": "paired-talons-of-perdition",
+            "name": "Paired Talons of Perdition",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Paired Talons of Perdition",
+                    "stats": {
+                        "im": "I",
+                        "am": "+2",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "aflame",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "iliastus-assault-cannon": {
+            "id": "iliastus-assault-cannon",
+            "name": "Iliastus Assault Cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Sustained fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Maximal fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "5",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "power-sword": {
+            "id": "power-sword",
+            "name": "Power sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Power sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "falling-star-power-spear": {
+            "id": "falling-star-power-spear",
+            "name": "Falling-star power spear",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Falling-star power spear",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "SM"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "grenade-discharger": {
+            "id": "grenade-discharger",
+            "name": "Grenade discharger",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Frag",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "6",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        }
+                    ]
+                },
+                {
+                    "name": "- Krak",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"]
+                }
+            ]
+        },
+        "pair-of-equinox-blades": {
+            "id": "pair-of-equinox-blades",
+            "name": "Pair of equinox blades",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Pair of equinox blades",
+                    "stats": {
+                        "im": "I",
+                        "am": "+1",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "lament-grief": {
+            "id": "lament-grief",
+            "name": "Lament & Grief",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Lament & Grief",
+                    "stats": {
+                        "r": "10",
+                        "fp": "6",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Volkite"],
+                    "specialRules": [
+                        {
+                            "id": "deflagrate",
+                            "value": "5"
+                        },
+                        {
+                            "id": "stun",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-spiritum-sanguis": {
+            "id": "the-spiritum-sanguis",
+            "name": "The Spiritum Sanguis",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Spiritum Sanguis",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "reaping-blow",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "infernus": {
+            "id": "infernus",
+            "name": "Infernus",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Infernus",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Melta", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "melta",
+                            "value": "12"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-blade-encarmine": {
+            "id": "the-blade-encarmine",
+            "name": "The Blade Encarmine",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Blade Encarmine",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        }
+                    ]
+                }
+            ]
+        },
+        "spear-of-telesto": {
+            "id": "spear-of-telesto",
+            "name": "Spear of Telesto",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Spear of Telesto",
+                    "stats": {
+                        "im": "-1",
+                        "am": "-2",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Suppressed"
+                        }
+                    ]
+                }
+            ]
+        },
+        "moonsilver-blade": {
+            "id": "moonsilver-blade",
+            "name": "Moonsilver Blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Moonsilver Blade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "duellists-edge",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "erelim-grenade-launcher": {
+            "id": "erelim-grenade-launcher",
+            "name": "Erelim Grenade Launcher",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Erelim grenade launcher",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Missile", "Rad"],
+                    "specialRules": [
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        }
+                    ]
+                }
+            ]
+        },
+        "blade-of-perdition": {
+            "id": "blade-of-perdition",
+            "name": "Blade of Perdition",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Blade of Perdition",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "name": "Axe of Perdition",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "name": "Maul of Perdition",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "name": "Spear of Perdition",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "sustained-fire": {
+            "id": "sustained-fire",
+            "name": "- Sustained fire",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Sustained fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Maximal fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "5",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Sustained fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "6",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Maximal fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "8",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "perdition-weapons": {
+            "id": "perdition-weapons",
+            "name": "Perdition Weapons",
+            "text": "Any Model with the Command, Champion or Sergeant Sub-Type and the Blood Angels Trait may have its power sword, power axe, power spear or power maul exchanged for one Blade of Perdition, one Axe of Perdition, one Spear of Perdition or one Maul of Perdition for +5 Points per Model. If a Model has a Perdition weapon as part of its Wargear, you can select one of the following for that Model to have: Blade of Perdition Axe of Perdition Maul of Perdition Spear of Perdition Melee Weapon Melee Weapon IM AM SM AP D Special Rules Traits Blade of Perdition Blade of Perdition I A S 3 1 Breaching (6+), Aflame (1) Power, Flame Axe of Perdition Axe of Perdition -1 A +1 3 1 Breaching (5+), Aflame (1) Power, Flame Maul of Perdition Maul of Perdition -1 A +2 3 1 Breaching (6+), Aflame (1) Power, Flame Spear of Perdition Spear of Perdition +1 A S 3 1 Precision (6+), Aflame (1) Power, Flame"
+        },
+        "coriolis-pattern-power-shield": {
+            "id": "coriolis-pattern-power-shield",
+            "name": "Coriolis Pattern Power Shield",
+            "text": ""
+        },
+        "two-volkite-serpenta-s": {
+            "id": "two-volkite-serpenta-s",
+            "name": "two volkite serpenta s",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "blood-angels-inferno-pistol": {
+            "id": "blood-angels-inferno-pistol",
+            "name": "Inferno Pistol",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "inferno-pistol": {
+                    "id": "inferno-pistol",
+                    "name": "Inferno Pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["inferno-pistol"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "plasma-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "inferno-pistol"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "blood-angels-perdition-weapons": {
+            "id": "blood-angels-perdition-weapons",
+            "name": "Perdition Weapons",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "perdition-weapons": {
+                    "id": "perdition-weapons",
+                    "name": "Perdition Weapons",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["blade-of-perdition"]
+                }
+            },
+            "default": "none"
+        },
+        "blood-angels-iliastus-assault-cannon": {
+            "id": "blood-angels-iliastus-assault-cannon",
+            "name": "Iliastus Assault Cannon",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "iliastus-assault-cannon": {
+                    "id": "iliastus-assault-cannon",
+                    "name": "Iliastus Assault Cannon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["sustained-fire"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "heavy-flamer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "sustained-fire"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "legion-heavy-weapons": {
+            "id": "legion-heavy-weapons",
+            "name": "Legion Heavy Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "heavy-bolter": {
+                    "id": "heavy-bolter",
+                    "name": "Heavy bolter",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-bolter"]
+                },
+                "heavy-flamer": {
+                    "id": "heavy-flamer",
+                    "name": "Heavy flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-flamer"]
+                },
+                "autocannon": {
+                    "id": "autocannon",
+                    "name": "Autocannon",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["autocannon"]
+                },
+                "missile-launcher": {
+                    "id": "missile-launcher",
+                    "name": "Missile launcher",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["missile-launcher"]
+                },
+                "multi-melta": {
+                    "id": "multi-melta",
+                    "name": "Multi-melta",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["multi-melta"]
+                },
+                "plasma-cannon": {
+                    "id": "plasma-cannon",
+                    "name": "Plasma cannon",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["plasma-cannon"]
+                },
+                "volkite-culverin": {
+                    "id": "volkite-culverin",
+                    "name": "Volkite culverin",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["volkite-culverin"]
+                },
+                "lascannon": {
+                    "id": "lascannon",
+                    "name": "Lascannon",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["lascannon"]
+                },
+                "iliastus-assault-cannon": {
+                    "id": "iliastus-assault-cannon",
+                    "name": "Iliastus assault cannon",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["iliastus-assault-cannon"]
+                }
+            }
+        },
+        "legion-pintle-weapons": {
+            "id": "legion-pintle-weapons",
+            "name": "Legion Pintle Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "pintle-mounted-combi-bolter": {
+                    "id": "pintle-mounted-combi-bolter",
+                    "name": "Pintle Mounted combi-bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["combi-bolter"]
+                },
+                "pintle-mounted-combi-flamer": {
+                    "id": "pintle-mounted-combi-flamer",
+                    "name": "Pintle Mounted combi-flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-flamer"]
+                },
+                "pintle-mounted-combi-plasma": {
+                    "id": "pintle-mounted-combi-plasma",
+                    "name": "Pintle Mounted combi-plasma",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-plasma"]
+                },
+                "pintle-mounted-combi-melta": {
+                    "id": "pintle-mounted-combi-melta",
+                    "name": "Pintle Mounted combi-melta",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-melta"]
+                },
+                "pintle-mounted-combi-volkite": {
+                    "id": "pintle-mounted-combi-volkite",
+                    "name": "Pintle Mounted combi-volkite",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-volkite"]
+                },
+                "pintle-mounted-havoc-launcher": {
+                    "id": "pintle-mounted-havoc-launcher",
+                    "name": "Pintle Mounted havoc launcher",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["havoc-launcher"]
+                },
+                "pintle-mounted-heavy-bolter": {
+                    "id": "pintle-mounted-heavy-bolter",
+                    "name": "Pintle Mounted heavy bolter",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-bolter"]
+                },
+                "pintle-mounted-heavy-flamer": {
+                    "id": "pintle-mounted-heavy-flamer",
+                    "name": "Pintle Mounted heavy flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-flamer"]
+                },
+                "pintle-mounted-multi-melta": {
+                    "id": "pintle-mounted-multi-melta",
+                    "name": "Pintle Mounted multi-melta",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["multi-melta"]
+                },
+                "pintle-mounted-iliastus-assault-cannon": {
+                    "id": "pintle-mounted-iliastus-assault-cannon",
+                    "name": "Pintle Mounted Iliastus assault cannon",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["iliastus-assault-cannon"]
+                }
+            }
+        },
+        "legion-sponson-weapons": {
+            "id": "legion-sponson-weapons",
+            "name": "Legion Sponson Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "two-sponson-mounted-heavy-bolters": {
+                    "id": "two-sponson-mounted-heavy-bolters",
+                    "name": "Two Sponson Mounted heavy bolters",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["heavy-bolter"]
+                },
+                "two-sponson-mounted-heavy-flamers": {
+                    "id": "two-sponson-mounted-heavy-flamers",
+                    "name": "Two Sponson Mounted heavy flamers",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["heavy-flamer"]
+                },
+                "two-sponson-mounted-lascannons": {
+                    "id": "two-sponson-mounted-lascannons",
+                    "name": "Two Sponson Mounted lascannons",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["lascannon"]
+                },
+                "two-sponson-mounted-volkite-culverins": {
+                    "id": "two-sponson-mounted-volkite-culverins",
+                    "name": "Two Sponson Mounted volkite culverins",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["volkite-culverin"]
+                },
+                "two-sponson-mounted-iliastus-assault-cannon": {
+                    "id": "two-sponson-mounted-iliastus-assault-cannon",
+                    "name": "Two Sponson Mounted Iliastus assault cannon",
+                    "cost": {
+                        "points": 30
+                    },
+                    "weaponRefs": ["iliastus-assault-cannon"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "the-ghost-of-saiph": {
+            "id": "the-ghost-of-saiph",
+            "name": "The Ghost of Saiph",
+            "text": "This Special Rule allows Aster Crohne to avoid being Removed as a Casualty. The first time in any battle that a Model with this Special Rule is reduced to 0 Wounds, before Removing this Model as a Casualty, the Controlling Player must roll a Dice. On a result of 4+, that Model is not Removed as a Casualty and has its Current Wounds Characteristic set to 1."
+        },
+        "eaters-of-the-dead": {
+            "id": "eaters-of-the-dead",
+            "name": "Eaters of the Dead",
+            "text": "A Unit containing any Models with this Special Rule may perform a unique aftermath option, causing every enemy Unit with at least one Model within 8\" to make a Panic Check. In Step 4 of the Resolution Sub-Phase, a Player that has won Combat must select the following aftermath option for any Units in that Combat entirely composed of Models with this Special Rule. Any Unit the winning Player controls in that Combat which is only partially composed of Models with this Special Rule may have a Cool Check made for it instead, allowing a different aftermath option to be selected for it if the Check is successful. The Thirst – A Leadership Check must immediately be made for each enemy Unit that is not part of the Combat which has any Models within 8\" of one or more Models from this Unit. If this Leadership Check is failed, then all Models in that Unit gain the Routed Status. This aftermath option is resolved after all other aftermath options from the given Combat have been completed."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "shadows-of-judgement": {
+            "id": "shadows-of-judgement",
+            "name": "Shadows of Judgement",
+            "text": "While a Model with this Special Rule is engaged in a Challenge, it has the Duellist’s Edge (1) and Feel No Pain (5+) Special Rules."
+        },
+        "archein-of-wisdom": {
+            "id": "archein-of-wisdom",
+            "name": "Archein of Wisdom",
+            "text": "This Gambit allows Raldoron to benefit from his Opponent’s successful Hit Rolls in a later Strike Step. While a Model with this Special Rule is Engaged in a Challenge, its Controlling Player can select the following Gambit : Archein of Wisdom: If this Gambit is selected, this Model’s Controlling Player gains a positive modifier to their Focus Roll equal to the number of successful Hit Tests made by their opponent in the previous Strike Step of the current Challenge. Note that this Gambit has no effect if no Strike Step has been resolved in the current Challenge."
+        },
+        "impact": {
+            "id": "impact",
+            "name": "Impact (X)",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "incaendius-boost-pack": {
+            "id": "incaendius-boost-pack",
+            "name": "Incaendius Boost Pack",
+            "text": "When a Model with this Special Rule makes a Rush, it gains the Antigrav Sub-Type for the duration of that Movement Phase."
+        },
+        "aflame": {
+            "id": "aflame",
+            "name": "Aflame (X)",
+            "text": "A Weapon with this Special Rule causes additional modifiers to a Target’s Leadership Characteristic. If a Melee Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit, regardless of whether any Damage is inflicted, until the end of the Phase, that Unit is considered to be ‘aflame’. If the Controlling Player of a Unit that is aflame is required to make a Leadership Check during that Phase for a Combat that includes that Unit, the value of X on this Special Rule is applied as an additional negative modifier to the Leadership Characteristic being used for that Check.",
+            "configurable": true
+        },
+        "the-blood-is-forever": {
+            "id": "the-blood-is-forever",
+            "name": "The Blood is Forever",
+            "text": "Models with this Special Rule gain a Damage Mitigation Roll when they are outnumbered. While the Unit a Model with this Special Rule is part of is Locked in Combat with an enemy Unit or Units whose total number of Models outnumber them, a Model with this Special Rule gains the Feel No Pain (5+) Special Rule. If outnumbered by more than twice their own number, Models with this Special Rule instead gain the Feel No Pain (4+) Special Rule. Any Model that joins a Unit that includes any Models with this Special Rule does not gain this Special Rule and does not count for the purposes of determining when the Unit is outnumbered."
+        },
+        "set-the-sky-aflame": {
+            "id": "set-the-sky-aflame",
+            "name": "Set the Sky Aflame",
+            "text": "A Unit with this Special Rule cannot be intercepted by distant enemy Units when they arrive on the Battlefield. When a Unit with at least one Model with this Special Rule is deployed via Deep Strike and is the target of a Shooting Attack made as part of the Intercept Advanced Reaction, no enemy Models over 12\" away from any Model in the Unit that was deployed via Deep Strike may make Shooting Attacks as part of that Intercept Advanced Reaction."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "sire-of-the-blood-angels": {
+            "id": "sire-of-the-blood-angels",
+            "name": "Sire of the Blood Angels",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Assault Squads, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Deep Strike Special Rule and the Blood Angels Trait in the same Army: Once per Turn, when the Controlling Player of a Model with this Special Rule makes a Reserves Roll for a Unit which only includes Models with the Blood Angels Trait and the Deep Strike Special Rule, before the Reserves Roll is made, that Player can choose to modify that Roll by +1. If this modifier is applied, that Unit must be deployed using the Deep Strike Special Rule."
+        },
+        "angelic-descent": {
+            "id": "angelic-descent",
+            "name": "Angelic Descent",
+            "text": "Sanguinius can use a Gambit to gain a bonus when fighting larger enemies. While a Model with this Special Rule is Engaged in a Challenge, its Controlling Player can select the following Gambit : Angelic Descent: This Gambit may only be selected prior to the first Focus Roll of a Challenge, and only if Sanguinius has made a successful Charge in the same Assault Phase. During the following Focus Step, Sanguinius’ Controlling Player gains a positive modifier to the Focus Roll equal to any variant of Bulky (X) that the enemy Model it is Engaged in a Challenge with has. For example, if the opposing Model in the Challenge has the Bulky (3) Special Rule, this Model’s Controlling Player gains a modifier of +3 to the Focus Roll."
+        },
+        "encarmine-fury": {
+            "id": "encarmine-fury",
+            "name": "Encarmine Fury",
+            "text": "LEGION TACTICA All Models with the Blood Angels Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: The strength of their attacks is increased when Blood Angels successfully Charge. On any Turn in which they made a Charge Move , Models with this Special Rule modify their Strength Characteristic by +1 until the end of the Turn."
+        },
+        "thrall-of-the-red-thirst": {
+            "id": "thrall-of-the-red-thirst",
+            "name": "Thrall of the Red Thirst",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Blood Angels Trait can select Thrall of the Red Thirst instead of any others available to that Model: This Model may ignore negative modifiers for Wounds lost, but cannot gain Outside Support. If this Gambit is selected, then the Model it was selected for may ignore any negative Modifiers applied to the Focus Roll for any Wounds lost, and each wound inflicted on the opponent has its Damage Characteristic modified by +1. Whilst this Gambit is selected, the Model it was selected for gains no bonus to the Focus Roll for Outside Support ."
+        },
+        "wrath-of-angels": {
+            "id": "wrath-of-angels",
+            "name": "Wrath of Angels (Advanced Reaction)",
+            "text": "This Reaction allows the Reacting Unit to Move towards an Enemy Unit that Targets it with a Shooting Attack. Trigger: Once per Battle, the Reactive Player may declare the Wrath of Angels Advanced Reaction in the Shooting Phase , during Step 4 of the Shooting Attack sequence of any Shooting Attack made by the Active Player that targets a Unit under the Reactive Player’s control that only includes Models with the Blood Angels Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare the Wrath of Angels Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Shooting Attack triggered the Reaction. The Reacting Unit is always the Unit that was the target of the Shooting Attack that triggered the Reaction. Process Once the Wrath of Angels Advanced Reaction has been declared, the Active Player must resolve all remaining Steps of the Shooting Attack process as normal, up to the start of Step 11. Immediately after Step 11 of the Shooting Attack that triggered this Reaction is resolved, each Model in the Reacting Unit must move following the procedure for making a normal Move, directly towards the nearest Model in the Target Unit, moving the maximum distance possible while remaining at least 1\" away from any enemy Model. After resolving this Move, if any Model from the Reacting Unit is within 6\" of any Model in the Target Unit, the Controlling Player of the Target Unit must make a Cool Check for it in the Morale Sub-Phase of the same Player Turn. If this Check is failed then all Models in the Target Unit gain the Pinned Status."
+        }
+    },
+    "detachments": {
+        "revelation-host": {
+            "id": "revelation-host",
+            "name": "Revelation Host",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": ["assault-squad"]
+                    }
+                },
+                {
+                    "roles": ["troop"],
+                    "units": {
+                        "unitIds": ["assault-squad"]
+                    }
+                },
+                {
+                    "roles": ["elites"],
+                    "units": {
+                        "unitIds": [
+                            "dawnbreaker-cohort",
+                            "veteran-assault-squad"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["elites"],
+                    "units": {
+                        "unitIds": [
+                            "dawnbreaker-cohort",
+                            "veteran-assault-squad"
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "revenants": {
+            "id": "revenants",
+            "name": "Revenants",
+            "text": "If a Unit which only includes Models with the Blood Angels Trait is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Revenants Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Fear (1) Special Rule.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "blood-angels-inferno-pistol": {
+            "id": "blood-angels-inferno-pistol",
+            "name": "Inferno Pistol",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-inferno-pistol"
+                }
+            ]
+        },
+        "blood-angels-perdition-weapons": {
+            "id": "blood-angels-perdition-weapons",
+            "name": "Perdition Weapons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-perdition-weapons"
+                }
+            ]
+        },
+        "blood-angels-iliastus-assault-cannon": {
+            "id": "blood-angels-iliastus-assault-cannon",
+            "name": "Iliastus Assault Cannon",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-iliastus-assault-cannon"
+                }
+            ]
+        },
+        "encarmine-fury-all": {
+            "id": "encarmine-fury-all",
+            "name": "Encarmine Fury",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "encarmine-fury"
+                    }
+                }
+            ]
+        }
+    },
+    "overrides": [
+        {
+            "kind": "upgrades",
+            "id": "legion-heavy-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-pintle-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-sponson-weapons"
+        }
+    ]
+}

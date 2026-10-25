@@ -1,0 +1,3359 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "dark-angels",
+    "version": "1.0.0",
+    "name": "Dark Angels",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "corswain": {
+            "id": "corswain",
+            "name": "Corswain",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 220
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "corswain",
+                    "name": "Corswain",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "7",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"]
+                }
+            ],
+            "traits": ["Loyalist", "Dark Angels", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-blade"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "armour-of-the-forest"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "dark-angels-cataphractii-terminator-deathwing-companions": {
+            "id": "dark-angels-cataphractii-terminator-deathwing-companions",
+            "name": "Dark Angels Cataphractii Terminator Deathwing Companions",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 240
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "cataphractii-oathbearer",
+                    "name": "Cataphractii Oathbearer",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "companions"
+                        }
+                    ]
+                },
+                {
+                    "id": "cataphractii-companion",
+                    "name": "Cataphractii Companion",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "companions"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Dark Angels"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "calibanite-warblade",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its combi-bolter and Calibanite warblade exchanged for one pair of lightning claws for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "terranic-greatsword": {
+                            "id": "terranic-greatsword",
+                            "name": "Terranic greatsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["terranic-greatsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "calibanite-warblade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "terranic-greatsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "calibanite-warblade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "calibanite-warblade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Cataphractii Oathbearer in this Unit may have one grenade harness selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "grenade-harness": {
+                            "id": "grenade-harness",
+                            "name": "grenade harness",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["grenade-harness"]
+                        }
+                    },
+                    "profileId": "cataphractii-oathbearer",
+                    "default": "none"
+                }
+            }
+        },
+        "dark-angels-excindio-battle-automata": {
+            "id": "dark-angels-excindio-battle-automata",
+            "name": "0-1 Dark Angels Excindio Battle-automata",
+            "role": "war-engine",
+            "type": "automata",
+            "cost": {
+                "points": 180
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "excindio",
+                    "name": "Excindio",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "7",
+                        "t": "7",
+                        "w": "8",
+                        "i": "4",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "3+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Champion"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "firing-protocols",
+                            "value": "3"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Infantry, Cavalry, Walker, Automata"
+                        },
+                        {
+                            "id": "vengeful-rage"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "excindio-claws"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its two combi-bolters exchanged for one of the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "two-graviton-guns": {
+                            "id": "two-graviton-guns",
+                            "name": "Two graviton guns",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["graviton-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "graviton-gun"
+                                    }
+                                }
+                            ]
+                        },
+                        "two-plasma-guns": {
+                            "id": "two-plasma-guns",
+                            "name": "Two plasma guns",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["plasma-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-gun"
+                                    }
+                                }
+                            ]
+                        },
+                        "two-irad-cleansers": {
+                            "id": "two-irad-cleansers",
+                            "name": "Two irad cleansers",
+                            "cost": {
+                                "points": 30
+                            },
+                            "weaponRefs": ["irad-cleanser"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "irad-cleanser"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "athanax-phosphex-canister-launcher": {
+                            "id": "athanax-phosphex-canister-launcher",
+                            "name": "Athanax phosphex canister launcher",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["athanax-phosphex-canister-launcher"]
+                        },
+                        "tyrhenius-nerve-induction-shredder": {
+                            "id": "tyrhenius-nerve-induction-shredder",
+                            "name": "Tyrhenius nerve induction shredder",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["tyrhenius-nerve-induction-shredder"]
+                        },
+                        "magaron-atomantic-pulse-cannon": {
+                            "id": "magaron-atomantic-pulse-cannon",
+                            "name": "Magaron atomantic pulse cannon",
+                            "cost": {
+                                "points": 30
+                            },
+                            "weaponRefs": ["magaron-atomantic-pulse-cannon"]
+                        },
+                        "cytheron-graviton-flux-projector": {
+                            "id": "cytheron-graviton-flux-projector",
+                            "name": "Cytheron graviton flux projector",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["cytheron-graviton-flux-projector"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "This Model may have up to two hunter-killer missiles selected for it for +5 Points each.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "hunter-killer-missiles": {
+                            "id": "hunter-killer-missiles",
+                            "name": "hunter-killer missiles",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "dark-angels-firewing-enigmatus-cabal": {
+            "id": "dark-angels-firewing-enigmatus-cabal",
+            "name": "Dark Angels Firewing Enigmatus Cabal",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 90
+            },
+            "modelCount": 3,
+            "profiles": [
+                {
+                    "id": "firewing-enigmatii",
+                    "name": "Firewing Enigmatii",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Champion", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "outflank"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "marked-for-death",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Dark Angels", "Smokescreen"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "calibanite-charge-blade",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "needle-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "One Model in this Unit may have one Enigmatus missile launcher selected for it for +15 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "enigmatus-missile-launcher": {
+                            "id": "enigmatus-missile-launcher",
+                            "name": "Enigmatus missile launcher",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["enigmatus-missile-launcher"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "dark-angels-inductii-squad": {
+            "id": "dark-angels-inductii-squad",
+            "name": "Dark Angels Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 90
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "line",
+                            "value": "1"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Dark Angels"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "volkite-charger",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "One Inductii in this Unit may have a vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "dark-angels-inner-circle-knights-cenobium-order-of-the-broken-claws": {
+            "id": "dark-angels-inner-circle-knights-cenobium-order-of-the-broken-claws",
+            "name": "Dark Angels Inner Circle Knights Cenobium – Order of the Broken Claws",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 285
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "order-preceptor",
+                    "name": "Order Preceptor",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "6",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "order-of-the-broken-claws"
+                        }
+                    ]
+                },
+                {
+                    "id": "order-cenobite",
+                    "name": "Order Cenobite",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "order-of-the-broken-claws"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Dark Angels"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 55
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "terranic-greatsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "plasma-caster",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "grenade-harness-order-preceptor-only",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its Terranic greatsword exchanged for one thunder hammer for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "terranic-greatsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "dark-angels-tartaros-terminator-deathwing-companions": {
+            "id": "dark-angels-tartaros-terminator-deathwing-companions",
+            "name": "Dark Angels Tartaros Terminator Deathwing Companions",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 240
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "tartaros-oathbearer",
+                    "name": "Tartaros Oathbearer",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "companions"
+                        }
+                    ]
+                },
+                {
+                    "id": "tartaros-companion",
+                    "name": "Tartaros Companion",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "companions"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Dark Angels"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "calibanite-warblade",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its combi-bolter and Calibanite warblade exchanged for one pair of lightning claws for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "terranic-greatsword": {
+                            "id": "terranic-greatsword",
+                            "name": "Terranic greatsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["terranic-greatsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "calibanite-warblade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "terranic-greatsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "calibanite-warblade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "calibanite-warblade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Tartaros Oathbearer in this Unit may have one grenade harness selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "grenade-harness": {
+                            "id": "grenade-harness",
+                            "name": "grenade harness",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["grenade-harness"]
+                        }
+                    },
+                    "profileId": "tartaros-oathbearer",
+                    "default": "none"
+                }
+            }
+        },
+        "deathwing-companion-detachment": {
+            "id": "deathwing-companion-detachment",
+            "name": "Deathwing Companion Detachment",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "deathwing-oathbearer",
+                    "name": "Deathwing Oathbearer",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "companions"
+                        }
+                    ]
+                },
+                {
+                    "id": "deathwing-companion",
+                    "name": "Deathwing Companion",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "companions"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Dark Angels"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 30
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "calibanite-warblade",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "calibanite-warblade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "terranic-greatsword": {
+                            "id": "terranic-greatsword",
+                            "name": "Terranic greatsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["terranic-greatsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "calibanite-warblade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "terranic-greatsword"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its bolter exchanged for one Cytheron pattern aegis for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "cytheron-pattern-aegis": {
+                            "id": "cytheron-pattern-aegis",
+                            "name": "Cytheron pattern aegis",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cytheron-pattern-aegis"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "cytheron-pattern-aegis"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one plasma pistol for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "plasma pistol",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Every Model in this Unit may have melta bombs selected for them for +25 Points.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "Any Model in this Unit may have its bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-7": {
+                    "id": "option-7",
+                    "name": "One Deathwing Companion in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "dreadwing-interemptors": {
+            "id": "dreadwing-interemptors",
+            "name": "Dreadwing Interemptors",
+            "role": "support",
+            "type": "infantry",
+            "cost": {
+                "points": 125
+            },
+            "modelCount": 2,
+            "profiles": [
+                {
+                    "id": "interemptor-praefectus",
+                    "name": "Interemptor Praefectus",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "bitter-duty"
+                        },
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "id": "interemptor",
+                    "name": "Interemptor",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bitter-duty"
+                        },
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Dark Angels"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 20
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "plasma-burner",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "For every five Models in this Unit, one Interemptor’s plasma burner may be exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "destroyer-missile-launcher-with-rad-missiles-and-stasis-miss": {
+                            "id": "destroyer-missile-launcher-with-rad-missiles-and-stasis-miss",
+                            "name": "Destroyer missile launcher with rad missiles and stasis missiles",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": [
+                                "destroyer-missile-launcher-with-rad-missiles",
+                                "stasis-missiles"
+                            ]
+                        },
+                        "plasma-incinerator": {
+                            "id": "plasma-incinerator",
+                            "name": "Plasma incinerator",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["plasma-incinerator"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "One Interemptor in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Up to two Interemptors in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Interemptor Praefectus in this Unit may have any of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "Melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        },
+                        "phosphex-bombs": {
+                            "id": "phosphex-bombs",
+                            "name": "Phosphex bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["phosphex-bomb"]
+                        }
+                    },
+                    "profileId": "interemptor-praefectus",
+                    "default": "none"
+                }
+            }
+        },
+        "inner-circle-knights-cenobium": {
+            "id": "inner-circle-knights-cenobium",
+            "name": "Inner Circle Knights Cenobium",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 275
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "order-preceptor",
+                    "name": "Order Preceptor",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "6",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "order-exemplars"
+                        }
+                    ]
+                },
+                {
+                    "id": "order-cenobite",
+                    "name": "Order Cenobite",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "order-exemplars"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Dark Angels"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 50
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "terranic-greatsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "plasma-caster",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "grenade-harness-order-preceptor-only",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its Terranic greatsword exchanged for one thunder hammer for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "terranic-greatsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "lion-eljonson": {
+            "id": "lion-eljonson",
+            "name": "Lion El’Jonson",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 460
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "lion-eljonson",
+                    "name": "Lion El’Jonson",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "8",
+                        "bs": "6",
+                        "s": "7",
+                        "t": "6",
+                        "w": "6",
+                        "i": "7",
+                        "a": "7",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-dark-angels"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "the-lions-choler"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Dark Angels", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-lion-sword"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-fusil-actinaeus"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "stasis-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its The Lion Sword exchanged for one The Wolf Blade for Free.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "the-wolf-blade-for-free": {
+                            "id": "the-wolf-blade-for-free",
+                            "name": "The Wolf Blade for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["the-wolf-blade"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "the-lion-sword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "the-wolf-blade"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "marduk-sedras": {
+            "id": "marduk-sedras",
+            "name": "Marduk Sedras",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 225
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "marduk-sedras",
+                    "name": "Marduk Sedras",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "5",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "ancient-of-war"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Dark Angels", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "plasma-burner"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "phosphex-bomb"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-death-of-worlds"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "the-blade": {
+            "id": "the-blade",
+            "name": "The Blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Blade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power", "Sword of the Order"],
+                    "specialRules": [
+                        {
+                            "id": "duellists-edge",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "calibanite-warblade": {
+            "id": "calibanite-warblade",
+            "name": "Calibanite warblade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Calibanite warblade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Sword of the Order"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "terranic-greatsword": {
+            "id": "terranic-greatsword",
+            "name": "Terranic greatsword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Terranic greatsword",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Sword of the Order"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "excindio-claws": {
+            "id": "excindio-claws",
+            "name": "Excindio claws",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Excindio claws",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "reaping-blow",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "irad-cleanser": {
+            "id": "irad-cleanser",
+            "name": "Irad cleanser",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Irad cleanser",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "2",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Rad"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "athanax-phosphex-canister-launcher": {
+            "id": "athanax-phosphex-canister-launcher",
+            "name": "Athanax phosphex canister launcher",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Athanax phosphex canister launcher",
+                    "stats": {
+                        "r": "24",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Rad"],
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "barrage",
+                            "value": "2"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "3"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tyrhenius-nerve-induction-shredder": {
+            "id": "tyrhenius-nerve-induction-shredder",
+            "name": "Tyrhenius nerve induction shredder",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Tyrhenius nerve induction shredder",
+                    "stats": {
+                        "r": "18",
+                        "fp": "10",
+                        "rs": "1",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "magaron-atomantic-pulse-cannon": {
+            "id": "magaron-atomantic-pulse-cannon",
+            "name": "Magaron atomantic pulse cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Magaron atomantic pulse cannon",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Suppressed"
+                        }
+                    ]
+                }
+            ]
+        },
+        "cytheron-graviton-flux-projector": {
+            "id": "cytheron-graviton-flux-projector",
+            "name": "Cytheron graviton flux projector",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Cytheron graviton flux projector",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "7",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Assault", "Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ]
+        },
+        "calibanite-charge-blade": {
+            "id": "calibanite-charge-blade",
+            "name": "Calibanite charge-blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "- Uncharged",
+                    "stats": {
+                        "im": "+2",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Sword of the Order"]
+                },
+                {
+                    "name": "- Charged",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Sword of the Order"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "enigmatus-missile-launcher": {
+            "id": "enigmatus-missile-launcher",
+            "name": "Enigmatus Missile Launcher",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Frag missile",
+                    "stats": {
+                        "r": "24",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "6",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        }
+                    ]
+                },
+                {
+                    "name": "- Krak missile",
+                    "stats": {
+                        "r": "24",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Assault"]
+                },
+                {
+                    "name": "- Stasis missile",
+                    "stats": {
+                        "r": "24",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "2"
+                    },
+                    "traits": ["Assault", "Stasis"],
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "stun",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ]
+        },
+        "plasma-burner": {
+            "id": "plasma-burner",
+            "name": "Plasma burner",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Sustained fire",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Maximal fire",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "plasma-incinerator": {
+            "id": "plasma-incinerator",
+            "name": "Plasma incinerator",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Sustained fire",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Maximal fire",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "plasma-caster": {
+            "id": "plasma-caster",
+            "name": "Plasma-caster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Sustained fire",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Maximal fire",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-lion-sword": {
+            "id": "the-lion-sword",
+            "name": "The Lion Sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Lion Sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Power", "Sword of the Order"]
+                }
+            ]
+        },
+        "the-fusil-actinaeus": {
+            "id": "the-fusil-actinaeus",
+            "name": "The Fusil Actinaeus",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "The Fusil Actinaeus",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "7",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Assault", "Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-wolf-blade": {
+            "id": "the-wolf-blade",
+            "name": "The Wolf Blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Wolf Blade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Chain", "Sword of the Order"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "reaping-blow",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-death-of-worlds": {
+            "id": "the-death-of-worlds",
+            "name": "The Death of Worlds",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Death of Worlds",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+5",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["None"]
+                }
+            ]
+        },
+        "power-sword": {
+            "id": "power-sword",
+            "name": "Power sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Power sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "sustained-fire": {
+            "id": "sustained-fire",
+            "name": "- Sustained fire",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Sustained fire",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Maximal fire",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Sustained fire",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Maximal fire",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "plasma-repeater": {
+            "id": "plasma-repeater",
+            "name": "Plasma repeater",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Sustained fire",
+                    "stats": {
+                        "r": "12",
+                        "fp": "3",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Maximal fire",
+                    "stats": {
+                        "r": "12",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "armour-of-the-forest": {
+            "id": "armour-of-the-forest",
+            "name": "Armour of the Forest",
+            "text": ""
+        },
+        "plasma-caster": {
+            "id": "plasma-caster",
+            "name": "Plasma caster",
+            "text": ""
+        },
+        "grenade-harness-order-preceptor-only": {
+            "id": "grenade-harness-order-preceptor-only",
+            "name": "Grenade harness (Order Preceptor only)",
+            "text": ""
+        },
+        "cytheron-pattern-aegis": {
+            "id": "cytheron-pattern-aegis",
+            "name": "Cytheron pattern aegis",
+            "text": ""
+        },
+        "stasis-missiles": {
+            "id": "stasis-missiles",
+            "name": "stasis missiles",
+            "text": ""
+        },
+        "stasis-grenades": {
+            "id": "stasis-grenades",
+            "name": "Stasis Grenades",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "dark-angels-blades-of-the-first-legion": {
+            "id": "dark-angels-blades-of-the-first-legion",
+            "name": "Blades of the First Legion",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "blades-of-the-first-legion": {
+                    "id": "blades-of-the-first-legion",
+                    "name": "Blades of the First Legion",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["calibanite-warblade"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "calibanite-warblade"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "dark-angels-plasma-burner-and-plasma-incinerator": {
+            "id": "dark-angels-plasma-burner-and-plasma-incinerator",
+            "name": "Plasma Burner and Plasma Incinerator",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "plasma-burner-and-plasma-incinerator": {
+                    "id": "plasma-burner-and-plasma-incinerator",
+                    "name": "Plasma Burner and Plasma Incinerator",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["sustained-fire"]
+                }
+            },
+            "default": "none"
+        },
+        "legion-special-weapons": {
+            "id": "legion-special-weapons",
+            "name": "Legion Special Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "flamer": {
+                    "id": "flamer",
+                    "name": "Flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["flamer"]
+                },
+                "plasma-gun": {
+                    "id": "plasma-gun",
+                    "name": "Plasma gun",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["plasma-gun"]
+                },
+                "meltagun": {
+                    "id": "meltagun",
+                    "name": "Meltagun",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["meltagun"]
+                },
+                "volkite-charger": {
+                    "id": "volkite-charger",
+                    "name": "Volkite charger",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["volkite-charger"]
+                },
+                "volkite-caliver": {
+                    "id": "volkite-caliver",
+                    "name": "Volkite caliver",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["volkite-caliver"]
+                },
+                "rotor-cannon": {
+                    "id": "rotor-cannon",
+                    "name": "Rotor cannon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["rotor-cannon"]
+                },
+                "plasma-repeater": {
+                    "id": "plasma-repeater",
+                    "name": "Plasma repeater",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["plasma-repeater"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "companions": {
+            "id": "companions",
+            "name": "Companions",
+            "text": "While a Model with both the Dark Angels Trait and either the Paragon Type or Command Sub-Type is part of a Unit that includes any Models with this Special Rule, Precision Wounds caused as part of a Shooting Attack cannot be allocated to that Model."
+        },
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred (X)",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        },
+        "vengeful-rage": {
+            "id": "vengeful-rage",
+            "name": "Vengeful Rage",
+            "text": "Whilst a Model with this Special Rule has a Current Wounds Characteristic of 4 or less, then in each of the Controlling Player’s Shooting Phases it must have a Shooting Attack made for it targeting the nearest Unit that has a Line of Sight to the Model, regardless of whether that Unit is an enemy or friendly Unit. Such a Shooting Attack must use all Weapons that are within range of at least one Model in the Target Unit."
+        },
+        "marked-for-death": {
+            "id": "marked-for-death",
+            "name": "Marked for Death (X)",
+            "text": "The Controlling Player of any Units with this Special Rule may select an enemy Unit to score extra Victory Points from. At the end of the Declare Mission Reserves Step the Controlling Player of any Units with this Special Rule may select one Unit from the Opposing Player’s Army, this Unit is the ‘Marked’ Unit. Once per Battle, the Controlling Player scores additional Victory Points equal to the value of X if a Friendly Unit with the Marked for Death (X) Special Rule scores Victory Points as a result of the Vanguard (X) Special Rule when the enemy Unit that fulfils the conditions of the Vanguard (X) Special Rule is the Marked Unit.",
+            "configurable": true
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "order-of-the-broken-claws": {
+            "id": "order-of-the-broken-claws",
+            "name": "Order of the Broken Claws",
+            "text": "This Special Rule provides bonuses when Models with it are Locked in Combat with larger enemies. Whilst a Model with this Special Rule is part of a Unit that is Locked in Combat with an enemy Unit that includes one or more Models with the Walker Type, Automata Type or Malefic Sub-Type: That Model with this Special Rule has its Toughness Characteristic modified by +1. When making a Characteristic Check that uses the Leadership, Cool, Willpower or Intelligence Characteristics of that Model with this Special Rule, the Controlling Player may ignore negative modifiers to that Characteristic."
+        },
+        "order-exemplars": {
+            "id": "order-exemplars",
+            "name": "Order Exemplars",
+            "text": "When a Unit that includes any Models with this Special Rule is selected as part of a Detachment, during Army selection, a single option from the Orders of the Hekatonystika presented below must be selected for all Models in that Unit. Orders of the Hekatonystika Augurs of Weakness: When making attacks targeting a Unit that includes one or more Models with the Vehicle Type, Models with the Order Exemplars Special Rule gain the Armourbane Special Rule. Icons of Resolve: When part of a Unit that is successfully Charged by an enemy Unit, Models with the Order Exemplars Special Rule set their Leadership Characteristic to 10 for the duration of the current Assault Phase. Slayers of Kings: Whilst part of a Unit that is Locked in Combat with an enemy Unit that includes at least one Model with a Weapon Skill Characteristic of 6 or higher, the Attacks Characteristic of Models with the Order Exemplars Special Rule may be set to 1. If this option is used then the Terranic greatswords those Models have gain the Critical Hit (6+) Special Rule until the Combat ends. Hunters of Beasts: Whilst part of a Unit that is Locked in Combat with an enemy Unit that includes one or more Models with a Toughness Characteristic of 6 or higher, the Damage Characteristic of Wounds caused by a Model with this Special Rule is modified by +1. Reapers of Hosts: Whilst part of a Unit that is Locked in Combat with one or more enemy Units that outnumbers it, then all Models in that Unit with the Order Exemplars Special Rule modify their Attacks Characteristic by +1. Breakers of Witches: Whilst part of a Unit that is Locked in Combat with an enemy Unit that has one or more Models with the Malefic Sub-Type or Psyker Trait, Hit and Wound Tests made for Models with the Order Exemplars Special Rule in that Combat are modified by +1."
+        },
+        "sire-of-the-dark-angels": {
+            "id": "sire-of-the-dark-angels",
+            "name": "Sire of the Dark Angels",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled and these Slots contain at least one Tactical Squad Unit, at least one Assault Squad Unit and at least one Breacher Squad Unit, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Outrider Squadron Units and all Scimitar Jetbike Squadron Units in the same Army: When the Controlling Player of a Model with this Special Rule makes a Reserve Roll for an Outrider Squadron Unit which only includes Models with the Dark Angels Trait or a Scimitar Jetbike Squadron Unit which only includes Models with the Dark Angels Trait, that Roll is modified by +1."
+        },
+        "the-lions-choler": {
+            "id": "the-lions-choler",
+            "name": "The Lion’s Choler",
+            "text": "The Lion gains a bonus to Focus Rolls when he is wounded. While a Model with this Special Rule is engaged in a Challenge, if it has 2 or fewer Wounds remaining, its Controlling Player can select the following Gambit : The Lion’s Choler: If this Gambit is selected, the Model for which this Gambit has been selected’s Controlling Player adds a +2 Modifier to the Focus Roll, and does not suffer a -1 modifier for each point of difference between this Model’s Base Wounds Characteristic and its current Wounds Characteristic."
+        },
+        "ancient-of-war": {
+            "id": "ancient-of-war",
+            "name": "Ancient of War",
+            "text": "While Marduk Sedras is part of a Unit that includes only Models with the Dark Angels Trait, all Models in that Unit gain the Hatred (Traitor) Special Rule."
+        },
+        "the-angels-of-death": {
+            "id": "the-angels-of-death",
+            "name": "The Angels of Death",
+            "text": "LEGION TACTICA All Models with the Dark Angels Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: Negative modifiers to Dark Angels’ Leadership, Willpower, Cool and Intelligence are limited. Models with this Special Rule may never have their Leadership Characteristic modified to less than 6. Additionally, any variant of the Fear (X) Special Rule may only reduce the Leadership , Willpower , Cool and Intelligence Characteristics of any Model with this Special Rule by a maximum of 1, regardless of the value of X."
+        },
+        "sword-of-the-order": {
+            "id": "sword-of-the-order",
+            "name": "Sword of the Order",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Dark Angels Trait can select Sword of the Order instead of any others available to that Model: This Gambit may be chosen when using sword Weapons in Challenges. If this Gambit is selected, then as long as the Model under this Player’s control is declared to be using a chainsword , power sword , force sword , paragon blade or Weapon with the Sword of the Order Trait, in Step 3 of the Challenge Sub-Phase , that Weapon’s Attacks Modifier Characteristic is modified by -1 and it gains the Critical Hit (6+) Special Rule, or improves the value of X of an existing version of Critical Hit (X) it already possessed by +1."
+        },
+        "vengeance-of-the-first-legion": {
+            "id": "vengeance-of-the-first-legion",
+            "name": "Vengeance of the First Legion (Advanced Reaction)",
+            "text": "This Reaction allows the Controlling Player to choose to repeat the Fight Sub-Phase. Trigger: Once per Battle, the Reactive Player may declare the Vengeance of the First Legion Advanced Reaction after the last Initiative Step of a Combat that includes a Unit under that Player’s control which only includes Models with the Dark Angels Trait has been resolved, but before the Make Final Pile-in Moves Step. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare the Vengeance of the First Legion Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always a Unit in that Combat which only includes Models with the Dark Angels Trait. That Unit is the Reacting Unit. Process Instead of Proceeding to the Make Final Pile-in Moves Step of that Combat, the Players must return to Step 1 of that Combat and resolve it a second time, discarding any Combat Resolution Points gained during the first round (but not Combat Resolution Points scored from any Challenges during that Combat). Models in the Reacting Unit gain the Shred (6+) Special Rule on any Weapons they have with the Sword of the Order Trait."
+        },
+        "ironwing-gauntlet": {
+            "id": "ironwing-gauntlet",
+            "name": "Ironwing Gauntlet (Advanced Reaction)",
+            "text": "IRONWING GAUNTLET [AUXILIARY DETACHMENT]"
+        },
+        "dreadwing-cadre": {
+            "id": "dreadwing-cadre",
+            "name": "Dreadwing Cadre (Advanced Reaction)",
+            "text": "DREADWING CADRE [AUXILIARY DETACHMENT] Support Slots in this Detachment may only be used to select Dreadwing Interemptor Units or Rapier Battery Units."
+        },
+        "stormwing-muster": {
+            "id": "stormwing-muster",
+            "name": "Stormwing Muster (Advanced Reaction)",
+            "text": "STORMWING MUSTER [AUXILIARY DETACHMENT]"
+        },
+        "deathwing-conclave": {
+            "id": "deathwing-conclave",
+            "name": "Deathwing Conclave (Advanced Reaction)",
+            "text": "DEATHWING CONCLAVE [AUXILIARY DETACHMENT]"
+        },
+        "ravenwing-lance": {
+            "id": "ravenwing-lance",
+            "name": "Ravenwing Lance (Advanced Reaction)",
+            "text": "RAVENWING LANCE [AUXILIARY DETACHMENT] Recon Slots in this Detachment may only be used to select Outrider Squadron Units."
+        },
+        "firewing-echelon": {
+            "id": "firewing-echelon",
+            "name": "Firewing Echelon (Advanced Reaction)",
+            "text": "FIREWING ECHELON [AUXILIARY DETACHMENT] Elites Slots in this Detachment may only be used to select Seeker Squad Units."
+        }
+    },
+    "detachments": {
+        "ironwing-gauntlet": {
+            "id": "ironwing-gauntlet",
+            "name": "Ironwing Gauntlet",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["heavy-transport"]
+                },
+                {
+                    "roles": ["heavy-transport"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                }
+            ]
+        },
+        "dreadwing-cadre": {
+            "id": "dreadwing-cadre",
+            "name": "Dreadwing Cadre",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["support"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": ["dreadwing-interemptors", "rapier-battery"]
+                    }
+                },
+                {
+                    "roles": ["support"],
+                    "units": {
+                        "unitIds": ["dreadwing-interemptors", "rapier-battery"]
+                    }
+                },
+                {
+                    "roles": ["support"],
+                    "units": {
+                        "unitIds": ["dreadwing-interemptors", "rapier-battery"]
+                    }
+                }
+            ]
+        },
+        "stormwing-muster": {
+            "id": "stormwing-muster",
+            "name": "Stormwing Muster",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["transport"]
+                },
+                {
+                    "roles": ["transport"]
+                }
+            ]
+        },
+        "deathwing-conclave": {
+            "id": "deathwing-conclave",
+            "name": "Deathwing Conclave",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["retinue"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["elites"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                }
+            ]
+        },
+        "ravenwing-lance": {
+            "id": "ravenwing-lance",
+            "name": "Ravenwing Lance",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["fast-attack"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                },
+                {
+                    "roles": ["recon"],
+                    "units": {
+                        "unitIds": ["outrider-squadron"]
+                    }
+                },
+                {
+                    "roles": ["recon"],
+                    "units": {
+                        "unitIds": ["outrider-squadron"]
+                    }
+                }
+            ]
+        },
+        "firewing-echelon": {
+            "id": "firewing-echelon",
+            "name": "Firewing Echelon",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["recon"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["recon"]
+                },
+                {
+                    "roles": ["elites"],
+                    "units": {
+                        "unitIds": ["seeker-squad"]
+                    }
+                },
+                {
+                    "roles": ["elites"],
+                    "units": {
+                        "unitIds": ["seeker-squad"]
+                    }
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "paladin-of-the-hekatonystika": {
+            "id": "paladin-of-the-hekatonystika",
+            "name": "Paladin of the Hekatonystika",
+            "text": "If a Centurion or Centurion with Jump Pack that has the Dark Angels Trait is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Paladin of the Hekatonystika This Prime Advantage can only be selected once per Army. One Model in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gains the following benefits: Has its Base Weapon Skill Characteristic modified by +1. Must have its bolter exchanged for a Terranic greatsword for Free. Gains the Order Exemplars Special Rule.",
+            "slotTag": "prime"
+        },
+        "terminator-paladin-of-the-hekatonystika": {
+            "id": "terminator-paladin-of-the-hekatonystika",
+            "name": "Terminator Paladin of the Hekatonystika",
+            "text": "If a Centurion in Terminator Armour that has the Dark Angels Trait is selected to fill a Prime Force Organisation Slot , the Paladin of the Hekatonystika Prime Advantage can be selected for it. If this Prime Advantage is selected for a Centurion in Terminator Armour, its power weapon is exchanged for a Terranic greatsword for Free instead of its bolter .",
+            "slotTag": "prime"
+        },
+        "artificia-kill-switch": {
+            "id": "artificia-kill-switch",
+            "name": "Artificia Kill-switch",
+            "text": "Any Model with the Command Sub-Type selected as part of the Primary Detachment of an Army that includes an Excindio Battle-automata may have an artificia kill-switch selected for it for +10 Points per Model. Artificia Kill-switch The Controlling Player of a Model with an artificia kill-switch may choose to activate it in the Effects Sub-Phase of any End Phase. When activated, that Player may select one friendly Model that has the Artificia Type that is within 12\" of the Model with the artificia kill-switch. The selected Model with the Artificia Type suffers D6+2 Unsaved Wounds. If this would cause that Model to be Removed as a Casualty , then if that Model has any version of the Explodes (X) Special Rule, that Special Rule is automatically activated. If a Model is Destroyed and Removed from Play due to the activation of an artificia kill-switch, then no Player may score any Victory Points for that Model being removed from play.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "dark-angels-blades-of-the-first-legion": {
+            "id": "dark-angels-blades-of-the-first-legion",
+            "name": "Blades of the First Legion",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "dark-angels-blades-of-the-first-legion"
+                }
+            ]
+        },
+        "dark-angels-plasma-burner-and-plasma-incinerator": {
+            "id": "dark-angels-plasma-burner-and-plasma-incinerator",
+            "name": "Plasma Burner and Plasma Incinerator",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "dark-angels-plasma-burner-and-plasma-incinerator"
+                }
+            ]
+        },
+        "the-angels-of-death-all": {
+            "id": "the-angels-of-death-all",
+            "name": "The Angels of Death",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "the-angels-of-death"
+                    }
+                }
+            ]
+        }
+    },
+    "overrides": [
+        {
+            "kind": "upgrades",
+            "id": "legion-special-weapons"
+        }
+    ]
+}

@@ -1,0 +1,3806 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "space-wolves",
+    "version": "1.0.0",
+    "name": "Space Wolves",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "caster-of-runes": {
+            "id": "caster-of-runes",
+            "name": "Caster Of Runes",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 110
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "caster-of-runes",
+                    "name": "Caster Of Runes",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"]
+                }
+            ],
+            "traits": ["Space Wolves", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frost-axe"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "take": {
+                            "id": "take",
+                            "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "runecasting": {
+                            "id": "runecasting",
+                            "name": "Runecasting",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": ["runecasting"]
+                        },
+                        "biomancy": {
+                            "id": "biomancy",
+                            "name": "Biomancy",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["biomancy"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "telekinesis": {
+                            "id": "telekinesis",
+                            "name": "Telekinesis",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["telekinesis"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "deathsworn-pack": {
+            "id": "deathsworn-pack",
+            "name": "Deathsworn Pack",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "deathsworn",
+                    "name": "Deathsworn",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "the-dreams-of-the-death-wolf"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 30
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "ymira-class-stasis-bombs",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its power axe exchanged for one power fist for +5 Points.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "power fist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every five Models in this Unit, one Deathsworn in this Unit may have its power axe exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        },
+                        "great-frost-blade": {
+                            "id": "great-frost-blade",
+                            "name": "Great frost blade",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["great-frost-blade"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "great-frost-blade"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Every Model in this Unit may have melta bombs selected for it for +5 Points per Model.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Every Model in this Unit may have rad grenades selected for it for +5 Points per Model.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "rad-grenades": {
+                            "id": "rad-grenades",
+                            "name": "rad grenades",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["rad-grenades"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "geigor-fell-hand": {
+            "id": "geigor-fell-hand",
+            "name": "Geigor Fell-hand",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 105
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "geigor-fell-hand",
+                    "name": "Geigor Fell-Hand",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "8",
+                        "wp": "9",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Space Wolves"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-fell-hand"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "grey-slayer-pack": {
+            "id": "grey-slayer-pack",
+            "name": "Grey Slayer Pack",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 145
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "huscarl",
+                    "name": "Huscarl",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "line",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "id": "grey-slayer",
+                    "name": "Grey Slayer",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "line",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 12
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "fenrisian-axe",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "combat-shield",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its combat shield exchanged for a bolter for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bolter-for-free": {
+                            "id": "bolter-for-free",
+                            "name": "bolter for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Huscarl in this Unit may have its Fenrisian axe exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "fenrisian-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["lightning-claw"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "fenrisian-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lightning-claw"
+                                    }
+                                }
+                            ]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "fenrisian-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        },
+                        "frost-blade-sword-axe-or-claw": {
+                            "id": "frost-blade-sword-axe-or-claw",
+                            "name": "Frost blade (sword, axe or claw)",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": ["frost-blade-sword-axe-or-claw"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "fenrisian-axe"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "frost-blade-sword-axe-or-claw"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "huscarl",
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Huscarl in this Unit may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "take": {
+                            "id": "take",
+                            "name": "The Huscarl in this Unit may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "profileId": "huscarl",
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "The Huscarl in this Unit may have its bolter, bolt pistol and Fenrisian axe exchanged for one pair of lightning claws for +15 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "huscarl",
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "The Huscarl in this Unit may be given melta bombs for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "huscarl-in-this-unit-may-be-given-melta-bombs": {
+                            "id": "huscarl-in-this-unit-may-be-given-melta-bombs",
+                            "name": "Huscarl in this Unit may be given melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": [
+                                "huscarl-in-this-unit-may-be-given-melta-bombs"
+                            ]
+                        }
+                    },
+                    "profileId": "huscarl",
+                    "default": "none"
+                },
+                "option-7": {
+                    "id": "option-7",
+                    "name": "Any Grey Slayer in this Unit may have its Fenrisian axe exchanged for one power weapon for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "power weapon",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "fenrisian-axe"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-8": {
+                    "id": "option-8",
+                    "name": "For every five Models in the Unit, one Grey Slayer may have its Fenrisian axe exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "Heavy chainsword",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "fenrisian-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "fenrisian-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["lightning-claw"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "fenrisian-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lightning-claw"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-9": {
+                    "id": "option-9",
+                    "name": "For every five Models in the Unit, one Grey Slayer may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "take": {
+                            "id": "take",
+                            "name": "For every five Models in the Unit, one Grey Slayer may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-10": {
+                    "id": "option-10",
+                    "name": "One Grey Slayer in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-11": {
+                    "id": "option-11",
+                    "name": "Up to two Grey Slayers in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "hvarl-red-blade": {
+            "id": "hvarl-red-blade",
+            "name": "Hvarl Red-Blade",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 210
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "hvarl-red-blade",
+                    "name": "Hvarl Red-Blade",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "5",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "head-taker"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Space Wolves", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "hearth-splitter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "heavy-bolter"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "leman-russ": {
+            "id": "leman-russ",
+            "name": "Leman Russ",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 450
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "leman-russ",
+                    "name": "Leman Russ",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "8",
+                        "bs": "6",
+                        "s": "7",
+                        "t": "6",
+                        "w": "6",
+                        "i": "7",
+                        "a": "7",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-space-wolves"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "5"
+                        },
+                        {
+                            "id": "howl-of-the-death-wolf"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Space Wolves", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-axe-of-helwinter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-sword-of-balenight"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "scornspitter"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "space-wolves-caster-of-runes-in-terminator-armour": {
+            "id": "space-wolves-caster-of-runes-in-terminator-armour",
+            "name": "Space Wolves Caster of Runes in Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 130
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "cataphractii-caster-of-runes",
+                    "name": "Cataphractii Caster of Runes",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command", "Heavy"]
+                }
+            ],
+            "traits": ["Space Wolves", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frost-axe"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "runecasting": {
+                            "id": "runecasting",
+                            "name": "Runecasting",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": ["runecasting"]
+                        },
+                        "biomancy": {
+                            "id": "biomancy",
+                            "name": "Biomancy",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["biomancy"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "telekinesis": {
+                            "id": "telekinesis",
+                            "name": "Telekinesis",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["telekinesis"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "space-wolves-caster-of-runes-with-jump-pack": {
+            "id": "space-wolves-caster-of-runes-with-jump-pack",
+            "name": "Space Wolves Caster of Runes with Jump Pack",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 140
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "caster-of-runes-with-jump-pack",
+                    "name": "Caster of Runes with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frost-axe"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "take": {
+                            "id": "take",
+                            "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "runecasting": {
+                            "id": "runecasting",
+                            "name": "Runecasting",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": ["runecasting"]
+                        },
+                        "biomancy": {
+                            "id": "biomancy",
+                            "name": "Biomancy",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["biomancy"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "telekinesis": {
+                            "id": "telekinesis",
+                            "name": "Telekinesis",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["telekinesis"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "space-wolves-fenrisian-wolf-pack": {
+            "id": "space-wolves-fenrisian-wolf-pack",
+            "name": "Space Wolves Fenrisian Wolf Pack",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 10
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "fenrisian-wolf",
+                    "name": "Fenrisian Wolf",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "3",
+                        "bs": "-",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "5",
+                        "cl": "5",
+                        "wp": "4",
+                        "in": "2",
+                        "sav": "6+",
+                        "inv": "-"
+                    },
+                    "tags": ["Light"],
+                    "specialRules": [
+                        {
+                            "id": "heedless"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "additionalModels": {
+                "max": 4,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "wolf-teeth-and-claws"
+                }
+            ]
+        },
+        "space-wolves-inductii-squad": {
+            "id": "space-wolves-inductii-squad",
+            "name": "Space Wolves Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "headstrong"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Every Model in this Unit may have its bolt pistol exchanged for one combat shield for +2 Points per Model.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "combat shield",
+                            "cost": {
+                                "points": 2
+                            },
+                            "equipmentRefs": ["combat-shield"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "combat-shield"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Inductii in this Unit may have its chainsword exchanged for one chainaxe for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainaxe-for-free": {
+                            "id": "chainaxe-for-free",
+                            "name": "chainaxe for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainaxe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "Heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "charnabal-sabre"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "space-wolves-jorlund-hunter-pack": {
+            "id": "space-wolves-jorlund-hunter-pack",
+            "name": "Space Wolves Jorlund Hunter Pack",
+            "role": "support",
+            "type": "infantry",
+            "cost": {
+                "points": 95
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "hunt-master",
+                    "name": "Hunt-master",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "move-through-cover"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "scouring-tempest"
+                        }
+                    ]
+                },
+                {
+                    "id": "hunter",
+                    "name": "Hunter",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "move-through-cover"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "scouring-tempest"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 17
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "hand-flamer",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Hunt-master may have its hand flamer exchanged for one plasma pistol for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "plasma pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Hunt-master may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "frost-sword": {
+                            "id": "frost-sword",
+                            "name": "Frost sword",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["frost-sword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "frost-sword"
+                                    }
+                                }
+                            ]
+                        },
+                        "frost-axe": {
+                            "id": "frost-axe",
+                            "name": "Frost axe",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["frost-axe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "frost-axe"
+                                    }
+                                }
+                            ]
+                        },
+                        "frost-claw": {
+                            "id": "frost-claw",
+                            "name": "Frost claw",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["frost-claw"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "frost-claw"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every five Models in this Unit, one Hunter in this Unit may have its hand flamer exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-serpenta": {
+                            "id": "volkite-serpenta",
+                            "name": "Volkite serpenta",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-serpenta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Hunter in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "The Hunt-master in this Unit may have melta bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "profileId": "hunt-master",
+                    "default": "none"
+                }
+            }
+        },
+        "space-wolves-mounted-caster-of-runes": {
+            "id": "space-wolves-mounted-caster-of-runes",
+            "name": "Space Wolves Mounted Caster of Runes",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 150
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "outrider-caster-of-runes",
+                    "name": "Outrider Caster of Runes",
+                    "template": "model",
+                    "stats": {
+                        "m": "14",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "10",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"]
+                }
+            ],
+            "traits": ["Space Wolves", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "twin-bolter-outrider-caster-of-runes-only"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "heavy-bolter-caster-of-runes-on-scimitar-jetbike-only"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frost-axe"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "take": {
+                            "id": "take",
+                            "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "runecasting": {
+                            "id": "runecasting",
+                            "name": "Runecasting",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": ["runecasting"]
+                        },
+                        "biomancy": {
+                            "id": "biomancy",
+                            "name": "Biomancy",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["biomancy"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "telekinesis": {
+                            "id": "telekinesis",
+                            "name": "Telekinesis",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["telekinesis"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "This Outrider Caster of Runes may have its twin bolter exchanged for one twin plasma gun for +15 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "twin-plasma-gun": {
+                            "id": "twin-plasma-gun",
+                            "name": "twin plasma gun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["twin-plasma-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "This Caster of Runes on Scimitar Jetbike may have its heavy bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "volkite-culverin": {
+                            "id": "volkite-culverin",
+                            "name": "Volkite culverin",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["volkite-culverin"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-culverin"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-cannon": {
+                            "id": "plasma-cannon",
+                            "name": "Plasma cannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["plasma-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-cannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["multi-melta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "multi-melta"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "space-wolves-mounted-speaker-of-the-dead": {
+            "id": "space-wolves-mounted-speaker-of-the-dead",
+            "name": "Space Wolves Mounted Speaker of the Dead",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 130
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "outrider-speaker-of-the-dead",
+                    "name": "Outrider Speaker of the Dead",
+                    "template": "model",
+                    "stats": {
+                        "m": "14",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "twin-bolter-outrider-speaker-of-the-dead-only"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "heavy-bolter-speaker-of-the-dead-on-scimitar-jetbike-only"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "crozius-arcanum"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "narthecium"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Outrider Speaker of the Dead may have its twin bolter exchanged for one twin plasma gun for +15 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "twin-plasma-gun": {
+                            "id": "twin-plasma-gun",
+                            "name": "twin plasma gun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["twin-plasma-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have melta bombs selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "This Speaker of the Dead on Scimitar Jetbike may have its heavy bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "volkite-culverin": {
+                            "id": "volkite-culverin",
+                            "name": "Volkite culverin",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["volkite-culverin"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-culverin"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-cannon": {
+                            "id": "plasma-cannon",
+                            "name": "Plasma cannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["plasma-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-cannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["multi-melta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "multi-melta"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "space-wolves-speaker-of-the-dead-in-terminator-armour": {
+            "id": "space-wolves-speaker-of-the-dead-in-terminator-armour",
+            "name": "Space Wolves Speaker of the Dead in Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "cataphractii-speaker-of-the-dead",
+                    "name": "Cataphractii Speaker of the Dead",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command", "Heavy"]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "crozius-arcanum"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "narthecium"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its combi-bolter exchanged for one volkite charger for Free or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger-for-free": {
+                            "id": "volkite-charger-for-free",
+                            "name": "volkite charger for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "for": {
+                            "id": "for",
+                            "name": "for",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "space-wolves-speaker-of-the-dead": {
+            "id": "space-wolves-speaker-of-the-dead",
+            "name": "Space Wolves Speaker of the Dead",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "speaker-of-the-dead",
+                    "name": "Speaker of the Dead",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "crozius-arcanum"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "narthecium"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "take": {
+                            "id": "take",
+                            "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have melta bombs selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "varagyr-wolf-guard-terminator-squad": {
+            "id": "varagyr-wolf-guard-terminator-squad",
+            "name": "Varagyr Wolf Guard Terminator Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 250
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "thegn",
+                    "name": "Thegn",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "9",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Champion", "Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "4"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "lordsbane"
+                        }
+                    ]
+                },
+                {
+                    "id": "varagyr",
+                    "name": "Varagyr",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "9",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "4"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "lordsbane"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 45
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frost-axe",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its frost axe exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "frost-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "frost-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainfist"
+                                    }
+                                }
+                            ]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "frost-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list or for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "frost-sword": {
+                            "id": "frost-sword",
+                            "name": "Frost sword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["frost-sword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "frost-sword"
+                                    }
+                                }
+                            ]
+                        },
+                        "frost-claw": {
+                            "id": "frost-claw",
+                            "name": "Frost claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["frost-claw"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "frost-claw"
+                                    }
+                                }
+                            ]
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "reaper-autocannon": {
+                            "id": "reaper-autocannon",
+                            "name": "Reaper autocannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["reaper-autocannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "reaper-autocannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Thegn in this Unit may have its frost axe exchanged for one great frost blade for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "great-frost-blade": {
+                            "id": "great-frost-blade",
+                            "name": "great frost blade",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["great-frost-blade"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "frost-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "great-frost-blade"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "thegn",
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Thegn in this Unit may have one grenade harness selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "grenade-harness": {
+                            "id": "grenade-harness",
+                            "name": "grenade harness",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["grenade-harness"]
+                        }
+                    },
+                    "profileId": "thegn",
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "One Varagyr in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "wolf-kin-of-russ": {
+            "id": "wolf-kin-of-russ",
+            "name": "Wolf-kin of Russ",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 2,
+            "profiles": [
+                {
+                    "id": "freki",
+                    "name": "Freki",
+                    "template": "model",
+                    "stats": {
+                        "m": "10",
+                        "ws": "5",
+                        "bs": "-",
+                        "s": "5",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "5",
+                        "wp": "5",
+                        "in": "3",
+                        "sav": "5+",
+                        "inv": "-"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "heedless"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "fast",
+                            "value": "2"
+                        },
+                        {
+                            "id": "wolf-kin-of-russ"
+                        }
+                    ]
+                },
+                {
+                    "id": "geri",
+                    "name": "Geri",
+                    "template": "model",
+                    "stats": {
+                        "m": "10",
+                        "ws": "7",
+                        "bs": "-",
+                        "s": "5",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "5",
+                        "wp": "5",
+                        "in": "3",
+                        "sav": "5+",
+                        "inv": "-"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "heedless"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "fast",
+                            "value": "2"
+                        },
+                        {
+                            "id": "wolf-kin-of-russ"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Space Wolves"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "tooth-claw",
+                    "perModel": true
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "force-staff": {
+            "id": "force-staff",
+            "name": "Force staff",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Force staff",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "force",
+                            "value": "D"
+                        }
+                    ]
+                }
+            ]
+        },
+        "frost-axe": {
+            "id": "frost-axe",
+            "name": "Frost axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Frost axe",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "reaping-blow",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "great-frost-blade": {
+            "id": "great-frost-blade",
+            "name": "Great frost blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Great frost blade",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "reaping-blow",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-fell-hand": {
+            "id": "the-fell-hand",
+            "name": "The Fell-Hand",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Fell-Hand",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "fenrisian-axe": {
+            "id": "fenrisian-axe",
+            "name": "Fenrisian axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Fenrisian axe",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["None"],
+                    "specialRules": [
+                        {
+                            "id": "reaping-blow",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "hearth-splitter": {
+            "id": "hearth-splitter",
+            "name": "Hearth-splitter",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Hearth-splitter",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-axe-of-helwinter": {
+            "id": "the-axe-of-helwinter",
+            "name": "The Axe of Helwinter",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Axe of Helwinter",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "reaping-blow",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-sword-of-balenight": {
+            "id": "the-sword-of-balenight",
+            "name": "The Sword of Balenight",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Sword of Balenight",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "scornspitter": {
+            "id": "scornspitter",
+            "name": "Scornspitter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Scornspitter",
+                    "stats": {
+                        "r": "12",
+                        "fp": "3",
+                        "rs": "4",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "wolf-teeth-and-claws": {
+            "id": "wolf-teeth-and-claws",
+            "name": "Wolf teeth and claws",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Wolf teeth and claws",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "5",
+                        "d": "1"
+                    }
+                }
+            ]
+        },
+        "frost-sword": {
+            "id": "frost-sword",
+            "name": "Frost sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Frost sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "reaping-blow",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "frost-claw": {
+            "id": "frost-claw",
+            "name": "Frost claw",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Frost claw",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "reaping-blow",
+                            "value": "1"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tooth-claw": {
+            "id": "tooth-claw",
+            "name": "Tooth & Claw",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Tooth & Claw",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["None"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "runecasting": {
+            "id": "runecasting",
+            "name": "Runecasting",
+            "text": ""
+        },
+        "ymira-class-stasis-bombs": {
+            "id": "ymira-class-stasis-bombs",
+            "name": "Ymira Class Stasis Bombs",
+            "text": ""
+        },
+        "frost-blade-sword-axe-or-claw": {
+            "id": "frost-blade-sword-axe-or-claw",
+            "name": "Frost blade (sword, axe or claw)",
+            "text": ""
+        },
+        "huscarl-in-this-unit-may-be-given-melta-bombs": {
+            "id": "huscarl-in-this-unit-may-be-given-melta-bombs",
+            "name": "Huscarl in this Unit may be given melta bombs",
+            "text": ""
+        },
+        "twin-bolter-outrider-caster-of-runes-only": {
+            "id": "twin-bolter-outrider-caster-of-runes-only",
+            "name": "Twin bolter (Outrider Caster of Runes only)",
+            "text": ""
+        },
+        "heavy-bolter-caster-of-runes-on-scimitar-jetbike-only": {
+            "id": "heavy-bolter-caster-of-runes-on-scimitar-jetbike-only",
+            "name": "Heavy bolter (Caster of Runes on Scimitar Jetbike only)",
+            "text": ""
+        },
+        "twin-bolter-outrider-speaker-of-the-dead-only": {
+            "id": "twin-bolter-outrider-speaker-of-the-dead-only",
+            "name": "Twin bolter (Outrider Speaker of the Dead only)",
+            "text": ""
+        },
+        "heavy-bolter-speaker-of-the-dead-on-scimitar-jetbike-only": {
+            "id": "heavy-bolter-speaker-of-the-dead-on-scimitar-jetbike-only",
+            "name": "Heavy bolter (Speaker of the Dead on Scimitar Jetbike only)",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "space-wolves-fenrisian-axe": {
+            "id": "space-wolves-fenrisian-axe",
+            "name": "Fenrisian Axe",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "fenrisian-axe": {
+                    "id": "fenrisian-axe",
+                    "name": "Fenrisian Axe",
+                    "cost": {
+                        "points": 2
+                    },
+                    "weaponRefs": ["fenrisian-axe"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "chainsword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "fenrisian-axe"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "space-wolves-frost-blades": {
+            "id": "space-wolves-frost-blades",
+            "name": "Frost Blades",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "frost-blades": {
+                    "id": "frost-blades",
+                    "name": "Frost Blades",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["frost-sword"]
+                }
+            },
+            "default": "none"
+        }
+    },
+    "specialRules": {
+        "force": {
+            "id": "force",
+            "name": "Force (X)",
+            "text": "A Weapon with this Special Rule may double a Characteristic with a Willpower Check, but may suffer Perils of the Warp. When selected to be used as part of a Combat or Shooting Attack, a Willpower Check may be made for the Model that will use this Weapon to make attacks. If it is successful then the Characteristic listed as X is doubled (if that Characteristic is AP, then the AP is instead changed to AP 2). If a double is rolled when making this Willpower Check then the Model using the Weapon to make attacks suffers Perils of the Warp.",
+            "configurable": true
+        },
+        "the-dreams-of-the-death-wolf": {
+            "id": "the-dreams-of-the-death-wolf",
+            "name": "The Dreams of the Death Wolf",
+            "text": "Deathsworn make a final attack before they are Removed as a Casualty. During Initiative Step 1 of any Combat that includes one or more Models with this Special Rule, the Controlling Player may make one additional attack for each Model with this Special Rule that has been Removed as a Casualty during any preceding Initiative Steps of that Combat. These attacks can target any enemy Unit in that Combat and use the following profile: Melee Weapon Melee Weapon IM AM SM AP D Special Rules Traits Death strike Death strike I 1 +1 3 1 Breaching (5+) Power"
+        },
+        "head-taker": {
+            "id": "head-taker",
+            "name": "Head-taker",
+            "text": "This Gambit prevents the Opposing Player from gaining a bonus to the Focus Roll from Outside Support. While a Model with this Special Rule is engaged in a Challenge, its Controlling Player can select the following Gambit : Head-taker: If this Gambit is selected, the Opposing Player may not claim an Outside Support bonus during the Focus Step."
+        },
+        "sire-of-the-space-wolves": {
+            "id": "sire-of-the-space-wolves",
+            "name": "Sire of the Space Wolves",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Grey Slayer Pack Units, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Infantry and or Paragon Type with the Space Wolves Trait in the same Army: Until the end of the first Battle Turn of the Battle, all Models in this Army with the Infantry or Paragon Types and the Space Wolves Trait have the Move Through Cover Special Rule."
+        },
+        "howl-of-the-death-wolf": {
+            "id": "howl-of-the-death-wolf",
+            "name": "Howl of the Death Wolf",
+            "text": "When this Gambit is selected, Leman Russ gains a fixed bonus to the Focus Roll in Challenges until he fails to wound his opponent. Once per battle, while a Model with this Special Rule is Engaged in a Challenge, its Controlling Player can select the following Gambit : Howl of the Death Wolf: Once this Gambit is selected and until its effects cease, no other Gambit may be selected for that Model. When this Gambit is selected, the Controlling Player of this Model gains a bonus of +5 to the following Focus Roll and successive Focus Rolls made during the Challenge, until this Model fails to inflict an Unsaved Wound in the Strike Step. When this Model fails to inflict an Unsaved Wound in the Strike Step, the effects of the Gambit cease, and the Controlling Player cannot select this Gambit again during the current Challenge."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "heedless": {
+            "id": "heedless",
+            "name": "Heedless",
+            "text": "A Unit that includes any Models with this Special Rule cannot claim Objectives. A Unit that includes any Models with this Special Rule cannot Control or Contest any Objective Marker - this overrides any other Rule or Special Rule that may apply to the Unit regardless of the source of the Rule or effect."
+        },
+        "headstrong": {
+            "id": "headstrong",
+            "name": "Headstrong",
+            "text": "Models with this Special Rule may make a Charge in the same Turn they Rush, but become Stunned and Pinned if they fail such a Charge. A Unit which only includes Models with this Special Rule may have a Charge declared for it in the same Player Turn that it made a Rush move, but if that Charge’s Charge Roll is failed all Models in that Unit immediately gain the Stunned and Pinned Tactical Statuses."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "scouring-tempest": {
+            "id": "scouring-tempest",
+            "name": "Scouring Tempest",
+            "text": "When a Unit that contains any Models with this Special Rule is selected to make a Shooting Attack, if five or more Models make attacks with hand flamers, those hand flamers gain the Panic (1) Special Rule until that Shooting Attack has been resolved."
+        },
+        "lordsbane": {
+            "id": "lordsbane",
+            "name": "Lordsbane",
+            "text": "Varagyr gain a bonus to their Combat Resolution if the Thegn survives a Challenge. During the Glory Step of a Challenge involving a Thegn Model with this Special Rule, if that Model was not Removed as a Casualty during that Challenge, the Controlling Player gains a number of Combat Resolution Points equal to the number of Varagyr Models in the same Unit, to a maximum of +4, for that Combat in the following Resolution Sub-Phase."
+        },
+        "fast": {
+            "id": "fast",
+            "name": "Fast (X)",
+            "text": "A Unit that only includes Models with the Fast (X) Special Rule gains a bonus to Rush and Charge Moves. When the Player controlling a Unit that is composed entirely of Models with the Fast (X) Special Rule elects to have that Unit Rush, add the value of X attached to the specific variant of Fast (X) to the distance the Unit can move. Likewise, when a Unit composed entirely of Models with the Fast (X) Special Rule is required to make a Charge Move, add the value of X attached to the specific variant of the Fast (X) Special Rule as a positive modifier to the Charge Roll. In any situation where a Unit includes Models with two or more variants of the Fast (X) Special Rule, the lowest possible modifier is used.",
+            "configurable": true
+        },
+        "wolf-kin-of-russ": {
+            "id": "wolf-kin-of-russ",
+            "name": "Wolf-kin of Russ",
+            "text": "A Unit containing Models with this Special Rule may never be joined by any Model other than Leman Russ."
+        },
+        "the-hunters-strike": {
+            "id": "the-hunters-strike",
+            "name": "The Hunter’s Strike",
+            "text": "LEGION TACTICA All Models with the Space Wolves Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: Space Wolves make a longer Set-up Move. Models with this Special Rule must add +2\" to the distance of any Set-up Move , to a maximum of 6\"."
+        },
+        "no-prey-escapes": {
+            "id": "no-prey-escapes",
+            "name": "No Prey Escapes",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Space Wolves Trait can select one of the following Gambits instead of any others available to that Model: This Gambit means that the Challenge only ends when one or both Models are Removed as Casualties. When this Gambit is selected, the Opposing Player may never choose to move to the Glory Step , regardless of who has Challenge Advantage , who is the Active Player or the effects of any other Gambit or Special Rule, until one or both Models are Removed as Casualties . This Gambit increases the Attacks Characteristic of a Unit that accompanies a Model fighting a Challenge. If a Model with this Gambit selected for it is the winner of the Challenge whilst this Gambit is selected and the opposing Model is Removed as a Casualty , all Models in the same Unit as the Model that this Gambit is selected for gain a modifier of +1 to their Attacks Characteristic in the following Fight Sub-Phase ."
+        },
+        "a-saga-woven-of-glory": {
+            "id": "a-saga-woven-of-glory",
+            "name": "A Saga Woven Of Glory",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Space Wolves Trait can select one of the following Gambits instead of any others available to that Model: This Gambit means that the Challenge only ends when one or both Models are Removed as Casualties. When this Gambit is selected, the Opposing Player may never choose to move to the Glory Step , regardless of who has Challenge Advantage , who is the Active Player or the effects of any other Gambit or Special Rule, until one or both Models are Removed as Casualties . This Gambit increases the Attacks Characteristic of a Unit that accompanies a Model fighting a Challenge. If a Model with this Gambit selected for it is the winner of the Challenge whilst this Gambit is selected and the opposing Model is Removed as a Casualty , all Models in the same Unit as the Model that this Gambit is selected for gain a modifier of +1 to their Attacks Characteristic in the following Fight Sub-Phase ."
+        },
+        "bestial-savagery": {
+            "id": "bestial-savagery",
+            "name": "Bestial Savagery (Advanced Reaction)",
+            "text": "This Reaction allows the Reacting Unit to make a Damage Mitigation Roll against Wounds caused during the current Shooting Phase and also move towards an Enemy Unit. Trigger: Once per Battle, the Reactive Player may declare the Bestial Savagery Advanced Reaction in the Shooting Phase , during Step 3 of any Shooting Attack made by the Active Player that targets a Unit that only includes Models with the Space Wolves Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare the Bestial Savagery Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Shooting Attack triggers the Reaction. The Reacting Unit is always the Unit that was the target of the Shooting Attack that triggers the Reaction. Process Once the Bestial Savagery Advanced Reaction has been declared, the Active Player must resolve all remaining Steps of the Shooting Attack process as normal. Models in the Reacting Unit gain the Feel No Pain (5+) Special Rule for the duration of this Shooting Phase. Immediately after Step 11 of the Shooting Attack that triggered this Reaction is resolved, the Reacting Unit must Move following the procedure for making a Set-up Move, as if the Target Unit were the Target of a Charge. If this Move is sufficient to bring any Models into Base Contact with the enemy, the Reacting Unit counts as having made a Successful Charge during the following Assault Phase and automatically passes all Checks that it is required to make in the following Morale Sub-Phase, with the Controlling Player assumed to have rolled a pair of 1s for each required Check."
+        }
+    },
+    "detachments": {
+        "bloodied-claw": {
+            "id": "bloodied-claw",
+            "name": "Bloodied Claw",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": ["grey-slayer-pack"]
+                    }
+                },
+                {
+                    "roles": ["troop"],
+                    "units": {
+                        "unitIds": ["grey-slayer-pack"]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "pack-thegn": {
+            "id": "pack-thegn",
+            "name": "Pack Thegn",
+            "text": "If an Optae that has the Space Wolves Trait is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Pack Thegn A Model selected to fill a Prime Force Organisation Slot with this Prime Advantage: Has its Base Attacks and Weapon Skill Characteristics modified by +1. May have its power sword exchanged with one frost sword or frost axe for Free, or with one frost claw for +5 Points.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "space-wolves-fenrisian-axe": {
+            "id": "space-wolves-fenrisian-axe",
+            "name": "Fenrisian Axe",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "space-wolves-fenrisian-axe"
+                }
+            ]
+        },
+        "space-wolves-frost-blades": {
+            "id": "space-wolves-frost-blades",
+            "name": "Frost Blades",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "space-wolves-frost-blades"
+                }
+            ]
+        },
+        "the-hunters-strike-all": {
+            "id": "the-hunters-strike-all",
+            "name": "The Hunter’s Strike",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "the-hunters-strike"
+                    }
+                }
+            ]
+        }
+    }
+}

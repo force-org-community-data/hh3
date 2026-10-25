@@ -1,0 +1,2822 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "sons-of-horus",
+    "version": "1.0.0",
+    "name": "Sons of Horus",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "dark-emissary": {
+            "id": "dark-emissary",
+            "name": "Dark Emissary",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 90
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "dark-emissary",
+                    "name": "Dark Emissary",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "9",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "eyes-of-the-warmaster"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Sons of Horus"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "staff-of-dark-authority"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "ezekyle-abaddon": {
+            "id": "ezekyle-abaddon",
+            "name": "Ezekyle Abaddon",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 250
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "ezekyle-abaddon",
+                    "name": "Ezekyle Abaddon",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "7",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "5",
+                        "i": "5",
+                        "a": "6",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "master-of-the-justaerin"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Sons of Horus", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "banestrike-combi-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "grenade-harness"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "cthonian-power-claw"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its banestrike combi-bolter and grenade harness exchanged for one paragon blade for Free.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "paragon-blade-for-free": {
+                            "id": "paragon-blade-for-free",
+                            "name": "paragon blade for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["paragon-blade"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "paragon-blade"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "garviel-loken": {
+            "id": "garviel-loken",
+            "name": "Garviel Loken",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "garviel-loken",
+                    "name": "Garviel Loken",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "hatred",
+                            "value": "Traitor"
+                        },
+                        {
+                            "id": "born-survivor"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Sons of Horus", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "paragon-blade"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "horus-ascended": {
+            "id": "horus-ascended",
+            "name": "Horus Ascended",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 850
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "horus-ascended",
+                    "name": "Horus Ascended",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "9",
+                        "bs": "7",
+                        "s": "8",
+                        "t": "8",
+                        "w": "8",
+                        "i": "7",
+                        "a": "7",
+                        "ld": "14",
+                        "cl": "12",
+                        "wp": "12",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "master-of-war"
+                        },
+                        {
+                            "id": "the-warmaster-ascended"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "3"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "the-spreading-corruption"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Sons of Horus", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-warmasters-talon"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "worldbreaker"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "horus-lupercal": {
+            "id": "horus-lupercal",
+            "name": "Horus Lupercal",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 530
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "horus-lupercal",
+                    "name": "Horus Lupercal",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "8",
+                        "bs": "6",
+                        "s": "6",
+                        "t": "6",
+                        "w": "7",
+                        "i": "6",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "12",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-sons-of-horus"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "master-of-war"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Sons of Horus", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-warmasters-talon"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "worldbreaker"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "justaerin-terminator-squad": {
+            "id": "justaerin-terminator-squad",
+            "name": "Justaerin Terminator Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 275
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "justaerin",
+                    "name": "Justaerin",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "4"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Sons of Horus"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 50
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "banestrike-combi-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "power-weapons",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its banestrike combi-bolter exchanged for one volkite charger for Free or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger-for-free": {
+                            "id": "volkite-charger-for-free",
+                            "name": "volkite charger for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "for": {
+                            "id": "for",
+                            "name": "for",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its power weapon exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["lightning-claw"]
+                        },
+                        "carsoran-power-axe": {
+                            "id": "carsoran-power-axe",
+                            "name": "Carsoran power axe",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["carsoran-power-axe"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its banestrike combi-bolter and power weapon exchanged for one pair of lightning claws for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "For every five Models in this Unit, one Model in this Unit may have its banestrike combi-bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["heavy-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["multi-melta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "multi-melta"
+                                    }
+                                }
+                            ]
+                        },
+                        "reaper-autocannon": {
+                            "id": "reaper-autocannon",
+                            "name": "Reaper autocannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["reaper-autocannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "reaper-autocannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-blaster": {
+                            "id": "plasma-blaster",
+                            "name": "Plasma blaster",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-blaster"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-blaster"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "little-horus-aximand": {
+            "id": "little-horus-aximand",
+            "name": "‘Little’ Horus Aximand",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 170
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "horus-aximand",
+                    "name": "Horus Aximand",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "haunted"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "I"
+                        }
+                    ]
+                }
+            ],
+            "traits": [
+                "Traitor",
+                "Sons of Horus",
+                "Master of the Legion",
+                "Shield"
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "mourn-it-all"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "banestrike-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "maloghurst-the-twisted": {
+            "id": "maloghurst-the-twisted",
+            "name": "Maloghurst The Twisted",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 140
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "maloghurst-the-twisted",
+                    "name": "Maloghurst the Twisted",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "broken-in-body"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Sons of Horus"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "banestrike-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "icon-of-the-warmaster"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "reaver-attack-squad": {
+            "id": "reaver-attack-squad",
+            "name": "Reaver Attack Squad",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 135
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "reaver-chieftain",
+                    "name": "Reaver Chieftain",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "id": "reaver",
+                    "name": "Reaver",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Sons of Horus"],
+            "additionalModels": {
+                "max": 15,
+                "cost": {
+                    "points": 22
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "chainaxe",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainaxe exchanged for one chainsword for Free, or for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        },
+                        "chainsword-for-free": {
+                            "id": "chainsword-for-free",
+                            "name": "chainsword for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "or-for": {
+                            "id": "or-for",
+                            "name": "or for",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every five Models in this Unit, one Reaver in this Unit may have its chainaxe exchanged for one item from the Legion Special Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-special-weapons": {
+                            "id": "legion-special-weapons",
+                            "target": "legion-special-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Reaver in this Unit may have a vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Up to two Reavers in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "Any Model in this Unit may have its bolt pistol and chainaxe exchanged for one pair of lightning claws for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-7": {
+                    "id": "option-7",
+                    "name": "The Reaver Chieftain may have melta bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "sons-of-horus-chieftain-squad": {
+            "id": "sons-of-horus-chieftain-squad",
+            "name": "Sons of Horus Chieftain Squad",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 155
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "chieftain",
+                    "name": "Chieftain",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "honour-above-all"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Sons of Horus", "Shield"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 25
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "banestrike-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "boarding-shield",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainaxe": {
+                            "id": "chainaxe",
+                            "name": "Chainaxe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainaxe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "One Model in this Unit may have its banestrike bolter exchanged for one Legion standard for +20 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-standard": {
+                            "id": "legion-standard",
+                            "name": "Legion standard",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["legion-standard"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "legion-standard"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "sons-of-horus-dark-emissary-in-terminator-armour": {
+            "id": "sons-of-horus-dark-emissary-in-terminator-armour",
+            "name": "Sons of Horus Dark Emissary in Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "cataphractii-dark-emissary",
+                    "name": "Cataphractii Dark Emissary",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "5",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "9",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command", "Heavy"]
+                }
+            ],
+            "traits": ["Traitor", "Sons of Horus"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "staff-of-dark-authority"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its combi-bolter exchanged for one volkite charger for Free or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger-for-free": {
+                            "id": "volkite-charger-for-free",
+                            "name": "volkite charger for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "for": {
+                            "id": "for",
+                            "name": "for",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "sons-of-horus-inductii-squad": {
+            "id": "sons-of-horus-inductii-squad",
+            "name": "Sons of Horus Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "creed-of-brutality"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Sons of Horus"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Inductii in this Unit may have its chainsword exchanged for one chainaxe for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainaxe-for-free": {
+                            "id": "chainaxe-for-free",
+                            "name": "chainaxe for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainaxe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "Heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "charnabal-sabre"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "sons-of-horus-reaver-aggressor-squad": {
+            "id": "sons-of-horus-reaver-aggressor-squad",
+            "name": "Sons of Horus Reaver Aggressor Squad",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "reaver-chieftain-with-jump-pack",
+                    "name": "Reaver Chieftain with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Sons of Horus"],
+            "additionalModels": {
+                "max": 15,
+                "cost": {
+                    "points": 27
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "chainaxe",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainaxe exchanged for one chainsword for Free, or for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        },
+                        "chainsword-for-free": {
+                            "id": "chainsword-for-free",
+                            "name": "chainsword for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "or-for": {
+                            "id": "or-for",
+                            "name": "or for",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every five Models in this Unit, one Reaver with Jump Pack in this Unit may have its chainaxe exchanged for one item from the Legion Special Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-special-weapons": {
+                            "id": "legion-special-weapons",
+                            "target": "legion-special-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Reaver with Jump Pack in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Up to two Reavers with Jump Packs in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "Any Model in this Unit may have its bolt pistol and chainaxe exchanged for one pair of lightning claws for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-7": {
+                    "id": "option-7",
+                    "name": "The Reaver Chieftain may have melta bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "tybalt-marr": {
+            "id": "tybalt-marr",
+            "name": "Tybalt Marr",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 160
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tybalt-marr",
+                    "name": "Tybalt Marr",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "hatred",
+                            "value": "Shattered Legions"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Sons of Horus", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-culling-blade"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "banestrike-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "vheren-ashurhaddon": {
+            "id": "vheren-ashurhaddon",
+            "name": "Vheren Ashurhaddon",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 205
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "vheren-ashurhaddon",
+                    "name": "Vheren Ashurhaddon",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "7",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"]
+                }
+            ],
+            "traits": ["Traitor", "Sons of Horus", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-axe-serpentis"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "banestrike-fusilade"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "vexilla"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        }
+    },
+    "weapons": {
+        "staff-of-dark-authority": {
+            "id": "staff-of-dark-authority",
+            "name": "Staff of Dark Authority",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Staff of Dark Authority",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "banestrike-combi-bolter": {
+            "id": "banestrike-combi-bolter",
+            "name": "Banestrike Combi-bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike combi-bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "4",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "cthonian-power-claw": {
+            "id": "cthonian-power-claw",
+            "name": "Cthonian Power Claw",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Cthonian power claw",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-warmasters-talon": {
+            "id": "the-warmasters-talon",
+            "name": "The Warmaster’s Talon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "The Warmaster’s Talon",
+                    "stats": {
+                        "r": "24",
+                        "fp": "5",
+                        "rs": "5",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "worldbreaker": {
+            "id": "worldbreaker",
+            "name": "Worldbreaker",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Worldbreaker",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "carsoran-power-axe": {
+            "id": "carsoran-power-axe",
+            "name": "Carsoran power axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Carsoran power axe",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "mourn-it-all": {
+            "id": "mourn-it-all",
+            "name": "Mourn-It-All",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Mourn-it-all",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "banestrike-bolter": {
+            "id": "banestrike-bolter",
+            "name": "Banestrike bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "power-sword": {
+            "id": "power-sword",
+            "name": "Power sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Power sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-culling-blade": {
+            "id": "the-culling-blade",
+            "name": "The Culling Blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Culling Blade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-axe-serpentis": {
+            "id": "the-axe-serpentis",
+            "name": "The Axe Serpentis",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Axe Serpentis",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "banestrike-fusilade": {
+            "id": "banestrike-fusilade",
+            "name": "Banestrike Fusilade",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike fusilade",
+                    "stats": {
+                        "r": "10",
+                        "fp": "4",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "banestrike-bolt-cannon": {
+            "id": "banestrike-bolt-cannon",
+            "name": "Banestrike bolt cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike bolt cannon",
+                    "stats": {
+                        "r": "24",
+                        "fp": "4",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "icon-of-the-warmaster": {
+            "id": "icon-of-the-warmaster",
+            "name": "Icon of the Warmaster",
+            "text": ""
+        },
+        "brutal-enforcement": {
+            "id": "brutal-enforcement",
+            "name": "Brutal Enforcement",
+            "text": "A Model with this Special Rule may target a friendly Unit with a Shooting Attack and the targeted Unit loses the Routed Tactical Status. At the start of the Move Sub-Phase , the Controlling Player of a Model with this Special Rule can select one Unit from their Army with the Routed Tactical Status that is within 12\" of the Model with this Special Rule. If they do, the Model with this Special Rule immediately makes a Shooting Attack, targeting that Unit, using only its Banestrike bolt cannon . This Shooting Attack does not cause any Leadership Checks . Once this Shooting Attack has been resolved, the Target Unit loses the Routed Tactical Status."
+        }
+    },
+    "upgrades": {
+        "sons-of-horus-banestrike-bolters": {
+            "id": "sons-of-horus-banestrike-bolters",
+            "name": "Banestrike Bolters",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "banestrike-bolters": {
+                    "id": "banestrike-bolters",
+                    "name": "Banestrike Bolters",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["banestrike-bolter"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "banestrike-bolter"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "sons-of-horus-carsoran-power-axes": {
+            "id": "sons-of-horus-carsoran-power-axes",
+            "name": "Carsoran Power Axes",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "carsoran-power-axes": {
+                    "id": "carsoran-power-axes",
+                    "name": "Carsoran Power Axes",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["carsoran-power-axe"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "carsoran-power-axe"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "sons-of-horus-banestrike-bolt-cannon": {
+            "id": "sons-of-horus-banestrike-bolt-cannon",
+            "name": "Banestrike Bolt Cannon",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "banestrike-bolt-cannon": {
+                    "id": "banestrike-bolt-cannon",
+                    "name": "Banestrike Bolt Cannon",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["banestrike-bolt-cannon"]
+                }
+            },
+            "default": "none"
+        },
+        "sons-of-horus-brutal-enforcement": {
+            "id": "sons-of-horus-brutal-enforcement",
+            "name": "Brutal Enforcement",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "brutal-enforcement": {
+                    "id": "brutal-enforcement",
+                    "name": "Brutal Enforcement",
+                    "cost": {
+                        "points": 0
+                    },
+                    "equipmentRefs": ["brutal-enforcement"]
+                }
+            },
+            "default": "none"
+        }
+    },
+    "specialRules": {
+        "eyes-of-the-warmaster": {
+            "id": "eyes-of-the-warmaster",
+            "name": "Eyes of the Warmaster",
+            "text": "If a Model with this Special Rule joins a Unit with a different Faction Trait, the Leadership and Cool Characteristics of Models in that Unit are not reduced."
+        },
+        "master-of-the-justaerin": {
+            "id": "master-of-the-justaerin",
+            "name": "Master of the Justaerin",
+            "text": "Abaddon confers additional Special Rules to Justaerin Terminator Squads that he joins. If a Model with this Special Rule joins a Justaerin Terminator Squad Unit in Reserves, Models in that Unit are also treated as having the Deep Strike Special Rule. In addition, when a Model with this Special Rule is deployed as part of a Deep Strike, that Model and each other Model in the same Unit gain the Feel No Pain (5+) Special Rule until the Controlling Player’s next Effects Sub-Phase."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred (X)",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        },
+        "born-survivor": {
+            "id": "born-survivor",
+            "name": "Born Survivor",
+            "text": "This Special Rule allows Garviel Loken to avoid being Removed as a Casualty. If the Wounds Characteristic of a Model with this Special Rule is reduced to 0 or less, the Controlling Player can roll one Dice. On a 4+, this Model is not Removed as a Casualty and has its current Wounds Characteristic set to ‘1’."
+        },
+        "master-of-war": {
+            "id": "master-of-war",
+            "name": "Master of War",
+            "text": "Horus grants the Army he is part of an additional point of Reaction Allotment. The Controlling Player of an Army that includes a Model with this Special Rule has +1 to their Reaction Allotment in each Turn, unless that Model is Removed as a Casualty."
+        },
+        "the-warmaster-ascended": {
+            "id": "the-warmaster-ascended",
+            "name": "The Warmaster Ascended",
+            "text": "Horus Ascended cannot be included in the same Army as Horus Lupercal."
+        },
+        "the-spreading-corruption": {
+            "id": "the-spreading-corruption",
+            "name": "The Spreading Corruption",
+            "text": "Horus can join Units that have the Malefic Sub-Type. A Model with this Special Rule can join Units with the Malefic Sub-Type as if it had that Sub-Type and while part of such a Unit, is treated as having that Sub-Type."
+        },
+        "sire-of-the-sons-of-horus": {
+            "id": "sire-of-the-sons-of-horus",
+            "name": "Sire of the Sons of Horus",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Tactical Squad Units and/or Despoiler Squad Units, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Sons of Horus Trait in the same Army: Until the end of the first Battle Turn of the Battle, the Controlling Player of a Model with this Special Rule can add +1 to the Move Characteristic of Models from their Army with the Sons of Horus Trait (excluding Models with the Vehicle Type)."
+        },
+        "haunted": {
+            "id": "haunted",
+            "name": "Haunted",
+            "text": "Aximand’s Controlling Player gains additional Victory Points if he kills Garviel Loken in a Challenge. The Controlling Player of a Model with this Special Rule gains 2 Victory Points if Garviel Loken is Removed as a Casualty whilst engaged in a Challenge with a Model with this Special Rule."
+        },
+        "impact": {
+            "id": "impact",
+            "name": "Impact (X)",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "broken-in-body": {
+            "id": "broken-in-body",
+            "name": "Broken in Body",
+            "text": "Maloghurst’s Controlling Player can choose whether he fights in Challenges. Each time an enemy Model declares a Challenge, the Controlling Player of a Model with this Special Rule can select whether the Model with this Special Rule is eligible to take part in a Challenge."
+        },
+        "honour-above-all": {
+            "id": "honour-above-all",
+            "name": "Honour Above All",
+            "text": "When any Model that has joined a Unit that includes any Models with this Special Rule takes part in a Challenge, all Models in that Unit with this Special Rule gain a bonus of +1 to all Wound Tests made during the following Fight Sub-Phase of that Assault Phase."
+        },
+        "creed-of-brutality": {
+            "id": "creed-of-brutality",
+            "name": "Creed of Brutality",
+            "text": "If a Unit containing any Models with this Special Rule succeeds on a Leadership Check in the Start Phase, they gain the Impact (S) Special Rule until the end of the Battle Turn. In the Effects Sub-Phase of their Start Phase, the Controlling Player of a Unit containing any Models with this Special Rule can make a Leadership Check for that Unit, and if any Model in that Unit is within 6\" of a friendly Model with the Sons of Horus Trait and a Weapon Skill Characteristic of 5 or more, that friendly Model’s Leadership Characteristic may be used to resolve this Leadership Check. If that Check is successful, every Model in the Unit gains the Impact (S) Special Rule until the end of that Battle Turn. If the Check is unsuccessful, every Model in that Unit immediately gains the Stunned Tactical Status."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "death-dealers": {
+            "id": "death-dealers",
+            "name": "Death Dealers",
+            "text": "LEGION TACTICA All Models with the Sons of Horus Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: Sons of Horus make Volley Attacks at their full Ballistic Skill Characteristic. When a Model with this Special Rule makes Volley Attacks , it is not required to fire Snap Shots ."
+        },
+        "merciless-strike": {
+            "id": "merciless-strike",
+            "name": "Merciless Strike",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Sons of Horus Trait can select Merciless Strike instead of any others available to that Model: When this Gambit is selected, the Controlling Player’s Model gains the Phage (T) Special Rule. This Gambit can only be selected during the first Face-Off Step of a Challenge involving this Model. While this Gambit is selected, any Weapon this Model uses during this Challenge gains the Phage (T) Special Rule for the duration of this Strike Step ."
+        },
+        "warrior-pride": {
+            "id": "warrior-pride",
+            "name": "Warrior Pride (Advanced Reaction)",
+            "text": "This Reaction allows the Reacting Unit to ignore Challenges from an opponent with a lower Weapon Skill Characteristic. Trigger: The Reactive Player may declare a Warrior Pride Advanced Reaction when a Unit made up of Models with the Sons of Horus Trait is in Combat with an enemy Unit and the Active Player selects a Model to be the Challenger. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Warrior Pride Advanced Reaction, this cost paid as soon as the declaration is made. Target: For a Warrior Pride Advanced Reaction, the Target Unit is always the Unit that includes the enemy Model that is selected as the Challenger. The Reacting Unit is the Unit that includes any Models with the Sons of Horus Trait that could be selected as the Challenged. Process If the Challenger’s Base Weapon Skill Characteristic is lower than the Base Weapon Skill Characteristic of all Models in the Reacting Unit that would be eligible to accept the Challenge, the Reactive Player can choose not to accept the Challenge. If they do so, the Challenge SubPhase ends immediately and that Model does not gain the Disgraced Tactical Status."
+        }
+    },
+    "detachments": {
+        "supremacy-cadre": {
+            "id": "supremacy-cadre",
+            "name": "Supremacy Cadre",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                },
+                {
+                    "roles": ["elites"]
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "martial-supremacy": {
+            "id": "martial-supremacy",
+            "name": "Martial Supremacy",
+            "text": "If a Unit which only includes Models with the Sons of Horus Trait and the Elites Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Martial Supremacy One Model in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gains the Champion Sub-Type and the Duellist’s Edge (1) Special Rule.",
+            "slotTag": "prime"
+        },
+        "decurion-lanius": {
+            "id": "decurion-lanius",
+            "name": "Decurion Lanius",
+            "text": "This upgrade may be purchased for any of the following Units from the Legiones Astartes Army List with the Sons of Horus Trait, and which do not have any Pintle Mounted Weapons: Predator +25 Points Kratos Assault Tank +30 Points Sicaran (Models with twin accelerator autocannon or punisher rotary cannon only) +25 Points A Model with this upgrade has a Pintle Mounted Banestrike bolt cannon and gains the Brutal Enforcement Special Rule.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "sons-of-horus-banestrike-bolters": {
+            "id": "sons-of-horus-banestrike-bolters",
+            "name": "Banestrike Bolters",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["sons-of-horus-trait-and-the-command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-banestrike-bolters"
+                }
+            ]
+        },
+        "sons-of-horus-carsoran-power-axes": {
+            "id": "sons-of-horus-carsoran-power-axes",
+            "name": "Carsoran Power Axes",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-carsoran-power-axes"
+                }
+            ]
+        },
+        "sons-of-horus-banestrike-bolt-cannon": {
+            "id": "sons-of-horus-banestrike-bolt-cannon",
+            "name": "Banestrike Bolt Cannon",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-banestrike-bolt-cannon"
+                }
+            ]
+        },
+        "sons-of-horus-brutal-enforcement": {
+            "id": "sons-of-horus-brutal-enforcement",
+            "name": "Brutal Enforcement",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-brutal-enforcement"
+                }
+            ]
+        },
+        "death-dealers-all": {
+            "id": "death-dealers-all",
+            "name": "Death Dealers",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "death-dealers"
+                    }
+                }
+            ]
+        }
+    }
+}

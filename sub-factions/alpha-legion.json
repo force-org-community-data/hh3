@@ -1,0 +1,2169 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "alpha-legion",
+    "version": "1.0.0",
+    "name": "Alpha Legion",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "alpha-legion-effrit-disruption-cadre": {
+            "id": "alpha-legion-effrit-disruption-cadre",
+            "name": "Alpha Legion Effrit Disruption Cadre",
+            "role": "recon",
+            "type": "infantry",
+            "cost": {
+                "points": 145
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "principal",
+                    "name": "Principal",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "8",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Skirmish"],
+                    "specialRules": [
+                        {
+                            "id": "infiltrate",
+                            "value": "8"
+                        },
+                        {
+                            "id": "hydras-wail"
+                        }
+                    ]
+                },
+                {
+                    "id": "disruptor",
+                    "name": "Disruptor",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "8",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Skirmish"],
+                    "specialRules": [
+                        {
+                            "id": "infiltrate",
+                            "value": "8"
+                        },
+                        {
+                            "id": "hydras-wail"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Alpha Legion", "Smokescreen"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 25
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "banestrike-shotgun",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Principal in this Unit may have one item from the Legion Sergeant Melee Weapons list selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "principal",
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its banestrike shotgun exchanged for one Nemesis bolter for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "nemesis-bolter": {
+                            "id": "nemesis-bolter",
+                            "name": "Nemesis bolter",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["nemesis-bolter"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-shotgun"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have one power dagger selected for it for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-dagger": {
+                            "id": "power-dagger",
+                            "name": "power dagger",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["power-dagger"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Every Model in this Unit may have melta bombs selected for it for +25 Points.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "alpha-legion-inductii-squad": {
+            "id": "alpha-legion-inductii-squad",
+            "name": "Alpha Legion Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 90
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "line",
+                            "value": "1"
+                        },
+                        {
+                            "id": "treacherous-lure"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Alpha Legion"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "For every five Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "alpharius": {
+            "id": "alpharius",
+            "name": "Alpharius",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 465
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "alpharius",
+                    "name": "Alpharius",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "7",
+                        "bs": "7",
+                        "s": "6",
+                        "t": "6",
+                        "w": "6",
+                        "i": "7",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "11",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Light"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-alpha-legion"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "everywhere-and-nowhere"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Alpha Legion", "Smokescreen", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-pale-spear"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-hydras-spite"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "the-pythian-scales"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "venom-spheres"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            }
+        },
+        "armillus-dynat": {
+            "id": "armillus-dynat",
+            "name": "Armillus Dynat",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 185
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "armillus-dynat",
+                    "name": "Armillus Dynat",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "harrowmaster"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Alpha Legion", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-prince-and-the-prophet"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "venom-spheres"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "phosphex-bomb"
+                }
+            ]
+        },
+        "autilon-skorr": {
+            "id": "autilon-skorr",
+            "name": "Autilon Skorr",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 135
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "autilon-skorr",
+                    "name": "Autilon Skorr",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "consul-delegatus"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Alpha Legion", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "rime-shard"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "exodus": {
+            "id": "exodus",
+            "name": "Exodus",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "exodus",
+                    "name": "Exodus",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "8",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "2",
+                        "ld": "9",
+                        "cl": "10",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Light"],
+                    "specialRules": [
+                        {
+                            "id": "shrouded",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "infiltrate",
+                            "value": "9"
+                        },
+                        {
+                            "id": "lone-killer"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Alpha Legion", "Smokescreen"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-instrument"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-dagger"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "venom-spheres"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ]
+        },
+        "headhunter-kill-team": {
+            "id": "headhunter-kill-team",
+            "name": "Headhunter Kill Team",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 125
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "headhunter-prime",
+                    "name": "Headhunter Prime",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Skirmish"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Command"
+                        },
+                        {
+                            "id": "infiltrate",
+                            "value": "9"
+                        }
+                    ]
+                },
+                {
+                    "id": "headhunter",
+                    "name": "Headhunter",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Skirmish"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Command"
+                        },
+                        {
+                            "id": "infiltrate",
+                            "value": "9"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Alpha Legion", "Smokescreen"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 20
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "banestrike-combi-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-dagger",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Headhunter Prime in this Unit may have its power dagger exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "headhunter-prime",
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Headhunter Prime in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "profileId": "headhunter-prime",
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every five Models in this Unit, one Headhunter in this Unit may have its Banestrike combi-bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-bolter": {
+                            "id": "heavy-bolter",
+                            "name": "Heavy bolter",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-bolter"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    }
+                                }
+                            ]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["multi-melta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "multi-melta"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Every Model in this Unit may have melta bombs selected for it for +5 Points per Model.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Any Model in this Unit may have its banestrike combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "The Headhunter Prime in this Unit may have its bolt pistol exchanged for one inferno pistol for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "inferno-pistol": {
+                            "id": "inferno-pistol",
+                            "name": "inferno pistol",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["inferno-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "inferno-pistol"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "headhunter-prime",
+                    "default": "none"
+                }
+            }
+        },
+        "lernaean-terminator-squad": {
+            "id": "lernaean-terminator-squad",
+            "name": "Lernaean Terminator Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 250
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "harrower",
+                    "name": "Harrower",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "line",
+                            "value": "1"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Legiones Astartes"
+                        }
+                    ]
+                },
+                {
+                    "id": "lernaean",
+                    "name": "Lernaean",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "line",
+                            "value": "1"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Legiones Astartes"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Alpha Legion"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 45
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "volkite-charger",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its volkite charger exchanged for one combi-bolter for Free or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "combi-bolter-for-free": {
+                            "id": "combi-bolter-for-free",
+                            "name": "combi-bolter for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    }
+                                }
+                            ]
+                        },
+                        "for": {
+                            "id": "for",
+                            "name": "for",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its power axe exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-maul"
+                                    }
+                                }
+                            ]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["lightning-claw"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lightning-claw"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainfist"
+                                    }
+                                }
+                            ]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its volkite charger and power axe exchanged for one pair of lightning claws for +10 Points.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "For every five Models in this Unit, one Lernaean in this Unit may have its volkite charger exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["heavy-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "conversion-beam-cannon": {
+                            "id": "conversion-beam-cannon",
+                            "name": "Conversion beam cannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["conversion-beam-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "conversion-beam-cannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "reaper-autocannon": {
+                            "id": "reaper-autocannon",
+                            "name": "Reaper autocannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["reaper-autocannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "reaper-autocannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-blaster": {
+                            "id": "plasma-blaster",
+                            "name": "Plasma blaster",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-blaster"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-blaster"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "saboteur": {
+            "id": "saboteur",
+            "name": "Saboteur",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 95
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "saboteur",
+                    "name": "Saboteur",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Specialist", "Skirmish"],
+                    "specialRules": [
+                        {
+                            "id": "false-colours"
+                        },
+                        {
+                            "id": "infiltrate",
+                            "value": "6"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Alpha Legion", "Smokescreen"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "banestrike-shotgun"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-dagger"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "melta-bombs"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "venom-spheres"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        }
+    },
+    "weapons": {
+        "banestrike-shotgun": {
+            "id": "banestrike-shotgun",
+            "name": "Banestrike Shotgun",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike shotgun",
+                    "stats": {
+                        "r": "12",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "stun",
+                            "value": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "power-dagger": {
+            "id": "power-dagger",
+            "name": "Power Dagger",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Power dagger",
+                    "stats": {
+                        "im": "+2",
+                        "am": "A",
+                        "sm": "-1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-pale-spear": {
+            "id": "the-pale-spear",
+            "name": "The Pale Spear",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Pale Spear",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "S"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-hydras-spite": {
+            "id": "the-hydras-spite",
+            "name": "The Hydra’s Spite",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "The Hydra’s Spite",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "7",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "venom-spheres": {
+            "id": "venom-spheres",
+            "name": "Venom Spheres",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Venom spheres",
+                    "stats": {
+                        "r": "8",
+                        "fp": "1",
+                        "rs": "1",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-prince-and-the-prophet": {
+            "id": "the-prince-and-the-prophet",
+            "name": "The Prince and the Prophet",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Prince",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "thunderstrike"
+                        }
+                    ]
+                },
+                {
+                    "name": "The Prophet",
+                    "stats": {
+                        "im": "-2",
+                        "am": "-1",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "rime-shard": {
+            "id": "rime-shard",
+            "name": "Rime-shard",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Rime-shard",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "the-instrument": {
+            "id": "the-instrument",
+            "name": "The Instrument",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Rapid shot",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"]
+                },
+                {
+                    "name": "- Execution shot",
+                    "stats": {
+                        "r": "72",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "D"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "banestrike-combi-bolter": {
+            "id": "banestrike-combi-bolter",
+            "name": "Banestrike Combi-bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike combi-bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "4",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "inferno-pistol": {
+            "id": "inferno-pistol",
+            "name": "Inferno Pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Inferno pistol",
+                    "stats": {
+                        "r": "6",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Melta"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "melta",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ]
+        },
+        "banestrike-bolter": {
+            "id": "banestrike-bolter",
+            "name": "Banestrike bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Banestrike combi-bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "4",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "the-pythian-scales": {
+            "id": "the-pythian-scales",
+            "name": "The Pythian Scales",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "alpha-legion-venom-spheres": {
+            "id": "alpha-legion-venom-spheres",
+            "name": "Venom Spheres",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "venom-spheres": {
+                    "id": "venom-spheres",
+                    "name": "Venom Spheres",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["venom-spheres"]
+                }
+            },
+            "default": "none"
+        },
+        "alpha-legion-power-daggers": {
+            "id": "alpha-legion-power-daggers",
+            "name": "Power Daggers",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "power-daggers": {
+                    "id": "power-daggers",
+                    "name": "Power Daggers",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["power-dagger"]
+                }
+            },
+            "default": "none"
+        },
+        "legion-combi-weapons": {
+            "id": "legion-combi-weapons",
+            "name": "Legion Combi-weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "combi-bolter": {
+                    "id": "combi-bolter",
+                    "name": "Combi-bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["combi-bolter"]
+                },
+                "combi-flamer": {
+                    "id": "combi-flamer",
+                    "name": "Combi-flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-flamer"]
+                },
+                "combi-melta": {
+                    "id": "combi-melta",
+                    "name": "Combi-melta",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-melta"]
+                },
+                "combi-plasma": {
+                    "id": "combi-plasma",
+                    "name": "Combi-plasma",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-plasma"]
+                },
+                "combi-volkite": {
+                    "id": "combi-volkite",
+                    "name": "Combi-volkite",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-volkite"]
+                },
+                "combi-grenade": {
+                    "id": "combi-grenade",
+                    "name": "Combi-grenade",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-grenade"]
+                },
+                "combi-disintegrator": {
+                    "id": "combi-disintegrator",
+                    "name": "Combi-disintegrator",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-disintegrator"]
+                },
+                "combi-grav": {
+                    "id": "combi-grav",
+                    "name": "Combi-grav",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-grav"]
+                },
+                "banestrike-bolter": {
+                    "id": "banestrike-bolter",
+                    "name": "Banestrike bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["banestrike-bolter"]
+                },
+                "banestrike-combi-bolter": {
+                    "id": "banestrike-combi-bolter",
+                    "name": "Banestrike combi-bolter",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["banestrike-combi-bolter"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "hydras-wail": {
+            "id": "hydras-wail",
+            "name": "Hydra’s Wail",
+            "text": "When making Cool or Intelligence Checks for a Unit with at least one Model within 12\" of at least one enemy Model with this Special Rule, the Controlling Player must roll an additional Dice and discard the lower roll."
+        },
+        "treacherous-lure": {
+            "id": "treacherous-lure",
+            "name": "Treacherous Lure",
+            "text": "A Unit entirely composed of Models with this Special Rule cannot be targeted by Shooting Attacks during the first Battle Turn. A Unit composed entirely of Models with this Special Rule may not be selected as the Target Unit of a Shooting Attack during the first Battle Turn. This Special Rule has no effect on Volley Attacks or Shooting Attacks made as part of a Reaction."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "sire-of-the-alpha-legion": {
+            "id": "sire-of-the-alpha-legion",
+            "name": "Sire of the Alpha Legion",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Tactical Squad Units and/or Assault Squad Units, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Alpha Legion Trait in the same Army: When the Controlling Player of a Model with this Special Rule makes a Reserve Roll for a Unit which only includes Models with the Alpha Legion Trait, on a Reserve Roll of 5+ that Unit can enter play as if it has the Outflank Special Rule."
+        },
+        "everywhere-and-nowhere": {
+            "id": "everywhere-and-nowhere",
+            "name": "Everywhere and Nowhere",
+            "text": "Alpharius may be redeployed at the start of the Battle. If the Mission being played has a Deploy Armies Step, at the end of this step, the Controlling Player of a Model with this Special Rule can deploy this Model again. When they do so, this Model can leave any Unit it has joined before being Deployed and can join a different Unit by being Deployed within Unit Coherency of it if the Unit is on the Battlefield, or placed with that Unit if it is currently Embarked upon a Model with the Transport Sub-Type, if that Model has sufficient remaining Transport Capacity and is able to Transport Models with the Bulky (X) Special Rule. This Special Rule cannot be used to deploy this Model on the Battlefield outside of the Controlling Player’s Deployment Zone, or Embarked upon a Model with the Transport Sub-Type on the Battlefield outside of the Controlling Player’s Deployment Zone."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "harrowmaster": {
+            "id": "harrowmaster",
+            "name": "Harrowmaster",
+            "text": "Certain Units gain the Infiltrate (X) Special Rule when joined by Armillus Dynat. When a Model with this Special Rule is deployed, if every Model in its Unit does not have the Bulky (X) Special Rule, all Models in that Unit gain the Infiltrate (12) Special Rule."
+        },
+        "thunderstrike": {
+            "id": "thunderstrike",
+            "name": "Thunderstrike",
+            "text": ""
+        },
+        "consul-delegatus": {
+            "id": "consul-delegatus",
+            "name": "Consul-Delegatus",
+            "text": "An Army may not include more than one Model with this Special Rule. If a Model with this Special Rule is selected to fill a Command Slot in any Detachment in the Crusade Force Organisation Chart, then the Controlling Player may select one Apex Detachment instead of the Auxiliary Detachment usually granted by filling a Command Slot. Additionally, a Model with this Special Rule counts as being a High Command Choice for the purposes of any version of the Slay the Warlord (X) Secondary Objective."
+        },
+        "shrouded": {
+            "id": "shrouded",
+            "name": "Shrouded (X)",
+            "text": "Shrouded (X) is a Damage Mitigation Test that may be taken in addition to a Saving Throw. A Model with the Shrouded (X) Special Rule gains a Shrouded Damage Mitigation Test that may be used in Step 9 of the Shooting Attack process to discard Wounds allocated to the Model. A Damage Mitigation Test may be made after and in addition to a Saving Throw. The Target Number for a Shrouded Damage Mitigation Test is the value of X attached to the specific variant of the Special Rule. A Shrouded Damage Mitigation Test may not be made against wounds inflicted by a Melee Weapon.",
+            "configurable": true
+        },
+        "lone-killer": {
+            "id": "lone-killer",
+            "name": "Lone Killer",
+            "text": "A Model with this Special Rule may not be joined by any other Models."
+        },
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred (X)",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        },
+        "false-colours": {
+            "id": "false-colours",
+            "name": "False Colours",
+            "text": "Saboteurs cannot be targeted by attacks before they are positively identified. A Unit composed entirely of Models with this Special Rule may not be selected as the Target Unit of a Shooting Attack or a Charge. When an enemy Unit finishes a Move within 6\" of a Model with this Special Rule, that Unit’s Controlling Player can make an Intelligence Check for that Unit. If that Check is passed, this Special Rule has no effect for that Model until the end of the Battle. In addition, if a Model with this Special Rule makes a Shooting Attack or ends a Charge Move in Base Contact with an enemy Model, this Special Rule has no effect for that Model until the end of the Battle."
+        },
+        "lies-and-obfuscation": {
+            "id": "lies-and-obfuscation",
+            "name": "Lies and Obfuscation",
+            "text": "LEGION TACTICA All Models with the Alpha Legion Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: Alpha Legion Models count as further away than they actually are. A Model with this Special Rule is always considered to be 2\" further away than it actually is when measuring range to it from any enemy Model for the purpose of resolving a Shooting Attack , Charge or any Reaction declared by an enemy Model or Unit (this is cumulative with any other modifiers to range imposed by Special Rules)."
+        },
+        "i-am-alpharius": {
+            "id": "i-am-alpharius",
+            "name": "I Am Alpharius",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Alpha Legion Trait can select I Am Alpharius instead of any others available to that Model: When this Gambit is selected, the Opposing Player’s Model’s Combat Initiative is reduced. This Gambit can only be selected during the first Face-Off Step of a Challenge involving this Model. If this Gambit is selected, then the opposing Model in the Challenge sets their Combat Initiative to ‘1’ until the end of this Strike Step ."
+        },
+        "smoke-and-mirrors": {
+            "id": "smoke-and-mirrors",
+            "name": "Smoke and Mirrors (Advanced Reaction)",
+            "text": "This Reaction changes the Target Number of Precision Hit Tests made against the Reacting Unit. Trigger: The Reactive Player may declare a Smoke and Mirrors Advanced Reaction in the Shooting Phase , during Step 3 of the Shooting Attack sequence of any Shooting Attack made by the Active Player that targets a Unit that includes only Models with the Alpha Legion Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Smoke and Mirrors Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Shooting Attack triggered the Reaction. The Reacting Unit is always the Unit that was the target of the Shooting Attack that triggered the Reaction. Process Once this Reaction is declared, until the Target Unit’s Shooting Attack has been resolved, Shooting Attacks with the Precision (X) Special Rule can only be inflicted on a Hit Test result of 6+."
+        }
+    },
+    "detachments": {
+        "headhunter-leviathal": {
+            "id": "headhunter-leviathal",
+            "name": "Headhunter Leviathal",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["recon"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["recon"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["elites"],
+                    "units": {
+                        "unitIds": ["seeker-squad", "headhunter-kill-team"]
+                    }
+                },
+                {
+                    "roles": ["elites"],
+                    "units": {
+                        "unitIds": ["seeker-squad", "headhunter-kill-team"]
+                    }
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "rewards-of-treachery": {
+            "id": "rewards-of-treachery",
+            "name": "Rewards of Treachery",
+            "text": "If a Unit which only includes Models with the Alpha Legion Trait that has the Command Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Rewards of Treachery Add one additional Battlefield Role Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. This Slot may be of any Battlefield Role other than High Command , Command , Warlord or Lord of War (note that a Detachment may gain more than one additional Force Organisation Slot if this option is selected for multiple Units in the same Detachment). Each Unit selected to fill such a Slot must: Be from the Legiones Astartes Army List. Not have the Alpha Legion Faction Trait on their Unit Profile. Not include any Models that have the Unique Sub-Type. All Models in any of these Units have their Faction Trait replaced with ‘Alpha Legion’.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "alpha-legion-venom-spheres": {
+            "id": "alpha-legion-venom-spheres",
+            "name": "Venom Spheres",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["alpha-legion-trait-and-the-command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "alpha-legion-venom-spheres"
+                }
+            ]
+        },
+        "alpha-legion-power-daggers": {
+            "id": "alpha-legion-power-daggers",
+            "name": "Power Daggers",
+            "selector": {
+                "profiles": {
+                    "anyOf": [
+                        "alpha-legion-trait-and-the-command",
+                        "champion",
+                        "sergeant"
+                    ]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "alpha-legion-power-daggers"
+                }
+            ]
+        },
+        "lies-and-obfuscation-all": {
+            "id": "lies-and-obfuscation-all",
+            "name": "Lies and Obfuscation",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "lies-and-obfuscation"
+                    }
+                }
+            ]
+        }
+    },
+    "overrides": [
+        {
+            "kind": "upgrades",
+            "id": "legion-combi-weapons"
+        }
+    ]
+}

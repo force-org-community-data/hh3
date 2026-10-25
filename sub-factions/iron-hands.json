@@ -1,0 +1,2600 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "iron-hands",
+    "version": "1.0.0",
+    "name": "Iron Hands",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "ferrus-manus": {
+            "id": "ferrus-manus",
+            "name": "Ferrus Manus",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 465
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "ferrus-manus",
+                    "name": "Ferrus Manus",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "7",
+                        "bs": "6",
+                        "s": "7",
+                        "t": "7",
+                        "w": "6",
+                        "i": "6",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-iron-hands"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "5"
+                        },
+                        {
+                            "id": "battlesmith",
+                            "value": "4"
+                        },
+                        {
+                            "id": "tempered-by-war"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Iron Hands", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "forgebreaker"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-medusan-carapace"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "gorgon-terminator-squad": {
+            "id": "gorgon-terminator-squad",
+            "name": "Gorgon Terminator Squad",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 200
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "gorgon-hammerbearer",
+                    "name": "Gorgon Hammerbearer",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "9",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "id": "gorgon-terminator",
+                    "name": "Gorgon Terminator",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "9",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Hands"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 35
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "thunder-hammer-gorgon-hammerbearer-only",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "artificer-power-axe-gorgon-terminator-only",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "gorgon-pattern-terminator-armour",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "grenade-harness-gorgon-hammerbearer-only",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Gorgon Terminator in this Unit may have its artificer power axe exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["lightning-claw"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "artificer-power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lightning-claw"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "artificer-power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "artificer-power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainfist"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Gorgon Terminator in this Unit may have its artificer power axe and combi-bolter exchanged for one pair of lightning claws for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "artificer-power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "For every three Models in this Unit, one Gorgon Terminator in this Unit may have its combi-bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "graviton-gun": {
+                            "id": "graviton-gun",
+                            "name": "Graviton gun",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["graviton-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "graviton-gun"
+                                    }
+                                }
+                            ]
+                        },
+                        "graviton-shredder": {
+                            "id": "graviton-shredder",
+                            "name": "Graviton shredder",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["graviton-shredder"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "graviton-shredder"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-blaster": {
+                            "id": "plasma-blaster",
+                            "name": "Plasma blaster",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-blaster"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-blaster"
+                                    }
+                                }
+                            ]
+                        },
+                        "reaper-autocannon": {
+                            "id": "reaper-autocannon",
+                            "name": "Reaper autocannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["reaper-autocannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "reaper-autocannon"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "One Gorgon Terminator in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "iron-father": {
+            "id": "iron-father",
+            "name": "Iron Father",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "iron-father",
+                    "name": "Iron Father",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "5",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "lord-of-automata"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Hands", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "artificer-power-axe"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "volkite-charger"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "servo-arm"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "augury-scanner"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cortex-controller"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its volkite charger exchanged for one item from the Legion Combi-weapon list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "take": {
+                            "id": "take",
+                            "name": "This Model may have its volkite charger exchanged for one item from the Legion Combi-weapon list.",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have its artificer power axe exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "artificer-power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        },
+                        "paragon-blade": {
+                            "id": "paragon-blade",
+                            "name": "Paragon blade",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["paragon-blade"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "artificer-power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "paragon-blade"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "This Model may have one cyber-familiar selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "cyber-familiar": {
+                            "id": "cyber-familiar",
+                            "name": "cyber-familiar",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cyber-familiar"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "iron-hands-inductii-squad": {
+            "id": "iron-hands-inductii-squad",
+            "name": "Iron Hands Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 90
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "line",
+                            "value": "1"
+                        },
+                        {
+                            "id": "forbidden-augmentations"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Hands"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "One Inductii in this Unit may have phosphex bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "phosphex-bombs": {
+                            "id": "phosphex-bombs",
+                            "name": "phosphex bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["phosphex-bomb"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "iron-hands-iron-father-in-artificer-armour": {
+            "id": "iron-hands-iron-father-in-artificer-armour",
+            "name": "Iron Hands Iron Father in Artificer Armour",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 150
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "iron-father-in-artificer-armour",
+                    "name": "Iron Father in Artificer Armour",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "lord-of-automata"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Hands", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "servo-arm"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cortex-controller"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolter and/or bolt pistol exchanged for one item from the Legion Officer Wargear list or one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "paragon-blade": {
+                            "id": "paragon-blade",
+                            "name": "Paragon blade",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["paragon-blade"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "paragon-blade"
+                                    }
+                                }
+                            ]
+                        },
+                        "archaeotech-pistol": {
+                            "id": "archaeotech-pistol",
+                            "name": "Archaeotech pistol",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["archaeotech-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "archaeotech-pistol"
+                                    }
+                                }
+                            ]
+                        },
+                        "artificer-power-axe": {
+                            "id": "artificer-power-axe",
+                            "name": "Artificer power axe",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["artificer-power-axe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "artificer-power-axe"
+                                    }
+                                }
+                            ]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have its bolter exchanged for one item from the Legion Combi-weapons list or one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "astartes-shotgun"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "This Model may have its bolter and bolt pistol exchanged for one pair of lightning claws for +20 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "This Model may have melta bombs selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "This Model with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "This Model may have a cyber-familiar selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "cyber-familiar": {
+                            "id": "cyber-familiar",
+                            "name": "cyber-familiar",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cyber-familiar"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "iron-hands-morlock-terminator-squad": {
+            "id": "iron-hands-morlock-terminator-squad",
+            "name": "Iron Hands Morlock Terminator Squad",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 3,
+            "profiles": [
+                {
+                    "id": "augmentor",
+                    "name": "Augmentor",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "8",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "fate-of-the-gorgon"
+                        }
+                    ]
+                },
+                {
+                    "id": "morlock",
+                    "name": "Morlock",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "fate-of-the-gorgon"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Iron Hands"],
+            "additionalModels": {
+                "max": 2,
+                "cost": {
+                    "points": 50
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "power-weapons",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its power weapon exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "artificer-power-axe": {
+                            "id": "artificer-power-axe",
+                            "name": "Artificer power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["artificer-power-axe"]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["lightning-claw"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "graviton-gun": {
+                            "id": "graviton-gun",
+                            "name": "Graviton gun",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["graviton-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "graviton-gun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Augmentor in this Unit may have its combi-bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "volkite-culverin": {
+                            "id": "volkite-culverin",
+                            "name": "Volkite culverin",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["volkite-culverin"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-culverin"
+                                    }
+                                }
+                            ]
+                        },
+                        "graviton-shredder": {
+                            "id": "graviton-shredder",
+                            "name": "Graviton shredder",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["graviton-shredder"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "graviton-shredder"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "augmentor",
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Up to two Morlocks in this Unit may have one item each from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "One Morlock in this Unit may have its combi-bolter exchanged for one Legion standard for +20 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-standard": {
+                            "id": "legion-standard",
+                            "name": "Legion standard",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["legion-standard"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "legion-standard"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "medusan-immortals-squad": {
+            "id": "medusan-immortals-squad",
+            "name": "Medusan Immortals Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 95
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "immortal-sergeant",
+                    "name": "Immortal Sergeant",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "9",
+                        "cl": "10",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "expendable",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "id": "immortal",
+                    "name": "Immortal",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "8",
+                        "cl": "10",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "expendable",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Iron Hands", "Shield"],
+            "additionalModels": {
+                "max": 15,
+                "cost": {
+                    "points": 15
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "boarding-shield",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Immortal Sergeant in this Unit may have its bolter exchanged for one item from the Legion Sergeant Melee Weapons list or one item from the Legion Combi-w...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "profileId": "immortal-sergeant",
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Immortal Sergeant in this Unit have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "profileId": "immortal-sergeant",
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Immortal Sergeant in this Unit may have melta bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "profileId": "immortal-sergeant",
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "For every five Models in this Unit, one Immortal in this Unit may have its bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "graviton-gun": {
+                            "id": "graviton-gun",
+                            "name": "Graviton gun",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["graviton-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "graviton-gun"
+                                    }
+                                }
+                            ]
+                        },
+                        "graviton-shredder": {
+                            "id": "graviton-shredder",
+                            "name": "Graviton shredder",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["graviton-shredder"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "graviton-shredder"
+                                    }
+                                }
+                            ]
+                        },
+                        "lascutter": {
+                            "id": "lascutter",
+                            "name": "Lascutter",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["lascutter"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lascutter"
+                                    }
+                                }
+                            ]
+                        },
+                        "meltagun": {
+                            "id": "meltagun",
+                            "name": "Meltagun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["meltagun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "meltagun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Any Model in this Unit may have its bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "shadrak-meduson": {
+            "id": "shadrak-meduson",
+            "name": "Shadrak Meduson",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "shadrak-meduson",
+                    "name": "Shadrak Meduson",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Iron Hands", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "storms-wrath"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "albian-power-gladius"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "servo-arm"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "forgebreaker": {
+            "id": "forgebreaker",
+            "name": "Forgebreaker",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forgebreaker",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-medusan-carapace": {
+            "id": "the-medusan-carapace",
+            "name": "The Medusan Carapace",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Alpha-12",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "7",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Epsilon-415",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Phi-71",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Flame"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "artificer-power-axe": {
+            "id": "artificer-power-axe",
+            "name": "Artificer Power Axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Artificer Power Axe",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "graviton-shredder": {
+            "id": "graviton-shredder",
+            "name": "Graviton shredder",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Graviton shredder",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "storms-wrath": {
+            "id": "storms-wrath",
+            "name": "Storm’s Wrath",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Storm’s Wrath",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "albian-power-gladius": {
+            "id": "albian-power-gladius",
+            "name": "Albian Power Gladius",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Albian Power Gladius",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "graviton-pistol": {
+            "id": "graviton-pistol",
+            "name": "Graviton pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Graviton pistol",
+                    "stats": {
+                        "r": "12",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "thunder-hammer-gorgon-hammerbearer-only": {
+            "id": "thunder-hammer-gorgon-hammerbearer-only",
+            "name": "Thunder hammer (Gorgon Hammerbearer only)",
+            "text": ""
+        },
+        "artificer-power-axe-gorgon-terminator-only": {
+            "id": "artificer-power-axe-gorgon-terminator-only",
+            "name": "Artificer power axe (Gorgon Terminator only)",
+            "text": ""
+        },
+        "gorgon-pattern-terminator-armour": {
+            "id": "gorgon-pattern-terminator-armour",
+            "name": "Gorgon Pattern Terminator Armour",
+            "text": ""
+        },
+        "grenade-harness-gorgon-hammerbearer-only": {
+            "id": "grenade-harness-gorgon-hammerbearer-only",
+            "name": "Grenade harness (Gorgon Hammerbearer only)",
+            "text": ""
+        },
+        "armatus-necrotechnika": {
+            "id": "armatus-necrotechnika",
+            "name": "Armatus Necrotechnika",
+            "text": "Vehicles may decrease the Target Number of Repair Tests if Models were Removed as Casualties from nearby Units. Any Model with the Iron Hands Trait and the Vehicle Type may have Armatus Necrotechnika selected for it for +10 Points per Model. A Model with Armatus Necrotechnika gains the Auto-Repair (5+) Special Rule. Additionally, if any Models were Removed as Casualties from a Unit that has any Models within 6\" of a Model with Armatus Necrotechnika during the same Turn as a Repair Roll is made for that Model, the Controlling Player can add 1 to the result of the Repair Roll."
+        }
+    },
+    "upgrades": {
+        "iron-hands-armatus-necrotechnika": {
+            "id": "iron-hands-armatus-necrotechnika",
+            "name": "Armatus Necrotechnika",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "armatus-necrotechnika": {
+                    "id": "armatus-necrotechnika",
+                    "name": "Armatus Necrotechnika",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["armatus-necrotechnika"]
+                }
+            },
+            "default": "none"
+        },
+        "iron-hands-artificer-power-axe": {
+            "id": "iron-hands-artificer-power-axe",
+            "name": "Artificer Power Axe",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "artificer-power-axe": {
+                    "id": "artificer-power-axe",
+                    "name": "Artificer Power Axe",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["artificer-power-axe"]
+                }
+            },
+            "default": "none"
+        },
+        "iron-hands-graviton-pistol": {
+            "id": "iron-hands-graviton-pistol",
+            "name": "Graviton Pistol",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "graviton-pistol": {
+                    "id": "graviton-pistol",
+                    "name": "Graviton Pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["graviton-pistol"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "plasma-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "graviton-pistol"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "legion-special-weapons": {
+            "id": "legion-special-weapons",
+            "name": "Legion Special Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "flamer": {
+                    "id": "flamer",
+                    "name": "Flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["flamer"]
+                },
+                "plasma-gun": {
+                    "id": "plasma-gun",
+                    "name": "Plasma gun",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["plasma-gun"]
+                },
+                "meltagun": {
+                    "id": "meltagun",
+                    "name": "Meltagun",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["meltagun"]
+                },
+                "volkite-charger": {
+                    "id": "volkite-charger",
+                    "name": "Volkite charger",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["volkite-charger"]
+                },
+                "volkite-caliver": {
+                    "id": "volkite-caliver",
+                    "name": "Volkite caliver",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["volkite-caliver"]
+                },
+                "rotor-cannon": {
+                    "id": "rotor-cannon",
+                    "name": "Rotor cannon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["rotor-cannon"]
+                },
+                "graviton-gun": {
+                    "id": "graviton-gun",
+                    "name": "Graviton gun",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["graviton-gun"]
+                },
+                "graviton-shredder": {
+                    "id": "graviton-shredder",
+                    "name": "Graviton shredder",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["graviton-shredder"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "sire-of-the-iron-hands": {
+            "id": "sire-of-the-iron-hands",
+            "name": "Sire of the Iron Hands",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Tactical Squads and/or Breacher Squads, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Infantry Type and the Iron Hands Trait in the same Army: Until the end of the first Battle Turn of the Battle, all Models in this Army with the Infantry Type and the Iron Hands Trait have the Feel No Pain (6+) Special Rule."
+        },
+        "tempered-by-war": {
+            "id": "tempered-by-war",
+            "name": "Tempered by War",
+            "text": "Whilst this Gambit is selected, Ferrus Manus has an increased Toughness Characteristic. While a Model with this Special Rule is Engaged in a Challenge, its Controlling Player can select the following Gambit : Tempered by War: When this Gambit is selected, this Model’s Toughness Characteristic is set to 8 for the duration of the following Strike Step."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "lord-of-automata": {
+            "id": "lord-of-automata",
+            "name": "Lord of Automata",
+            "text": "This Special Rule allows an Iron Father to be accompanied by a Unit of Battle-automata. When a Model with this Special Rule is included in a Detachment, one additional Force Organisation Slot is added to that Detachment. This Slot can only be filled with one Castellax Battle Maniple or Castellax Destructor Maniple Unit selected from Liber Mechanicum. When such a Unit is included in this way, its Cybernetica Trait is replaced with ‘Bonded Automata’, and this Unit can be included even though it does not have the same Faction Trait as the other Units in that Detachment. In addition, a Model with this Special Rule may join a Friendly Unit that includes Models with the Automata Type. If a Model with this Special Rule joins a Unit with the Automata Type, the Leadership and Cool Characteristics of Models in that Unit are not reduced."
+        },
+        "forbidden-augmentations": {
+            "id": "forbidden-augmentations",
+            "name": "Forbidden Augmentations",
+            "text": "Medic! Advanced Reactions may be declared for a Unit entirely composed of Models with this Special Rule, for which the Target Number of any resultant Recovery Tests is 5+. A Unit containing only Models with this Special Rule is considered to contain one or more Models with the Medic (X) Special Rule for the purposes of declaring the Medic! Advanced Reaction. If a Unit containing only Models with this Special Rule is the Target Unit of a Medic! Advanced Reaction, all Recovery Tests made as part of that Reaction have a Target Number of 5+."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "fate-of-the-gorgon": {
+            "id": "fate-of-the-gorgon",
+            "name": "Fate of the Gorgon",
+            "text": "When part of an Army that does not include Ferrus Manus, a Model with this Special Rule has the Hatred (Emperor’s Children) Special Rule."
+        },
+        "the-gorgons-scales": {
+            "id": "the-gorgons-scales",
+            "name": "The Gorgon’s Scales",
+            "text": "LEGION TACTICA All Models with the Iron Hands Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: Shooting Attacks targeting Iron Hands suffer a Strength penalty. The Ranged Strength of attacks made as part of a Shooting Attack are modified by -1 when resolving Wound Tests against a Unit that includes only Models with this Special Rule."
+        },
+        "legion-of-one": {
+            "id": "legion-of-one",
+            "name": "Legion of One",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Iron Hands Trait can select Legion of One instead of any others available to that Model: The Model gains more benefits from outside support when this Gambit is selected. When this Gambit is selected, the Model it is selected for gains double the normal bonus to their Focus Roll they would normally gain from Outside Support . In addition, when this Gambit is selected, their opponent can only ever gain a maximum bonus of +2 from Outside Support."
+        },
+        "spite-of-the-gorgon": {
+            "id": "spite-of-the-gorgon",
+            "name": "Spite of the Gorgon (Advanced Reaction)",
+            "text": "This Reaction allows the Reacting Unit to make a Shooting Attack targeting a Unit that makes a Charge. Trigger: Once per Battle, the Reactive Player may declare the Spite of the Gorgon Advanced Reaction at the start of Step 3 of the Charge process of any Charge declared by the Active Player that targets a Unit under the Reactive Player’s Control that only includes Models with the Iron Hands Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare the Spite of the Gorgon Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Charge triggered the Advanced Reaction. The Reacting Unit is always the Unit that was declared as the target of the Charge that triggered this Reaction. Process Once the Spite of the Gorgon Advanced Reaction has been declared, the Reactive Player makes a Shooting Attack with the Reacting Unit. This Shooting Attack must target the Target Unit and is made at full Ballistic Skill, not as Snap Shots, and may be made using any Ranged Weapon. Until this Shooting Attack is resolved, Weapons selected for it have their Firepower Characteristic modified by +1 and gain the Overload (1) Special Rule. If that Weapon already has the Overload (X) Special Rule, improve the value of X on that Special Rule by +1. After resolving this Shooting Attack, the Active Player proceeds with Step 3 of that Charge as normal. The Reactive Player may not make Volley Attacks during Step 4 of that Charge, even if the Active Player chooses to do so."
+        },
+        "spearhead-phalanx": {
+            "id": "spearhead-phalanx",
+            "name": "Spearhead Phalanx (Advanced Reaction)",
+            "text": "SPEARHEAD PHALANX [AUXILIARY DETACHMENT] Heavy Transport Slots in this Detachment may only be used to select Land Raider Carrier or Spartan Units."
+        },
+        "medusan-vanguard": {
+            "id": "medusan-vanguard",
+            "name": "Medusan Vanguard (Advanced Reaction)",
+            "text": "MEDUSAN VANGUARD [APEX DETACHMENT] The Command Slot in this Detachment may only be used to select a Praevian Unit. This Detachment may only be selected if your army also includes an Iron Father or Ferrus Manus Unit."
+        }
+    },
+    "detachments": {
+        "spearhead-phalanx": {
+            "id": "spearhead-phalanx",
+            "name": "Spearhead Phalanx",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["heavy-transport"],
+                    "units": {
+                        "unitIds": ["land-raider-carrier", "spartan"]
+                    }
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                }
+            ]
+        },
+        "medusan-vanguard": {
+            "id": "medusan-vanguard",
+            "name": "Medusan Vanguard",
+            "type": "apex",
+            "slots": [
+                {
+                    "roles": ["command"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": ["praevian"]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                },
+                {
+                    "roles": ["support"]
+                },
+                {
+                    "roles": ["war-engine"]
+                }
+            ],
+            "requires": [
+                {
+                    "units": {
+                        "unitIds": ["iron-father", "ferrus-manus"]
+                    },
+                    "count": 1
+                }
+            ],
+            "requirementText": "Requires ferrus-manus / iron-father"
+        }
+    },
+    "slotOptions": {
+        "the-iron-clad": {
+            "id": "the-iron-clad",
+            "name": "The Iron-clad",
+            "text": "If a Unit which only includes Models with the Iron Hands Trait and the Command Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: The Iron-clad This Prime Advantage can only be selected once per Army. Add one additional War Engines Battlefield Role Slot to the Detachment that includes the Prime Force Organisation Slot with this Prime Advantage. A Unit that is selected to fill that Slot gains the Champion Sub-Type if it did not already have it.",
+            "slotTag": "prime"
+        },
+        "gorgon-terminator-armour": {
+            "id": "gorgon-terminator-armour",
+            "name": "Gorgon Terminator Armour",
+            "text": "The following Models can have Gorgon Terminator Armour selected for them for +30 Points per Model: Iron Father Tartaros Praetor Tartaros Centurion Tartaros Warmonger Tartaros Librarian Tartaros Esoterist Tartaros Legion Champion Tartaros Chaplain Tartaros Herald Tartaros Siege Breaker Tartaros Forge Lord Tartaros Primus Medicae Tartaros Delegatus Tartaros Mortificator A Model with Gorgon Terminator Armour gains the Heavy Sub-Type and the Feel No Pain (5+) Special Rule and the Gorgon pattern Terminator Armour Wargear item.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "iron-hands-armatus-necrotechnika": {
+            "id": "iron-hands-armatus-necrotechnika",
+            "name": "Armatus Necrotechnika",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-hands-armatus-necrotechnika"
+                }
+            ]
+        },
+        "iron-hands-artificer-power-axe": {
+            "id": "iron-hands-artificer-power-axe",
+            "name": "Artificer Power Axe",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-hands-artificer-power-axe"
+                }
+            ]
+        },
+        "iron-hands-graviton-pistol": {
+            "id": "iron-hands-graviton-pistol",
+            "name": "Graviton Pistol",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-hands-graviton-pistol"
+                }
+            ]
+        },
+        "the-gorgons-scales-all": {
+            "id": "the-gorgons-scales-all",
+            "name": "The Gorgon’s Scales",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "the-gorgons-scales"
+                    }
+                }
+            ]
+        }
+    },
+    "overrides": [
+        {
+            "kind": "upgrades",
+            "id": "legion-special-weapons"
+        }
+    ]
+}

@@ -1,0 +1,2482 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "emperors-children",
+    "version": "1.0.0",
+    "name": "Emperor’s Children",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "captain-lucius": {
+            "id": "captain-lucius",
+            "name": "Captain Lucius",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 215
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "captain-lucius",
+                    "name": "Captain Lucius",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "7",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "6",
+                        "a": "5",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "the-faultless-blade"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Emperor’s Children"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "blades-of-lucius"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have sonic shriekers selected for it for +15 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "sonic-shriekers": {
+                            "id": "sonic-shriekers",
+                            "name": "sonic shriekers",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": ["sonic-shriekers"]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "emperors-children-inductii-squad": {
+            "id": "emperors-children-inductii-squad",
+            "name": "Emperor’s Children Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "perfection-embodied"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Emperor’s Children"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Inductii in this Unit may have its chainsword exchanged for one charnabal sabre for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "charnabal-sabre"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "Heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "emperors-children-palatine-blade-aquilae-squad": {
+            "id": "emperors-children-palatine-blade-aquilae-squad",
+            "name": "Emperor’s Children Palatine Blade Aquilae Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 195
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "palatine-prefector-with-jump-pack",
+                    "name": "Palatine Prefector with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "tags": ["Champion", "Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                },
+                {
+                    "id": "palatine-warrior-with-jump-pack",
+                    "name": "Palatine Warrior with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Emperor’s Children"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 33
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "palatine-blade",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its Palatine blade exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "palatine-blade"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "phoenix-rapier": {
+                            "id": "phoenix-rapier",
+                            "name": "Phoenix rapier",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["phoenix-rapier"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "palatine-blade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "phoenix-rapier"
+                                    }
+                                }
+                            ]
+                        },
+                        "phoenix-power-spear": {
+                            "id": "phoenix-power-spear",
+                            "name": "Phoenix power spear",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["phoenix-power-spear"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "palatine-blade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "phoenix-power-spear"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Palatine Prefector in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "sonic-shriekers": {
+                            "id": "sonic-shriekers",
+                            "name": "Sonic shriekers",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["sonic-shriekers"]
+                        },
+                        "sonic-lance": {
+                            "id": "sonic-lance",
+                            "name": "Sonic lance",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["sonic-lance"]
+                        }
+                    },
+                    "default": "sonic-shriekers"
+                }
+            }
+        },
+        "emperors-children-sun-killer-squad": {
+            "id": "emperors-children-sun-killer-squad",
+            "name": "0-1 Emperor’s Children Sun Killer Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 65
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "novaetor",
+                    "name": "Novaetor",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "9",
+                        "cl": "9",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "heedless"
+                        },
+                        {
+                            "id": "designated-quarry"
+                        }
+                    ]
+                },
+                {
+                    "id": "sun-killer",
+                    "name": "Sun Killer",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "heedless"
+                        },
+                        {
+                            "id": "designated-quarry"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Emperor’s Children"],
+            "additionalModels": {
+                "max": 15,
+                "cost": {
+                    "points": 10
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Every Model in the Unit must have one of the following options selected for it. Every Model in this Unit must have the same item selected for it:",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "volkite-culverin": {
+                            "id": "volkite-culverin",
+                            "name": "Volkite culverin",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["volkite-culverin"]
+                        },
+                        "plasma-cannon": {
+                            "id": "plasma-cannon",
+                            "name": "Plasma cannon",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["plasma-cannon"]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["multi-melta"]
+                        },
+                        "lascannon": {
+                            "id": "lascannon",
+                            "name": "Lascannon",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["lascannon"]
+                        }
+                    },
+                    "default": "volkite-culverin"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Novaetor in this Unit may have one item from the Legion Sergeant Melee Weapons list selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "novaetor",
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "One Sun Killer in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Up to two Sun Killers in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "fulgrim-transfigured": {
+            "id": "fulgrim-transfigured",
+            "name": "Fulgrim Transfigured",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 600
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "fulgrim-transfigured",
+                    "name": "Fulgrim Transfigured",
+                    "template": "model",
+                    "stats": {
+                        "m": "14",
+                        "ws": "8",
+                        "bs": "6",
+                        "s": "7",
+                        "t": "7",
+                        "w": "7",
+                        "i": "8",
+                        "a": "7",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "12",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Antigrav", "Malefic"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "7"
+                        },
+                        {
+                            "id": "scion-of-corruption"
+                        },
+                        {
+                            "id": "avatar-of-perfection"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Emperor’s Children", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "blades-of-the-phoenician"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "fulgrim": {
+            "id": "fulgrim",
+            "name": "Fulgrim",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 425
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "fulgrim",
+                    "name": "Fulgrim",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "8",
+                        "bs": "6",
+                        "s": "6",
+                        "t": "6",
+                        "w": "6",
+                        "i": "8",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-emperors-children"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "sublime-swordsman"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Emperor’s Children", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "laeran-blade"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "firebrand"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "kakophoni-squad": {
+            "id": "kakophoni-squad",
+            "name": "Kakophoni Squad",
+            "role": "support",
+            "type": "infantry",
+            "cost": {
+                "points": 150
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "orchestrator",
+                    "name": "Orchestrator",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"]
+                },
+                {
+                    "id": "chora",
+                    "name": "Chora",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    }
+                }
+            ],
+            "traits": ["Traitor", "Emperor’s Children"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 25
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-cacophony",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "sonic-shriekers",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Orchestrator in this Unit may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["power-fist"]
+                        }
+                    },
+                    "profileId": "orchestrator",
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "lord-commander-eidolon": {
+            "id": "lord-commander-eidolon",
+            "name": "Lord Commander Eidolon",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 215
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "lord-commander-eidolon",
+                    "name": "Lord Commander Eidolon",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "A"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Emperor’s Children", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "glory-aeterna"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "archaeotech-pistol"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "sonic-shriekers"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "death-scream"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "palatine-blade-squad": {
+            "id": "palatine-blade-squad",
+            "name": "Palatine Blade Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "palatine-prefector",
+                    "name": "Palatine Prefector",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "tags": ["Champion", "Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "id": "palatine-warrior",
+                    "name": "Palatine Warrior",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Emperor’s Children"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 28
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "palatine-blade",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its Palatine blade exchanged for one Phoenix power spear for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "phoenix-power-spear-for-free": {
+                            "id": "phoenix-power-spear-for-free",
+                            "name": "Phoenix power spear for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["phoenix-power-spear"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "palatine-blade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "phoenix-power-spear"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Palatine Prefector in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "profileId": "palatine-prefector",
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "sonic-shriekers": {
+                            "id": "sonic-shriekers",
+                            "name": "Sonic shriekers",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["sonic-shriekers"]
+                        },
+                        "sonic-lance": {
+                            "id": "sonic-lance",
+                            "name": "Sonic lance",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["sonic-lance"]
+                        }
+                    },
+                    "default": "sonic-shriekers"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Any Model in this Unit may have its Palatine blade exchanged for one power weapon or one Phoenix rapier for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "power weapon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "palatine-blade"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "phoenix-rapier-for-free": {
+                            "id": "phoenix-rapier-for-free",
+                            "name": "Phoenix rapier for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["phoenix-rapier"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "palatine-blade"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "phoenix-rapier"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "phoenix-terminator-squad": {
+            "id": "phoenix-terminator-squad",
+            "name": "Phoenix Terminator Squad",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 200
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "phoenix-champion",
+                    "name": "Phoenix Champion",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "9",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Champion", "Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "skill-unmatched"
+                        }
+                    ]
+                },
+                {
+                    "id": "phoenix-terminator",
+                    "name": "Phoenix Terminator",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "skill-unmatched"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Emperor’s Children"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 35
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "phoenix-power-spear",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "sonic-shriekers": {
+                            "id": "sonic-shriekers",
+                            "name": "Sonic shriekers",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["sonic-shriekers"]
+                        },
+                        "sonic-lance": {
+                            "id": "sonic-lance",
+                            "name": "Sonic lance",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["sonic-lance"]
+                        }
+                    },
+                    "default": "sonic-shriekers"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Phoenix Champion in this Unit may have one grenade harness selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "grenade-harness": {
+                            "id": "grenade-harness",
+                            "name": "grenade harness",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["grenade-harness"]
+                        }
+                    },
+                    "profileId": "phoenix-champion",
+                    "default": "none"
+                }
+            }
+        },
+        "rylanor-the-unyielding": {
+            "id": "rylanor-the-unyielding",
+            "name": "Rylanor the Unyielding",
+            "role": "war-engine",
+            "type": "walker",
+            "cost": {
+                "points": 180
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "rylanor",
+                    "name": "Rylanor",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "7",
+                        "t": "7",
+                        "w": "6",
+                        "i": "4",
+                        "a": "4",
+                        "ld": "12",
+                        "cl": "12",
+                        "wp": "7",
+                        "in": "5",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "vengeful-hate"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Emperor’s Children", "Smokescreen"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "kheres-assault-cannon"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "gravis-power-fist"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "heavy-flamer"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "saul-tarvitz": {
+            "id": "saul-tarvitz",
+            "name": "Saul Tarvitz",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 215
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "saul-tarvitz",
+                    "name": "Saul Tarvitz",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "hatred",
+                            "value": "Traitor"
+                        },
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        },
+                        {
+                            "id": "a-brother-betrayed"
+                        }
+                    ]
+                }
+            ],
+            "traits": [
+                "Loyalist",
+                "Emperor’s Children",
+                "Master of the Legion"
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "charnabal-broadsword"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "nemesis-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "blades-of-lucius": {
+            "id": "blades-of-lucius",
+            "name": "Blades of Lucius",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Blades of Lucius",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "duellists-edge",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "palatine-blade": {
+            "id": "palatine-blade",
+            "name": "Palatine blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Palatine blade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "duellists-edge",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "phoenix-rapier": {
+            "id": "phoenix-rapier",
+            "name": "Phoenix rapier",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Phoenix rapier",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "D"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "phoenix-power-spear": {
+            "id": "phoenix-power-spear",
+            "name": "Phoenix power spear",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Phoenix power spear",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "D"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "sonic-lance": {
+            "id": "sonic-lance",
+            "name": "Sonic lance",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Sonic lance",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "2",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Sonic", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "blades-of-the-phoenician": {
+            "id": "blades-of-the-phoenician",
+            "name": "Blades of the Phoenician",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "- Decapitating Slashes",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "duellists-edge",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Sundering Blows",
+                    "stats": {
+                        "im": "-2",
+                        "am": "3",
+                        "sm": "+5",
+                        "ap": "2",
+                        "d": "4"
+                    }
+                }
+            ]
+        },
+        "laeran-blade": {
+            "id": "laeran-blade",
+            "name": "Laeran Blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Laeran Blade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "duellists-edge",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "firebrand": {
+            "id": "firebrand",
+            "name": "Firebrand",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Firebrand",
+                    "stats": {
+                        "r": "15",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Volkite", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "deflagrate",
+                            "value": "6"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-cacophony": {
+            "id": "the-cacophony",
+            "name": "The Cacophony",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "The Cacophony",
+                    "stats": {
+                        "r": "36",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Sonic"],
+                    "specialRules": [
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        },
+                        {
+                            "id": "stun",
+                            "value": "2"
+                        },
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "glory-aeterna": {
+            "id": "glory-aeterna",
+            "name": "Glory Aeterna",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Glory Aeterna",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "death-scream": {
+            "id": "death-scream",
+            "name": "Death Scream",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Death Scream",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Sonic", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "charnabal-broadsword": {
+            "id": "charnabal-broadsword",
+            "name": "Charnabal broadsword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Charnabal broadsword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Charnabal"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "duellists-edge",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "sonic-shriekers": {
+            "id": "sonic-shriekers",
+            "name": "sonic shriekers",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "emperors-children-surgical-augments": {
+            "id": "emperors-children-surgical-augments",
+            "name": "Surgical Augments",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "surgical-augments": {
+                    "id": "surgical-augments",
+                    "name": "Surgical Augments",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["sonic-lance"]
+                }
+            },
+            "default": "none"
+        },
+        "emperors-children-phoenix-power-spears": {
+            "id": "emperors-children-phoenix-power-spears",
+            "name": "Phoenix Power Spears",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "phoenix-power-spears": {
+                    "id": "phoenix-power-spears",
+                    "name": "Phoenix Power Spears",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["phoenix-power-spear"]
+                }
+            },
+            "default": "none"
+        },
+        "legion-sergeant-melee-weapons": {
+            "id": "legion-sergeant-melee-weapons",
+            "name": "Legion Sergeant Melee Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainsword"]
+                },
+                "chainaxe": {
+                    "id": "chainaxe",
+                    "name": "Chainaxe",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainaxe"]
+                },
+                "charnabal-sabre": {
+                    "id": "charnabal-sabre",
+                    "name": "Charnabal sabre",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["charnabal-sabre"]
+                },
+                "power-weapon": {
+                    "id": "power-weapon",
+                    "name": "Power weapon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["power-weapons"]
+                },
+                "thunder-hammer": {
+                    "id": "thunder-hammer",
+                    "name": "Thunder hammer",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["thunder-hammer"]
+                },
+                "power-fist": {
+                    "id": "power-fist",
+                    "name": "Power fist",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["power-fist"]
+                },
+                "lightning-claw": {
+                    "id": "lightning-claw",
+                    "name": "Lightning claw",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["lightning-claw"]
+                },
+                "phoenix-rapier": {
+                    "id": "phoenix-rapier",
+                    "name": "Phoenix rapier",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["phoenix-rapier"]
+                }
+            }
+        },
+        "legion-officer-wargear": {
+            "id": "legion-officer-wargear",
+            "name": "Legion Officer Wargear",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["bolt-pistol"]
+                },
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainsword"]
+                },
+                "bolter": {
+                    "id": "bolter",
+                    "name": "Bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["bolter"]
+                },
+                "volkite-serpenta": {
+                    "id": "volkite-serpenta",
+                    "name": "Volkite serpenta",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["volkite-serpenta"]
+                },
+                "hand-flamer": {
+                    "id": "hand-flamer",
+                    "name": "Hand flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["hand-flamer"]
+                },
+                "plasma-pistol": {
+                    "id": "plasma-pistol",
+                    "name": "Plasma pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["plasma-pistol"]
+                },
+                "disintegrator-pistol": {
+                    "id": "disintegrator-pistol",
+                    "name": "Disintegrator pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["disintegrator-pistol"]
+                },
+                "chainaxe": {
+                    "id": "chainaxe",
+                    "name": "Chainaxe",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainaxe"]
+                },
+                "charnabal-sabre": {
+                    "id": "charnabal-sabre",
+                    "name": "Charnabal sabre",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["charnabal-sabre"]
+                },
+                "power-weapon": {
+                    "id": "power-weapon",
+                    "name": "Power weapon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["power-weapons"]
+                },
+                "power-fist": {
+                    "id": "power-fist",
+                    "name": "Power fist",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["power-fist"]
+                },
+                "lightning-claw": {
+                    "id": "lightning-claw",
+                    "name": "Lightning claw",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["lightning-claw"]
+                },
+                "thunder-hammer": {
+                    "id": "thunder-hammer",
+                    "name": "Thunder hammer",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["thunder-hammer"]
+                },
+                "combat-shield": {
+                    "id": "combat-shield",
+                    "name": "Combat shield",
+                    "cost": {
+                        "points": 0
+                    },
+                    "equipmentRefs": ["combat-shield"]
+                },
+                "boarding-shield": {
+                    "id": "boarding-shield",
+                    "name": "Boarding shield",
+                    "cost": {
+                        "points": 5
+                    },
+                    "equipmentRefs": ["boarding-shield"]
+                },
+                "phoenix-rapier": {
+                    "id": "phoenix-rapier",
+                    "name": "Phoenix rapier",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["phoenix-rapier"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "the-faultless-blade": {
+            "id": "the-faultless-blade",
+            "name": "The Faultless Blade",
+            "text": "Lucius gains an increased benefit from the Paragon of Excellence Gambit. If the Paragon of Excellence Gambit is selected for a Model with this Special Rule, add a +4 modifier to the Focus Roll instead of +2."
+        },
+        "perfection-embodied": {
+            "id": "perfection-embodied",
+            "name": "Perfection Embodied",
+            "text": "An additional Dice is rolled when making a Check to avoid Tactical Statuses for a Unit containing any Models with this Special Rule, discarding the worst result in the Shooting Phase and the best result in the Combat Phase. When a Check is made for a Unit containing any Models with this Special Rule to avoid gaining a Tactical Status, the Controlling Player must roll an additional Dice, discarding the Dice which, once rolled, has the highest result if the Check is made in the Morale Sub-Phase, or the Dice which, once rolled, has the lowest result if the Check is made in the Resolution Sub-Phase."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "impact": {
+            "id": "impact",
+            "name": "Impact (X)",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "heedless": {
+            "id": "heedless",
+            "name": "Heedless",
+            "text": "A Unit that includes any Models with this Special Rule cannot claim Objectives. A Unit that includes any Models with this Special Rule cannot Control or Contest any Objective Marker - this overrides any other Rule or Special Rule that may apply to the Unit regardless of the source of the Rule or effect."
+        },
+        "designated-quarry": {
+            "id": "designated-quarry",
+            "name": "Designated Quarry",
+            "text": "Models with this Special Rule can have their Ballistic Skill improved once per Battle against a specific target. Once per Battle, before making a Shooting Attack in the Controlling Player’s Shooting Phase, the Controlling Player of a Unit with this Special Rule that did not Move in the previous Movement Phase may select an enemy Unit with the Vehicle Type as that Unit’s Designated Quarry. When the Unit with this Special Rule makes a Shooting Attack that targets an enemy Unit that is selected as their Designated Quarry, the Ballistic Skill Characteristic of all Models with this Special Rule in the Unit making the Shooting Attack is modified by +1 for the duration of the current Phase."
+        },
+        "scion-of-corruption": {
+            "id": "scion-of-corruption",
+            "name": "Scion of Corruption",
+            "text": "Fulgrim Transfigured cannot be included in the same Army as Fulgrim."
+        },
+        "avatar-of-perfection": {
+            "id": "avatar-of-perfection",
+            "name": "Avatar of Perfection",
+            "text": "Fulgrim Transfigured must have a Challenge declared for him and may use the Heroic Intervention Reaction without expending a Reaction Point. In the Controlling Player’s Challenge Sub-Phase, if a Model with this Special Rule is eligible to have a Challenge declared for it, the Controlling Player must do so. In addition, if the Controlling Player of a Model with this Special Rule declares they will use the Heroic Intervention Advanced Reaction, and selects a Model with this Special Rule, they are not required to spend any points from their Reaction Allotment to do so."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "sire-of-the-emperors-children": {
+            "id": "sire-of-the-emperors-children",
+            "name": "Sire of the Emperor’s Children",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Tactical Squad Units and/or Assault Squad Units, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Emperor’s Children Trait in the same Army: A Unit that includes only Models with the Emperor’s Children Trait gains an additional +1 Combat Resolution Point if all Models in that Unit are not within the Controlling Player’s Deployment Zone during the Resolution Sub-Phase. If the Mission being played does not define Deployment Zones, the Controlling Player gains this bonus when not within 12\" of their Battlefield Edge, or if no Battlefield Edge is specified, a Battlefield Edge that is selected prior to the First Turn."
+        },
+        "sublime-swordsman": {
+            "id": "sublime-swordsman",
+            "name": "Sublime Swordsman",
+            "text": "In a Challenge, Fulgrim’s Attacks Characteristic is modified if his Initiative Characteristic is higher than his opponent’s. While a Model with this Special Rule is taking part in a Challenge, if its Controlling Player has Challenge Advantage, modify the Attacks Characteristic of the Model with this Special Rule by +1 for each point that its Base Initiative Characteristic is higher than its opponent’s Base Initiative Characteristic."
+        },
+        "skill-unmatched": {
+            "id": "skill-unmatched",
+            "name": "Skill Unmatched",
+            "text": "When Locked in Combat, this Unit may select an additional Special Rule to apply until the end of the Phase. At the End of the Charge Sub-Phase, if a Unit that includes any Models with this Special Rule is Locked in Combat with any enemy Units, this Unit’s Controlling Player can select one of the following effects: The Perfect Strike - If this effect is selected, until the end of this Phase, the Weapon Skill Characteristic of each Model in this Unit with this Special Rule is considered to be one point higher than normal when determining the score that Model needs to Hit its opponent in the Strike Step of the Challenge Sub-Phase or the Make Hit Tests Step of the Resolving an Initiative Step (this does not modify the Weapon Skill Characteristic of each Model in this Unit for the purposes of Hit Tests made for opposing Models). The Perfect Guard - If this effect is selected, until the end of this Phase, the Weapon Skill Characteristic of each Model in this Unit with this Special Rule is considered to be one point higher than normal when determining the score an opposing Model needs to Hit this Model in the Strike Step of the Challenge Sub-Phase or the Make Hit Tests Step of the Resolving an Initiative Step Step (this does not modify the Weapon Skill Characteristic of each Model in this Unit for the purposes of Hit Tests made for their own attacks)."
+        },
+        "vengeful-hate": {
+            "id": "vengeful-hate",
+            "name": "Vengeful Hate",
+            "text": "Rylanor can fight in a Challenge when Fulgrim is the Challenger. If a Model with this Special Rule is Locked in Combat with an enemy Unit that contains Fulgrim or Fulgrim Transfigured, the Model with this Special Rule is considered to be eligible to take part in a Challenge. In such a Challenge, if Fulgrim or Fulgrim Transfigured is the Challenger, Rylanor must be the Challenged."
+        },
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred (X)",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        },
+        "a-brother-betrayed": {
+            "id": "a-brother-betrayed",
+            "name": "A Brother Betrayed",
+            "text": "This Gambit allows Saul Tarvitz to gain benefits when fighting specific opponents. While a Model with this Special Rule is in a Challenge with an enemy Model with the Emperor’s Children, World Eaters, Sons of Horus or Death Guard Traits, its Controlling Player can select the following Gambit : Bite of the Betrayed: This Gambit can only be selected during the first Face-Off Step of a Challenge. If this Gambit is selected, until this Challenge ends, modify this Model’s Weapon Skill, Strength and Toughness Characteristics by +1."
+        },
+        "flawless-execution": {
+            "id": "flawless-execution",
+            "name": "Flawless Execution",
+            "text": "LEGION TACTICA All Models with the Emperor’s Children Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: Emperor’s Children gain an Initiative bonus when they successfully Charge. On any Turn in which they made a Charge Move , Models with this Special Rule gain an additional modifier to their Combat Initiative of +1 until the end of the Phase."
+        },
+        "paragon-of-excellence": {
+            "id": "paragon-of-excellence",
+            "name": "Paragon of Excellence",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Emperor’s Children Trait can select Paragon of Excellence instead of any others available to that Model: This Gambit allows the Controlling Player a bonus to the Focus Roll in the first round of a Challenge. This Gambit can only be selected during the first Face-Off Step of a Challenge involving this Model. While this Gambit is selected, during the Focus Step the Controlling Player gains a +2 modifier to the Focus Roll ."
+        },
+        "lords-of-profligacy": {
+            "id": "lords-of-profligacy",
+            "name": "Lords of Profligacy",
+            "text": "LEGION TACTICA All Models with the Emperor’s Children Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: The Controlling Player may choose that a Unit becomes Stupefied when it is the target of a Shooting Attack. After a Shooting Attack that targets a Unit entirely composed of Models with this Special Rule is resolved, that Unit’s Controlling Player can choose for the targeted Unit to become Stupefied. Stupefied When a Unit becomes Stupefied, all Tactical Statuses affecting it are removed. In addition, while a Unit is Stupefied: Models in that Unit have the Feel No Pain (6+) Special Rule. The Strength Characteristic of Models in that Unit is modified by +1. Models in that Unit cannot gain Tactical Statuses. The Controlling Player of a Unit that is Stupefied may not declare any Reactions for that Unit and must make all Shooting Attacks declared for that Unit as Snap Shots. In the Effects Sub-Phase of the Controlling Player’s End Phase, the Controlling Player must make a Cool Check for each Unit from their Army that is Stupefied. If the Check is passed, that Unit is no longer Stupefied."
+        },
+        "the-broken-mirror": {
+            "id": "the-broken-mirror",
+            "name": "The Broken Mirror",
+            "text": "GAMBIT When selecting Gambits , the Controlling Player of a Model with the Emperor’s Children Trait can select the following instead of any others available to that Model: When this Gambit is selected, the Controlling Player doubles any bonus for Outside Support and also gains a bonus when Stupefied. If this Gambit is selected, then the Model gains double the normal modifier for Outside Support during the Focus Step . If the Unit this Model is part of is Stupefied , add an additional modifier of +1."
+        },
+        "perfect-counter": {
+            "id": "perfect-counter",
+            "name": "Perfect Counter (Advanced Reaction)",
+            "text": "This Reaction allows the Reacting Unit to Charge an enemy Unit that has made a Charge. Trigger: Once per Battle, the Reactive Player may declare the Perfect Counter Advanced Reaction at the end of Step 3 of the Charge process of any Charge declared by the Active Player that targets a Unit under that Player’s control which only includes Models with the Emperor’s Children Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare the Perfect Counter Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Charge triggered the Reaction. The Reacting Unit is always the Unit that was declared as the target of the Charge that triggered this Reaction. Process Once this Reaction is declared, the Reactive Player must make a Charge Roll for the Reacting Unit. If the result of the Charge Roll would be enough to move any Model from the Reacting Unit into Base contact with a Model from the Target Unit then a Charge Move is made and the Units are Locked in Combat. No Model in the Target Unit may claim a bonus from any Special Rule that requires a successful Charge to have been made, while the Models in the Reacting Unit gain any bonuses from any Special Rules that would apply to that Unit as a result of a successful Charge. If the result of the Charge Roll would not bring any Model from the Reacting Unit into Base Contact with a Model from the Target Unit, then no Charge Move is made and the Players proceed to Step 4 of the Charge process."
+        },
+        "twisted-desire": {
+            "id": "twisted-desire",
+            "name": "Twisted Desire (Advanced Reaction)",
+            "text": "This Reaction allows the Reacting Unit to become Stupefied when it is Charged. Trigger: The Reactive Player may declare the Twisted Desire Advanced Reaction at the end of Step 2 of a Charge declared by the Active Player that targets a Unit under the Reactive Player’s control which only includes Models with the Emperor’s Children Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare the Twisted Desire Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Charge triggered the Reaction. The Reacting Unit is always the Unit that was declared as the target of the Charge that triggered this Reaction. Process Once this Reaction is declared, the Reacting Unit becomes Stupefied , and for the duration of this Assault Phase , Models in that Unit gain the Feel No Pain (5+) Special Rule."
+        }
+    },
+    "detachments": {
+        "primacy-wing": {
+            "id": "primacy-wing",
+            "name": "Primacy Wing",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["elites"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                }
+            ]
+        },
+        "brotherhood-of-the-phoenix": {
+            "id": "brotherhood-of-the-phoenix",
+            "name": "Brotherhood of the Phoenix",
+            "type": "warlord",
+            "slots": [
+                {
+                    "roles": ["paragon"]
+                },
+                {
+                    "roles": ["high-command"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["high-command"]
+                },
+                {
+                    "roles": ["high-command"]
+                },
+                {
+                    "roles": ["command"]
+                }
+            ],
+            "requires": [
+                {
+                    "units": {
+                        "unitIds": ["fulgrim-transfigured"]
+                    },
+                    "count": 1
+                }
+            ],
+            "requirementText": "Must include Fulgrim Transfigured",
+            "when": {
+                "if": "list.limit(points) >= 3000",
+                "message": "3,000 points or more"
+            }
+        }
+    },
+    "slotOptions": {
+        "phoenix-warden": {
+            "id": "phoenix-warden",
+            "name": "Phoenix Warden",
+            "text": "If a Tartaros Centurion Model that has the Emperor’s Children Trait is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Phoenix Warden A Model selected to fill a Prime Force Organisation Slot with this Prime Advantage: Must have its combi-bolter and power weapon exchanged for a Phoenix power spear for Free. Gains the Skill Unmatched Special Rule.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "emperors-children-surgical-augments": {
+            "id": "emperors-children-surgical-augments",
+            "name": "Surgical Augments",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "emperors-children-surgical-augments"
+                }
+            ]
+        },
+        "emperors-children-phoenix-power-spears": {
+            "id": "emperors-children-phoenix-power-spears",
+            "name": "Phoenix Power Spears",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "emperors-children-phoenix-power-spears"
+                }
+            ]
+        },
+        "flawless-execution-all": {
+            "id": "flawless-execution-all",
+            "name": "Flawless Execution",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "flawless-execution"
+                    }
+                }
+            ]
+        }
+    },
+    "overrides": [
+        {
+            "kind": "upgrades",
+            "id": "legion-sergeant-melee-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-officer-wargear"
+        }
+    ]
+}

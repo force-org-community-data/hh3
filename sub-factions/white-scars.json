@@ -1,0 +1,2980 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "white-scars",
+    "version": "1.0.0",
+    "name": "White Scars",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "ebon-keshig": {
+            "id": "ebon-keshig",
+            "name": "Ebon Keshig",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 200
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "kharash",
+                    "name": "Kharash",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "expendable",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["White Scars"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 35
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "power-glaive",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its power glaive exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "combi-bolter-and-power-weapon": {
+                            "id": "combi-bolter-and-power-weapon",
+                            "name": "Combi-bolter and power weapon",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["combi-bolter"],
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-glaive"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    }
+                                }
+                            ]
+                        },
+                        "combi-bolter-and-power-fist": {
+                            "id": "combi-bolter-and-power-fist",
+                            "name": "Combi-bolter and power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["combi-bolter", "power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-glaive"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit which has had its power glaive exchanged for one combi-bolter and one power weapon, or combi-bolter and power fist, may have its combi...",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "combi-bolter-and-one-power-weapon": {
+                            "id": "combi-bolter-and-one-power-weapon",
+                            "name": "combi-bolter and one power weapon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"],
+                            "equipmentRefs": ["power-weapons"]
+                        },
+                        "or-combi-bolter-and-power-fist": {
+                            "id": "or-combi-bolter-and-power-fist",
+                            "name": "or combi-bolter and power fist",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "equipmentRefs": ["or-combi-bolter"]
+                        },
+                        "may-have-its-combi-bolter-exchanged-for-one-volkite-charger-": {
+                            "id": "may-have-its-combi-bolter-exchanged-for-one-volkite-charger-",
+                            "name": "may have its combi-bolter exchanged for one volkite charger for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "for": {
+                            "id": "for",
+                            "name": "for",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "One Model in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Any Model in this Unit may have one grenade harness selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "grenade-harness": {
+                            "id": "grenade-harness",
+                            "name": "grenade harness",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["grenade-harness"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "golden-keshig": {
+            "id": "golden-keshig",
+            "name": "Golden Keshig",
+            "role": "elites",
+            "type": "cavalry",
+            "cost": {
+                "points": 140
+            },
+            "modelCount": 3,
+            "profiles": [
+                {
+                    "id": "keshig-champion",
+                    "name": "Keshig Champion",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "id": "keshig-rider",
+                    "name": "Keshig Rider",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["White Scars"],
+            "additionalModels": {
+                "max": 3,
+                "cost": {
+                    "points": 40
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "kontos-power-lance",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "scatterbolt-launcher",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Keshig Champion in this Unit may have its power sword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-sword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    }
+                                }
+                            ]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-sword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "keshig-champion",
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Keshig Rider in this Unit may have their power sword exchanged for one power axe for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-axe-for-free": {
+                            "id": "power-axe-for-free",
+                            "name": "power axe for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-sword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its power sword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-lance"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-sword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-lance"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-sword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-maul"
+                                    }
+                                }
+                            ]
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["charnabal-sabre"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-sword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "charnabal-sabre"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Keshig Rider in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "hibou-khan": {
+            "id": "hibou-khan",
+            "name": "Hibou Khan",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "hibou-khan",
+                    "name": "Hibou Khan",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        },
+                        {
+                            "id": "seeker-of-atonement"
+                        },
+                        {
+                            "id": "expendable",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "White Scars"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-breath-of-the-storm"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "jaghatai-khan": {
+            "id": "jaghatai-khan",
+            "name": "Jaghatai Khan",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 440
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "jaghatai-khan",
+                    "name": "Jaghatai Khan",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "7",
+                        "bs": "6",
+                        "s": "6",
+                        "t": "6",
+                        "w": "6",
+                        "i": "7",
+                        "a": "7",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-white-scars"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "death-by-a-thousand-cuts"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "White Scars", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-white-tiger-dao"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "storms-voice"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "kyzagan-assault-speeder": {
+            "id": "kyzagan-assault-speeder",
+            "name": "Kyzagan Assault Speeder",
+            "role": "support",
+            "type": "cavalry",
+            "cost": {
+                "points": 105
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "kyzagan",
+                    "name": "Kyzagan",
+                    "template": "model",
+                    "stats": {
+                        "m": "14",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "7",
+                        "w": "4",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "5"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "firing-protocols",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["White Scars"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "kheres-assault-cannon"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "reaper-autocannon"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "reaper-autocannon"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have up to two hunter-killer missiles selected for it for +5 Points each.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "hunter-killer-missiles": {
+                            "id": "hunter-killer-missiles",
+                            "name": "hunter-killer missiles",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "qin-xa": {
+            "id": "qin-xa",
+            "name": "Qin Xa",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 220
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "qin-xa",
+                    "name": "Qin Xa",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "chosen-of-the-khagan"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "White Scars", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-tails-of-the-dragon"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "stormseer": {
+            "id": "stormseer",
+            "name": "Stormseer",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 95
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "stormseer",
+                    "name": "Stormseer",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"]
+                }
+            ],
+            "traits": ["White Scars", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol List.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "take": {
+                            "id": "take",
+                            "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol List.",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "stormcalling": {
+                            "id": "stormcalling",
+                            "name": "Stormcalling",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["stormcalling"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "thaumaturgy": {
+                            "id": "thaumaturgy",
+                            "name": "Thaumaturgy",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["thaumaturgy"]
+                        },
+                        "telepathy": {
+                            "id": "telepathy",
+                            "name": "Telepathy",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["telepathy"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "white-scars-dark-sons-of-death": {
+            "id": "white-scars-dark-sons-of-death",
+            "name": "White Scars Dark Sons of Death",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 125
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "deaths-champion",
+                    "name": "Death’s Champion",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "A"
+                        },
+                        {
+                            "id": "invocation-of-the-razing-tempest"
+                        }
+                    ]
+                },
+                {
+                    "id": "dark-son",
+                    "name": "Dark Son",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "A"
+                        },
+                        {
+                            "id": "invocation-of-the-razing-tempest"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["White Scars"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 20
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "charnabal-sabre"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-glaive": {
+                            "id": "power-glaive",
+                            "name": "Power glaive",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["power-glaive"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-glaive"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every five Models in this Unit, one Model in this Unit may have its bolt pistol exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "Plasma pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        },
+                        "hand-flamer": {
+                            "id": "hand-flamer",
+                            "name": "Hand flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hand-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every five Models in this Unit, one Model in this Unit may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"]
+                        },
+                        "plasma-gun": {
+                            "id": "plasma-gun",
+                            "name": "Plasma gun",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-gun"]
+                        },
+                        "meltagun": {
+                            "id": "meltagun",
+                            "name": "Meltagun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["meltagun"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Death’s Champion in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["lightning-claw"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lightning-claw"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "deaths-champion",
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "The Death’s Champion in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "profileId": "deaths-champion",
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "The Death’s Champion in this Unit may have its bolt pistol and chainsword exchanged for one pair of lightning claws for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "deaths-champion",
+                    "default": "none"
+                },
+                "option-7": {
+                    "id": "option-7",
+                    "name": "The Death’s Champion in this Unit may have melta bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "profileId": "deaths-champion",
+                    "default": "none"
+                }
+            }
+        },
+        "white-scars-falcons-claws": {
+            "id": "white-scars-falcons-claws",
+            "name": "White Scars Falcon’s Claws",
+            "role": "recon",
+            "type": "infantry",
+            "cost": {
+                "points": 110
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "falcons-claw-champion",
+                    "name": "Falcon’s Claw Champion",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "8",
+                        "sav": "4+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Light"],
+                    "specialRules": [
+                        {
+                            "id": "outflank"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "id": "falcons-claw",
+                    "name": "Falcon’s Claw",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "8",
+                        "sav": "4+",
+                        "inv": "-"
+                    },
+                    "tags": ["Light"],
+                    "specialRules": [
+                        {
+                            "id": "outflank"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["White Scars", "Smokescreen"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 18
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "pair-of-lightning-claws",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its pair of lightning claws exchanged for one power weapon and one bolt pistol for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-weapon-and-one-bolt-pistol-for-free": {
+                            "id": "power-weapon-and-one-bolt-pistol-for-free",
+                            "name": "power weapon and one bolt pistol for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"],
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Falcon’s Claw Champion in this Unit may have its pair of lightning claws exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "one-lightning-claw-and-one-thunder-hammer": {
+                            "id": "one-lightning-claw-and-one-thunder-hammer",
+                            "name": "One lightning claw and one thunder hammer",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["lightning-claw", "thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lightning-claw"
+                                    }
+                                }
+                            ]
+                        },
+                        "one-lightning-claw-and-one-power-fist": {
+                            "id": "one-lightning-claw-and-one-power-fist",
+                            "name": "One lightning claw and one power fist",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["lightning-claw", "power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lightning-claw"
+                                    }
+                                }
+                            ]
+                        },
+                        "one-lightning-claw-and-one-hand-flamer": {
+                            "id": "one-lightning-claw-and-one-hand-flamer",
+                            "name": "One lightning claw and one hand flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["lightning-claw", "hand-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lightning-claw"
+                                    }
+                                }
+                            ]
+                        },
+                        "one-lightning-claw-and-one-plasma-pistol": {
+                            "id": "one-lightning-claw-and-one-plasma-pistol",
+                            "name": "One lightning claw and one plasma pistol",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["lightning-claw", "plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lightning-claw"
+                                    }
+                                }
+                            ]
+                        },
+                        "one-lightning-claw-and-one-volkite-serpenta": {
+                            "id": "one-lightning-claw-and-one-volkite-serpenta",
+                            "name": "One lightning claw and one volkite serpenta",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": [
+                                "lightning-claw",
+                                "volkite-serpenta"
+                            ],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lightning-claw"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "falcons-claw-champion",
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Falcons’s Claw Champion in this Unit may have melta bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Falcon’s Claw Champion in this Unit may have one cyber-hawk selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "cyber-hawk": {
+                            "id": "cyber-hawk",
+                            "name": "cyber-hawk",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cyber-hawk"]
+                        }
+                    },
+                    "profileId": "falcons-claw-champion",
+                    "default": "none"
+                }
+            }
+        },
+        "white-scars-inductii-squad": {
+            "id": "white-scars-inductii-squad",
+            "name": "White Scars Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "expendable",
+                            "value": "1"
+                        },
+                        {
+                            "id": "proof-of-valour"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["White Scars"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainsword and bolt pistol exchanged for one heavy chainsword for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "charnabal-sabre"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "white-scars-mounted-stormseer": {
+            "id": "white-scars-mounted-stormseer",
+            "name": "White Scars Mounted Stormseer",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 125
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "outrider-stormseer",
+                    "name": "Outrider Stormseer",
+                    "template": "model",
+                    "stats": {
+                        "m": "14",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"]
+                }
+            ],
+            "traits": ["White Scars", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "twin-bolter-outrider-stormseer-only"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "heavy-bolter-stormseer-on-scimitar-jetbike-only"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Outrider Stormseer may have its twin bolter exchanged for one twin plasma gun for +15 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "twin-plasma-gun": {
+                            "id": "twin-plasma-gun",
+                            "name": "twin plasma gun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["twin-plasma-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "This Stormseer on Scimitar Jetbike may have its heavy bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "volkite-culverin": {
+                            "id": "volkite-culverin",
+                            "name": "Volkite culverin",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["volkite-culverin"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-culverin"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-cannon": {
+                            "id": "plasma-cannon",
+                            "name": "Plasma cannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["plasma-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-cannon"
+                                    }
+                                }
+                            ]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["multi-melta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "multi-melta"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "stormcalling": {
+                            "id": "stormcalling",
+                            "name": "Stormcalling",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["stormcalling"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "thaumaturgy": {
+                            "id": "thaumaturgy",
+                            "name": "Thaumaturgy",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["thaumaturgy"]
+                        },
+                        "telepathy": {
+                            "id": "telepathy",
+                            "name": "Telepathy",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["telepathy"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "white-scars-stormseer-in-terminator-armour": {
+            "id": "white-scars-stormseer-in-terminator-armour",
+            "name": "White Scars Stormseer in Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 115
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "cataphractii-stormseer",
+                    "name": "Cataphractii Stormseer",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command", "Heavy"]
+                }
+            ],
+            "traits": ["White Scars", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its combi-bolter exchanged for one volkite charger for Free, or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger-for-free": {
+                            "id": "volkite-charger-for-free",
+                            "name": "volkite charger for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "or-for": {
+                            "id": "or-for",
+                            "name": "or for",
+                            "cost": {
+                                "points": 0
+                            }
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "stormcalling": {
+                            "id": "stormcalling",
+                            "name": "Stormcalling",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["stormcalling"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "thaumaturgy": {
+                            "id": "thaumaturgy",
+                            "name": "Thaumaturgy",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["thaumaturgy"]
+                        },
+                        "telepathy": {
+                            "id": "telepathy",
+                            "name": "Telepathy",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["telepathy"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "white-scars-stormseer-with-jump-pack": {
+            "id": "white-scars-stormseer-with-jump-pack",
+            "name": "White Scars Stormseer with Jump Pack",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 115
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "stormseer-with-jump-pack",
+                    "name": "Stormseer with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["White Scars", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "stormcalling": {
+                            "id": "stormcalling",
+                            "name": "Stormcalling",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["stormcalling"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "thaumaturgy": {
+                            "id": "thaumaturgy",
+                            "name": "Thaumaturgy",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["thaumaturgy"]
+                        },
+                        "telepathy": {
+                            "id": "telepathy",
+                            "name": "Telepathy",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["telepathy"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        }
+    },
+    "weapons": {
+        "power-glaive": {
+            "id": "power-glaive",
+            "name": "Power glaive",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Power glaive",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "AP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "kontos-power-lance": {
+            "id": "kontos-power-lance",
+            "name": "Kontos Power Lance",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Kontos power lance",
+                    "stats": {
+                        "im": "+4",
+                        "am": "1",
+                        "sm": "+5",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "AP"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ]
+                }
+            ]
+        },
+        "power-sword": {
+            "id": "power-sword",
+            "name": "Power sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Power sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "scatterbolt-launcher": {
+            "id": "scatterbolt-launcher",
+            "name": "Scatterbolt launcher",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Scatterbolt launcher",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-breath-of-the-storm": {
+            "id": "the-breath-of-the-storm",
+            "name": "The Breath of the Storm",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Breath of the Storm",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-white-tiger-dao": {
+            "id": "the-white-tiger-dao",
+            "name": "The White Tiger Dao",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The White Tiger Dao",
+                    "stats": {
+                        "im": "+2",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        },
+                        {
+                            "id": "duellists-edge",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "storms-voice": {
+            "id": "storms-voice",
+            "name": "Storm’s Voice",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Storm’s Voice",
+                    "stats": {
+                        "r": "12",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "deflagrate",
+                            "value": "6"
+                        },
+                        {
+                            "id": "stun",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-tails-of-the-dragon": {
+            "id": "the-tails-of-the-dragon",
+            "name": "The Tails of the Dragon",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Tails of the Dragon",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "3+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "force-staff": {
+            "id": "force-staff",
+            "name": "Force staff",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Force staff",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "force",
+                            "value": "D"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "or-combi-bolter": {
+            "id": "or-combi-bolter",
+            "name": "or combi-bolter",
+            "text": ""
+        },
+        "power-lance": {
+            "id": "power-lance",
+            "name": "Power lance",
+            "text": ""
+        },
+        "stormcalling": {
+            "id": "stormcalling",
+            "name": "Stormcalling",
+            "text": ""
+        },
+        "cyber-hawk": {
+            "id": "cyber-hawk",
+            "name": "cyber-hawk",
+            "text": ""
+        },
+        "twin-bolter-outrider-stormseer-only": {
+            "id": "twin-bolter-outrider-stormseer-only",
+            "name": "Twin bolter (Outrider Stormseer only)",
+            "text": ""
+        },
+        "heavy-bolter-stormseer-on-scimitar-jetbike-only": {
+            "id": "heavy-bolter-stormseer-on-scimitar-jetbike-only",
+            "name": "Heavy bolter (Stormseer on Scimitar Jetbike only)",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "white-scars-power-glaive": {
+            "id": "white-scars-power-glaive",
+            "name": "Power Glaive",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "power-glaive": {
+                    "id": "power-glaive",
+                    "name": "Power Glaive",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["power-glaive"]
+                }
+            },
+            "default": "none"
+        },
+        "white-scars-cyber-hawk": {
+            "id": "white-scars-cyber-hawk",
+            "name": "Cyber-hawk",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "cyber-hawk": {
+                    "id": "cyber-hawk",
+                    "name": "Cyber-hawk",
+                    "cost": {
+                        "points": 0
+                    },
+                    "equipmentRefs": ["cyber-hawk"]
+                }
+            },
+            "default": "none"
+        }
+    },
+    "specialRules": {
+        "impact": {
+            "id": "impact",
+            "name": "Impact (X)",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "seeker-of-atonement": {
+            "id": "seeker-of-atonement",
+            "name": "Seeker of Atonement",
+            "text": "This Gambit allows Hibou Khan to avoid being Removed as a Casualty. While a Model with this Special Rule is engaged in a Challenge, its Controlling Player can select the following Gambit: Seeker of Atonement: While this Gambit is selected, if this Model is reduced to 0 Wounds in Step 4 of the Strike Step, its Controlling Player can roll a Dice. On a result of 4+, this Model is not Removed as a Casualty but instead remains Engaged in the Challenge with a Wounds Characteristic of 1 and its Controlling Player gains Challenge Advantage."
+        },
+        "sire-of-the-white-scars": {
+            "id": "sire-of-the-white-scars",
+            "name": "Sire of the White Scars",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled then any Transport Battlefield Role Slots in the Primary Detachment may be exchanged for Recon Battlefield Role Slots. Any Recon Battlefield Role Slots included in the Primary Detachment in this way must be filled with Land Raider Explorator Units. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Infantry and or Paragon Type with the White Scars Trait in the same Army: Until the end of the first Battle Turn of a Battle, all Models in this Army with the Infantry or Paragon Type and the White Scars Trait have the Fast (2) Special Rule."
+        },
+        "death-by-a-thousand-cuts": {
+            "id": "death-by-a-thousand-cuts",
+            "name": "Death by a Thousand Cuts",
+            "text": "This Gambit reduces the strength of an opponent when they are wounded. While a Model with this Special Rule is engaged in a Challenge, the Controlling Player can select the following Gambit: Death by a Thousand Cuts: If this Gambit is selected, during the Strike Step, the Strength of attacks made by the enemy Model are modified by -1 if that Model’s Wounds Characteristic has been reduced from its Base Value. This cannot reduce the Strength Characteristic of an attack below 1."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "chosen-of-the-khagan": {
+            "id": "chosen-of-the-khagan",
+            "name": "Chosen of the Khagan",
+            "text": "This Special Rule ensures the arrival of a Unit held in Reserves. Once per Battle, at the start of the Reserves Sub-Phase of the Movement Phase, this Model’s Controlling Player may select a single Unit which only includes Models with the White Scars Trait that is in Reserves. Reserves Rolls made for that Unit during this Sub-Phase are automatically successful."
+        },
+        "force": {
+            "id": "force",
+            "name": "Force (X)",
+            "text": "A Weapon with this Special Rule may double a Characteristic with a Willpower Check, but may suffer Perils of the Warp. When selected to be used as part of a Combat or Shooting Attack, a Willpower Check may be made for the Model that will use this Weapon to make attacks. If it is successful then the Characteristic listed as X is doubled (if that Characteristic is AP, then the AP is instead changed to AP 2). If a double is rolled when making this Willpower Check then the Model using the Weapon to make attacks suffers Perils of the Warp.",
+            "configurable": true
+        },
+        "invocation-of-the-razing-tempest": {
+            "id": "invocation-of-the-razing-tempest",
+            "name": "Invocation of the Razing Tempest",
+            "text": "A Unit that includes any Models with this Special Rule can be more easily selected as the target of the Call of the Wind Psychic Power. A Unit that includes any Models with this Special Rule may be selected as the target of the Call of the Wind Psychic Power from the Stormcalling Discipline while it has at least one Model within 24\" of the Focus instead of 12\". In addition, a Unit that includes any Models with this Special Rule may be selected as the Target of that Psychic Power even if no Models in that Unit have Line of Sight to the Focus."
+        },
+        "proof-of-valour": {
+            "id": "proof-of-valour",
+            "name": "Proof of Valour",
+            "text": "Hit Tests resolved for Models with a Weapon Skill of 5 against a Unit entirely composed of Models with this Special Rule are only successful on a 4+. For any Strike Group in which the attacking Combatants have a current Weapon Skill Characteristic of 5, the Target Number of any Hit Test resulting from that Strike Group is always 4+ if that Strike Group’s Target Unit is entirely composed of Models with this Special Rule."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "swift-of-action": {
+            "id": "swift-of-action",
+            "name": "Swift of Action",
+            "text": "LEGION TACTICA All Models with the White Scars Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: The White Scars Player may increase their Model’s Movement Characteristic. At the start of any of the Controlling Player’s Turns that Player may choose to increase the Movement Characteristic of any Model with this Special Rule and a Base Movement Characteristic of at least 1 and apply a modifier of +2 to that Characteristic until the end of that Player Turn ."
+        },
+        "the-path-of-the-warrior": {
+            "id": "the-path-of-the-warrior",
+            "name": "The Path of the Warrior",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the White Scars Trait can select The Path of the Warrior instead of any others available to that Model: The Controlling Player may take a chance to gain a bonus to the Focus Roll. When this Gambit is selected, before making the Focus Roll , the Controlling Player must declare a choice to ‘Strike Low’ (predicting the result of the next Focus Roll, before any modifiers are applied, is 1-3) or to ‘Strike High’ (predicting the result of the next Focus Roll, before any modifiers are applied, is 4-6). If the result of the Focus Roll corresponds with their choice, they may ignore all negative modifiers and only apply positive modifiers to their Focus Roll."
+        },
+        "chasing-the-wind": {
+            "id": "chasing-the-wind",
+            "name": "Chasing the Wind (Advanced Reaction)",
+            "text": "This Advanced Reaction allows the Controlling Player to make an additional Move with the Reacting Unit. Trigger: The Reactive Player may declare a Chasing the Wind Advanced Reaction in Step 2 of the Move Sub-Phase process, if an enemy Unit ends a move within 12\" and in Line of Sight of a Unit that only includes Models with the White Scars Trait under the Reactive Player’s Control. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Chasing the Wind Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Move triggered the Advanced Reaction. Once the cost has been paid, the Reactive Player must select one Unit that only includes Models with the White Scars Trait under their control that is within 12\" and has Line of Sight to the Target Unit, that Unit is the Reacting Unit. Process Once the Target Unit has finished its Move, the Reactive Player may make a Move with the Reacting Unit, following the normal Rules for Movement, including applying any modifiers due to Difficult Terrain and making Tests required due to Dangerous Terrain but the Reacting Unit may not Rush. Once the Reacting Unit has completed this move, the Active Player must then proceed with the remainder of their Movement Phase."
+        }
+    },
+    "detachments": {
+        "chogorian-warband": {
+            "id": "chogorian-warband",
+            "name": "Chogorian Warband",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["fast-attack"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": ["scimitar-jetbike-squadron"]
+                    }
+                },
+                {
+                    "roles": ["fast-attack"],
+                    "units": {
+                        "unitIds": ["scimitar-jetbike-squadron"]
+                    }
+                },
+                {
+                    "roles": ["recon"],
+                    "units": {
+                        "unitIds": ["outrider-squadron"]
+                    }
+                },
+                {
+                    "roles": ["recon"],
+                    "units": {
+                        "unitIds": ["outrider-squadron"]
+                    }
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "the-sagyar-mazan": {
+            "id": "the-sagyar-mazan",
+            "name": "The Sagyar Mazan",
+            "text": "If a Unit which only includes Models with the White Scars Trait and the Infantry or Cavalry Type is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: The Sagyar Mazan All Models in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Expendable (2) Special Rule.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "white-scars-power-glaive": {
+            "id": "white-scars-power-glaive",
+            "name": "Power Glaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "white-scars-power-glaive"
+                }
+            ]
+        },
+        "white-scars-cyber-hawk": {
+            "id": "white-scars-cyber-hawk",
+            "name": "Cyber-hawk",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "white-scars-cyber-hawk"
+                }
+            ]
+        },
+        "swift-of-action-all": {
+            "id": "swift-of-action-all",
+            "name": "Swift of Action",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "swift-of-action"
+                    }
+                }
+            ]
+        }
+    }
+}

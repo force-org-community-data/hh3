@@ -1,0 +1,2296 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "death-guard",
+    "version": "1.0.0",
+    "name": "Death Guard",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "calas-typhon": {
+            "id": "calas-typhon",
+            "name": "Calas Typhon",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 200
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "calas-typhon",
+                    "name": "Calas Typhon",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "5",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "death-cloud"
+                        },
+                        {
+                            "id": "witchblood"
+                        }
+                    ]
+                }
+            ],
+            "traits": [
+                "Traitor",
+                "Death Guard",
+                "Psyker",
+                "Master of the Legion"
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "lakrimae"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "slaker"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "death-guard-inductii-squad": {
+            "id": "death-guard-inductii-squad",
+            "name": "Death Guard Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 90
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "line",
+                            "value": "1"
+                        },
+                        {
+                            "id": "barbaran-resilience"
+                        },
+                        {
+                            "id": "fury-of-the-legion"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Death Guard"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "For every five Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "alchem-flamer": {
+                            "id": "alchem-flamer",
+                            "name": "Alchem flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["alchem-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "alchem-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "rotor-cannon": {
+                            "id": "rotor-cannon",
+                            "name": "Rotor cannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["rotor-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "rotor-cannon"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "death-guard-mortus-poisoner-squad": {
+            "id": "death-guard-mortus-poisoner-squad",
+            "name": "Death Guard Mortus Poisoner Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 70
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "poison-master",
+                    "name": "Poison-master",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "bitter-duty"
+                        }
+                    ]
+                },
+                {
+                    "id": "mortus-poisoner",
+                    "name": "Mortus Poisoner",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bitter-duty"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Death Guard"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 12
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have one chainsword selected for it for +2 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "chainsword",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chainsword"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its bolter exchanged for one flamer for Free or one alchem flamer for +2 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "flamer-for-free": {
+                            "id": "flamer-for-free",
+                            "name": "flamer for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "alchem-flamer": {
+                            "id": "alchem-flamer",
+                            "name": "alchem flamer",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["alchem-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "alchem-flamer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "For every five Models in this Unit, one Mortus Poisoner may have its bolter exchanged for one heavy alchem flamer for +10 Points per Model.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-alchem-flamer": {
+                            "id": "heavy-alchem-flamer",
+                            "name": "heavy alchem flamer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["heavy-alchem-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-alchem-flamer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "One Mortus Poisoner in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "Up to two Mortus Poisoners in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-7": {
+                    "id": "option-7",
+                    "name": "The Poison-master in this Unit may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"]
+                        },
+                        "power-scythe": {
+                            "id": "power-scythe",
+                            "name": "Power scythe",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["power-scythe"]
+                        }
+                    },
+                    "profileId": "poison-master",
+                    "default": "none"
+                },
+                "option-8": {
+                    "id": "option-8",
+                    "name": "The Poison-master may have phosphex bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "phosphex-bombs": {
+                            "id": "phosphex-bombs",
+                            "name": "phosphex bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["phosphex-bomb"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-9": {
+                    "id": "option-9",
+                    "name": "The Poison-master may have melta bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "deathshroud-terminator-squad": {
+            "id": "deathshroud-terminator-squad",
+            "name": "Deathshroud Terminator Squad",
+            "role": "retinue",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 2,
+            "profiles": [
+                {
+                    "id": "deathshroud",
+                    "name": "Deathshroud",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Death Guard"],
+            "additionalModels": {
+                "max": 8,
+                "cost": {
+                    "points": 45
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "alchem-caster",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-scythe",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have one of each of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "Melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        },
+                        "grenade-harness": {
+                            "id": "grenade-harness",
+                            "name": "Grenade harness",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["grenade-harness"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "grave-warden-terminator-squad": {
+            "id": "grave-warden-terminator-squad",
+            "name": "Grave Warden Terminator Squad",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 225
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "chem-master",
+                    "name": "Chem-master",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "death-cloud"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "id": "grave-warden",
+                    "name": "Grave Warden",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "death-cloud"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Death Guard"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 40
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "assault-grenade-launcher",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-fist",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Chem-master in this Unit may have its assault grenade launcher exchanged for one item from the Legion Combi-weapons list for Free instead of the listed c...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "for-free-instead-of-the-listed-cost": {
+                            "id": "for-free-instead-of-the-listed-cost",
+                            "name": "for Free instead of the listed cost",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": [
+                                "for-free-instead-of-the-listed-cost"
+                            ],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "assault-grenade-launcher"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "for-free-instead-of-the-listed-cost"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "chem-master",
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its power fist exchanged for one chainfist for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "chainfist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainfist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainfist"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every five Models in this Unit, one Grave Warden in this Unit may have its assault grenade launcher exchanged for one heavy alchem flamer for +5 Points p...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-alchem-flamer": {
+                            "id": "heavy-alchem-flamer",
+                            "name": "heavy alchem flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-alchem-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "assault-grenade-launcher"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-alchem-flamer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Chem-master in this Unit may have one grenade harness selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "grenade-harness": {
+                            "id": "grenade-harness",
+                            "name": "grenade harness",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["grenade-harness"]
+                        }
+                    },
+                    "profileId": "chem-master",
+                    "default": "none"
+                }
+            }
+        },
+        "mortarion": {
+            "id": "mortarion",
+            "name": "Mortarion",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 425
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "mortarion",
+                    "name": "Mortarion",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "7",
+                        "bs": "6",
+                        "s": "7",
+                        "t": "7",
+                        "w": "7",
+                        "i": "6",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-death-guard"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "5"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "shadow-of-the-reaper"
+                        },
+                        {
+                            "id": "preternatural-resilience"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "3"
+                        },
+                        {
+                            "id": "death-cloud"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Death Guard", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "silence"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-lantern"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "phosphex-bomb"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        }
+    },
+    "weapons": {
+        "lakrimae": {
+            "id": "lakrimae",
+            "name": "Lakrimae",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Lakrimae",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "reaping-blow",
+                            "value": "3"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "3+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "slaker": {
+            "id": "slaker",
+            "name": "Slaker",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Slaker",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "alchem-flamer": {
+            "id": "alchem-flamer",
+            "name": "Alchem flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Alchem flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "heavy-alchem-flamer": {
+            "id": "heavy-alchem-flamer",
+            "name": "Heavy Alchem Flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Heavy Alchem Flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "power-scythe": {
+            "id": "power-scythe",
+            "name": "Power scythe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Power scythe",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "reaping-blow",
+                            "value": "2"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "alchem-caster": {
+            "id": "alchem-caster",
+            "name": "Alchem Caster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Alchem caster",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "assault-grenade-launcher": {
+            "id": "assault-grenade-launcher",
+            "name": "Assault Grenade Launcher",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Krak",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Assault"]
+                },
+                {
+                    "name": "- Toxin",
+                    "stats": {
+                        "r": "18",
+                        "fp": "3",
+                        "rs": "1",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "poisoned",
+                            "value": "3+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "silence": {
+            "id": "silence",
+            "name": "Silence",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Silence",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "reaping-blow",
+                            "value": "3"
+                        },
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-lantern": {
+            "id": "the-lantern",
+            "name": "The Lantern",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "The Lantern",
+                    "stats": {
+                        "r": "10",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        }
+                    ]
+                }
+            ]
+        },
+        "alchem-combi-flamer": {
+            "id": "alchem-combi-flamer",
+            "name": "Alchem combi-flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Bolter (Primary)",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Alchem flamer (Secondary)",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        },
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "for-free-instead-of-the-listed-cost": {
+            "id": "for-free-instead-of-the-listed-cost",
+            "name": "for Free instead of the listed cost",
+            "text": ""
+        },
+        "death-cloud": {
+            "id": "death-cloud",
+            "name": "Death Cloud",
+            "text": "This Special Rule inflicts Hits on an enemy Unit Locked in Combat with any Models with this Special Rule. At the start of the Fight Sub-Phase , each enemy Unit that is Locked in Combat with one or more Units that include any Models with this Special Rule is affected by the Death Cloud. Each Unit affected by the Death Cloud suffers a number of Hits equal to the number of Models with this Special Rule in Units they are Locked in Combat with. These Hits have a Strength of 1, the Poisoned (3+) Special Rule, an AP of 5 and a Damage Characteristic of 1. No Cover Saves or Shrouded Damage Mitigation Rolls may be made to discard wounds that result from these Hits, but other Saving Throws and Damage Mitigation Rolls may be made as normal."
+        }
+    },
+    "upgrades": {
+        "death-guard-power-scythe": {
+            "id": "death-guard-power-scythe",
+            "name": "Power Scythe",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "power-scythe": {
+                    "id": "power-scythe",
+                    "name": "Power Scythe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["power-scythe"]
+                }
+            },
+            "default": "none"
+        },
+        "death-guard-alchem-weapons": {
+            "id": "death-guard-alchem-weapons",
+            "name": "Alchem Weapons",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "alchem-weapons": {
+                    "id": "alchem-weapons",
+                    "name": "Alchem Weapons",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["alchem-flamer"]
+                }
+            },
+            "default": "none"
+        },
+        "death-guard-death-cloud": {
+            "id": "death-guard-death-cloud",
+            "name": "Death Cloud",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "death-cloud": {
+                    "id": "death-cloud",
+                    "name": "Death Cloud",
+                    "cost": {
+                        "points": 0
+                    },
+                    "equipmentRefs": ["death-cloud"]
+                }
+            },
+            "default": "none"
+        },
+        "legion-combi-weapons": {
+            "id": "legion-combi-weapons",
+            "name": "Legion Combi-weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "combi-bolter": {
+                    "id": "combi-bolter",
+                    "name": "Combi-bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["combi-bolter"]
+                },
+                "combi-flamer": {
+                    "id": "combi-flamer",
+                    "name": "Combi-flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-flamer"]
+                },
+                "combi-melta": {
+                    "id": "combi-melta",
+                    "name": "Combi-melta",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-melta"]
+                },
+                "combi-plasma": {
+                    "id": "combi-plasma",
+                    "name": "Combi-plasma",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-plasma"]
+                },
+                "combi-volkite": {
+                    "id": "combi-volkite",
+                    "name": "Combi-volkite",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-volkite"]
+                },
+                "combi-grenade": {
+                    "id": "combi-grenade",
+                    "name": "Combi-grenade",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-grenade"]
+                },
+                "combi-disintegrator": {
+                    "id": "combi-disintegrator",
+                    "name": "Combi-disintegrator",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-disintegrator"]
+                },
+                "combi-grav": {
+                    "id": "combi-grav",
+                    "name": "Combi-grav",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["combi-grav"]
+                },
+                "alchem-combi-flamer": {
+                    "id": "alchem-combi-flamer",
+                    "name": "Alchem combi-flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["alchem-combi-flamer"]
+                }
+            }
+        },
+        "legion-pistols": {
+            "id": "legion-pistols",
+            "name": "Legion Pistols",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "plasma-pistol": {
+                    "id": "plasma-pistol",
+                    "name": "Plasma pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["plasma-pistol"]
+                },
+                "hand-flamer": {
+                    "id": "hand-flamer",
+                    "name": "Hand flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["hand-flamer"]
+                },
+                "volkite-serpenta": {
+                    "id": "volkite-serpenta",
+                    "name": "Volkite serpenta",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["volkite-serpenta"]
+                },
+                "alchem-caster": {
+                    "id": "alchem-caster",
+                    "name": "Alchem caster",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["alchem-caster"]
+                }
+            }
+        },
+        "legion-heavy-weapons": {
+            "id": "legion-heavy-weapons",
+            "name": "Legion Heavy Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "heavy-bolter": {
+                    "id": "heavy-bolter",
+                    "name": "Heavy bolter",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-bolter"]
+                },
+                "heavy-flamer": {
+                    "id": "heavy-flamer",
+                    "name": "Heavy flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-flamer"]
+                },
+                "autocannon": {
+                    "id": "autocannon",
+                    "name": "Autocannon",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["autocannon"]
+                },
+                "missile-launcher": {
+                    "id": "missile-launcher",
+                    "name": "Missile launcher",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["missile-launcher"]
+                },
+                "multi-melta": {
+                    "id": "multi-melta",
+                    "name": "Multi-melta",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["multi-melta"]
+                },
+                "plasma-cannon": {
+                    "id": "plasma-cannon",
+                    "name": "Plasma cannon",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["plasma-cannon"]
+                },
+                "volkite-culverin": {
+                    "id": "volkite-culverin",
+                    "name": "Volkite culverin",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["volkite-culverin"]
+                },
+                "lascannon": {
+                    "id": "lascannon",
+                    "name": "Lascannon",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["lascannon"]
+                },
+                "heavy-alchem-flamer": {
+                    "id": "heavy-alchem-flamer",
+                    "name": "Heavy alchem flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-alchem-flamer"]
+                }
+            }
+        },
+        "legion-pintle-weapons": {
+            "id": "legion-pintle-weapons",
+            "name": "Legion Pintle Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "pintle-mounted-combi-bolter": {
+                    "id": "pintle-mounted-combi-bolter",
+                    "name": "Pintle Mounted combi-bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["combi-bolter"]
+                },
+                "pintle-mounted-combi-flamer": {
+                    "id": "pintle-mounted-combi-flamer",
+                    "name": "Pintle Mounted combi-flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-flamer"]
+                },
+                "pintle-mounted-combi-plasma": {
+                    "id": "pintle-mounted-combi-plasma",
+                    "name": "Pintle Mounted combi-plasma",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-plasma"]
+                },
+                "pintle-mounted-combi-melta": {
+                    "id": "pintle-mounted-combi-melta",
+                    "name": "Pintle Mounted combi-melta",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-melta"]
+                },
+                "pintle-mounted-combi-volkite": {
+                    "id": "pintle-mounted-combi-volkite",
+                    "name": "Pintle Mounted combi-volkite",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pintle-mounted-combi-volkite"]
+                },
+                "pintle-mounted-havoc-launcher": {
+                    "id": "pintle-mounted-havoc-launcher",
+                    "name": "Pintle Mounted havoc launcher",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["havoc-launcher"]
+                },
+                "pintle-mounted-heavy-bolter": {
+                    "id": "pintle-mounted-heavy-bolter",
+                    "name": "Pintle Mounted heavy bolter",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-bolter"]
+                },
+                "pintle-mounted-heavy-flamer": {
+                    "id": "pintle-mounted-heavy-flamer",
+                    "name": "Pintle Mounted heavy flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-flamer"]
+                },
+                "pintle-mounted-multi-melta": {
+                    "id": "pintle-mounted-multi-melta",
+                    "name": "Pintle Mounted multi-melta",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["multi-melta"]
+                },
+                "pintle-mounted-heavy-alchem-flamer": {
+                    "id": "pintle-mounted-heavy-alchem-flamer",
+                    "name": "Pintle Mounted heavy alchem flamer",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["heavy-alchem-flamer"]
+                }
+            }
+        },
+        "legion-sponson-weapons": {
+            "id": "legion-sponson-weapons",
+            "name": "Legion Sponson Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "two-sponson-mounted-heavy-bolters": {
+                    "id": "two-sponson-mounted-heavy-bolters",
+                    "name": "Two Sponson Mounted heavy bolters",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["heavy-bolter"]
+                },
+                "two-sponson-mounted-heavy-flamers": {
+                    "id": "two-sponson-mounted-heavy-flamers",
+                    "name": "Two Sponson Mounted heavy flamers",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["heavy-flamer"]
+                },
+                "two-sponson-mounted-lascannons": {
+                    "id": "two-sponson-mounted-lascannons",
+                    "name": "Two Sponson Mounted lascannons",
+                    "cost": {
+                        "points": 20
+                    },
+                    "weaponRefs": ["lascannon"]
+                },
+                "two-sponson-mounted-volkite-culverins": {
+                    "id": "two-sponson-mounted-volkite-culverins",
+                    "name": "Two Sponson Mounted volkite culverins",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["volkite-culverin"]
+                },
+                "two-sponson-mounted-heavy-alchem-flamers": {
+                    "id": "two-sponson-mounted-heavy-alchem-flamers",
+                    "name": "Two Sponson Mounted heavy alchem flamers",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-alchem-flamer"]
+                }
+            }
+        },
+        "legion-special-weapons": {
+            "id": "legion-special-weapons",
+            "name": "Legion Special Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "flamer": {
+                    "id": "flamer",
+                    "name": "Flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["flamer"]
+                },
+                "plasma-gun": {
+                    "id": "plasma-gun",
+                    "name": "Plasma gun",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["plasma-gun"]
+                },
+                "meltagun": {
+                    "id": "meltagun",
+                    "name": "Meltagun",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["meltagun"]
+                },
+                "volkite-charger": {
+                    "id": "volkite-charger",
+                    "name": "Volkite charger",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["volkite-charger"]
+                },
+                "volkite-caliver": {
+                    "id": "volkite-caliver",
+                    "name": "Volkite caliver",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["volkite-caliver"]
+                },
+                "rotor-cannon": {
+                    "id": "rotor-cannon",
+                    "name": "Rotor cannon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["rotor-cannon"]
+                },
+                "alchem-flamer": {
+                    "id": "alchem-flamer",
+                    "name": "Alchem flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["alchem-flamer"]
+                }
+            }
+        },
+        "legion-officer-wargear": {
+            "id": "legion-officer-wargear",
+            "name": "Legion Officer Wargear",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["bolt-pistol"]
+                },
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainsword"]
+                },
+                "bolter": {
+                    "id": "bolter",
+                    "name": "Bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["bolter"]
+                },
+                "volkite-serpenta": {
+                    "id": "volkite-serpenta",
+                    "name": "Volkite serpenta",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["volkite-serpenta"]
+                },
+                "hand-flamer": {
+                    "id": "hand-flamer",
+                    "name": "Hand flamer",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["hand-flamer"]
+                },
+                "plasma-pistol": {
+                    "id": "plasma-pistol",
+                    "name": "Plasma pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["plasma-pistol"]
+                },
+                "disintegrator-pistol": {
+                    "id": "disintegrator-pistol",
+                    "name": "Disintegrator pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["disintegrator-pistol"]
+                },
+                "chainaxe": {
+                    "id": "chainaxe",
+                    "name": "Chainaxe",
+                    "cost": {
+                        "points": 0
+                    },
+                    "weaponRefs": ["chainaxe"]
+                },
+                "charnabal-sabre": {
+                    "id": "charnabal-sabre",
+                    "name": "Charnabal sabre",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["charnabal-sabre"]
+                },
+                "power-weapon": {
+                    "id": "power-weapon",
+                    "name": "Power weapon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["power-weapons"]
+                },
+                "power-fist": {
+                    "id": "power-fist",
+                    "name": "Power fist",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["power-fist"]
+                },
+                "lightning-claw": {
+                    "id": "lightning-claw",
+                    "name": "Lightning claw",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["lightning-claw"]
+                },
+                "thunder-hammer": {
+                    "id": "thunder-hammer",
+                    "name": "Thunder hammer",
+                    "cost": {
+                        "points": 15
+                    },
+                    "weaponRefs": ["thunder-hammer"]
+                },
+                "combat-shield": {
+                    "id": "combat-shield",
+                    "name": "Combat shield",
+                    "cost": {
+                        "points": 0
+                    },
+                    "equipmentRefs": ["combat-shield"]
+                },
+                "boarding-shield": {
+                    "id": "boarding-shield",
+                    "name": "Boarding shield",
+                    "cost": {
+                        "points": 5
+                    },
+                    "equipmentRefs": ["boarding-shield"]
+                },
+                "alchem-caster": {
+                    "id": "alchem-caster",
+                    "name": "Alchem caster",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["alchem-caster"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "death-cloud": {
+            "id": "death-cloud",
+            "name": "Death Cloud",
+            "text": "This Special Rule inflicts Hits on an enemy Unit Locked in Combat with any Models with this Special Rule. At the start of the Fight Sub-Phase, each enemy Unit that is Locked in Combat with one or more Units that include any Models with this Special Rule is affected by the Death Cloud. Each Unit affected by the Death Cloud suffers a number of Hits equal to the number of Models with this Special Rule in Units they are Locked in Combat with. These Hits have a Strength of 1, the Poisoned (3+) Special Rule, an AP of 5 and a Damage Characteristic of 1. No Cover Saves or Shrouded Damage Mitigation Rolls may be made to discard wounds that result from these Hits, but other Saving Throws and Damage Mitigation Rolls may be made as normal."
+        },
+        "witchblood": {
+            "id": "witchblood",
+            "name": "Witchblood",
+            "text": "Calas Typhon has the Biomancy Discipline if included in an Army that does not include Mortarion. When part of an Army that includes Mortarion, a Model with this Special Rule does not have any Psychic Disciplines, despite having the Psyker Trait. When part of an Army that does not include Mortarion, a Model with this Special Rule has the Biomancy Discipline. Additionally, once per Battle, while a Model with this Special Rule is engaged in a Challenge, its Controlling Player can select the following Gambit : Witchblood: While this Gambit is selected, at the start of the Focus Step, the Controlling Player of this Model may make a Willpower Check for this Model. If the Check is successful, this Model has its Attacks and Strength Characteristics modified by +2 in the following Strike Step. If the Check is failed, this Model suffers 1 wound, with an AP of 2 and a Damage of 1, against which only Invulnerable Saves can be taken. If this would cause this Model to be reduced to 0 Wounds, this Model is Removed as a Casualty and the Challenge ends."
+        },
+        "barbaran-resilience": {
+            "id": "barbaran-resilience",
+            "name": "Barbaran Resilience",
+            "text": "A Unit containing any Models with this Special Rule never gains the Routed Tactical Status due to suffering 25% or more Casualties in the Shooting Phase. A Unit containing any Models with this Special Rule is never required to take a Leadership Check in the Morale SubPhase to avoid gaining the Routed Tactical Status due to having a certain number of Models removed from that Unit as Casualties from a single Shooting Attack."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "sire-of-the-death-guard": {
+            "id": "sire-of-the-death-guard",
+            "name": "Sire of the Death Guard",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Tactical Squad Units, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Death Guard Trait in the same Army: Until the end of the first Battle Turn of the Battle, each time the Controlling Player makes a Shooting Attack for a Unit that only includes Models with the Death Guard Trait, if a Fire Group has a total Firepower Characteristic of 11 or more, attacks made by that Fire Group have the Pinning (0) Special Rule."
+        },
+        "shadow-of-the-reaper": {
+            "id": "shadow-of-the-reaper",
+            "name": "Shadow of the Reaper",
+            "text": "Mortarion can move further when Rushing or making a Set-up Move. Each time a Model with this Special Rule Rushes, treat that Model’s Movement Characteristic as 10. In addition, add 2\" to the distance of any Set-up Move made by a Model with this Special Rule."
+        },
+        "preternatural-resilience": {
+            "id": "preternatural-resilience",
+            "name": "Preternatural Resilience",
+            "text": "Mortarion limits the Target Number of the Critical Hit (X) Special Rule. When Engaged in a Challenge, attacks with the Critical Hit (X) Special Rule made against a Model with this Special Rule substitute the value of X for 6+."
+        },
+        "combi": {
+            "id": "combi",
+            "name": "Combi",
+            "text": "A Weapon with this Special Rule can fire multiple profiles simultaneously. Each time a Model makes a Shooting Attack with a Weapon Profile with this Special Rule, the Controlling Player can select another Profile from the same Weapon with this Special Rule and make attacks with it as part of the same Shooting Attack. Note that if that Profile also has the Limited (X) Special Rule, this does not allow it to be selected to make attacks more than the number of times equal to the value of X on that Special Rule."
+        },
+        "remorseless-advance": {
+            "id": "remorseless-advance",
+            "name": "Remorseless Advance",
+            "text": "LEGION TACTICA All Models with the Death Guard Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: Models with this Special Rule may Move and still benefit from the Heavy (X) Special Rule. A Model with this Special Rule that has moved no more than 4\" in the Movement Phase and did not Rush may still benefit from any variant of the Heavy (X) Special Rule on any Weapons that they have. Additionally, the Controlling Player of a Model with this Special Rule may ignore negative modifiers to the Movement Characteristic of that Model as a result of moving in Difficult Terrain ."
+        },
+        "steadfast-resilience": {
+            "id": "steadfast-resilience",
+            "name": "Steadfast Resilience",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Death Guard Trait can select Steadfast Resilience instead of any others available to that Model: This Gambit allows a Model to increase its Toughness Characteristic. If this Gambit is selected, then the Toughness Characteristic of the Model it is selected for is replaced with the Base Weapon Skill Characteristic of the opposing Model for the duration of the following Strike Step ."
+        },
+        "barbaran-endurance": {
+            "id": "barbaran-endurance",
+            "name": "Barbaran Endurance (Advanced Reaction)",
+            "text": "This Reaction grants the Reacting Unit a Damage Mitigation Roll and allows them to recover from Tactical Statuses. Trigger: Once per Battle, the Reactive Player may declare the Barbaran Endurance Advanced Reaction during Step 4 of any Shooting Attack declared by the Active Player during the Shooting Phase that Targets a Unit which only includes Models with the Death Guard Trait that do not have the Vehicle Type. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare the Barbaran Endurance Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Shooting Attack triggered the Reaction. The Reacting Unit is always the Unit that was declared as the target of the Shooting Attack that triggered this Reaction. Process All Models in the Reacting Unit immediately recover from any Tactical Statuses. For the duration of the current Shooting Phase, all Models in the Reacting Unit gain the Feel No Pain (5+) Special Rule. For the duration of the current Shooting Phase, the Reacting Player automatically passes any Cool Checks or Leadership Checks made for the Reacting Unit."
+        }
+    },
+    "detachments": {
+        "reaping-host": {
+            "id": "reaping-host",
+            "name": "Reaping Host",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": [
+                            "breacher-squad",
+                            "despoiler-squad",
+                            "tactical-squad",
+                            "death-guard-inductii-squad"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["troop"],
+                    "units": {
+                        "unitIds": [
+                            "breacher-squad",
+                            "despoiler-squad",
+                            "tactical-squad",
+                            "death-guard-inductii-squad"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["support"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "unnatural-resilience": {
+            "id": "unnatural-resilience",
+            "name": "Unnatural Resilience",
+            "text": "If a Centurion Model with the Death Guard Trait or a Cataphractii Centurion Model with the Death Guard Trait is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Unnatural Resilience This Prime Advantage can only be selected once per Army. A Model selected to fill a Prime Force Organisation Slot with this Prime Advantage: Has its Base Wounds Characteristic modified by +1. Gains the Eternal Warrior (2) Special Rule.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "death-guard-power-scythe": {
+            "id": "death-guard-power-scythe",
+            "name": "Power Scythe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "death-guard-power-scythe"
+                }
+            ]
+        },
+        "death-guard-alchem-weapons": {
+            "id": "death-guard-alchem-weapons",
+            "name": "Alchem Weapons",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "death-guard-alchem-weapons"
+                }
+            ]
+        },
+        "death-guard-death-cloud": {
+            "id": "death-guard-death-cloud",
+            "name": "Death Cloud",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "death-guard-death-cloud"
+                }
+            ]
+        },
+        "remorseless-advance-all": {
+            "id": "remorseless-advance-all",
+            "name": "Remorseless Advance",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "remorseless-advance"
+                    }
+                }
+            ]
+        }
+    },
+    "overrides": [
+        {
+            "kind": "upgrades",
+            "id": "legion-combi-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-pistols"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-heavy-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-pintle-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-sponson-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-special-weapons"
+        },
+        {
+            "kind": "upgrades",
+            "id": "legion-officer-wargear"
+        }
+    ]
+}

@@ -1,0 +1,2233 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "world-eaters",
+    "version": "1.0.0",
+    "name": "World Eaters",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "angron-transfigured": {
+            "id": "angron-transfigured",
+            "name": "Angron Transfigured",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 600
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "angron-transfigured",
+                    "name": "Angron Transfigured",
+                    "template": "model",
+                    "stats": {
+                        "m": "14",
+                        "ws": "8",
+                        "bs": "6",
+                        "s": "7",
+                        "t": "7",
+                        "w": "7",
+                        "i": "7",
+                        "a": "8",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "12",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Antigrav", "Malefic"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "7"
+                        },
+                        {
+                            "id": "lord-of-corruption"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "World Eaters", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "blades-of-the-red-angel"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "angron": {
+            "id": "angron",
+            "name": "Angron",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 450
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "angron",
+                    "name": "Angron",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "8",
+                        "bs": "6",
+                        "s": "6",
+                        "t": "6",
+                        "w": "6",
+                        "i": "6",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-world-eaters"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "S"
+                        },
+                        {
+                            "id": "lord-of-the-red-sands"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "World Eaters", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "gorefather-gorechild"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-spite-furnace"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "kh-rn-the-bloody": {
+            "id": "kh-rn-the-bloody",
+            "name": "Khârn The Bloody",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "kh-rn-the-bloody",
+                    "name": "Khârn the Bloody",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "7",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "reaping-blow",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "World Eaters", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-cutter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "plasma-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "If Angron is not included in the same Army as this Model, this Model may have its The Cutter exchanged for one Gorechild Reforged for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "gorechild-reforged": {
+                            "id": "gorechild-reforged",
+                            "name": "Gorechild Reforged",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["gorechild-reforged"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "the-cutter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "gorechild-reforged"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "lotara-sarrin": {
+            "id": "lotara-sarrin",
+            "name": "Lotara Sarrin",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 85
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "lotara-sarrin",
+                    "name": "Lotara Sarrin",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "3",
+                        "bs": "3",
+                        "s": "3",
+                        "t": "3",
+                        "w": "2",
+                        "i": "3",
+                        "a": "2",
+                        "ld": "9",
+                        "cl": "9",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "6+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique", "Sergeant", "Specialist"],
+                    "specialRules": [
+                        {
+                            "id": "shadow-of-the-conqueror"
+                        },
+                        {
+                            "id": "level-headed"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "World Eaters"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "fleet-service-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-conquerors-bite"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "rampager-squad": {
+            "id": "rampager-squad",
+            "name": "Rampager Squad",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 135
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "rampager-champion",
+                    "name": "Rampager Champion",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Champion", "Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "S"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "id": "rampager",
+                    "name": "Rampager",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "S"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["World Eaters"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 22
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "caedere-weapons",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have one bolt pistol selected for it for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bolt-pistol-for-free": {
+                            "id": "bolt-pistol-for-free",
+                            "name": "bolt pistol for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "The Rampager Champion in this Unit may have its bolt pistol exchanged for one plasma pistol for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "plasma pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "rampager-champion",
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Rampager Champion in this Unit may have its Caedere weapon exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "Pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["power-fist"]
+                        }
+                    },
+                    "profileId": "rampager-champion",
+                    "default": "none"
+                }
+            }
+        },
+        "red-butchers": {
+            "id": "red-butchers",
+            "name": "Red Butchers",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 250
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "devoured",
+                    "name": "Devoured",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "6",
+                        "in": "4",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "heedless"
+                        },
+                        {
+                            "id": "ravening-madmen"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "id": "red-butcher",
+                    "name": "Red Butcher",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "6",
+                        "in": "4",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "heedless"
+                        },
+                        {
+                            "id": "ravening-madmen"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "World Eaters"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 45
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "butcher-power-axes",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Devoured in this Unit may have its butcher power axes exchanged for one butcher chainfists for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "butcher-chainfists": {
+                            "id": "butcher-chainfists",
+                            "name": "butcher chainfists",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["butcher-chainfists"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "butcher-power-axes"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "butcher-chainfists"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "devoured",
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its butcher power axes exchanged for one combi-bolter and one power axe for Free.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "combi-bolter-and-one-power-axe-for-free": {
+                            "id": "combi-bolter-and-one-power-axe-for-free",
+                            "name": "combi-bolter and one power axe for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter", "power-axe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "butcher-power-axes"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Any Model in this Unit may have its butcher power axes exchanged for one pair of lightning claws for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "butcher-power-axes"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "If the Devoured in this Unit has had its butcher power axes exchanged for a combi-bolter and power axe, it may have its combi-bolter exchanged for one item f...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "combi-bolter-and-power-axe": {
+                            "id": "combi-bolter-and-power-axe",
+                            "name": "combi-bolter and power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter", "power-axe"]
+                        },
+                        "it-may-have-its-combi-bolter-exchanged-for": {
+                            "id": "it-may-have-its-combi-bolter-exchanged-for",
+                            "name": "it may have its combi-bolter exchanged for",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": [
+                                "it-may-have-its-combi-bolter-exchanged-for"
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "If the Devoured in this Unit has had its butcher power axes exchanged for a combi-bolter and power axe, it may have its combi-bolter and/or power axe exchang...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainfist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "The Devoured in this Unit may have one grenade harness selected for it for +5 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "grenade-harness": {
+                            "id": "grenade-harness",
+                            "name": "grenade harness",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["grenade-harness"]
+                        }
+                    },
+                    "profileId": "devoured",
+                    "default": "none"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "world-eaters-inductii-squad": {
+            "id": "world-eaters-inductii-squad",
+            "name": "World Eaters Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "heedless"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "T"
+                        },
+                        {
+                            "id": "ravening-madmen"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["World Eaters"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainsword and bolt pistol exchanged for one heavy chainaxe for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainaxe": {
+                            "id": "heavy-chainaxe",
+                            "name": "heavy chainaxe",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainaxe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainaxe"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "Heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "charnabal-sabre"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "world-eaters-red-hand-destroyer-assault-squad": {
+            "id": "world-eaters-red-hand-destroyer-assault-squad",
+            "name": "World Eaters Red Hand Destroyer Assault Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 110
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "blood-bonded-with-jump-pack",
+                    "name": "Blood Bonded with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "bearers-of-the-blood-hand"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["World Eaters"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 20
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainsword exchanged for one Caedere weapon for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "caedere-weapon": {
+                            "id": "caedere-weapon",
+                            "name": "Caedere weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["caedere-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "caedere-weapons"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every five Models in this Unit, one Ravager with Jump Pack may have one bolt pistol exchanged for one of the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "destroyer-missile-launcher-with-rad-missiles": {
+                            "id": "destroyer-missile-launcher-with-rad-missiles",
+                            "name": "Destroyer missile launcher with rad missiles",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": [
+                                "destroyer-missile-launcher-with-rad-missiles"
+                            ],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "destroyer-missile-launcher-with-rad-missiles"
+                                    }
+                                }
+                            ]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Blood Bonded with Jump Pack in this Unit may have its chainsword exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "blood-bonded-with-jump-pack",
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Blood Bonded with Jump Pack in this Unit may have any of the following items selected for them:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "phosphex-bombs": {
+                            "id": "phosphex-bombs",
+                            "name": "Phosphex bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["phosphex-bomb"]
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "Melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "profileId": "blood-bonded-with-jump-pack",
+                    "default": "none"
+                }
+            }
+        },
+        "world-eaters-red-hand-destroyer-mortalis-squad": {
+            "id": "world-eaters-red-hand-destroyer-mortalis-squad",
+            "name": "World Eaters Red Hand Destroyer Mortalis Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 85
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "blood-bonded",
+                    "name": "Blood Bonded",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "bearers-of-the-blood-hand"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        }
+                    ]
+                },
+                {
+                    "id": "ravager",
+                    "name": "Ravager",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "bearers-of-the-blood-hand"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["World Eaters"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 15
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainsword exchanged for one Caedere weapon for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "caedere-weapon": {
+                            "id": "caedere-weapon",
+                            "name": "Caedere weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["caedere-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "caedere-weapons"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every five Models in this Unit, one Ravager may have one bolt pistol exchanged for one of the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "destroyer-missile-launcher-with-rad-missiles": {
+                            "id": "destroyer-missile-launcher-with-rad-missiles",
+                            "name": "Destroyer missile launcher with rad missiles",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": [
+                                "destroyer-missile-launcher-with-rad-missiles"
+                            ],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "destroyer-missile-launcher-with-rad-missiles"
+                                    }
+                                }
+                            ]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Blood Bonded in this Unit may have its chainsword exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "blood-bonded",
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Blood Bonded in this Unit may have any of the following items selected for them:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "phosphex-bombs": {
+                            "id": "phosphex-bombs",
+                            "name": "Phosphex bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["phosphex-bomb"]
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "Melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "profileId": "blood-bonded",
+                    "default": "none"
+                }
+            }
+        }
+    },
+    "weapons": {
+        "blades-of-the-red-angel": {
+            "id": "blades-of-the-red-angel",
+            "name": "Blades of the Red Angel",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "- Eviscerating Slashes",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "reaping-blow",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Crushing Blows",
+                    "stats": {
+                        "im": "-2",
+                        "am": "4",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "4"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ]
+                }
+            ]
+        },
+        "gorefather-gorechild": {
+            "id": "gorefather-gorechild",
+            "name": "Gorefather & Gorechild",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Gorefather & Gorechild",
+                    "stats": {
+                        "im": "I",
+                        "am": "+1",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-spite-furnace": {
+            "id": "the-spite-furnace",
+            "name": "The Spite Furnace",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "The Spite Furnace",
+                    "stats": {
+                        "r": "12",
+                        "fp": "2",
+                        "rs": "7",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Plasma", "Assault"]
+                }
+            ]
+        },
+        "the-cutter": {
+            "id": "the-cutter",
+            "name": "The Cutter",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Cutter",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "gorechild-reforged": {
+            "id": "gorechild-reforged",
+            "name": "Gorechild Reforged",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Gorechild Reforged",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "fleet-service-pistol": {
+            "id": "fleet-service-pistol",
+            "name": "Fleet Service Pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Fleet service pistol",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-conquerors-bite": {
+            "id": "the-conquerors-bite",
+            "name": "The Conqueror’s Bite",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Conqueror’s Bite",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "butcher-power-axes": {
+            "id": "butcher-power-axes",
+            "name": "Butcher Power Axes",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Butcher power axes",
+                    "stats": {
+                        "im": "-1",
+                        "am": "+1",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "butcher-chainfists": {
+            "id": "butcher-chainfists",
+            "name": "Butcher Chainfists",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Butcher chainfists",
+                    "stats": {
+                        "im": "-3",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ]
+                }
+            ]
+        },
+        "meteor-hammer": {
+            "id": "meteor-hammer",
+            "name": "Meteor hammer",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Meteor hammer",
+                    "stats": {
+                        "im": "I",
+                        "am": "-1",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "IM"
+                        }
+                    ]
+                },
+                {
+                    "name": "Excoriator chainaxe",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Paired falax blades",
+                    "stats": {
+                        "im": "I",
+                        "am": "+2",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"]
+                },
+                {
+                    "name": "Barb-hook lash",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "S"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "caedere-weapons": {
+            "id": "caedere-weapons",
+            "name": "Caedere Weapons",
+            "text": "If a Model has a Caedere weapon as part of its Wargear, you can select one of the following for that Model to have: Meteor hammer Excoriator chainaxe Paired falax blades Barb-hook lash Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one Caedere weapon for +10 Points per Model. Melee Weapon Melee Weapon IM AM SM AP D Special Rules Traits Meteor hammer Meteor hammer I -1 +2 3 2 Impact (IM) Power Excoriator chainaxe Excoriator chainaxe -2 A +2 3 1 Breaching (6+), Shred (6+) Chain Paired falax blades Paired falax blades I +2 S 3 1 - Power Barb-hook lash Barb-hook lash +1 A S 3 1 Critical Hit (6+), Phage (S) Power"
+        },
+        "it-may-have-its-combi-bolter-exchanged-for": {
+            "id": "it-may-have-its-combi-bolter-exchanged-for",
+            "name": "it may have its combi-bolter exchanged for",
+            "text": ""
+        },
+        "blades-of-the-fighting-pits": {
+            "id": "blades-of-the-fighting-pits",
+            "name": "Blades of the Fighting Pits",
+            "text": "In any Unit entirely composed of Models with the World Eaters Trait, any Model may have its chainsword exchanged for one chainaxe for Free."
+        }
+    },
+    "upgrades": {
+        "world-eaters-blades-of-the-fighting-pits": {
+            "id": "world-eaters-blades-of-the-fighting-pits",
+            "name": "Blades of the Fighting Pits",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "blades-of-the-fighting-pits": {
+                    "id": "blades-of-the-fighting-pits",
+                    "name": "Blades of the Fighting Pits",
+                    "cost": {
+                        "points": 0
+                    },
+                    "equipmentRefs": ["blades-of-the-fighting-pits"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "chainsword"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "blades-of-the-fighting-pits"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "world-eaters-caedere-weapons": {
+            "id": "world-eaters-caedere-weapons",
+            "name": "Caedere Weapons",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "caedere-weapons": {
+                    "id": "caedere-weapons",
+                    "name": "Caedere Weapons",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["meteor-hammer"]
+                }
+            },
+            "default": "none"
+        }
+    },
+    "specialRules": {
+        "lord-of-corruption": {
+            "id": "lord-of-corruption",
+            "name": "Lord of Corruption",
+            "text": "Angron Transfigured cannot be included in the same Army as Angron."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "sire-of-the-world-eaters": {
+            "id": "sire-of-the-world-eaters",
+            "name": "Sire of the World Eaters",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled with Assault Squad and/or Despoiler Squad Units, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Infantry or Paragon Type and the World Eaters Trait in the same Army: Until the end of the first Battle Turn of the Battle, all Models in this Army with the Infantry or Paragon Type and the World Eaters Trait have the Fast (2) Special Rule."
+        },
+        "impact": {
+            "id": "impact",
+            "name": "Impact (X)",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "lord-of-the-red-sands": {
+            "id": "lord-of-the-red-sands",
+            "name": "Lord of the Red Sands",
+            "text": "Angron may fight successive Challenges in a Turn. At the start of the Glory Step of a Challenge involving a Model with this Special Rule where they are the Challenger, before resolving the Glory Step, the Controlling Player of the Model with this Special Rule can choose to immediately return to the Declare Challenge Step and declare another Challenge. Enemy Models which have already fought in a Challenge during this Sub-Phase are not eligible to take part in this additional Challenge. When the Glory Step for this Challenge Sub-Phase is resolved, Players gain Combat Resolution Points for all of the Challenges resolved during this Sub-Phase."
+        },
+        "shadow-of-the-conqueror": {
+            "id": "shadow-of-the-conqueror",
+            "name": "Shadow of the Conqueror",
+            "text": "If a Model with this Special Rule is included in the Primary Detachment of this Army and is on the Battlefield, in the Effects Sub-Phase of the Start Phase, the Controlling Player of the Model with this Special Rule can make an Intelligence Check for that Model. If that Check is successful, the Controlling Player can select one of the following options: Coordinate: Once during this Turn, before making a Reserves Test for a Unit in Aerial Reserves, the Controlling Player can modify the result of that Reserves Test by +1. Annihilate: Once during their opponent’s next Movement Phase, the Controlling Player can make the Guns of the Conqueror Advanced Reaction. Guns of the Conqueror Advanced Reaction Trigger: The Reactive Player may declare a Guns of the Conqueror Advanced Reaction in Step 2 of the Move SubPhase process, if an enemy Unit ends a move within 24\" and Line of Sight of any Model in a Unit under the Reactive Player’s Control that includes a Model with this Special Rule. Cost: The Reactive Player must spend 3 Points of their Reaction Allotment to declare a Guns of the Conqueror Advanced Reaction. If this Reaction is declared, the Unit that includes the Model with this Special Rule is considered to be the Reacting Unit. Target: The Target Unit is always the Unit whose Move triggered the Reaction. Process: Once the Guns of the Conqueror Advanced Reaction has been declared, the Reactive Player makes a Shooting Attack targeting the Target Unit, using the following profile. The Hit Test for this Shooting Attack is automatically unsuccessful. Ranged Weapon Ranged Weapon R FP RS AP D Special Rules Traits Guns of the Conqueror Guns of the Conqueror 24 1 10 3 3 Barrage (2), Blast (7\"), Breaching (5+) Assault Once the Shooting Attack made as part of this Reaction has been completely resolved, including removing any Casualties, the Active Player must then completely resolve any remaining elements of the Target Unit’s movement."
+        },
+        "level-headed": {
+            "id": "level-headed",
+            "name": "Level-headed",
+            "text": "A Unit that Lotara Sarrin has joined may use her Characteristics to remove Tactical Statuses. If a Unit includes a Model with this Special Rule, during the Start Phase of their Turn as the Active Player the Controlling Player may make a Check to remove a single Status from all Models in the Unit that includes the Model with this Special Rule. This Check is made using the Characteristics of the Model with this Special Rule (using Cool, unless attempting to remove Routed, in which case Leadership is used)."
+        },
+        "heedless": {
+            "id": "heedless",
+            "name": "Heedless",
+            "text": "A Unit that includes any Models with this Special Rule cannot claim Objectives. A Unit that includes any Models with this Special Rule cannot Control or Contest any Objective Marker - this overrides any other Rule or Special Rule that may apply to the Unit regardless of the source of the Rule or effect."
+        },
+        "ravening-madmen": {
+            "id": "ravening-madmen",
+            "name": "Ravening Madmen",
+            "text": "Red Butchers count as having a Weapon Skill Characteristic of 3 when their opponent makes Hit Tests. Any Hit Tests made in the Assault Phase that target a Unit that includes one or more Models with this Special Rule always count the majority Weapon Skill Characteristic of the Target Unit as 3, regardless of the actual Weapon Skill Characteristic of the Models in that Unit. Additionally, a Unit that includes any Models with this Special Rule may only join or be joined by Models with this Special Rule."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "bearers-of-the-blood-hand": {
+            "id": "bearers-of-the-blood-hand",
+            "name": "Bearers of the Blood Hand",
+            "text": "When resolving a Combat in the Resolution Sub-Phase of the Assault Phase, the Controlling Player scores 1 Combat Resolution Point for each Unit that includes any Models with this Special Rule."
+        },
+        "violence-incarnate": {
+            "id": "violence-incarnate",
+            "name": "Violence Incarnate",
+            "text": "LEGION TACTICA All Models with the World Eaters Trait (excluding Models with the Vehicle Type) are subject to the following Special Rule: World Eaters gain +1 to their Attacks Characteristic when they Charge. On any Turn in which they made a Charge Move , Models with this Special Rule modify their Attacks Characteristic by +1 until the end of the Phase."
+        },
+        "violent-overkill": {
+            "id": "violent-overkill",
+            "name": "Violent Overkill",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the World Eaters Trait can select Violent Overkill instead of any others available to that Model: This Gambit allows additional wounds to be allocated to enemy Models outside the Challenge when the opponent is Removed as a Casualty. If this Gambit is selected, then when this Model makes attacks during the Strike Step , if the other Model involved in the Challenge is Removed as a Casualty , any remaining wounds must instead be allocated to other eligible enemy Models in the same Combat, using the normal Rules."
+        },
+        "the-nails-bite": {
+            "id": "the-nails-bite",
+            "name": "The Nails’ Bite",
+            "text": "LEGION TACTICA All Models with the World Eaters Trait (excluding Vehicle Models) are subject to the following Special Rule: The Controlling Player may choose that a World Eaters Unit becomes Lost to the Nails when it fails a Leadership Check. When a Unit entirely composed of Models with this Special Rule fails a Leadership Check , that Unit’s Controlling Player can choose for that Unit to become Lost to the Nails. Lost to the Nails When a Unit becomes Lost to the Nails, all Tactical Statuses affecting it are removed. In addition, while a Unit is Lost to the Nails: Models in that Unit may add +1\" to the distance of any Set-up Move. Modify the Attacks Characteristic of Models in that Unit by +1. Models in that Unit are considered to have a Leadership, Cool and Willpower Characteristic of 10 (unless it would normally be higher). If, at the start of the Controlling Player's Charge Sub-Phase, the Unit is within 12\" of any enemy Models, that Unit must make a Charge Move. If more than one enemy Unit is within 12\", the Controlling Player of this Unit must select the closest enemy Unit as the Target Unit for that Charge. At the start of the Controlling Player’s Charge Sub-Phase , if there are no enemy Units within 12\" of a Unit that is Lost to the Nails, that Unit is no longer Lost to the Nails."
+        },
+        "brutal-dismemberment": {
+            "id": "brutal-dismemberment",
+            "name": "Brutal Dismemberment",
+            "text": "GAMBIT When selecting Gambits , the Controlling Player of a Model with the World Eaters Trait can select one of the following instead of any others available to that Model: This Gambit allows the Controlling Player to score additional Combat Resolution Points if they are the winner of the Challenge. While this Gambit is selected, if the enemy Model is Removed as a Casualty during the Strike Step , during the subsequent Glory Step , the Controlling Player gains 2 additional Combat Resolution Points ."
+        },
+        "brutal-tide": {
+            "id": "brutal-tide",
+            "name": "Brutal Tide (Advanced Reaction)",
+            "text": "This Reaction allows the Reacting Unit to make a Charge towards a Unit that Targets them with a Shooting Attack. Trigger: Once per Battle, the Reactive Player may declare the Brutal Tide Advanced Reaction during Step 4 of a Shooting Attack declared by the Active Player that targets a Unit which only includes Models with the World Eaters Trait and does not have the Vehicle Type. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Brutal Tide Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Shooting Attack triggered the Reaction. The Reacting Unit is always the Unit that was declared as the target of the Shooting Attack that triggered this Reaction. Process For the duration of the current Shooting Phase, all Models in the Reacting Unit gain the Eternal Warrior (1) Special Rule. Immediately after Step 11 of the Shooting Attack that triggered this Reaction is resolved, the Reactive Player must make a Charge Roll for the Reacting Unit. If the result of the Charge Roll would be enough to move any Model from the Reacting Unit into Base Contact with a Model from the Target Unit, then a Charge Move is made and the Units are Locked in Combat. Models in the Reacting Unit gain any bonuses for any Special Rules that would apply to that Unit as a result of a successful Charge. If the result of the Charge Roll would not bring any Model from the Reacting Unit into contact with a Model from the Target Unit, then no Charge Move is made."
+        },
+        "furious-charge": {
+            "id": "furious-charge",
+            "name": "Furious Charge (Advanced Reaction)",
+            "text": "This Reaction allows the Reacting Unit to become Lost to the Nails after the Volley Step of a Charge. Trigger: The Reactive Player may declare a Furious Charge Advanced Reaction at the end of Step 4 of a Charge declared by the Active Player that targets a Unit which only includes Models with the World Eaters Trait if any Models in the Target Unit were Removed as Casualties as a result of Volley Attacks . Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Furious Charge Advanced Reaction, this cost paid as soon as the declaration is made. Target: The Target Unit is always the Unit whose Charge triggered the Reaction. The Reacting Unit is always the Unit that was declared as the target of the Charge that triggered this Reaction. Process Once this Reaction is declared, the Target Unit becomes Lost to the Nails. The Reactive Player must then make a Charge Roll for the Reacting Unit. If the result of the Charge Roll would be enough to move any Model from the Reacting Unit into Base contact with a Model from the Target Unit, then a Charge Move is made and the Units are Locked in Combat. Models in the Reacting Unit gain any bonuses for any Special Rules that would apply to that Unit as a result of a successful Charge. If the result of the Charge Roll would not bring any Model from the Reacting Unit into contact with a Model from the Target Unit, then no Charge Move is made and the Players proceed to Step 5 of the Charge process."
+        }
+    },
+    "detachments": {
+        "berserker-cadre": {
+            "id": "berserker-cadre",
+            "name": "Berserker Cadre",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "units": {
+                        "unitIds": ["rampager-squad"]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "units": {
+                        "unitIds": ["rampager-squad"]
+                    }
+                },
+                {
+                    "roles": ["elites"]
+                }
+            ]
+        },
+        "sons-of-bodt": {
+            "id": "sons-of-bodt",
+            "name": "Sons of Bodt",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["support"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": ["apothecary"]
+                    }
+                },
+                {
+                    "roles": ["support"],
+                    "tags": ["prime"],
+                    "units": {
+                        "unitIds": ["apothecary"]
+                    }
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "chain-bonded": {
+            "id": "chain-bonded",
+            "name": "Chain-bonded",
+            "text": "If a Unit which only includes Models with the World Eaters Trait that has the Command Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Chain-bonded This Prime Advantage can only be selected once per Army. When this Prime Advantage is selected, the Controlling Player must select another Unit which only includes Models with the World Eaters Trait that has the Command Battlefield Role from their Army. One Model in the selected Unit and one Model in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage both gain the Chain-brothers Special Rule. Chain-brothers: While a Model with this Special Rule is within Unit Coherency of the other Model from your Army with this Special Rule, that Model gains a bonus of +1 to Hit Tests made in the Assault Phase . If a Model that is engaged in a Challenge is in the same Combat as the other Model from your Army with this Special Rule, that Model is treated as being in Unit Coherency with that other Model for the purposes of this Special Rule.",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "world-eaters-blades-of-the-fighting-pits": {
+            "id": "world-eaters-blades-of-the-fighting-pits",
+            "name": "Blades of the Fighting Pits",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "world-eaters-blades-of-the-fighting-pits"
+                }
+            ]
+        },
+        "world-eaters-caedere-weapons": {
+            "id": "world-eaters-caedere-weapons",
+            "name": "Caedere Weapons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "world-eaters-caedere-weapons"
+                }
+            ]
+        },
+        "violence-incarnate-all": {
+            "id": "violence-incarnate-all",
+            "name": "Violence Incarnate",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "violence-incarnate"
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,2244 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/sub-faction.schema.json",
+    "id": "salamanders",
+    "version": "1.0.0",
+    "name": "Salamanders",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "units": {
+        "cassian-dracos-reborn": {
+            "id": "cassian-dracos-reborn",
+            "name": "Cassian Dracos Reborn",
+            "role": "high-command",
+            "type": "walker",
+            "cost": {
+                "points": 220
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "cassian-dracos",
+                    "name": "Cassian Dracos",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "7",
+                        "t": "7",
+                        "w": "8",
+                        "i": "3",
+                        "a": "4",
+                        "ld": "12",
+                        "cl": "12",
+                        "wp": "6",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "battlesmith",
+                            "value": "1"
+                        },
+                        {
+                            "id": "drakenscale-armour"
+                        },
+                        {
+                            "id": "whispers-of-isstvan"
+                        }
+                    ]
+                }
+            ],
+            "traits": [
+                "Loyalist",
+                "Salamanders",
+                "Smokescreen",
+                "Cybertheurgist"
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "paired-gravis-power-fists"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "forge-crafted-heavy-flamer"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "forge-crafted-heavy-flamer"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "firedrake-terminator-squad": {
+            "id": "firedrake-terminator-squad",
+            "name": "Firedrake Terminator Squad",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 250
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "firedrake-master",
+                    "name": "Firedrake Master",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Sergeant", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "4"
+                        }
+                    ]
+                },
+                {
+                    "id": "firedrake",
+                    "name": "Firedrake",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "4"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Salamanders", "Shield"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 45
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "forge-crafted-thunder-hammer",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "drakenscale",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its forge-crafted thunder hammer exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "forge-crafted-thunder-hammer"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "forge-crafted-thunder-hammer"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainfist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "forge-crafted-thunder-hammer"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainfist"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Any Model in this Unit may have its Drakenscale exchanged for one combi-bolter for Free or for one item from the Legion Combi-weapons list. Any Model that ha...",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "combi-bolter-for-free": {
+                            "id": "combi-bolter-for-free",
+                            "name": "combi-bolter for Free",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "One Firedrake in this Unit may have its Drakenscale exchanged for one forge-crafted heavy flamer for +10 Points. Any Model that has its Drakenscale exchanged...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "forge-crafted-heavy-flamer": {
+                            "id": "forge-crafted-heavy-flamer",
+                            "name": "forge-crafted heavy flamer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["forge-crafted-heavy-flamer"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "pyroclast-squad": {
+            "id": "pyroclast-squad",
+            "name": "Pyroclast Squad",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "pyroclast-warden",
+                    "name": "Pyroclast Warden",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "6+"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
+                },
+                {
+                    "id": "pyroclast",
+                    "name": "Pyroclast",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "1",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "6+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Salamanders"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 30
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "pyroclast-flame-projector",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "drakenscale",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "melta-bombs",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Pyroclast Warden in this Unit may have one of the following options selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "profileId": "pyroclast-warden",
+                    "default": "none"
+                }
+            }
+        },
+        "salamanders-adherents-squad": {
+            "id": "salamanders-adherents-squad",
+            "name": "Salamanders Adherents Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 85
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "advocate",
+                    "name": "Advocate",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "creed-of-flame"
+                        }
+                    ]
+                },
+                {
+                    "id": "adherent",
+                    "name": "Adherent",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "creed-of-flame"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Salamanders"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 15
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "combi-flamer",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "The Advocate in this Unit may have its chainsword exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "advocate",
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every five models in this Unit, one Adherent in this Unit may have its combi-flamer exchanged for one forge-crafted heavy flamer for +10 Points per Model.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "forge-crafted-heavy-flamer": {
+                            "id": "forge-crafted-heavy-flamer",
+                            "name": "forge-crafted heavy flamer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["forge-crafted-heavy-flamer"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "The Advocate in this Unit may have melta bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "profileId": "advocate",
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Adherent in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Up to two Adherents in this Unit may have one item each from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "salamanders-inductii-squad": {
+            "id": "salamanders-inductii-squad",
+            "name": "Salamanders Inductii Squad",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "6",
+                        "in": "6",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "wargear-of-heroes"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Salamanders"],
+            "additionalModels": {
+                "max": 10,
+                "cost": {
+                    "points": 9
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its chainsword and bolt pistol exchanged for one heavy chainsword for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every five Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every ten Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "meltagun": {
+                            "id": "meltagun",
+                            "name": "Meltagun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["meltagun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "meltagun"
+                                    }
+                                }
+                            ]
+                        },
+                        "disintegrator-blaster": {
+                            "id": "disintegrator-blaster",
+                            "name": "Disintegrator blaster",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["disintegrator-blaster"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "disintegrator-blaster"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "The Inductii Master in this Unit may have its chainsword and/or bolt pistol exchanged for one item each from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-7": {
+                    "id": "option-7",
+                    "name": "The Inductii Master in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-8": {
+                    "id": "option-8",
+                    "name": "The Inductii Master in this Unit may have its bolt pistol and chainsword exchanged for one pair of lightning claws for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-9": {
+                    "id": "option-9",
+                    "name": "The Inductii Master in this Unit may have melta bombs selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "salamanders-sanctifier-squad": {
+            "id": "salamanders-sanctifier-squad",
+            "name": "Salamanders Sanctifier Squad",
+            "role": "support",
+            "type": "infantry",
+            "cost": {
+                "points": 90
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "consecrator",
+                    "name": "Consecrator",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "id": "sanctifier",
+                    "name": "Sanctifier",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Salamanders"],
+            "additionalModels": {
+                "max": 5,
+                "cost": {
+                    "points": 16
+                }
+            },
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Any Model in this Unit may have its bolter and bolt pistol exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "two-bolt-pistols": {
+                            "id": "two-bolt-pistols",
+                            "name": "Two bolt pistols",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    }
+                                }
+                            ]
+                        },
+                        "two-volkite-serpentas": {
+                            "id": "two-volkite-serpentas",
+                            "name": "Two volkite serpentas",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-serpenta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    }
+                                }
+                            ]
+                        },
+                        "two-hand-flamers": {
+                            "id": "two-hand-flamers",
+                            "name": "Two hand flamers",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["hand-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "For every five Models in this Unit, one Sanctifier in this Unit may have its bolter exchanged for one obsidite rotor cannon for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "obsidite-rotor-cannon": {
+                            "id": "obsidite-rotor-cannon",
+                            "name": "obsidite rotor cannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["obsidite-rotor-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "obsidite-rotor-cannon"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "For every five models in this Unit, one Sanctifier in this Unit may have its chainsword exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "The Consecrator in this Unit may have its bolter and bolt pistol exchanged for two forge-crafted hand flamers for +15 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "forge-crafted-hand-flamers": {
+                            "id": "forge-crafted-hand-flamers",
+                            "name": "forge-crafted hand flamers",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["forge-crafted-hand-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "forge-crafted-hand-flamer"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "consecrator",
+                    "default": "none"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "The Consecrator in this Unit may have its chainsword exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "consecrator",
+                    "default": "none"
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "One Sanctifier in this Unit may have one vexilla selected for it for +10 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-7": {
+                    "id": "option-7",
+                    "name": "Up to two Sanctifiers in this Unit may have one item each from the Legion Equipment list selected for them.",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-equipment": {
+                            "id": "legion-equipment",
+                            "target": "legion-equipment"
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-8": {
+                    "id": "option-8",
+                    "name": "Every Model in the Unit may have melta bombs selected for them for +25 Points.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "vulkan": {
+            "id": "vulkan",
+            "name": "Vulkan",
+            "role": "paragon",
+            "type": "paragon",
+            "cost": {
+                "points": 465
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "vulkan",
+                    "name": "Vulkan",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "7",
+                        "bs": "6",
+                        "s": "7",
+                        "t": "7",
+                        "w": "7",
+                        "i": "5",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "sire-of-the-salamanders"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "5"
+                        },
+                        {
+                            "id": "the-undying-fire"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Salamanders", "Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-furnaces-heart"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "dragons-breath-gauntlet"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "dawnbringer"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "forge-crafted-heavy-flamer": {
+            "id": "forge-crafted-heavy-flamer",
+            "name": "Forge-crafted heavy flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Forge-crafted heavy flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Flame"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-thunder-hammer": {
+            "id": "forge-crafted-thunder-hammer",
+            "name": "Forge-crafted thunder hammer",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted thunder hammer",
+                    "stats": {
+                        "im": "-2",
+                        "am": "+1",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "pyroclast-flame-projector": {
+            "id": "pyroclast-flame-projector",
+            "name": "Pyroclast Flame Projector",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Dispersed",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Flame", "Melta"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Focussed",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Flame", "Melta"],
+                    "specialRules": [
+                        {
+                            "id": "melta",
+                            "value": "6"
+                        }
+                    ]
+                }
+            ]
+        },
+        "obsidite-rotor-cannon": {
+            "id": "obsidite-rotor-cannon",
+            "name": "Obsidite Rotor Cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "- Slug rounds",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "3",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "suppressive",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "name": "- Obsidite rounds",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "3",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-hand-flamer": {
+            "id": "forge-crafted-hand-flamer",
+            "name": "Forge-crafted hand flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Forge-crafted hand flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "-",
+                        "d": "2"
+                    },
+                    "traits": ["Flame", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "pistol"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-furnaces-heart": {
+            "id": "the-furnaces-heart",
+            "name": "The Furnace’s Heart",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "The Furnace’s Heart",
+                    "stats": {
+                        "r": "18",
+                        "fp": "1",
+                        "rs": "7",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Volkite"],
+                    "specialRules": [
+                        {
+                            "id": "panic",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "dragons-breath-gauntlet": {
+            "id": "dragons-breath-gauntlet",
+            "name": "Dragon’s Breath Gauntlet",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Dragon’s Breath Gauntlet",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Flame"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "dawnbringer": {
+            "id": "dawnbringer",
+            "name": "Dawnbringer",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Dawnbringer",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-power-sword": {
+            "id": "forge-crafted-power-sword",
+            "name": "Forge-crafted power sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "+1",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Forge-crafted power axe",
+                    "stats": {
+                        "im": "-1",
+                        "am": "+1",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Forge-crafted power maul",
+                    "stats": {
+                        "im": "-1",
+                        "am": "+1",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Forge-crafted power lance",
+                    "stats": {
+                        "im": "+1",
+                        "am": "+1",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-power-fist": {
+            "id": "forge-crafted-power-fist",
+            "name": "Forge-crafted power fist",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power fist",
+                    "stats": {
+                        "im": "-3",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "drakenscale": {
+            "id": "drakenscale",
+            "name": "Drakenscale",
+            "text": "Drakenscale reduces the Damage of wounds inflicted by Weapons with specific Traits. Any Model with the Command or Champion Sub-Type and the Salamanders Trait may have Drakenscale selected for it for +10 Points per Model. Wounds with the Flame, Plasma, Melta or Volkite Trait allocated to a Model with Drakenscale have their Damage Characteristic set to 1."
+        }
+    },
+    "upgrades": {
+        "salamanders-drakenscale": {
+            "id": "salamanders-drakenscale",
+            "name": "Drakenscale",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "drakenscale": {
+                    "id": "drakenscale",
+                    "name": "Drakenscale",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["drakenscale"]
+                }
+            },
+            "default": "none"
+        },
+        "salamanders-forge-crafted-power-weapons": {
+            "id": "salamanders-forge-crafted-power-weapons",
+            "name": "Forge-crafted Power Weapons",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "forge-crafted-power-weapons": {
+                    "id": "forge-crafted-power-weapons",
+                    "name": "Forge-crafted Power Weapons",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["forge-crafted-power-sword"]
+                }
+            },
+            "default": "none"
+        },
+        "salamanders-forge-crafted-power-fist": {
+            "id": "salamanders-forge-crafted-power-fist",
+            "name": "Forge-crafted Power Fist",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "forge-crafted-power-fist": {
+                    "id": "forge-crafted-power-fist",
+                    "name": "Forge-crafted Power Fist",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["forge-crafted-power-fist"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-fist"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-fist"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "salamanders-forge-crafted-thunder-hammer": {
+            "id": "salamanders-forge-crafted-thunder-hammer",
+            "name": "Forge-crafted Thunder Hammer",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "forge-crafted-thunder-hammer": {
+                    "id": "forge-crafted-thunder-hammer",
+                    "name": "Forge-crafted Thunder Hammer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["forge-crafted-thunder-hammer"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "thunder-hammer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-thunder-hammer"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "salamanders-forge-crafted-flame-weapons": {
+            "id": "salamanders-forge-crafted-flame-weapons",
+            "name": "Forge-crafted Flame Weapons",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "forge-crafted-flame-weapons": {
+                    "id": "forge-crafted-flame-weapons",
+                    "name": "Forge-crafted Flame Weapons",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["forge-crafted-hand-flamer"],
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "hand-flamer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-hand-flamer"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        }
+    },
+    "specialRules": {
+        "drakenscale-armour": {
+            "id": "drakenscale-armour",
+            "name": "Drakenscale Armour",
+            "text": "Wounds with the Flame, Plasma, Melta or Volkite Trait allocated to a Model with this Special Rule have their Damage Characteristic set to 1."
+        },
+        "whispers-of-isstvan": {
+            "id": "whispers-of-isstvan",
+            "name": "Whispers of Isstvan",
+            "text": "Cassian Dracos Reborn has the Cybertheurgist Trait and may use the Scrap-code Infection Cybertheurgic Rite only. When this Cybertheurgic Rite is invoked for Cassian Dracos, Cassian Dracos is counted as having the Heterodox Trait even though he does not have the Traitor Trait."
+        },
+        "creed-of-flame": {
+            "id": "creed-of-flame",
+            "name": "Creed of Flame",
+            "text": "Models with this Special Rule can make Volley Attacks with Weapons with the Flame Trait. Any weapon with the Flame Trait that a Model with this Special Rule has also gains the Assault Trait, and ignores the effects of the Limited (X) Special Rule when making Volley Attacks."
+        },
+        "wargear-of-heroes": {
+            "id": "wargear-of-heroes",
+            "name": "Wargear of Heroes",
+            "text": "Models with this Special Rule which inflict any unsaved wounds confer a bonus to Combat Resolution scores. When resolving a Combat in the Resolution Sub-Phase of the Assault Phase, the Controlling Player of any Models with this Special Rule which have inflicted at least one unsaved wound in that Combat in the same Turn scores 1 additional Combat Resolution Point."
+        },
+        "inductii": {
+            "id": "inductii",
+            "name": "Inductii",
+            "text": "A Unit containing any Models with this Special Rule may never be used to select a Prime Advantage. When a Unit that includes any Models with this Special Rule is selected to fill a Prime Force Organisation Slot, no corresponding Prime Advantage may be selected."
+        },
+        "sire-of-the-salamanders": {
+            "id": "sire-of-the-salamanders",
+            "name": "Sire of the Salamanders",
+            "text": "If a Model with this Special Rule is part of an Army, then the Controlling Player may apply the following additional Special Rules to all Auxiliary, Apex and Primary Detachments that have the same Faction Trait as the Model with this Special Rule: If four or more Troops Battlefield Role Slots in the Primary Detachment of this Army are filled and at least one Model in each Unit filling those Slots has been upgraded with a Forge-crafted Weapon, then all Force Organisation Slots with the Troops Battlefield Role in the Primary Detachment are considered Prime Slots. Furthermore, if a Model with this Special Rule is part of an Army, then the following Special Rules are granted to all Models with the Salamanders Trait in the same Army: Until the end of the first Battle Turn of the Battle, the Controlling Player may ignore all negative modifiers to the Leadership, Willpower, Cool and Intelligence Characteristics of all Models with this Special Rule."
+        },
+        "the-undying-fire": {
+            "id": "the-undying-fire",
+            "name": "The Undying Fire",
+            "text": "Vulkan may regenerate lost Wounds when this Gambit is selected. While a Model with this Special Rule is in a Challenge, its Controlling Player can select the following Gambit : The Undying Fire: When this Gambit is selected, this Model’s Controlling Player may not apply any positive modifiers to the Focus Roll. However, if this Model is not reduced to 0 Wounds in Step 4 of the Strike Step, this Model increases their Wounds Characteristic by +D3, to a maximum of their Base Wounds Characteristic, before Players return to Step 2 of the Challenge procedure or they move to the Glory Step. Note that any Wounds regained due to this Special Rule do not alter the amount of wounds inflicted by the Opponent for the purposes of Combat Resolution."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior (X)",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "promethean-endurance": {
+            "id": "promethean-endurance",
+            "name": "Promethean Endurance",
+            "text": "LEGION TACTICA All Models with the Salamanders Trait (excluding Models with the Vehicle Type) are subject to the following Special Rules: Wound Tests made against Salamanders fail on the unmodified roll of 1 or 2. Wound Tests that have an unmodified result of 1 or 2 that target any Unit that includes only Models with this Special Rule are never successful regardless of the Strength Characteristic of a Hit or any Special Rules that set the Target Number for Wound Tests. This Special Rule has no effect on Armour Penetration Tests . Units of Salamanders may ignore Tactical Status Checks applied from Flame Weapons. A Unit made up entirely of Models with this Special Rule is unaffected by any variant of the Panic (X) Special Rule on Weapons with the Flame Trait."
+        },
+        "blood-of-fire": {
+            "id": "blood-of-fire",
+            "name": "Blood of Fire",
+            "text": "LEGION TACTICA All Models with the Salamanders Trait (excluding Models with the Vehicle Type) are subject to the following Special Rules: Wound Tests made against Salamanders fail on the unmodified roll of 1 or 2. Wound Tests that have an unmodified result of 1 or 2 that target any Unit that includes only Models with this Special Rule are never successful regardless of the Strength Characteristic of a Hit or any Special Rules that set the Target Number for Wound Tests. This Special Rule has no effect on Armour Penetration Tests . Units of Salamanders may ignore Tactical Status Checks applied from Flame Weapons. A Unit made up entirely of Models with this Special Rule is unaffected by any variant of the Panic (X) Special Rule on Weapons with the Flame Trait."
+        },
+        "duty-is-sacrifice": {
+            "id": "duty-is-sacrifice",
+            "name": "Duty is Sacrifice",
+            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Salamanders Trait can select Duty is Sacrifice instead of any others available to that Model: This Gambit allows the Player to choose to suffer wounds in return for a bonus to their own Focus Roll. If this Gambit is selected, the Controlling Player can add a bonus of 1, 2 or 3 to their Focus Roll . In the Apply Damage from Unsaved Wounds Step of the opponent’s Strike Step , the Model this Gambit was selected for suffers a number of wounds, each with an AP Characteristic of 5 and a Damage Characteristic of 1, equal to the bonus to the Focus Roll applied by this Gambit, against which only Armour Saves , Invulnerable Saves and Damage Mitigation rolls can be taken as normal."
+        },
+        "selfless-burden": {
+            "id": "selfless-burden",
+            "name": "Selfless Burden (Advanced Reaction)",
+            "text": "This Reaction allows the Reacting Unit to increase certain Characteristics during the Assault Phase. Trigger: Once per Battle, the Reactive Player may declare the Selfless Burden Advanced Reaction at the start of Step 3 of a Charge declared by the Active Player, targeting a Unit under their control which only includes Models with the Salamanders Trait that do not have the Vehicle Type. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare the Selfless Burden Advanced Reaction, this cost paid as soon as the declaration is made. Target: For a Selfless Burden Advanced Reaction, the Reacting Unit is always the Unit that is the target of the Charge that triggered this Reaction. Process All Models in the Reacting Unit have their Weapon Skill, Strength and Attacks Characteristics modified by +1 until the end of the current Assault Phase. In the following Statuses Sub-Phase, the Reactive Player must roll a D6 for each Model in the Reacting Unit. For each result of 1, the Reacting Unit suffers 1 automatic wound with a Damage Characteristic of 1, an AP of ‘-’, against which Saving Throws and Damage Mitigation Rolls may be taken."
+        }
+    },
+    "detachments": {
+        "immolation-covenant": {
+            "id": "immolation-covenant",
+            "name": "Immolation Covenant",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["support"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["support"]
+                },
+                {
+                    "roles": ["armour"],
+                    "units": {
+                        "unitIds": ["predator", "vindicator-siege-tank"]
+                    }
+                },
+                {
+                    "roles": ["armour"],
+                    "units": {
+                        "unitIds": ["predator", "vindicator-siege-tank"]
+                    }
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "duty-before-death": {
+            "id": "duty-before-death",
+            "name": "Duty Before Death",
+            "text": "If a Unit which only includes Models with the Salamanders Trait that has the Troops Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Duty Before Death Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Feel No Pain (6+) Special Rule.",
+            "slotTag": "prime"
+        },
+        "nocturnean-artifice": {
+            "id": "nocturnean-artifice",
+            "name": "Nocturnean Artifice",
+            "text": "",
+            "slotTag": "prime"
+        }
+    },
+    "unitModifiers": {
+        "salamanders-drakenscale": {
+            "id": "salamanders-drakenscale",
+            "name": "Drakenscale",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-drakenscale"
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-weapons": {
+            "id": "salamanders-forge-crafted-power-weapons",
+            "name": "Forge-crafted Power Weapons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-weapons"
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-fist": {
+            "id": "salamanders-forge-crafted-power-fist",
+            "name": "Forge-crafted Power Fist",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-fist"
+                }
+            ]
+        },
+        "salamanders-forge-crafted-thunder-hammer": {
+            "id": "salamanders-forge-crafted-thunder-hammer",
+            "name": "Forge-crafted Thunder Hammer",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-thunder-hammer"
+                }
+            ]
+        },
+        "salamanders-forge-crafted-flame-weapons": {
+            "id": "salamanders-forge-crafted-flame-weapons",
+            "name": "Forge-crafted Flame Weapons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-flame-weapons"
+                }
+            ]
+        },
+        "promethean-endurance-all": {
+            "id": "promethean-endurance-all",
+            "name": "Promethean Endurance",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "promethean-endurance"
+                    }
+                }
+            ]
+        }
+    }
+}
