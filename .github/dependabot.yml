@@ -1,0 +1,12 @@
+version: 2
+updates:
+    # Opens a PR when a new validator tag appears. CI runs on it; a major bump
+    # means the data format or expression language changed.
+    - package-ecosystem: npm
+      directory: /
+      schedule:
+          interval: weekly
+    - package-ecosystem: github-actions
+      directory: /
+      schedule:
+          interval: weekly

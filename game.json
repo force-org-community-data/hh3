@@ -1,0 +1,785 @@
+{
+    "id": "hh3",
+    "version": "1.0.0",
+    "name": "Horus Heresy 3.0",
+    "terms": {
+        "group": {
+            "word": "detachment",
+            "singular": "Detachment",
+            "plural": "Detachments"
+        },
+        "root": {
+            "word": "primary",
+            "singular": "Primary Detachment",
+            "plural": "Primary Detachments"
+        },
+        "contingent": {
+            "singular": "Detachment Group",
+            "plural": "Detachment Groups"
+        },
+        "list": {
+            "singular": "Army",
+            "plural": "Armies"
+        },
+        "faction": {
+            "singular": "Faction",
+            "plural": "Factions"
+        },
+        "subFaction": {
+            "singular": "Sub-faction",
+            "plural": "Sub-factions"
+        },
+        "wargear": {
+            "singular": "Wargear",
+            "plural": "Wargear"
+        }
+    },
+    "roles": {
+        "paragon": {
+            "id": "paragon",
+            "name": "Paragon"
+        },
+        "high-command": {
+            "id": "high-command",
+            "name": "High Command",
+            "grants": {
+                "auxiliary": 1,
+                "apex": 1
+            }
+        },
+        "command": {
+            "id": "command",
+            "name": "Command",
+            "grants": {
+                "auxiliary": 1
+            }
+        },
+        "retinue": {
+            "id": "retinue",
+            "name": "Retinue"
+        },
+        "elites": {
+            "id": "elites",
+            "name": "Elites"
+        },
+        "war-engine": {
+            "id": "war-engine",
+            "name": "War Engine"
+        },
+        "troop": {
+            "id": "troop",
+            "name": "Troop"
+        },
+        "support": {
+            "id": "support",
+            "name": "Support"
+        },
+        "lord-of-war": {
+            "id": "lord-of-war",
+            "name": "Lord of War"
+        },
+        "transport": {
+            "id": "transport",
+            "name": "Transport"
+        },
+        "heavy-assault": {
+            "id": "heavy-assault",
+            "name": "Heavy Assault"
+        },
+        "heavy-transport": {
+            "id": "heavy-transport",
+            "name": "Heavy Transport"
+        },
+        "armour": {
+            "id": "armour",
+            "name": "Armour"
+        },
+        "recon": {
+            "id": "recon",
+            "name": "Recon"
+        },
+        "fast-attack": {
+            "id": "fast-attack",
+            "name": "Fast Attack"
+        }
+    },
+    "unitTypes": {
+        "infantry": {
+            "id": "infantry",
+            "name": "Infantry"
+        },
+        "cavalry": {
+            "id": "cavalry",
+            "name": "Cavalry"
+        },
+        "walker": {
+            "id": "walker",
+            "name": "Walker"
+        },
+        "paragon": {
+            "id": "paragon",
+            "name": "Paragon"
+        },
+        "automata": {
+            "id": "automata",
+            "name": "Automata"
+        },
+        "vehicle": {
+            "id": "vehicle",
+            "name": "Vehicle"
+        },
+        "knight": {
+            "id": "knight",
+            "name": "Knight"
+        }
+    },
+    "groupTypes": {
+        "primary": {
+            "id": "primary",
+            "name": "Primary",
+            "contingent": "root",
+            "source": "main",
+            "min": 1,
+            "max": 1
+        },
+        "allied": {
+            "id": "allied",
+            "name": "Allied",
+            "contingent": "root",
+            "source": "ally"
+        },
+        "auxiliary": {
+            "id": "auxiliary",
+            "name": "Auxiliary",
+            "contingent": {
+                "linksTo": ["primary", "allied"]
+            },
+            "cost": {
+                "auxiliary": 1
+            }
+        },
+        "apex": {
+            "id": "apex",
+            "name": "Apex",
+            "contingent": {
+                "linksTo": ["primary", "allied"]
+            },
+            "cost": {
+                "auxiliary": 1,
+                "apex": 1
+            }
+        },
+        "warlord": {
+            "id": "warlord",
+            "name": "Warlord",
+            "contingent": {
+                "linksTo": ["primary"]
+            }
+        },
+        "super-heavy": {
+            "id": "super-heavy",
+            "name": "Super-heavy",
+            "contingent": {
+                "linksTo": ["primary", "allied"]
+            }
+        }
+    },
+    "slotTags": {
+        "prime": {
+            "id": "prime",
+            "name": "Prime",
+            "description": "May take a prime benefit",
+            "optionLabel": "Prime Benefit"
+        }
+    },
+    "resources": {
+        "points": {
+            "id": "points",
+            "name": "Points",
+            "scope": "list",
+            "suffix": "pts"
+        },
+        "auxiliary": {
+            "id": "auxiliary",
+            "name": "Auxiliary Points",
+            "scope": "contingent",
+            "message": "Too many Auxiliary and Apex Detachments"
+        },
+        "apex": {
+            "id": "apex",
+            "name": "Apex Points",
+            "scope": "contingent",
+            "message": "Too many Apex Detachments"
+        }
+    },
+    "stats": {
+        "unit": {
+            "model": {
+                "id": "model",
+                "name": "Model",
+                "stats": [
+                    {
+                        "id": "m",
+                        "label": "M",
+                        "numeric": true
+                    },
+                    {
+                        "id": "ws",
+                        "label": "WS",
+                        "numeric": true
+                    },
+                    {
+                        "id": "bs",
+                        "label": "BS",
+                        "numeric": true
+                    },
+                    {
+                        "id": "s",
+                        "label": "S",
+                        "numeric": true
+                    },
+                    {
+                        "id": "t",
+                        "label": "T",
+                        "numeric": true
+                    },
+                    {
+                        "id": "w",
+                        "label": "W",
+                        "numeric": true
+                    },
+                    {
+                        "id": "i",
+                        "label": "I",
+                        "numeric": true
+                    },
+                    {
+                        "id": "a",
+                        "label": "A",
+                        "numeric": true
+                    },
+                    {
+                        "id": "ld",
+                        "label": "LD",
+                        "numeric": true
+                    },
+                    {
+                        "id": "cl",
+                        "label": "CL",
+                        "numeric": true
+                    },
+                    {
+                        "id": "wp",
+                        "label": "WP",
+                        "numeric": true
+                    },
+                    {
+                        "id": "in",
+                        "label": "IN",
+                        "numeric": true
+                    },
+                    {
+                        "id": "sav",
+                        "label": "SAV",
+                        "numeric": true
+                    },
+                    {
+                        "id": "inv",
+                        "label": "INV",
+                        "numeric": true
+                    }
+                ]
+            },
+            "vehicle": {
+                "id": "vehicle",
+                "name": "Vehicle",
+                "stats": [
+                    {
+                        "id": "m",
+                        "label": "M",
+                        "numeric": true
+                    },
+                    {
+                        "id": "bs",
+                        "label": "BS",
+                        "numeric": true
+                    },
+                    {
+                        "id": "front",
+                        "label": "Front",
+                        "numeric": true
+                    },
+                    {
+                        "id": "side",
+                        "label": "Side",
+                        "numeric": true
+                    },
+                    {
+                        "id": "rear",
+                        "label": "Rear",
+                        "numeric": true
+                    },
+                    {
+                        "id": "hp",
+                        "label": "HP",
+                        "numeric": true
+                    },
+                    {
+                        "id": "transport-capacity",
+                        "label": "Transport",
+                        "numeric": true
+                    }
+                ]
+            },
+            "knight": {
+                "id": "knight",
+                "name": "Knight",
+                "stats": [
+                    {
+                        "id": "m",
+                        "label": "M",
+                        "numeric": true
+                    },
+                    {
+                        "id": "ws",
+                        "label": "WS",
+                        "numeric": true
+                    },
+                    {
+                        "id": "bs",
+                        "label": "BS",
+                        "numeric": true
+                    },
+                    {
+                        "id": "s",
+                        "label": "S",
+                        "numeric": true
+                    },
+                    {
+                        "id": "i",
+                        "label": "I",
+                        "numeric": true
+                    },
+                    {
+                        "id": "a",
+                        "label": "A",
+                        "numeric": true
+                    },
+                    {
+                        "id": "front",
+                        "label": "Front",
+                        "numeric": true
+                    },
+                    {
+                        "id": "rear",
+                        "label": "Rear",
+                        "numeric": true
+                    },
+                    {
+                        "id": "hp",
+                        "label": "HP",
+                        "numeric": true
+                    },
+                    {
+                        "id": "transport-capacity",
+                        "label": "Transport",
+                        "numeric": true
+                    }
+                ]
+            }
+        },
+        "weapon": {
+            "ranged": {
+                "id": "ranged",
+                "name": "Ranged",
+                "stats": [
+                    {
+                        "id": "r",
+                        "label": "R",
+                        "numeric": true
+                    },
+                    {
+                        "id": "fp",
+                        "label": "FP",
+                        "numeric": true
+                    },
+                    {
+                        "id": "rs",
+                        "label": "RS",
+                        "numeric": true
+                    },
+                    {
+                        "id": "ap",
+                        "label": "AP",
+                        "numeric": true
+                    },
+                    {
+                        "id": "d",
+                        "label": "D",
+                        "numeric": true
+                    }
+                ]
+            },
+            "melee": {
+                "id": "melee",
+                "name": "Melee",
+                "stats": [
+                    {
+                        "id": "im",
+                        "label": "IM"
+                    },
+                    {
+                        "id": "am",
+                        "label": "AM"
+                    },
+                    {
+                        "id": "sm",
+                        "label": "SM"
+                    },
+                    {
+                        "id": "ap",
+                        "label": "AP",
+                        "numeric": true
+                    },
+                    {
+                        "id": "d",
+                        "label": "D",
+                        "numeric": true
+                    }
+                ]
+            }
+        }
+    },
+    "choices": {
+        "allegiance": {
+            "id": "allegiance",
+            "name": "Allegiance",
+            "values": {
+                "loyalist": {
+                    "id": "loyalist",
+                    "name": "Loyalist"
+                },
+                "traitor": {
+                    "id": "traitor",
+                    "name": "Traitor"
+                }
+            }
+        }
+    },
+    "listRules": {
+        "allies-cap": {
+            "kind": "resourceCap",
+            "id": "allies-cap",
+            "resource": "points",
+            "contingentTypes": ["allied"],
+            "max": {
+                "percentOfLimit": 50,
+                "round": "up"
+            },
+            "message": "No more than 50% of the points limit may be spent on allied units"
+        }
+    },
+    "detachments": {
+        "crusade-primary-detachment": {
+            "id": "crusade-primary-detachment",
+            "name": "Crusade Primary Detachment",
+            "type": "primary",
+            "slots": [
+                {
+                    "roles": ["high-command"]
+                },
+                {
+                    "roles": ["command"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["command"]
+                },
+                {
+                    "roles": ["command"]
+                },
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["transport"]
+                },
+                {
+                    "roles": ["transport"]
+                },
+                {
+                    "roles": ["transport"]
+                },
+                {
+                    "roles": ["transport"]
+                }
+            ]
+        },
+        "tactical-support": {
+            "id": "tactical-support",
+            "name": "Tactical Support",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["support"]
+                },
+                {
+                    "roles": ["support"]
+                }
+            ]
+        },
+        "officer-cadre": {
+            "id": "officer-cadre",
+            "name": "Officer Cadre",
+            "type": "apex",
+            "slots": [
+                {
+                    "roles": ["command"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["command"]
+                }
+            ]
+        },
+        "army-vangaurd": {
+            "id": "army-vangaurd",
+            "name": "Army Vangaurd",
+            "type": "apex",
+            "slots": [
+                {
+                    "roles": ["elites"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["elites"]
+                },
+                {
+                    "roles": ["elites"]
+                }
+            ]
+        },
+        "combat-retinue": {
+            "id": "combat-retinue",
+            "name": "Combat Retinue",
+            "type": "apex",
+            "slots": [
+                {
+                    "roles": ["retinue"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["retinue"]
+                }
+            ]
+        },
+        "warlord-detachment": {
+            "id": "warlord-detachment",
+            "name": "Warlord Detachment",
+            "type": "warlord",
+            "slots": [
+                {
+                    "roles": ["paragon"]
+                },
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["heavy-transport"]
+                }
+            ]
+        },
+        "allied-detachment": {
+            "id": "allied-detachment",
+            "name": "Allied Detachment",
+            "type": "allied",
+            "slots": [
+                {
+                    "roles": ["command"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["command"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                }
+            ]
+        }
+    },
+    "specialRules": {
+        "reduced-auxiliary-allocation": {
+            "id": "reduced-auxiliary-allocation",
+            "name": "Reduced Auxiliary Allocation",
+            "text": "This unit does not grant an additional Auxiliary detachment; reduce the army's Auxiliary detachment points by X.",
+            "configurable": true,
+            "defaultValue": "1",
+            "grants": {
+                "auxiliary": "-rule.value()"
+            }
+        }
+    },
+    "slotOptions": {
+        "master-sergeant": {
+            "id": "master-sergeant",
+            "name": "Master Sergeant",
+            "text": "",
+            "slotTag": "prime",
+            "effects": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "ws",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "a",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "ld",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "combat-veterans": {
+            "id": "combat-veterans",
+            "name": "Combat Veterans",
+            "text": "",
+            "slotTag": "prime",
+            "effects": [
+                {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "cl",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "wp",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "in",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "paragon-of-battle": {
+            "id": "paragon-of-battle",
+            "name": "Paragon of Battle",
+            "text": "",
+            "slotTag": "prime",
+            "slotRoles": ["command"],
+            "effects": [
+                {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "ws",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "bs",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "a",
+                            "op": "add",
+                            "value": 1,
+                            "max": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        "special-assignment": {
+            "id": "special-assignment",
+            "name": "Special Assignment",
+            "text": "",
+            "slotTag": "prime",
+            "slotRoles": ["command"],
+            "effects": [
+                {
+                    "kind": "allowedRoles",
+                    "roles": ["high-command"]
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "reduced-auxiliary-allocation",
+                        "value": "1"
+                    }
+                }
+            ]
+        },
+        "logistical-benefit": {
+            "id": "logistical-benefit",
+            "name": "Logistical Benefit",
+            "text": "",
+            "slotTag": "prime",
+            "effects": [
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "troop",
+                        "war-engine",
+                        "retinue",
+                        "elites",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ]
+                }
+            ]
+        }
+    }
+}
