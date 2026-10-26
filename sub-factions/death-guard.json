@@ -132,12 +132,20 @@
                 }
             ],
             "traits": ["Death Guard"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 9
+            "composition": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "profiles": {
+                        "inductii": 1
+                    },
+                    "min": 10,
+                    "max": 20,
+                    "cost": {
+                        "points": 9
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -261,6 +269,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-3": {
@@ -283,6 +292,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-4": {
@@ -395,12 +405,28 @@
                 }
             ],
             "traits": ["Death Guard"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 12
+            "composition": [
+                {
+                    "id": "poison-master",
+                    "name": "Poison-Master",
+                    "profiles": {
+                        "poison-master": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "mortus-poisoner",
+                    "name": "Mortus Poisoners",
+                    "profiles": {
+                        "mortus-poisoner": 1
+                    },
+                    "min": 4,
+                    "max": 14,
+                    "cost": {
+                        "points": 12
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -614,6 +640,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "mortus-poisoner",
                     "default": "none"
                 },
                 "option-6": {
@@ -636,6 +663,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "mortus-poisoner",
                     "default": "none"
                 },
                 "option-7": {
@@ -770,12 +798,20 @@
                 }
             ],
             "traits": ["Death Guard"],
-            "additionalModels": {
-                "max": 8,
-                "cost": {
-                    "points": 45
+            "composition": [
+                {
+                    "id": "deathshroud",
+                    "name": "Deathshroud",
+                    "profiles": {
+                        "deathshroud": 1
+                    },
+                    "min": 2,
+                    "max": 10,
+                    "cost": {
+                        "points": 45
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -918,12 +954,28 @@
                 }
             ],
             "traits": ["Death Guard"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 40
+            "composition": [
+                {
+                    "id": "chem-master",
+                    "name": "Chem-Master",
+                    "profiles": {
+                        "chem-master": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "grave-warden",
+                    "name": "Grave Wardens",
+                    "profiles": {
+                        "grave-warden": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 40
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -2235,6 +2287,17 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "death-guard-death-cloud"
+                }
+            ]
+        },
+        "death-guard-trait": {
+            "id": "death-guard-trait",
+            "name": "Death Guard Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Death Guard"]
                 }
             ]
         },

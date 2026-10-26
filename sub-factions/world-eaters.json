@@ -402,12 +402,28 @@
                 }
             ],
             "traits": ["World Eaters"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 22
+            "composition": [
+                {
+                    "id": "rampager-champion",
+                    "name": "Rampager Champion",
+                    "profiles": {
+                        "rampager-champion": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "rampager",
+                    "name": "Rampagers",
+                    "profiles": {
+                        "rampager": 1
+                    },
+                    "min": 4,
+                    "max": 14,
+                    "cost": {
+                        "points": 22
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "equipment",
@@ -619,12 +635,28 @@
                 }
             ],
             "traits": ["Traitor", "World Eaters"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 45
+            "composition": [
+                {
+                    "id": "devoured",
+                    "name": "Devoured",
+                    "profiles": {
+                        "devoured": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "red-butcher",
+                    "name": "Red Butchers",
+                    "profiles": {
+                        "red-butcher": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 45
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -955,12 +987,20 @@
                 }
             ],
             "traits": ["World Eaters"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 9
+            "composition": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "profiles": {
+                        "inductii": 1
+                    },
+                    "min": 10,
+                    "max": 20,
+                    "cost": {
+                        "points": 9
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1142,6 +1182,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-5": {
@@ -1164,6 +1205,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 }
             }
@@ -1217,15 +1259,71 @@
                             "id": "bitter-duty"
                         }
                     ]
+                },
+                {
+                    "id": "ravager-with-jump-pack",
+                    "name": "Ravager with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "bearers-of-the-blood-hand"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        }
+                    ]
                 }
             ],
             "traits": ["World Eaters"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 20
+            "composition": [
+                {
+                    "id": "blood-bonded-with-jump-pack",
+                    "name": "Blood Bonded With Jump Pack",
+                    "profiles": {
+                        "blood-bonded-with-jump-pack": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "ravager-with-jump-pack",
+                    "name": "Ravagers With Jump Packs",
+                    "profiles": {
+                        "ravager-with-jump-pack": 1
+                    },
+                    "min": 4,
+                    "max": 14,
+                    "cost": {
+                        "points": 20
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1490,12 +1588,28 @@
                 }
             ],
             "traits": ["World Eaters"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 15
+            "composition": [
+                {
+                    "id": "blood-bonded",
+                    "name": "Blood Bonded",
+                    "profiles": {
+                        "blood-bonded": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "ravager",
+                    "name": "Ravagers",
+                    "profiles": {
+                        "ravager": 1
+                    },
+                    "min": 4,
+                    "max": 14,
+                    "cost": {
+                        "points": 15
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -2250,6 +2364,17 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "world-eaters-caedere-weapons"
+                }
+            ]
+        },
+        "world-eaters-trait": {
+            "id": "world-eaters-trait",
+            "name": "World Eaters Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["World Eaters"]
                 }
             ]
         },

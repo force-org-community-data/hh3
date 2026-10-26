@@ -45,7 +45,7 @@ Pin a tag (`@v1.0.0`) to stay on a fixed release, or leave the ref off to follow
 - [Editor setup](docs/editor-setup.md)
 - [Using this repo with the app](docs/using-with-the-app.md)
 - [Review checklist](docs/review-checklist.md)
-- Validator: [data authoring guide](https://github.com/force-org-community-data/fo_data_validator/blob/v1.1.0/docs/data_authoring_guide.md), [data schema spec](https://github.com/force-org-community-data/fo_data_validator/blob/v1.1.0/docs/specs/data_schema_spec_2026-10-17.md), [expression language spec](https://github.com/force-org-community-data/fo_data_validator/blob/v1.1.0/docs/specs/expression_language_spec_2026-10-17.md)
+- Validator: [data authoring guide](https://github.com/force-org-community-data/fo_data_validator/blob/v1.2.0/docs/data_authoring_guide.md), [data schema spec](https://github.com/force-org-community-data/fo_data_validator/blob/v1.2.0/docs/specs/data_schema_spec_2026-10-17.md), [expression language spec](https://github.com/force-org-community-data/fo_data_validator/blob/v1.2.0/docs/specs/expression_language_spec_2026-10-17.md)
 
 ## Shape of the repo
 

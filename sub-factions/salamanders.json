@@ -177,12 +177,28 @@
                 }
             ],
             "traits": ["Salamanders", "Shield"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 45
+            "composition": [
+                {
+                    "id": "firedrake-master",
+                    "name": "Firedrake Master",
+                    "profiles": {
+                        "firedrake-master": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "firedrake",
+                    "name": "Firedrakes",
+                    "profiles": {
+                        "firedrake": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 45
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -325,6 +341,7 @@
                             "weaponRefs": ["forge-crafted-heavy-flamer"]
                         }
                     },
+                    "profileId": "firedrake",
                     "default": "none"
                 }
             }
@@ -394,12 +411,28 @@
                 }
             ],
             "traits": ["Salamanders"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 30
+            "composition": [
+                {
+                    "id": "pyroclast-warden",
+                    "name": "Pyroclast Warden",
+                    "profiles": {
+                        "pyroclast-warden": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "pyroclast",
+                    "name": "Pyroclasts",
+                    "profiles": {
+                        "pyroclast": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 30
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -550,12 +583,28 @@
                 }
             ],
             "traits": ["Salamanders"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 15
+            "composition": [
+                {
+                    "id": "advocate",
+                    "name": "Advocate",
+                    "profiles": {
+                        "advocate": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "adherent",
+                    "name": "Adherents",
+                    "profiles": {
+                        "adherent": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 15
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "equipment",
@@ -680,6 +729,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "adherent",
                     "default": "none"
                 },
                 "option-5": {
@@ -702,6 +752,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "adherent",
                     "default": "none"
                 }
             }
@@ -751,12 +802,20 @@
                 }
             ],
             "traits": ["Salamanders"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 9
+            "composition": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "profiles": {
+                        "inductii": 1
+                    },
+                    "min": 10,
+                    "max": 20,
+                    "cost": {
+                        "points": 9
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -938,6 +997,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-5": {
@@ -960,6 +1020,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-6": {
@@ -1141,12 +1202,28 @@
                 }
             ],
             "traits": ["Salamanders"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 16
+            "composition": [
+                {
+                    "id": "consecrator",
+                    "name": "Consecrator",
+                    "profiles": {
+                        "consecrator": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "sanctifier",
+                    "name": "Sanctifiers",
+                    "profiles": {
+                        "sanctifier": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 16
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1393,6 +1470,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "sanctifier",
                     "default": "none"
                 },
                 "option-7": {
@@ -1415,6 +1493,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "sanctifier",
                     "default": "none"
                 },
                 "option-8": {
@@ -2220,6 +2299,17 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "salamanders-forge-crafted-flame-weapons"
+                }
+            ]
+        },
+        "salamanders-trait": {
+            "id": "salamanders-trait",
+            "name": "Salamanders Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Salamanders"]
                 }
             ]
         },

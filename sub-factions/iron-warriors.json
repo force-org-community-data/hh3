@@ -61,12 +61,20 @@
                 }
             ],
             "traits": ["Iron Warriors", "Shield"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 135
+            "composition": [
+                {
+                    "id": "domitar-ferrum",
+                    "name": "Domitar-Ferrum",
+                    "profiles": {
+                        "domitar-ferrum": 1
+                    },
+                    "min": 1,
+                    "max": 6,
+                    "cost": {
+                        "points": 135
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -139,12 +147,20 @@
                 }
             ],
             "traits": ["Iron Warriors"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 45
+            "composition": [
+                {
+                    "id": "dominator",
+                    "name": "Dominators",
+                    "profiles": {
+                        "dominator": 1
+                    },
+                    "min": 5,
+                    "max": 10,
+                    "cost": {
+                        "points": 45
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -371,12 +387,20 @@
                 }
             ],
             "traits": ["Iron Warriors"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 9
+            "composition": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "profiles": {
+                        "inductii": 1
+                    },
+                    "min": 10,
+                    "max": 20,
+                    "cost": {
+                        "points": 9
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -460,6 +484,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-3": {
@@ -482,6 +507,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-4": {
@@ -602,12 +628,28 @@
                 }
             ],
             "traits": ["Iron Warriors"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 25
+            "composition": [
+                {
+                    "id": "iron-havoc-sergeant",
+                    "name": "Iron Havoc Sergeant",
+                    "profiles": {
+                        "iron-havoc-sergeant": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "iron-havoc",
+                    "name": "Iron Havocs",
+                    "profiles": {
+                        "iron-havoc": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 25
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -676,6 +718,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "iron-havoc",
                     "default": "none"
                 },
                 "option-3": {
@@ -698,6 +741,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "iron-havoc",
                     "default": "none"
                 },
                 "option-4": {
@@ -1515,12 +1559,28 @@
                 }
             ],
             "traits": ["Iron Warriors"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 55
+            "composition": [
+                {
+                    "id": "siege-master",
+                    "name": "Siege Master",
+                    "profiles": {
+                        "siege-master": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "tyrant",
+                    "name": "Tyrants",
+                    "profiles": {
+                        "tyrant": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 55
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -2778,6 +2838,17 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "iron-warriors-shrapnel-weapons"
+                }
+            ]
+        },
+        "iron-warriors-trait": {
+            "id": "iron-warriors-trait",
+            "name": "Iron Warriors Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Iron Warriors"]
                 }
             ]
         },
