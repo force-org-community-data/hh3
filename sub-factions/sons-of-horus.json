@@ -480,12 +480,20 @@
                 }
             ],
             "traits": ["Sons of Horus"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 50
+            "composition": [
+                {
+                    "id": "justaerin",
+                    "name": "Justaerin",
+                    "profiles": {
+                        "justaerin": 1
+                    },
+                    "min": 5,
+                    "max": 10,
+                    "cost": {
+                        "points": 50
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -963,12 +971,28 @@
                 }
             ],
             "traits": ["Sons of Horus"],
-            "additionalModels": {
-                "max": 15,
-                "cost": {
-                    "points": 22
+            "composition": [
+                {
+                    "id": "reaver-chieftain",
+                    "name": "Reaver Chieftain",
+                    "profiles": {
+                        "reaver-chieftain": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "reaver",
+                    "name": "Reavers",
+                    "profiles": {
+                        "reaver": 1
+                    },
+                    "min": 4,
+                    "max": 19,
+                    "cost": {
+                        "points": 22
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1105,6 +1129,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "reaver",
                     "default": "none"
                 },
                 "option-5": {
@@ -1127,6 +1152,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "reaver",
                     "default": "none"
                 },
                 "option-6": {
@@ -1232,12 +1258,20 @@
                 }
             ],
             "traits": ["Sons of Horus", "Shield"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 25
+            "composition": [
+                {
+                    "id": "chieftain",
+                    "name": "Chieftains",
+                    "profiles": {
+                        "chieftain": 1
+                    },
+                    "min": 5,
+                    "max": 10,
+                    "cost": {
+                        "points": 25
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1531,12 +1565,20 @@
                 }
             ],
             "traits": ["Sons of Horus"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 9
+            "composition": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "profiles": {
+                        "inductii": 1
+                    },
+                    "min": 10,
+                    "max": 20,
+                    "cost": {
+                        "points": 9
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1595,6 +1637,7 @@
                             ]
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-2": {
@@ -1718,6 +1761,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-5": {
@@ -1740,6 +1784,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 }
             }
@@ -1792,15 +1837,70 @@
                             "id": "deep-strike"
                         }
                     ]
+                },
+                {
+                    "id": "reaver-with-jump-pack",
+                    "name": "Reaver with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
                 }
             ],
             "traits": ["Sons of Horus"],
-            "additionalModels": {
-                "max": 15,
-                "cost": {
-                    "points": 27
+            "composition": [
+                {
+                    "id": "reaver-chieftain-with-jump-pack",
+                    "name": "Reaver Chieftain With Jump Pack",
+                    "profiles": {
+                        "reaver-chieftain-with-jump-pack": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "reaver-with-jump-pack",
+                    "name": "Reavers With Jump Packs",
+                    "profiles": {
+                        "reaver-with-jump-pack": 1
+                    },
+                    "min": 4,
+                    "max": 19,
+                    "cost": {
+                        "points": 27
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1937,6 +2037,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "reaver-with-jump-pack",
                     "default": "none"
                 },
                 "option-5": {
@@ -2798,6 +2899,17 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "sons-of-horus-brutal-enforcement"
+                }
+            ]
+        },
+        "sons-of-horus-trait": {
+            "id": "sons-of-horus-trait",
+            "name": "Sons of Horus Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Sons of Horus"]
                 }
             ]
         },

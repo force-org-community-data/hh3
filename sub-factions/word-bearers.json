@@ -172,12 +172,28 @@
                 }
             ],
             "traits": ["Word Bearers"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 20
+            "composition": [
+                {
+                    "id": "iconoclast",
+                    "name": "Iconoclast",
+                    "profiles": {
+                        "iconoclast": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "incendiary",
+                    "name": "Incendiaries",
+                    "profiles": {
+                        "incendiary": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 20
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -426,12 +442,20 @@
                 }
             ],
             "traits": ["Traitor", "Word Bearers"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 50
+            "composition": [
+                {
+                    "id": "dark-brethren",
+                    "name": "Dark Brethren",
+                    "profiles": {
+                        "dark-brethren": 1
+                    },
+                    "min": 5,
+                    "max": 10,
+                    "cost": {
+                        "points": 50
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1019,6 +1043,24 @@
                 }
             ],
             "traits": ["Traitor", "Word Bearers"],
+            "composition": [
+                {
+                    "id": "phaetus-disciple",
+                    "name": "Phaetus Disciple",
+                    "profiles": {
+                        "phaetus-disciple": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "phaetus-anointed",
+                    "name": "Phaetus Anointed",
+                    "profiles": {
+                        "phaetus-anointed": 1
+                    },
+                    "min": 2
+                }
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1406,12 +1448,20 @@
                 }
             ],
             "traits": ["Traitor", "Word Bearers"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 9
+            "composition": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "profiles": {
+                        "inductii": 1
+                    },
+                    "min": 10,
+                    "max": 20,
+                    "cost": {
+                        "points": 9
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1573,6 +1623,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-5": {
@@ -1595,6 +1646,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 }
             },
@@ -1817,8 +1869,8 @@
             "modelCount": 5,
             "profiles": [
                 {
-                    "id": "procurator-with-jump-pack",
-                    "name": "Procurator with Jump Pack",
+                    "id": "procurant-with-jump-pack",
+                    "name": "Procurant with Jump Pack",
                     "template": "model",
                     "stats": {
                         "m": "12",
@@ -1829,14 +1881,14 @@
                         "w": "1",
                         "i": "4",
                         "a": "2",
-                        "ld": "8",
+                        "ld": "7",
                         "cl": "7",
                         "wp": "7",
                         "in": "7",
                         "sav": "3+",
                         "inv": "-"
                     },
-                    "tags": ["Sergeant", "Antigrav"],
+                    "tags": ["Antigrav"],
                     "specialRules": [
                         {
                             "id": "bulky",
@@ -1863,12 +1915,20 @@
                 }
             ],
             "traits": ["Traitor", "Word Bearers"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 20
+            "composition": [
+                {
+                    "id": "procurant-with-jump-pack",
+                    "name": "Procurants With Jump Packs",
+                    "profiles": {
+                        "procurant-with-jump-pack": 1
+                    },
+                    "min": 5,
+                    "max": 15,
+                    "cost": {
+                        "points": 20
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1893,7 +1953,7 @@
                 {
                     "kind": "equipment",
                     "id": "narthecium",
-                    "profileId": "procurator-with-jump-pack"
+                    "perModel": true
                 }
             ],
             "upgrades": {
@@ -2058,12 +2118,20 @@
                 }
             ],
             "traits": ["Traitor", "Word Bearers"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 15
+            "composition": [
+                {
+                    "id": "procurant",
+                    "name": "Procurants",
+                    "profiles": {
+                        "procurant": 1
+                    },
+                    "min": 5,
+                    "max": 15,
+                    "cost": {
+                        "points": 15
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -3542,6 +3610,17 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "word-bearers-burning-lore"
+                }
+            ]
+        },
+        "word-bearers-trait": {
+            "id": "word-bearers-trait",
+            "name": "Word Bearers Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Word Bearers"]
                 }
             ]
         },

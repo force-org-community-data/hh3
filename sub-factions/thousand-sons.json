@@ -583,12 +583,28 @@
                 }
             ],
             "traits": ["Thousand Sons", "Psyker", "Khenetai"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 24
+            "composition": [
+                {
+                    "id": "khenetai-blademaster",
+                    "name": "Khenetai Blademaster",
+                    "profiles": {
+                        "khenetai-blademaster": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "khenetai-blade",
+                    "name": "Khenetai Blade",
+                    "profiles": {
+                        "khenetai-blade": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 24
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1081,12 +1097,28 @@
                 }
             ],
             "traits": ["Thousand Sons", "Psyker"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 45
+            "composition": [
+                {
+                    "id": "sekhmet-inceptor",
+                    "name": "Sekhmet Inceptor",
+                    "profiles": {
+                        "sekhmet-inceptor": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "sekhmet",
+                    "name": "Sekhmet",
+                    "profiles": {
+                        "sekhmet": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 45
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1468,12 +1500,28 @@
                 }
             ],
             "traits": ["Thousand Sons", "Psyker", "Corvidae", "Smokescreen"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 27
+            "composition": [
+                {
+                    "id": "ammitara-fate",
+                    "name": "Ammitara Fate",
+                    "profiles": {
+                        "ammitara-fate": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "intercessor",
+                    "name": "Intercessors",
+                    "profiles": {
+                        "intercessor": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 27
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1568,6 +1616,7 @@
                             "equipmentRefs": ["nuncio-vox"]
                         }
                     },
+                    "profileId": "intercessor",
                     "default": "none"
                 },
                 "option-4": {
@@ -1695,12 +1744,20 @@
                 }
             ],
             "traits": ["Thousand Sons", "Psyker", "Unattuned"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 9
+            "composition": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "profiles": {
+                        "inductii": 1
+                    },
+                    "min": 10,
+                    "max": 20,
+                    "cost": {
+                        "points": 9
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1784,6 +1841,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-3": {
@@ -1806,6 +1864,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-4": {
@@ -1913,12 +1972,28 @@
                 "Diviner (Numerologist only)",
                 "Telepath (Numerologist only)"
             ],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 15
+            "composition": [
+                {
+                    "id": "numerologist",
+                    "name": "Numerologist",
+                    "profiles": {
+                        "numerologist": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "life-ward",
+                    "name": "Life Wards",
+                    "profiles": {
+                        "life-ward": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 15
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -2350,6 +2425,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "life-ward",
                     "default": "none"
                 },
                 "option-7": {
@@ -2372,6 +2448,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "life-ward",
                     "default": "none"
                 }
             }
@@ -3356,6 +3433,17 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "thousand-sons-ther-fire"
+                }
+            ]
+        },
+        "thousand-sons-trait": {
+            "id": "thousand-sons-trait",
+            "name": "Thousand Sons Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Thousand Sons"]
                 }
             ]
         },

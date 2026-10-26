@@ -82,12 +82,28 @@
                 }
             ],
             "traits": ["Alpha Legion", "Smokescreen"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 25
+            "composition": [
+                {
+                    "id": "principal",
+                    "name": "Principal",
+                    "profiles": {
+                        "principal": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "disruptor",
+                    "name": "Disruptors",
+                    "profiles": {
+                        "disruptor": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 25
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -267,12 +283,20 @@
                 }
             ],
             "traits": ["Alpha Legion"],
-            "additionalModels": {
-                "max": 10,
-                "cost": {
-                    "points": 9
+            "composition": [
+                {
+                    "id": "inductii",
+                    "name": "Inductii",
+                    "profiles": {
+                        "inductii": 1
+                    },
+                    "min": 10,
+                    "max": 20,
+                    "cost": {
+                        "points": 9
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -340,6 +364,7 @@
                             "equipmentRefs": ["vexilla"]
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-3": {
@@ -362,6 +387,7 @@
                             "target": "legion-equipment"
                         }
                     },
+                    "profileId": "inductii",
                     "default": "none"
                 },
                 "option-4": {
@@ -785,12 +811,28 @@
                 }
             ],
             "traits": ["Alpha Legion", "Smokescreen"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 20
+            "composition": [
+                {
+                    "id": "headhunter-prime",
+                    "name": "Headhunter Prime",
+                    "profiles": {
+                        "headhunter-prime": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "headhunter",
+                    "name": "Headhunters",
+                    "profiles": {
+                        "headhunter": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 20
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -1102,12 +1144,28 @@
                 }
             ],
             "traits": ["Alpha Legion"],
-            "additionalModels": {
-                "max": 5,
-                "cost": {
-                    "points": 45
+            "composition": [
+                {
+                    "id": "harrower",
+                    "name": "Harrower",
+                    "profiles": {
+                        "harrower": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "lernaean",
+                    "name": "Lernaeans",
+                    "profiles": {
+                        "lernaean": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 45
+                    }
                 }
-            },
+            ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
@@ -2149,6 +2207,17 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "alpha-legion-power-daggers"
+                }
+            ]
+        },
+        "alpha-legion-trait": {
+            "id": "alpha-legion-trait",
+            "name": "Alpha Legion Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Alpha Legion"]
                 }
             ]
         },
