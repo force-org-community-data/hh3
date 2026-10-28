@@ -226,7 +226,7 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "If this Unit has 10 Models, one Dark Fury may be replaced with a Chooser of the Slain for +5 Points.",
+                    "name": "If this Unit has 10 Models, one Dark Fury may be replaced with a Chooser of the Slain.",
                     "perModel": {
                         "type": "single"
                     },
@@ -251,7 +251,7 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Chooser of the Slain in this Unit may have melta bombs selected for it for +10 Points per Model.",
+                    "name": "Any Chooser of the Slain in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "some"
                     },
@@ -491,7 +491,7 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its Nemesis bolter exchanged for an Astartes shotgun for Free.",
+                    "name": "Any Model in this Unit may have its Nemesis bolter exchanged for an Astartes shotgun.",
                     "perModel": {
                         "type": "some"
                     },
@@ -584,7 +584,8 @@
                     "id": "option-4",
                     "name": "For every three Models in this Unit, one Model in this Unit may have its Nemesis bolter exchanged for one of the following:",
                     "perModel": {
-                        "type": "single"
+                        "type": "one-in-x",
+                        "everyX": 3
                     },
                     "options": {
                         "none": {
@@ -719,7 +720,7 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "The Mor Deythan Shade in this Unit may have melta bombs selected for it for +5 Points.",
+                    "name": "The Mor Deythan Shade in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -884,7 +885,8 @@
                     "id": "option-1",
                     "name": "For every five Models in this Unit, one Model in this Unit may have its combi-bolter exchanged for one of the following:",
                     "perModel": {
-                        "type": "single"
+                        "type": "one-in-x",
+                        "everyX": 5
                     },
                     "options": {
                         "none": {
@@ -1013,7 +1015,7 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit may have its combi-bolter and power weapon exchanged for one pair of Raven’s Talons for +10 Points per Model.",
+                    "name": "Any Model in this Unit may have its combi-bolter and power weapon exchanged for one pair of Raven’s Talons.",
                     "perModel": {
                         "type": "some"
                     },
@@ -1134,9 +1136,10 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "For every ten Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one Nemesis bolter for +5 Points per Model.",
+                    "name": "For every ten Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one Nemesis bolter.",
                     "perModel": {
-                        "type": "single"
+                        "type": "one-in-x",
+                        "everyX": 10
                     },
                     "options": {
                         "none": {
@@ -1171,7 +1174,7 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1390,7 +1393,11 @@
                             "value": "FP"
                         },
                         {
-                            "id": "breaching-6-stun",
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "stun",
                             "value": "0"
                         }
                     ]
@@ -1549,13 +1556,13 @@
         },
         "eternal-warrior": {
             "id": "eternal-warrior",
-            "name": "Eternal Warrior (X)",
+            "name": "Eternal Warrior",
             "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
             "configurable": true
         },
         "impact": {
             "id": "impact",
-            "name": "Impact (X)",
+            "name": "Impact",
             "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
             "configurable": true
         },
@@ -1563,12 +1570,6 @@
             "id": "the-blood-crow",
             "name": "The Blood Crow (Advanced Reaction)",
             "text": "Kaedes Nex always uses his full Ballistic Skill and reduces the effectiveness of an enemy’s Damage Mitigation Rolls. A Model with this Special Rule is never forced to make Shooting Attacks as Snap Shots and may never have its Ballistic Skill modified to less than 6, unless the Target Unit has the Flyer Sub-Type. Additionally, any Shrouded Damage Mitigation Rolls made against wounds inflicted by a Shooting Attack made by a Model with this Special Rule are only successful on a roll of 6+, regardless of the variant of the Shrouded (X) Special Rule the selected Target Model has or any Special Rules to the contrary."
-        },
-        "breaching-6-stun": {
-            "id": "breaching-6-stun",
-            "name": "Breaching (6+) Stun",
-            "text": "",
-            "configurable": true
         },
         "fatal-strike": {
             "id": "fatal-strike",

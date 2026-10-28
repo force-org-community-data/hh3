@@ -424,7 +424,7 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its power weapon exchanged for one Solarite power gauntlet for +10 Points per Model.",
+                    "name": "Any Model in this Unit may have its power weapon exchanged for one Solarite power gauntlet.",
                     "perModel": {
                         "type": "some"
                     },
@@ -449,7 +449,7 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "The Huscarl-master may have one grenade harness selected for it for +5 Points.",
+                    "name": "The Huscarl-master may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -560,7 +560,8 @@
                     "id": "option-1",
                     "name": "For every ten Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one of the following:",
                     "perModel": {
-                        "type": "single"
+                        "type": "one-in-x",
+                        "everyX": 10
                     },
                     "options": {
                         "none": {
@@ -615,7 +616,7 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Inductii in this Unit may have a vexilla selected for it for +10 Points.",
+                    "name": "One Inductii in this Unit may have a vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -825,7 +826,7 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Warder Sergeant in this Unit may have its bolt pistol exchanged for one plasma pistol for +10 Points.",
+                    "name": "The Warder Sergeant in this Unit may have its bolt pistol exchanged for one plasma pistol.",
                     "perModel": {
                         "type": "single"
                     },
@@ -944,7 +945,7 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "One Phalanx Warder in this Unit may have one vexilla selected for it for +10 Points.",
+                    "name": "One Phalanx Warder in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -970,7 +971,7 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Every Model in the Unit may have melta bombs selected for them for +25 Points per Unit.",
+                    "name": "Every Model in the Unit may have melta bombs selected for them per Unit.",
                     "perModel": {
                         "type": "every"
                     },
@@ -997,7 +998,8 @@
                     "id": "option-6",
                     "name": "For every five Models in this Unit, one Phalanx Warder in this Unit may have one item from the Legion Combi-weapons list or one of the following selected for...",
                     "perModel": {
-                        "type": "single"
+                        "type": "one-in-x",
+                        "everyX": 5
                     },
                     "options": {
                         "none": {
@@ -1369,7 +1371,7 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "The Templar Champion in this Unit may have its bolt pistol exchanged for one archaeotech pistol for +5 Points.",
+                    "name": "The Templar Champion in this Unit may have its bolt pistol exchanged for one archaeotech pistol.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1407,7 +1409,7 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Any Model in this Unit may have their bolt pistol exchanged for one combat shield for +2 Points per Model.",
+                    "name": "Any Model in this Unit may have their bolt pistol exchanged for one combat shield.",
                     "perModel": {
                         "type": "some"
                     },
@@ -1444,7 +1446,7 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one plasma pistol for +10 Points per Model.",
+                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one plasma pistol.",
                     "perModel": {
                         "type": "some"
                     },
@@ -1504,7 +1506,7 @@
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "One Templar Brethren in this Unit may have one vexilla selected for it for +10 Points.",
+                    "name": "One Templar Brethren in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1530,7 +1532,7 @@
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "Every Model in the Unit may have melta bombs selected for them for +25 Points per Unit.",
+                    "name": "Every Model in the Unit may have melta bombs selected for them per Unit.",
                     "perModel": {
                         "type": "every"
                     },
@@ -1688,7 +1690,11 @@
                     "traits": ["Chain"],
                     "specialRules": [
                         {
-                            "id": "shred-4-reaping-blow",
+                            "id": "shred",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "reaping-blow",
                             "value": "2"
                         }
                     ]
@@ -1776,7 +1782,7 @@
             "template": "ranged",
             "profiles": [
                 {
-                    "name": "- Sustained fire",
+                    "name": "Sustained fire",
                     "stats": {
                         "r": "24",
                         "fp": "3",
@@ -1797,7 +1803,7 @@
                     ]
                 },
                 {
-                    "name": "- Maximal fire",
+                    "name": "Maximal fire",
                     "stats": {
                         "r": "24",
                         "fp": "5",
@@ -2137,7 +2143,7 @@
         },
         "impact": {
             "id": "impact",
-            "name": "Impact (X)",
+            "name": "Impact",
             "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
             "configurable": true
         },
@@ -2153,7 +2159,7 @@
         },
         "eternal-warrior": {
             "id": "eternal-warrior",
-            "name": "Eternal Warrior (X)",
+            "name": "Eternal Warrior",
             "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
             "configurable": true
         },
@@ -2181,12 +2187,6 @@
             "id": "bulwark-of-the-imperium",
             "name": "Bulwark of the Imperium",
             "text": "This Gambit allows Rogal Dorn to fight defensively. While a Model with this Special Rule is engaged in a Challenge, its Controlling Player can select the following Gambit: Bulwark of the Imperium: While this Gambit is selected, Wound Tests made against the Model that this Gambit was selected for that have an unmodified result of a 1, 2, 3 and 4 are never successful regardless of the Strength Characteristic of a Hit or any Special Rules that set the Target Number for Wound Tests."
-        },
-        "shred-4-reaping-blow": {
-            "id": "shred-4-reaping-blow",
-            "name": "Shred (4+) Reaping Blow",
-            "text": "",
-            "configurable": true
         },
         "slayer-of-kings": {
             "id": "slayer-of-kings",
