@@ -144,7 +144,7 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model’s Asphyx bolt cannon may be exchanged for one æther-fire cannon for +10 Points.",
+                    "name": "This Model’s Asphyx bolt cannon may be exchanged for one æther-fire cannon.",
                     "perModel": {
                         "type": "single"
                     },
@@ -156,13 +156,13 @@
                                 "points": 0
                             }
                         },
-                        "ther-fire-cannon": {
-                            "id": "ther-fire-cannon",
+                        "aether-fire-cannon": {
+                            "id": "aether-fire-cannon",
                             "name": "æther-fire cannon",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["ther-fire-cannon"]
+                            "weaponRefs": ["aether-fire-cannon"]
                         }
                     },
                     "default": "none"
@@ -354,7 +354,7 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have one havoc launcher selected for it for +5 Points.",
+                    "name": "This Model may have one havoc launcher selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -444,7 +444,7 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "This Model may have its Gravis bolt cannon exchanged for one æther-fire magna-cannon for +10 Points.",
+                    "name": "This Model may have its Gravis bolt cannon exchanged for one æther-fire magna-cannon.",
                     "perModel": {
                         "type": "single"
                     },
@@ -456,13 +456,13 @@
                                 "points": 0
                             }
                         },
-                        "ther-fire-magna-cannon": {
-                            "id": "ther-fire-magna-cannon",
+                        "aether-fire-magna-cannon": {
+                            "id": "aether-fire-magna-cannon",
                             "name": "æther-fire magna-cannon",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["ther-fire-magna-cannon"],
+                            "weaponRefs": ["aether-fire-magna-cannon"],
                             "swaps": [
                                 {
                                     "from": {
@@ -471,7 +471,7 @@
                                     },
                                     "to": {
                                         "kind": "weapon",
-                                        "id": "ther-fire-magna-cannon"
+                                        "id": "aether-fire-magna-cannon"
                                     }
                                 }
                             ]
@@ -481,7 +481,7 @@
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "This Model may have its combi-bolter exchanged for one æther-fire blaster for +10 Points.",
+                    "name": "This Model may have its combi-bolter exchanged for one æther-fire blaster.",
                     "perModel": {
                         "type": "single"
                     },
@@ -493,13 +493,13 @@
                                 "points": 0
                             }
                         },
-                        "ther-fire-blaster": {
-                            "id": "ther-fire-blaster",
+                        "aether-fire-blaster": {
+                            "id": "aether-fire-blaster",
                             "name": "æther-fire blaster",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["ther-fire-blaster"],
+                            "weaponRefs": ["aether-fire-blaster"],
                             "swaps": [
                                 {
                                     "from": {
@@ -508,7 +508,7 @@
                                     },
                                     "to": {
                                         "kind": "weapon",
-                                        "id": "ther-fire-blaster"
+                                        "id": "aether-fire-blaster"
                                     }
                                 }
                             ]
@@ -653,7 +653,8 @@
                     "id": "option-2",
                     "name": "For every five Models in this Unit, one Model in this Unit may have its bolt pistol exchanged for one of the following:",
                     "perModel": {
-                        "type": "single"
+                        "type": "one-in-x",
+                        "everyX": 5
                     },
                     "options": {
                         "none": {
@@ -683,13 +684,13 @@
                                 }
                             ]
                         },
-                        "ther-fire-pistol": {
-                            "id": "ther-fire-pistol",
+                        "aether-fire-pistol": {
+                            "id": "aether-fire-pistol",
                             "name": "Æther-fire pistol",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["ther-fire-pistol"],
+                            "weaponRefs": ["aether-fire-pistol"],
                             "swaps": [
                                 {
                                     "from": {
@@ -698,7 +699,7 @@
                                     },
                                     "to": {
                                         "kind": "weapon",
-                                        "id": "ther-fire-pistol"
+                                        "id": "aether-fire-pistol"
                                     }
                                 }
                             ]
@@ -1134,7 +1135,7 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger for Free or for one item from the Legion Combi-weapons list.",
+                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "some"
                     },
@@ -1169,13 +1170,6 @@
                                     }
                                 }
                             ]
-                        },
-                        "for": {
-                            "id": "for",
-                            "name": "for",
-                            "cost": {
-                                "points": 0
-                            }
                         }
                     },
                     "default": "none"
@@ -1279,7 +1273,7 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Any Model in this Unit may have its combi-bolter and Achea pattern force sword exchanged for one pair of lightning claws for +10 Points.",
+                    "name": "Any Model in this Unit may have its combi-bolter and Achea pattern force sword exchanged for one pair of lightning claws.",
                     "perModel": {
                         "type": "some"
                     },
@@ -1318,7 +1312,8 @@
                     "id": "option-4",
                     "name": "For every five Models in this Unit, one Model may have its combi-bolter exchanged for one of the following:",
                     "perModel": {
-                        "type": "single"
+                        "type": "one-in-x",
+                        "everyX": 5
                     },
                     "options": {
                         "none": {
@@ -1393,7 +1388,7 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "The Sekhment Inceptor in this Unit may have one grenade harness selected for it for +5 Points.",
+                    "name": "The Sekhment Inceptor in this Unit may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1547,7 +1542,7 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Ammitara Fate in this Unit may have melta bombs selected for it for +10 Points.",
+                    "name": "The Ammitara Fate in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1595,7 +1590,7 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "One Intercessor in this Unit may have one nuncio-vox selected for it for +10 Points.",
+                    "name": "One Intercessor in this Unit may have one nuncio-vox selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1674,13 +1669,13 @@
                                 }
                             ]
                         },
-                        "ther-fire-blaster": {
-                            "id": "ther-fire-blaster",
+                        "aether-fire-blaster": {
+                            "id": "aether-fire-blaster",
                             "name": "Æther-fire blaster",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["ther-fire-blaster"],
+                            "weaponRefs": ["aether-fire-blaster"],
                             "swaps": [
                                 {
                                     "from": {
@@ -1689,7 +1684,7 @@
                                     },
                                     "to": {
                                         "kind": "weapon",
-                                        "id": "ther-fire-blaster"
+                                        "id": "aether-fire-blaster"
                                     }
                                 }
                             ]
@@ -1783,9 +1778,10 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one volkite caliver for +10 Points per Model.",
+                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one volkite caliver.",
                     "perModel": {
-                        "type": "single"
+                        "type": "one-in-x",
+                        "everyX": 4
                     },
                     "options": {
                         "none": {
@@ -1820,7 +1816,7 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Inductii in this Unit may have one vexilla selected for it for +10 Points.",
+                    "name": "One Inductii in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -2102,7 +2098,7 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "The Numerologist in this Unit may have its bolt pistol exchanged for one bolter for Free, for one item from the Legion Combi-weapons list or for one of the f...",
+                    "name": "The Numerologist in this Unit may have its bolt pistol exchanged for one bolter, for one item from the Legion Combi-weapons list or for one of the f...",
                     "perModel": {
                         "type": "single"
                     },
@@ -2234,13 +2230,13 @@
                                 }
                             ]
                         },
-                        "ther-fire-blaster": {
-                            "id": "ther-fire-blaster",
+                        "aether-fire-blaster": {
+                            "id": "aether-fire-blaster",
                             "name": "Æther-fire blaster",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["ther-fire-blaster"],
+                            "weaponRefs": ["aether-fire-blaster"],
                             "swaps": [
                                 {
                                     "from": {
@@ -2249,7 +2245,7 @@
                                     },
                                     "to": {
                                         "kind": "weapon",
-                                        "id": "ther-fire-blaster"
+                                        "id": "aether-fire-blaster"
                                     }
                                 }
                             ]
@@ -2264,7 +2260,7 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "The Numerologist in this Unit may have one cyber-familiar selected for it for +10 Points.",
+                    "name": "The Numerologist in this Unit may have one cyber-familiar selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -2349,7 +2345,8 @@
                     "id": "option-5",
                     "name": "For every five Models in this Unit, one Life Ward in this Unit may have its bolt pistol exchanged for one of the following:",
                     "perModel": {
-                        "type": "single"
+                        "type": "one-in-x",
+                        "everyX": 5
                     },
                     "options": {
                         "none": {
@@ -2404,7 +2401,7 @@
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "One Life Ward in this Unit may have one vexilla selected for it for +10 Points.",
+                    "name": "One Life Ward in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -2531,8 +2528,8 @@
                 }
             ]
         },
-        "ther-fire-cannon": {
-            "id": "ther-fire-cannon",
+        "aether-fire-cannon": {
+            "id": "aether-fire-cannon",
             "name": "Æther-fire Cannon",
             "template": "ranged",
             "profiles": [
@@ -2587,8 +2584,8 @@
                 }
             ]
         },
-        "ther-fire-magna-cannon": {
-            "id": "ther-fire-magna-cannon",
+        "aether-fire-magna-cannon": {
+            "id": "aether-fire-magna-cannon",
             "name": "Æther-fire magna-cannon",
             "template": "ranged",
             "profiles": [
@@ -2615,8 +2612,8 @@
                 }
             ]
         },
-        "ther-fire-blaster": {
-            "id": "ther-fire-blaster",
+        "aether-fire-blaster": {
+            "id": "aether-fire-blaster",
             "name": "Æther-fire blaster",
             "template": "ranged",
             "profiles": [
@@ -2663,8 +2660,8 @@
                 }
             ]
         },
-        "ther-fire-pistol": {
-            "id": "ther-fire-pistol",
+        "aether-fire-pistol": {
+            "id": "aether-fire-pistol",
             "name": "Æther-fire pistol",
             "template": "ranged",
             "profiles": [
@@ -2928,8 +2925,8 @@
             },
             "default": "none"
         },
-        "thousand-sons-ther-fire": {
-            "id": "thousand-sons-ther-fire",
+        "thousand-sons-aether-fire": {
+            "id": "thousand-sons-aether-fire",
             "name": "Æther-fire",
             "perModel": {
                 "type": "some"
@@ -2942,13 +2939,13 @@
                         "points": 0
                     }
                 },
-                "ther-fire": {
-                    "id": "ther-fire",
+                "aether-fire": {
+                    "id": "aether-fire",
                     "name": "Æther-fire",
                     "cost": {
                         "points": 0
                     },
-                    "weaponRefs": ["ther-fire-pistol"]
+                    "weaponRefs": ["aether-fire-pistol"]
                 }
             },
             "default": "none"
@@ -2984,13 +2981,13 @@
                     },
                     "weaponRefs": ["volkite-serpenta"]
                 },
-                "ther-fire-pistol": {
-                    "id": "ther-fire-pistol",
+                "aether-fire-pistol": {
+                    "id": "aether-fire-pistol",
                     "name": "Æther-fire pistol",
                     "cost": {
                         "points": 10
                     },
-                    "weaponRefs": ["ther-fire-pistol"]
+                    "weaponRefs": ["aether-fire-pistol"]
                 }
             }
         },
@@ -3065,13 +3062,13 @@
                     },
                     "weaponRefs": ["lascannon"]
                 },
-                "ther-fire-cannon": {
-                    "id": "ther-fire-cannon",
+                "aether-fire-cannon": {
+                    "id": "aether-fire-cannon",
                     "name": "Æther-fire cannon",
                     "cost": {
                         "points": 20
                     },
-                    "weaponRefs": ["ther-fire-cannon"]
+                    "weaponRefs": ["aether-fire-cannon"]
                 }
             }
         },
@@ -3130,13 +3127,13 @@
                     },
                     "weaponRefs": ["rotor-cannon"]
                 },
-                "ther-fire-blaster": {
-                    "id": "ther-fire-blaster",
+                "aether-fire-blaster": {
+                    "id": "aether-fire-blaster",
                     "name": "Æther-fire blaster",
                     "cost": {
                         "points": 15
                     },
-                    "weaponRefs": ["ther-fire-blaster"]
+                    "weaponRefs": ["aether-fire-blaster"]
                 }
             }
         },
@@ -3267,13 +3264,13 @@
                     },
                     "equipmentRefs": ["boarding-shield"]
                 },
-                "ther-fire-pistol": {
-                    "id": "ther-fire-pistol",
+                "aether-fire-pistol": {
+                    "id": "aether-fire-pistol",
                     "name": "Æther-fire pistol",
                     "cost": {
                         "points": 10
                     },
-                    "weaponRefs": ["ther-fire-pistol"]
+                    "weaponRefs": ["aether-fire-pistol"]
                 }
             }
         }
@@ -3286,7 +3283,7 @@
         },
         "force": {
             "id": "force",
-            "name": "Force (X)",
+            "name": "Force",
             "text": "A Weapon with this Special Rule may double a Characteristic with a Willpower Check, but may suffer Perils of the Warp. When selected to be used as part of a Combat or Shooting Attack, a Willpower Check may be made for the Model that will use this Weapon to make attacks. If it is successful then the Characteristic listed as X is doubled (if that Characteristic is AP, then the AP is instead changed to AP 2). If a double is rolled when making this Willpower Check then the Model using the Weapon to make attacks suffers Perils of the Warp.",
             "configurable": true
         },
@@ -3317,7 +3314,7 @@
         },
         "shrouded": {
             "id": "shrouded",
-            "name": "Shrouded (X)",
+            "name": "Shrouded",
             "text": "Shrouded (X) is a Damage Mitigation Test that may be taken in addition to a Saving Throw. A Model with the Shrouded (X) Special Rule gains a Shrouded Damage Mitigation Test that may be used in Step 9 of the Shooting Attack process to discard Wounds allocated to the Model. A Damage Mitigation Test may be made after and in addition to a Saving Throw. The Target Number for a Shrouded Damage Mitigation Test is the value of X attached to the specific variant of the Special Rule. A Shrouded Damage Mitigation Test may not be made against wounds inflicted by a Melee Weapon.",
             "configurable": true
         },
@@ -3328,7 +3325,7 @@
         },
         "eternal-warrior": {
             "id": "eternal-warrior",
-            "name": "Eternal Warrior (X)",
+            "name": "Eternal Warrior",
             "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
             "configurable": true
         },
@@ -3425,14 +3422,14 @@
                 }
             ]
         },
-        "thousand-sons-ther-fire": {
-            "id": "thousand-sons-ther-fire",
+        "thousand-sons-aether-fire": {
+            "id": "thousand-sons-aether-fire",
             "name": "Æther-fire",
             "selector": {},
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "thousand-sons-ther-fire"
+                    "upgradeId": "thousand-sons-aether-fire"
                 }
             ]
         },
