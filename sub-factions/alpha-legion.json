@@ -2168,7 +2168,70 @@
             "id": "rewards-of-treachery",
             "name": "Rewards of Treachery",
             "text": "If a Unit which only includes Models with the Alpha Legion Trait that has the Command Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Rewards of Treachery Add one additional Battlefield Role Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. This Slot may be of any Battlefield Role other than High Command , Command , Warlord or Lord of War (note that a Detachment may gain more than one additional Force Organisation Slot if this option is selected for multiple Units in the same Detachment). Each Unit selected to fill such a Slot must: Be from the Legiones Astartes Army List. Not have the Alpha Legion Faction Trait on their Unit Profile. Not include any Models that have the Unique Sub-Type. All Models in any of these Units have their Faction Trait replaced with ‘Alpha Legion’.",
-            "slotTag": "prime"
+            "slotTag": "prime",
+            "effects": [
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "paragon",
+                        "retinue",
+                        "elites",
+                        "war-engine",
+                        "troop",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "legiones-astartes",
+                        "subFactions": "any"
+                    },
+                    "units": {
+                        "exclude": [
+                            {
+                                "traits": ["Alpha Legion"]
+                            },
+                            {
+                                "profiles": {
+                                    "anyOf": ["Unique"]
+                                }
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "remove": [
+                                "Blood Angels",
+                                "Dark Angels",
+                                "Death Guard",
+                                "Emperor’s Children",
+                                "Imperial Fists",
+                                "Iron Hands",
+                                "Iron Warriors",
+                                "Night Lords",
+                                "Raven Guard",
+                                "Salamanders",
+                                "Sons of Horus",
+                                "Space Wolves",
+                                "Thousand Sons",
+                                "Ultramarines",
+                                "White Scars",
+                                "Word Bearers",
+                                "World Eaters"
+                            ]
+                        },
+                        {
+                            "kind": "trait",
+                            "add": ["Alpha Legion"]
+                        }
+                    ]
+                }
+            ]
         }
     },
     "unitModifiers": {
