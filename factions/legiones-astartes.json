@@ -6724,7 +6724,16 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        },
+                        {
+                            "id": "legiones-thallaxes"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -32262,6 +32271,49 @@
                             "replace": {
                                 "from": ["Cybernetica"],
                                 "to": "Bonded Automata"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "legiones-thallaxes": {
+            "id": "legiones-thallaxes",
+            "name": "Legiones Thallaxes",
+            "text": "Each Detachment that includes a Model with this Special Rule gains two additional Force Organisation Slots. These Slots can only be filled with Thallax Cohort Units selected from Liber Mechanicum. For each Thallax Cohort included this way, the Reductor Trait of every Model in the Unit is replaced with ‘Bonded Reductor’ and the Aegis of Pain Special Rule is removed from every Model in the Unit. These Units can be included even though they do not have the same Faction Trait as the other Units in the Detachment.",
+            "slots": [
+                {
+                    "roleChoices": ["support"],
+                    "source": {
+                        "faction": "mechanicum-taghmata"
+                    },
+                    "units": {
+                        "unitIds": ["thallax-cohort"]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Reductor"],
+                                "to": "Bonded Reductor"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "roleChoices": ["support"],
+                    "source": {
+                        "faction": "mechanicum-taghmata"
+                    },
+                    "units": {
+                        "unitIds": ["thallax-cohort"]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Reductor"],
+                                "to": "Bonded Reductor"
                             }
                         }
                     ]
