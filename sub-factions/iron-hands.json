@@ -2494,7 +2494,27 @@
         "lord-of-automata": {
             "id": "lord-of-automata",
             "name": "Lord of Automata",
-            "text": "This Special Rule allows an Iron Father to be accompanied by a Unit of Battle-automata. When a Model with this Special Rule is included in a Detachment, one additional Force Organisation Slot is added to that Detachment. This Slot can only be filled with one Castellax Battle Maniple or Castellax Destructor Maniple Unit selected from Liber Mechanicum. When such a Unit is included in this way, its Cybernetica Trait is replaced with ‘Bonded Automata’, and this Unit can be included even though it does not have the same Faction Trait as the other Units in that Detachment. In addition, a Model with this Special Rule may join a Friendly Unit that includes Models with the Automata Type. If a Model with this Special Rule joins a Unit with the Automata Type, the Leadership and Cool Characteristics of Models in that Unit are not reduced."
+            "text": "This Special Rule allows an Iron Father to be accompanied by a Unit of Battle-automata. When a Model with this Special Rule is included in a Detachment, one additional Force Organisation Slot is added to that Detachment. This Slot can only be filled with one Castellax Battle Maniple or Castellax Destructor Maniple Unit selected from Liber Mechanicum. When such a Unit is included in this way, its Cybernetica Trait is replaced with ‘Bonded Automata’, and this Unit can be included even though it does not have the same Faction Trait as the other Units in that Detachment. In addition, a Model with this Special Rule may join a Friendly Unit that includes Models with the Automata Type. If a Model with this Special Rule joins a Unit with the Automata Type, the Leadership and Cool Characteristics of Models in that Unit are not reduced.",
+            "slots": [
+                {
+                    "roleChoices": ["support", "heavy-assault"],
+                    "source": {
+                        "faction": "mechanicum-taghmata"
+                    },
+                    "units": {
+                        "unitIds": ["castellax-battle-maniple", "castellax-destructor-maniple"]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Cybernetica"],
+                                "to": "Bonded Automata"
+                            }
+                        }
+                    ]
+                }
+            ]
         },
         "forbidden-augmentations": {
             "id": "forbidden-augmentations",
