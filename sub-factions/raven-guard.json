@@ -226,18 +226,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "If this Unit has 10 Models, one Dark Fury may be replaced with a Chooser of the Slain.",
+                    "name": "Chooser of the Slain",
+                    "description": "If this Unit has 10 Models, one Dark Fury may be replaced with a Chooser of the Slain.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "chooser-of-the-slain": {
                             "id": "chooser-of-the-slain",
                             "name": "Chooser of the Slain",
@@ -247,22 +241,16 @@
                             "equipmentRefs": ["chooser-of-the-slain"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Chooser of the Slain in this Unit may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "Any Chooser of the Slain in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -273,7 +261,7 @@
                         }
                     },
                     "profileId": "chooser-of-the-slain",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -464,11 +452,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "nemesis-bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "bolt-pistol",
                     "perModel": true
                 },
@@ -489,19 +472,22 @@
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "Any Model in this Unit may have its Nemesis bolter exchanged for an Astartes shotgun.",
+                "nemesis-bolter": {
+                    "id": "nemesis-bolter",
+                    "name": "Nemesis bolter",
+                    "description": "Any Model in this Unit may have its Nemesis bolter exchanged for an Astartes shotgun.",
                     "perModel": {
                         "type": "some"
                     },
+                    "default": "nemesis-bolter",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "nemesis-bolter": {
+                            "id": "nemesis-bolter",
+                            "name": "Nemesis bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["nemesis-bolter"]
                         },
                         "astartes-shotgun": {
                             "id": "astartes-shotgun",
@@ -509,26 +495,18 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["astartes-shotgun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "nemesis-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "astartes-shotgun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["astartes-shotgun"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
                         }
-                    },
-                    "default": "none"
+                    }
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have one of the following selected for it:",
+                    "name": "Charnabal sabre / Power weapon",
+                    "description": "Any Model in this Unit may have one of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -559,30 +537,10 @@
                     },
                     "default": "none"
                 },
-                "option-3": {
-                    "id": "option-3",
-                    "name": "Any Model in this Unit may have its Nemesis bolter exchanged for one item from the Legion Combi-weapons list.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "legion-combi-weapons": {
-                            "id": "legion-combi-weapons",
-                            "target": "legion-combi-weapons"
-                        }
-                    },
-                    "default": "none"
-                },
                 "option-4": {
                     "id": "option-4",
-                    "name": "For every three Models in this Unit, one Model in this Unit may have its Nemesis bolter exchanged for one of the following:",
+                    "name": "Nemesis bolter exchange",
+                    "description": "For every three Models in this Unit, one Model in this Unit may have its Nemesis bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 3
@@ -720,18 +678,12 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "The Mor Deythan Shade in this Unit may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "The Mor Deythan Shade in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -742,7 +694,7 @@
                         }
                     },
                     "profileId": "mor-deythan-shade",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -868,22 +820,42 @@
                     }
                 }
             ],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "combi-bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "equipment",
-                    "id": "power-weapons",
-                    "perModel": true
-                }
-            ],
             "upgrades": {
+                "combi-bolter": {
+                    "id": "combi-bolter",
+                    "name": "Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "pair-of-ravens-talons": {
+                            "id": "pair-of-ravens-talons",
+                            "name": "pair of Raven’s Talons",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-ravens-talons"]
+                        }
+                    }
+                },
                 "option-1": {
                     "id": "option-1",
-                    "name": "For every five Models in this Unit, one Model in this Unit may have its combi-bolter exchanged for one of the following:",
+                    "name": "Combi-bolter exchange",
+                    "description": "For every five Models in this Unit, one Model in this Unit may have its combi-bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -961,17 +933,19 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have its power weapon exchanged for one of the following:",
+                    "name": "Power weapon exchange",
+                    "description": "Any Model in this Unit may have its power weapon exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "power-weapons": {
+                            "id": "power-weapons",
+                            "name": "Power weapons",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "equipmentRefs": ["power-weapons"]
                         },
                         "power-fist": {
                             "id": "power-fist",
@@ -990,65 +964,7 @@
                             "weaponRefs": ["chainfist"]
                         }
                     },
-                    "default": "none"
-                },
-                "option-3": {
-                    "id": "option-3",
-                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "legion-combi-weapons": {
-                            "id": "legion-combi-weapons",
-                            "target": "legion-combi-weapons"
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-4": {
-                    "id": "option-4",
-                    "name": "Any Model in this Unit may have its combi-bolter and power weapon exchanged for one pair of Raven’s Talons.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "pair-of-ravens-talons": {
-                            "id": "pair-of-ravens-talons",
-                            "name": "pair of Raven’s Talons",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["pair-of-ravens-talons"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-ravens-talons"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
+                    "default": "power-weapons"
                 }
             }
         },
@@ -1136,19 +1052,13 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "For every ten Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one Nemesis bolter.",
+                    "name": "Bolter to nemesis bolter",
+                    "description": "For every ten Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one Nemesis bolter.",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 10
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "nemesis-bolter": {
                             "id": "nemesis-bolter",
                             "name": "Nemesis bolter",
@@ -1170,22 +1080,16 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Inductii in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Inductii in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -1196,11 +1100,12 @@
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -1223,7 +1128,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "name": "Bayonet / Chain bayonet",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },

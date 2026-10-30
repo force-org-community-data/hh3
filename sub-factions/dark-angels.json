@@ -185,22 +185,11 @@
                     "min": 4
                 }
             ],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "combi-bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "calibanite-warblade",
-                    "perModel": true
-                }
-            ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "name": "Legion Combi-weapons",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "some"
                     },
@@ -221,17 +210,19 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have its combi-bolter and Calibanite warblade exchanged for one pair of lightning claws.",
+                    "name": "Swap to pair of lightning claws",
+                    "description": "Any Model in this Unit may have its combi-bolter and Calibanite warblade exchanged for one pair of lightning claws.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["combi-bolter"]
                         },
                         "pair-of-lightning-claws": {
                             "id": "pair-of-lightning-claws",
@@ -239,36 +230,26 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["pair-of-lightning-claws"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-lightning-claws"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["pair-of-lightning-claws"]
                         }
                     },
-                    "default": "none"
+                    "default": "combi-bolter"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
+                    "name": "Calibanite warblade exchange",
+                    "description": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "calibanite-warblade": {
+                            "id": "calibanite-warblade",
+                            "name": "Calibanite warblade",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["calibanite-warblade"]
                         },
                         "terranic-greatsword": {
                             "id": "terranic-greatsword",
@@ -276,19 +257,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["terranic-greatsword"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "calibanite-warblade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "terranic-greatsword"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["terranic-greatsword"]
                         },
                         "power-fist": {
                             "id": "power-fist",
@@ -296,19 +265,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["power-fist"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "calibanite-warblade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "power-fist"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["power-fist"]
                         },
                         "thunder-hammer": {
                             "id": "thunder-hammer",
@@ -316,37 +273,19 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["thunder-hammer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "calibanite-warblade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "none"
+                    "default": "calibanite-warblade"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "The Cataphractii Oathbearer in this Unit may have one grenade harness selected for it.",
+                    "name": "Grenade harness",
+                    "description": "The Cataphractii Oathbearer in this Unit may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "grenade-harness": {
                             "id": "grenade-harness",
                             "name": "grenade harness",
@@ -357,7 +296,7 @@
                         }
                     },
                     "profileId": "cataphractii-oathbearer",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -422,31 +361,26 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "combi-bolter"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "combi-bolter"
-                },
-                {
-                    "kind": "weapon",
                     "id": "excindio-claws"
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "This Model may have its two combi-bolters exchanged for one of the following options:",
+                "combi-bolter": {
+                    "id": "combi-bolter",
+                    "name": "Two combi-bolters",
+                    "description": "This Model may have its two combi-bolters exchanged for one of the following options:",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "combi-bolter",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Two combi-bolters",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["combi-bolter", "combi-bolter"]
                         },
                         "two-graviton-guns": {
                             "id": "two-graviton-guns",
@@ -454,19 +388,7 @@
                             "cost": {
                                 "points": 20
                             },
-                            "weaponRefs": ["graviton-gun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "graviton-gun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["graviton-gun"]
                         },
                         "two-plasma-guns": {
                             "id": "two-plasma-guns",
@@ -474,19 +396,7 @@
                             "cost": {
                                 "points": 20
                             },
-                            "weaponRefs": ["plasma-gun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "plasma-gun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["plasma-gun"]
                         },
                         "two-irad-cleansers": {
                             "id": "two-irad-cleansers",
@@ -494,26 +404,14 @@
                             "cost": {
                                 "points": 30
                             },
-                            "weaponRefs": ["irad-cleanser"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "irad-cleanser"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["irad-cleanser"]
                         }
-                    },
-                    "default": "none"
+                    }
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one of the following selected for it:",
+                    "name": "Athanax phosphex canister launcher",
+                    "description": "This Model may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -562,19 +460,13 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have up to two hunter-killer missiles selected for it.",
+                    "name": "Hunter-killer missiles",
+                    "description": "This Model may have up to two hunter-killer missiles selected for it.",
                     "perModel": {
                         "type": "some",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "hunter-killer-missiles": {
                             "id": "hunter-killer-missiles",
                             "name": "hunter-killer missiles",
@@ -584,7 +476,7 @@
                             "weaponRefs": ["hunter-killer-missile"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -667,18 +559,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "One Model in this Unit may have one Enigmatus missile launcher selected for it.",
+                    "name": "Enigmatus missile launcher",
+                    "description": "One Model in this Unit may have one Enigmatus missile launcher selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "enigmatus-missile-launcher": {
                             "id": "enigmatus-missile-launcher",
                             "name": "Enigmatus missile launcher",
@@ -688,7 +574,7 @@
                             "weaponRefs": ["enigmatus-missile-launcher"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -773,18 +659,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "One Inductii in this Unit may have a vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Inductii in this Unit may have a vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -795,11 +675,12 @@
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -932,11 +813,6 @@
             ],
             "defaultWargear": [
                 {
-                    "kind": "weapon",
-                    "id": "terranic-greatsword",
-                    "perModel": true
-                },
-                {
                     "kind": "equipment",
                     "id": "plasma-caster",
                     "perModel": true
@@ -950,17 +826,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its Terranic greatsword exchanged for one thunder hammer.",
+                    "name": "Terranic greatsword to thunder hammer",
+                    "description": "Any Model in this Unit may have its Terranic greatsword exchanged for one thunder hammer.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "terranic-greatsword": {
+                            "id": "terranic-greatsword",
+                            "name": "Terranic greatsword",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["terranic-greatsword"]
                         },
                         "thunder-hammer": {
                             "id": "thunder-hammer",
@@ -968,22 +846,10 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["thunder-hammer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "terranic-greatsword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "none"
+                    "default": "terranic-greatsword"
                 }
             }
         },
@@ -1092,22 +958,11 @@
                     "min": 4
                 }
             ],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "combi-bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "calibanite-warblade",
-                    "perModel": true
-                }
-            ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "name": "Legion Combi-weapons",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "some"
                     },
@@ -1128,17 +983,19 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have its combi-bolter and Calibanite warblade exchanged for one pair of lightning claws.",
+                    "name": "Swap to pair of lightning claws",
+                    "description": "Any Model in this Unit may have its combi-bolter and Calibanite warblade exchanged for one pair of lightning claws.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["combi-bolter"]
                         },
                         "pair-of-lightning-claws": {
                             "id": "pair-of-lightning-claws",
@@ -1146,36 +1003,26 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["pair-of-lightning-claws"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-lightning-claws"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["pair-of-lightning-claws"]
                         }
                     },
-                    "default": "none"
+                    "default": "combi-bolter"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
+                    "name": "Calibanite warblade exchange",
+                    "description": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "calibanite-warblade": {
+                            "id": "calibanite-warblade",
+                            "name": "Calibanite warblade",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["calibanite-warblade"]
                         },
                         "terranic-greatsword": {
                             "id": "terranic-greatsword",
@@ -1183,19 +1030,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["terranic-greatsword"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "calibanite-warblade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "terranic-greatsword"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["terranic-greatsword"]
                         },
                         "power-fist": {
                             "id": "power-fist",
@@ -1203,19 +1038,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["power-fist"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "calibanite-warblade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "power-fist"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["power-fist"]
                         },
                         "thunder-hammer": {
                             "id": "thunder-hammer",
@@ -1223,37 +1046,19 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["thunder-hammer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "calibanite-warblade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "none"
+                    "default": "calibanite-warblade"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "The Tartaros Oathbearer in this Unit may have one grenade harness selected for it.",
+                    "name": "Grenade harness",
+                    "description": "The Tartaros Oathbearer in this Unit may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "grenade-harness": {
                             "id": "grenade-harness",
                             "name": "grenade harness",
@@ -1264,7 +1069,7 @@
                         }
                     },
                     "profileId": "tartaros-oathbearer",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1366,21 +1171,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "calibanite-warblade",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -1393,17 +1183,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
+                    "name": "Calibanite warblade exchange",
+                    "description": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "calibanite-warblade": {
+                            "id": "calibanite-warblade",
+                            "name": "Calibanite warblade",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["calibanite-warblade"]
                         },
                         "power-fist": {
                             "id": "power-fist",
@@ -1411,19 +1203,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["power-fist"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "calibanite-warblade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "power-fist"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["power-fist"]
                         },
                         "terranic-greatsword": {
                             "id": "terranic-greatsword",
@@ -1431,36 +1211,26 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["terranic-greatsword"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "calibanite-warblade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "terranic-greatsword"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["terranic-greatsword"]
                         }
                     },
-                    "default": "none"
+                    "default": "calibanite-warblade"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have its bolter exchanged for one Cytheron pattern aegis.",
+                    "name": "Bolter to cytheron pattern aegis",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one Cytheron pattern aegis.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolter"]
                         },
                         "cytheron-pattern-aegis": {
                             "id": "cytheron-pattern-aegis",
@@ -1468,36 +1238,26 @@
                             "cost": {
                                 "points": 10
                             },
-                            "equipmentRefs": ["cytheron-pattern-aegis"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    },
-                                    "to": {
-                                        "kind": "equipment",
-                                        "id": "cytheron-pattern-aegis"
-                                    }
-                                }
-                            ]
+                            "equipmentRefs": ["cytheron-pattern-aegis"]
                         }
                     },
-                    "default": "none"
+                    "default": "bolter"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one plasma pistol.",
+                    "name": "Bolt pistol to plasma pistol",
+                    "description": "Any Model in this Unit may have its bolt pistol exchanged for one plasma pistol.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolt-pistol"]
                         },
                         "plasma-pistol": {
                             "id": "plasma-pistol",
@@ -1505,37 +1265,19 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["plasma-pistol"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "plasma-pistol"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["plasma-pistol"]
                         }
                     },
-                    "default": "none"
+                    "default": "bolt-pistol"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Every Model in this Unit may have melta bombs selected for them.",
+                    "name": "Melta bombs",
+                    "description": "Every Model in this Unit may have melta bombs selected for them.",
                     "perModel": {
                         "type": "every"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -1545,11 +1287,12 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "name": "Bayonet / Chain bayonet",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -1592,7 +1335,8 @@
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "Any Model in this Unit may have its bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "name": "Legion Combi-weapons",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "some"
                     },
@@ -1613,18 +1357,12 @@
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "One Deathwing Companion in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Deathwing Companion in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -1635,7 +1373,7 @@
                         }
                     },
                     "profileId": "deathwing-companion",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1764,7 +1502,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "For every five Models in this Unit, one Interemptor’s plasma burner may be exchanged for one of the following:",
+                    "name": "Missile launcher ammunition",
+                    "description": "For every five Models in this Unit, one Interemptor’s plasma burner may be exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -1783,9 +1522,18 @@
                             "cost": {
                                 "points": 15
                             },
-                            "equipmentRefs": [
-                                "destroyer-missile-launcher-with-rad-missiles",
-                                "stasis-missiles"
+                            "weaponRefs": ["destroyer-missile-launcher"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "plasma-burner"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "destroyer-missile-launcher"
+                                    }
+                                }
                             ]
                         },
                         "plasma-incinerator": {
@@ -1794,25 +1542,31 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["plasma-incinerator"]
+                            "weaponRefs": ["plasma-incinerator"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "plasma-burner"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-incinerator"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Interemptor in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Interemptor in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -1823,11 +1577,12 @@
                         }
                     },
                     "profileId": "interemptor",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Up to two Interemptors in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Interemptors in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -1850,7 +1605,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "The Interemptor Praefectus in this Unit may have any of the following selected for it:",
+                    "name": "Melta bombs / Phosphex bombs",
+                    "description": "The Interemptor Praefectus in this Unit may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -1995,11 +1751,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "terranic-greatsword",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "plasma-caster",
                     "perModel": true
                 },
@@ -2012,17 +1763,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its Terranic greatsword exchanged for one thunder hammer.",
+                    "name": "Terranic greatsword to thunder hammer",
+                    "description": "Any Model in this Unit may have its Terranic greatsword exchanged for one thunder hammer.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "terranic-greatsword": {
+                            "id": "terranic-greatsword",
+                            "name": "Terranic greatsword",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["terranic-greatsword"]
                         },
                         "thunder-hammer": {
                             "id": "thunder-hammer",
@@ -2030,22 +1783,10 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["thunder-hammer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "terranic-greatsword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "none"
+                    "default": "terranic-greatsword"
                 }
             }
         },
@@ -2102,10 +1843,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "the-lion-sword"
-                },
-                {
-                    "kind": "weapon",
                     "id": "the-fusil-actinaeus"
                 },
                 {
@@ -2124,17 +1861,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its The Lion Sword exchanged for one The Wolf Blade.",
+                    "name": "Swap to the Wolf Blade",
+                    "description": "This Model may have its The Lion Sword exchanged for one The Wolf Blade.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "the-lion-sword": {
+                            "id": "the-lion-sword",
+                            "name": "The Lion Sword",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["the-lion-sword"]
                         },
                         "the-wolf-blade": {
                             "id": "the-wolf-blade",
@@ -2142,22 +1881,10 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["the-wolf-blade"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "the-lion-sword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "the-wolf-blade"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["the-wolf-blade"]
                         }
                     },
-                    "default": "none"
+                    "default": "the-lion-sword"
                 }
             },
             "limit": {
@@ -3020,11 +2747,6 @@
         "cytheron-pattern-aegis": {
             "id": "cytheron-pattern-aegis",
             "name": "Cytheron pattern aegis",
-            "text": ""
-        },
-        "stasis-missiles": {
-            "id": "stasis-missiles",
-            "name": "stasis missiles",
             "text": ""
         },
         "stasis-grenades": {

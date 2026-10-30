@@ -171,7 +171,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "For every five Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one of the following:",
+                    "name": "Bolter exchange",
+                    "description": "For every five Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -249,18 +250,12 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Inductii in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Inductii in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -271,11 +266,12 @@
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -298,7 +294,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "name": "Bayonet / Chain bayonet",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -431,11 +428,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "bolt-pistol",
                     "perModel": true
                 },
@@ -456,20 +448,49 @@
                 }
             ],
             "upgrades": {
+                "bolter": {
+                    "id": "bolter",
+                    "name": "Bolter",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one flamer or one alchem flamer.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolter",
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "flamer",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["flamer"]
+                        },
+                        "alchem-flamer": {
+                            "id": "alchem-flamer",
+                            "name": "alchem flamer",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["alchem-flamer"]
+                        }
+                    }
+                },
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have one chainsword selected for it.",
+                    "name": "Chainsword",
+                    "description": "Any Model in this Unit may have one chainsword selected for it.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "chainsword": {
                             "id": "chainsword",
                             "name": "chainsword",
@@ -479,11 +500,12 @@
                             "weaponRefs": ["chainsword"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "name": "Bayonet / Chain bayonet",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -524,78 +546,15 @@
                         "requiredAnd": true
                     }
                 },
-                "option-3": {
-                    "id": "option-3",
-                    "name": "Any Model in this Unit may have its bolter exchanged for one flamer or one alchem flamer.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "flamer": {
-                            "id": "flamer",
-                            "name": "flamer",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["flamer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "flamer"
-                                    }
-                                }
-                            ]
-                        },
-                        "alchem-flamer": {
-                            "id": "alchem-flamer",
-                            "name": "alchem flamer",
-                            "cost": {
-                                "points": 2
-                            },
-                            "weaponRefs": ["alchem-flamer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "alchem-flamer"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
-                },
                 "option-4": {
                     "id": "option-4",
-                    "name": "For every five Models in this Unit, one Mortus Poisoner may have its bolter exchanged for one heavy alchem flamer.",
+                    "name": "Bolter to heavy alchem flamer",
+                    "description": "For every five Models in this Unit, one Mortus Poisoner may have its bolter exchanged for one heavy alchem flamer.",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "heavy-alchem-flamer": {
                             "id": "heavy-alchem-flamer",
                             "name": "heavy alchem flamer",
@@ -617,22 +576,16 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "One Mortus Poisoner in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Mortus Poisoner in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -643,11 +596,12 @@
                         }
                     },
                     "profileId": "mortus-poisoner",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "Up to two Mortus Poisoners in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Mortus Poisoners in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -670,7 +624,8 @@
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "The Poison-master in this Unit may have one of the following selected for it:",
+                    "name": "Power weapon / Power scythe",
+                    "description": "The Poison-master in this Unit may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -704,18 +659,12 @@
                 },
                 "option-8": {
                     "id": "option-8",
-                    "name": "The Poison-master may have phosphex bombs selected for it.",
+                    "name": "Phosphex bombs",
+                    "description": "The Poison-master may have phosphex bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "phosphex-bombs": {
                             "id": "phosphex-bombs",
                             "name": "phosphex bombs",
@@ -725,22 +674,16 @@
                             "weaponRefs": ["phosphex-bomb"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-9": {
                     "id": "option-9",
-                    "name": "The Poison-master may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "The Poison-master may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -750,7 +693,7 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -829,7 +772,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have one of each of the following selected for it:",
+                    "name": "Melta bombs / Grenade harness",
+                    "description": "Any Model in this Unit may have one of each of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -982,50 +926,50 @@
                 {
                     "kind": "weapon",
                     "id": "assault-grenade-launcher",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "power-fist",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "grave-warden"
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "The Chem-master in this Unit may have its assault grenade launcher exchanged for one item from the Legion Combi-weapons list instead of the listed c...",
+                "assault-grenade-launcher": {
+                    "id": "assault-grenade-launcher",
+                    "name": "Assault Grenade Launcher",
+                    "description": "The Chem-master in this Unit may have its assault grenade launcher exchanged for one item from the Legion Combi-weapons list instead of the listed c...",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "assault-grenade-launcher",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "assault-grenade-launcher": {
+                            "id": "assault-grenade-launcher",
+                            "name": "Assault Grenade Launcher",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["assault-grenade-launcher"]
                         },
                         "legion-combi-weapons": {
                             "id": "legion-combi-weapons",
                             "target": "legion-combi-weapons"
                         }
                     },
-                    "profileId": "chem-master",
-                    "default": "none"
+                    "profileId": "chem-master"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have its power fist exchanged for one chainfist.",
+                    "name": "Power fist to chainfist",
+                    "description": "Any Model in this Unit may have its power fist exchanged for one chainfist.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["power-fist"]
                         },
                         "chainfist": {
                             "id": "chainfist",
@@ -1033,38 +977,20 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["chainfist"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "power-fist"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "chainfist"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["chainfist"]
                         }
                     },
-                    "default": "none"
+                    "default": "power-fist"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "For every five Models in this Unit, one Grave Warden in this Unit may have its assault grenade launcher exchanged for one heavy alchem flamer p...",
+                    "name": "Swap to heavy alchem flamer",
+                    "description": "For every five Models in this Unit, one Grave Warden in this Unit may have its assault grenade launcher exchanged for one heavy alchem flamer p...",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "heavy-alchem-flamer": {
                             "id": "heavy-alchem-flamer",
                             "name": "heavy alchem flamer",
@@ -1086,22 +1012,17 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true,
+                    "profileId": "grave-warden"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "The Chem-master in this Unit may have one grenade harness selected for it.",
+                    "name": "Grenade harness",
+                    "description": "The Chem-master in this Unit may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "grenade-harness": {
                             "id": "grenade-harness",
                             "name": "grenade harness",
@@ -1112,7 +1033,7 @@
                         }
                     },
                     "profileId": "chem-master",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1623,7 +1544,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-flamer"]
+                    "weaponRefs": ["combi-flamer"]
                 },
                 "combi-melta": {
                     "id": "combi-melta",
@@ -1631,7 +1552,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-melta"]
+                    "weaponRefs": ["combi-melta"]
                 },
                 "combi-plasma": {
                     "id": "combi-plasma",
@@ -1639,7 +1560,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-plasma"]
+                    "weaponRefs": ["combi-plasma"]
                 },
                 "combi-volkite": {
                     "id": "combi-volkite",
@@ -1647,7 +1568,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-volkite"]
+                    "weaponRefs": ["combi-volkite"]
                 },
                 "combi-grenade": {
                     "id": "combi-grenade",
@@ -1655,7 +1576,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-grenade"]
+                    "weaponRefs": ["combi-grenade"]
                 },
                 "combi-disintegrator": {
                     "id": "combi-disintegrator",
@@ -1663,7 +1584,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-disintegrator"]
+                    "weaponRefs": ["combi-disintegrator"]
                 },
                 "combi-grav": {
                     "id": "combi-grav",
@@ -1671,7 +1592,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-grav"]
+                    "weaponRefs": ["combi-grav"]
                 },
                 "alchem-combi-flamer": {
                     "id": "alchem-combi-flamer",
@@ -1826,7 +1747,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-flamer"]
+                    "weaponRefs": ["combi-flamer"]
                 },
                 "pintle-mounted-combi-plasma": {
                     "id": "pintle-mounted-combi-plasma",
@@ -1834,7 +1755,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-plasma"]
+                    "weaponRefs": ["combi-plasma"]
                 },
                 "pintle-mounted-combi-melta": {
                     "id": "pintle-mounted-combi-melta",
@@ -1842,7 +1763,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-melta"]
+                    "weaponRefs": ["combi-melta"]
                 },
                 "pintle-mounted-combi-volkite": {
                     "id": "pintle-mounted-combi-volkite",
@@ -1850,7 +1771,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-volkite"]
+                    "weaponRefs": ["combi-volkite"]
                 },
                 "pintle-mounted-havoc-launcher": {
                     "id": "pintle-mounted-havoc-launcher",
@@ -2187,11 +2108,6 @@
             "id": "preternatural-resilience",
             "name": "Preternatural Resilience",
             "text": "Mortarion limits the Target Number of the Critical Hit (X) Special Rule. When Engaged in a Challenge, attacks with the Critical Hit (X) Special Rule made against a Model with this Special Rule substitute the value of X for 6+."
-        },
-        "combi": {
-            "id": "combi",
-            "name": "Combi",
-            "text": "A Weapon with this Special Rule can fire multiple profiles simultaneously. Each time a Model makes a Shooting Attack with a Weapon Profile with this Special Rule, the Controlling Player can select another Profile from the same Weapon with this Special Rule and make attacks with it as part of the same Shooting Attack. Note that if that Profile also has the Limited (X) Special Rule, this does not allow it to be selected to make attacks more than the number of times equal to the value of X on that Special Rule."
         },
         "remorseless-advance": {
             "id": "remorseless-advance",

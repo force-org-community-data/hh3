@@ -54,10 +54,6 @@
                 },
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol"
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades"
                 },
                 {
@@ -68,24 +64,26 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "name": "Legion Pistols",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolt-pistol"]
                         },
                         "legion-pistols": {
                             "id": "legion-pistols",
                             "target": "legion-pistols"
                         }
                     },
-                    "default": "none"
+                    "default": "bolt-pistol"
                 }
             },
             "when": {
@@ -152,10 +150,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "banestrike-combi-bolter"
-                },
-                {
-                    "kind": "weapon",
                     "id": "grenade-harness"
                 },
                 {
@@ -166,17 +160,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its banestrike combi-bolter and grenade harness exchanged for one paragon blade.",
+                    "name": "Paragon blade",
+                    "description": "This Model may have its banestrike combi-bolter and grenade harness exchanged for one paragon blade.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "banestrike-combi-bolter": {
+                            "id": "banestrike-combi-bolter",
+                            "name": "Banestrike Combi-bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["banestrike-combi-bolter"]
                         },
                         "paragon-blade": {
                             "id": "paragon-blade",
@@ -184,22 +180,10 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["paragon-blade"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "banestrike-combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "paragon-blade"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["paragon-blade"]
                         }
                     },
-                    "default": "none"
+                    "default": "banestrike-combi-bolter"
                 }
             },
             "when": {
@@ -494,32 +478,23 @@
                     }
                 }
             ],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "banestrike-combi-bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "equipment",
-                    "id": "power-weapons",
-                    "perModel": true
-                }
-            ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "Any Model in this Unit may have its banestrike combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                "banestrike-combi-bolter": {
+                    "id": "banestrike-combi-bolter",
+                    "name": "Banestrike Combi-bolter",
+                    "description": "Any Model in this Unit may have its banestrike combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "some"
                     },
+                    "default": "banestrike-combi-bolter",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "banestrike-combi-bolter": {
+                            "id": "banestrike-combi-bolter",
+                            "name": "Banestrike Combi-bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["banestrike-combi-bolter"]
                         },
                         "legion-combi-weapons": {
                             "id": "legion-combi-weapons",
@@ -531,36 +506,33 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["volkite-charger"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "banestrike-combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    },
-                    "default": "none"
+                    }
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have its power weapon exchanged for one of the following:",
+                    "name": "Power weapon exchange",
+                    "description": "Any Model in this Unit may have its power weapon exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "power-weapons": {
+                            "id": "power-weapons",
+                            "name": "Power weapons",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "equipmentRefs": ["power-weapons"]
                         },
                         "lightning-claw": {
                             "id": "lightning-claw",
@@ -603,48 +575,12 @@
                             "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "none"
-                },
-                "option-3": {
-                    "id": "option-3",
-                    "name": "Any Model in this Unit may have its banestrike combi-bolter and power weapon exchanged for one pair of lightning claws.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "pair-of-lightning-claws": {
-                            "id": "pair-of-lightning-claws",
-                            "name": "pair of lightning claws",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["pair-of-lightning-claws"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "banestrike-combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-lightning-claws"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
+                    "default": "power-weapons"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "For every five Models in this Unit, one Model in this Unit may have its banestrike combi-bolter exchanged for one of the following:",
+                    "name": "Banestrike combi-bolter exchange 2",
+                    "description": "For every five Models in this Unit, one Model in this Unit may have its banestrike combi-bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -990,16 +926,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "chainaxe",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -1012,17 +938,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its chainaxe exchanged for one chainsword, or for one item from the Legion Sergeant Melee Weapons list.",
+                    "name": "Chainaxe exchange",
+                    "description": "Any Model in this Unit may have its chainaxe exchanged for one chainsword, or for one item from the Legion Sergeant Melee Weapons list.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "chainaxe": {
+                            "id": "chainaxe",
+                            "name": "Chainaxe",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["chainaxe"]
                         },
                         "legion-sergeant-melee-weapons": {
                             "id": "legion-sergeant-melee-weapons",
@@ -1034,26 +962,15 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["chainsword"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "chainaxe"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "chainsword"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["chainsword"]
                         }
                     },
-                    "default": "none"
+                    "default": "chainaxe"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "name": "Legion Pistols",
+                    "description": "Any Model in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
                     "perModel": {
                         "type": "some"
                     },
@@ -1074,7 +991,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "For every five Models in this Unit, one Reaver in this Unit may have its chainaxe exchanged for one item from the Legion Special Weapons list.",
+                    "name": "Legion Special Weapons",
+                    "description": "For every five Models in this Unit, one Reaver in this Unit may have its chainaxe exchanged for one item from the Legion Special Weapons list.",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -1087,27 +1005,137 @@
                                 "points": 0
                             }
                         },
-                        "legion-special-weapons": {
-                            "id": "legion-special-weapons",
-                            "target": "legion-special-weapons"
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-gun": {
+                            "id": "plasma-gun",
+                            "name": "Plasma gun",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-gun"
+                                    }
+                                }
+                            ]
+                        },
+                        "meltagun": {
+                            "id": "meltagun",
+                            "name": "Meltagun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["meltagun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "meltagun"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-caliver": {
+                            "id": "volkite-caliver",
+                            "name": "Volkite caliver",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["volkite-caliver"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-caliver"
+                                    }
+                                }
+                            ]
+                        },
+                        "rotor-cannon": {
+                            "id": "rotor-cannon",
+                            "name": "Rotor cannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["rotor-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "rotor-cannon"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "One Reaver in this Unit may have a vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Reaver in this Unit may have a vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -1118,11 +1146,12 @@
                         }
                     },
                     "profileId": "reaver",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Up to two Reavers in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Reavers in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -1145,17 +1174,19 @@
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "Any Model in this Unit may have its bolt pistol and chainaxe exchanged for one pair of lightning claws.",
+                    "name": "Swap to pair of lightning claws",
+                    "description": "Any Model in this Unit may have its bolt pistol and chainaxe exchanged for one pair of lightning claws.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolt-pistol"]
                         },
                         "pair-of-lightning-claws": {
                             "id": "pair-of-lightning-claws",
@@ -1163,37 +1194,19 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["pair-of-lightning-claws"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-lightning-claws"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["pair-of-lightning-claws"]
                         }
                     },
-                    "default": "none"
+                    "default": "bolt-pistol"
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "The Reaver Chieftain may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "The Reaver Chieftain may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -1203,7 +1216,7 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1272,11 +1285,6 @@
                     "perModel": true
                 },
                 {
-                    "kind": "weapon",
-                    "id": "chainsword",
-                    "perModel": true
-                },
-                {
                     "kind": "equipment",
                     "id": "boarding-shield",
                     "perModel": true
@@ -1295,17 +1303,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its chainsword exchanged for one of the following:",
+                    "name": "Chainsword exchange",
+                    "description": "Any Model in this Unit may have its chainsword exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["chainsword"]
                         },
                         "chainaxe": {
                             "id": "chainaxe",
@@ -1313,19 +1323,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["chainaxe"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "chainsword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "chainaxe"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["chainaxe"]
                         },
                         "power-weapon": {
                             "id": "power-weapon",
@@ -1333,19 +1331,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "equipmentRefs": ["power-weapons"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "chainsword"
-                                    },
-                                    "to": {
-                                        "kind": "equipment",
-                                        "id": "power-weapons"
-                                    }
-                                }
-                            ]
+                            "equipmentRefs": ["power-weapons"]
                         },
                         "power-fist": {
                             "id": "power-fist",
@@ -1353,37 +1339,19 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["power-fist"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "chainsword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "power-fist"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["power-fist"]
                         }
                     },
-                    "default": "none"
+                    "default": "chainsword"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Model in this Unit may have its banestrike bolter exchanged for one Legion standard.",
+                    "name": "Banestrike bolter to legion standard",
+                    "description": "One Model in this Unit may have its banestrike bolter exchanged for one Legion standard.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-standard": {
                             "id": "legion-standard",
                             "name": "Legion standard",
@@ -1405,7 +1373,7 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1446,27 +1414,25 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "combi-bolter"
-                },
-                {
-                    "kind": "weapon",
                     "id": "staff-of-dark-authority"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "name": "Combi-bolter exchange",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["combi-bolter"]
                         },
                         "legion-combi-weapons": {
                             "id": "legion-combi-weapons",
@@ -1478,22 +1444,10 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["volkite-charger"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["volkite-charger"]
                         }
                     },
-                    "default": "none"
+                    "default": "combi-bolter"
                 }
             },
             "when": {
@@ -1568,11 +1522,6 @@
                 },
                 {
                     "kind": "weapon",
-                    "id": "chainsword",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -1585,17 +1534,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Inductii in this Unit may have its chainsword exchanged for one chainaxe.",
+                    "name": "Chainsword to chainaxe",
+                    "description": "Any Inductii in this Unit may have its chainsword exchanged for one chainaxe.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["chainsword"]
                         },
                         "chainaxe": {
                             "id": "chainaxe",
@@ -1603,27 +1554,17 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["chainaxe"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "chainsword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "chainaxe"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["chainaxe"]
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none"
+                    "multiSelect": true,
+                    "default": "chainsword"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
+                    "name": "Chainsword exchange",
+                    "description": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 4
@@ -1697,11 +1638,13 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "inductii"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "name": "Legion Pistols",
+                    "description": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 4
@@ -1714,27 +1657,77 @@
                                 "points": 0
                             }
                         },
-                        "legion-pistols": {
-                            "id": "legion-pistols",
-                            "target": "legion-pistols"
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "Plasma pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        },
+                        "hand-flamer": {
+                            "id": "hand-flamer",
+                            "name": "Hand flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hand-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-serpenta": {
+                            "id": "volkite-serpenta",
+                            "name": "Volkite serpenta",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-serpenta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "One Inductii in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Inductii in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -1745,11 +1738,12 @@
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -1887,16 +1881,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "chainaxe",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -1909,17 +1893,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its chainaxe exchanged for one chainsword, or for one item from the Legion Sergeant Melee Weapons list.",
+                    "name": "Chainaxe exchange",
+                    "description": "Any Model in this Unit may have its chainaxe exchanged for one chainsword, or for one item from the Legion Sergeant Melee Weapons list.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "chainaxe": {
+                            "id": "chainaxe",
+                            "name": "Chainaxe",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["chainaxe"]
                         },
                         "legion-sergeant-melee-weapons": {
                             "id": "legion-sergeant-melee-weapons",
@@ -1931,26 +1917,15 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["chainsword"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "chainaxe"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "chainsword"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["chainsword"]
                         }
                     },
-                    "default": "none"
+                    "default": "chainaxe"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "name": "Legion Pistols",
+                    "description": "Any Model in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
                     "perModel": {
                         "type": "some"
                     },
@@ -1971,7 +1946,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "For every five Models in this Unit, one Reaver with Jump Pack in this Unit may have its chainaxe exchanged for one item from the Legion Special Weapons list.",
+                    "name": "Legion Special Weapons",
+                    "description": "For every five Models in this Unit, one Reaver with Jump Pack in this Unit may have its chainaxe exchanged for one item from the Legion Special Weapons list.",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -1984,27 +1960,137 @@
                                 "points": 0
                             }
                         },
-                        "legion-special-weapons": {
-                            "id": "legion-special-weapons",
-                            "target": "legion-special-weapons"
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "plasma-gun": {
+                            "id": "plasma-gun",
+                            "name": "Plasma gun",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-gun"
+                                    }
+                                }
+                            ]
+                        },
+                        "meltagun": {
+                            "id": "meltagun",
+                            "name": "Meltagun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["meltagun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "meltagun"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-charger"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-caliver": {
+                            "id": "volkite-caliver",
+                            "name": "Volkite caliver",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["volkite-caliver"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-caliver"
+                                    }
+                                }
+                            ]
+                        },
+                        "rotor-cannon": {
+                            "id": "rotor-cannon",
+                            "name": "Rotor cannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["rotor-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "rotor-cannon"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "One Reaver with Jump Pack in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Reaver with Jump Pack in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -2015,11 +2101,12 @@
                         }
                     },
                     "profileId": "reaver-with-jump-pack",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Up to two Reavers with Jump Packs in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Reavers with Jump Packs in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -2041,17 +2128,19 @@
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "Any Model in this Unit may have its bolt pistol and chainaxe exchanged for one pair of lightning claws.",
+                    "name": "Swap to pair of lightning claws",
+                    "description": "Any Model in this Unit may have its bolt pistol and chainaxe exchanged for one pair of lightning claws.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolt-pistol"]
                         },
                         "pair-of-lightning-claws": {
                             "id": "pair-of-lightning-claws",
@@ -2059,37 +2148,19 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["pair-of-lightning-claws"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-lightning-claws"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["pair-of-lightning-claws"]
                         }
                     },
-                    "default": "none"
+                    "default": "bolt-pistol"
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "The Reaver Chieftain may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "The Reaver Chieftain may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -2099,7 +2170,7 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },

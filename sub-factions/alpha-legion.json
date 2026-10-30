@@ -107,11 +107,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "banestrike-shotgun",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "bolt-pistol",
                     "perModel": true
                 },
@@ -129,7 +124,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Principal in this Unit may have one item from the Legion Sergeant Melee Weapons list selected for it.",
+                    "name": "Legion Sergeant Melee Weapons",
+                    "description": "The Principal in this Unit may have one item from the Legion Sergeant Melee Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -151,17 +147,19 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have its banestrike shotgun exchanged for one Nemesis bolter.",
+                    "name": "Banestrike shotgun to nemesis bolter",
+                    "description": "Any Model in this Unit may have its banestrike shotgun exchanged for one Nemesis bolter.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "banestrike-shotgun": {
+                            "id": "banestrike-shotgun",
+                            "name": "Banestrike Shotgun",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["banestrike-shotgun"]
                         },
                         "nemesis-bolter": {
                             "id": "nemesis-bolter",
@@ -169,37 +167,19 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["nemesis-bolter"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "banestrike-shotgun"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "nemesis-bolter"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["nemesis-bolter"]
                         }
                     },
-                    "default": "none"
+                    "default": "banestrike-shotgun"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Any Model in this Unit may have one power dagger selected for it.",
+                    "name": "Power dagger",
+                    "description": "Any Model in this Unit may have one power dagger selected for it.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "power-dagger": {
                             "id": "power-dagger",
                             "name": "power dagger",
@@ -209,22 +189,16 @@
                             "weaponRefs": ["power-dagger"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Every Model in this Unit may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "Every Model in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "every"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -234,7 +208,7 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -322,7 +296,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "For every five Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "name": "Legion Combi-weapons",
+                    "description": "For every five Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -335,27 +310,217 @@
                                 "points": 0
                             }
                         },
-                        "legion-combi-weapons": {
-                            "id": "legion-combi-weapons",
-                            "target": "legion-combi-weapons"
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["combi-bolter"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    }
+                                }
+                            ]
+                        },
+                        "combi-flamer": {
+                            "id": "combi-flamer",
+                            "name": "Combi-flamer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["combi-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "combi-melta": {
+                            "id": "combi-melta",
+                            "name": "Combi-melta",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["combi-melta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-melta"
+                                    }
+                                }
+                            ]
+                        },
+                        "combi-plasma": {
+                            "id": "combi-plasma",
+                            "name": "Combi-plasma",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["combi-plasma"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-plasma"
+                                    }
+                                }
+                            ]
+                        },
+                        "combi-volkite": {
+                            "id": "combi-volkite",
+                            "name": "Combi-volkite",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["combi-volkite"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-volkite"
+                                    }
+                                }
+                            ]
+                        },
+                        "combi-grenade": {
+                            "id": "combi-grenade",
+                            "name": "Combi-grenade",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["combi-grenade"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-grenade"
+                                    }
+                                }
+                            ]
+                        },
+                        "combi-disintegrator": {
+                            "id": "combi-disintegrator",
+                            "name": "Combi-disintegrator",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["combi-disintegrator"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-disintegrator"
+                                    }
+                                }
+                            ]
+                        },
+                        "combi-grav": {
+                            "id": "combi-grav",
+                            "name": "Combi-grav",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["combi-grav"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-grav"
+                                    }
+                                }
+                            ]
+                        },
+                        "banestrike-bolter": {
+                            "id": "banestrike-bolter",
+                            "name": "Banestrike bolter",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["banestrike-bolter"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-bolter"
+                                    }
+                                }
+                            ]
+                        },
+                        "banestrike-combi-bolter": {
+                            "id": "banestrike-combi-bolter",
+                            "name": "Banestrike combi-bolter",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["banestrike-combi-bolter"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "banestrike-combi-bolter"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Inductii in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Inductii in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -366,11 +531,12 @@
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -393,7 +559,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "name": "Bayonet / Chain bayonet",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -837,21 +1004,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "banestrike-combi-bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "power-dagger",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -859,56 +1011,96 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-dagger",
+                    "perModel": true,
+                    "profileId": "headhunter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "headhunter"
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "The Headhunter Prime in this Unit may have its power dagger exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                "power-dagger": {
+                    "id": "power-dagger",
+                    "name": "Power Dagger",
+                    "description": "The Headhunter Prime in this Unit may have its power dagger exchanged for one item from the Legion Sergeant Melee Weapons list.",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "power-dagger",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "power-dagger": {
+                            "id": "power-dagger",
+                            "name": "Power Dagger",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["power-dagger"]
                         },
                         "legion-sergeant-melee-weapons": {
                             "id": "legion-sergeant-melee-weapons",
                             "target": "legion-sergeant-melee-weapons"
                         }
                     },
-                    "profileId": "headhunter-prime",
-                    "default": "none"
+                    "profileId": "headhunter-prime"
                 },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "The Headhunter Prime in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "The Headhunter Prime in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "bolt-pistol",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolt-pistol"]
                         },
                         "legion-pistols": {
                             "id": "legion-pistols",
                             "target": "legion-pistols"
                         }
                     },
-                    "profileId": "headhunter-prime",
-                    "default": "none"
+                    "profileId": "headhunter-prime"
+                },
+                "banestrike-combi-bolter": {
+                    "id": "banestrike-combi-bolter",
+                    "name": "Banestrike Combi-bolter",
+                    "description": "Any Model in this Unit may have its banestrike combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "banestrike-combi-bolter",
+                    "options": {
+                        "banestrike-combi-bolter": {
+                            "id": "banestrike-combi-bolter",
+                            "name": "Banestrike Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["banestrike-combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    }
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "For every five Models in this Unit, one Headhunter in this Unit may have its Banestrike combi-bolter exchanged for one of the following:",
+                    "name": "Banestrike combi-bolter exchange",
+                    "description": "For every five Models in this Unit, one Headhunter in this Unit may have its Banestrike combi-bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -966,18 +1158,12 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Every Model in this Unit may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "Every Model in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "every"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -987,43 +1173,16 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "default": "none"
-                },
-                "option-5": {
-                    "id": "option-5",
-                    "name": "Any Model in this Unit may have its banestrike combi-bolter exchanged for one item from the Legion Combi-weapons list.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "legion-combi-weapons": {
-                            "id": "legion-combi-weapons",
-                            "target": "legion-combi-weapons"
-                        }
-                    },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "The Headhunter Prime in this Unit may have its bolt pistol exchanged for one inferno pistol.",
+                    "name": "Bolt pistol to inferno pistol",
+                    "description": "The Headhunter Prime in this Unit may have its bolt pistol exchanged for one inferno pistol.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "inferno-pistol": {
                             "id": "inferno-pistol",
                             "name": "inferno pistol",
@@ -1046,7 +1205,7 @@
                         }
                     },
                     "profileId": "headhunter-prime",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1168,32 +1327,23 @@
                     }
                 }
             ],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "volkite-charger",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "power-axe",
-                    "perModel": true
-                }
-            ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "Any Model in this Unit may have its volkite charger exchanged for one combi-bolter or for one item from the Legion Combi-weapons list.",
+                "volkite-charger": {
+                    "id": "volkite-charger",
+                    "name": "Volkite charger",
+                    "description": "Any Model in this Unit may have its volkite charger exchanged for one combi-bolter or for one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "some"
                     },
+                    "default": "volkite-charger",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["volkite-charger"]
                         },
                         "legion-combi-weapons": {
                             "id": "legion-combi-weapons",
@@ -1205,153 +1355,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["combi-bolter"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "Any Model in this Unit may have its power axe exchanged for one of the following:",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "power-maul": {
-                            "id": "power-maul",
-                            "name": "Power maul",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["power-maul"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "power-axe"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "power-maul"
-                                    }
-                                }
-                            ]
-                        },
-                        "lightning-claw": {
-                            "id": "lightning-claw",
-                            "name": "Lightning claw",
-                            "cost": {
-                                "points": 5
-                            },
-                            "weaponRefs": ["lightning-claw"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "power-axe"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "lightning-claw"
-                                    }
-                                }
-                            ]
-                        },
-                        "power-fist": {
-                            "id": "power-fist",
-                            "name": "Power fist",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["power-fist"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "power-axe"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "power-fist"
-                                    }
-                                }
-                            ]
-                        },
-                        "chainfist": {
-                            "id": "chainfist",
-                            "name": "Chainfist",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["chainfist"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "power-axe"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "chainfist"
-                                    }
-                                }
-                            ]
-                        },
-                        "thunder-hammer": {
-                            "id": "thunder-hammer",
-                            "name": "Thunder hammer",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["thunder-hammer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "power-axe"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-3": {
-                    "id": "option-3",
-                    "name": "Any Model in this Unit may have its volkite charger and power axe exchanged for one pair of lightning claws.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
+                            "weaponRefs": ["combi-bolter"]
                         },
                         "pair-of-lightning-claws": {
                             "id": "pair-of-lightning-claws",
@@ -1359,26 +1363,73 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["pair-of-lightning-claws"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-lightning-claws"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Power axe exchange",
+                    "description": "Any Model in this Unit may have its power axe exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["lightning-claw"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "none"
+                    "default": "power-axe"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "For every five Models in this Unit, one Lernaean in this Unit may have its volkite charger exchanged for one of the following:",
+                    "name": "Volkite charger exchange 2",
+                    "description": "For every five Models in this Unit, one Lernaean in this Unit may have its volkite charger exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -1530,10 +1581,6 @@
                 },
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol"
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades"
                 },
                 {
@@ -1552,24 +1599,26 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "name": "Legion Pistols",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolt-pistol"]
                         },
                         "legion-pistols": {
                             "id": "legion-pistols",
                             "target": "legion-pistols"
                         }
                     },
-                    "default": "none"
+                    "default": "bolt-pistol"
                 }
             }
         }
@@ -1980,7 +2029,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-flamer"]
+                    "weaponRefs": ["combi-flamer"]
                 },
                 "combi-melta": {
                     "id": "combi-melta",
@@ -1988,7 +2037,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-melta"]
+                    "weaponRefs": ["combi-melta"]
                 },
                 "combi-plasma": {
                     "id": "combi-plasma",
@@ -1996,7 +2045,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-plasma"]
+                    "weaponRefs": ["combi-plasma"]
                 },
                 "combi-volkite": {
                     "id": "combi-volkite",
@@ -2004,7 +2053,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-volkite"]
+                    "weaponRefs": ["combi-volkite"]
                 },
                 "combi-grenade": {
                     "id": "combi-grenade",
@@ -2012,7 +2061,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-grenade"]
+                    "weaponRefs": ["combi-grenade"]
                 },
                 "combi-disintegrator": {
                     "id": "combi-disintegrator",
@@ -2020,7 +2069,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-disintegrator"]
+                    "weaponRefs": ["combi-disintegrator"]
                 },
                 "combi-grav": {
                     "id": "combi-grav",
@@ -2028,7 +2077,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["combi-grav"]
+                    "weaponRefs": ["combi-grav"]
                 },
                 "banestrike-bolter": {
                     "id": "banestrike-bolter",

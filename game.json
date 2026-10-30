@@ -180,12 +180,13 @@
                 "linksTo": ["primary"]
             }
         },
-        "super-heavy": {
-            "id": "super-heavy",
-            "name": "Super-heavy",
+        "lord-of-war": {
+            "id": "lord-of-war",
+            "name": "Lord of War",
             "contingent": {
                 "linksTo": ["primary", "allied"]
-            }
+            },
+            "max": 1
         }
     },
     "slotTags": {
@@ -517,6 +518,18 @@
                 "round": "up"
             },
             "message": "No more than 50% of the points limit may be spent on allied units"
+        },
+        "warlord-lord-of-war-cap": {
+            "kind": "resourceCap",
+            "id": "warlord-lord-of-war-cap",
+            "resource": "points",
+            "units": {
+                "roles": ["warlord", "lord-of-war"]
+            },
+            "max": {
+                "percentOfLimit": 25
+            },
+            "message": "No more than 25% of the points limit may be spent on Warlord and Lord of War units"
         }
     },
     "detachments": {
@@ -565,6 +578,96 @@
                 }
             ]
         },
+        "warlord-detachment": {
+            "id": "warlord-detachment",
+            "name": "Warlord Detachment",
+            "type": "warlord",
+            "slots": [
+                {
+                    "roles": ["warlord"]
+                },
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["heavy-transport"]
+                }
+            ],
+            "when": {
+                "if": "list.limit(points) >= 3000",
+                "message": "3,000 points or more"
+            }
+        },
+        "lord-of-war-detachment": {
+            "id": "lord-of-war-detachment",
+            "name": "Lord of War Detachment",
+            "type": "lord-of-war",
+            "slots": [
+                {
+                    "roles": ["lord-of-war"]
+                },
+                {
+                    "roles": ["lord-of-war"]
+                }
+            ]
+        },
+        "allied-detachment": {
+            "id": "allied-detachment",
+            "name": "Allied Detachment",
+            "type": "allied",
+            "slots": [
+                {
+                    "roles": ["command"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["command"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                }
+            ]
+        },
+        "armoured-fist": {
+            "id": "armoured-fist",
+            "name": "Armoured Fist",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["transport"]
+                },
+                {
+                    "roles": ["transport"]
+                },
+                {
+                    "roles": ["transport"]
+                },
+                {
+                    "roles": ["transport"]
+                },
+                {
+                    "roles": ["heavy-transport"]
+                },
+                {
+                    "roles": ["heavy-transport"]
+                },
+                {
+                    "roles": ["heavy-transport"]
+                },
+                {
+                    "roles": ["heavy-transport"]
+                }
+            ]
+        },
         "tactical-support": {
             "id": "tactical-support",
             "name": "Tactical Support",
@@ -581,6 +684,91 @@
                 },
                 {
                     "roles": ["support"]
+                }
+            ]
+        },
+        "armoured-support": {
+            "id": "armoured-support",
+            "name": "Armoured Support",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                }
+            ]
+        },
+        "heavy-support": {
+            "id": "heavy-support",
+            "name": "Heavy Support",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["war-engine"]
+                }
+            ]
+        },
+        "combat-pioneer": {
+            "id": "combat-pioneer",
+            "name": "Combat Pioneer",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["recon"]
+                },
+                {
+                    "roles": ["recon"]
+                }
+            ]
+        },
+        "shock-assault": {
+            "id": "shock-assault",
+            "name": "Shock Assault",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["heavy-assault"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                }
+            ]
+        },
+        "first-strike": {
+            "id": "first-strike",
+            "name": "First Strike",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["fast-attack"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                }
+            ]
+        },
+        "combat-retinue": {
+            "id": "combat-retinue",
+            "name": "Combat Retinue",
+            "type": "apex",
+            "slots": [
+                {
+                    "roles": ["retinue"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["retinue"]
                 }
             ]
         },
@@ -612,65 +800,6 @@
                 },
                 {
                     "roles": ["elites"]
-                }
-            ]
-        },
-        "combat-retinue": {
-            "id": "combat-retinue",
-            "name": "Combat Retinue",
-            "type": "apex",
-            "slots": [
-                {
-                    "roles": ["retinue"],
-                    "tags": ["prime"]
-                },
-                {
-                    "roles": ["retinue"]
-                },
-                {
-                    "roles": ["retinue"]
-                }
-            ]
-        },
-        "warlord-detachment": {
-            "id": "warlord-detachment",
-            "name": "Warlord Detachment",
-            "type": "warlord",
-            "slots": [
-                {
-                    "roles": ["warlord"]
-                },
-                {
-                    "roles": ["retinue"]
-                },
-                {
-                    "roles": ["heavy-transport"]
-                }
-            ]
-        },
-        "allied-detachment": {
-            "id": "allied-detachment",
-            "name": "Allied Detachment",
-            "type": "allied",
-            "slots": [
-                {
-                    "roles": ["command"],
-                    "tags": ["prime"]
-                },
-                {
-                    "roles": ["command"]
-                },
-                {
-                    "roles": ["troop"]
-                },
-                {
-                    "roles": ["troop"]
-                },
-                {
-                    "roles": ["troop"]
-                },
-                {
-                    "roles": ["troop"]
                 }
             ]
         }

@@ -80,30 +80,22 @@
                     }
                 }
             ],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "multi-laser"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "aethon-missile-battery"
-                }
-            ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its multi-laser exchanged for one of the following:",
+                    "name": "Multi-laser exchange",
+                    "description": "Any Model in this Unit may have its multi-laser exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "multi-laser": {
+                            "id": "multi-laser",
+                            "name": "Multi-laser",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["multi-laser"]
                         },
                         "autocannon": {
                             "id": "autocannon",
@@ -111,19 +103,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["autocannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "autocannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["autocannon"]
                         },
                         "volkite-culverin": {
                             "id": "volkite-culverin",
@@ -131,19 +111,7 @@
                             "cost": {
                                 "points": 7
                             },
-                            "weaponRefs": ["volkite-culverin"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-culverin"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["volkite-culverin"]
                         },
                         "lascannon": {
                             "id": "lascannon",
@@ -151,19 +119,7 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["lascannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "lascannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["lascannon"]
                         },
                         "heavy-incinerator": {
                             "id": "heavy-incinerator",
@@ -171,19 +127,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["heavy-incinerator"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-incinerator"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-incinerator"]
                         },
                         "melta-lance": {
                             "id": "melta-lance",
@@ -191,36 +135,26 @@
                             "cost": {
                                 "points": 20
                             },
-                            "weaponRefs": ["melta-lance"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "melta-lance"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["melta-lance"]
                         }
                     },
-                    "default": "none"
+                    "default": "multi-laser"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have its Aethon missile battery exchanged for one hunter-killer missile battery.",
+                    "name": "Swap to hunter-killer missile battery",
+                    "description": "Any Model in this Unit may have its Aethon missile battery exchanged for one hunter-killer missile battery.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "aethon-missile-battery": {
+                            "id": "aethon-missile-battery",
+                            "name": "Aethon missile battery",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["aethon-missile-battery"]
                         },
                         "hunter-killer-missile-battery": {
                             "id": "hunter-killer-missile-battery",
@@ -228,22 +162,11 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["hunter-killer-missile-battery"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "aethon-missile-battery"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "hunter-killer-missile-battery"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["hunter-killer-missile-battery"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true,
+                    "default": "aethon-missile-battery"
                 }
             }
         },
@@ -282,30 +205,22 @@
                 }
             ],
             "traits": ["Solar Auxilia", "Armour Tercio", "Smokescreen"],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "battlecannon"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "heavy-bolter"
-                }
-            ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its battlecannon exchanged for one of the following:",
+                    "name": "Battlecannon exchange",
+                    "description": "This Model may have its battlecannon exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "battlecannon": {
+                            "id": "battlecannon",
+                            "name": "Battlecannon",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["battlecannon"]
                         },
                         "turret-mounted-gravis-autocannon": {
                             "id": "turret-mounted-gravis-autocannon",
@@ -313,19 +228,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["gravis-autocannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "gravis-autocannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["gravis-autocannon"]
                         },
                         "turret-mounted-twin-lascannon": {
                             "id": "turret-mounted-twin-lascannon",
@@ -333,19 +236,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["twin-lascannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "twin-lascannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["twin-lascannon"]
                         },
                         "turret-mounted-vanquisher-cannon-and-one-co-axial-vanquisher": {
                             "id": "turret-mounted-vanquisher-cannon-and-one-co-axial-vanquisher",
@@ -353,22 +244,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": [
-                                "vanquisher-cannon",
-                                "heavy-stubber"
-                            ],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "vanquisher-cannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["vanquisher-cannon", "heavy-stubber"]
                         },
                         "turret-mounted-demolisher-cannon": {
                             "id": "turret-mounted-demolisher-cannon",
@@ -376,19 +252,7 @@
                             "cost": {
                                 "points": 30
                             },
-                            "weaponRefs": ["demolisher-cannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "demolisher-cannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["demolisher-cannon"]
                         },
                         "turret-mounted-executioner-plasma-destroyer": {
                             "id": "turret-mounted-executioner-plasma-destroyer",
@@ -396,19 +260,7 @@
                             "cost": {
                                 "points": 25
                             },
-                            "weaponRefs": ["executioner-plasma-destroyer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "executioner-plasma-destroyer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["executioner-plasma-destroyer"]
                         },
                         "turret-mounted-volkite-macro-saker": {
                             "id": "turret-mounted-volkite-macro-saker",
@@ -416,47 +268,38 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["volkite-macro-saker"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-macro-saker"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["volkite-macro-saker"]
                         }
                     },
-                    "default": "none"
+                    "default": "battlecannon"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have its heavy bolter exchanged for one item from the Auxilia Hull Weapons list.",
+                    "name": "Auxilia Hull Weapons",
+                    "description": "This Model may have its heavy bolter exchanged for one item from the Auxilia Hull Weapons list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "heavy-bolter": {
+                            "id": "heavy-bolter",
+                            "name": "Heavy bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["heavy-bolter"]
                         },
                         "auxilia-hull-weapons": {
                             "id": "auxilia-hull-weapons",
                             "target": "auxilia-hull-weapons"
                         }
                     },
-                    "default": "none"
+                    "default": "heavy-bolter"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -477,7 +320,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Turret Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -628,18 +472,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Ordnance Master in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre.",
+                    "name": "Swap to laspistol and charnabal sabre",
+                    "description": "The Ordnance Master in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "laspistol-and-one-charnabal-sabre": {
                             "id": "laspistol-and-one-charnabal-sabre",
                             "name": "laspistol and one charnabal sabre",
@@ -662,11 +500,12 @@
                         }
                     },
                     "profileId": "ordnance-master",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "If the Ordnance Master in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its charnabal sabre exchanged for o...",
+                    "name": "Lasrifle exchange",
+                    "description": "If the Ordnance Master in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its charnabal sabre exchanged for o...",
                     "perModel": {
                         "type": "single"
                     },
@@ -721,7 +560,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "If the Ordnance Master in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its laspistol exchanged for one ite...",
+                    "name": "Auxilia Pistols",
+                    "description": "If the Ordnance Master in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its laspistol exchanged for one ite...",
                     "perModel": {
                         "type": "single"
                     },
@@ -756,7 +596,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "name": "Bayonet / Blast-charger",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -799,18 +640,12 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "One Veteran in this Unit may have one command vox selected for it.",
+                    "name": "Command vox",
+                    "description": "One Veteran in this Unit may have one command vox selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "command-vox": {
                             "id": "command-vox",
                             "name": "command vox",
@@ -821,22 +656,16 @@
                         }
                     },
                     "profileId": "veteran",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "One Veteran in this Unit may have one augury scanner selected for it.",
+                    "name": "Augury scanner",
+                    "description": "One Veteran in this Unit may have one augury scanner selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "augury-scanner": {
                             "id": "augury-scanner",
                             "name": "augury scanner",
@@ -847,22 +676,16 @@
                         }
                     },
                     "profileId": "veteran",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "One Veteran in this Unit may have one auxilia vexilla selected for it.",
+                    "name": "Auxilia vexilla",
+                    "description": "One Veteran in this Unit may have one auxilia vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "auxilia-vexilla": {
                             "id": "auxilia-vexilla",
                             "name": "auxilia vexilla",
@@ -873,22 +696,16 @@
                         }
                     },
                     "profileId": "veteran",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-8": {
                     "id": "option-8",
-                    "name": "One Veteran in this Unit may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "One Veteran in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -899,7 +716,7 @@
                         }
                     },
                     "profileId": "veteran",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -944,18 +761,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one Hull (Rear) Mounted multi-laser selected for it.",
+                    "name": "Hull (Rear) Mounted multi-laser",
+                    "description": "This Model may have one Hull (Rear) Mounted multi-laser selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "hull-rear-mounted-multi-laser": {
                             "id": "hull-rear-mounted-multi-laser",
                             "name": "Hull (Rear) Mounted multi-laser",
@@ -965,22 +776,16 @@
                             "weaponRefs": ["multi-laser"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have flare launchers selected for it.",
+                    "name": "Flare launchers",
+                    "description": "This Model may have flare launchers selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "flare-launchers": {
                             "id": "flare-launchers",
                             "name": "flare launchers",
@@ -990,7 +795,7 @@
                             "equipmentRefs": ["flare-launchers"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1035,7 +840,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1056,18 +862,12 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one Hull (Front) Mounted hunter-killer missile selected for it.",
+                    "name": "Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have one Hull (Front) Mounted hunter-killer missile selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "hull-front-mounted-hunter-killer-missile": {
                             "id": "hull-front-mounted-hunter-killer-missile",
                             "name": "Hull (Front) Mounted hunter-killer missile",
@@ -1077,7 +877,7 @@
                             "weaponRefs": ["hunter-killer-missile"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1171,7 +971,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one of the following selected for it:",
+                    "name": "Sponson lascannon and bolters",
+                    "description": "This Model may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -1204,7 +1005,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1225,7 +1027,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Turret Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -1298,7 +1101,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one of the following selected for it:",
+                    "name": "Sponson lascannon and bolters",
+                    "description": "This Model may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -1331,7 +1135,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1352,7 +1157,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -1420,7 +1226,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1441,7 +1248,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -1511,18 +1319,6 @@
             "traits": ["Solar Auxilia"],
             "defaultWargear": [
                 {
-                    "kind": "weapon",
-                    "id": "volkite-culverin"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "volkite-caliver"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "volkite-caliver"
-                },
-                {
                     "kind": "equipment",
                     "id": "searchlights"
                 }
@@ -1530,17 +1326,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its Turret Mounted volkite culverin exchanged for one of the following:",
+                    "name": "Turret Mounted volkite culverin exchange",
+                    "description": "This Model may have its Turret Mounted volkite culverin exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "volkite-culverin": {
+                            "id": "volkite-culverin",
+                            "name": "Volkite culverin",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["volkite-culverin"]
                         },
                         "turret-mounted-twin-multi-laser": {
                             "id": "turret-mounted-twin-multi-laser",
@@ -1548,19 +1346,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["twin-multi-laser"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-culverin"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "twin-multi-laser"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["twin-multi-laser"]
                         },
                         "turret-mounted-gravis-autocannon": {
                             "id": "turret-mounted-gravis-autocannon",
@@ -1568,19 +1354,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["gravis-autocannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-culverin"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "gravis-autocannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["gravis-autocannon"]
                         },
                         "turret-mounted-twin-lascannon": {
                             "id": "turret-mounted-twin-lascannon",
@@ -1588,47 +1362,38 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-lascannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-culverin"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "twin-lascannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["twin-lascannon"]
                         }
                     },
-                    "default": "none"
+                    "default": "volkite-culverin"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have both of its Sponson Mounted volkite calivers exchanged for one item from the Auxilia Sponson Weapons list.",
+                    "name": "Auxilia Sponson Weapons",
+                    "description": "This Model may have both of its Sponson Mounted volkite calivers exchanged for one item from the Auxilia Sponson Weapons list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "volkite-caliver": {
+                            "id": "volkite-caliver",
+                            "name": "Two volkite calivers",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["volkite-caliver", "volkite-caliver"]
                         },
                         "auxilia-sponson-weapons": {
                             "id": "auxilia-sponson-weapons",
                             "target": "auxilia-sponson-weapons"
                         }
                     },
-                    "default": "none"
+                    "default": "volkite-caliver"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1649,18 +1414,12 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "This Model may have one Turret Mounted hunter-killer missile selected for it.",
+                    "name": "Turret Mounted hunter-killer missile",
+                    "description": "This Model may have one Turret Mounted hunter-killer missile selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "turret-mounted-hunter-killer-missile": {
                             "id": "turret-mounted-hunter-killer-missile",
                             "name": "Turret Mounted hunter-killer missile",
@@ -1670,7 +1429,7 @@
                             "weaponRefs": ["hunter-killer-missile"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1846,11 +1605,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "lasrifle",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -1863,17 +1617,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre or one of the following:",
+                    "name": "Lasrifle exchange",
+                    "description": "Any Model in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre or one of the following:",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "lasrifle": {
+                            "id": "lasrifle",
+                            "name": "Lasrifle",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["lasrifle"]
                         },
                         "bolter": {
                             "id": "bolter",
@@ -1881,19 +1637,7 @@
                             "cost": {
                                 "points": 3
                             },
-                            "weaponRefs": ["bolter"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "lasrifle"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["bolter"]
                         },
                         "volkite-charger": {
                             "id": "volkite-charger",
@@ -1901,19 +1645,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["volkite-charger"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "lasrifle"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["volkite-charger"]
                         },
                         "flamer": {
                             "id": "flamer",
@@ -1921,19 +1653,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["flamer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "lasrifle"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "flamer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["flamer"]
                         },
                         "grenade-launcher": {
                             "id": "grenade-launcher",
@@ -1941,19 +1661,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["grenade-launcher"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "lasrifle"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "grenade-launcher"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["grenade-launcher"]
                         },
                         "plasma-gun": {
                             "id": "plasma-gun",
@@ -1961,19 +1669,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["plasma-gun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "lasrifle"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "plasma-gun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["plasma-gun"]
                         },
                         "rotor-cannon": {
                             "id": "rotor-cannon",
@@ -1981,19 +1677,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["rotor-cannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "lasrifle"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "rotor-cannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["rotor-cannon"]
                         },
                         "meltagun": {
                             "id": "meltagun",
@@ -2001,26 +1685,15 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["meltagun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "lasrifle"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "meltagun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["meltagun"]
                         }
                     },
-                    "default": "none"
+                    "default": "lasrifle"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit whose lasrifle has been exchanged for a laspistol and charnabal sabre may have its laspistol exchanged for one item from the Auxilia P...",
+                    "name": "Auxilia Pistols",
+                    "description": "Any Model in this Unit whose lasrifle has been exchanged for a laspistol and charnabal sabre may have its laspistol exchanged for one item from the Auxilia P...",
                     "perModel": {
                         "type": "some"
                     },
@@ -2051,7 +1724,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Any Model in this Unit whose lasrifle has been exchanged for a laspistol and charnabal sabre may have its charnabal sabre exchanged for one chainsword for Fr...",
+                    "name": "Charnabal sabre exchange",
+                    "description": "Any Model in this Unit whose lasrifle has been exchanged for a laspistol and charnabal sabre may have its charnabal sabre exchanged for one chainsword for Fr...",
                     "perModel": {
                         "type": "some"
                     },
@@ -2102,7 +1776,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "name": "Bayonet / Blast-charger",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -2145,18 +1820,12 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "One Companion in this Unit may have one vox interlock selected for it.",
+                    "name": "Vox interlock",
+                    "description": "One Companion in this Unit may have one vox interlock selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vox-interlock": {
                             "id": "vox-interlock",
                             "name": "vox interlock",
@@ -2167,22 +1836,16 @@
                         }
                     },
                     "profileId": "companion",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "One Companion in this Unit may have one auxilia vexilla selected for it.",
+                    "name": "Auxilia vexilla",
+                    "description": "One Companion in this Unit may have one auxilia vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "auxilia-vexilla": {
                             "id": "auxilia-vexilla",
                             "name": "auxilia vexilla",
@@ -2193,22 +1856,16 @@
                         }
                     },
                     "profileId": "companion",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "One Companion in this Unit may have one augury scanner selected for it.",
+                    "name": "Augury scanner",
+                    "description": "One Companion in this Unit may have one augury scanner selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "augury-scanner": {
                             "id": "augury-scanner",
                             "name": "augury scanner",
@@ -2219,22 +1876,16 @@
                         }
                     },
                     "profileId": "companion",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-8": {
                     "id": "option-8",
-                    "name": "One Companion in this Unit may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "One Companion in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -2245,7 +1896,7 @@
                         }
                     },
                     "profileId": "companion",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -2297,7 +1948,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -2318,7 +1970,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -2483,7 +2136,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -2504,7 +2158,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -2577,26 +2232,22 @@
                 }
             ],
             "traits": ["Solar Auxilia", "Smokescreen"],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "twin-lascannon"
-                }
-            ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its twin lascannon exchanged for one Hull (Front) Mounted demolisher cannon.",
+                    "name": "Swap to Hull (Front) Mounted demolisher cannon",
+                    "description": "This Model may have its twin lascannon exchanged for one Hull (Front) Mounted demolisher cannon.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "twin-lascannon": {
+                            "id": "twin-lascannon",
+                            "name": "Twin lascannon",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["twin-lascannon"]
                         },
                         "hull-front-mounted-demolisher-cannon": {
                             "id": "hull-front-mounted-demolisher-cannon",
@@ -2604,26 +2255,15 @@
                             "cost": {
                                 "points": 35
                             },
-                            "weaponRefs": ["demolisher-cannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "twin-lascannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "demolisher-cannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["demolisher-cannon"]
                         }
                     },
-                    "default": "none"
+                    "default": "twin-lascannon"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -2644,7 +2284,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "Up to two Hull (Front) Mounted hunter-killer missiles",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -2791,7 +2432,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one of the following selected for it:",
+                    "name": "Sponson lascannon and bolters",
+                    "description": "This Model may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -2824,7 +2466,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -2845,7 +2488,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Turret Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -2992,11 +2636,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "multi-laser",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -3009,17 +2648,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its multi-laser exchanged for one of the following:",
+                    "name": "Multi-laser exchange",
+                    "description": "Any Model in this Unit may have its multi-laser exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "multi-laser": {
+                            "id": "multi-laser",
+                            "name": "Multi-laser",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["multi-laser"]
                         },
                         "volkite-caliver": {
                             "id": "volkite-caliver",
@@ -3027,19 +2668,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["volkite-caliver"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-caliver"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["volkite-caliver"]
                         },
                         "heavy-flamer": {
                             "id": "heavy-flamer",
@@ -3047,19 +2676,7 @@
                             "cost": {
                                 "points": 3
                             },
-                            "weaponRefs": ["heavy-flamer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-flamer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-flamer"]
                         },
                         "hermes-grenade-launcher": {
                             "id": "hermes-grenade-launcher",
@@ -3067,22 +2684,10 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["hermes-grenade-launcher"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "hermes-grenade-launcher"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["hermes-grenade-launcher"]
                         }
                     },
-                    "default": "none"
+                    "default": "multi-laser"
                 }
             }
         },
@@ -3152,11 +2757,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "multi-laser",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -3169,17 +2769,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its multi-laser exchanged for one Hermes grenade launcher.",
+                    "name": "Multi-laser to hermes grenade launcher",
+                    "description": "Any Model in this Unit may have its multi-laser exchanged for one Hermes grenade launcher.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "multi-laser": {
+                            "id": "multi-laser",
+                            "name": "Multi-laser",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["multi-laser"]
                         },
                         "hermes-grenade-launcher": {
                             "id": "hermes-grenade-launcher",
@@ -3187,22 +2789,10 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["hermes-grenade-launcher"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "hermes-grenade-launcher"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["hermes-grenade-launcher"]
                         }
                     },
-                    "default": "none"
+                    "default": "multi-laser"
                 }
             }
         },
@@ -3272,11 +2862,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "volkite-caliver",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -3289,17 +2874,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its volkite caliver exchanged for one heavy flamer.",
+                    "name": "Volkite caliver to heavy flamer",
+                    "description": "Any Model in this Unit may have its volkite caliver exchanged for one heavy flamer.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "volkite-caliver": {
+                            "id": "volkite-caliver",
+                            "name": "Volkite caliver",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["volkite-caliver"]
                         },
                         "heavy-flamer": {
                             "id": "heavy-flamer",
@@ -3307,22 +2894,10 @@
                             "cost": {
                                 "points": 3
                             },
-                            "weaponRefs": ["heavy-flamer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-caliver"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-flamer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-flamer"]
                         }
                     },
-                    "default": "none"
+                    "default": "volkite-caliver"
                 }
             }
         },
@@ -3435,18 +3010,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Auxilia Sergeant in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre.",
+                    "name": "Swap to laspistol and charnabal sabre",
+                    "description": "The Auxilia Sergeant in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "laspistol-and-one-charnabal-sabre": {
                             "id": "laspistol-and-one-charnabal-sabre",
                             "name": "laspistol and one charnabal sabre",
@@ -3469,11 +3038,12 @@
                         }
                     },
                     "profileId": "auxilia-sergeant",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "If the Auxilia Sergeant in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its charnabal sabre exchanged for ...",
+                    "name": "Auxilia Melee Weapons",
+                    "description": "If the Auxilia Sergeant in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its charnabal sabre exchanged for ...",
                     "perModel": {
                         "type": "single"
                     },
@@ -3508,7 +3078,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "If the Auxilia Sergeant in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its laspistol exchanged for one it...",
+                    "name": "Auxilia Pistols",
+                    "description": "If the Auxilia Sergeant in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its laspistol exchanged for one it...",
                     "perModel": {
                         "type": "single"
                     },
@@ -3543,7 +3114,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "name": "Bayonet / Blast-charger",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -3586,18 +3158,12 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "One Auxiliary in this Unit may have one vox interlock selected for it.",
+                    "name": "Vox interlock",
+                    "description": "One Auxiliary in this Unit may have one vox interlock selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vox-interlock": {
                             "id": "vox-interlock",
                             "name": "vox interlock",
@@ -3608,22 +3174,16 @@
                         }
                     },
                     "profileId": "auxiliary",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "One Auxiliary in this Unit may have one auxilia vexilla selected for it.",
+                    "name": "Auxilia vexilla",
+                    "description": "One Auxiliary in this Unit may have one auxilia vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "auxilia-vexilla": {
                             "id": "auxilia-vexilla",
                             "name": "auxilia vexilla",
@@ -3634,22 +3194,16 @@
                         }
                     },
                     "profileId": "auxiliary",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "The Auxilia Sergeant in this Unit may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "The Auxilia Sergeant in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -3660,7 +3214,7 @@
                         }
                     },
                     "profileId": "auxilia-sergeant",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -3756,22 +3310,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "lasrifle",
-                    "profileId": "lifeward",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "laspistol",
-                    "profileId": "legate-marshal"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "charnabal-sabre",
-                    "profileId": "legate-marshal"
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -3784,17 +3322,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Legate Marshal in this Unit may have its charnabal sabre exchanged for one thunder hammer or one paragon blade or one item from the Auxili...",
+                    "name": "Charnabal sabre exchange",
+                    "description": "The Legate Marshal in this Unit may have its charnabal sabre exchanged for one thunder hammer or one paragon blade or one item from the Auxili...",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["charnabal-sabre"]
                         },
                         "auxilia-melee-weapons": {
                             "id": "auxilia-melee-weapons",
@@ -3806,19 +3346,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["thunder-hammer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "charnabal-sabre"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["thunder-hammer"]
                         },
                         "paragon-blade": {
                             "id": "paragon-blade",
@@ -3826,37 +3354,27 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["paragon-blade"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "charnabal-sabre"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "paragon-blade"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["paragon-blade"]
                         }
                     },
                     "profileId": "legate-marshal",
-                    "default": "none"
+                    "default": "charnabal-sabre"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "The Legate Marshal in this Unit may have its laspistol exchanged for one archaeotech pistol or one inferno pistol or for one item from the Aux...",
+                    "name": "Laspistol exchange",
+                    "description": "The Legate Marshal in this Unit may have its laspistol exchanged for one archaeotech pistol or one inferno pistol or for one item from the Aux...",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "laspistol": {
+                            "id": "laspistol",
+                            "name": "Laspistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["laspistol"]
                         },
                         "auxilia-pistols": {
                             "id": "auxilia-pistols",
@@ -3868,19 +3386,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["archaeotech-pistol"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "laspistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "archaeotech-pistol"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["archaeotech-pistol"]
                         },
                         "inferno-pistol": {
                             "id": "inferno-pistol",
@@ -3888,37 +3394,27 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["inferno-pistol"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "laspistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "inferno-pistol"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["inferno-pistol"]
                         }
                     },
                     "profileId": "legate-marshal",
-                    "default": "none"
+                    "default": "laspistol"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Any Lifeward in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre.",
+                    "name": "Swap to laspistol and charnabal sabre",
+                    "description": "Any Lifeward in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "lasrifle": {
+                            "id": "lasrifle",
+                            "name": "Lasrifle",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["lasrifle"]
                         },
                         "laspistol-and-one-charnabal-sabre": {
                             "id": "laspistol-and-one-charnabal-sabre",
@@ -3926,27 +3422,16 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["laspistol", "charnabal-sabre"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "lasrifle"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "laspistol"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["laspistol", "charnabal-sabre"]
                         }
                     },
                     "profileId": "lifeward",
-                    "default": "none"
+                    "default": "lasrifle"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Lifeward in this Unit whose lasrifle has been exchanged for one laspistol and one charnabal sabre may have its charnabal sabre exchanged for one item fro...",
+                    "name": "Auxilia Melee Weapons",
+                    "description": "Any Lifeward in this Unit whose lasrifle has been exchanged for one laspistol and one charnabal sabre may have its charnabal sabre exchanged for one item fro...",
                     "perModel": {
                         "type": "some"
                     },
@@ -3981,7 +3466,8 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Any Lifeward in this Unit whose lasrifle has been exchanged for one laspistol and one charnabal sabre may have its laspistol exchanged for one item from the ...",
+                    "name": "Auxilia Pistols",
+                    "description": "Any Lifeward in this Unit whose lasrifle has been exchanged for one laspistol and one charnabal sabre may have its laspistol exchanged for one item from the ...",
                     "perModel": {
                         "type": "some"
                     },
@@ -4016,7 +3502,8 @@
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "name": "Bayonet / Blast-charger",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -4059,18 +3546,12 @@
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "One Lifeward in this Unit may have one command vox selected for it.",
+                    "name": "Command vox",
+                    "description": "One Lifeward in this Unit may have one command vox selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "command-vox": {
                             "id": "command-vox",
                             "name": "command vox",
@@ -4081,22 +3562,16 @@
                         }
                     },
                     "profileId": "lifeward",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-8": {
                     "id": "option-8",
-                    "name": "One Lifeward in this Unit may have one augury scanner selected for it.",
+                    "name": "Augury scanner",
+                    "description": "One Lifeward in this Unit may have one augury scanner selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "augury-scanner": {
                             "id": "augury-scanner",
                             "name": "augury scanner",
@@ -4107,11 +3582,12 @@
                         }
                     },
                     "profileId": "lifeward",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-9": {
                     "id": "option-9",
-                    "name": "One Lifeward in this Unit may have one of the following selected for it:",
+                    "name": "Auxilia vexilla / Cohorts vexilla",
+                    "description": "One Lifeward in this Unit may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -4145,18 +3621,12 @@
                 },
                 "option-10": {
                     "id": "option-10",
-                    "name": "One Lifeward in this Unit may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "One Lifeward in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -4167,7 +3637,7 @@
                         }
                     },
                     "profileId": "lifeward",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -4197,30 +3667,22 @@
                 }
             ],
             "traits": ["Solar Auxilia", "Smokescreen"],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "volkite-macro-saker"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "heavy-bolter"
-                }
-            ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its volkite macro-saker exchanged for one of the following:",
+                    "name": "Volkite macro-saker exchange",
+                    "description": "This Model may have its volkite macro-saker exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "volkite-macro-saker": {
+                            "id": "volkite-macro-saker",
+                            "name": "Volkite macro-saker",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["volkite-macro-saker"]
                         },
                         "turret-mounted-executioner-plasma-destroyer": {
                             "id": "turret-mounted-executioner-plasma-destroyer",
@@ -4228,19 +3690,7 @@
                             "cost": {
                                 "points": 25
                             },
-                            "weaponRefs": ["executioner-plasma-destroyer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-macro-saker"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "executioner-plasma-destroyer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["executioner-plasma-destroyer"]
                         },
                         "turret-mounted-demolisher-cannon": {
                             "id": "turret-mounted-demolisher-cannon",
@@ -4248,47 +3698,38 @@
                             "cost": {
                                 "points": 30
                             },
-                            "weaponRefs": ["demolisher-cannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-macro-saker"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "demolisher-cannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["demolisher-cannon"]
                         }
                     },
-                    "default": "none"
+                    "default": "volkite-macro-saker"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have its heavy bolter exchanged for one item from the Auxilia Hull Weapons list.",
+                    "name": "Auxilia Hull Weapons",
+                    "description": "This Model may have its heavy bolter exchanged for one item from the Auxilia Hull Weapons list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "heavy-bolter": {
+                            "id": "heavy-bolter",
+                            "name": "Heavy bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["heavy-bolter"]
                         },
                         "auxilia-hull-weapons": {
                             "id": "auxilia-hull-weapons",
                             "target": "auxilia-hull-weapons"
                         }
                     },
-                    "default": "none"
+                    "default": "heavy-bolter"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -4309,7 +3750,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Turret Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -4376,30 +3818,22 @@
                 }
             ],
             "traits": ["Solar Auxilia", "Smokescreen"],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "battlecannon"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "heavy-bolter"
-                }
-            ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its battlecannon exchanged for one of the following:",
+                    "name": "Battlecannon exchange",
+                    "description": "This Model may have its battlecannon exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "battlecannon": {
+                            "id": "battlecannon",
+                            "name": "Battlecannon",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["battlecannon"]
                         },
                         "turret-mounted-gravis-autocannon": {
                             "id": "turret-mounted-gravis-autocannon",
@@ -4407,19 +3841,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["gravis-autocannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "gravis-autocannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["gravis-autocannon"]
                         },
                         "turret-mounted-twin-lascannon": {
                             "id": "turret-mounted-twin-lascannon",
@@ -4427,19 +3849,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["twin-lascannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "twin-lascannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["twin-lascannon"]
                         },
                         "turret-mounted-vanquisher-cannon-and-one-co-axial-vanquisher": {
                             "id": "turret-mounted-vanquisher-cannon-and-one-co-axial-vanquisher",
@@ -4447,50 +3857,38 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": [
-                                "vanquisher-cannon",
-                                "heavy-stubber"
-                            ],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "vanquisher-cannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["vanquisher-cannon", "heavy-stubber"]
                         }
                     },
-                    "default": "none"
+                    "default": "battlecannon"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have its heavy bolter exchanged for one item from the Auxilia Hull Weapons list.",
+                    "name": "Auxilia Hull Weapons",
+                    "description": "This Model may have its heavy bolter exchanged for one item from the Auxilia Hull Weapons list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "heavy-bolter": {
+                            "id": "heavy-bolter",
+                            "name": "Heavy bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["heavy-bolter"]
                         },
                         "auxilia-hull-weapons": {
                             "id": "auxilia-hull-weapons",
                             "target": "auxilia-hull-weapons"
                         }
                     },
-                    "default": "none"
+                    "default": "heavy-bolter"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -4511,7 +3909,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Turret Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -4654,18 +4053,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Troop Master in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre.",
+                    "name": "Swap to laspistol and charnabal sabre",
+                    "description": "The Troop Master in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "laspistol-and-one-charnabal-sabre": {
                             "id": "laspistol-and-one-charnabal-sabre",
                             "name": "laspistol and one charnabal sabre",
@@ -4688,11 +4081,12 @@
                         }
                     },
                     "profileId": "troop-master",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "If the Troop Master in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its charnabal sabre exchanged for one ...",
+                    "name": "Lasrifle exchange",
+                    "description": "If the Troop Master in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its charnabal sabre exchanged for one ...",
                     "perModel": {
                         "type": "single"
                     },
@@ -4747,7 +4141,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "If the Troop Master in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its laspistol exchanged for one item f...",
+                    "name": "Auxilia Pistols",
+                    "description": "If the Troop Master in this Unit has had its lasrifle exchanged for one laspistol and one charnabal sabre, it may have its laspistol exchanged for one item f...",
                     "perModel": {
                         "type": "single"
                     },
@@ -4782,7 +4177,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "name": "Bayonet / Blast-charger",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -4825,18 +4221,12 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "One Veteran in this Unit may have one command vox selected for it.",
+                    "name": "Command vox",
+                    "description": "One Veteran in this Unit may have one command vox selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "command-vox": {
                             "id": "command-vox",
                             "name": "command vox",
@@ -4847,22 +4237,16 @@
                         }
                     },
                     "profileId": "veteran",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "One Veteran in this Unit may have one augury scanner selected for it.",
+                    "name": "Augury scanner",
+                    "description": "One Veteran in this Unit may have one augury scanner selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "augury-scanner": {
                             "id": "augury-scanner",
                             "name": "augury scanner",
@@ -4873,22 +4257,16 @@
                         }
                     },
                     "profileId": "veteran",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "One Veteran in this Unit may have one auxilia vexilla selected for it.",
+                    "name": "Auxilia vexilla",
+                    "description": "One Veteran in this Unit may have one auxilia vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "auxilia-vexilla": {
                             "id": "auxilia-vexilla",
                             "name": "auxilia vexilla",
@@ -4899,22 +4277,16 @@
                         }
                     },
                     "profileId": "veteran",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-8": {
                     "id": "option-8",
-                    "name": "One Veteran in this Unit may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "One Veteran in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -4925,7 +4297,7 @@
                         }
                     },
                     "profileId": "veteran",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -4959,92 +4331,26 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "twin-battlecannon"
-                },
-                {
-                    "kind": "weapon",
                     "id": "twin-heavy-stubber"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "heavy-stubber"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "heavy-stubber"
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "This Model may have its Turret Mounted twin battlecannon exchanged for one of the following:",
+                "heavy-stubber": {
+                    "id": "heavy-stubber",
+                    "name": "Two heavy stubbers",
+                    "description": "This Model may have both of its Sponson Mounted heavy stubbers exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "heavy-stubber",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "turret-mounted-twin-avenger-bolt-cannon": {
-                            "id": "turret-mounted-twin-avenger-bolt-cannon",
-                            "name": "Turret Mounted twin avenger bolt cannon",
+                        "heavy-stubber": {
+                            "id": "heavy-stubber",
+                            "name": "Two heavy stubbers",
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["twin-avenger-bolt-cannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "twin-battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "twin-avenger-bolt-cannon"
-                                    }
-                                }
-                            ]
-                        },
-                        "turret-mounted-twin-vanquisher-cannon": {
-                            "id": "turret-mounted-twin-vanquisher-cannon",
-                            "name": "Turret Mounted twin vanquisher cannon",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["twin-vanquisher-cannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "twin-battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "twin-vanquisher-cannon"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "This Model may have both of its Sponson Mounted heavy stubbers exchanged for one of the following:",
-                    "perModel": {
-                        "type": "single"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
+                            "weaponRefs": ["heavy-stubber", "heavy-stubber"]
                         },
                         "two-sponson-mounted-heavy-bolters": {
                             "id": "two-sponson-mounted-heavy-bolters",
@@ -5052,19 +4358,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["heavy-bolter"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "heavy-stubber"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-bolter"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-bolter"]
                         },
                         "two-sponson-mounted-heavy-flamers": {
                             "id": "two-sponson-mounted-heavy-flamers",
@@ -5072,26 +4366,49 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["heavy-flamer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "heavy-stubber"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-flamer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-flamer"]
+                        }
+                    }
+                },
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Turret Mounted twin battlecannon exchange",
+                    "description": "This Model may have its Turret Mounted twin battlecannon exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "twin-battlecannon": {
+                            "id": "twin-battlecannon",
+                            "name": "Twin battlecannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["twin-battlecannon"]
+                        },
+                        "turret-mounted-twin-avenger-bolt-cannon": {
+                            "id": "turret-mounted-twin-avenger-bolt-cannon",
+                            "name": "Turret Mounted twin avenger bolt cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["twin-avenger-bolt-cannon"]
+                        },
+                        "turret-mounted-twin-vanquisher-cannon": {
+                            "id": "turret-mounted-twin-vanquisher-cannon",
+                            "name": "Turret Mounted twin vanquisher cannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["twin-vanquisher-cannon"]
                         }
                     },
-                    "default": "none"
+                    "default": "twin-battlecannon"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -5112,7 +4429,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Turret Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -5176,38 +4494,22 @@
                 }
             ],
             "traits": ["Solar Auxilia", "Smokescreen"],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "battlecannon"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "heavy-bolter"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "multi-laser"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "multi-laser"
-                }
-            ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its battlecannon exchanged for one of the following:",
+                    "name": "Battlecannon exchange",
+                    "description": "This Model may have its battlecannon exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "battlecannon": {
+                            "id": "battlecannon",
+                            "name": "Battlecannon",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["battlecannon"]
                         },
                         "hull-front-mounted-twin-lascannon": {
                             "id": "hull-front-mounted-twin-lascannon",
@@ -5215,19 +4517,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["twin-lascannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "twin-lascannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["twin-lascannon"]
                         },
                         "hull-front-mounted-vanquisher-cannon": {
                             "id": "hull-front-mounted-vanquisher-cannon",
@@ -5235,36 +4525,26 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["vanquisher-cannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "battlecannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "vanquisher-cannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["vanquisher-cannon"]
                         }
                     },
-                    "default": "none"
+                    "default": "battlecannon"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have its Hull (Front) Mounted heavy bolter exchanged for one Hull (Front) Mounted demolisher cannon or one item from the Auxili...",
+                    "name": "Auxilia Hull Weapons",
+                    "description": "This Model may have its Hull (Front) Mounted heavy bolter exchanged for one Hull (Front) Mounted demolisher cannon or one item from the Auxili...",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "heavy-bolter": {
+                            "id": "heavy-bolter",
+                            "name": "Heavy bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["heavy-bolter"]
                         },
                         "auxilia-hull-weapons": {
                             "id": "auxilia-hull-weapons",
@@ -5276,47 +4556,38 @@
                             "cost": {
                                 "points": 40
                             },
-                            "weaponRefs": ["demolisher-cannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "heavy-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "demolisher-cannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["demolisher-cannon"]
                         }
                     },
-                    "default": "none"
+                    "default": "heavy-bolter"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have both of its Sponson Mounted multi-lasers exchanged for one item from the Auxilia Sponson Weapons list.",
+                    "name": "Auxilia Sponson Weapons",
+                    "description": "This Model may have both of its Sponson Mounted multi-lasers exchanged for one item from the Auxilia Sponson Weapons list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "multi-laser": {
+                            "id": "multi-laser",
+                            "name": "Two multi-lasers",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["multi-laser", "multi-laser"]
                         },
                         "auxilia-sponson-weapons": {
                             "id": "auxilia-sponson-weapons",
                             "target": "auxilia-sponson-weapons"
                         }
                     },
-                    "default": "none"
+                    "default": "multi-laser"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -5337,7 +4608,8 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -5422,41 +4694,36 @@
                 {
                     "kind": "weapon",
                     "id": "infernus-cannon"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "multi-laser"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "multi-laser"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have both of its Sponson Mounted multi-lasers exchanged for one item from the Auxilia Sponson Weapons list.",
+                    "name": "Auxilia Sponson Weapons",
+                    "description": "This Model may have both of its Sponson Mounted multi-lasers exchanged for one item from the Auxilia Sponson Weapons list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "multi-laser": {
+                            "id": "multi-laser",
+                            "name": "Two multi-lasers",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["multi-laser", "multi-laser"]
                         },
                         "auxilia-sponson-weapons": {
                             "id": "auxilia-sponson-weapons",
                             "target": "auxilia-sponson-weapons"
                         }
                     },
-                    "default": "none"
+                    "default": "multi-laser"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -5477,7 +4744,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -5721,7 +4989,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -5742,7 +5011,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -5818,7 +5088,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Rear) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -5895,7 +5166,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -5916,7 +5188,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -6130,7 +5403,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Each Rapier Carrier in this Unit may have its Gravis multi-laser array exchanged for one of the following:",
+                    "name": "Gravis multi-laser array exchange",
+                    "description": "Each Rapier Carrier in this Unit may have its Gravis multi-laser array exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
@@ -6248,7 +5522,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one of the following selected for it:",
+                    "name": "Sponson lascannon and bolters",
+                    "description": "This Model may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -6281,7 +5556,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -6302,7 +5578,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -6375,7 +5652,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one of the following selected for it:",
+                    "name": "Sponson lascannon and bolters",
+                    "description": "This Model may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -6408,7 +5686,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -6429,7 +5708,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -6496,15 +5776,7 @@
                 },
                 {
                     "kind": "weapon",
-                    "id": "multi-laser"
-                },
-                {
-                    "kind": "weapon",
                     "id": "twin-battlecannon"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "multi-laser"
                 },
                 {
                     "kind": "weapon",
@@ -6532,19 +5804,22 @@
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "This Model may have its Hull (Front) Mounted multi-laser exchanged for a Hull (Front) Mounted lascannon.",
+                "hull-front-mounted-multi-laser": {
+                    "id": "hull-front-mounted-multi-laser",
+                    "name": "Hull (Front) Mounted multi-laser",
+                    "description": "This Model may have its Hull (Front) Mounted multi-laser exchanged for a Hull (Front) Mounted lascannon.",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "multi-laser",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "multi-laser": {
+                            "id": "multi-laser",
+                            "name": "Hull (Front) Mounted multi-laser",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["multi-laser"]
                         },
                         "hull-front-mounted-lascannon": {
                             "id": "hull-front-mounted-lascannon",
@@ -6552,36 +5827,26 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["lascannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "lascannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["lascannon"]
                         }
-                    },
-                    "default": "none"
+                    }
                 },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "This Model may have its three Hull (Left) and three Hull (Right) Mounted multi-lasers exchanged for one of the following:",
+                "three-hull-left-and-three-hull-right-mounted-multi-lasers": {
+                    "id": "three-hull-left-and-three-hull-right-mounted-multi-lasers",
+                    "name": "Three Hull (Left) and three Hull (Right) Mounted multi-lasers",
+                    "description": "This Model may have its three Hull (Left) and three Hull (Right) Mounted multi-lasers exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "multi-laser",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "multi-laser": {
+                            "id": "multi-laser",
+                            "name": "Three Hull (Left) and three Hull (Right) Mounted multi-lasers",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["multi-laser"]
                         },
                         "three-hull-left-mounted-heavy-bolters-and-three-hull-right-m": {
                             "id": "three-hull-left-mounted-heavy-bolters-and-three-hull-right-m",
@@ -6589,19 +5854,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["heavy-bolter", "heavy-bolter"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-bolter"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-bolter", "heavy-bolter"]
                         },
                         "three-hull-left-mounted-heavy-flamers-and-three-hull-right-m": {
                             "id": "three-hull-left-mounted-heavy-flamers-and-three-hull-right-m",
@@ -6609,19 +5862,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["heavy-flamer", "heavy-flamer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-flamer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-flamer", "heavy-flamer"]
                         },
                         "three-hull-left-mounted-lascannon-and-three-hull-right-mount": {
                             "id": "three-hull-left-mounted-lascannon-and-three-hull-right-mount",
@@ -6629,26 +5870,14 @@
                             "cost": {
                                 "points": 50
                             },
-                            "weaponRefs": ["lascannon", "lascannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "lascannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["lascannon", "lascannon"]
                         }
-                    },
-                    "default": "none"
+                    }
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -6669,7 +5898,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Turret Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -6763,7 +5993,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one of the following selected for it:",
+                    "name": "Sponson lascannon and bolters",
+                    "description": "This Model may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -6796,7 +6027,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -6817,7 +6049,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -6890,7 +6123,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one of the following selected for it:",
+                    "name": "Sponson lascannon and bolters",
+                    "description": "This Model may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -6923,7 +6157,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -6944,7 +6179,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -7191,22 +6427,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "lasrifle",
-                    "profileId": "companion",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "laspistol",
-                    "profileId": "auxilia-captain"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "charnabal-sabre",
-                    "profileId": "auxilia-captain"
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -7219,17 +6439,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Auxilia Captain in this Unit may have its charnabal sabre exchanged for one thunder hammer or one item from the Auxilia Melee Weapons list.",
+                    "name": "Charnabal sabre exchange",
+                    "description": "The Auxilia Captain in this Unit may have its charnabal sabre exchanged for one thunder hammer or one item from the Auxilia Melee Weapons list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["charnabal-sabre"]
                         },
                         "auxilia-melee-weapons": {
                             "id": "auxilia-melee-weapons",
@@ -7241,37 +6463,27 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["thunder-hammer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "charnabal-sabre"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["thunder-hammer"]
                         }
                     },
                     "profileId": "auxilia-captain",
-                    "default": "none"
+                    "default": "charnabal-sabre"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "The Auxilia Captain in this Unit may have its laspistol exchanged for one item from the Auxilia Pistols list.",
+                    "name": "Auxilia Pistols (Auxilia Captain)",
+                    "description": "The Auxilia Captain in this Unit may have its laspistol exchanged for one item from the Auxilia Pistols list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "laspistol": {
+                            "id": "laspistol",
+                            "name": "Laspistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["laspistol"]
                         },
                         "auxilia-pistols": {
                             "id": "auxilia-pistols",
@@ -7279,21 +6491,23 @@
                         }
                     },
                     "profileId": "auxilia-captain",
-                    "default": "none"
+                    "default": "laspistol"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Any Companion in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre.",
+                    "name": "Swap to laspistol and charnabal sabre",
+                    "description": "Any Companion in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "lasrifle": {
+                            "id": "lasrifle",
+                            "name": "Lasrifle",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["lasrifle"]
                         },
                         "laspistol-and-one-charnabal-sabre": {
                             "id": "laspistol-and-one-charnabal-sabre",
@@ -7301,27 +6515,16 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["laspistol", "charnabal-sabre"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "lasrifle"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "laspistol"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["laspistol", "charnabal-sabre"]
                         }
                     },
                     "profileId": "companion",
-                    "default": "none"
+                    "default": "lasrifle"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Companion in this Unit whose lasrifle has been exchanged for one laspistol and one charnabal sabre may have its laspistol exchanged for one item from the...",
+                    "name": "Auxilia Pistols (Companion)",
+                    "description": "Any Companion in this Unit whose lasrifle has been exchanged for one laspistol and one charnabal sabre may have its laspistol exchanged for one item from the...",
                     "perModel": {
                         "type": "some"
                     },
@@ -7356,7 +6559,8 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Any Companion in this Unit whose lasrifle has been exchanged for a laspistol and charnabal sabre may have its charnabal sabre exchanged for one item from the...",
+                    "name": "Auxilia Melee Weapons",
+                    "description": "Any Companion in this Unit whose lasrifle has been exchanged for a laspistol and charnabal sabre may have its charnabal sabre exchanged for one item from the...",
                     "perModel": {
                         "type": "some"
                     },
@@ -7391,7 +6595,8 @@
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "name": "Bayonet / Blast-charger",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -7434,18 +6639,12 @@
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "One Companion in this Unit may have one command vox selected for it.",
+                    "name": "Command vox",
+                    "description": "One Companion in this Unit may have one command vox selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "command-vox": {
                             "id": "command-vox",
                             "name": "command vox",
@@ -7456,22 +6655,16 @@
                         }
                     },
                     "profileId": "companion",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-8": {
                     "id": "option-8",
-                    "name": "One Companion in this Unit may have one augury scanner selected for it.",
+                    "name": "Augury scanner",
+                    "description": "One Companion in this Unit may have one augury scanner selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "augury-scanner": {
                             "id": "augury-scanner",
                             "name": "augury scanner",
@@ -7482,11 +6675,12 @@
                         }
                     },
                     "profileId": "companion",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-9": {
                     "id": "option-9",
-                    "name": "One Companion in this Unit may have one of the following selected for it:",
+                    "name": "Auxilia vexilla / Cohorts vexilla",
+                    "description": "One Companion in this Unit may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -7520,18 +6714,12 @@
                 },
                 "option-10": {
                     "id": "option-10",
-                    "name": "One Companion in this Unit may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "One Companion in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -7542,7 +6730,7 @@
                         }
                     },
                     "profileId": "companion",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -7584,27 +6772,22 @@
                 }
             ],
             "traits": ["Solar Auxilia"],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "twin-heavy-bolter",
-                    "perModel": true
-                }
-            ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its Turret Mounted twin heavy bolter exchanged for one Turret Mounted twin lascannon.",
+                    "name": "Turret Mounted twin lascannon",
+                    "description": "Any Model in this Unit may have its Turret Mounted twin heavy bolter exchanged for one Turret Mounted twin lascannon.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "twin-heavy-bolter": {
+                            "id": "twin-heavy-bolter",
+                            "name": "Twin heavy bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["twin-heavy-bolter"]
                         },
                         "turret-mounted-twin-lascannon": {
                             "id": "turret-mounted-twin-lascannon",
@@ -7612,22 +6795,10 @@
                             "cost": {
                                 "points": 20
                             },
-                            "weaponRefs": ["twin-lascannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "twin-heavy-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "twin-lascannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["twin-lascannon"]
                         }
                     },
-                    "default": "none"
+                    "default": "twin-heavy-bolter"
                 }
             }
         },
@@ -7708,7 +6879,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -7729,7 +6901,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -7806,26 +6979,24 @@
                 {
                     "kind": "weapon",
                     "id": "neutron-beam-laser"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "multi-laser"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its Sponson (Right) Mounted multi-laser exchanged for one of the following:",
+                    "name": "Sponson (Right) Mounted heavy bolter",
+                    "description": "This Model may have its Sponson (Right) Mounted multi-laser exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "multi-laser": {
+                            "id": "multi-laser",
+                            "name": "Multi-laser",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["multi-laser"]
                         },
                         "sponson-right-mounted-heavy-bolter": {
                             "id": "sponson-right-mounted-heavy-bolter",
@@ -7833,19 +7004,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["heavy-bolter"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-bolter"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-bolter"]
                         },
                         "sponson-right-mounted-heavy-flamer": {
                             "id": "sponson-right-mounted-heavy-flamer",
@@ -7853,19 +7012,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["heavy-flamer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-flamer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-flamer"]
                         },
                         "sponson-right-mounted-autocannon": {
                             "id": "sponson-right-mounted-autocannon",
@@ -7873,19 +7020,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["autocannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "autocannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["autocannon"]
                         },
                         "sponson-right-mounted-lascannon": {
                             "id": "sponson-right-mounted-lascannon",
@@ -7893,26 +7028,15 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["lascannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "multi-laser"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "lascannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["lascannon"]
                         }
                     },
-                    "default": "none"
+                    "default": "multi-laser"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
+                    "name": "Auxilia Pintle Weapons",
+                    "description": "This Model may have one item from the Auxilia Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -7933,7 +7057,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -8077,11 +7202,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "volkite-charger",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -8094,18 +7214,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The First Prime in this Unit may have its volkite charger exchanged for one laspistol and one charnabal tabar.",
+                    "name": "Swap to laspistol and charnabal tabar",
+                    "description": "The First Prime in this Unit may have its volkite charger exchanged for one laspistol and one charnabal tabar.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "laspistol-and-one-charnabal-tabar": {
                             "id": "laspistol-and-one-charnabal-tabar",
                             "name": "laspistol and one charnabal tabar",
@@ -8128,11 +7242,12 @@
                         }
                     },
                     "profileId": "first-prime",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "If the First Prime in this Unit has had its volkite charger exchanged for one laspistol and one charnabal tabar, it may have its charnabal tabar exchanged fo...",
+                    "name": "Volkite charger exchange",
+                    "description": "If the First Prime in this Unit has had its volkite charger exchanged for one laspistol and one charnabal tabar, it may have its charnabal tabar exchanged fo...",
                     "perModel": {
                         "type": "single"
                     },
@@ -8187,7 +7302,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "If the First Prime in this Unit has had its volkite charger exchanged for one laspistol and one charnabal tabar, it may have its laspistol exchanged for one ...",
+                    "name": "Auxilia Pistols",
+                    "description": "If the First Prime in this Unit has had its volkite charger exchanged for one laspistol and one charnabal tabar, it may have its laspistol exchanged for one ...",
                     "perModel": {
                         "type": "single"
                     },
@@ -8222,17 +7338,19 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit may have its volkite charger exchanged for one storm axe.",
+                    "name": "Volkite charger to storm axe",
+                    "description": "Any Model in this Unit may have its volkite charger exchanged for one storm axe.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["volkite-charger"]
                         },
                         "storm-axe": {
                             "id": "storm-axe",
@@ -8240,37 +7358,19 @@
                             "cost": {
                                 "points": 3
                             },
-                            "weaponRefs": ["storm-axe"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "storm-axe"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["storm-axe"]
                         }
                     },
-                    "default": "none"
+                    "default": "volkite-charger"
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "One Veletarii in this Unit may have one command vox selected for it.",
+                    "name": "Command vox",
+                    "description": "One Veletarii in this Unit may have one command vox selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "command-vox": {
                             "id": "command-vox",
                             "name": "command vox",
@@ -8281,22 +7381,16 @@
                         }
                     },
                     "profileId": "veletarii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "One Veletarii in this Unit may have one augury scanner selected for it.",
+                    "name": "Augury scanner",
+                    "description": "One Veletarii in this Unit may have one augury scanner selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "augury-scanner": {
                             "id": "augury-scanner",
                             "name": "augury scanner",
@@ -8307,22 +7401,16 @@
                         }
                     },
                     "profileId": "veletarii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "One Veletarii in this Unit may have one auxilia vexilla selected for it.",
+                    "name": "Auxilia vexilla",
+                    "description": "One Veletarii in this Unit may have one auxilia vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "auxilia-vexilla": {
                             "id": "auxilia-vexilla",
                             "name": "auxilia vexilla",
@@ -8333,7 +7421,7 @@
                         }
                     },
                     "profileId": "veletarii",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -8429,11 +7517,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "volkite-charger",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -8446,18 +7529,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Veletarii Prime in this Unit may have its volkite charger exchanged for one laspistol and one charnabal tabar.",
+                    "name": "Swap to laspistol and charnabal tabar",
+                    "description": "The Veletarii Prime in this Unit may have its volkite charger exchanged for one laspistol and one charnabal tabar.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "laspistol-and-one-charnabal-tabar": {
                             "id": "laspistol-and-one-charnabal-tabar",
                             "name": "laspistol and one charnabal tabar",
@@ -8480,11 +7557,12 @@
                         }
                     },
                     "profileId": "veletarii-prime",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "If the Veletarii Prime in this Unit has had its volkite charger exchanged for one laspistol and one charnabal tabar, it may have its charnabal tabar exchange...",
+                    "name": "Auxilia Melee Weapons",
+                    "description": "If the Veletarii Prime in this Unit has had its volkite charger exchanged for one laspistol and one charnabal tabar, it may have its charnabal tabar exchange...",
                     "perModel": {
                         "type": "single"
                     },
@@ -8519,7 +7597,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "If the Veletarii Prime in this Unit has had its volkite charger exchanged for one laspistol and one charnabal tabar, it may have its laspistol exchanged for ...",
+                    "name": "Auxilia Pistols",
+                    "description": "If the Veletarii Prime in this Unit has had its volkite charger exchanged for one laspistol and one charnabal tabar, it may have its laspistol exchanged for ...",
                     "perModel": {
                         "type": "single"
                     },
@@ -8554,17 +7633,19 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit may have its volkite charger exchanged for one storm axe.",
+                    "name": "Volkite charger to storm axe",
+                    "description": "Any Model in this Unit may have its volkite charger exchanged for one storm axe.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["volkite-charger"]
                         },
                         "storm-axe": {
                             "id": "storm-axe",
@@ -8572,37 +7653,19 @@
                             "cost": {
                                 "points": 3
                             },
-                            "weaponRefs": ["storm-axe"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "storm-axe"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["storm-axe"]
                         }
                     },
-                    "default": "none"
+                    "default": "volkite-charger"
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "One Veletarii in this Unit may have one vox interlock selected for it.",
+                    "name": "Vox interlock",
+                    "description": "One Veletarii in this Unit may have one vox interlock selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vox-interlock": {
                             "id": "vox-interlock",
                             "name": "vox interlock",
@@ -8613,22 +7676,16 @@
                         }
                     },
                     "profileId": "veletarii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "One Veletarii in this Unit may have one auxilia vexilla selected for it.",
+                    "name": "Auxilia vexilla",
+                    "description": "One Veletarii in this Unit may have one auxilia vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "auxilia-vexilla": {
                             "id": "auxilia-vexilla",
                             "name": "auxilia vexilla",
@@ -8639,7 +7696,7 @@
                         }
                     },
                     "profileId": "veletarii",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -8758,18 +7815,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Veletarii Prime in this Unit may have its heavy flamer exchanged for one laspistol and one charnabal tabar.",
+                    "name": "Swap to laspistol and charnabal tabar",
+                    "description": "The Veletarii Prime in this Unit may have its heavy flamer exchanged for one laspistol and one charnabal tabar.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "laspistol-and-one-charnabal-tabar": {
                             "id": "laspistol-and-one-charnabal-tabar",
                             "name": "laspistol and one charnabal tabar",
@@ -8792,11 +7843,12 @@
                         }
                     },
                     "profileId": "veletarii-prime",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "If the Veletarii Prime in this Unit has had its heavy flamer exchanged for one laspistol and one charnabal tabar, it may have its charnabal tabar exchanged f...",
+                    "name": "Auxilia Melee Weapons",
+                    "description": "If the Veletarii Prime in this Unit has had its heavy flamer exchanged for one laspistol and one charnabal tabar, it may have its charnabal tabar exchanged f...",
                     "perModel": {
                         "type": "single"
                     },
@@ -8831,7 +7883,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "If the Veletarii Prime in this Unit has had its heavy flamer exchanged for one laspistol and one charnabal tabar, it may have its laspistol exchanged for one...",
+                    "name": "Auxilia Pistols",
+                    "description": "If the Veletarii Prime in this Unit has had its heavy flamer exchanged for one laspistol and one charnabal tabar, it may have its laspistol exchanged for one...",
                     "perModel": {
                         "type": "single"
                     },
@@ -8866,18 +7919,12 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "One Veletarii in this Unit may have one vox interlock selected for it.",
+                    "name": "Vox interlock",
+                    "description": "One Veletarii in this Unit may have one vox interlock selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vox-interlock": {
                             "id": "vox-interlock",
                             "name": "vox interlock",
@@ -8888,22 +7935,16 @@
                         }
                     },
                     "profileId": "veletarii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "One Veletarii in this Unit may have one auxilia vexilla selected for it.",
+                    "name": "Auxilia vexilla",
+                    "description": "One Veletarii in this Unit may have one auxilia vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "auxilia-vexilla": {
                             "id": "auxilia-vexilla",
                             "name": "auxilia vexilla",
@@ -8914,7 +7955,7 @@
                         }
                     },
                     "profileId": "veletarii",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         }
