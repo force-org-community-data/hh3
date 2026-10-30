@@ -68,18 +68,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have sonic shriekers selected for it.",
+                    "name": "Sonic shriekers",
+                    "description": "This Model may have sonic shriekers selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "sonic-shriekers": {
                             "id": "sonic-shriekers",
                             "name": "sonic shriekers",
@@ -89,7 +83,7 @@
                             "equipmentRefs": ["sonic-shriekers"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             },
             "when": {
@@ -164,11 +158,6 @@
                 },
                 {
                     "kind": "weapon",
-                    "id": "chainsword",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -181,17 +170,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Inductii in this Unit may have its chainsword exchanged for one charnabal sabre.",
+                    "name": "Chainsword to charnabal sabre",
+                    "description": "Any Inductii in this Unit may have its chainsword exchanged for one charnabal sabre.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["chainsword"]
                         },
                         "charnabal-sabre": {
                             "id": "charnabal-sabre",
@@ -199,27 +190,17 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["charnabal-sabre"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "chainsword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "charnabal-sabre"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["charnabal-sabre"]
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none"
+                    "multiSelect": true,
+                    "default": "chainsword"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
+                    "name": "Chainsword exchange",
+                    "description": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 4
@@ -273,11 +254,13 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "inductii"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "name": "Legion Pistols",
+                    "description": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 4
@@ -290,16 +273,73 @@
                                 "points": 0
                             }
                         },
-                        "legion-pistols": {
-                            "id": "legion-pistols",
-                            "target": "legion-pistols"
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "Plasma pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        },
+                        "hand-flamer": {
+                            "id": "hand-flamer",
+                            "name": "Hand flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hand-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-serpenta": {
+                            "id": "volkite-serpenta",
+                            "name": "Volkite serpenta",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-serpenta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -429,11 +469,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "palatine-blade",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "bolt-pistol",
                     "perModel": true
                 },
@@ -451,17 +486,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its Palatine blade exchanged for one of the following:",
+                    "name": "Palatine blade exchange",
+                    "description": "Any Model in this Unit may have its Palatine blade exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "palatine-blade": {
+                            "id": "palatine-blade",
+                            "name": "Palatine blade",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["palatine-blade"]
                         },
                         "power-weapon": {
                             "id": "power-weapon",
@@ -469,19 +506,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "equipmentRefs": ["power-weapons"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "palatine-blade"
-                                    },
-                                    "to": {
-                                        "kind": "equipment",
-                                        "id": "power-weapons"
-                                    }
-                                }
-                            ]
+                            "equipmentRefs": ["power-weapons"]
                         },
                         "phoenix-rapier": {
                             "id": "phoenix-rapier",
@@ -489,19 +514,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["phoenix-rapier"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "palatine-blade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "phoenix-rapier"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["phoenix-rapier"]
                         },
                         "phoenix-power-spear": {
                             "id": "phoenix-power-spear",
@@ -509,26 +522,15 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["phoenix-power-spear"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "palatine-blade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "phoenix-power-spear"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["phoenix-power-spear"]
                         }
                     },
-                    "default": "none"
+                    "default": "palatine-blade"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "The Palatine Prefector in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "name": "Legion Pistols",
+                    "description": "The Palatine Prefector in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
                     "perModel": {
                         "type": "single"
                     },
@@ -540,16 +542,73 @@
                                 "points": 0
                             }
                         },
-                        "legion-pistols": {
-                            "id": "legion-pistols",
-                            "target": "legion-pistols"
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "Plasma pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        },
+                        "hand-flamer": {
+                            "id": "hand-flamer",
+                            "name": "Hand flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hand-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-serpenta": {
+                            "id": "volkite-serpenta",
+                            "name": "Volkite serpenta",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-serpenta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
+                    "name": "Sonic shriekers / Sonic lance",
+                    "description": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
                     "perModel": {
                         "type": "single"
                     },
@@ -688,7 +747,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Every Model in the Unit must have one of the following options selected for it. Every Model in this Unit must have the same item selected for it:",
+                    "name": "Volkite culverin / Plasma cannon",
+                    "description": "Every Model in the Unit must have one of the following options selected for it. Every Model in this Unit must have the same item selected for it:",
                     "perModel": {
                         "type": "every"
                     },
@@ -730,7 +790,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "The Novaetor in this Unit may have one item from the Legion Sergeant Melee Weapons list selected for it.",
+                    "name": "Legion Sergeant Melee Weapons",
+                    "description": "The Novaetor in this Unit may have one item from the Legion Sergeant Melee Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -752,18 +813,12 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "One Sun Killer in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Sun Killer in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -774,11 +829,12 @@
                         }
                     },
                     "profileId": "sun-killer",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Up to two Sun Killers in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Sun Killers in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -1051,7 +1107,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Orchestrator in this Unit may have one of the following selected for it:",
+                    "name": "Chainsword / Power weapon",
+                    "description": "The Orchestrator in this Unit may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -1267,16 +1324,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "palatine-blade",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -1284,22 +1331,55 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "palatine-warrior"
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "Any Model in this Unit may have its Palatine blade exchanged for one Phoenix power spear.",
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "The Palatine Prefector in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "profileId": "palatine-prefector"
+                },
+                "palatine-blade": {
+                    "id": "palatine-blade",
+                    "name": "Palatine blade",
+                    "description": "Any Model in this Unit may have its Palatine blade exchanged for one Phoenix power spear.",
                     "perModel": {
                         "type": "some"
                     },
+                    "default": "palatine-blade",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "palatine-blade": {
+                            "id": "palatine-blade",
+                            "name": "Palatine blade",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["palatine-blade"]
                         },
                         "phoenix-power-spear": {
                             "id": "phoenix-power-spear",
@@ -1307,48 +1387,30 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["phoenix-power-spear"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "palatine-blade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "phoenix-power-spear"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "The Palatine Prefector in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
-                    "perModel": {
-                        "type": "single"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                            "weaponRefs": ["phoenix-power-spear"]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "power weapon",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "equipmentRefs": ["power-weapons"]
                         },
-                        "legion-pistols": {
-                            "id": "legion-pistols",
-                            "target": "legion-pistols"
+                        "phoenix-rapier": {
+                            "id": "phoenix-rapier",
+                            "name": "Phoenix rapier",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["phoenix-rapier"]
                         }
-                    },
-                    "profileId": "palatine-prefector",
-                    "default": "none"
+                    }
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
+                    "name": "Sonic shriekers / Sonic lance",
+                    "description": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
                     "perModel": {
                         "type": "single"
                     },
@@ -1371,63 +1433,6 @@
                         }
                     },
                     "default": "sonic-shriekers"
-                },
-                "option-4": {
-                    "id": "option-4",
-                    "name": "Any Model in this Unit may have its Palatine blade exchanged for one power weapon or one Phoenix rapier.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "power-weapon": {
-                            "id": "power-weapon",
-                            "name": "power weapon",
-                            "cost": {
-                                "points": 0
-                            },
-                            "equipmentRefs": ["power-weapons"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "palatine-blade"
-                                    },
-                                    "to": {
-                                        "kind": "equipment",
-                                        "id": "power-weapons"
-                                    }
-                                }
-                            ]
-                        },
-                        "phoenix-rapier": {
-                            "id": "phoenix-rapier",
-                            "name": "Phoenix rapier",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["phoenix-rapier"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "palatine-blade"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "phoenix-rapier"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
                 }
             }
         },
@@ -1536,7 +1541,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
+                    "name": "Sonic shriekers / Sonic lance",
+                    "description": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
                     "perModel": {
                         "type": "single"
                     },
@@ -1562,18 +1568,12 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "The Phoenix Champion in this Unit may have one grenade harness selected for it.",
+                    "name": "Grenade harness",
+                    "description": "The Phoenix Champion in this Unit may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "grenade-harness": {
                             "id": "grenade-harness",
                             "name": "grenade harness",
@@ -1584,7 +1584,7 @@
                         }
                     },
                     "profileId": "phoenix-champion",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },

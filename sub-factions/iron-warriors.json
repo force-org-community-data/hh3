@@ -161,22 +161,42 @@
                     }
                 }
             ],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "combi-bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "thunder-hammer",
-                    "perModel": true
-                }
-            ],
             "upgrades": {
+                "combi-bolter": {
+                    "id": "combi-bolter",
+                    "name": "Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    }
+                },
                 "option-1": {
                     "id": "option-1",
-                    "name": "For every five Models in the Unit, one Dominator may have its combi-bolter exchanged for one of the following:",
+                    "name": "Combi-bolter exchange 1",
+                    "description": "For every five Models in the Unit, one Dominator may have its combi-bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
@@ -253,17 +273,19 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Any Model in this Unit may have its thunder hammer exchanged for one chainfist.",
+                    "name": "Thunder hammer to chainfist",
+                    "description": "Any Model in this Unit may have its thunder hammer exchanged for one chainfist.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["thunder-hammer"]
                         },
                         "chainfist": {
                             "id": "chainfist",
@@ -271,63 +293,10 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["chainfist"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "chainfist"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["chainfist"]
                         }
                     },
-                    "default": "none"
-                },
-                "option-3": {
-                    "id": "option-3",
-                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "legion-combi-weapons": {
-                            "id": "legion-combi-weapons",
-                            "target": "legion-combi-weapons"
-                        },
-                        "volkite-charger": {
-                            "id": "volkite-charger",
-                            "name": "volkite charger",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["volkite-charger"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
+                    "default": "thunder-hammer"
                 }
             }
         },
@@ -397,11 +366,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "bolt-pistol",
                     "perModel": true
                 },
@@ -419,17 +383,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its bolter exchanged for one Astartes shotgun.",
+                    "name": "Bolter to astartes shotgun",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one Astartes shotgun.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolter"]
                         },
                         "astartes-shotgun": {
                             "id": "astartes-shotgun",
@@ -437,37 +403,19 @@
                             "cost": {
                                 "points": 2
                             },
-                            "weaponRefs": ["astartes-shotgun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "astartes-shotgun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["astartes-shotgun"]
                         }
                     },
-                    "default": "none"
+                    "default": "bolter"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Inductii in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Inductii in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -478,11 +426,12 @@
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -505,7 +454,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "name": "Bayonet / Chain Bayonet",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -646,11 +596,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "shrapnel-cannon",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "bolt-pistol",
                     "perModel": true
                 },
@@ -666,9 +611,53 @@
                 }
             ],
             "upgrades": {
+                "shrapnel-cannon": {
+                    "id": "shrapnel-cannon",
+                    "name": "Shrapnel cannon",
+                    "description": "Every Model in this Unit may have its shrapnel cannon replaced with one of the following options. Every Model in this Unit must have the same option selected...",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "default": "shrapnel-cannon",
+                    "options": {
+                        "shrapnel-cannon": {
+                            "id": "shrapnel-cannon",
+                            "name": "Shrapnel cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["shrapnel-cannon"]
+                        },
+                        "autocannon": {
+                            "id": "autocannon",
+                            "name": "Autocannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["autocannon"]
+                        },
+                        "missile-launcher": {
+                            "id": "missile-launcher",
+                            "name": "Missile launcher",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["missile-launcher"]
+                        },
+                        "lascannon": {
+                            "id": "lascannon",
+                            "name": "Lascannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["lascannon"]
+                        }
+                    }
+                },
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Iron Havoc Sergeant in this Unit may have one item from the Legion Sergeant Melee Weapons list selected for it.",
+                    "name": "Legion Sergeant Melee Weapons",
+                    "description": "The Iron Havoc Sergeant in this Unit may have one item from the Legion Sergeant Melee Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -690,18 +679,12 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Iron Havoc in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Iron Havoc in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -712,11 +695,12 @@
                         }
                     },
                     "profileId": "iron-havoc",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Up to two Iron Havocs in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Iron Havocs in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -736,76 +720,6 @@
                     },
                     "profileId": "iron-havoc",
                     "default": "none"
-                },
-                "option-4": {
-                    "id": "option-4",
-                    "name": "Every Model in this Unit may have its shrapnel cannon replaced with one of the following options. Every Model in this Unit must have the same option selected...",
-                    "perModel": {
-                        "type": "every"
-                    },
-                    "options": {
-                        "autocannon": {
-                            "id": "autocannon",
-                            "name": "Autocannon",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["autocannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "shrapnel-cannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "autocannon"
-                                    }
-                                }
-                            ]
-                        },
-                        "missile-launcher": {
-                            "id": "missile-launcher",
-                            "name": "Missile launcher",
-                            "cost": {
-                                "points": 5
-                            },
-                            "weaponRefs": ["missile-launcher"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "shrapnel-cannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "missile-launcher"
-                                    }
-                                }
-                            ]
-                        },
-                        "lascannon": {
-                            "id": "lascannon",
-                            "name": "Lascannon",
-                            "cost": {
-                                "points": 15
-                            },
-                            "weaponRefs": ["lascannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "shrapnel-cannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "lascannon"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "autocannon"
                 }
             }
         },
@@ -851,14 +765,6 @@
             "traits": ["Iron Warriors", "Master of the Legion"],
             "defaultWargear": [
                 {
-                    "kind": "weapon",
-                    "id": "bolter"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "bolt-pistol"
-                },
-                {
                     "kind": "equipment",
                     "id": "servo-arm"
                 },
@@ -880,19 +786,22 @@
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "This Model may have its bolter and/or bolt pistol exchanged for one paragon blade, one archaeotech pistol or one item from the...",
+                "bolter": {
+                    "id": "bolter",
+                    "name": "Bolter",
+                    "description": "This Model may have its bolter and/or bolt pistol exchanged for one paragon blade, one archaeotech pistol or one item from the...",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "bolter",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolter"]
                         },
                         "legion-officer-wargear": {
                             "id": "legion-officer-wargear",
@@ -904,19 +813,7 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["paragon-blade"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "paragon-blade"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["paragon-blade"]
                         },
                         "archaeotech-pistol": {
                             "id": "archaeotech-pistol",
@@ -924,36 +821,7 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["archaeotech-pistol"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "archaeotech-pistol"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "This Model may have its bolter exchanged for one item from the Legion Combi-weapons list or one of the following:",
-                    "perModel": {
-                        "type": "single"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
+                            "weaponRefs": ["archaeotech-pistol"]
                         },
                         "astartes-shotgun": {
                             "id": "astartes-shotgun",
@@ -961,19 +829,7 @@
                             "cost": {
                                 "points": 2
                             },
-                            "weaponRefs": ["astartes-shotgun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "astartes-shotgun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["astartes-shotgun"]
                         },
                         "volkite-charger": {
                             "id": "volkite-charger",
@@ -981,78 +837,81 @@
                             "cost": {
                                 "points": 2
                             },
-                            "weaponRefs": ["volkite-charger"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["volkite-charger"]
                         },
                         "legion-combi-weapons": {
                             "id": "legion-combi-weapons",
                             "target": "legion-combi-weapons"
                         }
+                    }
+                },
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolter and/or bolt pistol exchanged for one paragon blade, one archaeotech pistol or one item from the...",
+                    "perModel": {
+                        "type": "single"
                     },
-                    "default": "none"
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        },
+                        "paragon-blade": {
+                            "id": "paragon-blade",
+                            "name": "paragon blade",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["paragon-blade"]
+                        },
+                        "archaeotech-pistol": {
+                            "id": "archaeotech-pistol",
+                            "name": "archaeotech pistol",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["archaeotech-pistol"]
+                        }
+                    }
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have its bolter and bolt pistol exchanged for one pair of lightning claws.",
+                    "name": "Swap to pair of lightning claws",
+                    "description": "This Model may have its bolter and bolt pistol exchanged for one pair of lightning claws.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "pair-of-lightning-claws": {
                             "id": "pair-of-lightning-claws",
                             "name": "pair of lightning claws",
                             "cost": {
                                 "points": 20
                             },
-                            "weaponRefs": ["pair-of-lightning-claws"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-lightning-claws"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["pair-of-lightning-claws"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true,
+                    "replaces": ["bolter", "bolt-pistol"]
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "This Model may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -1062,11 +921,12 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "This Model with a bolter may have one of the following selected for it:",
+                    "name": "Bayonet / Chain bayonet",
+                    "description": "This Model with a bolter may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -1109,18 +969,12 @@
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "This Model may have a cyber-familiar selected for it.",
+                    "name": "Cyber-familiar",
+                    "description": "This Model may have a cyber-familiar selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "cyber-familiar": {
                             "id": "cyber-familiar",
                             "name": "cyber-familiar",
@@ -1130,7 +984,7 @@
                             "equipmentRefs": ["cyber-familiar"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1279,18 +1133,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have Forgebreaker Desecrated selected for it.",
+                    "name": "Forgebreaker Desecrated",
+                    "description": "This Model may have Forgebreaker Desecrated selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "forgebreaker-desecrated": {
                             "id": "forgebreaker-desecrated",
                             "name": "Forgebreaker Desecrated",
@@ -1300,7 +1148,7 @@
                             "weaponRefs": ["forgebreaker-desecrated"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             },
             "limit": {
@@ -1354,8 +1202,8 @@
             "traits": ["Traitor", "Iron Warriors", "Smokescreen"],
             "defaultWargear": [
                 {
-                    "kind": "equipment",
-                    "id": "centreline-mounted-volcano-cannon"
+                    "kind": "weapon",
+                    "id": "volcano-cannon"
                 },
                 {
                     "kind": "weapon",
@@ -1365,7 +1213,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have one of the following selected for it:",
+                    "name": "Sponson lascannon and bolters",
+                    "description": "This Model may have one of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -1398,7 +1247,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model may have one item from the Legion Pintle Weapons list selected for it.",
+                    "name": "Legion Pintle Weapons",
+                    "description": "This Model may have one item from the Legion Pintle Weapons list selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -1419,7 +1269,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have any of the following selected for it:",
+                    "name": "One Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have any of the following selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -1579,22 +1430,13 @@
                     "kind": "weapon",
                     "id": "tyrant-rocket-launcher",
                     "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "combi-bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "power-fist",
-                    "perModel": true
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "name": "Legion Combi-weapons",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "some"
                     },
@@ -1615,18 +1457,12 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "The Siege Master in this Unit may have one omni-scope selected for it.",
+                    "name": "Omni-scope",
+                    "description": "The Siege Master in this Unit may have one omni-scope selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "omni-scope": {
                             "id": "omni-scope",
                             "name": "omni-scope",
@@ -1637,22 +1473,16 @@
                         }
                     },
                     "profileId": "siege-master",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "The Siege Master in this Unit may have one grenade harness selected for it.",
+                    "name": "Grenade harness",
+                    "description": "The Siege Master in this Unit may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "grenade-harness": {
                             "id": "grenade-harness",
                             "name": "grenade harness",
@@ -1663,21 +1493,23 @@
                         }
                     },
                     "profileId": "siege-master",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit may have its combi-bolter and power fist exchanged for one pair of lightning claws.",
+                    "name": "Swap to pair of lightning claws",
+                    "description": "Any Model in this Unit may have its combi-bolter and power fist exchanged for one pair of lightning claws.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["combi-bolter"]
                         },
                         "pair-of-lightning-claws": {
                             "id": "pair-of-lightning-claws",
@@ -1685,36 +1517,26 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["pair-of-lightning-claws"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-lightning-claws"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["pair-of-lightning-claws"]
                         }
                     },
-                    "default": "none"
+                    "default": "combi-bolter"
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Any Model in this Unit may have its power fist exchanged for one chainfist.",
+                    "name": "Power fist to chainfist",
+                    "description": "Any Model in this Unit may have its power fist exchanged for one chainfist.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["power-fist"]
                         },
                         "chainfist": {
                             "id": "chainfist",
@@ -1722,22 +1544,10 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["chainfist"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "power-fist"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "chainfist"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["chainfist"]
                         }
                     },
-                    "default": "none"
+                    "default": "power-fist"
                 }
             }
         },
@@ -1797,7 +1607,7 @@
                     "id": "graviton-crusher"
                 },
                 {
-                    "kind": "equipment",
+                    "kind": "weapon",
                     "id": "combi-grav"
                 },
                 {
@@ -1816,18 +1626,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have a cyber-familiar selected for it.",
+                    "name": "Cyber-familiar",
+                    "description": "This Model may have a cyber-familiar selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "cyber-familiar": {
                             "id": "cyber-familiar",
                             "name": "cyber-familiar",
@@ -1837,7 +1641,7 @@
                             "equipmentRefs": ["cyber-familiar"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         }
@@ -2149,11 +1953,6 @@
             "name": "Karceri Battle Shield",
             "text": ""
         },
-        "centreline-mounted-volcano-cannon": {
-            "id": "centreline-mounted-volcano-cannon",
-            "name": "Centreline Mounted volcano cannon",
-            "text": ""
-        },
         "omni-scope": {
             "id": "omni-scope",
             "name": "omni-scope",
@@ -2398,7 +2197,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-flamer"]
+                    "weaponRefs": ["combi-flamer"]
                 },
                 "pintle-mounted-combi-plasma": {
                     "id": "pintle-mounted-combi-plasma",
@@ -2406,7 +2205,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-plasma"]
+                    "weaponRefs": ["combi-plasma"]
                 },
                 "pintle-mounted-combi-melta": {
                     "id": "pintle-mounted-combi-melta",
@@ -2414,7 +2213,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-melta"]
+                    "weaponRefs": ["combi-melta"]
                 },
                 "pintle-mounted-combi-volkite": {
                     "id": "pintle-mounted-combi-volkite",
@@ -2422,7 +2221,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-volkite"]
+                    "weaponRefs": ["combi-volkite"]
                 },
                 "pintle-mounted-havoc-launcher": {
                     "id": "pintle-mounted-havoc-launcher",
@@ -2706,11 +2505,6 @@
             "id": "lair-of-the-iron-tyrant",
             "name": "Lair of the Iron Tyrant",
             "text": "Only Perturabo or Domitar-ferrum Models may Embark on a Model with this Special Rule."
-        },
-        "macro-auspex": {
-            "id": "macro-auspex",
-            "name": "Macro-auspex",
-            "text": "When not attacking Titans, Knights or Super-heavies, a Weapon with this Special Rule must make Snap Shots. If the target of a Shooting Attack is not a Unit entirely composed of Models with the Titan, Knight or Super-heavy Sub-Type or other Models with a Base Wounds Characteristic of 10 or more, then all attacks made for a Weapon with this Special Rule must be made as Snap Shots."
         },
         "the-bitter-end": {
             "id": "the-bitter-end",

@@ -144,16 +144,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "chainsword",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -164,46 +154,68 @@
                 }
             ],
             "upgrades": {
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "Replaces the bolt pistol",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        }
+                    }
+                },
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "description": "Replaces the chainsword",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "chainsword",
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        }
+                    }
+                },
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its chainsword and bolt pistol exchanged for one heavy chainaxe.",
+                    "name": "Swap to heavy chainaxe",
+                    "description": "Any Model in this Unit may have its chainsword and bolt pistol exchanged for one heavy chainaxe.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "heavy-chainaxe": {
                             "id": "heavy-chainaxe",
                             "name": "heavy chainaxe",
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["heavy-chainaxe"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "chainsword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-chainaxe"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-chainaxe"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true,
+                    "replaces": ["bolt-pistol", "chainsword"]
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
+                    "name": "Chainsword exchange",
+                    "description": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 4
@@ -281,7 +293,8 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "name": "Legion Pistols",
+                    "description": "For every four Models in this Unit, one Inductii in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 4
@@ -294,27 +307,77 @@
                                 "points": 0
                             }
                         },
-                        "legion-pistols": {
-                            "id": "legion-pistols",
-                            "target": "legion-pistols"
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "Plasma pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        },
+                        "hand-flamer": {
+                            "id": "hand-flamer",
+                            "name": "Hand flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hand-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-serpenta": {
+                            "id": "volkite-serpenta",
+                            "name": "Volkite serpenta",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-serpenta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "One Inductii in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Inductii in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -325,11 +388,12 @@
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -594,11 +658,6 @@
                 },
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -609,19 +668,22 @@
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one combat shield.",
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "Any Model in this Unit may have its bolt pistol exchanged for one combat shield.",
                     "perModel": {
                         "type": "some"
                     },
+                    "default": "bolt-pistol",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolt-pistol"]
                         },
                         "combat-shield": {
                             "id": "combat-shield",
@@ -629,36 +691,7 @@
                             "cost": {
                                 "points": 2
                             },
-                            "equipmentRefs": ["combat-shield"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "equipment",
-                                        "id": "combat-shield"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one inferno pistol or for one item from the Legion Pistols list.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
+                            "equipmentRefs": ["combat-shield"]
                         },
                         "legion-pistols": {
                             "id": "legion-pistols",
@@ -670,37 +703,18 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["inferno-pistol"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "inferno-pistol"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["inferno-pistol"]
                         }
-                    },
-                    "default": "none"
+                    }
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Every Model in this Unit may have melta bombs selected for them.",
+                    "name": "Melta bombs",
+                    "description": "Every Model in this Unit may have melta bombs selected for them.",
                     "perModel": {
                         "type": "every"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -710,48 +724,48 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "For every five Models in this Unit, one Model in this Unit may have its perdition weapon exchanged for one paragon blade.",
+                    "name": "Paragon blade",
+                    "description": "For every five Models in this Unit, one Model in this Unit may have its perdition weapon exchanged for one paragon blade.",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "paragon-blade": {
                             "id": "paragon-blade",
                             "name": "paragon blade",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["paragon-blade"]
+                            "weaponRefs": ["paragon-blade"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "equipment",
+                                        "id": "perdition-weapons"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "paragon-blade"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "One Model in this Unit may have its perdition weapon and bolt pistol exchanged for one Legion standard and one power weapon.",
+                    "name": "Legion standard and power weapon",
+                    "description": "One Model in this Unit may have its perdition weapon and bolt pistol exchanged for one Legion standard and one power weapon.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-standard-and-one-power-weapon": {
                             "id": "legion-standard-and-one-power-weapon",
                             "name": "Legion standard and one power weapon",
@@ -776,7 +790,7 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -825,7 +839,7 @@
                     "id": "the-encarmine-warblade"
                 },
                 {
-                    "kind": "equipment",
+                    "kind": "weapon",
                     "id": "combi-flamer"
                 },
                 {
@@ -899,30 +913,24 @@
                 {
                     "kind": "weapon",
                     "id": "paired-talons-of-perdition"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "heavy-flamer"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "heavy-flamer"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Both of this Model’s heavy flamers may be exchanged for one of the following:",
+                    "name": "Heavy flamers exchange",
+                    "description": "Both of this Model’s heavy flamers may be exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Two heavy flamers",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["heavy-flamer", "heavy-flamer"]
                         },
                         "two-meltaguns": {
                             "id": "two-meltaguns",
@@ -941,7 +949,7 @@
                             "weaponRefs": ["iliastus-assault-cannon"]
                         }
                     },
-                    "default": "none"
+                    "default": "heavy-flamer"
                 }
             }
         },
@@ -1082,18 +1090,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Crimson Exemplar in this Unit may have its power sword and Coriolis pattern power shield exchanged for one Perdition weapon.",
+                    "name": "Perdition weapon",
+                    "description": "The Crimson Exemplar in this Unit may have its power sword and Coriolis pattern power shield exchanged for one Perdition weapon.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "perdition-weapon": {
                             "id": "perdition-weapon",
                             "name": "Perdition weapon",
@@ -1116,11 +1118,12 @@
                         }
                     },
                     "profileId": "crimson-exemplar",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "For every five Models in this Unit, one Crimson Paladin in this Unit may have its Coriolis pattern power shield exchanged for one of the following:",
+                    "name": "Coriolis pattern power shield exchange",
+                    "description": "For every five Models in this Unit, one Crimson Paladin in this Unit may have its Coriolis pattern power shield exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -1139,7 +1142,19 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["heavy-flamer"]
+                            "weaponRefs": ["heavy-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "equipment",
+                                        "id": "coriolis-pattern-power-shield"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-flamer"
+                                    }
+                                }
+                            ]
                         },
                         "iliastus-assault-cannon": {
                             "id": "iliastus-assault-cannon",
@@ -1147,7 +1162,19 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["iliastus-assault-cannon"]
+                            "weaponRefs": ["iliastus-assault-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "equipment",
+                                        "id": "coriolis-pattern-power-shield"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "iliastus-assault-cannon"
+                                    }
+                                }
+                            ]
                         },
                         "plasma-blaster": {
                             "id": "plasma-blaster",
@@ -1155,14 +1182,27 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["plasma-blaster"]
+                            "weaponRefs": ["plasma-blaster"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "equipment",
+                                        "id": "coriolis-pattern-power-shield"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-blaster"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Up to two Crimson Paladins in this Unit may have their power sword exchanged for one of the following:",
+                    "name": "Power sword exchange",
+                    "description": "Up to two Crimson Paladins in this Unit may have their power sword exchanged for one of the following:",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -1221,18 +1261,12 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "The Crimson Exemplar in this Unit may have one grenade harness selected for it.",
+                    "name": "Grenade harness",
+                    "description": "The Crimson Exemplar in this Unit may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "grenade-harness": {
                             "id": "grenade-harness",
                             "name": "grenade harness",
@@ -1243,7 +1277,7 @@
                         }
                     },
                     "profileId": "crimson-exemplar",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1352,11 +1386,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "falling-star-power-spear",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "grenade-discharger",
                     "perModel": true
                 }
@@ -1364,18 +1393,12 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Dawnbreaker Champion in this Unit may have its Falling-star power spear exchanged for one Perdition weapon.",
+                    "name": "Swap to perdition weapon",
+                    "description": "The Dawnbreaker Champion in this Unit may have its Falling-star power spear exchanged for one Perdition weapon.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "perdition-weapon": {
                             "id": "perdition-weapon",
                             "name": "Perdition weapon",
@@ -1398,22 +1421,16 @@
                         }
                     },
                     "profileId": "dawnbreaker-champion",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Every Model in this Unit may have melta bombs selected for them per Unit.",
+                    "name": "Melta bombs",
+                    "description": "Every Model in this Unit may have melta bombs selected for them per Unit.",
                     "perModel": {
                         "type": "every"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -1423,21 +1440,23 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Any Model in this Unit may have its falling-star power spear exchanged for one pair of equinox blades.",
+                    "name": "Swap to pair of equinox blades",
+                    "description": "Any Model in this Unit may have its falling-star power spear exchanged for one pair of equinox blades.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "falling-star-power-spear": {
+                            "id": "falling-star-power-spear",
+                            "name": "Falling-star power spear",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["falling-star-power-spear"]
                         },
                         "pair-of-equinox-blades": {
                             "id": "pair-of-equinox-blades",
@@ -1445,22 +1464,10 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["pair-of-equinox-blades"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "falling-star-power-spear"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-equinox-blades"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["pair-of-equinox-blades"]
                         }
                     },
-                    "default": "none"
+                    "default": "falling-star-power-spear"
                 }
             }
         },
@@ -1602,10 +1609,6 @@
                 },
                 {
                     "kind": "weapon",
-                    "id": "the-blade-encarmine"
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades"
                 },
                 {
@@ -1616,17 +1619,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its The Blade Encarmine exchanged for one Spear of Telesto and one Moonsilver Blade.",
+                    "name": "Spear of Telesto and Moonsilver Blade",
+                    "description": "This Model may have its The Blade Encarmine exchanged for one Spear of Telesto and one Moonsilver Blade.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "the-blade-encarmine": {
+                            "id": "the-blade-encarmine",
+                            "name": "The Blade Encarmine",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["the-blade-encarmine"]
                         },
                         "spear-of-telesto-and-one-moonsilver-blade": {
                             "id": "spear-of-telesto-and-one-moonsilver-blade",
@@ -1637,22 +1642,10 @@
                             "weaponRefs": [
                                 "spear-of-telesto",
                                 "moonsilver-blade"
-                            ],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "the-blade-encarmine"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "spear-of-telesto"
-                                    }
-                                }
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "the-blade-encarmine"
                 }
             },
             "limit": {
@@ -1784,16 +1777,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "volkite-serpenta",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "volkite-serpenta",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "rad-grenades",
                     "perModel": true
                 },
@@ -1809,19 +1792,22 @@
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "Any Model in this Unit may have its two volkite serpenta s exchanged for one Erelim grenade launcher.",
+                "volkite-serpenta": {
+                    "id": "volkite-serpenta",
+                    "name": "Volkite serpenta",
+                    "description": "Any Model in this Unit may have its two volkite serpenta s exchanged for one Erelim grenade launcher.",
                     "perModel": {
                         "type": "some"
                     },
+                    "default": "volkite-serpenta",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "volkite-serpenta": {
+                            "id": "volkite-serpenta",
+                            "name": "Volkite serpenta",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["volkite-serpenta"]
                         },
                         "erelim-grenade-launcher": {
                             "id": "erelim-grenade-launcher",
@@ -1829,36 +1815,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["erelim-grenade-launcher"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-serpenta"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "erelim-grenade-launcher"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "Any Model in this Unit may have its two volkite serpentas exchanged for one of the following:",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
+                            "weaponRefs": ["erelim-grenade-launcher"]
                         },
                         "heavy-chainsword": {
                             "id": "heavy-chainsword",
@@ -1866,19 +1823,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["heavy-chainsword"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-serpenta"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-chainsword"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-chainsword"]
                         },
                         "heavy-flamer": {
                             "id": "heavy-flamer",
@@ -1886,19 +1831,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["heavy-flamer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-serpenta"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "heavy-flamer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["heavy-flamer"]
                         },
                         "rotor-cannon": {
                             "id": "rotor-cannon",
@@ -1906,19 +1839,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["rotor-cannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "volkite-serpenta"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "rotor-cannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["rotor-cannon"]
                         },
                         "iliastus-assault-cannon": {
                             "id": "iliastus-assault-cannon",
@@ -1926,7 +1847,32 @@
                             "cost": {
                                 "points": 20
                             },
-                            "weaponRefs": ["iliastus-assault-cannon"],
+                            "weaponRefs": ["iliastus-assault-cannon"]
+                        }
+                    }
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Legion Sergeant Melee Weapons",
+                    "description": "The Arch-Erelim in this Unit may have one of its volkite serpentas exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"],
                             "swaps": [
                                 {
                                     "from": {
@@ -1935,31 +1881,130 @@
                                     },
                                     "to": {
                                         "kind": "weapon",
-                                        "id": "iliastus-assault-cannon"
+                                        "id": "chainsword"
                                     }
                                 }
                             ]
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-3": {
-                    "id": "option-3",
-                    "name": "The Arch-Erelim in this Unit may have one of its volkite serpentas exchanged for one item from the Legion Sergeant Melee Weapons list.",
-                    "perModel": {
-                        "type": "single"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        },
+                        "chainaxe": {
+                            "id": "chainaxe",
+                            "name": "Chainaxe",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["chainaxe"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    }
+                                }
+                            ]
                         },
-                        "legion-sergeant-melee-weapons": {
-                            "id": "legion-sergeant-melee-weapons",
-                            "target": "legion-sergeant-melee-weapons"
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "charnabal-sabre"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-weapon": {
+                            "id": "power-weapon",
+                            "name": "Power weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["power-weapons"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "power-weapons"
+                                    }
+                                }
+                            ]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["thunder-hammer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["power-fist"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-fist"
+                                    }
+                                }
+                            ]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["lightning-claw"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "lightning-claw"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "profileId": "arch-erelim",
@@ -1967,18 +2012,12 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "The Arch-Erelim in this Unit may have one of its volkite serpentas exchanged for one plasma pistol.",
+                    "name": "Volkite serpentas to plasma pistol",
+                    "description": "The Arch-Erelim in this Unit may have one of its volkite serpentas exchanged for one plasma pistol.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "plasma-pistol": {
                             "id": "plasma-pistol",
                             "name": "plasma pistol",
@@ -2001,7 +2040,7 @@
                         }
                     },
                     "profileId": "arch-erelim",
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         }
@@ -2894,7 +2933,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-flamer"]
+                    "weaponRefs": ["combi-flamer"]
                 },
                 "pintle-mounted-combi-plasma": {
                     "id": "pintle-mounted-combi-plasma",
@@ -2902,7 +2941,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-plasma"]
+                    "weaponRefs": ["combi-plasma"]
                 },
                 "pintle-mounted-combi-melta": {
                     "id": "pintle-mounted-combi-melta",
@@ -2910,7 +2949,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-melta"]
+                    "weaponRefs": ["combi-melta"]
                 },
                 "pintle-mounted-combi-volkite": {
                     "id": "pintle-mounted-combi-volkite",
@@ -2918,7 +2957,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-volkite"]
+                    "weaponRefs": ["combi-volkite"]
                 },
                 "pintle-mounted-havoc-launcher": {
                     "id": "pintle-mounted-havoc-launcher",

@@ -134,27 +134,25 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "asphyx-bolt-cannon"
-                },
-                {
-                    "kind": "weapon",
                     "id": "achea-force-claws"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model’s Asphyx bolt cannon may be exchanged for one æther-fire cannon.",
+                    "name": "Æther-fire cannon",
+                    "description": "This Model’s Asphyx bolt cannon may be exchanged for one æther-fire cannon.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "asphyx-bolt-cannon": {
+                            "id": "asphyx-bolt-cannon",
+                            "name": "Asphyx Bolt Cannon",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["asphyx-bolt-cannon"]
                         },
                         "aether-fire-cannon": {
                             "id": "aether-fire-cannon",
@@ -165,7 +163,7 @@
                             "weaponRefs": ["aether-fire-cannon"]
                         }
                     },
-                    "default": "none"
+                    "default": "asphyx-bolt-cannon"
                 }
             }
         },
@@ -218,21 +216,14 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "gravis-bolt-cannon"
-                },
-                {
-                    "kind": "weapon",
                     "id": "gravis-force-blade"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "combi-bolter"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model’s Gravis bolt cannon may be exchanged for one of the following:",
+                    "name": "Gravis bolt cannon exchange",
+                    "description": "This Model’s Gravis bolt cannon may be exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
@@ -250,7 +241,19 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["gravis-melta-cannon"]
+                            "weaponRefs": ["gravis-melta-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "gravis-bolt-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "gravis-melta-cannon"
+                                    }
+                                }
+                            ]
                         },
                         "gravis-autocannon": {
                             "id": "gravis-autocannon",
@@ -258,7 +261,19 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["gravis-autocannon"]
+                            "weaponRefs": ["gravis-autocannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "gravis-bolt-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "gravis-autocannon"
+                                    }
+                                }
+                            ]
                         },
                         "gravis-plasma-cannon": {
                             "id": "gravis-plasma-cannon",
@@ -266,7 +281,19 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["gravis-plasma-cannon"]
+                            "weaponRefs": ["gravis-plasma-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "gravis-bolt-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "gravis-plasma-cannon"
+                                    }
+                                }
+                            ]
                         },
                         "conversion-beam-cannon": {
                             "id": "conversion-beam-cannon",
@@ -274,7 +301,19 @@
                             "cost": {
                                 "points": 20
                             },
-                            "weaponRefs": ["conversion-beam-cannon"]
+                            "weaponRefs": ["conversion-beam-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "gravis-bolt-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "conversion-beam-cannon"
+                                    }
+                                }
+                            ]
                         },
                         "twin-volkite-culverin": {
                             "id": "twin-volkite-culverin",
@@ -282,7 +321,19 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-volkite-culverin"]
+                            "weaponRefs": ["twin-volkite-culverin"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "gravis-bolt-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-volkite-culverin"
+                                    }
+                                }
+                            ]
                         },
                         "kheres-assault-cannon": {
                             "id": "kheres-assault-cannon",
@@ -290,7 +341,19 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["kheres-assault-cannon"]
+                            "weaponRefs": ["kheres-assault-cannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "gravis-bolt-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "kheres-assault-cannon"
+                                    }
+                                }
+                            ]
                         },
                         "twin-lascannon": {
                             "id": "twin-lascannon",
@@ -298,14 +361,27 @@
                             "cost": {
                                 "points": 20
                             },
-                            "weaponRefs": ["twin-lascannon"]
+                            "weaponRefs": ["twin-lascannon"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "gravis-bolt-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-lascannon"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "This Model’s combi-bolter may be exchanged for one of the following:",
+                    "name": "Combi-bolter exchange",
+                    "description": "This Model’s combi-bolter may be exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
@@ -323,7 +399,19 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["heavy-flamer"]
+                            "weaponRefs": ["heavy-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-flamer"
+                                    }
+                                }
+                            ]
                         },
                         "plasma-blaster": {
                             "id": "plasma-blaster",
@@ -331,7 +419,19 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["plasma-blaster"]
+                            "weaponRefs": ["plasma-blaster"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-blaster"
+                                    }
+                                }
+                            ]
                         },
                         "graviton-gun": {
                             "id": "graviton-gun",
@@ -339,7 +439,19 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["graviton-gun"]
+                            "weaponRefs": ["graviton-gun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "graviton-gun"
+                                    }
+                                }
+                            ]
                         },
                         "meltagun": {
                             "id": "meltagun",
@@ -347,25 +459,31 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["meltagun"]
+                            "weaponRefs": ["meltagun"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "meltagun"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "This Model may have one havoc launcher selected for it.",
+                    "name": "Havoc launcher",
+                    "description": "This Model may have one havoc launcher selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "havoc-launcher": {
                             "id": "havoc-launcher",
                             "name": "havoc launcher",
@@ -375,11 +493,12 @@
                             "weaponRefs": ["havoc-launcher"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "This Model may have one of the following Psychic Disciplines selected for it:",
+                    "name": "Biomancy / Pyromancy",
+                    "description": "This Model may have one of the following Psychic Disciplines selected for it:",
                     "perModel": {
                         "type": "single"
                     },
@@ -444,17 +563,19 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "This Model may have its Gravis bolt cannon exchanged for one æther-fire magna-cannon.",
+                    "name": "Swap to æther-fire magna-cannon",
+                    "description": "This Model may have its Gravis bolt cannon exchanged for one æther-fire magna-cannon.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "gravis-bolt-cannon": {
+                            "id": "gravis-bolt-cannon",
+                            "name": "Gravis bolt cannon",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["gravis-bolt-cannon"]
                         },
                         "aether-fire-magna-cannon": {
                             "id": "aether-fire-magna-cannon",
@@ -462,36 +583,26 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["aether-fire-magna-cannon"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "gravis-bolt-cannon"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "aether-fire-magna-cannon"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["aether-fire-magna-cannon"]
                         }
                     },
-                    "default": "none"
+                    "default": "gravis-bolt-cannon"
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "This Model may have its combi-bolter exchanged for one æther-fire blaster.",
+                    "name": "Combi-bolter to æther-fire blaster",
+                    "description": "This Model may have its combi-bolter exchanged for one æther-fire blaster.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["combi-bolter"]
                         },
                         "aether-fire-blaster": {
                             "id": "aether-fire-blaster",
@@ -499,22 +610,10 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["aether-fire-blaster"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "aether-fire-blaster"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["aether-fire-blaster"]
                         }
                     },
-                    "default": "none"
+                    "default": "combi-bolter"
                 }
             }
         },
@@ -630,7 +729,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Khenetai Blademaster may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "name": "Legion Pistols",
+                    "description": "The Khenetai Blademaster may have its bolt pistol exchanged for one item from the Legion Pistols list.",
                     "perModel": {
                         "type": "single"
                     },
@@ -642,16 +742,93 @@
                                 "points": 0
                             }
                         },
-                        "legion-pistols": {
-                            "id": "legion-pistols",
-                            "target": "legion-pistols"
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "Plasma pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["plasma-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
+                        },
+                        "hand-flamer": {
+                            "id": "hand-flamer",
+                            "name": "Hand flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hand-flamer"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    }
+                                }
+                            ]
+                        },
+                        "volkite-serpenta": {
+                            "id": "volkite-serpenta",
+                            "name": "Volkite serpenta",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-serpenta"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    }
+                                }
+                            ]
+                        },
+                        "aether-fire-pistol": {
+                            "id": "aether-fire-pistol",
+                            "name": "Æther-fire pistol",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["aether-fire-pistol"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "aether-fire-pistol"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "For every five Models in this Unit, one Model in this Unit may have its bolt pistol exchanged for one of the following:",
+                    "name": "Bolt pistol exchange",
+                    "description": "For every five Models in this Unit, one Model in this Unit may have its bolt pistol exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -851,7 +1028,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "name": "Biomancy / Pyromancy",
+                    "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -972,10 +1150,6 @@
                 },
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol"
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades"
                 },
                 {
@@ -986,27 +1160,26 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                    "name": "Legion Pistols",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolt-pistol"]
                         },
-                        "take": {
-                            "id": "take",
-                            "name": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
-                            "cost": {
-                                "points": 0
-                            }
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
                         }
                     },
-                    "default": "none"
+                    "default": "bolt-pistol"
                 }
             }
         },
@@ -1120,32 +1293,23 @@
                     }
                 }
             ],
-            "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "combi-bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "achea-pattern-force-sword",
-                    "perModel": true
-                }
-            ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                "combi-bolter": {
+                    "id": "combi-bolter",
+                    "name": "Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "some"
                     },
+                    "default": "combi-bolter",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["combi-bolter"]
                         },
                         "legion-combi-weapons": {
                             "id": "legion-combi-weapons",
@@ -1157,133 +1321,7 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["volkite-charger"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "Any Model in this Unit may have its Achea pattern force sword exchanged for one of the following:",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "lightning-claw": {
-                            "id": "lightning-claw",
-                            "name": "Lightning claw",
-                            "cost": {
-                                "points": 5
-                            },
-                            "weaponRefs": ["lightning-claw"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "achea-pattern-force-sword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "lightning-claw"
-                                    }
-                                }
-                            ]
-                        },
-                        "power-fist": {
-                            "id": "power-fist",
-                            "name": "Power fist",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["power-fist"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "achea-pattern-force-sword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "power-fist"
-                                    }
-                                }
-                            ]
-                        },
-                        "chainfist": {
-                            "id": "chainfist",
-                            "name": "Chainfist",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["chainfist"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "achea-pattern-force-sword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "chainfist"
-                                    }
-                                }
-                            ]
-                        },
-                        "thunder-hammer": {
-                            "id": "thunder-hammer",
-                            "name": "Thunder hammer",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["thunder-hammer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "achea-pattern-force-sword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-3": {
-                    "id": "option-3",
-                    "name": "Any Model in this Unit may have its combi-bolter and Achea pattern force sword exchanged for one pair of lightning claws.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
+                            "weaponRefs": ["volkite-charger"]
                         },
                         "pair-of-lightning-claws": {
                             "id": "pair-of-lightning-claws",
@@ -1291,26 +1329,65 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["pair-of-lightning-claws"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-lightning-claws"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Achea pattern force sword exchange",
+                    "description": "Any Model in this Unit may have its Achea pattern force sword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "achea-pattern-force-sword": {
+                            "id": "achea-pattern-force-sword",
+                            "name": "Achea pattern force sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["achea-pattern-force-sword"]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["lightning-claw"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "none"
+                    "default": "achea-pattern-force-sword"
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "For every five Models in this Unit, one Model may have its combi-bolter exchanged for one of the following:",
+                    "name": "Combi-bolter exchange 2",
+                    "description": "For every five Models in this Unit, one Model may have its combi-bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -1388,18 +1465,12 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "The Sekhment Inceptor in this Unit may have one grenade harness selected for it.",
+                    "name": "Grenade harness",
+                    "description": "The Sekhment Inceptor in this Unit may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "grenade-harness": {
                             "id": "grenade-harness",
                             "name": "grenade harness",
@@ -1409,7 +1480,7 @@
                             "weaponRefs": ["grenade-harness"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1520,16 +1591,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "nemesis-bolter",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -1537,23 +1598,47 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "intercessor"
                 }
             ],
             "upgrades": {
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "The Ammitara Fate in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "profileId": "ammitara-fate"
+                },
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Ammitara Fate in this Unit may have melta bombs selected for it.",
+                    "name": "Melta bombs",
+                    "description": "The Ammitara Fate in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -1564,44 +1649,16 @@
                         }
                     },
                     "profileId": "ammitara-fate",
-                    "default": "none"
-                },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "The Ammitara Fate in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
-                    "perModel": {
-                        "type": "single"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "legion-pistols": {
-                            "id": "legion-pistols",
-                            "target": "legion-pistols"
-                        }
-                    },
-                    "profileId": "ammitara-fate",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "One Intercessor in this Unit may have one nuncio-vox selected for it.",
+                    "name": "Nuncio-vox",
+                    "description": "One Intercessor in this Unit may have one nuncio-vox selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "nuncio-vox": {
                             "id": "nuncio-vox",
                             "name": "nuncio-vox",
@@ -1612,22 +1669,24 @@
                         }
                     },
                     "profileId": "intercessor",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "For every five Models in this Unit, up to two Intercessors in this Unit may each have their Nemesis bolter exchanged for one of the following:",
+                    "name": "Nemesis bolter exchange",
+                    "description": "For every five Models in this Unit, up to two Intercessors in this Unit may each have their Nemesis bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "some",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "nemesis-bolter": {
+                            "id": "nemesis-bolter",
+                            "name": "Nemesis bolter",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["nemesis-bolter"]
                         },
                         "meltagun": {
                             "id": "meltagun",
@@ -1635,19 +1694,7 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["meltagun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "nemesis-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "meltagun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["meltagun"]
                         },
                         "plasma-gun": {
                             "id": "plasma-gun",
@@ -1655,19 +1702,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["plasma-gun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "nemesis-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "plasma-gun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["plasma-gun"]
                         },
                         "aether-fire-blaster": {
                             "id": "aether-fire-blaster",
@@ -1675,22 +1710,10 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["aether-fire-blaster"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "nemesis-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "aether-fire-blaster"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["aether-fire-blaster"]
                         }
                     },
-                    "default": "none"
+                    "default": "nemesis-bolter"
                 }
             }
         },
@@ -1778,19 +1801,13 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "For every four Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one volkite caliver.",
+                    "name": "Bolter to volkite caliver",
+                    "description": "For every four Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one volkite caliver.",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 4
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "volkite-caliver": {
                             "id": "volkite-caliver",
                             "name": "volkite caliver",
@@ -1812,22 +1829,16 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Inductii in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Inductii in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -1838,11 +1849,12 @@
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -1865,7 +1877,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "name": "Bayonet / Chain bayonet",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -1993,16 +2006,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "chainsword",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -2015,22 +2018,37 @@
                     "kind": "equipment",
                     "id": "servo-arm",
                     "profileId": "numerologist"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true,
+                    "profileId": "life-ward"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "life-ward"
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "The Numerologist in this Unit may have its chainsword exchanged for one of the following:",
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "description": "The Numerologist in this Unit may have its chainsword exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "chainsword",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["chainsword"]
                         },
                         "power-axe": {
                             "id": "power-axe",
@@ -2038,19 +2056,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["power-axe"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "chainsword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "power-axe"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["power-axe"]
                         },
                         "achea-pattern-force-sword": {
                             "id": "achea-pattern-force-sword",
@@ -2058,19 +2064,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["achea-pattern-force-sword"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "chainsword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "achea-pattern-force-sword"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["achea-pattern-force-sword"]
                         },
                         "thunder-hammer": {
                             "id": "thunder-hammer",
@@ -2078,37 +2072,27 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["thunder-hammer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "chainsword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "profileId": "numerologist",
-                    "default": "none"
+                    "profileId": "numerologist"
                 },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "The Numerologist in this Unit may have its bolt pistol exchanged for one bolter, for one item from the Legion Combi-weapons list or for one of the f...",
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "The Numerologist in this Unit may have its bolt pistol exchanged for one bolter, for one item from the Legion Combi-weapons list or for one of the f...",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "bolt-pistol",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolt-pistol"]
                         },
                         "volkite-charger": {
                             "id": "volkite-charger",
@@ -2116,19 +2100,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["volkite-charger"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["volkite-charger"]
                         },
                         "plasma-pistol": {
                             "id": "plasma-pistol",
@@ -2136,19 +2108,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["plasma-pistol"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "plasma-pistol"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["plasma-pistol"]
                         },
                         "flamer": {
                             "id": "flamer",
@@ -2156,19 +2116,7 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["flamer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "flamer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["flamer"]
                         },
                         "plasma-gun": {
                             "id": "plasma-gun",
@@ -2176,19 +2124,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["plasma-gun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "plasma-gun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["plasma-gun"]
                         },
                         "meltagun": {
                             "id": "meltagun",
@@ -2196,19 +2132,7 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["meltagun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "meltagun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["meltagun"]
                         },
                         "graviton-gun": {
                             "id": "graviton-gun",
@@ -2216,19 +2140,7 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["graviton-gun"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "graviton-gun"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["graviton-gun"]
                         },
                         "aether-fire-blaster": {
                             "id": "aether-fire-blaster",
@@ -2236,42 +2148,23 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["aether-fire-blaster"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "aether-fire-blaster"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["aether-fire-blaster"]
                         },
                         "legion-combi-weapons": {
                             "id": "legion-combi-weapons",
                             "target": "legion-combi-weapons"
                         }
                     },
-                    "profileId": "numerologist",
-                    "default": "none"
+                    "profileId": "numerologist"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "The Numerologist in this Unit may have one cyber-familiar selected for it.",
+                    "name": "Cyber-familiar",
+                    "description": "The Numerologist in this Unit may have one cyber-familiar selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "cyber-familiar": {
                             "id": "cyber-familiar",
                             "name": "cyber-familiar",
@@ -2282,11 +2175,12 @@
                         }
                     },
                     "profileId": "numerologist",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "One Life Ward may have its chainsword exchanged for one of the following:",
+                    "name": "Chainsword exchange",
+                    "description": "One Life Ward may have its chainsword exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
@@ -2339,11 +2233,13 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "life-ward"
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "For every five Models in this Unit, one Life Ward in this Unit may have its bolt pistol exchanged for one of the following:",
+                    "name": "Bolt pistol exchange",
+                    "description": "For every five Models in this Unit, one Life Ward in this Unit may have its bolt pistol exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -2397,22 +2293,17 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "life-ward"
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "One Life Ward in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Life Ward in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -2423,11 +2314,12 @@
                         }
                     },
                     "profileId": "life-ward",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "Up to two Life Wards in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Life Wards in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2

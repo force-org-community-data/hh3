@@ -67,7 +67,7 @@
                     "id": "vigil-pattern-storm-shield"
                 },
                 {
-                    "kind": "equipment",
+                    "kind": "weapon",
                     "id": "combi-melta"
                 },
                 {
@@ -412,11 +412,6 @@
             "defaultWargear": [
                 {
                     "kind": "equipment",
-                    "id": "power-weapons",
-                    "perModel": true
-                },
-                {
-                    "kind": "equipment",
                     "id": "vigil-pattern-storm-shield",
                     "perModel": true
                 }
@@ -424,17 +419,19 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Any Model in this Unit may have its power weapon exchanged for one Solarite power gauntlet.",
+                    "name": "Solarite power gauntlet",
+                    "description": "Any Model in this Unit may have its power weapon exchanged for one Solarite power gauntlet.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "power-weapons": {
+                            "id": "power-weapons",
+                            "name": "Power weapons",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "equipmentRefs": ["power-weapons"]
                         },
                         "solarite-power-gauntlet": {
                             "id": "solarite-power-gauntlet",
@@ -445,22 +442,17 @@
                             "weaponRefs": ["solarite-power-gauntlet"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true,
+                    "default": "power-weapons"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "The Huscarl-master may have one grenade harness selected for it.",
+                    "name": "Grenade harness",
+                    "description": "The Huscarl-master may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "grenade-harness": {
                             "id": "grenade-harness",
                             "name": "grenade harness",
@@ -470,7 +462,7 @@
                             "weaponRefs": ["grenade-harness"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -558,7 +550,8 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "For every ten Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one of the following:",
+                    "name": "Bolter exchange",
+                    "description": "For every ten Models in this Unit, one Inductii in this Unit may have its bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 10
@@ -616,18 +609,12 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "One Inductii in this Unit may have a vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Inductii in this Unit may have a vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -638,11 +625,12 @@
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -665,7 +653,8 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "name": "Bayonet / Chain bayonet",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
                     "perModel": {
                         "type": "some"
                     },
@@ -799,11 +788,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "power-axe",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "bolt-pistol",
                     "perModel": true
                 },
@@ -821,23 +805,59 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "perModel": true,
+                    "profileId": "phalanx-warder"
                 }
             ],
             "upgrades": {
+                "power-axe": {
+                    "id": "power-axe",
+                    "name": "Power axe",
+                    "description": "The Warder Sergeant in this Unit may have its power axe exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "power-axe",
+                    "options": {
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        },
+                        "solarite-power-gauntlet": {
+                            "id": "solarite-power-gauntlet",
+                            "name": "Solarite power gauntlet",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["solarite-power-gauntlet"]
+                        }
+                    },
+                    "profileId": "warder-sergeant"
+                },
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Warder Sergeant in this Unit may have its bolt pistol exchanged for one plasma pistol.",
+                    "name": "Bolt pistol to plasma pistol",
+                    "description": "The Warder Sergeant in this Unit may have its bolt pistol exchanged for one plasma pistol.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "plasma-pistol": {
                             "id": "plasma-pistol",
                             "name": "plasma pistol",
@@ -860,69 +880,12 @@
                         }
                     },
                     "profileId": "warder-sergeant",
-                    "default": "none"
-                },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "The Warder Sergeant in this Unit may have its power axe exchanged for one of the following:",
-                    "perModel": {
-                        "type": "single"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "thunder-hammer": {
-                            "id": "thunder-hammer",
-                            "name": "Thunder hammer",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["thunder-hammer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "power-axe"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    }
-                                }
-                            ]
-                        },
-                        "solarite-power-gauntlet": {
-                            "id": "solarite-power-gauntlet",
-                            "name": "Solarite power gauntlet",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["solarite-power-gauntlet"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "power-axe"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "solarite-power-gauntlet"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "profileId": "warder-sergeant",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Up to two Phalanx Warders in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Phalanx Warders in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -945,18 +908,12 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "One Phalanx Warder in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Phalanx Warder in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -967,22 +924,16 @@
                         }
                     },
                     "profileId": "phalanx-warder",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Every Model in the Unit may have melta bombs selected for them per Unit.",
+                    "name": "Melta bombs",
+                    "description": "Every Model in the Unit may have melta bombs selected for them per Unit.",
                     "perModel": {
                         "type": "every"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -992,11 +943,12 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "For every five Models in this Unit, one Phalanx Warder in this Unit may have one item from the Legion Combi-weapons list or one of the following selected for...",
+                    "name": "Flamer / Plasma gun",
+                    "description": "For every five Models in this Unit, one Phalanx Warder in this Unit may have one item from the Legion Combi-weapons list or one of the following selected for...",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -1291,16 +1243,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "power-sword",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -1308,22 +1250,31 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "perModel": true,
+                    "profileId": "templar-brethren"
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "The Templar Champion in this Unit may have its power sword exchanged for one of the following:",
+                "power-sword": {
+                    "id": "power-sword",
+                    "name": "Power sword",
+                    "description": "The Templar Champion in this Unit may have its power sword exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "power-sword",
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["power-sword"]
                         },
                         "solarite-power-gauntlet": {
                             "id": "solarite-power-gauntlet",
@@ -1331,19 +1282,7 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["solarite-power-gauntlet"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "power-sword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "solarite-power-gauntlet"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["solarite-power-gauntlet"]
                         },
                         "thunder-hammer": {
                             "id": "thunder-hammer",
@@ -1351,38 +1290,54 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["thunder-hammer"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "power-sword"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "thunder-hammer"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "profileId": "templar-champion",
-                    "default": "none"
+                    "profileId": "templar-champion"
+                },
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "Any Model in this Unit may have their bolt pistol exchanged for one combat shield.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "combat shield",
+                            "cost": {
+                                "points": 2
+                            },
+                            "equipmentRefs": ["combat-shield"]
+                        },
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "plasma pistol",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-pistol"]
+                        }
+                    }
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "The Templar Champion in this Unit may have its bolt pistol exchanged for one archaeotech pistol.",
+                    "name": "Bolt pistol to archaeotech pistol",
+                    "description": "The Templar Champion in this Unit may have its bolt pistol exchanged for one archaeotech pistol.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "archaeotech-pistol": {
                             "id": "archaeotech-pistol",
                             "name": "archaeotech pistol",
@@ -1405,85 +1360,12 @@
                         }
                     },
                     "profileId": "templar-champion",
-                    "default": "none"
-                },
-                "option-3": {
-                    "id": "option-3",
-                    "name": "Any Model in this Unit may have their bolt pistol exchanged for one combat shield.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "combat-shield": {
-                            "id": "combat-shield",
-                            "name": "combat shield",
-                            "cost": {
-                                "points": 2
-                            },
-                            "equipmentRefs": ["combat-shield"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "equipment",
-                                        "id": "combat-shield"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
-                },
-                "option-4": {
-                    "id": "option-4",
-                    "name": "Any Model in this Unit may have its bolt pistol exchanged for one plasma pistol.",
-                    "perModel": {
-                        "type": "some"
-                    },
-                    "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
-                        "plasma-pistol": {
-                            "id": "plasma-pistol",
-                            "name": "plasma pistol",
-                            "cost": {
-                                "points": 10
-                            },
-                            "weaponRefs": ["plasma-pistol"],
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "plasma-pistol"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Up to two Templar Brethren in this Unit may each have one item from the Legion Equipment list selected for them.",
+                    "name": "Legion Equipment",
+                    "description": "Up to two Templar Brethren in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
                         "type": "some",
                         "max": 2
@@ -1506,18 +1388,12 @@
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "One Templar Brethren in this Unit may have one vexilla selected for it.",
+                    "name": "Vexilla",
+                    "description": "One Templar Brethren in this Unit may have one vexilla selected for it.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "vexilla": {
                             "id": "vexilla",
                             "name": "vexilla",
@@ -1528,22 +1404,16 @@
                         }
                     },
                     "profileId": "templar-brethren",
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-7": {
                     "id": "option-7",
-                    "name": "Every Model in the Unit may have melta bombs selected for them per Unit.",
+                    "name": "Melta bombs",
+                    "description": "Every Model in the Unit may have melta bombs selected for them per Unit.",
                     "perModel": {
                         "type": "every"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "melta-bombs": {
                             "id": "melta-bombs",
                             "name": "melta bombs",
@@ -1553,7 +1423,7 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         }
@@ -2007,7 +1877,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-flamer"]
+                    "weaponRefs": ["combi-flamer"]
                 },
                 "pintle-mounted-combi-plasma": {
                     "id": "pintle-mounted-combi-plasma",
@@ -2015,7 +1885,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-plasma"]
+                    "weaponRefs": ["combi-plasma"]
                 },
                 "pintle-mounted-combi-melta": {
                     "id": "pintle-mounted-combi-melta",
@@ -2023,7 +1893,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-melta"]
+                    "weaponRefs": ["combi-melta"]
                 },
                 "pintle-mounted-combi-volkite": {
                     "id": "pintle-mounted-combi-volkite",
@@ -2031,7 +1901,7 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["pintle-mounted-combi-volkite"]
+                    "weaponRefs": ["combi-volkite"]
                 },
                 "pintle-mounted-havoc-launcher": {
                     "id": "pintle-mounted-havoc-launcher",
