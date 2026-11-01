@@ -247,9 +247,9 @@
                                 }
                             ]
                         },
-                        "power-weapon": {
-                            "id": "power-weapon",
-                            "name": "Power weapon",
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
                             "cost": {
                                 "points": 10
                             },
@@ -260,8 +260,65 @@
                                         "id": "chainsword"
                                     },
                                     "to": {
-                                        "kind": "equipment",
-                                        "id": "power-weapons"
+                                        "kind": "weapon",
+                                        "id": "power-sword"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 10
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 10
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-maul"
+                                    }
+                                }
+                            ]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 10
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-lance"
                                     }
                                 }
                             ]
@@ -695,13 +752,12 @@
                         "type": "single"
                     },
                     "options": {
-                        "legion-standard-and-one-power-weapon": {
-                            "id": "legion-standard-and-one-power-weapon",
-                            "name": "Legion standard and one power weapon",
+                        "legion-standard-and-one-power-sword": {
+                            "id": "legion-standard-and-one-power-sword",
+                            "name": "Legion standard and one power sword",
                             "cost": {
                                 "points": 15
                             },
-                            "equipmentRefs": ["power-weapons"],
                             "swaps": [
                                 {
                                     "from": {
@@ -713,7 +769,68 @@
                                         "id": "legion-standard"
                                     }
                                 }
-                            ]
+                            ],
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "legion-standard-and-one-power-axe": {
+                            "id": "legion-standard-and-one-power-axe",
+                            "name": "Legion standard and one power axe",
+                            "cost": {
+                                "points": 15
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "legion-standard"
+                                    }
+                                }
+                            ],
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "legion-standard-and-one-power-maul": {
+                            "id": "legion-standard-and-one-power-maul",
+                            "name": "Legion standard and one power maul",
+                            "cost": {
+                                "points": 15
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "legion-standard"
+                                    }
+                                }
+                            ],
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "legion-standard-and-one-power-lance": {
+                            "id": "legion-standard-and-one-power-lance",
+                            "name": "Legion standard and one power lance",
+                            "cost": {
+                                "points": 15
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "legion-standard"
+                                    }
+                                }
+                            ],
+                            "weaponRefs": ["power-lance"]
                         }
                     },
                     "multiSelect": true
@@ -1974,30 +2091,6 @@
                         {
                             "id": "overload",
                             "value": "1"
-                        }
-                    ]
-                }
-            ]
-        },
-        "power-sword": {
-            "id": "power-sword",
-            "name": "Power sword",
-            "template": "melee",
-            "profiles": [
-                {
-                    "name": "Power sword",
-                    "stats": {
-                        "im": "I",
-                        "am": "A",
-                        "sm": "S",
-                        "ap": "3",
-                        "d": "1"
-                    },
-                    "traits": ["Power"],
-                    "specialRules": [
-                        {
-                            "id": "breaching",
-                            "value": "6+"
                         }
                     ]
                 }
