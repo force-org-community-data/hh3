@@ -783,7 +783,7 @@
                 },
                 "option-8": {
                     "id": "option-8",
-                    "name": "Melee weapon",
+                    "name": "Special Weapon",
                     "description": "For every five Models in the Unit, one Grey Slayer may have its Fenrisian axe exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
@@ -854,7 +854,8 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "grey-slayer"
                 },
                 "option-9": {
                     "id": "option-9",
@@ -876,7 +877,12 @@
                             "target": "legion-pistols"
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "grey-slayer",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolt-pistol"
+                    }
                 },
                 "option-10": {
                     "id": "option-10",
@@ -1605,7 +1611,7 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Melee weapon",
+                    "name": "Special Weapon",
                     "description": "For every four Models in this Unit, one Inductii in this Unit may have its chainsword exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
@@ -1916,16 +1922,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "hand-flamer",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
-                    "id": "chainsword",
-                    "perModel": true
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades",
                     "perModel": true
                 },
@@ -1933,12 +1929,36 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "hand-flamer",
+                    "perModel": true,
+                    "profileId": "hunt-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "hand-flamer",
+                    "perModel": true,
+                    "profileId": "hunter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true,
+                    "profileId": "hunt-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true,
+                    "profileId": "hunter"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Hand flamer to plasma pistol",
+                    "name": "Hunt-master Hand flamer to plasma pistol",
                     "description": "The Hunt-master may have its hand flamer exchanged for one plasma pistol.",
                     "perModel": {
                         "type": "single"
@@ -1964,11 +1984,12 @@
                             ]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "hunt-master"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Melee weapon",
+                    "name": "Hunt-master Melee weapon",
                     "description": "The Hunt-master may have its chainsword exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
@@ -2039,11 +2060,12 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "hunt-master"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Special weapon",
+                    "name": "Hunter Special weapon",
                     "description": "For every five Models in this Unit, one Hunter in this Unit may have its hand flamer exchanged for one of the following:",
                     "perModel": {
                         "type": "one-in-x",
@@ -2096,7 +2118,8 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "hunter"
                 },
                 "option-4": {
                     "id": "option-4",
