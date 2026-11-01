@@ -1845,7 +1845,7 @@
         },
         "white-scars-mounted-stormseer": {
             "id": "white-scars-mounted-stormseer",
-            "name": "White Scars Mounted Stormseer",
+            "name": "White Scars Outrider Stormseer",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -1873,7 +1873,22 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        }
+                    ]
                 }
             ],
             "traits": ["White Scars", "Psyker"],
@@ -1941,6 +1956,140 @@
                         }
                     },
                     "default": "twin-bolter"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Psychic Disciplines",
+                    "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "stormcalling": {
+                            "id": "stormcalling",
+                            "name": "Stormcalling",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["stormcalling"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "thaumaturgy": {
+                            "id": "thaumaturgy",
+                            "name": "Thaumaturgy",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["thaumaturgy"]
+                        },
+                        "telepathy": {
+                            "id": "telepathy",
+                            "name": "Telepathy",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["telepathy"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "white-scars-stormseer-on-scimitar-jetbike": {
+            "id": "white-scars-stormseer-on-scimitar-jetbike",
+            "name": "White Scars Stormseer on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 125
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "stormseer-on-scimitar-jetbike",
+                    "name": "Stormseer on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["White Scars", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "bolt-pistol"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -2040,7 +2189,7 @@
         },
         "white-scars-stormseer-in-terminator-armour": {
             "id": "white-scars-stormseer-in-terminator-armour",
-            "name": "White Scars Stormseer in Terminator Armour",
+            "name": "White Scars Stormseer in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -2068,7 +2217,153 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["White Scars", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger, or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Psychic Disciplines",
+                    "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "stormcalling": {
+                            "id": "stormcalling",
+                            "name": "Stormcalling",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["stormcalling"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "thaumaturgy": {
+                            "id": "thaumaturgy",
+                            "name": "Thaumaturgy",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["thaumaturgy"]
+                        },
+                        "telepathy": {
+                            "id": "telepathy",
+                            "name": "Telepathy",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["telepathy"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "white-scars-stormseer-in-tartaros-terminator-armour": {
+            "id": "white-scars-stormseer-in-tartaros-terminator-armour",
+            "name": "White Scars Stormseer in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 115
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-stormseer",
+                    "name": "Tartaros Stormseer",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "traits": ["White Scars", "Psyker"],

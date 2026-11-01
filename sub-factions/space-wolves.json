@@ -1038,7 +1038,7 @@
         },
         "space-wolves-caster-of-runes-in-terminator-armour": {
             "id": "space-wolves-caster-of-runes-in-terminator-armour",
-            "name": "Space Wolves Caster of Runes in Terminator Armour",
+            "name": "Space Wolves Caster of Runes in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -1066,7 +1066,126 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frost-axe"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Psychic Disciplines",
+                    "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "runecasting": {
+                            "id": "runecasting",
+                            "name": "Runecasting",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": ["runecasting"]
+                        },
+                        "biomancy": {
+                            "id": "biomancy",
+                            "name": "Biomancy",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["biomancy"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "telekinesis": {
+                            "id": "telekinesis",
+                            "name": "Telekinesis",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["telekinesis"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "space-wolves-caster-of-runes-in-tartaros-terminator-armour": {
+            "id": "space-wolves-caster-of-runes-in-tartaros-terminator-armour",
+            "name": "Space Wolves Caster of Runes in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 130
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-caster-of-runes",
+                    "name": "Tartaros Caster of Runes",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "2",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "traits": ["Space Wolves", "Psyker"],
@@ -1942,7 +2061,7 @@
         },
         "space-wolves-mounted-caster-of-runes": {
             "id": "space-wolves-mounted-caster-of-runes",
-            "name": "Space Wolves Mounted Caster of Runes",
+            "name": "Space Wolves Outrider Caster of Runes",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -1970,7 +2089,22 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        }
+                    ]
                 }
             ],
             "traits": ["Space Wolves", "Psyker"],
@@ -2093,6 +2227,144 @@
                         }
                     },
                     "default": "twin-bolter"
+                }
+            }
+        },
+        "space-wolves-caster-of-runes-on-scimitar-jetbike": {
+            "id": "space-wolves-caster-of-runes-on-scimitar-jetbike",
+            "name": "Space Wolves Caster of Runes on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 150
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "caster-of-runes-on-scimitar-jetbike",
+                    "name": "Caster of Runes on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves", "Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "force-staff"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frost-axe"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "bolt-pistol"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Psychic Disciplines",
+                    "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "runecasting": {
+                            "id": "runecasting",
+                            "name": "Runecasting",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": ["runecasting"]
+                        },
+                        "biomancy": {
+                            "id": "biomancy",
+                            "name": "Biomancy",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["biomancy"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "telekinesis": {
+                            "id": "telekinesis",
+                            "name": "Telekinesis",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["telekinesis"]
+                        }
+                    },
+                    "default": "none"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -2141,7 +2413,7 @@
         },
         "space-wolves-mounted-speaker-of-the-dead": {
             "id": "space-wolves-mounted-speaker-of-the-dead",
-            "name": "Space Wolves Mounted Speaker of the Dead",
+            "name": "Space Wolves Outrider Speaker of the Dead",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -2169,7 +2441,26 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        },
+                        {
+                            "id": "medic",
+                            "value": "5+"
+                        }
+                    ]
                 }
             ],
             "traits": ["Space Wolves"],
@@ -2241,6 +2532,97 @@
                         }
                     },
                     "multiSelect": true
+                }
+            }
+        },
+        "space-wolves-speaker-of-the-dead-on-scimitar-jetbike": {
+            "id": "space-wolves-speaker-of-the-dead-on-scimitar-jetbike",
+            "name": "Space Wolves Speaker of the Dead on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 130
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "speaker-of-the-dead-on-scimitar-jetbike",
+                    "name": "Speaker of the Dead on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "medic",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "crozius-arcanum"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "narthecium"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
@@ -2289,7 +2671,7 @@
         },
         "space-wolves-speaker-of-the-dead-in-terminator-armour": {
             "id": "space-wolves-speaker-of-the-dead-in-terminator-armour",
-            "name": "Space Wolves Speaker of the Dead in Terminator Armour",
+            "name": "Space Wolves Speaker of the Dead in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -2317,7 +2699,114 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "medic",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "crozius-arcanum"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "narthecium"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                }
+            }
+        },
+        "space-wolves-speaker-of-the-dead-in-tartaros-terminator-armour": {
+            "id": "space-wolves-speaker-of-the-dead-in-tartaros-terminator-armour",
+            "name": "Space Wolves Speaker of the Dead in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-speaker-of-the-dead",
+                    "name": "Tartaros Speaker of the Dead",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "medic",
+                            "value": "5+"
+                        }
+                    ]
                 }
             ],
             "traits": ["Space Wolves"],
@@ -2395,7 +2884,123 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "medic",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Space Wolves"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "crozius-arcanum"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "narthecium"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Pistol list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "bolt-pistol"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            }
+        },
+        "space-wolves-speaker-of-the-dead-with-jump-pack": {
+            "id": "space-wolves-speaker-of-the-dead-with-jump-pack",
+            "name": "Space Wolves Speaker of the Dead with Jump Pack",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "speaker-of-the-dead-with-jump-pack",
+                    "name": "Speaker of the Dead with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "medic",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
                 }
             ],
             "traits": ["Space Wolves"],
@@ -3253,7 +3858,6 @@
                     "cost": {
                         "points": 2
                     },
-                    "weaponRefs": ["fenrisian-axe"],
                     "swaps": [
                         {
                             "from": {
