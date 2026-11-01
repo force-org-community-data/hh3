@@ -2765,7 +2765,7 @@
         },
         "centurion-in-terminator-armour": {
             "id": "centurion-in-terminator-armour",
-            "name": "Centurion in Terminator Armour",
+            "name": "Centurion in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -2793,7 +2793,134 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "upgrades": {
+                "combi-bolter": {
+                    "id": "combi-bolter",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Power weapons",
+                    "description": "This Model may have its power weapon exchanged for one item from the Legion Terminator Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "power-weapons": {
+                            "id": "power-weapons",
+                            "name": "Power weapons",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-weapons"]
+                        },
+                        "legion-terminator-melee-weapons": {
+                            "id": "legion-terminator-melee-weapons",
+                            "target": "legion-terminator-melee-weapons"
+                        }
+                    },
+                    "default": "power-weapons"
+                }
+            }
+        },
+        "centurion-in-tartaros-terminator-armour": {
+            "id": "centurion-in-tartaros-terminator-armour",
+            "name": "Centurion in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-centurion",
+                    "name": "Tartaros Centurion",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "upgrades": {
@@ -2891,7 +3018,259 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "bolter": {
+                    "id": "bolter",
+                    "name": "Bolter",
+                    "description": "This Model may have its bolter and/or bolt pistol exchanged for one item from the Legion Officer Wargear list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolter",
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    }
+                },
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolter and/or bolt pistol exchanged for one item from the Legion Officer Wargear list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        }
+                    }
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Swap to pair of lightning claws",
+                    "description": "This Model may have its bolter and bolt pistol exchanged for one pair of lightning claws.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "replaces": ["bolter", "bolt-pistol"]
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Bayonets",
+                    "description": "This Model with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    }
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "Vexilla",
+                    "description": "This Centurion may have one vexilla selected for it*.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "vexilla": {
+                            "id": "vexilla",
+                            "name": "vexilla",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["vexilla"]
+                        }
+                    },
+                    "multiSelect": true
+                },
+                "option-7": {
+                    "id": "option-7",
+                    "name": "Cyber-familiar",
+                    "description": "This Centurion may have one cyber-familiar selected for it*.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "cyber-familiar": {
+                            "id": "cyber-familiar",
+                            "name": "cyber-familiar",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cyber-familiar"]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            }
+        },
+        "centurion-with-jump-pack": {
+            "id": "centurion-with-jump-pack",
+            "name": "Centurion with Jump Pack",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "centurion-with-jump-pack",
+                    "name": "Centurion with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -3217,7 +3596,7 @@
         },
         "chaplain-in-terminator-armour": {
             "id": "chaplain-in-terminator-armour",
-            "name": "Chaplain in Terminator Armour",
+            "name": "Chaplain in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -3245,7 +3624,101 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "crozius-arcanum"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                }
+            }
+        },
+        "chaplain-in-tartaros-terminator-armour": {
+            "id": "chaplain-in-tartaros-terminator-armour",
+            "name": "Chaplain in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 110
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-chaplain",
+                    "name": "Tartaros Chaplain",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -4052,7 +4525,7 @@
         },
         "delegatus-in-terminator-armour": {
             "id": "delegatus-in-terminator-armour",
-            "name": "Delegatus in Terminator Armour",
+            "name": "Delegatus in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -4080,7 +4553,126 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "upgrades": {
+                "combi-bolter": {
+                    "id": "combi-bolter",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Power weapons",
+                    "description": "This Model may have its power weapon exchanged for one item from the Legion Terminator Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "power-weapons": {
+                            "id": "power-weapons",
+                            "name": "Power weapons",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-weapons"]
+                        },
+                        "legion-terminator-melee-weapons": {
+                            "id": "legion-terminator-melee-weapons",
+                            "target": "legion-terminator-melee-weapons"
+                        }
+                    },
+                    "default": "power-weapons"
+                }
+            }
+        },
+        "delegatus-in-tartaros-terminator-armour": {
+            "id": "delegatus-in-tartaros-terminator-armour",
+            "name": "Delegatus in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-delegatus",
+                    "name": "Tartaros Delegatus",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "upgrades": {
@@ -4179,6 +4771,210 @@
                         "inv": "5+"
                     },
                     "tags": ["Command"]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "bolter": {
+                    "id": "bolter",
+                    "name": "Bolter",
+                    "description": "This Model may have its bolter and/or bolt pistol exchanged for one item from the Legion Officer Wargear list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolter",
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    }
+                },
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolter and/or bolt pistol exchanged for one item from the Legion Officer Wargear list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        }
+                    }
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Swap to pair of lightning claws",
+                    "description": "This Model may have its bolter and bolt pistol exchanged for one pair of lightning claws.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "replaces": ["bolter", "bolt-pistol"]
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Bayonets",
+                    "description": "This Model with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    }
+                }
+            }
+        },
+        "delegatus-with-jump-pack": {
+            "id": "delegatus-with-jump-pack",
+            "name": "Delegatus with Jump Pack",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "delegatus-with-jump-pack",
+                    "name": "Delegatus with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -5328,7 +6124,7 @@
         },
         "esoterist-in-terminator-armour": {
             "id": "esoterist-in-terminator-armour",
-            "name": "Esoterist in Terminator Armour",
+            "name": "Esoterist in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -5356,7 +6152,108 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "anathemata-discipline"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Psyker", "Anathemata"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "force-weapons"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                }
+            }
+        },
+        "esoterist-in-tartaros-terminator-armour": {
+            "id": "esoterist-in-tartaros-terminator-armour",
+            "name": "Esoterist in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 125
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-esoterist",
+                    "name": "Tartaros Esoterist",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "anathemata-discipline"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "traits": ["Psyker", "Anathemata"],
@@ -5467,7 +6364,7 @@
         },
         "mounted-esoterist": {
             "id": "mounted-esoterist",
-            "name": "Mounted Esoterist",
+            "name": "Outrider Esoterist",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -5514,7 +6411,67 @@
                             "id": "outflank"
                         }
                     ]
+                }
+            ],
+            "traits": ["Psyker", "Anathemata"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "archaeotech-pistol"
                 },
+                {
+                    "kind": "equipment",
+                    "id": "force-weapons"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "twin-bolter": {
+                    "id": "twin-bolter",
+                    "name": "Twin bolter",
+                    "description": "This Outrider Esoterist may have its twin bolter exchanged for one twin plasma gun for +15 Points.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "twin-bolter",
+                    "options": {
+                        "twin-bolter": {
+                            "id": "twin-bolter",
+                            "name": "Twin bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["twin-bolter"]
+                        },
+                        "twin-plasma-gun": {
+                            "id": "twin-plasma-gun",
+                            "name": "Twin plasma gun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["twin-plasma-gun"]
+                        }
+                    }
+                }
+            }
+        },
+        "esoterist-on-scimitar-jetbike": {
+            "id": "esoterist-on-scimitar-jetbike",
+            "name": "Esoterist on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 145
+            },
+            "modelCount": 1,
+            "profiles": [
                 {
                     "id": "esoterist-on-scimitar-jetbike",
                     "name": "Esoterist on Scimitar Jetbike",
@@ -5550,31 +6507,6 @@
                     ]
                 }
             ],
-            "composition": [
-                {
-                    "id": "outrider-esoterist",
-                    "name": "Outrider Esoterist",
-                    "profiles": {
-                        "outrider-esoterist": 1
-                    }
-                },
-                {
-                    "id": "esoterist-on-scimitar-jetbike",
-                    "name": "Esoterist on Scimitar Jetbike",
-                    "profiles": {
-                        "esoterist-on-scimitar-jetbike": 1
-                    },
-                    "min": 0,
-                    "max": 1,
-                    "cost": {
-                        "points": 10
-                    },
-                    "replaces": {
-                        "block": "outrider-esoterist",
-                        "profile": "outrider-esoterist"
-                    }
-                }
-            ],
             "traits": ["Psyker", "Anathemata"],
             "defaultWargear": [
                 {
@@ -5595,43 +6527,14 @@
                 }
             ],
             "upgrades": {
-                "twin-bolter": {
-                    "id": "twin-bolter",
-                    "name": "Outrider twin bolter",
-                    "description": "This Outrider Esoterist may have its twin bolter exchanged for one twin plasma gun for +15 Points.",
-                    "perModel": {
-                        "type": "single"
-                    },
-                    "default": "twin-bolter",
-                    "profileId": "outrider-esoterist",
-                    "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
-                        "twin-plasma-gun": {
-                            "id": "twin-plasma-gun",
-                            "name": "Twin plasma gun",
-                            "cost": {
-                                "points": 15
-                            },
-                            "weaponRefs": ["twin-plasma-gun"]
-                        }
-                    }
-                },
                 "heavy-bolter": {
                     "id": "heavy-bolter",
-                    "name": "Jetbike heavy bolter",
+                    "name": "Heavy bolter",
                     "description": "This Esoterist on Scimitar Jetbike may have its heavy bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
                     },
                     "default": "heavy-bolter",
-                    "profileId": "esoterist-on-scimitar-jetbike",
                     "options": {
                         "heavy-bolter": {
                             "id": "heavy-bolter",
@@ -6119,7 +7022,7 @@
         },
         "forge-lord-in-terminator-armour": {
             "id": "forge-lord-in-terminator-armour",
-            "name": "Forge Lord in Terminator Armour",
+            "name": "Forge Lord in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -6147,7 +7050,161 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "legiones-thallaxes"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "machinator-array"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Power axe to thunder hammer",
+                    "description": "This Model may have its power axe exchanged for one thunder hammer.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "thunder hammer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "power-axe"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Cyber-familiar",
+                    "description": "This Model may have a cyber-familiar selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "cyber-familiar": {
+                            "id": "cyber-familiar",
+                            "name": "cyber-familiar",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cyber-familiar"]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            }
+        },
+        "forge-lord-in-tartaros-terminator-armour": {
+            "id": "forge-lord-in-tartaros-terminator-armour",
+            "name": "Forge Lord in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 130
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-forge-lord",
+                    "name": "Tartaros Forge Lord",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "legiones-thallaxes"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -6271,6 +7328,141 @@
                         {
                             "id": "battlesmith",
                             "value": "2"
+                        },
+                        {
+                            "id": "legiones-thallaxes"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "machinator-array"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Officer Wargear list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        }
+                    },
+                    "default": "bolt-pistol"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Power axe to thunder hammer",
+                    "description": "This Model may have its power axe exchanged for one thunder hammer.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "thunder hammer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "power-axe"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Cyber-familiar",
+                    "description": "This Model may have a cyber-familiar selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "cyber-familiar": {
+                            "id": "cyber-familiar",
+                            "name": "cyber-familiar",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cyber-familiar"]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            }
+        },
+        "forge-lord-with-jump-pack": {
+            "id": "forge-lord-with-jump-pack",
+            "name": "Forge Lord with Jump Pack",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 130
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "forge-lord-with-jump-pack",
+                    "name": "Forge Lord with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
                         },
                         {
                             "id": "legiones-thallaxes"
@@ -6709,7 +7901,7 @@
         },
         "herald-in-terminator-armour": {
             "id": "herald-in-terminator-armour",
-            "name": "Herald in Terminator Armour",
+            "name": "Herald in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -6737,7 +7929,101 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "icon-of-allegiance"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Power weapons",
+                    "description": "This Model may have its power weapon exchanged for one item from the Legion Terminator Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "power-weapons": {
+                            "id": "power-weapons",
+                            "name": "Power weapons",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-weapons"]
+                        },
+                        "legion-terminator-melee-weapons": {
+                            "id": "legion-terminator-melee-weapons",
+                            "target": "legion-terminator-melee-weapons"
+                        }
+                    },
+                    "default": "power-weapons"
+                }
+            }
+        },
+        "herald-in-tartaros-terminator-armour": {
+            "id": "herald-in-tartaros-terminator-armour",
+            "name": "Herald in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 130
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-herald",
+                    "name": "Tartaros Herald",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "9",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -8429,7 +9715,7 @@
         },
         "legion-champion-in-terminator-armour": {
             "id": "legion-champion-in-terminator-armour",
-            "name": "Legion Champion in Terminator Armour",
+            "name": "Legion Champion in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -8457,7 +9743,107 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "never-back-down"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "paragon-blade"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                }
+            }
+        },
+        "legion-champion-in-tartaros-terminator-armour": {
+            "id": "legion-champion-in-tartaros-terminator-armour",
+            "name": "Legion Champion in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 135
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-legion-champion",
+                    "name": "Tartaros Legion Champion",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "never-back-down"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -8986,7 +10372,7 @@
         },
         "librarian-in-terminator-armour": {
             "id": "librarian-in-terminator-armour",
-            "name": "Librarian in Terminator Armour",
+            "name": "Librarian in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -9014,7 +10400,173 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "force-weapons"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list or one item from the Legio...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "legion-terminator-melee-weapons": {
+                            "id": "legion-terminator-melee-weapons",
+                            "target": "legion-terminator-melee-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Psychic Disciplines",
+                    "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "biomancy": {
+                            "id": "biomancy",
+                            "name": "Biomancy",
+                            "cost": {
+                                "points": 25
+                            },
+                            "equipmentRefs": ["biomancy"]
+                        },
+                        "pyromancy": {
+                            "id": "pyromancy",
+                            "name": "Pyromancy",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": ["pyromancy"]
+                        },
+                        "telekinesis": {
+                            "id": "telekinesis",
+                            "name": "Telekinesis",
+                            "cost": {
+                                "points": 30
+                            },
+                            "equipmentRefs": ["telekinesis"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 30
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "thaumaturgy": {
+                            "id": "thaumaturgy",
+                            "name": "Thaumaturgy",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["thaumaturgy"]
+                        },
+                        "telepathy": {
+                            "id": "telepathy",
+                            "name": "Telepathy",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["telepathy"]
+                        }
+                    },
+                    "default": "none"
+                }
+            }
+        },
+        "librarian-in-tartaros-terminator-armour": {
+            "id": "librarian-in-tartaros-terminator-armour",
+            "name": "Librarian in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 115
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-librarian",
+                    "name": "Tartaros Librarian",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "9",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "traits": ["Psyker"],
@@ -10403,7 +11955,7 @@
         },
         "mortificator-in-terminator-armour": {
             "id": "mortificator-in-terminator-armour",
-            "name": "Mortificator in Terminator Armour",
+            "name": "Mortificator in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -10431,7 +11983,113 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Specialist", "Heavy"]
+                    "tags": ["Specialist", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "corposant-stave"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "servo-arm"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                }
+            }
+        },
+        "mortificator-in-tartaros-terminator-armour": {
+            "id": "mortificator-in-tartaros-terminator-armour",
+            "name": "Mortificator in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-mortificator",
+                    "name": "Tartaros Mortificator",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Specialist"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -10563,7 +12221,7 @@
         },
         "mounted-centurion": {
             "id": "mounted-centurion",
-            "name": "Mounted Centurion",
+            "name": "Outrider Centurion",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -10591,7 +12249,26 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        },
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -10696,6 +12373,130 @@
                         }
                     },
                     "default": "twin-bolter"
+                }
+            }
+        },
+        "centurion-on-scimitar-jetbike": {
+            "id": "centurion-on-scimitar-jetbike",
+            "name": "Centurion on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "centurion-on-scimitar-jetbike",
+                    "name": "Centurion on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its chainsword and/or bolt pistol exchanged for one item from the Legion Officer Wargear list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        }
+                    }
+                },
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "description": "This Model may have its chainsword and/or bolt pistol exchanged for one item from the Legion Officer Wargear list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "chainsword",
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
@@ -10744,7 +12545,7 @@
         },
         "mounted-chaplain": {
             "id": "mounted-chaplain",
-            "name": "Mounted Chaplain",
+            "name": "Outrider Chaplain",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -10772,7 +12573,22 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -10840,6 +12656,107 @@
                     },
                     "default": "twin-bolter"
                 },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            }
+        },
+        "chaplain-on-scimitar-jetbike": {
+            "id": "chaplain-on-scimitar-jetbike",
+            "name": "Chaplain on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "chaplain-on-scimitar-jetbike",
+                    "name": "Chaplain on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "7",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "crozius-arcanum"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "bolt-pistol"
+                },
                 "option-3": {
                     "id": "option-3",
                     "name": "Heavy bolter",
@@ -10906,7 +12823,7 @@
         },
         "mounted-delegatus": {
             "id": "mounted-delegatus",
-            "name": "Mounted Delegatus",
+            "name": "Outrider Delegatus",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -10934,7 +12851,22 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -11039,6 +12971,126 @@
                         }
                     },
                     "default": "twin-bolter"
+                }
+            }
+        },
+        "delegatus-on-scimitar-jetbike": {
+            "id": "delegatus-on-scimitar-jetbike",
+            "name": "Delegatus on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 140
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "delegatus-on-scimitar-jetbike",
+                    "name": "Delegatus on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its chainsword and/or bolt pistol exchanged for one item from the Legion Officer Wargear list each.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        }
+                    }
+                },
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "description": "This Model may have its chainsword and/or bolt pistol exchanged for one item from the Legion Officer Wargear list each.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "chainsword",
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
@@ -11087,7 +13139,7 @@
         },
         "mounted-forge-lord": {
             "id": "mounted-forge-lord",
-            "name": "Mounted Forge Lord",
+            "name": "Outrider Forge Lord",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -11115,7 +13167,29 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        },
+                        {
+                            "id": "legiones-thallaxes"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -11250,6 +13324,163 @@
                         }
                     },
                     "default": "twin-bolter"
+                }
+            }
+        },
+        "forge-lord-on-scimitar-jetbike": {
+            "id": "forge-lord-on-scimitar-jetbike",
+            "name": "Forge Lord on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 150
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "forge-lord-on-scimitar-jetbike",
+                    "name": "Forge Lord on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "legiones-thallaxes"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "machinator-array"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-weapon",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-charger"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Power axe to thunder hammer",
+                    "description": "This Model may have its power axe exchanged for one thunder hammer.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "thunder hammer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "power-axe"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Cyber-familiar",
+                    "description": "This Model may have a cyber-familiar selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "cyber-familiar": {
+                            "id": "cyber-familiar",
+                            "name": "cyber-familiar",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cyber-familiar"]
+                        }
+                    },
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
@@ -11298,7 +13529,7 @@
         },
         "mounted-herald": {
             "id": "mounted-herald",
-            "name": "Mounted Herald",
+            "name": "Outrider Herald",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -11326,7 +13557,26 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -11402,6 +13652,119 @@
                     },
                     "default": "twin-bolter"
                 },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            }
+        },
+        "herald-on-scimitar-jetbike": {
+            "id": "herald-on-scimitar-jetbike",
+            "name": "Herald on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 150
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "herald-on-scimitar-jetbike",
+                    "name": "Herald on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "9",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "icon-of-allegiance"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Power weapons",
+                    "description": "This Model may have its power weapon exchanged for one power fist.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "power-weapons": {
+                            "id": "power-weapons",
+                            "name": "Power weapons",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-weapons"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        }
+                    },
+                    "default": "power-weapons"
+                },
                 "option-3": {
                     "id": "option-3",
                     "name": "Heavy bolter",
@@ -11468,7 +13831,7 @@
         },
         "mounted-legion-champion": {
             "id": "mounted-legion-champion",
-            "name": "Mounted Legion Champion",
+            "name": "Outrider Legion Champion",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -11496,7 +13859,25 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        },
+                        {
+                            "id": "never-back-down"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -11563,6 +13944,91 @@
                         }
                     },
                     "default": "twin-bolter"
+                }
+            }
+        },
+        "legion-champion-on-scimitar-jetbike": {
+            "id": "legion-champion-on-scimitar-jetbike",
+            "name": "Legion Champion on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 155
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "legion-champion-on-scimitar-jetbike",
+                    "name": "Legion Champion on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "never-back-down"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "volkite-serpenta"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "paragon-blade"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
@@ -11611,7 +14077,7 @@
         },
         "mounted-librarian": {
             "id": "mounted-librarian",
-            "name": "Mounted Librarian",
+            "name": "Outrider Librarian",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -11639,7 +14105,22 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        }
+                    ]
                 }
             ],
             "traits": ["Psyker"],
@@ -11774,6 +14255,156 @@
                         }
                     },
                     "default": "twin-bolter"
+                }
+            }
+        },
+        "librarian-on-scimitar-jetbike": {
+            "id": "librarian-on-scimitar-jetbike",
+            "name": "Librarian on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 135
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "librarian-on-scimitar-jetbike",
+                    "name": "Librarian on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "9",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Psyker"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "force-weapons"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "bolt-pistol"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Psychic Disciplines",
+                    "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
+                    "perModel": {
+                        "type": "some",
+                        "max": 2
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "biomancy": {
+                            "id": "biomancy",
+                            "name": "Biomancy",
+                            "cost": {
+                                "points": 30
+                            },
+                            "equipmentRefs": ["biomancy"]
+                        },
+                        "pyromancy": {
+                            "id": "pyromancy",
+                            "name": "Pyromancy",
+                            "cost": {
+                                "points": 15
+                            },
+                            "equipmentRefs": ["pyromancy"]
+                        },
+                        "telekinesis": {
+                            "id": "telekinesis",
+                            "name": "Telekinesis",
+                            "cost": {
+                                "points": 30
+                            },
+                            "equipmentRefs": ["telekinesis"]
+                        },
+                        "divination": {
+                            "id": "divination",
+                            "name": "Divination",
+                            "cost": {
+                                "points": 25
+                            },
+                            "equipmentRefs": ["divination"]
+                        },
+                        "thaumaturgy": {
+                            "id": "thaumaturgy",
+                            "name": "Thaumaturgy",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["thaumaturgy"]
+                        },
+                        "telepathy": {
+                            "id": "telepathy",
+                            "name": "Telepathy",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["telepathy"]
+                        }
+                    },
+                    "default": "none"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -11822,7 +14453,7 @@
         },
         "mounted-master-of-signals": {
             "id": "mounted-master-of-signals",
-            "name": "Mounted Master of Signals",
+            "name": "Outrider Master of Signals",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -11850,7 +14481,22 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -11917,6 +14563,88 @@
                         }
                     },
                     "default": "twin-bolter"
+                }
+            }
+        },
+        "master-of-signals-on-scimitar-jetbike": {
+            "id": "master-of-signals-on-scimitar-jetbike",
+            "name": "Master of Signals on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 155
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "master-of-signals-on-scimitar-jetbike",
+                    "name": "Master of Signals on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "command-vox-relay"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "bolt-pistol"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -11965,7 +14693,7 @@
         },
         "mounted-praetor": {
             "id": "mounted-praetor",
-            "name": "Mounted Praetor",
+            "name": "Outrider Praetor",
             "role": "high-command",
             "type": "cavalry",
             "cost": {
@@ -11993,15 +14721,26 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        }
+                    ]
                 }
             ],
             "traits": ["Master of the Legion"],
             "defaultWargear": [
-                {
-                    "kind": "weapon",
-                    "id": "bolt-pistol"
-                },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades"
@@ -12012,13 +14751,14 @@
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "Chainsword and/or bolt pistol",
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
                     "description": "This Model may have its chainsword and/or bolt pistol exchanged for one paragon blade, one archaeotech pistol or one item from...",
                     "perModel": {
                         "type": "single"
                     },
+                    "default": "chainsword",
                     "options": {
                         "chainsword": {
                             "id": "chainsword",
@@ -12048,8 +14788,46 @@
                             },
                             "weaponRefs": ["archaeotech-pistol"]
                         }
+                    }
+                },
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its chainsword and/or bolt pistol exchanged for one paragon blade, one archaeotech pistol or one item from...",
+                    "perModel": {
+                        "type": "single"
                     },
-                    "default": "chainsword"
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        },
+                        "paragon-blade": {
+                            "id": "paragon-blade",
+                            "name": "paragon blade",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["paragon-blade"]
+                        },
+                        "archaeotech-pistol": {
+                            "id": "archaeotech-pistol",
+                            "name": "archaeotech pistol",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["archaeotech-pistol"]
+                        }
+                    }
                 },
                 "option-2": {
                     "id": "option-2",
@@ -12096,6 +14874,159 @@
                         }
                     },
                     "default": "twin-bolter"
+                }
+            }
+        },
+        "praetor-on-scimitar-jetbike": {
+            "id": "praetor-on-scimitar-jetbike",
+            "name": "Praetor on Scimitar Jetbike",
+            "role": "high-command",
+            "type": "cavalry",
+            "cost": {
+                "points": 170
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "praetor-on-scimitar-jetbike",
+                    "name": "Praetor on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "5",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "description": "This Model may have its chainsword and/or bolt pistol exchanged for one paragon blade, one archaeotech pistol or one item from...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "chainsword",
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        },
+                        "paragon-blade": {
+                            "id": "paragon-blade",
+                            "name": "paragon blade",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["paragon-blade"]
+                        },
+                        "archaeotech-pistol": {
+                            "id": "archaeotech-pistol",
+                            "name": "archaeotech pistol",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["archaeotech-pistol"]
+                        }
+                    }
+                },
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its chainsword and/or bolt pistol exchanged for one paragon blade, one archaeotech pistol or one item from...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        },
+                        "paragon-blade": {
+                            "id": "paragon-blade",
+                            "name": "paragon blade",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["paragon-blade"]
+                        },
+                        "archaeotech-pistol": {
+                            "id": "archaeotech-pistol",
+                            "name": "archaeotech pistol",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["archaeotech-pistol"]
+                        }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
@@ -12144,7 +15075,7 @@
         },
         "mounted-primus-medicae": {
             "id": "mounted-primus-medicae",
-            "name": "Mounted Primus Medicae",
+            "name": "Outrider Primus Medicae",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -12172,7 +15103,26 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Specialist"]
+                    "tags": ["Specialist"],
+                    "specialRules": [
+                        {
+                            "id": "medic",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -12281,6 +15231,134 @@
                         }
                     },
                     "default": "twin-bolter"
+                }
+            }
+        },
+        "primus-medicae-on-scimitar-jetbike": {
+            "id": "primus-medicae-on-scimitar-jetbike",
+            "name": "Primus Medicae on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 140
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "primus-medicae-on-scimitar-jetbike",
+                    "name": "Primus Medicae on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Specialist", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "medic",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "narthecium"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol and/or chainsword exchanged for one item from the Legion Officer Wargear list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        }
+                    }
+                },
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "description": "This Model may have its bolt pistol and/or chainsword exchanged for one item from the Legion Officer Wargear list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "chainsword",
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
@@ -12329,7 +15407,7 @@
         },
         "mounted-siege-breaker": {
             "id": "mounted-siege-breaker",
-            "name": "Mounted Siege Breaker",
+            "name": "Outrider Siege Breaker",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -12357,7 +15435,22 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -12444,6 +15537,127 @@
                         }
                     },
                     "default": "twin-bolter"
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            }
+        },
+        "siege-breaker-on-scimitar-jetbike": {
+            "id": "siege-breaker-on-scimitar-jetbike",
+            "name": "Siege Breaker on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 155
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "siege-breaker-on-scimitar-jetbike",
+                    "name": "Siege Breaker on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "9",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Heavy", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "thunder-hammer"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "phosphex-bomb"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cognis-signum"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "augury-scanner"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one disintegrator pistol or one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        },
+                        "disintegrator-pistol": {
+                            "id": "disintegrator-pistol",
+                            "name": "disintegrator pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["disintegrator-pistol"]
+                        }
+                    },
+                    "default": "bolt-pistol"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -12540,6 +15754,206 @@
                         "inv": "-"
                     },
                     "tags": ["Command"]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "bolter": {
+                    "id": "bolter",
+                    "name": "Bolter",
+                    "description": "This Model may have its bolter and/or bolt pistol exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolter",
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    }
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one disintegrator pistol or one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        },
+                        "disintegrator-pistol": {
+                            "id": "disintegrator-pistol",
+                            "name": "disintegrator pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["disintegrator-pistol"]
+                        }
+                    },
+                    "default": "bolt-pistol"
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "Bayonets",
+                    "description": "This Model with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    }
+                }
+            }
+        },
+        "optae-with-jump-pack": {
+            "id": "optae-with-jump-pack",
+            "name": "Optae with Jump Pack",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 70
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "optae-with-jump-pack",
+                    "name": "Optae with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "2",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -13690,7 +17104,7 @@
         },
         "praetor-in-terminator-armour": {
             "id": "praetor-in-terminator-armour",
-            "name": "Praetor in Terminator Armour",
+            "name": "Praetor in Cataphractii Terminator Armour",
             "role": "high-command",
             "type": "infantry",
             "cost": {
@@ -13718,7 +17132,135 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Master of the Legion"],
+            "upgrades": {
+                "combi-bolter": {
+                    "id": "combi-bolter",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger, or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Power weapons",
+                    "description": "This Model may have its power weapon exchanged for one paragon blade, or for one item from the Legion Terminator Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "power-weapons": {
+                            "id": "power-weapons",
+                            "name": "Power weapons",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-weapons"]
+                        },
+                        "legion-terminator-melee-weapons": {
+                            "id": "legion-terminator-melee-weapons",
+                            "target": "legion-terminator-melee-weapons"
+                        },
+                        "paragon-blade": {
+                            "id": "paragon-blade",
+                            "name": "paragon blade",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["paragon-blade"]
+                        }
+                    },
+                    "default": "power-weapons"
+                }
+            }
+        },
+        "praetor-in-tartaros-terminator-armour": {
+            "id": "praetor-in-tartaros-terminator-armour",
+            "name": "Praetor in Tartaros Terminator Armour",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 155
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-praetor",
+                    "name": "Tartaros Praetor",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "5",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "traits": ["Master of the Legion"],
@@ -13826,6 +17368,262 @@
                         "inv": "4+"
                     },
                     "tags": ["Command"]
+                }
+            ],
+            "traits": ["Master of the Legion"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "bolter": {
+                    "id": "bolter",
+                    "name": "Bolter",
+                    "description": "This Model may have its bolter and/or bolt pistol exchanged for one paragon blade, one archaeotech pistol or one item from the...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolter",
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        },
+                        "paragon-blade": {
+                            "id": "paragon-blade",
+                            "name": "paragon blade",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["paragon-blade"]
+                        },
+                        "archaeotech-pistol": {
+                            "id": "archaeotech-pistol",
+                            "name": "archaeotech pistol",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["archaeotech-pistol"]
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    }
+                },
+                "bolt-pistol": {
+                    "id": "bolt-pistol",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolter and/or bolt pistol exchanged for one paragon blade, one archaeotech pistol or one item from the...",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        },
+                        "paragon-blade": {
+                            "id": "paragon-blade",
+                            "name": "paragon blade",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["paragon-blade"]
+                        },
+                        "archaeotech-pistol": {
+                            "id": "archaeotech-pistol",
+                            "name": "archaeotech pistol",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["archaeotech-pistol"]
+                        }
+                    }
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Swap to pair of lightning claws",
+                    "description": "This Model may have its bolter and bolt pistol exchanged for one pair of lightning claws.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "replaces": ["bolter", "bolt-pistol"]
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
+                },
+                "option-5": {
+                    "id": "option-5",
+                    "name": "Bayonets",
+                    "description": "This Model with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    }
+                },
+                "option-6": {
+                    "id": "option-6",
+                    "name": "Cyber-familiar",
+                    "description": "This Praetor may have one cyber-familiar selected for it*.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "cyber-familiar": {
+                            "id": "cyber-familiar",
+                            "name": "cyber-familiar",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cyber-familiar"]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            }
+        },
+        "praetor-with-jump-pack": {
+            "id": "praetor-with-jump-pack",
+            "name": "Praetor with Jump Pack",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 140
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "praetor-with-jump-pack",
+                    "name": "Praetor with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
                 }
             ],
             "traits": ["Master of the Legion"],
@@ -15236,7 +19034,7 @@
         },
         "primus-medicae-in-terminator-armour": {
             "id": "primus-medicae-in-terminator-armour",
-            "name": "Primus Medicae in Terminator Armour",
+            "name": "Primus Medicae in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -15264,7 +19062,140 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Specialist", "Heavy"]
+                    "tags": ["Specialist", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "medic",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "narthecium"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger, one needle pistol, or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "needle-pistol": {
+                            "id": "needle-pistol",
+                            "name": "needle pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["needle-pistol"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Power weapons",
+                    "description": "This Model may have its power weapon exchanged for one item from the Legion Terminator Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "power-weapons": {
+                            "id": "power-weapons",
+                            "name": "Power weapons",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-weapons"]
+                        },
+                        "legion-terminator-melee-weapons": {
+                            "id": "legion-terminator-melee-weapons",
+                            "target": "legion-terminator-melee-weapons"
+                        }
+                    },
+                    "default": "power-weapons"
+                }
+            }
+        },
+        "primus-medicae-in-tartaros-terminator-armour": {
+            "id": "primus-medicae-in-tartaros-terminator-armour",
+            "name": "Primus Medicae in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-primus-medicae",
+                    "name": "Tartaros Primus Medicae",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Specialist"],
+                    "specialRules": [
+                        {
+                            "id": "medic",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -15368,7 +19299,157 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Specialist"]
+                    "tags": ["Specialist"],
+                    "specialRules": [
+                        {
+                            "id": "medic",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "narthecium"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "chainsword": {
+                    "id": "chainsword",
+                    "name": "Chainsword",
+                    "description": "This Model may have its bolt pistol and/or chainsword exchanged for one item from the Legion Officer Wargear list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "chainsword",
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "legion-officer-wargear": {
+                            "id": "legion-officer-wargear",
+                            "target": "legion-officer-wargear"
+                        }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Combi-weapons list or one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "bolt-pistol"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Melta bombs",
+                    "description": "This Model may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            }
+        },
+        "primus-medicae-with-jump-pack": {
+            "id": "primus-medicae-with-jump-pack",
+            "name": "Primus Medicae with Jump Pack",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "primus-medicae-with-jump-pack",
+                    "name": "Primus Medicae with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Specialist", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "medic",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -18048,7 +22129,7 @@
         },
         "siege-breaker-in-terminator-armour": {
             "id": "siege-breaker-in-terminator-armour",
-            "name": "Siege Breaker in Terminator Armour",
+            "name": "Siege Breaker in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -18076,7 +22157,109 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "thunder-hammer"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "cognis-signum"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "augury-scanner"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                }
+            }
+        },
+        "siege-breaker-in-tartaros-terminator-armour": {
+            "id": "siege-breaker-in-tartaros-terminator-armour",
+            "name": "Siege Breaker in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 130
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-siege-breaker",
+                    "name": "Tartaros Siege Breaker",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "9",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [
@@ -21986,7 +26169,7 @@
         },
         "warmonger-in-terminator-armour": {
             "id": "warmonger-in-terminator-armour",
-            "name": "Warmonger in Terminator Armour",
+            "name": "Warmonger in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -22014,7 +26197,132 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "aetheric-juncture-splicer"
+                }
+            ],
+            "upgrades": {
+                "combi-bolter": {
+                    "id": "combi-bolter",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Power weapons",
+                    "description": "This Model may have its power weapon exchanged for one item from the Legion Terminator Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "power-weapons": {
+                            "id": "power-weapons",
+                            "name": "Power weapons",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["power-weapons"]
+                        },
+                        "legion-terminator-melee-weapons": {
+                            "id": "legion-terminator-melee-weapons",
+                            "target": "legion-terminator-melee-weapons"
+                        }
+                    },
+                    "default": "power-weapons"
+                }
+            }
+        },
+        "warmonger-in-tartaros-terminator-armour": {
+            "id": "warmonger-in-tartaros-terminator-armour",
+            "name": "Warmonger in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 150
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-warmonger",
+                    "name": "Tartaros Warmonger",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "defaultWargear": [

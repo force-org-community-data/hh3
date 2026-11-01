@@ -1104,7 +1104,7 @@
         },
         "word-bearers-diabolist-in-terminator-armour": {
             "id": "word-bearers-diabolist-in-terminator-armour",
-            "name": "Word Bearers Diabolist in Terminator Armour",
+            "name": "Word Bearers Diabolist in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -1132,7 +1132,106 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Command", "Heavy"]
+                    "tags": ["Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers", "Psyker", "Diabolist"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "force-weapons"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "word-bearers-diabolist-in-tartaros-terminator-armour": {
+            "id": "word-bearers-diabolist-in-tartaros-terminator-armour",
+            "name": "Word Bearers Diabolist in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 135
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-diabolist",
+                    "name": "Tartaros Diabolist",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        }
+                    ]
                 }
             ],
             "traits": ["Traitor", "Word Bearers", "Psyker", "Diabolist"],
@@ -1211,6 +1310,93 @@
                         "inv": "5+"
                     },
                     "tags": ["Command"]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers", "Psyker", "Diabolist"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "force-weapons"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "bolt-pistol"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "word-bearers-diabolist-with-jump-pack": {
+            "id": "word-bearers-diabolist-with-jump-pack",
+            "name": "Word Bearers Diabolist with Jump Pack",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 135
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "diabolist-with-jump-pack",
+                    "name": "Diabolist with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
                 }
             ],
             "traits": ["Traitor", "Word Bearers", "Psyker", "Diabolist"],
@@ -1520,7 +1706,7 @@
         },
         "word-bearers-mounted-diabolist": {
             "id": "word-bearers-mounted-diabolist",
-            "name": "Word Bearers Mounted Diabolist",
+            "name": "Word Bearers Outrider Diabolist",
             "role": "command",
             "type": "cavalry",
             "cost": {
@@ -1548,7 +1734,22 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        }
+                    ]
                 }
             ],
             "traits": ["Traitor", "Word Bearers", "Psyker", "Diabolist"],
@@ -1616,6 +1817,93 @@
                         }
                     },
                     "default": "twin-bolter"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "word-bearers-diabolist-on-scimitar-jetbike": {
+            "id": "word-bearers-diabolist-on-scimitar-jetbike",
+            "name": "Word Bearers Diabolist on Scimitar Jetbike",
+            "role": "command",
+            "type": "cavalry",
+            "cost": {
+                "points": 155
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "diabolist-on-scimitar-jetbike",
+                    "name": "Diabolist on Scimitar Jetbike",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Word Bearers", "Psyker", "Diabolist"],
+            "defaultWargear": [
+                {
+                    "kind": "equipment",
+                    "id": "force-weapons"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "bolt-pistol"
                 },
                 "option-3": {
                     "id": "option-3",

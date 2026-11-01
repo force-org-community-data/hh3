@@ -150,30 +150,56 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "grenade-harness"
-                },
-                {
-                    "kind": "weapon",
                     "id": "cthonian-power-claw"
                 }
             ],
             "upgrades": {
+                "banestrike-combi-bolter": {
+                    "id": "banestrike-combi-bolter",
+                    "name": "Banestrike combi-bolter",
+                    "description": "This Model may have its banestrike combi-bolter and grenade harness exchanged for one paragon blade.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "banestrike-combi-bolter",
+                    "options": {
+                        "banestrike-combi-bolter": {
+                            "id": "banestrike-combi-bolter",
+                            "name": "Banestrike combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["banestrike-combi-bolter"]
+                        }
+                    }
+                },
+                "grenade-harness": {
+                    "id": "grenade-harness",
+                    "name": "Grenade harness",
+                    "description": "This Model may have its banestrike combi-bolter and grenade harness exchanged for one paragon blade.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "grenade-harness",
+                    "options": {
+                        "grenade-harness": {
+                            "id": "grenade-harness",
+                            "name": "Grenade harness",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["grenade-harness"]
+                        }
+                    }
+                },
                 "option-1": {
                     "id": "option-1",
-                    "name": "Banestrike Combi-bolter",
+                    "name": "Paragon blade",
                     "description": "This Model may have its banestrike combi-bolter and grenade harness exchanged for one paragon blade.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "banestrike-combi-bolter": {
-                            "id": "banestrike-combi-bolter",
-                            "name": "Banestrike Combi-bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["banestrike-combi-bolter"]
-                        },
                         "paragon-blade": {
                             "id": "paragon-blade",
                             "name": "paragon blade",
@@ -183,7 +209,7 @@
                             "weaponRefs": ["paragon-blade"]
                         }
                     },
-                    "default": "banestrike-combi-bolter"
+                    "replaces": ["banestrike-combi-bolter", "grenade-harness"]
                 }
             },
             "when": {
@@ -1258,7 +1284,7 @@
         },
         "sons-of-horus-dark-emissary-in-terminator-armour": {
             "id": "sons-of-horus-dark-emissary-in-terminator-armour",
-            "name": "Sons of Horus Dark Emissary in Terminator Armour",
+            "name": "Sons of Horus Dark Emissary in Cataphractii Terminator Armour",
             "role": "command",
             "type": "infantry",
             "cost": {
@@ -1286,7 +1312,112 @@
                         "sav": "2+",
                         "inv": "4+"
                     },
-                    "tags": ["Unique", "Command", "Heavy"]
+                    "tags": ["Unique", "Command", "Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "eyes-of-the-warmaster"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Sons of Horus"],
+            "defaultWargear": [
+                {
+                    "kind": "weapon",
+                    "id": "staff-of-dark-authority"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Combi-bolter",
+                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "default": "combi-bolter"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        },
+        "sons-of-horus-dark-emissary-in-tartaros-terminator-armour": {
+            "id": "sons-of-horus-dark-emissary-in-tartaros-terminator-armour",
+            "name": "Sons of Horus Dark Emissary in Tartaros Terminator Armour",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tartaros-dark-emissary",
+                    "name": "Tartaros Dark Emissary",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "5",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "9",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "eyes-of-the-warmaster"
+                        }
+                    ]
                 }
             ],
             "traits": ["Traitor", "Sons of Horus"],
@@ -2372,7 +2503,6 @@
                     "cost": {
                         "points": 5
                     },
-                    "weaponRefs": ["banestrike-bolter"],
                     "swaps": [
                         {
                             "from": {
@@ -2409,7 +2539,6 @@
                     "cost": {
                         "points": 5
                     },
-                    "weaponRefs": ["carsoran-power-axe"],
                     "swaps": [
                         {
                             "from": {
