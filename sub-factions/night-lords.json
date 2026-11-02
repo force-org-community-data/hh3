@@ -1394,16 +1394,39 @@
                                 "points": 5
                             },
                             "weaponRefs": ["chainglaive"]
-                        },
+                        }
+                    }
+                },
+                "chainblade": {
+                    "id": "chainblade",
+                    "name": "Executioner Chainsword to chainblade",
+                    "description": "Any Model in this Unit may have its chainsword exchanged for one chainblade for +5 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
                         "chainblade": {
                             "id": "chainblade",
                             "name": "chainblade",
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["chainblade"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainblade"
+                                    }
+                                }
+                            ]
                         }
-                    }
+                    },
+                    "multiSelect": true,
+                    "profileId": "executioner"
                 },
                 "option-2": {
                     "id": "option-2",

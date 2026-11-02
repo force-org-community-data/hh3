@@ -1393,6 +1393,11 @@
                     "kind": "weapon",
                     "id": "grenade-discharger",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "falling-star-power-spear",
+                    "perModel": true
                 }
             ],
             "upgrades": {
@@ -1448,30 +1453,33 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Falling-star power spear",
+                    "name": "Falling-star power spear to pair of equinox blades",
                     "description": "Any Model in this Unit may have its falling-star power spear exchanged for one pair of equinox blades.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "falling-star-power-spear": {
-                            "id": "falling-star-power-spear",
-                            "name": "Falling-star power spear",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["falling-star-power-spear"]
-                        },
                         "pair-of-equinox-blades": {
                             "id": "pair-of-equinox-blades",
                             "name": "pair of equinox blades",
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["pair-of-equinox-blades"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "falling-star-power-spear"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-equinox-blades"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "falling-star-power-spear"
+                    "multiSelect": true
                 }
             }
         },
@@ -1618,38 +1626,43 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-blade-encarmine"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Blade Encarmine",
+                    "name": "The Blade Encarmine to Spear of Telesto and one Moonsilver Blade",
                     "description": "This Model may have its The Blade Encarmine exchanged for one Spear of Telesto and one Moonsilver Blade.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "the-blade-encarmine": {
-                            "id": "the-blade-encarmine",
-                            "name": "The Blade Encarmine",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["the-blade-encarmine"]
-                        },
                         "spear-of-telesto-and-one-moonsilver-blade": {
                             "id": "spear-of-telesto-and-one-moonsilver-blade",
                             "name": "Spear of Telesto and one Moonsilver Blade",
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": [
-                                "spear-of-telesto",
-                                "moonsilver-blade"
-                            ]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "the-blade-encarmine"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "spear-of-telesto"
+                                    }
+                                }
+                            ],
+                            "weaponRefs": ["moonsilver-blade"]
                         }
                     },
-                    "default": "the-blade-encarmine"
+                    "multiSelect": true
                 }
             },
             "limit": {

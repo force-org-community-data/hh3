@@ -321,7 +321,7 @@
                 "option-1": {
                     "id": "option-1",
                     "name": "Phosphex shells",
-                    "description": "If your Army includes a Siege Breaker Model with the same Faction Trait as this Model, this Model’s Centreline Mounted Morbus bombard may also have phosphex ...",
+                    "description": "If your Army includes a Siege Breaker Model with the same Faction Trait as this Model, this Model’s Centreline Mounted Morbus bombard may also have phosphex shells selected for it.",
                     "perModel": {
                         "type": "single"
                     },
@@ -543,35 +543,48 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
                 }
             ],
             "upgrades": {
                 "chainsword": {
                     "id": "chainsword",
-                    "name": "Chainsword",
+                    "name": "Legionary Chainsword to chainaxe",
                     "description": "Any Model in this Unit may have its chainsword exchanged for one chainaxe.",
                     "perModel": {
                         "type": "some"
                     },
-                    "default": "chainsword",
                     "options": {
-                        "chainsword": {
-                            "id": "chainsword",
-                            "name": "Chainsword",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["chainsword"]
-                        },
                         "chainaxe": {
                             "id": "chainaxe",
                             "name": "chainaxe",
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["chainaxe"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    }
+                                }
+                            ]
                         }
-                    }
+                    },
+                    "multiSelect": true
                 },
                 "option-1": {
                     "id": "option-1",
@@ -697,24 +710,27 @@
                         "type": "every"
                     },
                     "options": {
-                        "bolt-pistol": {
-                            "id": "bolt-pistol",
-                            "name": "Bolt pistol",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["bolt-pistol"]
-                        },
                         "combat-shield": {
                             "id": "combat-shield",
                             "name": "combat shield",
                             "cost": {
                                 "points": 2
                             },
-                            "equipmentRefs": ["combat-shield"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "combat-shield"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "bolt-pistol"
+                    "multiSelect": true
                 },
                 "option-7": {
                     "id": "option-7",
@@ -1244,7 +1260,7 @@
                 "bolter": {
                     "id": "bolter",
                     "name": "Sgt Bolter",
-                    "description": "The Breacher Sergeant in this Unit may have its bolter exchanged for one item from the Legion Sergeant Melee Weapons list or one item from the Legion Combi-w...",
+                    "description": "The Breacher Sergeant in this Unit may have its bolter exchanged for one item from the Legion Sergeant Melee Weapons list or one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "single"
                     },
@@ -2431,6 +2447,11 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
                 }
             ],
             "upgrades": {
@@ -2501,21 +2522,24 @@
                         "type": "some"
                     },
                     "options": {
-                        "bolt-pistol": {
-                            "id": "bolt-pistol",
-                            "name": "Bolt pistol",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["bolt-pistol"]
-                        },
                         "combat-shield": {
                             "id": "combat-shield",
                             "name": "combat shield",
                             "cost": {
                                 "points": 2
                             },
-                            "equipmentRefs": ["combat-shield"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "combat-shield"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "restrictions": {
@@ -2528,7 +2552,7 @@
                         ],
                         "requiredAnd": true
                     },
-                    "default": "bolt-pistol"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
@@ -2807,17 +2831,49 @@
                                 "points": 0
                             },
                             "weaponRefs": ["plasma-bombard"]
-                        },
+                        }
+                    },
+                    "default": "saturnine-disruption-fist"
+                },
+                "twin-heavy-disintegrator": {
+                    "id": "twin-heavy-disintegrator",
+                    "name": "Plasma bombard to twin heavy disintegrator",
+                    "description": "This Model may have its plasma bombard exchanged for one twin heavy disintegrator.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
                         "twin-heavy-disintegrator": {
                             "id": "twin-heavy-disintegrator",
                             "name": "Twin heavy disintegrator",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["twin-heavy-disintegrator"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "plasma-bombard"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-heavy-disintegrator"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "saturnine-disruption-fist"
+                    "multiSelect": true,
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "plasma-bombard"
+                            }
+                        ],
+                        "requiredAnd": true
+                    }
                 },
                 "option-2": {
                     "id": "option-2",
@@ -7122,6 +7178,10 @@
                 {
                     "kind": "weapon",
                     "id": "demolisher-cannon"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-heavy-bolter"
                 }
             ],
             "upgrades": {
@@ -7162,30 +7222,33 @@
                 },
                 "option-1": {
                     "id": "option-1",
-                    "name": "Twin heavy bolter",
+                    "name": "Twin heavy bolter to Hull (Front) Mounted twin heavy flamer",
                     "description": "This Model may have its Hull (Front) Mounted twin heavy bolter exchanged for one Hull (Front) Mounted twin heavy flamer.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-heavy-bolter": {
-                            "id": "twin-heavy-bolter",
-                            "name": "Twin heavy bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-heavy-bolter"]
-                        },
                         "hull-front-mounted-twin-heavy-flamer": {
                             "id": "hull-front-mounted-twin-heavy-flamer",
                             "name": "Hull (Front) Mounted twin heavy flamer",
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["twin-heavy-flamer"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-heavy-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-heavy-flamer"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-heavy-bolter"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
@@ -7406,6 +7469,10 @@
                 {
                     "kind": "equipment",
                     "id": "machinator-array"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-axe"
                 }
             ],
             "upgrades": {
@@ -7448,24 +7515,27 @@
                         "type": "single"
                     },
                     "options": {
-                        "power-axe": {
-                            "id": "power-axe",
-                            "name": "Power axe",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["power-axe"]
-                        },
                         "thunder-hammer": {
                             "id": "thunder-hammer",
                             "name": "thunder hammer",
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["thunder-hammer"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "power-axe"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
@@ -7677,6 +7747,10 @@
                 {
                     "kind": "equipment",
                     "id": "machinator-array"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-axe"
                 }
             ],
             "upgrades": {
@@ -7711,24 +7785,27 @@
                         "type": "single"
                     },
                     "options": {
-                        "power-axe": {
-                            "id": "power-axe",
-                            "name": "Power axe",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["power-axe"]
-                        },
                         "thunder-hammer": {
                             "id": "thunder-hammer",
                             "name": "thunder hammer",
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["thunder-hammer"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "power-axe"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
@@ -7957,7 +8034,7 @@
                 },
                 "option-1": {
                     "id": "option-1",
-                    "name": "Twin heavy bolter",
+                    "name": "Hull (Front) Mounted twin heavy bolter",
                     "description": "This Model may have its Hull (Front) Mounted twin heavy bolter exchanged for one Hull (Front) Mounted twin heavy flamer.",
                     "perModel": {
                         "type": "single"
@@ -8149,7 +8226,7 @@
                 "option-1": {
                     "id": "option-1",
                     "name": "Legion Heavy Weapons",
-                    "description": "Every Model in this Unit must have one item from the Legion Heavy Weapons list selected for it. Every Model in this Unit must have the same item selected for...",
+                    "description": "Every Model in this Unit must have one item from the Legion Heavy Weapons list selected for it. Every Model in this Unit must have the same item selected for it.",
                     "perModel": {
                         "type": "every"
                     },
@@ -8540,7 +8617,18 @@
                                 "points": 0
                             },
                             "weaponRefs": ["power-lance"]
-                        },
+                        }
+                    },
+                    "default": "power-sword"
+                },
+                "power-fist": {
+                    "id": "power-fist",
+                    "name": "Power sword to power fist",
+                    "description": "This Model may have its power weapon exchanged for one power fist.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
                         "power-fist": {
                             "id": "power-fist",
                             "name": "power fist",
@@ -8550,7 +8638,8 @@
                             "weaponRefs": ["power-fist"]
                         }
                     },
-                    "default": "power-sword"
+                    "multiSelect": true,
+                    "replaces": ["option-1"]
                 },
                 "option-2": {
                     "id": "option-2",
@@ -8670,7 +8759,18 @@
                                 "points": 0
                             },
                             "weaponRefs": ["power-lance"]
-                        },
+                        }
+                    },
+                    "default": "power-sword"
+                },
+                "power-fist": {
+                    "id": "power-fist",
+                    "name": "Power sword to power fist",
+                    "description": "This Model may have its power weapon exchanged for one power fist.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
                         "power-fist": {
                             "id": "power-fist",
                             "name": "power fist",
@@ -8680,7 +8780,8 @@
                             "weaponRefs": ["power-fist"]
                         }
                     },
-                    "default": "power-sword"
+                    "multiSelect": true,
+                    "replaces": ["option-1"]
                 },
                 "option-2": {
                     "id": "option-2",
@@ -10427,6 +10528,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "volkite-serpenta"
                 }
             ],
             "upgrades": {
@@ -10438,24 +10543,27 @@
                         "type": "single"
                     },
                     "options": {
-                        "volkite-serpenta": {
-                            "id": "volkite-serpenta",
-                            "name": "Volkite serpenta",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["volkite-serpenta"]
-                        },
                         "combi-melta": {
                             "id": "combi-melta",
                             "name": "combi-melta",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["combi-melta"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-melta"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "volkite-serpenta"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
@@ -10523,6 +10631,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "volkite-serpenta"
                 }
             ],
             "upgrades": {
@@ -10534,24 +10646,27 @@
                         "type": "single"
                     },
                     "options": {
-                        "volkite-serpenta": {
-                            "id": "volkite-serpenta",
-                            "name": "Volkite serpenta",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["volkite-serpenta"]
-                        },
                         "combi-melta": {
                             "id": "combi-melta",
                             "name": "combi-melta",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["combi-melta"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-melta"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "volkite-serpenta"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
@@ -11894,38 +12009,56 @@
                 {
                     "kind": "weapon",
                     "id": "rad-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "overcharged-volkite-serpenta"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "overcharged-volkite-serpenta"
                 }
             ],
             "upgrades": {
                 "overcharged-volkite-serpenta": {
                     "id": "overcharged-volkite-serpenta",
-                    "name": "Two overcharged volkite serpentas",
+                    "name": "Two overcharged volkite serpentas to overcharged plasma pistols",
                     "description": "This Model may have both its overcharged volkite serpentas exchanged for two overcharged plasma pistol s.",
                     "perModel": {
                         "type": "single"
                     },
-                    "default": "overcharged-volkite-serpenta",
                     "options": {
-                        "overcharged-volkite-serpenta": {
-                            "id": "overcharged-volkite-serpenta",
-                            "name": "Two overcharged volkite serpentas",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": [
-                                "overcharged-volkite-serpenta",
-                                "overcharged-volkite-serpenta"
-                            ]
-                        },
                         "overcharged-plasma-pistol-s": {
                             "id": "overcharged-plasma-pistol-s",
                             "name": "Overcharged plasma pistols",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["overcharged-plasma-pistol"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "overcharged-volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "overcharged-plasma-pistol"
+                                    }
+                                },
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "overcharged-volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "overcharged-plasma-pistol"
+                                    }
+                                }
+                            ]
                         }
-                    }
+                    },
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
@@ -12011,38 +12144,56 @@
                 {
                     "kind": "weapon",
                     "id": "rad-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "overcharged-volkite-serpenta"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "overcharged-volkite-serpenta"
                 }
             ],
             "upgrades": {
                 "overcharged-volkite-serpenta": {
                     "id": "overcharged-volkite-serpenta",
-                    "name": "Two overcharged volkite serpentas",
+                    "name": "Two overcharged volkite serpentas to overcharged plasma pistols",
                     "description": "This Model may have both its overcharged volkite serpentas exchanged for two overcharged plasma pistols.",
                     "perModel": {
                         "type": "single"
                     },
-                    "default": "overcharged-volkite-serpenta",
                     "options": {
-                        "overcharged-volkite-serpenta": {
-                            "id": "overcharged-volkite-serpenta",
-                            "name": "Two overcharged volkite serpentas",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": [
-                                "overcharged-volkite-serpenta",
-                                "overcharged-volkite-serpenta"
-                            ]
-                        },
                         "overcharged-plasma-pistols": {
                             "id": "overcharged-plasma-pistols",
                             "name": "overcharged plasma pistols",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["overcharged-plasma-pistol"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "overcharged-volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "overcharged-plasma-pistol"
+                                    }
+                                },
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "overcharged-volkite-serpenta"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "overcharged-plasma-pistol"
+                                    }
+                                }
+                            ]
                         }
-                    }
+                    },
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
@@ -12764,6 +12915,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter"
                 }
             ],
             "upgrades": {
@@ -12834,30 +12989,33 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "This Outrider Centurion may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 }
             }
         },
@@ -13088,6 +13246,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter"
                 }
             ],
             "upgrades": {
@@ -13116,30 +13278,33 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "This Outrider Chaplain may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
@@ -13362,6 +13527,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter"
                 }
             ],
             "upgrades": {
@@ -13432,30 +13601,33 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "This Outrider Delegatus may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 }
             }
         },
@@ -13693,6 +13865,14 @@
                 {
                     "kind": "equipment",
                     "id": "machinator-array"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-axe"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter"
                 }
             ],
             "upgrades": {
@@ -13745,24 +13925,27 @@
                         "type": "single"
                     },
                     "options": {
-                        "power-axe": {
-                            "id": "power-axe",
-                            "name": "Power axe",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["power-axe"]
-                        },
                         "thunder-hammer": {
                             "id": "thunder-hammer",
                             "name": "thunder hammer",
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["thunder-hammer"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-axe"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "thunder-hammer"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "power-axe"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
@@ -13785,30 +13968,33 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "This Outrider Forge Lord may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 }
             }
         },
@@ -14080,6 +14266,10 @@
                 {
                     "kind": "equipment",
                     "id": "icon-of-allegiance"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter"
                 }
             ],
             "upgrades": {
@@ -14122,7 +14312,18 @@
                                 "points": 0
                             },
                             "weaponRefs": ["power-lance"]
-                        },
+                        }
+                    },
+                    "default": "power-sword"
+                },
+                "power-fist": {
+                    "id": "power-fist",
+                    "name": "Power sword to power fist",
+                    "description": "This Model may have its power weapon exchanged for one power fist.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
                         "power-fist": {
                             "id": "power-fist",
                             "name": "power fist",
@@ -14132,34 +14333,38 @@
                             "weaponRefs": ["power-fist"]
                         }
                     },
-                    "default": "power-sword"
+                    "multiSelect": true,
+                    "replaces": ["option-1"]
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "This Outrider Herald may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
@@ -14429,6 +14634,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter"
                 }
             ],
             "upgrades": {
@@ -14453,30 +14662,33 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "This Outrider Legion Champion may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 }
             }
         },
@@ -14669,6 +14881,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter"
                 }
             ],
             "upgrades": {
@@ -14764,30 +14980,33 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "This Outrider Librarian may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 }
             }
         },
@@ -15044,6 +15263,10 @@
                 {
                     "kind": "equipment",
                     "id": "command-vox-relay"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter"
                 }
             ],
             "upgrades": {
@@ -15072,30 +15295,33 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "This Outrider Master of Signals may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 }
             }
         },
@@ -15281,6 +15507,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter"
                 }
             ],
             "upgrades": {
@@ -15383,30 +15613,33 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "This Outrider Praetor may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 }
             }
         },
@@ -15670,6 +15903,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter"
                 }
             ],
             "upgrades": {
@@ -15740,30 +15977,33 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "This Outrider Primus Medicae may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 }
             }
         },
@@ -16010,6 +16250,10 @@
                 {
                     "kind": "equipment",
                     "id": "augury-scanner"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter"
                 }
             ],
             "upgrades": {
@@ -16046,30 +16290,33 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "This Outrider Siege Breaker may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
@@ -16763,6 +17010,11 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter",
+                    "perModel": true
                 }
             ],
             "upgrades": {
@@ -16853,30 +17105,33 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "Any Model in this Unit may have its twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "some"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
@@ -17024,6 +17279,16 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
                 }
             ],
             "upgrades": {
@@ -17099,30 +17364,33 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Twin bolter",
+                    "name": "Twin bolter to twin plasma gun",
                     "description": "All Models in the Unit may have their twin bolter exchanged for one twin plasma gun.",
                     "perModel": {
                         "type": "every"
                     },
                     "options": {
-                        "twin-bolter": {
-                            "id": "twin-bolter",
-                            "name": "Twin bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["twin-bolter"]
-                        },
                         "twin-plasma-gun": {
                             "id": "twin-plasma-gun",
                             "name": "Twin plasma gun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["twin-plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "twin-bolter"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
@@ -17132,24 +17400,27 @@
                         "type": "some"
                     },
                     "options": {
-                        "chainsword": {
-                            "id": "chainsword",
-                            "name": "Chainsword",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["chainsword"]
-                        },
                         "astartes-shotgun": {
                             "id": "astartes-shotgun",
                             "name": "Astartes shotgun",
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["astartes-shotgun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "astartes-shotgun"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "chainsword"
+                    "multiSelect": true
                 }
             }
         },
@@ -17203,6 +17474,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-lash"
                 }
             ],
             "upgrades": {
@@ -17214,24 +17489,27 @@
                         "type": "single"
                     },
                     "options": {
-                        "power-lash": {
-                            "id": "power-lash",
-                            "name": "Power lash",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["power-lash"]
-                        },
                         "power-maul": {
                             "id": "power-maul",
                             "name": "power maul",
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["power-maul"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "power-lash"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "power-maul"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "power-lash"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
@@ -18526,6 +18804,11 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
                 }
             ],
             "upgrades": {
@@ -18596,21 +18879,24 @@
                         "type": "some"
                     },
                     "options": {
-                        "bolt-pistol": {
-                            "id": "bolt-pistol",
-                            "name": "Bolt pistol",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["bolt-pistol"]
-                        },
                         "combat-shield": {
                             "id": "combat-shield",
                             "name": "combat shield",
                             "cost": {
                                 "points": 2
                             },
-                            "equipmentRefs": ["combat-shield"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "combat-shield"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "restrictions": {
@@ -18623,7 +18909,7 @@
                         ],
                         "requiredAnd": true
                     },
-                    "default": "bolt-pistol"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
@@ -19087,6 +19373,11 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
                 }
             ],
             "upgrades": {
@@ -19157,21 +19448,24 @@
                         "type": "some"
                     },
                     "options": {
-                        "bolt-pistol": {
-                            "id": "bolt-pistol",
-                            "name": "Bolt pistol",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["bolt-pistol"]
-                        },
                         "combat-shield": {
                             "id": "combat-shield",
                             "name": "combat shield",
                             "cost": {
                                 "points": 2
                             },
-                            "equipmentRefs": ["combat-shield"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "combat-shield"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "restrictions": {
@@ -19184,7 +19478,7 @@
                         ],
                         "requiredAnd": true
                     },
-                    "default": "bolt-pistol"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
@@ -20520,6 +20814,12 @@
                     "id": "bolt-pistol",
                     "perModel": true,
                     "profileId": "recon-legionary"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "astartes-shotgun",
+                    "perModel": true,
+                    "profileId": "recon-legionary"
                 }
             ],
             "upgrades": {
@@ -20547,6 +20847,30 @@
                         "legion-pistols": {
                             "id": "legion-pistols",
                             "target": "legion-pistols"
+                        }
+                    },
+                    "profileId": "recon-sergeant"
+                },
+                "astartes-shotgun": {
+                    "id": "astartes-shotgun",
+                    "name": "Sgt Astartes shotgun",
+                    "description": "The Recon Sergeant in this Unit may have its Astartes shotgun and/or bolt pistol exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "default": "astartes-shotgun",
+                    "options": {
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["astartes-shotgun"]
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
                         }
                     },
                     "profileId": "recon-sergeant"
@@ -20583,24 +20907,27 @@
                         "type": "some"
                     },
                     "options": {
-                        "astartes-shotgun": {
-                            "id": "astartes-shotgun",
-                            "name": "Astartes shotgun",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["astartes-shotgun"]
-                        },
                         "nemesis-bolter": {
                             "id": "nemesis-bolter",
                             "name": "Nemesis bolter",
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["nemesis-bolter"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "astartes-shotgun"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "astartes-shotgun"
+                    "multiSelect": true
                 },
                 "option-5": {
                     "id": "option-5",
@@ -20796,7 +21123,7 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Anvilus snub autocannon",
+                    "name": "Centreline Mounted Anvilus snub autocannon",
                     "description": "This Model may have its Centreline Mounted Anvilus snub autocannon exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
@@ -20831,7 +21158,7 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Heavy bolter",
+                    "name": "Hull (Front) Mounted heavy bolter",
                     "description": "This Model may have its Hull (Front) Mounted heavy bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
@@ -21494,17 +21821,49 @@
                                 "points": 0
                             },
                             "weaponRefs": ["plasma-bombard"]
-                        },
+                        }
+                    },
+                    "default": "saturnine-disruption-fist"
+                },
+                "twin-heavy-disintegrator": {
+                    "id": "twin-heavy-disintegrator",
+                    "name": "Plasma bombard to twin heavy disintegrator",
+                    "description": "Any Model in this Unit may have its plasma bombard exchanged for one twin heavy disintegrator for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
                         "twin-heavy-disintegrator": {
                             "id": "twin-heavy-disintegrator",
                             "name": "Twin heavy disintegrator",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["twin-heavy-disintegrator"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "plasma-bombard"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-heavy-disintegrator"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "saturnine-disruption-fist"
+                    "multiSelect": true,
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "plasma-bombard"
+                            }
+                        ],
+                        "requiredAnd": true
+                    }
                 },
                 "option-2": {
                     "id": "option-2",
@@ -22714,7 +23073,7 @@
                 },
                 "option-1": {
                     "id": "option-1",
-                    "name": "Twin accelerator autocannon",
+                    "name": "Turret Mounted twin accelerator autocannon",
                     "description": "This Model may have its Turret Mounted twin accelerator autocannon exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
@@ -23433,7 +23792,7 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Twin heavy bolter",
+                    "name": "Hull (Front) Mounted twin heavy bolter",
                     "description": "This Model may have its Hull (Front) Mounted twin heavy bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
@@ -23611,7 +23970,7 @@
                 },
                 "option-1": {
                     "id": "option-1",
-                    "name": "Twin heavy bolter",
+                    "name": "Centreline Mounted twin heavy bolter",
                     "description": "This Model may have its Centreline Mounted twin heavy bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "single"
@@ -24172,7 +24531,7 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Twin heavy bolter",
+                    "name": "Turret Mounted twin heavy bolter",
                     "description": "Any Model in this Unit may have its Turret Mounted twin heavy bolter exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
@@ -25636,7 +25995,7 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Bolt pistol to disintegrator pistol (Veteran Assault Sergeant)",
+                    "name": "Sgt Bolt pistol to disintegrator pistol",
                     "description": "The Veteran Assault Sergeant in this Unit may have its bolt pistol exchanged for one disintegrator pistol.",
                     "perModel": {
                         "type": "single"
@@ -26617,7 +26976,7 @@
                 "option-2": {
                     "id": "option-2",
                     "name": "Veteran Heavy / Special weapon",
-                    "description": "For every five Models in this Unit, one Veteran in this Unit may have its bolter exchanged for one item from the Legion Special Weapons list or one item from...",
+                    "description": "For every five Models in this Unit, one Veteran in this Unit may have its bolter exchanged for one item from the Legion Special Weapons list or one item from the Legion Heavy Weapons list or one of the following:",
                     "perModel": {
                         "type": "one-in-x",
                         "everyX": 5
@@ -26859,35 +27218,42 @@
                 {
                     "kind": "weapon",
                     "id": "combi-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "demolisher-cannon"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Demolisher cannon",
+                    "name": "Demolisher cannon to Centreline Mounted magna laser destroyer",
                     "description": "This Model may have its Centreline Mounted demolisher cannon exchanged for one Centreline Mounted magna laser destroyer.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "demolisher-cannon": {
-                            "id": "demolisher-cannon",
-                            "name": "Demolisher cannon",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["demolisher-cannon"]
-                        },
                         "centreline-mounted-magna-laser-destroyer": {
                             "id": "centreline-mounted-magna-laser-destroyer",
                             "name": "Centreline Mounted magna laser destroyer",
                             "cost": {
                                 "points": 20
                             },
-                            "weaponRefs": ["magna-laser-destroyer"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "demolisher-cannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "magna-laser-destroyer"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "demolisher-cannon"
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
