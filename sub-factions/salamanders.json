@@ -1793,6 +1793,24 @@
                 }
             ]
         },
+        "forge-crafted-power-fist": {
+            "id": "forge-crafted-power-fist",
+            "name": "Forge-crafted power fist",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power fist",
+                    "stats": {
+                        "im": "-3",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        },
         "forge-crafted-power-sword": {
             "id": "forge-crafted-power-sword",
             "name": "Forge-crafted power sword",
@@ -1814,7 +1832,14 @@
                             "value": "6+"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        "forge-crafted-power-axe": {
+            "id": "forge-crafted-power-axe",
+            "name": "Forge-crafted power axe",
+            "template": "melee",
+            "profiles": [
                 {
                     "name": "Forge-crafted power axe",
                     "stats": {
@@ -1831,7 +1856,14 @@
                             "value": "5+"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        "forge-crafted-power-maul": {
+            "id": "forge-crafted-power-maul",
+            "name": "Forge-crafted power maul",
+            "template": "melee",
+            "profiles": [
                 {
                     "name": "Forge-crafted power maul",
                     "stats": {
@@ -1848,7 +1880,14 @@
                             "value": "6+"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        "forge-crafted-power-lance": {
+            "id": "forge-crafted-power-lance",
+            "name": "Forge-crafted power lance",
+            "template": "melee",
+            "profiles": [
                 {
                     "name": "Forge-crafted power lance",
                     "stats": {
@@ -1867,24 +1906,6 @@
                     ]
                 }
             ]
-        },
-        "forge-crafted-power-fist": {
-            "id": "forge-crafted-power-fist",
-            "name": "Forge-crafted power fist",
-            "template": "melee",
-            "profiles": [
-                {
-                    "name": "Forge-crafted power fist",
-                    "stats": {
-                        "im": "-3",
-                        "am": "A",
-                        "sm": "+4",
-                        "ap": "2",
-                        "d": "3"
-                    },
-                    "traits": ["Power"]
-                }
-            ]
         }
     },
     "equipment": {
@@ -1899,16 +1920,9 @@
             "id": "salamanders-drakenscale",
             "name": "Drakenscale",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "drakenscale": {
                     "id": "drakenscale",
                     "name": "Drakenscale",
@@ -1917,48 +1931,155 @@
                     },
                     "equipmentRefs": ["drakenscale"]
                 }
-            },
-            "default": "none"
+            }
         },
-        "salamanders-forge-crafted-power-weapons": {
-            "id": "salamanders-forge-crafted-power-weapons",
-            "name": "Forge-crafted Power Weapons",
+        "salamanders-forge-crafted-power-sword": {
+            "id": "salamanders-forge-crafted-power-sword",
+            "name": "Forge-crafted Power Sword",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
-                "forge-crafted-power-weapons": {
-                    "id": "forge-crafted-power-weapons",
-                    "name": "Forge-crafted Power Weapons",
+                "forge-crafted-power-sword": {
+                    "id": "forge-crafted-power-sword",
+                    "name": "Forge-crafted Power Sword",
                     "cost": {
                         "points": 5
                     },
-                    "weaponRefs": ["forge-crafted-power-sword"]
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-sword"
+                            }
+                        }
+                    ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-axe": {
+            "id": "salamanders-forge-crafted-power-axe",
+            "name": "Forge-crafted Power Axe",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-axe": {
+                    "id": "forge-crafted-power-axe",
+                    "name": "Forge-crafted Power Axe",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-axe"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-maul": {
+            "id": "salamanders-forge-crafted-power-maul",
+            "name": "Forge-crafted Power Maul",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-maul": {
+                    "id": "forge-crafted-power-maul",
+                    "name": "Forge-crafted Power Maul",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-maul"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-lance": {
+            "id": "salamanders-forge-crafted-power-lance",
+            "name": "Forge-crafted Power Lance",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-lance": {
+                    "id": "forge-crafted-power-lance",
+                    "name": "Forge-crafted Power Lance",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-lance"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
         },
         "salamanders-forge-crafted-power-fist": {
             "id": "salamanders-forge-crafted-power-fist",
             "name": "Forge-crafted Power Fist",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "forge-crafted-power-fist": {
                     "id": "forge-crafted-power-fist",
                     "name": "Forge-crafted Power Fist",
@@ -1979,22 +2100,21 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-fist",
+                    "count": 1
+                }
+            ]
         },
         "salamanders-forge-crafted-thunder-hammer": {
             "id": "salamanders-forge-crafted-thunder-hammer",
             "name": "Forge-crafted Thunder Hammer",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "forge-crafted-thunder-hammer": {
                     "id": "forge-crafted-thunder-hammer",
                     "name": "Forge-crafted Thunder Hammer",
@@ -2015,22 +2135,21 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "thunder-hammer",
+                    "count": 1
+                }
+            ]
         },
         "salamanders-forge-crafted-flame-weapons": {
             "id": "salamanders-forge-crafted-flame-weapons",
             "name": "Forge-crafted Flame Weapons",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "forge-crafted-flame-weapons": {
                     "id": "forge-crafted-flame-weapons",
                     "name": "Forge-crafted Flame Weapons",
@@ -2051,7 +2170,13 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "hand-flamer",
+                    "count": 1
+                }
+            ]
         }
     },
     "specialRules": {
@@ -2160,10 +2285,22 @@
         }
     },
     "unitModifiers": {
+        "salamanders-trait": {
+            "id": "salamanders-trait",
+            "name": "Salamanders Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Salamanders"]
+                }
+            ]
+        },
         "salamanders-drakenscale": {
             "id": "salamanders-drakenscale",
             "name": "Drakenscale",
             "selector": {
+                "traits": ["Salamanders"],
                 "profiles": {
                     "anyOf": ["command", "champion"]
                 }
@@ -2175,10 +2312,11 @@
                 }
             ]
         },
-        "salamanders-forge-crafted-power-weapons": {
-            "id": "salamanders-forge-crafted-power-weapons",
-            "name": "Forge-crafted Power Weapons",
+        "salamanders-forge-crafted-power-sword": {
+            "id": "salamanders-forge-crafted-power-sword",
+            "name": "Forge-crafted Power Sword",
             "selector": {
+                "traits": ["Salamanders"],
                 "profiles": {
                     "anyOf": ["command", "champion", "specialist", "sergeant"]
                 }
@@ -2186,7 +2324,55 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "salamanders-forge-crafted-power-weapons"
+                    "upgradeId": "salamanders-forge-crafted-power-sword"
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-axe": {
+            "id": "salamanders-forge-crafted-power-axe",
+            "name": "Forge-crafted Power Axe",
+            "selector": {
+                "traits": ["Salamanders"],
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-axe"
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-maul": {
+            "id": "salamanders-forge-crafted-power-maul",
+            "name": "Forge-crafted Power Maul",
+            "selector": {
+                "traits": ["Salamanders"],
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-maul"
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-lance": {
+            "id": "salamanders-forge-crafted-power-lance",
+            "name": "Forge-crafted Power Lance",
+            "selector": {
+                "traits": ["Salamanders"],
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-lance"
                 }
             ]
         },
@@ -2194,6 +2380,7 @@
             "id": "salamanders-forge-crafted-power-fist",
             "name": "Forge-crafted Power Fist",
             "selector": {
+                "traits": ["Salamanders"],
                 "profiles": {
                     "anyOf": ["command", "champion", "specialist", "sergeant"]
                 }
@@ -2209,6 +2396,7 @@
             "id": "salamanders-forge-crafted-thunder-hammer",
             "name": "Forge-crafted Thunder Hammer",
             "selector": {
+                "traits": ["Salamanders"],
                 "profiles": {
                     "anyOf": ["command", "champion", "specialist"]
                 }
@@ -2224,6 +2412,7 @@
             "id": "salamanders-forge-crafted-flame-weapons",
             "name": "Forge-crafted Flame Weapons",
             "selector": {
+                "traits": ["Salamanders"],
                 "profiles": {
                     "anyOf": ["sergeant"]
                 }
@@ -2232,17 +2421,6 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "salamanders-forge-crafted-flame-weapons"
-                }
-            ]
-        },
-        "salamanders-trait": {
-            "id": "salamanders-trait",
-            "name": "Salamanders Trait",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "trait",
-                    "add": ["Salamanders"]
                 }
             ]
         },
