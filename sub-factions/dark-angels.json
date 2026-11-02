@@ -1833,35 +1833,42 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-lion-sword"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Lion Sword",
+                    "name": "The Lion Sword to The Wolf Blade",
                     "description": "This Model may have its The Lion Sword exchanged for one The Wolf Blade.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "the-lion-sword": {
-                            "id": "the-lion-sword",
-                            "name": "The Lion Sword",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["the-lion-sword"]
-                        },
                         "the-wolf-blade": {
                             "id": "the-wolf-blade",
                             "name": "The Wolf Blade",
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["the-wolf-blade"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "the-lion-sword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "the-wolf-blade"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "the-lion-sword"
+                    "multiSelect": true
                 }
             },
             "limit": {

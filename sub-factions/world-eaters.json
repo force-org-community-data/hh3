@@ -220,35 +220,42 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-cutter"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "The Cutter to gorechild Reforged",
+                    "name": "The Cutter to Gorechild Reforged",
                     "description": "If Angron is not included in the same Army as this Model, this Model may have its The Cutter exchanged for one Gorechild Reforged.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "the-cutter": {
-                            "id": "the-cutter",
-                            "name": "The Cutter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["the-cutter"]
-                        },
                         "gorechild-reforged": {
                             "id": "gorechild-reforged",
                             "name": "Gorechild Reforged",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["gorechild-reforged"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "the-cutter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "gorechild-reforged"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "the-cutter"
+                    "multiSelect": true
                 }
             },
             "when": {
@@ -486,7 +493,7 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Rampager Champion Bolt pistol to plasma pistol",
+                    "name": "Champion Bolt pistol to plasma pistol",
                     "description": "The Rampager Champion in this Unit may have its bolt pistol exchanged for one plasma pistol.",
                     "perModel": {
                         "type": "single"
