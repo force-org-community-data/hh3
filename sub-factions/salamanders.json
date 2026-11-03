@@ -267,13 +267,15 @@
                     },
                     "default": "forge-crafted-thunder-hammer"
                 },
-                "option-2": {
-                    "id": "option-2",
-                    "name": "Drakenscale",
+                "drakenscale": {
+                    "id": "drakenscale",
+                    "name": "Master Drakenscale",
                     "description": "Any Model in this Unit may have its Drakenscale exchanged for one combi-bolter or for one item from the Legion Combi-weapons list. Any Model that ha...",
+                    "profileId": "firedrake-master",
                     "perModel": {
-                        "type": "some"
+                        "type": "single"
                     },
+                    "default": "drakenscale",
                     "options": {
                         "drakenscale": {
                             "id": "drakenscale",
@@ -283,24 +285,55 @@
                             },
                             "equipmentRefs": ["drakenscale"]
                         },
-                        "legion-combi-weapons": {
-                            "id": "legion-combi-weapons",
-                            "target": "legion-combi-weapons"
-                        },
                         "combi-bolter": {
                             "id": "combi-bolter",
-                            "name": "combi-bolter",
+                            "name": "Combi-bolter",
                             "cost": {
                                 "points": 0
                             },
                             "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
                         }
+                    }
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Firedrake Drakenscale",
+                    "description": "Any Model in this Unit may have its Drakenscale exchanged for one combi-bolter or for one item from the Legion Combi-weapons list. Any Model that ha...",
+                    "profileId": "firedrake",
+                    "perModel": {
+                        "type": "some"
                     },
-                    "default": "drakenscale"
+                    "default": "drakenscale",
+                    "options": {
+                        "drakenscale": {
+                            "id": "drakenscale",
+                            "name": "Drakenscale",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["drakenscale"]
+                        },
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    }
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Forge-crafted heavy flamer",
+                    "name": "Firedrake Drakenscale to forge-crafted heavy flamer",
                     "description": "One Firedrake in this Unit may have its Drakenscale exchanged for one forge-crafted heavy flamer. Any Model that has its Drakenscale exchanged...",
                     "perModel": {
                         "type": "single"
@@ -308,11 +341,22 @@
                     "options": {
                         "forge-crafted-heavy-flamer": {
                             "id": "forge-crafted-heavy-flamer",
-                            "name": "forge-crafted heavy flamer",
+                            "name": "Forge-crafted heavy flamer",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["forge-crafted-heavy-flamer"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "equipment",
+                                        "id": "drakenscale"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "forge-crafted-heavy-flamer"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "profileId": "firedrake",
@@ -1195,6 +1239,18 @@
                     "id": "chainsword",
                     "perModel": true,
                     "profileId": "sanctifier"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "profileId": "sanctifier",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "profileId": "sanctifier",
+                    "perModel": true
                 }
             ],
             "upgrades": {
@@ -1224,8 +1280,8 @@
                 },
                 "bolter": {
                     "id": "bolter",
-                    "name": "Bolter",
-                    "description": "Replaces the bolter",
+                    "name": "Consecrator Bolter",
+                    "description": "The Consecrator's bolter",
                     "perModel": {
                         "type": "single"
                     },
@@ -1239,12 +1295,13 @@
                             },
                             "weaponRefs": ["bolter"]
                         }
-                    }
+                    },
+                    "profileId": "consecrator"
                 },
                 "bolt-pistol": {
                     "id": "bolt-pistol",
-                    "name": "Bolt pistol",
-                    "description": "Replaces the bolt pistol",
+                    "name": "Consecrator Bolt pistol",
+                    "description": "The Consecrator's bolt pistol",
                     "perModel": {
                         "type": "single"
                     },
@@ -1258,11 +1315,12 @@
                             },
                             "weaponRefs": ["bolt-pistol"]
                         }
-                    }
+                    },
+                    "profileId": "consecrator"
                 },
                 "option-1": {
                     "id": "option-1",
-                    "name": "Paired pistols",
+                    "name": "Sanctifier Paired pistols",
                     "description": "Any Model in this Unit may have its bolter and bolt pistol exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
@@ -1281,7 +1339,28 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["bolt-pistol", "bolt-pistol"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    }
+                                },
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    }
+                                }
+                            ]
                         },
                         "two-volkite-serpentas": {
                             "id": "two-volkite-serpentas",
@@ -1289,9 +1368,27 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": [
-                                "volkite-serpenta",
-                                "volkite-serpenta"
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    }
+                                },
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "volkite-serpenta"
+                                    }
+                                }
                             ]
                         },
                         "two-hand-flamers": {
@@ -1300,11 +1397,32 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["hand-flamer", "hand-flamer"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    }
+                                },
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "hand-flamer"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "default": "none",
-                    "replaces": ["bolter", "bolt-pistol"]
+                    "profileId": "sanctifier"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1340,7 +1458,7 @@
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Sanctifier Sergeant Melee Weapons",
+                    "name": "Sanctifier Melee Weapons",
                     "description": "For every five models in this Unit, one Sanctifier in this Unit may have its chainsword exchanged for one item from the Legion Sergeant Melee Weapons list.",
                     "perModel": {
                         "type": "one-in-x",
@@ -1368,34 +1486,61 @@
                 },
                 "option-4": {
                     "id": "option-4",
-                    "name": "Swap Consecrator to forge-crafted hand flamers",
-                    "description": "The Consecrator in this Unit may have its bolter and bolt pistol exchanged for two forge-crafted hand flamers.",
+                    "name": "Consecrator Paired pistols",
+                    "description": "Any Model in this Unit may have its bolter and bolt pistol exchanged for one of the following: Two bolt pistols, two volkite serpentas, two hand flamers. The Consecrator in this Unit may have its bolter and bolt pistol exchanged for two forge-crafted hand flamers.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "two-bolt-pistols": {
+                            "id": "two-bolt-pistols",
+                            "name": "Two bolt pistols",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol", "bolt-pistol"]
+                        },
+                        "two-volkite-serpentas": {
+                            "id": "two-volkite-serpentas",
+                            "name": "Two volkite serpentas",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": [
+                                "volkite-serpenta",
+                                "volkite-serpenta"
+                            ]
+                        },
+                        "two-hand-flamers": {
+                            "id": "two-hand-flamers",
+                            "name": "Two hand flamers",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["hand-flamer", "hand-flamer"]
+                        },
                         "forge-crafted-hand-flamers": {
                             "id": "forge-crafted-hand-flamers",
-                            "name": "forge-crafted hand flamers",
+                            "name": "Two forge-crafted hand flamers",
                             "cost": {
                                 "points": 15
                             },
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "forge-crafted-hand-flamer"
-                                    }
-                                }
+                            "weaponRefs": [
+                                "forge-crafted-hand-flamer",
+                                "forge-crafted-hand-flamer"
                             ]
                         }
                     },
                     "profileId": "consecrator",
-                    "multiSelect": true
+                    "default": "none",
+                    "replaces": ["bolter", "bolt-pistol"]
                 },
                 "option-6": {
                     "id": "option-6",
