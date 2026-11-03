@@ -129,7 +129,14 @@
                 {
                     "kind": "weapon",
                     "id": "chainblade",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "dissident"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainblade",
+                    "perModel": true,
+                    "profileId": "contekar"
                 }
             ],
             "upgrades": {
@@ -434,7 +441,48 @@
                             },
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    }
+                    },
+                    "profileId": "atramentar"
+                },
+                "combi-bolter-atramentar-trucidor": {
+                    "id": "combi-bolter-atramentar-trucidor",
+                    "name": "Trucidor Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger, or one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "profileId": "atramentar-trucidor"
                 },
                 "option-1": {
                     "id": "option-1",
@@ -950,7 +998,7 @@
                     "name": "Bolt pistol",
                     "description": "Replaces the bolt pistol",
                     "perModel": {
-                        "type": "single"
+                        "type": "some"
                     },
                     "default": "bolt-pistol",
                     "options": {
@@ -962,7 +1010,28 @@
                             },
                             "weaponRefs": ["bolt-pistol"]
                         }
-                    }
+                    },
+                    "profileId": "night-raptor"
+                },
+                "bolt-pistol-huntmaster": {
+                    "id": "bolt-pistol-huntmaster",
+                    "name": "Huntmaster Bolt pistol",
+                    "description": "Replaces the bolt pistol",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        }
+                    },
+                    "profileId": "huntmaster"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -982,7 +1051,11 @@
                         }
                     },
                     "multiSelect": true,
-                    "replaces": ["chainsword", "bolt-pistol"]
+                    "replaces": [
+                        "chainsword",
+                        "bolt-pistol",
+                        "bolt-pistol-huntmaster"
+                    ]
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1395,7 +1468,76 @@
                             },
                             "weaponRefs": ["chainglaive"]
                         }
-                    }
+                    },
+                    "profileId": "executioner"
+                },
+                "chainsword-headsman": {
+                    "id": "chainsword-headsman",
+                    "name": "Headsman Chainsword",
+                    "description": "Any Model in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "chainsword",
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "rotor-cannon": {
+                            "id": "rotor-cannon",
+                            "name": "Rotor cannon",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["rotor-cannon"]
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"]
+                        },
+                        "chainaxe": {
+                            "id": "chainaxe",
+                            "name": "Chainaxe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainaxe"]
+                        },
+                        "chainglaive": {
+                            "id": "chainglaive",
+                            "name": "Chainglaive",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainglaive"]
+                        }
+                    },
+                    "profileId": "headsman"
                 },
                 "chainblade": {
                     "id": "chainblade",
@@ -1449,7 +1591,11 @@
                         }
                     },
                     "profileId": "headsman",
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "chainsword"
+                    }
                 },
                 "option-4": {
                     "id": "option-4",

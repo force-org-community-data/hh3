@@ -821,11 +821,6 @@
             ],
             "defaultWargear": [
                 {
-                    "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
                     "kind": "equipment",
                     "id": "boarding-shield",
                     "perModel": true
@@ -843,6 +838,18 @@
                 {
                     "kind": "weapon",
                     "id": "power-axe",
+                    "perModel": true,
+                    "profileId": "phalanx-warder"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "warder-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
                     "perModel": true,
                     "profileId": "phalanx-warder"
                 }
@@ -1362,7 +1369,44 @@
                             },
                             "weaponRefs": ["plasma-pistol"]
                         }
-                    }
+                    },
+                    "profileId": "templar-brethren"
+                },
+                "bolt-pistol-templar-champion": {
+                    "id": "bolt-pistol-templar-champion",
+                    "name": "Champion Bolt pistol",
+                    "description": "Any Model in this Unit may have their bolt pistol exchanged for one combat shield.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "combat shield",
+                            "cost": {
+                                "points": 2
+                            },
+                            "equipmentRefs": ["combat-shield"]
+                        },
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "plasma pistol",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-pistol"]
+                        }
+                    },
+                    "profileId": "templar-champion"
                 },
                 "option-2": {
                     "id": "option-2",

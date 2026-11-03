@@ -135,8 +135,8 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Melee weapon",
-                    "description": "Any Model in this Unit which has had its power glaive exchanged for one combi-bolter and one power weapon, or combi-bolter and power fist, may have its combi...",
+                    "name": "Combi-weapon",
+                    "description": "Any Model in this Unit which has had its power glaive exchanged for one combi-bolter and one power weapon, or combi-bolter and power fist, may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
                     "perModel": {
                         "type": "some"
                     },
@@ -148,52 +148,8 @@
                                 "points": 0
                             }
                         },
-                        "legion-combi-weapons": {
-                            "id": "legion-combi-weapons",
-                            "target": "legion-combi-weapons"
-                        },
-                        "combi-bolter-and-one-power-sword": {
-                            "id": "combi-bolter-and-one-power-sword",
-                            "name": "Combi-bolter and power sword",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["combi-bolter", "power-sword"]
-                        },
-                        "combi-bolter-and-one-power-axe": {
-                            "id": "combi-bolter-and-one-power-axe",
-                            "name": "Combi-bolter and power axe",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["combi-bolter", "power-axe"]
-                        },
-                        "combi-bolter-and-one-power-maul": {
-                            "id": "combi-bolter-and-one-power-maul",
-                            "name": "Combi-bolter and power maul",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["combi-bolter", "power-maul"]
-                        },
-                        "combi-bolter-and-one-power-lance": {
-                            "id": "combi-bolter-and-one-power-lance",
-                            "name": "Combi-bolter and power lance",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["combi-bolter", "power-lance"]
-                        },
-                        "or-combi-bolter-and-power-fist": {
-                            "id": "or-combi-bolter-and-power-fist",
-                            "name": "Combi-bolter and power fist",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["power-fist", "combi-bolter"]
-                        },
-                        "may-have-its-combi-bolter-exchanged-for-one-volkite-charger": {
-                            "id": "may-have-its-combi-bolter-exchanged-for-one-volkite-charger",
+                        "volkite-charger": {
+                            "id": "volkite-charger",
                             "name": "Volkite charger",
                             "cost": {
                                 "points": 0
@@ -210,9 +166,23 @@
                                     }
                                 }
                             ]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "combi-bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    }
                 },
                 "option-3": {
                     "id": "option-3",
@@ -497,7 +467,52 @@
                             "weaponRefs": ["charnabal-sabre"]
                         }
                     },
-                    "default": "power-sword"
+                    "default": "power-sword",
+                    "profileId": "keshig-rider"
+                },
+                "option-3-keshig-champion": {
+                    "id": "option-3-keshig-champion",
+                    "name": "Champion Power sword",
+                    "description": "Any Model in this Unit may have its power sword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-lance"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["charnabal-sabre"]
+                        }
+                    },
+                    "default": "power-sword",
+                    "profileId": "keshig-champion"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1131,7 +1146,44 @@
                             "weaponRefs": ["power-glaive"]
                         }
                     },
-                    "default": "chainsword"
+                    "default": "chainsword",
+                    "profileId": "dark-son"
+                },
+                "option-1-deaths-champion": {
+                    "id": "option-1-deaths-champion",
+                    "name": "Champion Chainsword",
+                    "description": "Any Model in this Unit may have its chainsword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"]
+                        },
+                        "power-glaive": {
+                            "id": "power-glaive",
+                            "name": "Power glaive",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["power-glaive"]
+                        }
+                    },
+                    "default": "chainsword",
+                    "profileId": "deaths-champion"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1547,7 +1599,60 @@
                             "weaponRefs": ["bolt-pistol", "power-lance"]
                         }
                     },
-                    "default": "pair-of-lightning-claws"
+                    "default": "pair-of-lightning-claws",
+                    "profileId": "falcons-claw"
+                },
+                "option-1-falcons-claw-champion": {
+                    "id": "option-1-falcons-claw-champion",
+                    "name": "Champion Pair of lightning claws",
+                    "description": "Any Model in this Unit may have its pair of lightning claws exchanged for one power weapon and one bolt pistol.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "Pair of lightning claws",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        },
+                        "power-sword-and-one-bolt-pistol": {
+                            "id": "power-sword-and-one-bolt-pistol",
+                            "name": "power sword and one bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol", "power-sword"]
+                        },
+                        "power-axe-and-one-bolt-pistol": {
+                            "id": "power-axe-and-one-bolt-pistol",
+                            "name": "power axe and one bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol", "power-axe"]
+                        },
+                        "power-maul-and-one-bolt-pistol": {
+                            "id": "power-maul-and-one-bolt-pistol",
+                            "name": "power maul and one bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol", "power-maul"]
+                        },
+                        "power-lance-and-one-bolt-pistol": {
+                            "id": "power-lance-and-one-bolt-pistol",
+                            "name": "power lance and one bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol", "power-lance"]
+                        }
+                    },
+                    "default": "pair-of-lightning-claws",
+                    "profileId": "falcons-claw-champion"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1978,7 +2083,11 @@
                             "target": "legion-pistols"
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolt-pistol"
+                    }
                 },
                 "option-4": {
                     "id": "option-4",
