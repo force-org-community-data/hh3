@@ -285,7 +285,32 @@
                             "id": "legion-combi-weapons",
                             "target": "legion-combi-weapons"
                         }
-                    }
+                    },
+                    "profileId": "gorgon-terminator"
+                },
+                "combi-bolter-gorgon-hammerbearer": {
+                    "id": "combi-bolter-gorgon-hammerbearer",
+                    "name": "Hammerbearer Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "profileId": "gorgon-hammerbearer"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1310,7 +1335,44 @@
                             "weaponRefs": ["graviton-gun"]
                         }
                     },
-                    "default": "combi-bolter"
+                    "default": "combi-bolter",
+                    "profileId": "morlock"
+                },
+                "option-2-augmentor": {
+                    "id": "option-2-augmentor",
+                    "name": "Augmentor Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "graviton-gun": {
+                            "id": "graviton-gun",
+                            "name": "Graviton gun",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["graviton-gun"]
+                        }
+                    },
+                    "default": "combi-bolter",
+                    "profileId": "augmentor"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -1615,7 +1677,44 @@
                             },
                             "weaponRefs": ["volkite-charger"]
                         }
-                    }
+                    },
+                    "profileId": "immortal"
+                },
+                "bolter-immortal-sergeant": {
+                    "id": "bolter-immortal-sergeant",
+                    "name": "Sgt Bolter",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolter",
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        }
+                    },
+                    "profileId": "immortal-sergeant"
                 },
                 "option-1": {
                     "id": "option-1",
@@ -1642,7 +1741,11 @@
                         }
                     },
                     "profileId": "immortal-sergeant",
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolter"
+                    }
                 },
                 "option-3": {
                     "id": "option-3",

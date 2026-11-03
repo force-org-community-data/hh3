@@ -489,7 +489,28 @@
                             "weaponRefs": ["bolt-pistol"]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "rampager"
+                },
+                "option-1-rampager-champion": {
+                    "id": "option-1-rampager-champion",
+                    "name": "Champion Bolt pistol",
+                    "description": "Any Model in this Unit may have one bolt pistol selected for it.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "rampager-champion"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -674,7 +695,44 @@
                             },
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    }
+                    },
+                    "profileId": "red-butcher"
+                },
+                "butcher-power-axes-devoured": {
+                    "id": "butcher-power-axes-devoured",
+                    "name": "Devoured Butcher Power Axes",
+                    "description": "Any Model in this Unit may have its butcher power axes exchanged for one combi-bolter and one power axe.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "butcher-power-axes",
+                    "options": {
+                        "butcher-power-axes": {
+                            "id": "butcher-power-axes",
+                            "name": "Butcher Power Axes",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["butcher-power-axes"]
+                        },
+                        "combi-bolter-and-one-power-axe": {
+                            "id": "combi-bolter-and-one-power-axe",
+                            "name": "combi-bolter and one power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter", "power-axe"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "profileId": "devoured"
                 },
                 "option-1": {
                     "id": "option-1",
@@ -1149,7 +1207,11 @@
                             "target": "legion-pistols"
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolt-pistol"
+                    }
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1378,7 +1440,36 @@
                             "equipmentRefs": ["caedere-weapons"]
                         }
                     },
-                    "default": "chainsword"
+                    "default": "chainsword",
+                    "profileId": "ravager-with-jump-pack"
+                },
+                "option-1-blood-bonded-with-jump-pack": {
+                    "id": "option-1-blood-bonded-with-jump-pack",
+                    "name": "Blood Bonded Chainsword to caedere weapon",
+                    "description": "Any Model in this Unit may have its chainsword exchanged for one Caedere weapon.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "caedere-weapon": {
+                            "id": "caedere-weapon",
+                            "name": "Caedere weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["caedere-weapons"]
+                        }
+                    },
+                    "default": "chainsword",
+                    "profileId": "blood-bonded-with-jump-pack"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1459,7 +1550,11 @@
                         }
                     },
                     "profileId": "blood-bonded-with-jump-pack",
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "chainsword"
+                    }
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1664,7 +1759,36 @@
                             "equipmentRefs": ["caedere-weapons"]
                         }
                     },
-                    "default": "chainsword"
+                    "default": "chainsword",
+                    "profileId": "ravager"
+                },
+                "option-1-blood-bonded": {
+                    "id": "option-1-blood-bonded",
+                    "name": "Blood Bonded Chainsword to caedere weapon",
+                    "description": "Any Model in this Unit may have its chainsword exchanged for one Caedere weapon.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "caedere-weapon": {
+                            "id": "caedere-weapon",
+                            "name": "Caedere weapon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["caedere-weapons"]
+                        }
+                    },
+                    "default": "chainsword",
+                    "profileId": "blood-bonded"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1745,7 +1869,11 @@
                         }
                     },
                     "profileId": "blood-bonded",
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "chainsword"
+                    }
                 },
                 "option-4": {
                     "id": "option-4",

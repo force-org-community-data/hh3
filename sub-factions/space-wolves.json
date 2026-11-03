@@ -732,7 +732,7 @@
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Huscarl Pair of lightning claws",
+                    "name": "Swap Huscarl to pair of lightning claws",
                     "description": "The Huscarl in this Unit may have its bolter, bolt pistol and Fenrisian axe exchanged for one pair of lightning claws.",
                     "perModel": {
                         "type": "single"
@@ -744,22 +744,12 @@
                             "cost": {
                                 "points": 15
                             },
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "pair-of-lightning-claws"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["pair-of-lightning-claws"]
                         }
                     },
                     "profileId": "huscarl",
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "replaces": ["fenrisian-axe", "bolt-pistol"]
                 },
                 "option-6": {
                     "id": "option-6",
@@ -1764,7 +1754,11 @@
                             "target": "legion-pistols"
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolt-pistol"
+                    }
                 },
                 "option-5": {
                     "id": "option-5",
@@ -3351,7 +3345,52 @@
                             "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "frost-axe"
+                    "default": "frost-axe",
+                    "profileId": "varagyr"
+                },
+                "option-1-thegn": {
+                    "id": "option-1-thegn",
+                    "name": "Thegn Frost axe",
+                    "description": "Any Model in this Unit may have its frost axe exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "frost-axe": {
+                            "id": "frost-axe",
+                            "name": "Frost axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["frost-axe"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "frost-axe",
+                    "profileId": "thegn"
                 },
                 "option-2": {
                     "id": "option-2",

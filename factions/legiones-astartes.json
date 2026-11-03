@@ -547,12 +547,26 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "assault-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "assault-legionary"
                 },
                 {
                     "kind": "weapon",
                     "id": "chainsword",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "assault-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true,
+                    "profileId": "assault-legionary"
                 }
             ],
             "upgrades": {
@@ -584,7 +598,39 @@
                             ]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "assault-legionary"
+                },
+                "chainsword-assault-sergeant": {
+                    "id": "chainsword-assault-sergeant",
+                    "name": "Sgt Chainsword to chainaxe",
+                    "description": "Any Model in this Unit may have its chainsword exchanged for one chainaxe.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "chainaxe": {
+                            "id": "chainaxe",
+                            "name": "chainaxe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainaxe"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "assault-sergeant"
                 },
                 "option-1": {
                     "id": "option-1",
@@ -649,7 +695,11 @@
                         }
                     },
                     "profileId": "assault-sergeant",
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolt-pistol"
+                    }
                 },
                 "option-3": {
                     "id": "option-3",
@@ -730,7 +780,39 @@
                             ]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "assault-legionary"
+                },
+                "option-5-assault-sergeant": {
+                    "id": "option-5-assault-sergeant",
+                    "name": "Sgt Bolt pistol to combat shield",
+                    "description": "Every Model in this Unit may have its bolt pistol exchanged for a combat shield.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "combat shield",
+                            "cost": {
+                                "points": 2
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "combat-shield"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "assault-sergeant"
                 },
                 "option-7": {
                     "id": "option-7",
@@ -920,7 +1002,11 @@
                         }
                     },
                     "default": "none",
-                    "profileId": "assault-legionary"
+                    "profileId": "assault-legionary",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolt-pistol"
+                    }
                 }
             }
         },
@@ -1964,7 +2050,48 @@
                             },
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    }
+                    },
+                    "profileId": "cataphractii-chosen"
+                },
+                "volkite-charger-cataphractii-chosen-champion": {
+                    "id": "volkite-charger-cataphractii-chosen-champion",
+                    "name": "Champion Volkite charger",
+                    "description": "Any Model in this Unit may have its volkite charger exchanged for one combi-bolter, or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "volkite-charger",
+                    "options": {
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "profileId": "cataphractii-chosen-champion"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -2213,7 +2340,48 @@
                             },
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    }
+                    },
+                    "profileId": "cataphractii-terminator"
+                },
+                "volkite-charger-cataphractii-terminator-sergeant": {
+                    "id": "volkite-charger-cataphractii-terminator-sergeant",
+                    "name": "Sgt Volkite charger",
+                    "description": "Any Model in this Unit may have its volkite charger exchanged for one combi-bolter, or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "volkite-charger",
+                    "options": {
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "profileId": "cataphractii-terminator-sergeant"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -2451,7 +2619,14 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "veteran"
                 }
             ],
             "upgrades": {
@@ -2512,7 +2687,68 @@
                             },
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    }
+                    },
+                    "profileId": "veteran"
+                },
+                "bolter-veteran-champion": {
+                    "id": "bolter-veteran-champion",
+                    "name": "Champion Bolter",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one item from the Legion Combi-weapons list, one item from the Legion Sergeant Melee Weapons list or...",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolter",
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"]
+                        },
+                        "disintegrator-rifle": {
+                            "id": "disintegrator-rifle",
+                            "name": "Disintegrator rifle",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["disintegrator-rifle"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "profileId": "veteran-champion"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -2552,7 +2788,49 @@
                         ],
                         "requiredAnd": true
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "veteran"
+                },
+                "option-2-veteran-champion": {
+                    "id": "option-2-veteran-champion",
+                    "name": "Champion Bolt pistol to combat shield",
+                    "description": "Any Model in this Unit whose bolter has been exchanged for an item from the Legion Sergeant Melee Weapons list may have its bolt pistol exchanged for one com...",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "combat shield",
+                            "cost": {
+                                "points": 2
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "combat-shield"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "multiSelect": true,
+                    "profileId": "veteran-champion"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -2602,7 +2880,11 @@
                         }
                     },
                     "default": "none",
-                    "profileId": "veteran"
+                    "profileId": "veteran",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolter"
+                    }
                 },
                 "option-5": {
                     "id": "option-5",
@@ -2849,18 +3131,7 @@
                             "cost": {
                                 "points": 10
                             },
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "plasma-bombard"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "twin-heavy-disintegrator"
-                                    }
-                                }
-                            ]
+                            "weaponRefs": ["twin-heavy-disintegrator"]
                         }
                     },
                     "multiSelect": true,
@@ -2873,7 +3144,8 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "replaces": ["option-2"]
                 },
                 "option-2": {
                     "id": "option-2",
@@ -6180,7 +6452,47 @@
                             },
                             "weaponRefs": ["hand-flamer", "hand-flamer"]
                         }
-                    }
+                    },
+                    "profileId": "assault-destroyer"
+                },
+                "bolt-pistol-assault-destroyer-sergeant": {
+                    "id": "bolt-pistol-assault-destroyer-sergeant",
+                    "name": "Sgt Two bolt pistols",
+                    "description": "Any Model in this Unit may have its two bolt pistols exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Two bolt pistols",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol", "bolt-pistol"]
+                        },
+                        "two-volkite-serpentas": {
+                            "id": "two-volkite-serpentas",
+                            "name": "Two volkite serpentas",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": [
+                                "volkite-serpenta",
+                                "volkite-serpenta"
+                            ]
+                        },
+                        "two-hand-flamers": {
+                            "id": "two-hand-flamers",
+                            "name": "Two hand flamers",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hand-flamer", "hand-flamer"]
+                        }
+                    },
+                    "profileId": "assault-destroyer-sergeant"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -9068,7 +9380,48 @@
                             },
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    }
+                    },
+                    "profileId": "indomitus-terminator"
+                },
+                "combi-bolter-indomitus-terminator-sergeant": {
+                    "id": "combi-bolter-indomitus-terminator-sergeant",
+                    "name": "Sgt Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one Proteus pattern storm shield, or for one item from the Legion Com...",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "proteus-pattern-storm-shield": {
+                            "id": "proteus-pattern-storm-shield",
+                            "name": "Proteus pattern storm shield",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["proteus-pattern-storm-shield"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "profileId": "indomitus-terminator-sergeant"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -9191,7 +9544,44 @@
                             "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "power-fist"
+                    "default": "power-fist",
+                    "profileId": "indomitus-terminator"
+                },
+                "option-4-indomitus-terminator-sergeant": {
+                    "id": "option-4-indomitus-terminator-sergeant",
+                    "name": "Sgt Power fist",
+                    "description": "Any Model in this Unit may have its power fist exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainfist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "power-fist",
+                    "profileId": "indomitus-terminator-sergeant"
                 },
                 "option-5": {
                     "id": "option-5",
@@ -12426,7 +12816,47 @@
                             },
                             "weaponRefs": ["hand-flamer", "hand-flamer"]
                         }
-                    }
+                    },
+                    "profileId": "mortalis-destroyer"
+                },
+                "bolt-pistol-mortalis-destroyer-sergeant": {
+                    "id": "bolt-pistol-mortalis-destroyer-sergeant",
+                    "name": "Sgt Two bolt pistols",
+                    "description": "Any Model in this Unit may have its two bolt pistols exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Two bolt pistols",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol", "bolt-pistol"]
+                        },
+                        "two-volkite-serpentas": {
+                            "id": "two-volkite-serpentas",
+                            "name": "Two volkite serpentas",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": [
+                                "volkite-serpenta",
+                                "volkite-serpenta"
+                            ]
+                        },
+                        "two-hand-flamers": {
+                            "id": "two-hand-flamers",
+                            "name": "Two hand flamers",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hand-flamer", "hand-flamer"]
+                        }
+                    },
+                    "profileId": "mortalis-destroyer-sergeant"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -13873,10 +14303,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol"
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades"
                 },
                 {
@@ -13899,44 +14325,34 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Combi-weapon",
-                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one volkite charger or for one item from the Legion Combi-weapons list. (The datasheet says \"combi-bolter\", which this Model does not have: read as its bolt pistol.)",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
                         },
                         "legion-combi-weapons": {
                             "id": "legion-combi-weapons",
                             "target": "legion-combi-weapons"
-                        },
-                        "volkite-charger": {
-                            "id": "volkite-charger",
-                            "name": "volkite charger",
-                            "cost": {
-                                "points": 0
-                            },
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    }
-                                }
-                            ]
                         }
                     },
-                    "default": "none"
+                    "default": "bolt-pistol"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -14071,10 +14487,6 @@
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol"
-                },
-                {
-                    "kind": "weapon",
                     "id": "frag-grenades"
                 },
                 {
@@ -14089,44 +14501,34 @@
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Combi-weapon",
-                    "description": "This Model may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "name": "Bolt pistol",
+                    "description": "This Model may have its bolt pistol exchanged for one volkite charger or for one item from the Legion Combi-weapons list. (The datasheet says \"combi-bolter\", which this Model does not have: read as its bolt pistol.)",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
                             "cost": {
                                 "points": 0
-                            }
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
                         },
                         "legion-combi-weapons": {
                             "id": "legion-combi-weapons",
                             "target": "legion-combi-weapons"
-                        },
-                        "volkite-charger": {
-                            "id": "volkite-charger",
-                            "name": "volkite charger",
-                            "cost": {
-                                "points": 0
-                            },
-                            "swaps": [
-                                {
-                                    "from": {
-                                        "kind": "weapon",
-                                        "id": "combi-bolter"
-                                    },
-                                    "to": {
-                                        "kind": "weapon",
-                                        "id": "volkite-charger"
-                                    }
-                                }
-                            ]
                         }
                     },
-                    "default": "none"
+                    "default": "bolt-pistol"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -17091,7 +17493,40 @@
                             "equipmentRefs": ["combat-shield"]
                         }
                     },
-                    "default": "bolt-pistol"
+                    "default": "bolt-pistol",
+                    "profileId": "outrider-chosen"
+                },
+                "option-2-outrider-chosen-champion": {
+                    "id": "option-2-outrider-chosen-champion",
+                    "name": "Champion Bolt pistol",
+                    "description": "Any Model in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list or one combat shield.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        },
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "combat shield",
+                            "cost": {
+                                "points": 4
+                            },
+                            "equipmentRefs": ["combat-shield"]
+                        }
+                    },
+                    "default": "bolt-pistol",
+                    "profileId": "outrider-chosen-champion"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -17309,7 +17744,14 @@
                 {
                     "kind": "weapon",
                     "id": "chainsword",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "outrider-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true,
+                    "profileId": "outrider"
                 }
             ],
             "upgrades": {
@@ -17358,7 +17800,11 @@
                         }
                     },
                     "profileId": "outrider-sergeant",
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "chainsword"
+                    }
                 },
                 "option-3": {
                     "id": "option-3",
@@ -17441,7 +17887,39 @@
                             ]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "outrider"
+                },
+                "option-5-outrider-sergeant": {
+                    "id": "option-5-outrider-sergeant",
+                    "name": "Sgt Chainsword to astartes shotgun",
+                    "description": "Any Model in this Unit may have their chainsword exchanged for one Astartes shotgun.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 0
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "astartes-shotgun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "outrider-sergeant"
                 }
             }
         },
@@ -18829,7 +19307,14 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "chosen-champion-with-jump-pack"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "chosen-with-jump-pack"
                 }
             ],
             "upgrades": {
@@ -18930,7 +19415,49 @@
                         ],
                         "requiredAnd": true
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "chosen-with-jump-pack"
+                },
+                "option-2-chosen-champion-with-jump-pack": {
+                    "id": "option-2-chosen-champion-with-jump-pack",
+                    "name": "Champion Bolt pistol to combat shield",
+                    "description": "Any Model in this Unit whose bolter has been exchanged for an item from the Legion Sergeant Melee Weapons list may have its bolt pistol exchanged for one com...",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "combat shield",
+                            "cost": {
+                                "points": 2
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "combat-shield"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "multiSelect": true,
+                    "profileId": "chosen-champion-with-jump-pack"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -19398,7 +19925,14 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "chosen-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "chosen"
                 }
             ],
             "upgrades": {
@@ -19499,7 +20033,49 @@
                         ],
                         "requiredAnd": true
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "chosen"
+                },
+                "option-2-chosen-champion": {
+                    "id": "option-2-chosen-champion",
+                    "name": "Champion Bolt pistol to combat shield",
+                    "description": "Any Model in this Unit whose bolter has been exchanged for an item from the Legion Sergeant Melee Weapons list may have its bolt pistol exchanged for one com...",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "combat shield",
+                            "cost": {
+                                "points": 2
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "combat-shield"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "multiSelect": true,
+                    "profileId": "chosen-champion"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -20614,7 +21190,14 @@
                 {
                     "kind": "weapon",
                     "id": "gravis-heavy-bolter-battery",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "legionary"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "gravis-heavy-bolter-battery",
+                    "perModel": true,
+                    "profileId": "rapier-carrier"
                 }
             ],
             "upgrades": {
@@ -20948,7 +21531,29 @@
                             ]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "recon-legionary"
+                },
+                "option-4-recon-sergeant": {
+                    "id": "option-4-recon-sergeant",
+                    "name": "Sgt Astartes shotgun to nemesis bolter",
+                    "description": "Any Model in this Unit may have its Astartes shotgun exchanged for one Nemesis bolter.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "nemesis-bolter": {
+                            "id": "nemesis-bolter",
+                            "name": "Nemesis bolter",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["nemesis-bolter"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "recon-sergeant",
+                    "replaces": ["astartes-shotgun"]
                 },
                 "option-5": {
                     "id": "option-5",
@@ -22550,7 +23155,11 @@
                         }
                     },
                     "profileId": "scout-sergeant",
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolter"
+                    }
                 },
                 "option-2": {
                     "id": "option-2",
@@ -22613,7 +23222,52 @@
                             "weaponRefs": ["astartes-shotgun"]
                         }
                     },
-                    "default": "bolter"
+                    "default": "bolter",
+                    "profileId": "scout"
+                },
+                "option-4-scout-sergeant": {
+                    "id": "option-4-scout-sergeant",
+                    "name": "Sgt Bolter",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "nemesis-bolter": {
+                            "id": "nemesis-bolter",
+                            "name": "Nemesis bolter",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["nemesis-bolter"]
+                        },
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["astartes-shotgun"]
+                        }
+                    },
+                    "default": "bolter",
+                    "profileId": "scout-sergeant"
                 },
                 "option-5": {
                     "id": "option-5",
@@ -24753,7 +25407,48 @@
                             },
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    }
+                    },
+                    "profileId": "tartaros-chosen"
+                },
+                "combi-bolter-tartaros-chosen-champion": {
+                    "id": "combi-bolter-tartaros-chosen-champion",
+                    "name": "Champion Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "profileId": "tartaros-chosen-champion"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -25084,7 +25779,11 @@
                             "target": "legion-terminator-melee-weapons"
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "power-sword"
+                    }
                 },
                 "option-5": {
                     "id": "option-5",
@@ -25248,7 +25947,48 @@
                             },
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    }
+                    },
+                    "profileId": "tartaros-terminator"
+                },
+                "combi-bolter-tartaros-terminator-sergeant": {
+                    "id": "combi-bolter-tartaros-terminator-sergeant",
+                    "name": "Sgt Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger, or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "profileId": "tartaros-terminator-sergeant"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -25994,7 +26734,32 @@
                             "id": "legion-sergeant-melee-weapons",
                             "target": "legion-sergeant-melee-weapons"
                         }
-                    }
+                    },
+                    "profileId": "assault-veteran"
+                },
+                "chainsword-veteran-assault-sergeant": {
+                    "id": "chainsword-veteran-assault-sergeant",
+                    "name": "Sgt Chainsword",
+                    "description": "Any Model in this Unit may have its chainsword exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "chainsword",
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "veteran-assault-sergeant"
                 },
                 "bolt-pistol": {
                     "id": "bolt-pistol",
@@ -26025,7 +26790,40 @@
                             },
                             "equipmentRefs": ["combat-shield"]
                         }
-                    }
+                    },
+                    "profileId": "assault-veteran"
+                },
+                "bolt-pistol-veteran-assault-sergeant": {
+                    "id": "bolt-pistol-veteran-assault-sergeant",
+                    "name": "Sgt Bolt pistol",
+                    "description": "Any Model in this Unit may have its bolt pistol exchanged for one combat shield or one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        },
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "combat shield",
+                            "cost": {
+                                "points": 2
+                            },
+                            "equipmentRefs": ["combat-shield"]
+                        }
+                    },
+                    "profileId": "veteran-assault-sergeant"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -26282,11 +27080,6 @@
             ],
             "defaultWargear": [
                 {
-                    "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
-                },
-                {
                     "kind": "equipment",
                     "id": "boarding-shield",
                     "perModel": true
@@ -26300,6 +27093,18 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "veteran-breacher-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "breacher-veteran"
                 }
             ],
             "upgrades": {
@@ -26400,7 +27205,108 @@
                             },
                             "weaponRefs": ["lightning-claw"]
                         }
-                    }
+                    },
+                    "profileId": "breacher-veteran"
+                },
+                "bolter-veteran-breacher-sergeant": {
+                    "id": "bolter-veteran-breacher-sergeant",
+                    "name": "Sgt Bolter",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolter",
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "chainaxe": {
+                            "id": "chainaxe",
+                            "name": "Chainaxe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainaxe"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "charnabal-sabre": {
+                            "id": "charnabal-sabre",
+                            "name": "Charnabal sabre",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["charnabal-sabre"]
+                        },
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-lance"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["lightning-claw"]
+                        }
+                    },
+                    "profileId": "veteran-breacher-sergeant"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -27005,7 +27911,56 @@
                             "id": "legion-combi-weapons",
                             "target": "legion-combi-weapons"
                         }
-                    }
+                    },
+                    "profileId": "veteran"
+                },
+                "bolter-veteran-sergeant": {
+                    "id": "bolter-veteran-sergeant",
+                    "name": "Sgt Bolter",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one item from the Legion Combi-weapons list or one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolter",
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"]
+                        },
+                        "disintegrator-rifle": {
+                            "id": "disintegrator-rifle",
+                            "name": "Disintegrator rifle",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["disintegrator-rifle"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "profileId": "veteran-sergeant"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -27071,7 +28026,11 @@
                         }
                     },
                     "default": "none",
-                    "profileId": "veteran"
+                    "profileId": "veteran",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolter"
+                    }
                 },
                 "option-5": {
                     "id": "option-5",

@@ -366,7 +366,11 @@
                             "target": "legion-pistols"
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolt-pistol"
+                    }
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1123,14 +1127,21 @@
             ],
             "defaultWargear": [
                 {
-                    "kind": "weapon",
-                    "id": "power-sword",
-                    "perModel": true
-                },
-                {
                     "kind": "equipment",
                     "id": "coriolis-pattern-power-shield",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "perModel": true,
+                    "profileId": "crimson-exemplar"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "perModel": true,
+                    "profileId": "crimson-paladin"
                 }
             ],
             "upgrades": {
@@ -1400,7 +1411,14 @@
                 {
                     "kind": "weapon",
                     "id": "falling-star-power-spear",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "dawnbreaker-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "falling-star-power-spear",
+                    "perModel": true,
+                    "profileId": "dawnbreaker"
                 }
             ],
             "upgrades": {
@@ -1482,7 +1500,39 @@
                             ]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "dawnbreaker"
+                },
+                "option-3-dawnbreaker-champion": {
+                    "id": "option-3-dawnbreaker-champion",
+                    "name": "Champion Falling-star power spear to pair of equinox blades",
+                    "description": "Any Model in this Unit may have its falling-star power spear exchanged for one pair of equinox blades.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "pair-of-equinox-blades": {
+                            "id": "pair-of-equinox-blades",
+                            "name": "pair of equinox blades",
+                            "cost": {
+                                "points": 0
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "falling-star-power-spear"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-equinox-blades"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "dawnbreaker-champion"
                 }
             }
         },
@@ -1872,7 +1922,71 @@
                             },
                             "weaponRefs": ["iliastus-assault-cannon"]
                         }
-                    }
+                    },
+                    "profileId": "erelim"
+                },
+                "volkite-serpenta-arch-erelim": {
+                    "id": "volkite-serpenta-arch-erelim",
+                    "name": "Arch-Erelim Two volkite serpentas",
+                    "description": "Any Model in this Unit may have its two volkite serpenta s exchanged for one Erelim grenade launcher.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "volkite-serpenta",
+                    "options": {
+                        "volkite-serpenta": {
+                            "id": "volkite-serpenta",
+                            "name": "Two volkite serpentas",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": [
+                                "volkite-serpenta",
+                                "volkite-serpenta"
+                            ]
+                        },
+                        "erelim-grenade-launcher": {
+                            "id": "erelim-grenade-launcher",
+                            "name": "Erelim grenade launcher",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["erelim-grenade-launcher"]
+                        },
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "Heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-chainsword"]
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["heavy-flamer"]
+                        },
+                        "rotor-cannon": {
+                            "id": "rotor-cannon",
+                            "name": "Rotor cannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["rotor-cannon"]
+                        },
+                        "iliastus-assault-cannon": {
+                            "id": "iliastus-assault-cannon",
+                            "name": "Iliastus assault cannon",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["iliastus-assault-cannon"]
+                        }
+                    },
+                    "profileId": "arch-erelim"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -1895,7 +2009,11 @@
                         }
                     },
                     "profileId": "arch-erelim",
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "volkite-serpenta"
+                    }
                 },
                 "option-4": {
                     "id": "option-4",
