@@ -20,6 +20,16 @@ Thanks for helping. This repo holds rules data only; the checker lives in the [v
 - **Keep diffs small.** Don't reformat or edit records unrelated to your change.
 - By submitting, you certify you wrote the contribution yourself and have the right to submit it. This repository has no license, so no reuse rights are granted beyond GitHub's terms of service.
 
+## Releasing (maintainers)
+
+Players pin a release tag in the app (`github.com/<owner>/<repo>@v1.2.3`, see [docs/using-with-the-app.md](docs/using-with-the-app.md)).
+
+1. Set the new version in `game.json`, then run `npm run sync-version` to copy it into `package.json` and `package-lock.json`: a **patch** for data fixes, a **minor** for added units, factions or options, a **major** for a change that breaks saved army lists (ids removed or renamed, a new game `version` range).
+2. Add an entry to [CHANGELOG.md](CHANGELOG.md), commit, and merge to `main`.
+3. Tagging is automatic: once `Validate data` passes on `main`, the [Release tags](.github/workflows/release-tags.yml) workflow tags the merged commit `vX.Y.Z` from `game.json` and moves the major tag (for example `v1`). If `vX.Y.Z` already exists it does nothing, so merges that don't bump the version add no tags. Don't push version tags by hand.
+
+`version` in `game.json` is the source of truth: `package.json` and `package-lock.json` always equal it, and `npm run validate` (so CI) fails when they differ. Faction files match `game.json` with their `game.versions` range (currently `>=1.0.0 <2.0.0`), so a **major** bump also means updating that range in every faction and sub-faction file.
+
 ## Recommended branch protection (maintainers)
 
 Template repositories don't copy settings. On `main`, enable:
