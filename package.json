@@ -1,6 +1,6 @@
 {
     "name": "fo-data-hh3",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "private": true,
     "description": "Force Org data source. Rename after creating a repo from the template.",
     "type": "module",
@@ -9,7 +9,9 @@
     },
     "scripts": {
         "run-local": "npx http-server /Users/josephmassie/projects/force_org_data/hh3 -p 8080 --cors -c-1",
-        "validate": "fo-validate .",
+        "check-version": "node scripts/version-sync.mjs",
+        "sync-version": "node scripts/version-sync.mjs --write",
+        "validate": "npm run check-version && fo-validate .",
         "format": "prettier --write"
     },
     "devDependencies": {
