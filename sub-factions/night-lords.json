@@ -991,7 +991,48 @@
                             },
                             "weaponRefs": ["chainblade"]
                         }
-                    }
+                    },
+                    "profileId": "night-raptor"
+                },
+                "chainsword-huntmaster": {
+                    "id": "chainsword-huntmaster",
+                    "name": "Huntmaster Chainsword",
+                    "description": "Any Model in this Unit may have its chainsword exchanged for one chainglaive or one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "chainsword",
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        },
+                        "chainglaive": {
+                            "id": "chainglaive",
+                            "name": "chainglaive",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainglaive"]
+                        },
+                        "chainblade": {
+                            "id": "chainblade",
+                            "name": "chainblade",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainblade"]
+                        }
+                    },
+                    "profileId": "huntmaster"
                 },
                 "bolt-pistol": {
                     "id": "bolt-pistol",
@@ -1047,15 +1088,65 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["pair-of-lightning-claws"]
+                            "swaps": [
+                                {
+                                    "from": [
+                                        {
+                                            "kind": "weapon",
+                                            "id": "bolt-pistol"
+                                        },
+                                        {
+                                            "kind": "weapon",
+                                            "id": "chainsword"
+                                        }
+                                    ],
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "multiSelect": true,
-                    "replaces": [
-                        "chainsword",
-                        "bolt-pistol",
-                        "bolt-pistol-huntmaster"
-                    ]
+                    "profileId": "night-raptor"
+                },
+                "option-3-huntmaster": {
+                    "id": "option-3-huntmaster",
+                    "name": "Swap Huntmaster to pair of lightning claws",
+                    "description": "Any Model in this Unit may have its bolt pistol and chainsword exchanged for one pair of lightning claws.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "swaps": [
+                                {
+                                    "from": [
+                                        {
+                                            "kind": "weapon",
+                                            "id": "bolt-pistol"
+                                        },
+                                        {
+                                            "kind": "weapon",
+                                            "id": "chainsword"
+                                        }
+                                    ],
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "huntmaster"
                 },
                 "option-4": {
                     "id": "option-4",
