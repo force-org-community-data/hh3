@@ -146,6 +146,11 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
                 }
             ],
             "upgrades": {
@@ -154,28 +159,30 @@
                     "name": "Bolt pistol to plasma pistol",
                     "description": "For every five Models in this Unit, up to two Models may each have their bolt pistol exchanged for one plasma pistol.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "bolt-pistol": {
-                            "id": "bolt-pistol",
-                            "name": "Bolt pistol",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["bolt-pistol"]
-                        },
                         "plasma-pistol": {
                             "id": "plasma-pistol",
                             "name": "plasma pistol",
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["plasma-pistol"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolt-pistol"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-pistol"
+                                    }
+                                }
+                            ]
                         }
-                    },
-                    "default": "bolt-pistol"
+                    }
                 },
                 "option-2": {
                     "id": "option-2",

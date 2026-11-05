@@ -1516,6 +1516,12 @@
                     "id": "bolt-pistol",
                     "perModel": true,
                     "profileId": "intercessor"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "nemesis-bolter",
+                    "perModel": true,
+                    "profileId": "intercessor"
                 }
             ],
             "upgrades": {
@@ -1588,25 +1594,28 @@
                     "name": "Nemesis bolter",
                     "description": "For every five Models in this Unit, up to two Intercessors in this Unit may each have their Nemesis bolter exchanged for one of the following:",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "nemesis-bolter": {
-                            "id": "nemesis-bolter",
-                            "name": "Nemesis bolter",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["nemesis-bolter"]
-                        },
                         "meltagun": {
                             "id": "meltagun",
                             "name": "Meltagun",
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["meltagun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "meltagun"
+                                    }
+                                }
+                            ]
                         },
                         "plasma-gun": {
                             "id": "plasma-gun",
@@ -1614,7 +1623,18 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["plasma-gun"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "plasma-gun"
+                                    }
+                                }
+                            ]
                         },
                         "aether-fire-blaster": {
                             "id": "aether-fire-blaster",
@@ -1622,10 +1642,20 @@
                             "cost": {
                                 "points": 15
                             },
-                            "weaponRefs": ["aether-fire-blaster"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "nemesis-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "aether-fire-blaster"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "default": "nemesis-bolter",
                     "profileId": "intercessor"
                 }
             }
