@@ -89,17 +89,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "runecasting": {
                             "id": "runecasting",
                             "name": "Runecasting",
@@ -133,7 +126,7 @@
                             "equipmentRefs": ["telekinesis"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -499,12 +492,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "huscarl"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "grey-slayer"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "huscarl"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "grey-slayer"
                 },
                 {
                     "kind": "weapon",
@@ -684,7 +691,37 @@
                         }
                     },
                     "multiSelect": true,
-                    "default": "combat-shield"
+                    "default": "combat-shield",
+                    "profileId": "grey-slayer"
+                },
+                "option-1-huscarl": {
+                    "id": "option-1-huscarl",
+                    "name": "Huscarl Combat shield",
+                    "description": "Any Model in this Unit may have its combat shield exchanged for a bolter.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "Combat shield",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["combat-shield"]
+                        },
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "default": "combat-shield",
+                    "profileId": "huscarl"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -728,7 +765,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "grey-slayer",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-2-huscarl": {
+                    "id": "option-2-huscarl",
+                    "name": "Huscarl Bayonets",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "huscarl",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-5": {
                     "id": "option-5",
@@ -899,24 +996,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Grey Slayers in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "grey-slayer",
-                    "default": "none"
+                    "profileId": "grey-slayer"
                 }
             }
         },
@@ -1118,17 +1207,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "runecasting": {
                             "id": "runecasting",
                             "name": "Runecasting",
@@ -1162,7 +1244,7 @@
                             "equipmentRefs": ["telekinesis"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1225,17 +1307,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "runecasting": {
                             "id": "runecasting",
                             "name": "Runecasting",
@@ -1269,7 +1344,7 @@
                             "equipmentRefs": ["telekinesis"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1363,17 +1438,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "runecasting": {
                             "id": "runecasting",
                             "name": "Runecasting",
@@ -1407,7 +1475,7 @@
                             "equipmentRefs": ["telekinesis"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -1785,24 +1853,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 }
             }
         },
@@ -1917,12 +1977,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "hunt-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "hunter"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "hunt-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "hunter"
                 },
                 {
                     "kind": "weapon",
@@ -2257,17 +2331,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "runecasting": {
                             "id": "runecasting",
                             "name": "Runecasting",
@@ -2301,7 +2368,7 @@
                             "equipmentRefs": ["telekinesis"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
@@ -2425,17 +2492,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "runecasting": {
                             "id": "runecasting",
                             "name": "Runecasting",
@@ -2469,7 +2529,7 @@
                             "equipmentRefs": ["telekinesis"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
@@ -3445,7 +3505,64 @@
                             "target": "legion-combi-weapons"
                         }
                     },
-                    "default": "combi-bolter"
+                    "default": "combi-bolter",
+                    "profileId": "varagyr"
+                },
+                "option-2-thegn": {
+                    "id": "option-2-thegn",
+                    "name": "Thegn Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list or for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "frost-sword": {
+                            "id": "frost-sword",
+                            "name": "Frost sword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["frost-sword"]
+                        },
+                        "frost-claw": {
+                            "id": "frost-claw",
+                            "name": "Frost claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["frost-claw"]
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-flamer"]
+                        },
+                        "reaper-autocannon": {
+                            "id": "reaper-autocannon",
+                            "name": "Reaper autocannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["reaper-autocannon"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "combi-bolter",
+                    "profileId": "thegn"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -3646,7 +3763,14 @@
                 {
                     "kind": "weapon",
                     "id": "tooth-claw",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "freki"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "tooth-claw",
+                    "perModel": true,
+                    "profileId": "geri"
                 }
             ],
             "when": {
@@ -4187,7 +4311,9 @@
         "space-wolves-fenrisian-axe": {
             "id": "space-wolves-fenrisian-axe",
             "name": "Fenrisian Axe",
-            "selector": {},
+            "selector": {
+                "profiles": {}
+            },
             "actions": [
                 {
                     "kind": "addUpgrade",

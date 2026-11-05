@@ -413,7 +413,14 @@
                 {
                     "kind": "equipment",
                     "id": "vigil-pattern-storm-shield",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "huscarl-terminator-sergeant"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "vigil-pattern-storm-shield",
+                    "perModel": true,
+                    "profileId": "huscarl-terminator"
                 }
             ],
             "upgrades": {
@@ -459,7 +466,53 @@
                         }
                     },
                     "multiSelect": true,
-                    "default": "power-sword"
+                    "default": "power-sword",
+                    "profileId": "huscarl-terminator"
+                },
+                "option-1-huscarl-terminator-sergeant": {
+                    "id": "option-1-huscarl-terminator-sergeant",
+                    "name": "Sgt Power sword",
+                    "description": "Any Model in this Unit may have its power weapon exchanged for one Solarite power gauntlet.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-lance"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "default": "power-sword",
+                    "profileId": "huscarl-terminator-sergeant"
                 },
                 "solarite-power-gauntlet": {
                     "id": "solarite-power-gauntlet",
@@ -479,11 +532,33 @@
                         }
                     },
                     "multiSelect": true,
-                    "replaces": ["option-1"]
+                    "replaces": ["option-1"],
+                    "profileId": "huscarl-terminator"
+                },
+                "solarite-power-gauntlet-huscarl-terminator-sergeant": {
+                    "id": "solarite-power-gauntlet-huscarl-terminator-sergeant",
+                    "name": "Sgt Power sword to solarite power gauntlet",
+                    "description": "Any Model in this Unit may have its power weapon exchanged for one Solarite power gauntlet for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "solarite-power-gauntlet": {
+                            "id": "solarite-power-gauntlet",
+                            "name": "Solarite power gauntlet",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["solarite-power-gauntlet"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "replaces": ["option-1"],
+                    "profileId": "huscarl-terminator-sergeant"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Grenade harness",
+                    "name": "Sgt Grenade harness",
                     "description": "The Huscarl-master may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
@@ -498,7 +573,8 @@
                             "weaponRefs": ["grenade-harness"]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "huscarl-terminator-sergeant"
                 }
             }
         },
@@ -666,24 +742,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -823,17 +891,38 @@
                 {
                     "kind": "equipment",
                     "id": "boarding-shield",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "warder-sergeant"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "boarding-shield",
+                    "perModel": true,
+                    "profileId": "phalanx-warder"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "warder-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "phalanx-warder"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "warder-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "phalanx-warder"
                 },
                 {
                     "kind": "weapon",
@@ -927,24 +1016,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Phalanx Warders in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "phalanx-warder",
-                    "default": "none"
+                    "profileId": "phalanx-warder"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -971,7 +1052,7 @@
                     "name": "Melta bombs",
                     "description": "Every Model in the Unit may have melta bombs selected for them per Unit.",
                     "perModel": {
-                        "type": "every"
+                        "type": "single"
                     },
                     "options": {
                         "melta-bombs": {
@@ -1285,12 +1366,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "templar-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "templar-brethren"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "templar-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "templar-brethren"
                 },
                 {
                     "kind": "weapon",
@@ -1444,24 +1539,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Templar Brethren in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "templar-brethren",
-                    "default": "none"
+                    "profileId": "templar-brethren"
                 },
                 "option-6": {
                     "id": "option-6",
@@ -1488,7 +1575,7 @@
                     "name": "Melta bombs",
                     "description": "Every Model in the Unit may have melta bombs selected for them per Unit.",
                     "perModel": {
-                        "type": "every"
+                        "type": "single"
                     },
                     "options": {
                         "melta-bombs": {

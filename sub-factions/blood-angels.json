@@ -397,24 +397,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 }
             }
         },
@@ -714,7 +706,7 @@
                     "name": "Melta bombs",
                     "description": "Every Model in this Unit may have melta bombs selected for them.",
                     "perModel": {
-                        "type": "every"
+                        "type": "single"
                     },
                     "options": {
                         "melta-bombs": {
@@ -1129,7 +1121,14 @@
                 {
                     "kind": "equipment",
                     "id": "coriolis-pattern-power-shield",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "crimson-exemplar"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "coriolis-pattern-power-shield",
+                    "perModel": true,
+                    "profileId": "crimson-paladin"
                 },
                 {
                     "kind": "weapon",
@@ -1225,17 +1224,10 @@
                     "name": "Paladin Melee weapon",
                     "description": "Up to two Crimson Paladins in this Unit may have their power sword exchanged for one of the following:",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "power-fist": {
                             "id": "power-fist",
                             "name": "Power fist",
@@ -1275,8 +1267,7 @@
                             ]
                         }
                     },
-                    "profileId": "crimson-paladin",
-                    "default": "none"
+                    "profileId": "crimson-paladin"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1406,7 +1397,14 @@
                 {
                     "kind": "weapon",
                     "id": "grenade-discharger",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "dawnbreaker-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "grenade-discharger",
+                    "perModel": true,
+                    "profileId": "dawnbreaker"
                 },
                 {
                     "kind": "weapon",
@@ -1458,7 +1456,7 @@
                     "name": "Melta bombs",
                     "description": "Every Model in this Unit may have melta bombs selected for them per Unit.",
                     "perModel": {
-                        "type": "every"
+                        "type": "single"
                     },
                     "options": {
                         "melta-bombs": {
@@ -1848,17 +1846,38 @@
                 {
                     "kind": "weapon",
                     "id": "rad-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "arch-erelim"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true,
+                    "profileId": "erelim"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "arch-erelim"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "erelim"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "arch-erelim"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "erelim"
                 }
             ],
             "upgrades": {
@@ -2050,30 +2069,6 @@
         }
     },
     "weapons": {
-        "saiphan-shard-axe": {
-            "id": "saiphan-shard-axe",
-            "name": "Saiphan Shard-axe",
-            "template": "melee",
-            "profiles": [
-                {
-                    "name": "Saiphan Shard-axe",
-                    "stats": {
-                        "im": "I",
-                        "am": "+1",
-                        "sm": "+1",
-                        "ap": "3",
-                        "d": "1"
-                    },
-                    "traits": ["Power"],
-                    "specialRules": [
-                        {
-                            "id": "breaching",
-                            "value": "4+"
-                        }
-                    ]
-                }
-            ]
-        },
         "blade-of-judgement": {
             "id": "blade-of-judgement",
             "name": "Blade of Judgement",
@@ -2097,412 +2092,6 @@
                         {
                             "id": "critical-hit",
                             "value": "6+"
-                        }
-                    ]
-                }
-            ]
-        },
-        "inferno-pistol": {
-            "id": "inferno-pistol",
-            "name": "Inferno Pistol",
-            "template": "ranged",
-            "profiles": [
-                {
-                    "name": "Inferno pistol",
-                    "stats": {
-                        "r": "6",
-                        "fp": "1",
-                        "rs": "8",
-                        "ap": "2",
-                        "d": "1"
-                    },
-                    "traits": ["Assault", "Melta"],
-                    "specialRules": [
-                        {
-                            "id": "pistol"
-                        },
-                        {
-                            "id": "melta",
-                            "value": "3"
-                        }
-                    ]
-                }
-            ]
-        },
-        "the-encarmine-warblade": {
-            "id": "the-encarmine-warblade",
-            "name": "The Encarmine Warblade",
-            "template": "melee",
-            "profiles": [
-                {
-                    "name": "The Encarmine Warblade",
-                    "stats": {
-                        "im": "I",
-                        "am": "A",
-                        "sm": "+1",
-                        "ap": "2",
-                        "d": "2"
-                    },
-                    "traits": ["Power"],
-                    "specialRules": [
-                        {
-                            "id": "impact",
-                            "value": "AM"
-                        },
-                        {
-                            "id": "critical-hit",
-                            "value": "6+"
-                        }
-                    ]
-                }
-            ]
-        },
-        "paired-talons-of-perdition": {
-            "id": "paired-talons-of-perdition",
-            "name": "Paired Talons of Perdition",
-            "template": "melee",
-            "profiles": [
-                {
-                    "name": "Paired Talons of Perdition",
-                    "stats": {
-                        "im": "I",
-                        "am": "+2",
-                        "sm": "S",
-                        "ap": "2",
-                        "d": "2"
-                    },
-                    "traits": ["Power", "Flame"],
-                    "specialRules": [
-                        {
-                            "id": "aflame",
-                            "value": "2"
-                        }
-                    ]
-                }
-            ]
-        },
-        "iliastus-assault-cannon": {
-            "id": "iliastus-assault-cannon",
-            "name": "Iliastus Assault Cannon",
-            "template": "ranged",
-            "profiles": [
-                {
-                    "name": "Sustained fire",
-                    "stats": {
-                        "r": "24",
-                        "fp": "3",
-                        "rs": "6",
-                        "ap": "4",
-                        "d": "1"
-                    },
-                    "traits": ["Auto"],
-                    "specialRules": [
-                        {
-                            "id": "heavy",
-                            "value": "FP"
-                        },
-                        {
-                            "id": "breaching",
-                            "value": "6+"
-                        }
-                    ]
-                },
-                {
-                    "name": "Maximal fire",
-                    "stats": {
-                        "r": "24",
-                        "fp": "5",
-                        "rs": "6",
-                        "ap": "4",
-                        "d": "1"
-                    },
-                    "traits": ["Auto"],
-                    "specialRules": [
-                        {
-                            "id": "heavy",
-                            "value": "FP"
-                        },
-                        {
-                            "id": "breaching",
-                            "value": "6+"
-                        },
-                        {
-                            "id": "overload",
-                            "value": "1"
-                        }
-                    ]
-                }
-            ]
-        },
-        "falling-star-power-spear": {
-            "id": "falling-star-power-spear",
-            "name": "Falling-star power spear",
-            "template": "melee",
-            "profiles": [
-                {
-                    "name": "Falling-star power spear",
-                    "stats": {
-                        "im": "+1",
-                        "am": "A",
-                        "sm": "S",
-                        "ap": "3",
-                        "d": "1"
-                    },
-                    "traits": ["Power"],
-                    "specialRules": [
-                        {
-                            "id": "impact",
-                            "value": "SM"
-                        },
-                        {
-                            "id": "breaching",
-                            "value": "5+"
-                        }
-                    ]
-                }
-            ]
-        },
-        "grenade-discharger": {
-            "id": "grenade-discharger",
-            "name": "Grenade discharger",
-            "template": "ranged",
-            "profiles": [
-                {
-                    "name": "Frag",
-                    "stats": {
-                        "r": "12",
-                        "fp": "1",
-                        "rs": "4",
-                        "ap": "6",
-                        "d": "1"
-                    },
-                    "traits": ["Assault"],
-                    "specialRules": [
-                        {
-                            "id": "blast",
-                            "value": "3\""
-                        }
-                    ]
-                },
-                {
-                    "name": "Krak",
-                    "stats": {
-                        "r": "12",
-                        "fp": "1",
-                        "rs": "6",
-                        "ap": "4",
-                        "d": "1"
-                    },
-                    "traits": ["Assault"]
-                }
-            ]
-        },
-        "pair-of-equinox-blades": {
-            "id": "pair-of-equinox-blades",
-            "name": "Pair of equinox blades",
-            "template": "melee",
-            "profiles": [
-                {
-                    "name": "Pair of equinox blades",
-                    "stats": {
-                        "im": "I",
-                        "am": "+1",
-                        "sm": "S",
-                        "ap": "3",
-                        "d": "1"
-                    },
-                    "traits": ["Power"],
-                    "specialRules": [
-                        {
-                            "id": "breaching",
-                            "value": "6+"
-                        }
-                    ]
-                }
-            ]
-        },
-        "lament-grief": {
-            "id": "lament-grief",
-            "name": "Lament & Grief",
-            "template": "ranged",
-            "profiles": [
-                {
-                    "name": "Lament & Grief",
-                    "stats": {
-                        "r": "10",
-                        "fp": "6",
-                        "rs": "5",
-                        "ap": "5",
-                        "d": "1"
-                    },
-                    "traits": ["Assault", "Volkite"],
-                    "specialRules": [
-                        {
-                            "id": "deflagrate",
-                            "value": "5"
-                        },
-                        {
-                            "id": "stun",
-                            "value": "1"
-                        }
-                    ]
-                }
-            ]
-        },
-        "the-spiritum-sanguis": {
-            "id": "the-spiritum-sanguis",
-            "name": "The Spiritum Sanguis",
-            "template": "melee",
-            "profiles": [
-                {
-                    "name": "The Spiritum Sanguis",
-                    "stats": {
-                        "im": "I",
-                        "am": "A",
-                        "sm": "+1",
-                        "ap": "2",
-                        "d": "2"
-                    },
-                    "traits": ["Power"],
-                    "specialRules": [
-                        {
-                            "id": "reaping-blow",
-                            "value": "1"
-                        }
-                    ]
-                }
-            ]
-        },
-        "infernus": {
-            "id": "infernus",
-            "name": "Infernus",
-            "template": "ranged",
-            "profiles": [
-                {
-                    "name": "Infernus",
-                    "stats": {
-                        "r": "18",
-                        "fp": "2",
-                        "rs": "8",
-                        "ap": "2",
-                        "d": "3"
-                    },
-                    "traits": ["Melta", "Assault"],
-                    "specialRules": [
-                        {
-                            "id": "melta",
-                            "value": "12"
-                        },
-                        {
-                            "id": "limited",
-                            "value": "1"
-                        }
-                    ]
-                }
-            ]
-        },
-        "the-blade-encarmine": {
-            "id": "the-blade-encarmine",
-            "name": "The Blade Encarmine",
-            "template": "melee",
-            "profiles": [
-                {
-                    "name": "The Blade Encarmine",
-                    "stats": {
-                        "im": "I",
-                        "am": "A",
-                        "sm": "+1",
-                        "ap": "2",
-                        "d": "2"
-                    },
-                    "traits": ["Power"],
-                    "specialRules": [
-                        {
-                            "id": "critical-hit",
-                            "value": "5+"
-                        },
-                        {
-                            "id": "impact",
-                            "value": "AM"
-                        }
-                    ]
-                }
-            ]
-        },
-        "spear-of-telesto": {
-            "id": "spear-of-telesto",
-            "name": "Spear of Telesto",
-            "template": "melee",
-            "profiles": [
-                {
-                    "name": "Spear of Telesto",
-                    "stats": {
-                        "im": "-1",
-                        "am": "-2",
-                        "sm": "+3",
-                        "ap": "2",
-                        "d": "2"
-                    },
-                    "traits": ["Power"],
-                    "specialRules": [
-                        {
-                            "id": "armourbane"
-                        },
-                        {
-                            "id": "shock",
-                            "value": "Suppressed"
-                        }
-                    ]
-                }
-            ]
-        },
-        "moonsilver-blade": {
-            "id": "moonsilver-blade",
-            "name": "Moonsilver Blade",
-            "template": "melee",
-            "profiles": [
-                {
-                    "name": "Moonsilver Blade",
-                    "stats": {
-                        "im": "I",
-                        "am": "A",
-                        "sm": "S",
-                        "ap": "3",
-                        "d": "2"
-                    },
-                    "traits": ["Power"],
-                    "specialRules": [
-                        {
-                            "id": "duellists-edge",
-                            "value": "1"
-                        }
-                    ]
-                }
-            ]
-        },
-        "erelim-grenade-launcher": {
-            "id": "erelim-grenade-launcher",
-            "name": "Erelim Grenade Launcher",
-            "template": "ranged",
-            "profiles": [
-                {
-                    "name": "Erelim grenade launcher",
-                    "stats": {
-                        "r": "18",
-                        "fp": "2",
-                        "rs": "4",
-                        "ap": "4",
-                        "d": "1"
-                    },
-                    "traits": ["Missile", "Rad"],
-                    "specialRules": [
-                        {
-                            "id": "poisoned",
-                            "value": "2+"
-                        },
-                        {
-                            "id": "phage",
-                            "value": "T"
                         }
                     ]
                 }
@@ -2599,9 +2188,100 @@
                 }
             ]
         },
-        "sustained-fire": {
-            "id": "sustained-fire",
-            "name": "Sustained fire",
+        "erelim-grenade-launcher": {
+            "id": "erelim-grenade-launcher",
+            "name": "Erelim Grenade Launcher",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Erelim grenade launcher",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Missile", "Rad"],
+                    "specialRules": [
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        }
+                    ]
+                }
+            ]
+        },
+        "falling-star-power-spear": {
+            "id": "falling-star-power-spear",
+            "name": "Falling-star power spear",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Falling-star power spear",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "SM"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "grenade-discharger": {
+            "id": "grenade-discharger",
+            "name": "Grenade discharger",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Frag",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "6",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        }
+                    ]
+                },
+                {
+                    "name": "Krak",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"]
+                }
+            ]
+        },
+        "iliastus-assault-cannon": {
+            "id": "iliastus-assault-cannon",
+            "name": "Iliastus Assault Cannon",
             "template": "ranged",
             "profiles": [
                 {
@@ -2649,7 +2329,300 @@
                             "value": "1"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        "inferno-pistol": {
+            "id": "inferno-pistol",
+            "name": "Inferno Pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Inferno pistol",
+                    "stats": {
+                        "r": "6",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Melta"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "melta",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ]
+        },
+        "infernus": {
+            "id": "infernus",
+            "name": "Infernus",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Infernus",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Melta", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "melta",
+                            "value": "12"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "lament-grief": {
+            "id": "lament-grief",
+            "name": "Lament & Grief",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Lament & Grief",
+                    "stats": {
+                        "r": "10",
+                        "fp": "6",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Volkite"],
+                    "specialRules": [
+                        {
+                            "id": "deflagrate",
+                            "value": "5"
+                        },
+                        {
+                            "id": "stun",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "moonsilver-blade": {
+            "id": "moonsilver-blade",
+            "name": "Moonsilver Blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Moonsilver Blade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "duellists-edge",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "pair-of-equinox-blades": {
+            "id": "pair-of-equinox-blades",
+            "name": "Pair of equinox blades",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Pair of equinox blades",
+                    "stats": {
+                        "im": "I",
+                        "am": "+1",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "paired-talons-of-perdition": {
+            "id": "paired-talons-of-perdition",
+            "name": "Paired Talons of Perdition",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Paired Talons of Perdition",
+                    "stats": {
+                        "im": "I",
+                        "am": "+2",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "aflame",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "saiphan-shard-axe": {
+            "id": "saiphan-shard-axe",
+            "name": "Saiphan Shard-axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Saiphan Shard-axe",
+                    "stats": {
+                        "im": "I",
+                        "am": "+1",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "spear-of-telesto": {
+            "id": "spear-of-telesto",
+            "name": "Spear of Telesto",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Spear of Telesto",
+                    "stats": {
+                        "im": "-1",
+                        "am": "-2",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Suppressed"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-blade-encarmine": {
+            "id": "the-blade-encarmine",
+            "name": "The Blade Encarmine",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Blade Encarmine",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-encarmine-warblade": {
+            "id": "the-encarmine-warblade",
+            "name": "The Encarmine Warblade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Encarmine Warblade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        },
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-spiritum-sanguis": {
+            "id": "the-spiritum-sanguis",
+            "name": "The Spiritum Sanguis",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Spiritum Sanguis",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "reaping-blow",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "twin-iliastus-assault-cannon": {
+            "id": "twin-iliastus-assault-cannon",
+            "name": "Twin Iliastus assault cannon",
+            "template": "ranged",
+            "profiles": [
                 {
                     "name": "Sustained fire",
                     "stats": {
@@ -2801,13 +2774,14 @@
                             },
                             "to": {
                                 "kind": "weapon",
-                                "id": "sustained-fire"
+                                "id": "iliastus-assault-cannon"
                             }
                         }
                     ]
                 }
             },
-            "default": "none"
+            "default": "none",
+            "description": "Any Model with the Blood Angels Trait from either a Veteran Tactical Squad or a Centurion Command Squad, and any Cataphractii Terminator with the Blood Angels Trait, may have its heavy flamer exchanged for one Iliastus assault cannon."
         },
         "legion-heavy-weapons": {
             "id": "legion-heavy-weapons",
@@ -3030,6 +3004,76 @@
                     ]
                 }
             }
+        },
+        "blood-angels-twin-iliastus-assault-cannon": {
+            "id": "blood-angels-twin-iliastus-assault-cannon",
+            "name": "Turret Mounted Predator cannon to twin Iliastus assault cannon",
+            "description": "Any Predator with the Blood Angels Trait may have its Turret Mounted Predator cannon exchanged for one Turret Mounted twin Iliastus assault cannon.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "twin-iliastus-assault-cannon": {
+                    "id": "twin-iliastus-assault-cannon",
+                    "name": "Twin Iliastus assault cannon",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "predator-cannon"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "twin-iliastus-assault-cannon"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "blood-angels-leviathan-iliastus-assault-cannons": {
+            "id": "blood-angels-leviathan-iliastus-assault-cannons",
+            "name": "Heavy flamers to two Iliastus assault cannons",
+            "description": "Any Leviathan Dreadnought with the Blood Angels Trait may have both its heavy flamers exchanged for two Iliastus assault cannon.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "two-iliastus-assault-cannons": {
+                    "id": "two-iliastus-assault-cannons",
+                    "name": "Two Iliastus assault cannons",
+                    "cost": {
+                        "points": 30
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "heavy-flamer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "iliastus-assault-cannon"
+                            }
+                        },
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "heavy-flamer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "iliastus-assault-cannon"
+                            }
+                        }
+                    ]
+                }
+            }
         }
     },
     "specialRules": {
@@ -3169,7 +3213,9 @@
         "blood-angels-inferno-pistol": {
             "id": "blood-angels-inferno-pistol",
             "name": "Inferno Pistol",
-            "selector": {},
+            "selector": {
+                "profiles": {}
+            },
             "actions": [
                 {
                     "kind": "addUpgrade",
@@ -3195,7 +3241,14 @@
         "blood-angels-iliastus-assault-cannon": {
             "id": "blood-angels-iliastus-assault-cannon",
             "name": "Iliastus Assault Cannon",
-            "selector": {},
+            "selector": {
+                "unitIds": [
+                    "veteran-tactical-squad",
+                    "centurion-command-squad",
+                    "cataphractii-terminator-squad"
+                ],
+                "profiles": {}
+            },
             "actions": [
                 {
                     "kind": "addUpgrade",
@@ -3228,6 +3281,34 @@
                     "rule": {
                         "id": "encarmine-fury"
                     }
+                }
+            ]
+        },
+        "blood-angels-twin-iliastus-assault-cannon": {
+            "id": "blood-angels-twin-iliastus-assault-cannon",
+            "name": "Twin Iliastus Assault Cannon",
+            "selector": {
+                "unitIds": ["predator"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-twin-iliastus-assault-cannon"
+                }
+            ]
+        },
+        "blood-angels-leviathan-iliastus-assault-cannons": {
+            "id": "blood-angels-leviathan-iliastus-assault-cannons",
+            "name": "Leviathan Iliastus Assault Cannons",
+            "selector": {
+                "unitIds": ["leviathan-dreadnought"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-leviathan-iliastus-assault-cannons"
                 }
             ]
         }

@@ -344,24 +344,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 }
             }
         },
@@ -473,17 +465,38 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "palatine-prefector-with-jump-pack"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "palatine-warrior-with-jump-pack"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "palatine-prefector-with-jump-pack"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "palatine-warrior-with-jump-pack"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "palatine-prefector-with-jump-pack"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "palatine-warrior-with-jump-pack"
                 }
             ],
             "upgrades": {
@@ -552,11 +565,80 @@
                             "weaponRefs": ["phoenix-power-spear"]
                         }
                     },
-                    "default": "palatine-blade"
+                    "default": "palatine-blade",
+                    "profileId": "palatine-warrior-with-jump-pack"
+                },
+                "option-1-palatine-prefector-with-jump-pack": {
+                    "id": "option-1-palatine-prefector-with-jump-pack",
+                    "name": "Prefector Palatine blade",
+                    "description": "Any Model in this Unit may have its Palatine blade exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "palatine-blade": {
+                            "id": "palatine-blade",
+                            "name": "Palatine blade",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["palatine-blade"]
+                        },
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-lance"]
+                        },
+                        "phoenix-rapier": {
+                            "id": "phoenix-rapier",
+                            "name": "Phoenix rapier",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["phoenix-rapier"]
+                        },
+                        "phoenix-power-spear": {
+                            "id": "phoenix-power-spear",
+                            "name": "Phoenix power spear",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["phoenix-power-spear"]
+                        }
+                    },
+                    "default": "palatine-blade",
+                    "profileId": "palatine-prefector-with-jump-pack"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Legion Pistols",
+                    "name": "Prefector Pistols",
                     "description": "The Palatine Prefector in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
                     "perModel": {
                         "type": "single"
@@ -578,23 +660,35 @@
                     "swapFrom": {
                         "kind": "weapon",
                         "id": "bolt-pistol"
-                    }
+                    },
+                    "profileId": "palatine-prefector-with-jump-pack"
                 },
                 "option-3": {
                     "id": "option-3",
                     "name": "Sonic shriekers / Sonic lance",
                     "description": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
                     "perModel": {
-                        "type": "single"
+                        "type": "every"
                     },
                     "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
                         "sonic-shriekers": {
                             "id": "sonic-shriekers",
                             "name": "Sonic shriekers",
                             "cost": {
                                 "points": 5
                             },
-                            "equipmentRefs": ["sonic-shriekers"]
+                            "equipmentRefs": ["sonic-shriekers"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
                         },
                         "sonic-lance": {
                             "id": "sonic-lance",
@@ -602,10 +696,59 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["sonic-lance"]
+                            "weaponRefs": ["sonic-lance"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
                         }
                     },
-                    "default": "sonic-shriekers"
+                    "default": "none",
+                    "profileId": "palatine-warrior-with-jump-pack"
+                },
+                "option-3-palatine-prefector-with-jump-pack": {
+                    "id": "option-3-palatine-prefector-with-jump-pack",
+                    "name": "Prefector Sonic shriekers / Sonic lance",
+                    "description": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "sonic-shriekers": {
+                            "id": "sonic-shriekers",
+                            "name": "Sonic shriekers",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["sonic-shriekers"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
+                        },
+                        "sonic-lance": {
+                            "id": "sonic-lance",
+                            "name": "Sonic lance",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["sonic-lance"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
+                        }
+                    },
+                    "default": "none",
+                    "profileId": "palatine-prefector-with-jump-pack",
+                    "mirrorOf": "option-3"
                 }
             }
         },
@@ -706,17 +849,38 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "novaetor"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "sun-killer"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "novaetor"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "sun-killer"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "novaetor"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "sun-killer"
                 }
             ],
             "upgrades": {
@@ -761,7 +925,53 @@
                             "weaponRefs": ["lascannon"]
                         }
                     },
-                    "default": "volkite-culverin"
+                    "default": "volkite-culverin",
+                    "profileId": "sun-killer"
+                },
+                "option-1-novaetor": {
+                    "id": "option-1-novaetor",
+                    "name": "Novaetor Volkite culverin / Plasma cannon",
+                    "description": "Every Model in the Unit must have one of the following options selected for it. Every Model in this Unit must have the same item selected for it:",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "volkite-culverin": {
+                            "id": "volkite-culverin",
+                            "name": "Volkite culverin",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["volkite-culverin"]
+                        },
+                        "plasma-cannon": {
+                            "id": "plasma-cannon",
+                            "name": "Plasma cannon",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["plasma-cannon"]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["multi-melta"]
+                        },
+                        "lascannon": {
+                            "id": "lascannon",
+                            "name": "Lascannon",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["lascannon"]
+                        }
+                    },
+                    "default": "volkite-culverin",
+                    "profileId": "novaetor",
+                    "mirrorOf": "option-1"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -811,24 +1021,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Sun Killers in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "sun-killer",
-                    "default": "none"
+                    "profileId": "sun-killer"
                 }
             }
         },
@@ -1056,27 +1258,62 @@
                 {
                     "kind": "weapon",
                     "id": "the-cacophony",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "orchestrator"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "the-cacophony",
+                    "perModel": true,
+                    "profileId": "chora"
                 },
                 {
                     "kind": "equipment",
                     "id": "sonic-shriekers",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "orchestrator"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "sonic-shriekers",
+                    "perModel": true,
+                    "profileId": "chora"
                 },
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "orchestrator"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "chora"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "orchestrator"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "chora"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "orchestrator"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "chora"
                 }
             ],
             "upgrades": {
@@ -1324,12 +1561,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "palatine-prefector"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "palatine-warrior"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "palatine-prefector"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "palatine-warrior"
                 },
                 {
                     "kind": "weapon",
@@ -1428,23 +1679,103 @@
                             },
                             "weaponRefs": ["phoenix-rapier"]
                         }
-                    }
+                    },
+                    "profileId": "palatine-warrior"
+                },
+                "palatine-blade-palatine-prefector": {
+                    "id": "palatine-blade-palatine-prefector",
+                    "name": "Prefector Palatine blade",
+                    "description": "Any Model in this Unit may have its Palatine blade exchanged for one Phoenix power spear.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "palatine-blade",
+                    "options": {
+                        "palatine-blade": {
+                            "id": "palatine-blade",
+                            "name": "Palatine blade",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["palatine-blade"]
+                        },
+                        "phoenix-power-spear": {
+                            "id": "phoenix-power-spear",
+                            "name": "Phoenix power spear",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["phoenix-power-spear"]
+                        },
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-lance"]
+                        },
+                        "phoenix-rapier": {
+                            "id": "phoenix-rapier",
+                            "name": "Phoenix rapier",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["phoenix-rapier"]
+                        }
+                    },
+                    "profileId": "palatine-prefector"
                 },
                 "option-3": {
                     "id": "option-3",
                     "name": "Sonic shriekers / Sonic lance",
                     "description": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
                     "perModel": {
-                        "type": "single"
+                        "type": "every"
                     },
                     "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
                         "sonic-shriekers": {
                             "id": "sonic-shriekers",
                             "name": "Sonic shriekers",
                             "cost": {
                                 "points": 5
                             },
-                            "equipmentRefs": ["sonic-shriekers"]
+                            "equipmentRefs": ["sonic-shriekers"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
                         },
                         "sonic-lance": {
                             "id": "sonic-lance",
@@ -1452,10 +1783,59 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["sonic-lance"]
+                            "weaponRefs": ["sonic-lance"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
                         }
                     },
-                    "default": "sonic-shriekers"
+                    "default": "none",
+                    "profileId": "palatine-warrior"
+                },
+                "option-3-palatine-prefector": {
+                    "id": "option-3-palatine-prefector",
+                    "name": "Prefector Sonic shriekers / Sonic lance",
+                    "description": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "sonic-shriekers": {
+                            "id": "sonic-shriekers",
+                            "name": "Sonic shriekers",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["sonic-shriekers"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
+                        },
+                        "sonic-lance": {
+                            "id": "sonic-lance",
+                            "name": "Sonic lance",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["sonic-lance"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
+                        }
+                    },
+                    "default": "none",
+                    "profileId": "palatine-prefector",
+                    "mirrorOf": "option-3"
                 }
             }
         },
@@ -1558,7 +1938,14 @@
                 {
                     "kind": "weapon",
                     "id": "phoenix-power-spear",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "phoenix-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "phoenix-power-spear",
+                    "perModel": true,
+                    "profileId": "phoenix-terminator"
                 }
             ],
             "upgrades": {
@@ -1567,16 +1954,27 @@
                     "name": "Sonic shriekers / Sonic lance",
                     "description": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
                     "perModel": {
-                        "type": "single"
+                        "type": "every"
                     },
                     "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
                         "sonic-shriekers": {
                             "id": "sonic-shriekers",
                             "name": "Sonic shriekers",
                             "cost": {
                                 "points": 5
                             },
-                            "equipmentRefs": ["sonic-shriekers"]
+                            "equipmentRefs": ["sonic-shriekers"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
                         },
                         "sonic-lance": {
                             "id": "sonic-lance",
@@ -1584,10 +1982,59 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["sonic-lance"]
+                            "weaponRefs": ["sonic-lance"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
                         }
                     },
-                    "default": "sonic-shriekers"
+                    "default": "none",
+                    "profileId": "phoenix-terminator"
+                },
+                "option-1-phoenix-champion": {
+                    "id": "option-1-phoenix-champion",
+                    "name": "Champion Sonic shriekers / Sonic lance",
+                    "description": "If all Models in this Unit have the Traitor Trait, all Models in the Unit may have one of the following selected for them. Every Model in this Unit must have...",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "sonic-shriekers": {
+                            "id": "sonic-shriekers",
+                            "name": "Sonic shriekers",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["sonic-shriekers"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
+                        },
+                        "sonic-lance": {
+                            "id": "sonic-lance",
+                            "name": "Sonic lance",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["sonic-lance"],
+                            "when": {
+                                "if": "choice(allegiance) == traitor",
+                                "message": "Traitor units only"
+                            }
+                        }
+                    },
+                    "default": "none",
+                    "profileId": "phoenix-champion",
+                    "mirrorOf": "option-1"
                 },
                 "option-2": {
                     "id": "option-2",

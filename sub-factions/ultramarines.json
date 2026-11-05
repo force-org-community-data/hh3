@@ -288,17 +288,38 @@
                 {
                     "kind": "equipment",
                     "id": "boarding-shield",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "praetorian-primus"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "boarding-shield",
+                    "perModel": true,
+                    "profileId": "praetorian"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "praetorian-primus"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "praetorian"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "praetorian-primus"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "praetorian"
                 },
                 {
                     "kind": "weapon",
@@ -331,24 +352,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Praetorians in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "praetorian",
-                    "default": "none"
+                    "profileId": "praetorian"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -749,12 +762,26 @@
                 {
                     "kind": "weapon",
                     "id": "combi-bolter",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "fulmentarus-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "perModel": true,
+                    "profileId": "fulmentarus-terminator"
                 },
                 {
                     "kind": "weapon",
                     "id": "fulmentarus-missile-array",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "fulmentarus-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "fulmentarus-missile-array",
+                    "perModel": true,
+                    "profileId": "fulmentarus-terminator"
                 }
             ],
             "upgrades": {
@@ -823,7 +850,76 @@
                             "weaponRefs": ["chainfist"]
                         }
                     },
-                    "default": "peritarch-targeter"
+                    "default": "peritarch-targeter",
+                    "profileId": "fulmentarus-terminator"
+                },
+                "option-1-fulmentarus-sergeant": {
+                    "id": "option-1-fulmentarus-sergeant",
+                    "name": "Sgt Peritarch targeter",
+                    "description": "Any Model in this Unit may have its peritarch targeter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "peritarch-targeter": {
+                            "id": "peritarch-targeter",
+                            "name": "Peritarch targeter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["peritarch-targeter"]
+                        },
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-lance"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        }
+                    },
+                    "default": "peritarch-targeter",
+                    "profileId": "fulmentarus-sergeant"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -920,28 +1016,19 @@
                     "name": "Legion Special Weapons",
                     "description": "Up to two Inductii in this Unit may each have their bolter exchanged for one item from the Legion Special Weapons list.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-special-weapons": {
                             "id": "legion-special-weapons",
                             "target": "legion-special-weapons"
                         }
                     },
                     "profileId": "inductii",
-                    "default": "none",
                     "swapFrom": {
                         "kind": "weapon",
-                        "id": "bolter",
-                        "count": 2
+                        "id": "bolter"
                     }
                 },
                 "option-2": {
@@ -969,24 +1056,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1253,12 +1332,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "locutarus-strike-leader"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "locutarus"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "locutarus-strike-leader"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "locutarus"
                 },
                 {
                     "kind": "weapon",
@@ -1479,27 +1572,62 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "nemesis-destroyer-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "nemesis-destroyer"
                 },
                 {
                     "kind": "weapon",
                     "id": "chainsword",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "nemesis-destroyer-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true,
+                    "profileId": "nemesis-destroyer"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "nemesis-destroyer-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "nemesis-destroyer"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "nemesis-destroyer-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "nemesis-destroyer"
                 },
                 {
                     "kind": "weapon",
                     "id": "rad-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "nemesis-destroyer-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true,
+                    "profileId": "nemesis-destroyer"
                 },
                 {
                     "kind": "weapon",
@@ -1539,31 +1667,24 @@
                     "swapFrom": {
                         "kind": "weapon",
                         "id": "chainsword"
-                    }
+                    },
+                    "profileId": "nemesis-destroyer-sergeant"
                 },
                 "option-2": {
                     "id": "option-2",
                     "name": "Legion Equipment",
                     "description": "Up to two Nemesis Destroyers in this Unit may have one item each from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "nemesis-destroyer",
-                    "default": "none"
+                    "profileId": "nemesis-destroyer"
                 },
                 "option-3": {
                     "id": "option-3",

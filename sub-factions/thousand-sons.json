@@ -564,17 +564,38 @@
                 {
                     "kind": "weapon",
                     "id": "paired-achea-force-swords",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "khenetai-blademaster"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "paired-achea-force-swords",
+                    "perModel": true,
+                    "profileId": "khenetai-blade"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "khenetai-blademaster"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "khenetai-blade"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "khenetai-blademaster"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "khenetai-blade"
                 },
                 {
                     "kind": "weapon",
@@ -822,17 +843,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "biomancy": {
                             "id": "biomancy",
                             "name": "Biomancy",
@@ -882,7 +896,7 @@
                             "equipmentRefs": ["telepathy"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             },
             "limit": {
@@ -1122,7 +1136,48 @@
                             },
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    }
+                    },
+                    "profileId": "sekhmet"
+                },
+                "combi-bolter-sekhmet-inceptor": {
+                    "id": "combi-bolter-sekhmet-inceptor",
+                    "name": "Inceptor Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "profileId": "sekhmet-inceptor"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1173,7 +1228,60 @@
                             "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "achea-pattern-force-sword"
+                    "default": "achea-pattern-force-sword",
+                    "profileId": "sekhmet"
+                },
+                "option-2-sekhmet-inceptor": {
+                    "id": "option-2-sekhmet-inceptor",
+                    "name": "Inceptor Achea pattern force sword",
+                    "description": "Any Model in this Unit may have its Achea pattern force sword exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "achea-pattern-force-sword": {
+                            "id": "achea-pattern-force-sword",
+                            "name": "Achea pattern force sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["achea-pattern-force-sword"]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["lightning-claw"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "achea-pattern-force-sword",
+                    "profileId": "sekhmet-inceptor"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1249,11 +1357,12 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "sekhmet"
                 },
                 "option-5": {
                     "id": "option-5",
-                    "name": "Grenade harness",
+                    "name": "Inceptor Grenade harness",
                     "description": "The Sekhment Inceptor in this Unit may have one grenade harness selected for it.",
                     "perModel": {
                         "type": "single"
@@ -1268,7 +1377,8 @@
                             "weaponRefs": ["grenade-harness"]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "sekhmet-inceptor"
                 }
             }
         },
@@ -1380,12 +1490,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "ammitara-fate"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "intercessor"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "ammitara-fate"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "intercessor"
                 },
                 {
                     "kind": "weapon",
@@ -1644,24 +1768,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1795,12 +1911,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "numerologist"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "life-ward"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "numerologist"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "life-ward"
                 },
                 {
                     "kind": "equipment",
@@ -2162,24 +2292,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Life Wards in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "life-ward",
-                    "default": "none"
+                    "profileId": "life-ward"
                 }
             }
         }
@@ -3156,8 +3278,9 @@
             "id": "thousand-sons-achea-pattern-force-swords",
             "name": "Achea Pattern Force Swords",
             "selector": {
+                "traits": ["Thousand Sons"],
                 "profiles": {
-                    "anyOf": ["thousand-sons-trait-and-the-command", "champion"]
+                    "anyOf": ["command", "champion"]
                 }
             },
             "actions": [
@@ -3170,7 +3293,9 @@
         "thousand-sons-asphyx-weapons": {
             "id": "thousand-sons-asphyx-weapons",
             "name": "Asphyx Weapons",
-            "selector": {},
+            "selector": {
+                "profiles": {}
+            },
             "actions": [
                 {
                     "kind": "addUpgrade",

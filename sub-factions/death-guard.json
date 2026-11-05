@@ -270,24 +270,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -426,22 +418,50 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "poison-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "mortus-poisoner"
                 },
                 {
                     "kind": "weapon",
                     "id": "rad-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "poison-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true,
+                    "profileId": "mortus-poisoner"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "poison-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "mortus-poisoner"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "poison-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "mortus-poisoner"
                 }
             ],
             "upgrades": {
@@ -534,7 +554,28 @@
                             "weaponRefs": ["chainsword"]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "mortus-poisoner"
+                },
+                "option-1-poison-master": {
+                    "id": "option-1-poison-master",
+                    "name": "Poison-master Chainsword",
+                    "description": "Any Model in this Unit may have one chainsword selected for it.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "chainsword",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chainsword"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "poison-master"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -578,7 +619,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "mortus-poisoner",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-2-poison-master": {
+                    "id": "option-2-poison-master",
+                    "name": "Poison-master Bayonets",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "poison-master",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-4": {
                     "id": "option-4",
@@ -637,24 +738,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Mortus Poisoners in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "mortus-poisoner",
-                    "default": "none"
+                    "profileId": "mortus-poisoner"
                 },
                 "option-7": {
                     "id": "option-7",
@@ -1040,7 +1133,36 @@
                             "weaponRefs": ["chainfist"]
                         }
                     },
-                    "default": "power-fist"
+                    "default": "power-fist",
+                    "profileId": "grave-warden"
+                },
+                "option-2-chem-master": {
+                    "id": "option-2-chem-master",
+                    "name": "Chem-master Power fist to chainfist",
+                    "description": "Any Model in this Unit may have its power fist exchanged for one chainfist.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "chainfist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["chainfist"]
+                        }
+                    },
+                    "default": "power-fist",
+                    "profileId": "chem-master"
                 },
                 "option-3": {
                     "id": "option-3",
