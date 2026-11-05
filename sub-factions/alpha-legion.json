@@ -1948,23 +1948,6 @@
                             "value": "6+"
                         }
                     ]
-                },
-                {
-                    "name": "Banestrike combi-bolter",
-                    "stats": {
-                        "r": "18",
-                        "fp": "4",
-                        "rs": "4",
-                        "ap": "4",
-                        "d": "1"
-                    },
-                    "traits": ["Bolt"],
-                    "specialRules": [
-                        {
-                            "id": "breaching",
-                            "value": "6+"
-                        }
-                    ]
                 }
             ]
         }
@@ -2000,11 +1983,13 @@
                     "weaponRefs": ["venom-spheres"]
                 }
             },
-            "default": "none"
+            "default": "none",
+            "description": "Any Model with the Alpha Legion Trait and the Command or Champion Sub-Type may be given venom spheres."
         },
         "alpha-legion-power-daggers": {
             "id": "alpha-legion-power-daggers",
             "name": "Power Daggers",
+            "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
             "perModel": {
                 "type": "some"
             },
@@ -2016,13 +2001,81 @@
                         "points": 0
                     }
                 },
-                "power-daggers": {
-                    "id": "power-daggers",
-                    "name": "Power Daggers",
+                "power-sword-to-power-dagger": {
+                    "id": "power-sword-to-power-dagger",
+                    "name": "Power sword to power Dagger",
                     "cost": {
                         "points": 0
                     },
-                    "weaponRefs": ["power-dagger"]
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-dagger"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-power-dagger": {
+                    "id": "power-axe-to-power-dagger",
+                    "name": "Power axe to power Dagger",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-dagger"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-power-dagger": {
+                    "id": "power-maul-to-power-dagger",
+                    "name": "Power maul to power Dagger",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-dagger"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-power-dagger": {
+                    "id": "power-lance-to-power-dagger",
+                    "name": "Power lance to power Dagger",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-dagger"
+                            }
+                        }
+                    ]
                 }
             },
             "default": "none"
@@ -2302,6 +2355,17 @@
         }
     },
     "unitModifiers": {
+        "alpha-legion-trait": {
+            "id": "alpha-legion-trait",
+            "name": "Alpha Legion Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Alpha Legion"]
+                }
+            ]
+        },
         "alpha-legion-venom-spheres": {
             "id": "alpha-legion-venom-spheres",
             "name": "Venom Spheres",
@@ -2331,17 +2395,6 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "alpha-legion-power-daggers"
-                }
-            ]
-        },
-        "alpha-legion-trait": {
-            "id": "alpha-legion-trait",
-            "name": "Alpha Legion Trait",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "trait",
-                    "add": ["Alpha Legion"]
                 }
             ]
         },

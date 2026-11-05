@@ -3148,6 +3148,7 @@
         "white-scars-power-glaive": {
             "id": "white-scars-power-glaive",
             "name": "Power Glaive",
+            "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
             "perModel": {
                 "type": "some"
             },
@@ -3159,38 +3160,81 @@
                         "points": 0
                     }
                 },
-                "power-glaive": {
-                    "id": "power-glaive",
-                    "name": "Power Glaive",
+                "power-sword-to-power-glaive": {
+                    "id": "power-sword-to-power-glaive",
+                    "name": "Power sword to power glaive",
                     "cost": {
                         "points": 10
                     },
-                    "weaponRefs": ["power-glaive"]
-                }
-            },
-            "default": "none"
-        },
-        "white-scars-cyber-hawk": {
-            "id": "white-scars-cyber-hawk",
-            "name": "Cyber-hawk",
-            "perModel": {
-                "type": "some"
-            },
-            "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-glaive"
+                            }
+                        }
+                    ]
                 },
-                "cyber-hawk": {
-                    "id": "cyber-hawk",
-                    "name": "Cyber-hawk",
+                "power-axe-to-power-glaive": {
+                    "id": "power-axe-to-power-glaive",
+                    "name": "Power axe to power glaive",
                     "cost": {
-                        "points": 0
+                        "points": 10
                     },
-                    "equipmentRefs": ["cyber-hawk"]
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-glaive"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-power-glaive": {
+                    "id": "power-maul-to-power-glaive",
+                    "name": "Power maul to power glaive",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-glaive"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-power-glaive": {
+                    "id": "power-lance-to-power-glaive",
+                    "name": "Power lance to power glaive",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-glaive"
+                            }
+                        }
+                    ]
                 }
             },
             "default": "none"
@@ -3321,17 +3365,6 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "white-scars-power-glaive"
-                }
-            ]
-        },
-        "white-scars-cyber-hawk": {
-            "id": "white-scars-cyber-hawk",
-            "name": "Cyber-hawk",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "addUpgrade",
-                    "upgradeId": "white-scars-cyber-hawk"
                 }
             ]
         },

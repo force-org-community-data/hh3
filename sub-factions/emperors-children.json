@@ -2555,6 +2555,7 @@
         "emperors-children-surgical-augments": {
             "id": "emperors-children-surgical-augments",
             "name": "Surgical Augments",
+            "description": "Any Model with the Command or Champion Sub-Type and the Emperor's Children and Traitor Traits may have one of the following selected for it: sonic shriekers, sonic lance.",
             "perModel": {
                 "type": "some"
             },
@@ -2566,13 +2567,29 @@
                         "points": 0
                     }
                 },
-                "surgical-augments": {
-                    "id": "surgical-augments",
-                    "name": "Surgical Augments",
+                "sonic-shriekers": {
+                    "id": "sonic-shriekers",
+                    "name": "Sonic shriekers",
                     "cost": {
-                        "points": 0
+                        "points": 15
                     },
-                    "weaponRefs": ["sonic-lance"]
+                    "equipmentRefs": ["sonic-shriekers"],
+                    "when": {
+                        "if": "choice(allegiance) == traitor",
+                        "message": "Traitor units only"
+                    }
+                },
+                "sonic-lance": {
+                    "id": "sonic-lance",
+                    "name": "Sonic lance",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["sonic-lance"],
+                    "when": {
+                        "if": "choice(allegiance) == traitor",
+                        "message": "Traitor units only"
+                    }
                 }
             },
             "default": "none"
@@ -2580,6 +2597,7 @@
         "emperors-children-phoenix-power-spears": {
             "id": "emperors-children-phoenix-power-spears",
             "name": "Phoenix Power Spears",
+            "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
             "perModel": {
                 "type": "some"
             },
@@ -2591,13 +2609,81 @@
                         "points": 0
                     }
                 },
-                "phoenix-power-spears": {
-                    "id": "phoenix-power-spears",
-                    "name": "Phoenix Power Spears",
+                "power-sword-to-phoenix-power-spear": {
+                    "id": "power-sword-to-phoenix-power-spear",
+                    "name": "Power sword to phoenix power spear",
                     "cost": {
                         "points": 10
                     },
-                    "weaponRefs": ["phoenix-power-spear"]
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "phoenix-power-spear"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-phoenix-power-spear": {
+                    "id": "power-axe-to-phoenix-power-spear",
+                    "name": "Power axe to phoenix power spear",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "phoenix-power-spear"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-phoenix-power-spear": {
+                    "id": "power-maul-to-phoenix-power-spear",
+                    "name": "Power maul to phoenix power spear",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "phoenix-power-spear"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-phoenix-power-spear": {
+                    "id": "power-lance-to-phoenix-power-spear",
+                    "name": "Power lance to phoenix power spear",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "phoenix-power-spear"
+                            }
+                        }
+                    ]
                 }
             },
             "default": "none"
@@ -3055,7 +3141,11 @@
         "emperors-children-phoenix-power-spears": {
             "id": "emperors-children-phoenix-power-spears",
             "name": "Phoenix Power Spears",
-            "selector": {},
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
             "actions": [
                 {
                     "kind": "addUpgrade",

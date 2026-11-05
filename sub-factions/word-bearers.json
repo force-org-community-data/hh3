@@ -3252,56 +3252,6 @@
                             "value": "6+"
                         }
                     ]
-                },
-                {
-                    "name": "Warpfire blaster",
-                    "stats": {
-                        "r": "24",
-                        "fp": "2",
-                        "rs": "5",
-                        "ap": "4",
-                        "d": "1"
-                    },
-                    "traits": ["Plasma"],
-                    "specialRules": [
-                        {
-                            "id": "breaching",
-                            "value": "5+"
-                        },
-                        {
-                            "id": "shred",
-                            "value": "6+"
-                        }
-                    ]
-                },
-                {
-                    "name": "Warpfire projector",
-                    "stats": {
-                        "r": "36",
-                        "fp": "1",
-                        "rs": "5",
-                        "ap": "4",
-                        "d": "1"
-                    },
-                    "traits": ["Plasma"],
-                    "specialRules": [
-                        {
-                            "id": "heavy",
-                            "value": "RS"
-                        },
-                        {
-                            "id": "blast",
-                            "value": "3\""
-                        },
-                        {
-                            "id": "breaching",
-                            "value": "5+"
-                        },
-                        {
-                            "id": "shred",
-                            "value": "6+"
-                        }
-                    ]
                 }
             ]
         },
@@ -3365,56 +3315,6 @@
         }
     },
     "upgrades": {
-        "word-bearers-tainted-weapon": {
-            "id": "word-bearers-tainted-weapon",
-            "name": "Tainted Weapon",
-            "perModel": {
-                "type": "some"
-            },
-            "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
-                "tainted-weapon": {
-                    "id": "tainted-weapon",
-                    "name": "Tainted Weapon",
-                    "cost": {
-                        "points": 0
-                    },
-                    "weaponRefs": ["tainted-weapon"]
-                }
-            },
-            "default": "none"
-        },
-        "word-bearers-warpfire-weapons": {
-            "id": "word-bearers-warpfire-weapons",
-            "name": "Warpfire Weapons",
-            "perModel": {
-                "type": "some"
-            },
-            "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
-                "warpfire-weapons": {
-                    "id": "warpfire-weapons",
-                    "name": "Warpfire Weapons",
-                    "cost": {
-                        "points": 0
-                    },
-                    "weaponRefs": ["warpfire-pistol"]
-                }
-            },
-            "default": "none"
-        },
         "word-bearers-burning-lore": {
             "id": "word-bearers-burning-lore",
             "name": "Burning Lore",
@@ -3438,7 +3338,8 @@
                     "equipmentRefs": ["burning-lore"]
                 }
             },
-            "default": "none"
+            "default": "none",
+            "description": "Any Model with the High Command Battlefield Role and Word Bearers Trait may be given the Psyker Trait and the Anathemata Psychic Discipline."
         },
         "legion-sergeant-melee-weapons": {
             "id": "legion-sergeant-melee-weapons",
@@ -4021,32 +3922,12 @@
         }
     },
     "unitModifiers": {
-        "word-bearers-tainted-weapon": {
-            "id": "word-bearers-tainted-weapon",
-            "name": "Tainted Weapon",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "addUpgrade",
-                    "upgradeId": "word-bearers-tainted-weapon"
-                }
-            ]
-        },
-        "word-bearers-warpfire-weapons": {
-            "id": "word-bearers-warpfire-weapons",
-            "name": "Warpfire Weapons",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "addUpgrade",
-                    "upgradeId": "word-bearers-warpfire-weapons"
-                }
-            ]
-        },
         "word-bearers-burning-lore": {
             "id": "word-bearers-burning-lore",
             "name": "Burning Lore",
-            "selector": {},
+            "selector": {
+                "roles": ["high-command"]
+            },
             "actions": [
                 {
                     "kind": "addUpgrade",

@@ -2695,7 +2695,14 @@
                             "value": "6+"
                         }
                     ]
-                },
+                }
+            ]
+        },
+        "asphyx-bolter": {
+            "id": "asphyx-bolter",
+            "name": "Asphyx bolter",
+            "template": "ranged",
+            "profiles": [
                 {
                     "name": "Asphyx bolter",
                     "stats": {
@@ -2721,6 +2728,7 @@
         "thousand-sons-achea-pattern-force-swords": {
             "id": "thousand-sons-achea-pattern-force-swords",
             "name": "Achea Pattern Force Swords",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
             "perModel": {
                 "type": "some"
             },
@@ -2732,20 +2740,89 @@
                         "points": 0
                     }
                 },
-                "achea-pattern-force-swords": {
-                    "id": "achea-pattern-force-swords",
-                    "name": "Achea Pattern Force Swords",
+                "power-sword-to-achea-pattern-force-sword": {
+                    "id": "power-sword-to-achea-pattern-force-sword",
+                    "name": "Power sword to achea pattern force sword",
                     "cost": {
                         "points": 5
                     },
-                    "weaponRefs": ["achea-pattern-force-sword"]
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-achea-pattern-force-sword": {
+                    "id": "power-axe-to-achea-pattern-force-sword",
+                    "name": "Power axe to achea pattern force sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-achea-pattern-force-sword": {
+                    "id": "power-maul-to-achea-pattern-force-sword",
+                    "name": "Power maul to achea pattern force sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-achea-pattern-force-sword": {
+                    "id": "power-lance-to-achea-pattern-force-sword",
+                    "name": "Power lance to achea pattern force sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
                 }
             },
             "default": "none"
         },
         "thousand-sons-asphyx-weapons": {
             "id": "thousand-sons-asphyx-weapons",
-            "name": "Asphyx Weapons",
+            "name": "Asphyx Pistols",
+            "description": "In any Unit entirely composed of Models with the Thousand Sons Trait, every Model in that Unit may have its bolt pistol exchanged for one asphyx pistol.",
             "perModel": {
                 "type": "some"
             },
@@ -2757,9 +2834,9 @@
                         "points": 0
                     }
                 },
-                "asphyx-weapons": {
-                    "id": "asphyx-weapons",
-                    "name": "Asphyx Weapons",
+                "bolt-pistol-to-asphyx-pistol": {
+                    "id": "bolt-pistol-to-asphyx-pistol",
+                    "name": "Bolt pistol to asphyx pistol",
                     "cost": {
                         "points": 2
                     },
@@ -2775,31 +2852,6 @@
                             }
                         }
                     ]
-                }
-            },
-            "default": "none"
-        },
-        "thousand-sons-aether-fire": {
-            "id": "thousand-sons-aether-fire",
-            "name": "Æther-fire",
-            "perModel": {
-                "type": "some"
-            },
-            "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
-                "aether-fire": {
-                    "id": "aether-fire",
-                    "name": "Æther-fire",
-                    "cost": {
-                        "points": 0
-                    },
-                    "weaponRefs": ["aether-fire-pistol"]
                 }
             },
             "default": "none"
@@ -3151,6 +3203,43 @@
                     "weaponRefs": ["aether-fire-pistol"]
                 }
             }
+        },
+        "thousand-sons-asphyx-bolters": {
+            "id": "thousand-sons-asphyx-bolters",
+            "name": "Asphyx Bolters",
+            "description": "In any Unit entirely composed of Models with the Thousand Sons Trait, every Model in that Unit may have its bolter exchanged for one asphyx bolter.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "bolter-to-asphyx-bolter": {
+                    "id": "bolter-to-asphyx-bolter",
+                    "name": "Bolter to asphyx bolter",
+                    "cost": {
+                        "points": 3
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "asphyx-bolter"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
         }
     },
     "specialRules": {
@@ -3274,6 +3363,17 @@
         }
     },
     "unitModifiers": {
+        "thousand-sons-trait": {
+            "id": "thousand-sons-trait",
+            "name": "Thousand Sons Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Thousand Sons"]
+                }
+            ]
+        },
         "thousand-sons-achea-pattern-force-swords": {
             "id": "thousand-sons-achea-pattern-force-swords",
             "name": "Achea Pattern Force Swords",
@@ -3303,28 +3403,6 @@
                 }
             ]
         },
-        "thousand-sons-aether-fire": {
-            "id": "thousand-sons-aether-fire",
-            "name": "Æther-fire",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "addUpgrade",
-                    "upgradeId": "thousand-sons-aether-fire"
-                }
-            ]
-        },
-        "thousand-sons-trait": {
-            "id": "thousand-sons-trait",
-            "name": "Thousand Sons Trait",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "trait",
-                    "add": ["Thousand Sons"]
-                }
-            ]
-        },
         "cult-arcana-all": {
             "id": "cult-arcana-all",
             "name": "Cult Arcana",
@@ -3339,6 +3417,19 @@
                     "rule": {
                         "id": "cult-arcana"
                     }
+                }
+            ]
+        },
+        "thousand-sons-asphyx-bolters": {
+            "id": "thousand-sons-asphyx-bolters",
+            "name": "Asphyx Bolters",
+            "selector": {
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-asphyx-bolters"
                 }
             ]
         }

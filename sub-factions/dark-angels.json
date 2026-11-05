@@ -3159,7 +3159,8 @@
                     ]
                 }
             },
-            "default": "none"
+            "default": "none",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Dark Angels Trait may have its power sword exchanged for one Calibanite warblade."
         },
         "legion-special-weapons": {
             "id": "legion-special-weapons",
@@ -3225,6 +3226,43 @@
                     "weaponRefs": ["plasma-repeater"]
                 }
             }
+        },
+        "dark-angels-terranic-greatsword": {
+            "id": "dark-angels-terranic-greatsword",
+            "name": "Terranic Greatsword",
+            "description": "Any Model with the Command or Champion Sub-Type and the Dark Angels Trait may have its power fist exchanged for one Terranic greatsword.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "power-fist-to-terranic-greatsword": {
+                    "id": "power-fist-to-terranic-greatsword",
+                    "name": "Power fist to terranic greatsword",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-fist"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "terranic-greatsword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
         }
     },
     "specialRules": {
@@ -3530,6 +3568,21 @@
                     "rule": {
                         "id": "the-angels-of-death"
                     }
+                }
+            ]
+        },
+        "dark-angels-terranic-greatsword": {
+            "id": "dark-angels-terranic-greatsword",
+            "name": "Terranic Greatsword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "dark-angels-terranic-greatsword"
                 }
             ]
         }

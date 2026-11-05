@@ -2213,39 +2213,14 @@
                             "value": "IM"
                         }
                     ]
-                },
-                {
-                    "name": "Excoriator chainaxe",
-                    "stats": {
-                        "im": "-2",
-                        "am": "A",
-                        "sm": "+2",
-                        "ap": "3",
-                        "d": "1"
-                    },
-                    "traits": ["Chain"],
-                    "specialRules": [
-                        {
-                            "id": "breaching",
-                            "value": "6+"
-                        },
-                        {
-                            "id": "shred",
-                            "value": "6+"
-                        }
-                    ]
-                },
-                {
-                    "name": "Paired falax blades",
-                    "stats": {
-                        "im": "I",
-                        "am": "+2",
-                        "sm": "S",
-                        "ap": "3",
-                        "d": "1"
-                    },
-                    "traits": ["Power"]
-                },
+                }
+            ]
+        },
+        "barb-hook-lash": {
+            "id": "barb-hook-lash",
+            "name": "Barb-hook lash",
+            "template": "melee",
+            "profiles": [
                 {
                     "name": "Barb-hook lash",
                     "stats": {
@@ -2268,6 +2243,52 @@
                     ]
                 }
             ]
+        },
+        "excoriator-chainaxe": {
+            "id": "excoriator-chainaxe",
+            "name": "Excoriator chainaxe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Excoriator chainaxe",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "paired-falax-blades": {
+            "id": "paired-falax-blades",
+            "name": "Paired falax blades",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Paired falax blades",
+                    "stats": {
+                        "im": "I",
+                        "am": "+2",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
         }
     },
     "equipment": {
@@ -2275,17 +2296,13 @@
             "id": "caedere-weapons",
             "name": "Caedere Weapons",
             "text": "If a Model has a Caedere weapon as part of its Wargear, you can select one of the following for that Model to have: Meteor hammer Excoriator chainaxe Paired falax blades Barb-hook lash Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one Caedere weapon for +10 Points per Model. Melee Weapon Melee Weapon IM AM SM AP D Special Rules Traits Meteor hammer Meteor hammer I -1 +2 3 2 Impact (IM) Power Excoriator chainaxe Excoriator chainaxe -2 A +2 3 1 Breaching (6+), Shred (6+) Chain Paired falax blades Paired falax blades I +2 S 3 1 - Power Barb-hook lash Barb-hook lash +1 A S 3 1 Critical Hit (6+), Phage (S) Power"
-        },
-        "blades-of-the-fighting-pits": {
-            "id": "blades-of-the-fighting-pits",
-            "name": "Blades of the Fighting Pits",
-            "text": "In any Unit entirely composed of Models with the World Eaters Trait, any Model may have its chainsword exchanged for one chainaxe for Free."
         }
     },
     "upgrades": {
         "world-eaters-blades-of-the-fighting-pits": {
             "id": "world-eaters-blades-of-the-fighting-pits",
             "name": "Blades of the Fighting Pits",
+            "description": "In any Unit entirely composed of Models with the World Eaters Trait, any Model may have its chainsword exchanged for one chainaxe.",
             "perModel": {
                 "type": "some"
             },
@@ -2297,9 +2314,9 @@
                         "points": 0
                     }
                 },
-                "blades-of-the-fighting-pits": {
-                    "id": "blades-of-the-fighting-pits",
-                    "name": "Blades of the Fighting Pits",
+                "chainsword-to-chainaxe": {
+                    "id": "chainsword-to-chainaxe",
+                    "name": "Chainsword to chainaxe",
                     "cost": {
                         "points": 0
                     },
@@ -2310,8 +2327,8 @@
                                 "id": "chainsword"
                             },
                             "to": {
-                                "kind": "equipment",
-                                "id": "blades-of-the-fighting-pits"
+                                "kind": "weapon",
+                                "id": "chainaxe"
                             }
                         }
                     ]
@@ -2322,6 +2339,7 @@
         "world-eaters-caedere-weapons": {
             "id": "world-eaters-caedere-weapons",
             "name": "Caedere Weapons",
+            "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one Caedere weapon (meteor hammer, Excoriator chainaxe, paired falax blades or barb-hook lash).",
             "perModel": {
                 "type": "some"
             },
@@ -2333,13 +2351,309 @@
                         "points": 0
                     }
                 },
-                "caedere-weapons": {
-                    "id": "caedere-weapons",
-                    "name": "Caedere Weapons",
+                "power-sword-to-meteor-hammer": {
+                    "id": "power-sword-to-meteor-hammer",
+                    "name": "Power sword to meteor hammer",
                     "cost": {
                         "points": 10
                     },
-                    "weaponRefs": ["meteor-hammer"]
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "meteor-hammer"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-meteor-hammer": {
+                    "id": "power-axe-to-meteor-hammer",
+                    "name": "Power axe to meteor hammer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "meteor-hammer"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-meteor-hammer": {
+                    "id": "power-maul-to-meteor-hammer",
+                    "name": "Power maul to meteor hammer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "meteor-hammer"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-meteor-hammer": {
+                    "id": "power-lance-to-meteor-hammer",
+                    "name": "Power lance to meteor hammer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "meteor-hammer"
+                            }
+                        }
+                    ]
+                },
+                "power-sword-to-excoriator-chainaxe": {
+                    "id": "power-sword-to-excoriator-chainaxe",
+                    "name": "Power sword to excoriator chainaxe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "excoriator-chainaxe"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-excoriator-chainaxe": {
+                    "id": "power-axe-to-excoriator-chainaxe",
+                    "name": "Power axe to excoriator chainaxe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "excoriator-chainaxe"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-excoriator-chainaxe": {
+                    "id": "power-maul-to-excoriator-chainaxe",
+                    "name": "Power maul to excoriator chainaxe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "excoriator-chainaxe"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-excoriator-chainaxe": {
+                    "id": "power-lance-to-excoriator-chainaxe",
+                    "name": "Power lance to excoriator chainaxe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "excoriator-chainaxe"
+                            }
+                        }
+                    ]
+                },
+                "power-sword-to-paired-falax-blades": {
+                    "id": "power-sword-to-paired-falax-blades",
+                    "name": "Power sword to paired falax blades",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "paired-falax-blades"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-paired-falax-blades": {
+                    "id": "power-axe-to-paired-falax-blades",
+                    "name": "Power axe to paired falax blades",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "paired-falax-blades"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-paired-falax-blades": {
+                    "id": "power-maul-to-paired-falax-blades",
+                    "name": "Power maul to paired falax blades",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "paired-falax-blades"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-paired-falax-blades": {
+                    "id": "power-lance-to-paired-falax-blades",
+                    "name": "Power lance to paired falax blades",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "paired-falax-blades"
+                            }
+                        }
+                    ]
+                },
+                "power-sword-to-barb-hook-lash": {
+                    "id": "power-sword-to-barb-hook-lash",
+                    "name": "Power sword to barb-hook lash",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "barb-hook-lash"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-barb-hook-lash": {
+                    "id": "power-axe-to-barb-hook-lash",
+                    "name": "Power axe to barb-hook lash",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "barb-hook-lash"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-barb-hook-lash": {
+                    "id": "power-maul-to-barb-hook-lash",
+                    "name": "Power maul to barb-hook lash",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "barb-hook-lash"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-barb-hook-lash": {
+                    "id": "power-lance-to-barb-hook-lash",
+                    "name": "Power lance to barb-hook lash",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "barb-hook-lash"
+                            }
+                        }
+                    ]
                 }
             },
             "default": "none"

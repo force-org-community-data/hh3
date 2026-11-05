@@ -1614,31 +1614,6 @@
                             "value": "6+"
                         }
                     ]
-                },
-                {
-                    "name": "Pair of Raven’s Talons",
-                    "stats": {
-                        "im": "I",
-                        "am": "+2",
-                        "sm": "S",
-                        "ap": "3",
-                        "d": "1"
-                    },
-                    "traits": ["Power"],
-                    "specialRules": [
-                        {
-                            "id": "impact",
-                            "value": "IM"
-                        },
-                        {
-                            "id": "rending",
-                            "value": "6+"
-                        },
-                        {
-                            "id": "breaching",
-                            "value": "6+"
-                        }
-                    ]
                 }
             ]
         }
@@ -1664,6 +1639,7 @@
         "raven-guard-ravens-talons": {
             "id": "raven-guard-ravens-talons",
             "name": "Raven’s Talons",
+            "description": "Any Model with the Command Sub-Type and the Raven Guard Trait may have its lightning claw exchanged for one Raven’s Talon, or its pair of lightning claws exchanged for one pair of Raven’s Talons.",
             "perModel": {
                 "type": "some"
             },
@@ -1675,9 +1651,9 @@
                         "points": 0
                     }
                 },
-                "ravens-talons": {
-                    "id": "ravens-talons",
-                    "name": "Raven’s Talons",
+                "lightning-claw-to-ravens-talon": {
+                    "id": "lightning-claw-to-ravens-talon",
+                    "name": "Lightning claw to raven’s Talon",
                     "cost": {
                         "points": 0
                     },
@@ -1690,6 +1666,25 @@
                             "to": {
                                 "kind": "weapon",
                                 "id": "ravens-talon"
+                            }
+                        }
+                    ]
+                },
+                "pair-of-lightning-claws-to-pair-of-ravens-talons": {
+                    "id": "pair-of-lightning-claws-to-pair-of-ravens-talons",
+                    "name": "Pair of lightning claws to pair of Raven’s Talons",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "pair-of-lightning-claws"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "pair-of-ravens-talons"
                             }
                         }
                     ]
@@ -1717,10 +1712,23 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["corvid-pattern-jump-pack"]
+                    "equipmentRefs": ["corvid-pattern-jump-pack"],
+                    "effects": [
+                        {
+                            "kind": "stat",
+                            "changes": [
+                                {
+                                    "stat": "m",
+                                    "op": "set",
+                                    "value": "14"
+                                }
+                            ]
+                        }
+                    ]
                 }
             },
-            "default": "none"
+            "default": "none",
+            "description": "Any Praetor with Jump Pack, Centurion with Jump Pack, Optae with Jump Pack or Moritat with the Raven Guard Trait may have one Corvid pattern jump pack selected for it (Movement 14)."
         }
     },
     "specialRules": {
@@ -1847,7 +1855,14 @@
         "raven-guard-corvid-pattern-jump-pack": {
             "id": "raven-guard-corvid-pattern-jump-pack",
             "name": "Corvid Pattern Jump Pack",
-            "selector": {},
+            "selector": {
+                "unitIds": [
+                    "praetor-with-jump-pack",
+                    "centurion-with-jump-pack",
+                    "optae-with-jump-pack",
+                    "moritat"
+                ]
+            },
             "actions": [
                 {
                     "kind": "addUpgrade",

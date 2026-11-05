@@ -2754,6 +2754,34 @@
                     ]
                 }
             ]
+        },
+        "carsoran-power-tabar": {
+            "id": "carsoran-power-tabar",
+            "name": "Carsoran power tabar",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Carsoran power tabar",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {
@@ -2772,6 +2800,7 @@
         "sons-of-horus-banestrike-bolters": {
             "id": "sons-of-horus-banestrike-bolters",
             "name": "Banestrike Bolters",
+            "description": "Any Model with the Sons of Horus Trait and the Command or Champion Sub-Type may have its bolter exchanged for one banestrike bolter, or its combi-bolter exchanged for one banestrike combi-bolter.",
             "perModel": {
                 "type": "some"
             },
@@ -2783,9 +2812,158 @@
                         "points": 0
                     }
                 },
-                "banestrike-bolters": {
-                    "id": "banestrike-bolters",
-                    "name": "Banestrike Bolters",
+                "bolter-to-banestrike-bolter": {
+                    "id": "bolter-to-banestrike-bolter",
+                    "name": "Bolter to banestrike bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "banestrike-bolter"
+                            }
+                        }
+                    ]
+                },
+                "combi-bolter-to-banestrike-combi-bolter": {
+                    "id": "combi-bolter-to-banestrike-combi-bolter",
+                    "name": "Combi-bolter to banestrike Combi-bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "combi-bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "banestrike-combi-bolter"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "sons-of-horus-carsoran-power-axes": {
+            "id": "sons-of-horus-carsoran-power-axes",
+            "name": "Carsoran Power Axes",
+            "description": "Any Model with the Sons of Horus Trait may have its power axe exchanged for one Carsoran power axe or one Carsoran power tabar.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "power-axe-to-carsoran-power-axe": {
+                    "id": "power-axe-to-carsoran-power-axe",
+                    "name": "Power axe to carsoran power axe",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "carsoran-power-axe"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-carsoran-power-tabar": {
+                    "id": "power-axe-to-carsoran-power-tabar",
+                    "name": "Power axe to carsoran power tabar",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "carsoran-power-tabar"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "sons-of-horus-banestrike-bolters-seekers": {
+            "id": "sons-of-horus-banestrike-bolters-seekers",
+            "name": "Banestrike Bolters",
+            "description": "Any Model in a Seeker Squad with the Sons of Horus Trait may have its kraken bolter exchanged for one banestrike bolter.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "kraken-bolter-to-banestrike-bolter": {
+                    "id": "kraken-bolter-to-banestrike-bolter",
+                    "name": "Kraken bolter to banestrike bolter",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "kraken-bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "banestrike-bolter"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "sons-of-horus-banestrike-bolters-veterans": {
+            "id": "sons-of-horus-banestrike-bolters-veterans",
+            "name": "Banestrike Bolters",
+            "description": "Any Model in a Veteran Tactical Squad with the Sons of Horus Trait may have its bolter exchanged for one banestrike bolter.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "bolter-to-banestrike-bolter": {
+                    "id": "bolter-to-banestrike-bolter",
+                    "name": "Bolter to banestrike bolter",
                     "cost": {
                         "points": 5
                     },
@@ -2805,91 +2983,82 @@
             },
             "default": "none"
         },
-        "sons-of-horus-carsoran-power-axes": {
-            "id": "sons-of-horus-carsoran-power-axes",
-            "name": "Carsoran Power Axes",
+        "sons-of-horus-decurion-lanius-predator": {
+            "id": "sons-of-horus-decurion-lanius-predator",
+            "name": "Decurion Lanius",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Sons of Horus Trait that has no Pintle Mounted Weapons. A Model with this upgrade has a Pintle Mounted Banestrike bolt cannon and gains the Brutal Enforcement Special Rule.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
+            "multiSelect": true,
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
+                "decurion-lanius": {
+                    "id": "decurion-lanius",
+                    "name": "Decurion Lanius",
                     "cost": {
-                        "points": 0
-                    }
-                },
-                "carsoran-power-axes": {
-                    "id": "carsoran-power-axes",
-                    "name": "Carsoran Power Axes",
-                    "cost": {
-                        "points": 5
+                        "points": 25
                     },
-                    "swaps": [
-                        {
-                            "from": {
-                                "kind": "weapon",
-                                "id": "power-axe"
-                            },
-                            "to": {
-                                "kind": "weapon",
-                                "id": "carsoran-power-axe"
-                            }
-                        }
-                    ]
-                }
-            },
-            "default": "none"
-        },
-        "sons-of-horus-banestrike-bolt-cannon": {
-            "id": "sons-of-horus-banestrike-bolt-cannon",
-            "name": "Banestrike Bolt Cannon",
-            "perModel": {
-                "type": "some"
-            },
-            "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
-                "banestrike-bolt-cannon": {
-                    "id": "banestrike-bolt-cannon",
-                    "name": "Banestrike Bolt Cannon",
-                    "cost": {
-                        "points": 0
-                    },
-                    "weaponRefs": ["banestrike-bolt-cannon"]
-                }
-            },
-            "default": "none"
-        },
-        "sons-of-horus-brutal-enforcement": {
-            "id": "sons-of-horus-brutal-enforcement",
-            "name": "Brutal Enforcement",
-            "perModel": {
-                "type": "some"
-            },
-            "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
-                "brutal-enforcement": {
-                    "id": "brutal-enforcement",
-                    "name": "Brutal Enforcement",
-                    "cost": {
-                        "points": 0
-                    },
+                    "weaponRefs": ["banestrike-bolt-cannon"],
                     "equipmentRefs": ["brutal-enforcement"]
                 }
             },
-            "default": "none"
+            "replaces": ["option-3"]
+        },
+        "sons-of-horus-decurion-lanius-kratos-assault-tank": {
+            "id": "sons-of-horus-decurion-lanius-kratos-assault-tank",
+            "name": "Decurion Lanius",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Sons of Horus Trait that has no Pintle Mounted Weapons. A Model with this upgrade has a Pintle Mounted Banestrike bolt cannon and gains the Brutal Enforcement Special Rule.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "decurion-lanius": {
+                    "id": "decurion-lanius",
+                    "name": "Decurion Lanius",
+                    "cost": {
+                        "points": 30
+                    },
+                    "weaponRefs": ["banestrike-bolt-cannon"],
+                    "equipmentRefs": ["brutal-enforcement"]
+                }
+            },
+            "replaces": ["option-5"]
+        },
+        "sons-of-horus-decurion-lanius-sicaran": {
+            "id": "sons-of-horus-decurion-lanius-sicaran",
+            "name": "Decurion Lanius",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Sons of Horus Trait that has no Pintle Mounted Weapons. A Model with this upgrade has a Pintle Mounted Banestrike bolt cannon and gains the Brutal Enforcement Special Rule.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "decurion-lanius": {
+                    "id": "decurion-lanius",
+                    "name": "Decurion Lanius",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["banestrike-bolt-cannon"],
+                    "equipmentRefs": ["brutal-enforcement"]
+                }
+            },
+            "replaces": ["option-3"],
+            "restrictions": {
+                "exclusions": [],
+                "required": [
+                    {
+                        "kind": "weapon",
+                        "id": "twin-accelerator-autocannon"
+                    },
+                    {
+                        "kind": "weapon",
+                        "id": "punisher-rotary-cannon"
+                    }
+                ],
+                "requiredAnd": false
+            }
         }
     },
     "specialRules": {
@@ -3025,6 +3194,17 @@
         }
     },
     "unitModifiers": {
+        "sons-of-horus-trait": {
+            "id": "sons-of-horus-trait",
+            "name": "Sons of Horus Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Sons of Horus"]
+                }
+            ]
+        },
         "sons-of-horus-banestrike-bolters": {
             "id": "sons-of-horus-banestrike-bolters",
             "name": "Banestrike Bolters",
@@ -3054,39 +3234,6 @@
                 }
             ]
         },
-        "sons-of-horus-banestrike-bolt-cannon": {
-            "id": "sons-of-horus-banestrike-bolt-cannon",
-            "name": "Banestrike Bolt Cannon",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "addUpgrade",
-                    "upgradeId": "sons-of-horus-banestrike-bolt-cannon"
-                }
-            ]
-        },
-        "sons-of-horus-brutal-enforcement": {
-            "id": "sons-of-horus-brutal-enforcement",
-            "name": "Brutal Enforcement",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "addUpgrade",
-                    "upgradeId": "sons-of-horus-brutal-enforcement"
-                }
-            ]
-        },
-        "sons-of-horus-trait": {
-            "id": "sons-of-horus-trait",
-            "name": "Sons of Horus Trait",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "trait",
-                    "add": ["Sons of Horus"]
-                }
-            ]
-        },
         "death-dealers-all": {
             "id": "death-dealers-all",
             "name": "Death Dealers",
@@ -3101,6 +3248,73 @@
                     "rule": {
                         "id": "death-dealers"
                     }
+                }
+            ]
+        },
+        "sons-of-horus-banestrike-bolters-seekers": {
+            "id": "sons-of-horus-banestrike-bolters-seekers",
+            "name": "Banestrike Bolters (Seeker Squad)",
+            "selector": {
+                "unitIds": ["seeker-squad"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-banestrike-bolters-seekers"
+                }
+            ]
+        },
+        "sons-of-horus-banestrike-bolters-veterans": {
+            "id": "sons-of-horus-banestrike-bolters-veterans",
+            "name": "Banestrike Bolters (Veteran Tactical Squad)",
+            "selector": {
+                "unitIds": ["veteran-tactical-squad"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-banestrike-bolters-veterans"
+                }
+            ]
+        },
+        "sons-of-horus-decurion-lanius-predator": {
+            "id": "sons-of-horus-decurion-lanius-predator",
+            "name": "Decurion Lanius",
+            "selector": {
+                "unitIds": ["predator"]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-decurion-lanius-predator"
+                }
+            ]
+        },
+        "sons-of-horus-decurion-lanius-kratos-assault-tank": {
+            "id": "sons-of-horus-decurion-lanius-kratos-assault-tank",
+            "name": "Decurion Lanius",
+            "selector": {
+                "unitIds": ["kratos-assault-tank"]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-decurion-lanius-kratos-assault-tank"
+                }
+            ]
+        },
+        "sons-of-horus-decurion-lanius-sicaran": {
+            "id": "sons-of-horus-decurion-lanius-sicaran",
+            "name": "Decurion Lanius",
+            "selector": {
+                "unitIds": ["sicaran"]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-decurion-lanius-sicaran"
                 }
             ]
         }
