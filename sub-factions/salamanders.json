@@ -988,6 +988,16 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
                 }
             ],
             "upgrades": {
@@ -998,39 +1008,15 @@
                     "perModel": {
                         "type": "single"
                     },
-                    "default": "bolt-pistol",
                     "options": {
-                        "bolt-pistol": {
-                            "id": "bolt-pistol",
-                            "name": "Bolt pistol",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["bolt-pistol"]
-                        },
                         "legion-pistols": {
                             "id": "legion-pistols",
                             "target": "legion-pistols"
                         }
-                    }
-                },
-                "chainsword": {
-                    "id": "chainsword",
-                    "name": "Chainsword",
-                    "description": "Replaces the chainsword",
-                    "perModel": {
-                        "type": "single"
                     },
-                    "default": "chainsword",
-                    "options": {
-                        "chainsword": {
-                            "id": "chainsword",
-                            "name": "Chainsword",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["chainsword"]
-                        }
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolt-pistol"
                     }
                 },
                 "option-1": {
@@ -1047,11 +1033,27 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["heavy-chainsword"]
+                            "swaps": [
+                                {
+                                    "from": [
+                                        {
+                                            "kind": "weapon",
+                                            "id": "bolt-pistol"
+                                        },
+                                        {
+                                            "kind": "weapon",
+                                            "id": "chainsword"
+                                        }
+                                    ],
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "multiSelect": true,
-                    "replaces": ["bolt-pistol", "chainsword"]
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1228,11 +1230,27 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["pair-of-lightning-claws"]
+                            "swaps": [
+                                {
+                                    "from": [
+                                        {
+                                            "kind": "weapon",
+                                            "id": "bolt-pistol"
+                                        },
+                                        {
+                                            "kind": "weapon",
+                                            "id": "chainsword"
+                                        }
+                                    ],
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "multiSelect": true,
-                    "replaces": ["bolt-pistol", "chainsword"]
+                    "multiSelect": true
                 },
                 "option-9": {
                     "id": "option-9",

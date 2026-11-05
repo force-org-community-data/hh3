@@ -1689,47 +1689,19 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true
                 }
             ],
             "upgrades": {
-                "bolt-pistol": {
-                    "id": "bolt-pistol",
-                    "name": "Bolt pistol",
-                    "description": "Replaces the bolt pistol",
-                    "perModel": {
-                        "type": "single"
-                    },
-                    "default": "bolt-pistol",
-                    "options": {
-                        "bolt-pistol": {
-                            "id": "bolt-pistol",
-                            "name": "Bolt pistol",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["bolt-pistol"]
-                        }
-                    }
-                },
-                "chainsword": {
-                    "id": "chainsword",
-                    "name": "Chainsword",
-                    "description": "Replaces the chainsword",
-                    "perModel": {
-                        "type": "single"
-                    },
-                    "default": "chainsword",
-                    "options": {
-                        "chainsword": {
-                            "id": "chainsword",
-                            "name": "Chainsword",
-                            "cost": {
-                                "points": 0
-                            },
-                            "weaponRefs": ["chainsword"]
-                        }
-                    }
-                },
                 "option-1": {
                     "id": "option-1",
                     "name": "Swap to heavy chainsword",
@@ -1744,11 +1716,27 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["heavy-chainsword"]
+                            "swaps": [
+                                {
+                                    "from": [
+                                        {
+                                            "kind": "weapon",
+                                            "id": "bolt-pistol"
+                                        },
+                                        {
+                                            "kind": "weapon",
+                                            "id": "chainsword"
+                                        }
+                                    ],
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
                         }
                     },
-                    "multiSelect": true,
-                    "replaces": ["bolt-pistol", "chainsword"]
+                    "multiSelect": true
                 },
                 "option-2": {
                     "id": "option-2",
