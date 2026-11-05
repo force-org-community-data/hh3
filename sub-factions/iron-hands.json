@@ -2311,32 +2311,8 @@
                     "equipmentRefs": ["armatus-necrotechnika"]
                 }
             },
-            "default": "none"
-        },
-        "iron-hands-artificer-power-axe": {
-            "id": "iron-hands-artificer-power-axe",
-            "name": "Artificer Power Axe",
-            "perModel": {
-                "type": "some"
-            },
-            "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
-                "artificer-power-axe": {
-                    "id": "artificer-power-axe",
-                    "name": "Artificer Power Axe",
-                    "cost": {
-                        "points": 0
-                    },
-                    "weaponRefs": ["artificer-power-axe"]
-                }
-            },
-            "default": "none"
+            "default": "none",
+            "description": "Any Model with the Iron Hands Trait and the Vehicle Type may have Armatus Necrotechnika selected for it."
         },
         "iron-hands-graviton-pistol": {
             "id": "iron-hands-graviton-pistol",
@@ -2372,7 +2348,8 @@
                     ]
                 }
             },
-            "default": "none"
+            "default": "none",
+            "description": "Any Model with the Command or Champion Sub-Type and the Iron Hands Trait may have its plasma pistol exchanged for one graviton pistol."
         },
         "legion-special-weapons": {
             "id": "legion-special-weapons",
@@ -2608,22 +2585,15 @@
         "iron-hands-armatus-necrotechnika": {
             "id": "iron-hands-armatus-necrotechnika",
             "name": "Armatus Necrotechnika",
-            "selector": {},
+            "selector": {
+                "profiles": {
+                    "anyOf": ["vehicle"]
+                }
+            },
             "actions": [
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "iron-hands-armatus-necrotechnika"
-                }
-            ]
-        },
-        "iron-hands-artificer-power-axe": {
-            "id": "iron-hands-artificer-power-axe",
-            "name": "Artificer Power Axe",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "addUpgrade",
-                    "upgradeId": "iron-hands-artificer-power-axe"
                 }
             ]
         },

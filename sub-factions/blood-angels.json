@@ -2122,69 +2122,6 @@
                             "value": "1"
                         }
                     ]
-                },
-                {
-                    "name": "Axe of Perdition",
-                    "stats": {
-                        "im": "-1",
-                        "am": "A",
-                        "sm": "+1",
-                        "ap": "3",
-                        "d": "1"
-                    },
-                    "traits": ["Power", "Flame"],
-                    "specialRules": [
-                        {
-                            "id": "breaching",
-                            "value": "5+"
-                        },
-                        {
-                            "id": "aflame",
-                            "value": "1"
-                        }
-                    ]
-                },
-                {
-                    "name": "Maul of Perdition",
-                    "stats": {
-                        "im": "-1",
-                        "am": "A",
-                        "sm": "+2",
-                        "ap": "3",
-                        "d": "1"
-                    },
-                    "traits": ["Power", "Flame"],
-                    "specialRules": [
-                        {
-                            "id": "breaching",
-                            "value": "6+"
-                        },
-                        {
-                            "id": "aflame",
-                            "value": "1"
-                        }
-                    ]
-                },
-                {
-                    "name": "Spear of Perdition",
-                    "stats": {
-                        "im": "+1",
-                        "am": "A",
-                        "sm": "S",
-                        "ap": "3",
-                        "d": "1"
-                    },
-                    "traits": ["Power", "Flame"],
-                    "specialRules": [
-                        {
-                            "id": "precision",
-                            "value": "6+"
-                        },
-                        {
-                            "id": "aflame",
-                            "value": "1"
-                        }
-                    ]
                 }
             ]
         },
@@ -2670,6 +2607,90 @@
                     ]
                 }
             ]
+        },
+        "axe-of-perdition": {
+            "id": "axe-of-perdition",
+            "name": "Axe of Perdition",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Axe of Perdition",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "maul-of-perdition": {
+            "id": "maul-of-perdition",
+            "name": "Maul of Perdition",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Maul of Perdition",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "spear-of-perdition": {
+            "id": "spear-of-perdition",
+            "name": "Spear of Perdition",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Spear of Perdition",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {
@@ -2719,11 +2740,13 @@
                     ]
                 }
             },
-            "default": "none"
+            "default": "none",
+            "description": "Any Model with the Blood Angels Trait may have its plasma pistol exchanged for one inferno pistol."
         },
         "blood-angels-perdition-weapons": {
             "id": "blood-angels-perdition-weapons",
             "name": "Perdition Weapons",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Blood Angels Trait may have its power sword, power axe, power spear or power maul exchanged for one Blade of Perdition, one Axe of Perdition, one Spear of Perdition or one Maul of Perdition.",
             "perModel": {
                 "type": "some"
             },
@@ -2735,13 +2758,81 @@
                         "points": 0
                     }
                 },
-                "perdition-weapons": {
-                    "id": "perdition-weapons",
-                    "name": "Perdition Weapons",
+                "power-sword-to-blade-of-perdition": {
+                    "id": "power-sword-to-blade-of-perdition",
+                    "name": "Power sword to blade of Perdition",
                     "cost": {
                         "points": 5
                     },
-                    "weaponRefs": ["blade-of-perdition"]
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "blade-of-perdition"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-axe-of-perdition": {
+                    "id": "power-axe-to-axe-of-perdition",
+                    "name": "Power axe to axe of Perdition",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "axe-of-perdition"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-maul-of-perdition": {
+                    "id": "power-maul-to-maul-of-perdition",
+                    "name": "Power maul to maul of Perdition",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "maul-of-perdition"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-spear-of-perdition": {
+                    "id": "power-lance-to-spear-of-perdition",
+                    "name": "Power lance to spear of Perdition",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "spear-of-perdition"
+                            }
+                        }
+                    ]
                 }
             },
             "default": "none"

@@ -2033,44 +2033,6 @@
                             "value": "0"
                         }
                     ]
-                },
-                {
-                    "name": "Shrapnel bolter",
-                    "stats": {
-                        "r": "18",
-                        "fp": "2",
-                        "rs": "4",
-                        "ap": "-",
-                        "d": "1"
-                    },
-                    "traits": ["Bolt"],
-                    "specialRules": [
-                        {
-                            "id": "pinning",
-                            "value": "0"
-                        }
-                    ]
-                },
-                {
-                    "name": "Shrapnel cannon",
-                    "stats": {
-                        "r": "36",
-                        "fp": "3",
-                        "rs": "5",
-                        "ap": "5",
-                        "d": "1"
-                    },
-                    "traits": ["Bolt"],
-                    "specialRules": [
-                        {
-                            "id": "pinning",
-                            "value": "0"
-                        },
-                        {
-                            "id": "shred",
-                            "value": "6+"
-                        }
-                    ]
                 }
             ]
         },
@@ -2100,6 +2062,30 @@
                     ]
                 }
             ]
+        },
+        "shrapnel-bolter": {
+            "id": "shrapnel-bolter",
+            "name": "Shrapnel bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Shrapnel bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {
@@ -2118,6 +2104,7 @@
         "iron-warriors-graviton-crushers": {
             "id": "iron-warriors-graviton-crushers",
             "name": "Graviton Crushers",
+            "description": "Any Model with the Iron Warriors Trait and the Command or Champion Sub-Type may have a thunder hammer exchanged for a graviton crusher.",
             "perModel": {
                 "type": "some"
             },
@@ -2129,20 +2116,32 @@
                         "points": 0
                     }
                 },
-                "graviton-crushers": {
-                    "id": "graviton-crushers",
-                    "name": "Graviton Crushers",
+                "thunder-hammer-to-graviton-crusher": {
+                    "id": "thunder-hammer-to-graviton-crusher",
+                    "name": "Thunder hammer to graviton crusher",
                     "cost": {
                         "points": 0
                     },
-                    "weaponRefs": ["graviton-crusher"]
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "thunder-hammer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "graviton-crusher"
+                            }
+                        }
+                    ]
                 }
             },
             "default": "none"
         },
         "iron-warriors-shrapnel-weapons": {
             "id": "iron-warriors-shrapnel-weapons",
-            "name": "Shrapnel Weapons",
+            "name": "Shrapnel Pistols",
+            "description": "In any Unit entirely composed of Models with the Iron Warriors Trait, every Model in that Unit may have its bolt pistol exchanged for one shrapnel pistol.",
             "perModel": {
                 "type": "some"
             },
@@ -2154,9 +2153,9 @@
                         "points": 0
                     }
                 },
-                "shrapnel-weapons": {
-                    "id": "shrapnel-weapons",
-                    "name": "Shrapnel Weapons",
+                "bolt-pistol-to-shrapnel-pistol": {
+                    "id": "bolt-pistol-to-shrapnel-pistol",
+                    "name": "Bolt pistol to shrapnel pistol",
                     "cost": {
                         "points": 2
                     },
@@ -2652,6 +2651,43 @@
                     "weaponRefs": ["graviton-mace"]
                 }
             }
+        },
+        "iron-warriors-shrapnel-bolters": {
+            "id": "iron-warriors-shrapnel-bolters",
+            "name": "Shrapnel Bolters",
+            "description": "In any Unit entirely composed of Models with the Iron Warriors Trait, every Model in that Unit may have its bolter exchanged for one shrapnel bolter.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "bolter-to-shrapnel-bolter": {
+                    "id": "bolter-to-shrapnel-bolter",
+                    "name": "Bolter to shrapnel bolter",
+                    "cost": {
+                        "points": 3
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "shrapnel-bolter"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
         }
     },
     "specialRules": {
@@ -2804,6 +2840,17 @@
         }
     },
     "unitModifiers": {
+        "iron-warriors-trait": {
+            "id": "iron-warriors-trait",
+            "name": "Iron Warriors Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "add": ["Iron Warriors"]
+                }
+            ]
+        },
         "iron-warriors-graviton-crushers": {
             "id": "iron-warriors-graviton-crushers",
             "name": "Graviton Crushers",
@@ -2833,17 +2880,6 @@
                 }
             ]
         },
-        "iron-warriors-trait": {
-            "id": "iron-warriors-trait",
-            "name": "Iron Warriors Trait",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "trait",
-                    "add": ["Iron Warriors"]
-                }
-            ]
-        },
         "the-bitter-end-all": {
             "id": "the-bitter-end-all",
             "name": "The Bitter End",
@@ -2858,6 +2894,19 @@
                     "rule": {
                         "id": "the-bitter-end"
                     }
+                }
+            ]
+        },
+        "iron-warriors-shrapnel-bolters": {
+            "id": "iron-warriors-shrapnel-bolters",
+            "name": "Shrapnel Bolters",
+            "selector": {
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-warriors-shrapnel-bolters"
                 }
             ]
         }

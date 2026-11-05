@@ -1632,6 +1632,7 @@
         "death-guard-power-scythe": {
             "id": "death-guard-power-scythe",
             "name": "Power Scythe",
+            "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one power scythe for +10 Points per Model or its power fist exchanged for one power scythe for +5 Points.",
             "perModel": {
                 "type": "some"
             },
@@ -1643,63 +1644,100 @@
                         "points": 0
                     }
                 },
-                "power-scythe": {
-                    "id": "power-scythe",
-                    "name": "Power Scythe",
+                "power-sword-to-power-scythe": {
+                    "id": "power-sword-to-power-scythe",
+                    "name": "Power sword to power scythe",
                     "cost": {
                         "points": 10
                     },
-                    "weaponRefs": ["power-scythe"]
-                }
-            },
-            "default": "none"
-        },
-        "death-guard-alchem-weapons": {
-            "id": "death-guard-alchem-weapons",
-            "name": "Alchem Weapons",
-            "perModel": {
-                "type": "some"
-            },
-            "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-scythe"
+                            }
+                        }
+                    ]
                 },
-                "alchem-weapons": {
-                    "id": "alchem-weapons",
-                    "name": "Alchem Weapons",
+                "power-axe-to-power-scythe": {
+                    "id": "power-axe-to-power-scythe",
+                    "name": "Power axe to power scythe",
                     "cost": {
-                        "points": 0
+                        "points": 10
                     },
-                    "weaponRefs": ["alchem-flamer"]
-                }
-            },
-            "default": "none"
-        },
-        "death-guard-death-cloud": {
-            "id": "death-guard-death-cloud",
-            "name": "Death Cloud",
-            "perModel": {
-                "type": "some"
-            },
-            "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-scythe"
+                            }
+                        }
+                    ]
                 },
-                "death-cloud": {
-                    "id": "death-cloud",
-                    "name": "Death Cloud",
+                "power-maul-to-power-scythe": {
+                    "id": "power-maul-to-power-scythe",
+                    "name": "Power maul to power scythe",
                     "cost": {
-                        "points": 0
+                        "points": 10
                     },
-                    "equipmentRefs": ["death-cloud"]
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-scythe"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-power-scythe": {
+                    "id": "power-lance-to-power-scythe",
+                    "name": "Power lance to power scythe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-scythe"
+                            }
+                        }
+                    ]
+                },
+                "power-fist-to-power-scythe": {
+                    "id": "power-fist-to-power-scythe",
+                    "name": "Power fist to power scythe",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-fist"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-scythe"
+                            }
+                        }
+                    ]
                 }
             },
             "default": "none"
@@ -2389,28 +2427,6 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "death-guard-power-scythe"
-                }
-            ]
-        },
-        "death-guard-alchem-weapons": {
-            "id": "death-guard-alchem-weapons",
-            "name": "Alchem Weapons",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "addUpgrade",
-                    "upgradeId": "death-guard-alchem-weapons"
-                }
-            ]
-        },
-        "death-guard-death-cloud": {
-            "id": "death-guard-death-cloud",
-            "name": "Death Cloud",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "addUpgrade",
-                    "upgradeId": "death-guard-death-cloud"
                 }
             ]
         },

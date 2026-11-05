@@ -1887,11 +1887,13 @@
                     ]
                 }
             },
-            "default": "none"
+            "default": "none",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Imperial Fists Trait may have its power fist exchanged for one Solarite power gauntlet."
         },
         "imperial-fists-vigil-pattern-storm-shield": {
             "id": "imperial-fists-vigil-pattern-storm-shield",
             "name": "Vigil Pattern Storm Shield",
+            "description": "Any Model with the Command Sub-Type and the Imperial Fists Trait may have its boarding shield or a combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model or its combat shield exchanged for one Vigil pattern storm shield for +10 Points per Model.",
             "perModel": {
                 "type": "some"
             },
@@ -1903,13 +1905,62 @@
                         "points": 0
                     }
                 },
-                "vigil-pattern-storm-shield": {
-                    "id": "vigil-pattern-storm-shield",
-                    "name": "Vigil Pattern Storm Shield",
+                "boarding-shield-to-vigil-pattern-storm-shield": {
+                    "id": "boarding-shield-to-vigil-pattern-storm-shield",
+                    "name": "Boarding Shield to vigil Pattern Storm Shield",
                     "cost": {
                         "points": 5
                     },
-                    "equipmentRefs": ["vigil-pattern-storm-shield"]
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "equipment",
+                                "id": "boarding-shield"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "vigil-pattern-storm-shield"
+                            }
+                        }
+                    ]
+                },
+                "combi-bolter-to-vigil-pattern-storm-shield": {
+                    "id": "combi-bolter-to-vigil-pattern-storm-shield",
+                    "name": "Combi-bolter to vigil Pattern Storm Shield",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "combi-bolter"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "vigil-pattern-storm-shield"
+                            }
+                        }
+                    ]
+                },
+                "combat-shield-to-vigil-pattern-storm-shield": {
+                    "id": "combat-shield-to-vigil-pattern-storm-shield",
+                    "name": "Combat Shield to vigil Pattern Storm Shield",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "equipment",
+                                "id": "combat-shield"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "vigil-pattern-storm-shield"
+                            }
+                        }
+                    ]
                 }
             },
             "default": "none"
@@ -2135,6 +2186,80 @@
                     ]
                 }
             }
+        },
+        "imperial-fists-vigil-pattern-storm-shield-tartaros": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-tartaros",
+            "name": "Vigil Pattern Storm Shield",
+            "description": "Any Model with the Imperial Fists Trait in a Tartaros Terminator Command Squad or Tartaros Terminator Squad may have its combi-bolter exchanged for one Vigil pattern storm shield.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "combi-bolter-to-vigil-pattern-storm-shield": {
+                    "id": "combi-bolter-to-vigil-pattern-storm-shield",
+                    "name": "Combi-bolter to vigil Pattern Storm Shield",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "combi-bolter"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "vigil-pattern-storm-shield"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "imperial-fists-vigil-pattern-storm-shield-cataphractii": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-cataphractii",
+            "name": "Vigil Pattern Storm Shield",
+            "description": "Any Model with the Imperial Fists Trait in a Cataphractii Terminator Command Squad or Cataphractii Terminator Squad may have its combi-bolter exchanged for one Vigil pattern storm shield.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "combi-bolter-to-vigil-pattern-storm-shield": {
+                    "id": "combi-bolter-to-vigil-pattern-storm-shield",
+                    "name": "Combi-bolter to vigil Pattern Storm Shield",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "combi-bolter"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "vigil-pattern-storm-shield"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
         }
     },
     "specialRules": {
@@ -2323,6 +2448,40 @@
                     "rule": {
                         "id": "fire-discipline"
                     }
+                }
+            ]
+        },
+        "imperial-fists-vigil-pattern-storm-shield-tartaros": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-tartaros",
+            "name": "Vigil Pattern Storm Shield (Tartaros)",
+            "selector": {
+                "unitIds": [
+                    "tartaros-terminator-command-squad",
+                    "tartaros-terminator-squad"
+                ],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-tartaros"
+                }
+            ]
+        },
+        "imperial-fists-vigil-pattern-storm-shield-cataphractii": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-cataphractii",
+            "name": "Vigil Pattern Storm Shield (Cataphractii)",
+            "selector": {
+                "unitIds": [
+                    "cataphractii-terminator-command-squad",
+                    "cataphractii-terminator-squad"
+                ],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-cataphractii"
                 }
             ]
         }
