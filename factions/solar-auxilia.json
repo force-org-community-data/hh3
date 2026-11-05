@@ -456,12 +456,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "ordnance-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "veteran"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "ordnance-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "veteran"
                 },
                 {
                     "kind": "weapon",
@@ -644,7 +658,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "veteran",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-4-ordnance-master": {
+                    "id": "option-4-ordnance-master",
+                    "name": "Master Bayonets",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "blast-charger": {
+                            "id": "blast-charger",
+                            "name": "Blast-charger",
+                            "cost": {
+                                "points": 1
+                            },
+                            "equipmentRefs": ["blast-charger"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "lasrifle"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "ordnance-master",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-5": {
                     "id": "option-5",
@@ -1634,12 +1708,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "auxilia-adjutant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "companion"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "auxilia-adjutant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "companion"
                 }
             ],
             "upgrades": {
@@ -1724,7 +1812,92 @@
                             "weaponRefs": ["meltagun"]
                         }
                     },
-                    "default": "lasrifle"
+                    "default": "lasrifle",
+                    "profileId": "companion"
+                },
+                "option-1-auxilia-adjutant": {
+                    "id": "option-1-auxilia-adjutant",
+                    "name": "Adjutant Lasrifle",
+                    "description": "Any Model in this Unit may have its lasrifle exchanged for one laspistol and one charnabal sabre or one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "lasrifle": {
+                            "id": "lasrifle",
+                            "name": "Lasrifle",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["lasrifle"]
+                        },
+                        "laspistol-and-one-charnabal-sabre": {
+                            "id": "laspistol-and-one-charnabal-sabre",
+                            "name": "Laspistol and one charnabal sabre",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["laspistol", "charnabal-sabre"]
+                        },
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 3
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"]
+                        },
+                        "grenade-launcher": {
+                            "id": "grenade-launcher",
+                            "name": "Grenade launcher",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["grenade-launcher"]
+                        },
+                        "plasma-gun": {
+                            "id": "plasma-gun",
+                            "name": "Plasma gun",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-gun"]
+                        },
+                        "rotor-cannon": {
+                            "id": "rotor-cannon",
+                            "name": "Rotor cannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["rotor-cannon"]
+                        },
+                        "meltagun": {
+                            "id": "meltagun",
+                            "name": "Meltagun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["meltagun"]
+                        }
+                    },
+                    "default": "lasrifle",
+                    "profileId": "auxilia-adjutant"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1760,7 +1933,45 @@
                     "swapFrom": {
                         "kind": "weapon",
                         "id": "laspistol"
-                    }
+                    },
+                    "profileId": "companion"
+                },
+                "option-2-auxilia-adjutant": {
+                    "id": "option-2-auxilia-adjutant",
+                    "name": "Adjutant Auxilia Pistols",
+                    "description": "Any Model in this Unit whose lasrifle has been exchanged for a laspistol and charnabal sabre may have its laspistol exchanged for one item from the Auxilia P...",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "auxilia-pistols": {
+                            "id": "auxilia-pistols",
+                            "target": "auxilia-pistols"
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "laspistol"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "laspistol"
+                    },
+                    "profileId": "auxilia-adjutant"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -1815,7 +2026,64 @@
                     "swapFrom": {
                         "kind": "weapon",
                         "id": "charnabal-sabre"
-                    }
+                    },
+                    "profileId": "companion"
+                },
+                "option-3-auxilia-adjutant": {
+                    "id": "option-3-auxilia-adjutant",
+                    "name": "Adjutant Melee follow-up",
+                    "description": "Any Model in this Unit whose lasrifle has been exchanged for a laspistol and charnabal sabre may have its charnabal sabre exchanged for one chainsword for Fr...",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "auxilia-melee-weapons": {
+                            "id": "auxilia-melee-weapons",
+                            "target": "auxilia-melee-weapons"
+                        },
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "charnabal-sabre"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "chainsword"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "charnabal-sabre"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "charnabal-sabre"
+                    },
+                    "profileId": "auxilia-adjutant"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1859,7 +2127,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "companion",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-4-auxilia-adjutant": {
+                    "id": "option-4-auxilia-adjutant",
+                    "name": "Adjutant Bayonets",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "blast-charger": {
+                            "id": "blast-charger",
+                            "name": "Blast-charger",
+                            "cost": {
+                                "points": 1
+                            },
+                            "equipmentRefs": ["blast-charger"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "lasrifle"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "auxilia-adjutant",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-5": {
                     "id": "option-5",
@@ -2690,12 +3018,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "hermes-lead"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "hermes-pathfinder"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "hermes-lead"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "hermes-pathfinder"
                 }
             ],
             "upgrades": {
@@ -2740,7 +3082,52 @@
                             "weaponRefs": ["hermes-grenade-launcher"]
                         }
                     },
-                    "default": "multi-laser"
+                    "default": "multi-laser",
+                    "profileId": "hermes-pathfinder"
+                },
+                "option-1-hermes-lead": {
+                    "id": "option-1-hermes-lead",
+                    "name": "Lead Multi-laser",
+                    "description": "Any Model in this Unit may have its multi-laser exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "multi-laser": {
+                            "id": "multi-laser",
+                            "name": "Multi-laser",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["multi-laser"]
+                        },
+                        "volkite-caliver": {
+                            "id": "volkite-caliver",
+                            "name": "Volkite caliver",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-caliver"]
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 3
+                            },
+                            "weaponRefs": ["heavy-flamer"]
+                        },
+                        "hermes-grenade-launcher": {
+                            "id": "hermes-grenade-launcher",
+                            "name": "Hermes grenade launcher",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hermes-grenade-launcher"]
+                        }
+                    },
+                    "default": "multi-laser",
+                    "profileId": "hermes-lead"
                 }
             }
         },
@@ -3047,12 +3434,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "auxilia-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "auxiliary"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "auxilia-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "auxiliary"
                 },
                 {
                     "kind": "weapon",
@@ -3216,7 +3617,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "auxiliary",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-4-auxilia-sergeant": {
+                    "id": "option-4-auxilia-sergeant",
+                    "name": "Sgt Bayonets",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "blast-charger": {
+                            "id": "blast-charger",
+                            "name": "Blast-charger",
+                            "cost": {
+                                "points": 1
+                            },
+                            "equipmentRefs": ["blast-charger"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "lasrifle"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "auxilia-sergeant",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-5": {
                     "id": "option-5",
@@ -3373,12 +3834,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "legate-marshal"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "lifeward"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "legate-marshal"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "lifeward"
                 }
             ],
             "upgrades": {
@@ -3606,7 +4081,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "lifeward",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-6-legate-marshal": {
+                    "id": "option-6-legate-marshal",
+                    "name": "Marshal Bayonets",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "blast-charger": {
+                            "id": "blast-charger",
+                            "name": "Blast-charger",
+                            "cost": {
+                                "points": 1
+                            },
+                            "equipmentRefs": ["blast-charger"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "lasrifle"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "legate-marshal",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-7": {
                     "id": "option-7",
@@ -4101,12 +4636,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "troop-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "veteran"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "troop-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "veteran"
                 },
                 {
                     "kind": "weapon",
@@ -4289,7 +4838,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "veteran",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-4-troop-master": {
+                    "id": "option-4-troop-master",
+                    "name": "Master Bayonets",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "blast-charger": {
+                            "id": "blast-charger",
+                            "name": "Blast-charger",
+                            "cost": {
+                                "points": 1
+                            },
+                            "equipmentRefs": ["blast-charger"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "lasrifle"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "troop-master",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-5": {
                     "id": "option-5",
@@ -5453,17 +6062,38 @@
                 {
                     "kind": "weapon",
                     "id": "lasrifle",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "rapier-gunner"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "lasrifle",
+                    "perModel": true,
+                    "profileId": "rapier-carrier"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "rapier-gunner"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "rapier-carrier"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "rapier-gunner"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "rapier-carrier"
                 },
                 {
                     "kind": "weapon",
@@ -6432,17 +7062,38 @@
                 {
                     "kind": "weapon",
                     "id": "needle-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "aevos-jovan"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "needle-pistol",
+                    "perModel": true,
+                    "profileId": "auto-gurney"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "aevos-jovan"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "auto-gurney"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "aevos-jovan"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "auto-gurney"
                 }
             ],
             "when": {
@@ -6547,12 +7198,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "auxilia-captain"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "companion"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "auxilia-captain"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "companion"
                 }
             ],
             "upgrades": {
@@ -6756,7 +7421,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "companion",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-6-auxilia-captain": {
+                    "id": "option-6-auxilia-captain",
+                    "name": "Captain Bayonets",
+                    "description": "Any Model in this Unit with a lasrifle may have any of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "blast-charger": {
+                            "id": "blast-charger",
+                            "name": "Blast-charger",
+                            "cost": {
+                                "points": 1
+                            },
+                            "equipmentRefs": ["blast-charger"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "lasrifle"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "auxilia-captain",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "lasrifle",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-7": {
                     "id": "option-7",
@@ -7324,12 +8049,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "first-prime"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "veletarii"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "first-prime"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "veletarii"
                 }
             ],
             "upgrades": {
@@ -7669,12 +8408,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veletarii-prime"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "veletarii"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veletarii-prime"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "veletarii"
                 }
             ],
             "upgrades": {
@@ -7981,12 +8734,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veletarii-prime"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "veletarii"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veletarii-prime"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "veletarii"
                 },
                 {
                     "kind": "weapon",

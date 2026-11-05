@@ -537,12 +537,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "assault-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "assault-legionary"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "assault-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "assault-legionary"
                 },
                 {
                     "kind": "weapon",
@@ -1317,17 +1331,38 @@
                 {
                     "kind": "equipment",
                     "id": "boarding-shield",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "breacher-sergeant"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "boarding-shield",
+                    "perModel": true,
+                    "profileId": "breacher-legionary"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "breacher-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "breacher-legionary"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "breacher-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "breacher-legionary"
                 },
                 {
                     "kind": "weapon",
@@ -1440,24 +1475,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Breacher Legionaries in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "breacher-legionary",
-                    "default": "none"
+                    "profileId": "breacher-legionary"
                 },
                 "option-6": {
                     "id": "option-6",
@@ -2138,7 +2165,56 @@
                             "target": "legion-terminator-melee-weapons"
                         }
                     },
-                    "default": "power-sword"
+                    "default": "power-sword",
+                    "profileId": "cataphractii-chosen"
+                },
+                "option-2-cataphractii-chosen-champion": {
+                    "id": "option-2-cataphractii-chosen-champion",
+                    "name": "Champion Power sword",
+                    "description": "Any Model in this Unit may have its power weapon exchanged for one item from the Legion Terminator Melee Weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-lance"]
+                        },
+                        "legion-terminator-melee-weapons": {
+                            "id": "legion-terminator-melee-weapons",
+                            "target": "legion-terminator-melee-weapons"
+                        }
+                    },
+                    "default": "power-sword",
+                    "profileId": "cataphractii-chosen-champion"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -2428,7 +2504,56 @@
                             "target": "legion-terminator-melee-weapons"
                         }
                     },
-                    "default": "power-sword"
+                    "default": "power-sword",
+                    "profileId": "cataphractii-terminator"
+                },
+                "option-2-cataphractii-terminator-sergeant": {
+                    "id": "option-2-cataphractii-terminator-sergeant",
+                    "name": "Sgt Power sword",
+                    "description": "Any Model in this Unit may have its power weapon exchanged for one item from the Legion Terminator Melee Weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-lance"]
+                        },
+                        "legion-terminator-melee-weapons": {
+                            "id": "legion-terminator-melee-weapons",
+                            "target": "legion-terminator-melee-weapons"
+                        }
+                    },
+                    "default": "power-sword",
+                    "profileId": "cataphractii-terminator-sergeant"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -2609,12 +2734,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "veteran"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "veteran"
                 },
                 {
                     "kind": "weapon",
@@ -2991,7 +3130,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "veteran",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-7-veteran-champion": {
+                    "id": "option-7-veteran-champion",
+                    "name": "Champion Bayonets",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "veteran-champion",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-8": {
                     "id": "option-8",
@@ -3033,24 +3232,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Veterans in this Unit may have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "veteran",
-                    "default": "none"
+                    "profileId": "veteran"
                 }
             }
         },
@@ -5955,12 +6146,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "despoiler-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "despoiler-legionary"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "despoiler-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "despoiler-legionary"
                 },
                 {
                     "kind": "weapon",
@@ -6256,24 +6461,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Despoiler Legionaries in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "despoiler-legionary",
-                    "default": "none"
+                    "profileId": "despoiler-legionary"
                 }
             }
         },
@@ -6396,17 +6593,38 @@
                 {
                     "kind": "weapon",
                     "id": "rad-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "assault-destroyer-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true,
+                    "profileId": "assault-destroyer"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "assault-destroyer-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "assault-destroyer"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "assault-destroyer-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "assault-destroyer"
                 },
                 {
                     "kind": "weapon",
@@ -8565,17 +8783,38 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "legionary"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "legionary"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "legionary"
                 }
             ],
             "upgrades": {
@@ -8591,7 +8830,24 @@
                             "id": "legion-heavy-weapons",
                             "target": "legion-heavy-weapons"
                         }
-                    }
+                    },
+                    "profileId": "legionary"
+                },
+                "option-1-sergeant": {
+                    "id": "option-1-sergeant",
+                    "name": "Sgt Heavy Weapons",
+                    "description": "Every Model in this Unit must have one item from the Legion Heavy Weapons list selected for it. Every Model in this Unit must have the same item selected for it.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "legion-heavy-weapons": {
+                            "id": "legion-heavy-weapons",
+                            "target": "legion-heavy-weapons"
+                        }
+                    },
+                    "profileId": "sergeant",
+                    "mirrorOf": "option-1"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -8641,24 +8897,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Legionaries in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "legionary",
-                    "default": "none"
+                    "profileId": "legionary"
                 }
             }
         },
@@ -11502,17 +11750,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "biomancy": {
                             "id": "biomancy",
                             "name": "Biomancy",
@@ -11562,7 +11803,7 @@
                             "equipmentRefs": ["telepathy"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -11656,17 +11897,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "biomancy": {
                             "id": "biomancy",
                             "name": "Biomancy",
@@ -11716,7 +11950,7 @@
                             "equipmentRefs": ["telepathy"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -11806,17 +12040,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "biomancy": {
                             "id": "biomancy",
                             "name": "Biomancy",
@@ -11866,7 +12093,7 @@
                             "equipmentRefs": ["telepathy"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -11947,17 +12174,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "biomancy": {
                             "id": "biomancy",
                             "name": "Biomancy",
@@ -12007,7 +12227,7 @@
                             "equipmentRefs": ["telepathy"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 }
             }
         },
@@ -12760,17 +12980,38 @@
                 {
                     "kind": "weapon",
                     "id": "rad-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "mortalis-destroyer-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true,
+                    "profileId": "mortalis-destroyer"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "mortalis-destroyer-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "mortalis-destroyer"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "mortalis-destroyer-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "mortalis-destroyer"
                 },
                 {
                     "kind": "weapon",
@@ -12915,24 +13156,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Mortalis Destroyers in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "mortalis-destroyer",
-                    "default": "none"
+                    "profileId": "mortalis-destroyer"
                 },
                 "option-5": {
                     "id": "option-5",
@@ -15371,17 +15604,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "biomancy": {
                             "id": "biomancy",
                             "name": "Biomancy",
@@ -15431,7 +15657,7 @@
                             "equipmentRefs": ["telepathy"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-3": {
                     "id": "option-3",
@@ -15551,17 +15777,10 @@
                     "name": "Psychic Disciplines",
                     "description": "This Model may have up to two of the following Psychic Disciplines selected for it:",
                     "perModel": {
-                        "type": "some",
+                        "type": "single",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "biomancy": {
                             "id": "biomancy",
                             "name": "Biomancy",
@@ -15611,7 +15830,7 @@
                             "equipmentRefs": ["telepathy"]
                         }
                     },
-                    "default": "none"
+                    "multiSelect": true
                 },
                 "option-4": {
                     "id": "option-4",
@@ -17459,17 +17678,38 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "outrider-chosen-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "outrider-chosen"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "outrider-chosen-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "outrider-chosen"
                 },
                 {
                     "kind": "weapon",
                     "id": "twin-bolter",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "outrider-chosen-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter",
+                    "perModel": true,
+                    "profileId": "outrider-chosen"
                 }
             ],
             "upgrades": {
@@ -17494,7 +17734,32 @@
                             "target": "legion-sergeant-melee-weapons"
                         }
                     },
-                    "default": "chainsword"
+                    "default": "chainsword",
+                    "profileId": "outrider-chosen"
+                },
+                "option-1-outrider-chosen-champion": {
+                    "id": "option-1-outrider-chosen-champion",
+                    "name": "Champion Chainsword",
+                    "description": "Any Model in this Unit may have its chainsword exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "default": "chainsword",
+                    "profileId": "outrider-chosen-champion"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -17619,7 +17884,39 @@
                             ]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "outrider-chosen"
+                },
+                "option-4-outrider-chosen-champion": {
+                    "id": "option-4-outrider-chosen-champion",
+                    "name": "Champion Twin bolter to twin plasma gun",
+                    "description": "Any Model in this Unit may have its twin bolter exchanged for one twin plasma gun.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "twin-plasma-gun": {
+                            "id": "twin-plasma-gun",
+                            "name": "Twin plasma gun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "outrider-chosen-champion"
                 },
                 "option-5": {
                     "id": "option-5",
@@ -17761,17 +18058,38 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "outrider-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "outrider"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "outrider-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "outrider"
                 },
                 {
                     "kind": "weapon",
                     "id": "twin-bolter",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "outrider-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-bolter",
+                    "perModel": true,
+                    "profileId": "outrider"
                 },
                 {
                     "kind": "weapon",
@@ -17792,24 +18110,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Outriders in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "outrider",
-                    "default": "none"
+                    "profileId": "outrider"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -17859,7 +18169,32 @@
                             "target": "legion-pistols"
                         }
                     },
-                    "default": "bolt-pistol"
+                    "default": "bolt-pistol",
+                    "profileId": "outrider"
+                },
+                "option-3-outrider-sergeant": {
+                    "id": "option-3-outrider-sergeant",
+                    "name": "Sgt Bolt pistol",
+                    "description": "Any Model in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "bolt-pistol",
+                    "profileId": "outrider-sergeant"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -17889,7 +18224,40 @@
                             ]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "outrider"
+                },
+                "option-4-outrider-sergeant": {
+                    "id": "option-4-outrider-sergeant",
+                    "name": "Sgt Twin bolter to twin plasma gun",
+                    "description": "All Models in the Unit may have their twin bolter exchanged for one twin plasma gun.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "twin-plasma-gun": {
+                            "id": "twin-plasma-gun",
+                            "name": "Twin plasma gun",
+                            "cost": {
+                                "points": 15
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-plasma-gun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "outrider-sergeant",
+                    "mirrorOf": "option-4"
                 },
                 "option-5": {
                     "id": "option-5",
@@ -19329,12 +19697,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "chosen-champion-with-jump-pack"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "chosen-with-jump-pack"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "chosen-champion-with-jump-pack"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "chosen-with-jump-pack"
                 },
                 {
                     "kind": "weapon",
@@ -19407,7 +19789,68 @@
                             },
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    }
+                    },
+                    "profileId": "chosen-with-jump-pack"
+                },
+                "bolter-chosen-champion-with-jump-pack": {
+                    "id": "bolter-chosen-champion-with-jump-pack",
+                    "name": "Champion Bolter",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one item from the Legion Combi-weapons list, one item from the Legion Sergeant Melee Weapons list or...",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolter",
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"]
+                        },
+                        "disintegrator-rifle": {
+                            "id": "disintegrator-rifle",
+                            "name": "Disintegrator rifle",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["disintegrator-rifle"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "profileId": "chosen-champion-with-jump-pack"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -19618,7 +20061,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "chosen-with-jump-pack",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-6-chosen-champion-with-jump-pack": {
+                    "id": "option-6-chosen-champion-with-jump-pack",
+                    "name": "Champion Bayonets",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "chosen-champion-with-jump-pack",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-7": {
                     "id": "option-7",
@@ -19741,12 +20244,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "scimitar-chosen-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "scimitar-chosen"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "scimitar-chosen-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "scimitar-chosen"
                 }
             ],
             "upgrades": {
@@ -19779,7 +20296,40 @@
                             },
                             "equipmentRefs": ["combat-shield"]
                         }
-                    }
+                    },
+                    "profileId": "scimitar-chosen"
+                },
+                "bolt-pistol-scimitar-chosen-champion": {
+                    "id": "bolt-pistol-scimitar-chosen-champion",
+                    "name": "Champion Bolt pistol",
+                    "description": "Any Model in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list or one combat shield.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolt-pistol",
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        },
+                        "combat-shield": {
+                            "id": "combat-shield",
+                            "name": "combat shield",
+                            "cost": {
+                                "points": 4
+                            },
+                            "equipmentRefs": ["combat-shield"]
+                        }
+                    },
+                    "profileId": "scimitar-chosen-champion"
                 },
                 "option-1": {
                     "id": "option-1",
@@ -19802,11 +20352,36 @@
                             "target": "legion-sergeant-melee-weapons"
                         }
                     },
-                    "default": "chainsword"
+                    "default": "chainsword",
+                    "profileId": "scimitar-chosen"
+                },
+                "option-1-scimitar-chosen-champion": {
+                    "id": "option-1-scimitar-chosen-champion",
+                    "name": "Champion Chainsword",
+                    "description": "Any Model in this Unit may have its chainsword exchanged for one item from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "chainsword": {
+                            "id": "chainsword",
+                            "name": "Chainsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainsword"]
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "default": "chainsword",
+                    "profileId": "scimitar-chosen-champion"
                 },
                 "option-3": {
                     "id": "option-3",
-                    "name": "Bolt pistol to disintegrator pistol",
+                    "name": "Champion Bolt pistol to disintegrator pistol",
                     "description": "The Scimitar Chosen Champion may have its bolt pistol exchanged for one disintegrator pistol.",
                     "perModel": {
                         "type": "single"
@@ -19832,7 +20407,8 @@
                             ]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "scimitar-chosen-champion"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -19875,7 +20451,52 @@
                             "weaponRefs": ["multi-melta"]
                         }
                     },
-                    "default": "heavy-bolter"
+                    "default": "heavy-bolter",
+                    "profileId": "scimitar-chosen"
+                },
+                "option-4-scimitar-chosen-champion": {
+                    "id": "option-4-scimitar-chosen-champion",
+                    "name": "Champion Heavy bolter",
+                    "description": "Any Model in this Unit may have its heavy bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "heavy-bolter": {
+                            "id": "heavy-bolter",
+                            "name": "Heavy bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["heavy-bolter"]
+                        },
+                        "volkite-culverin": {
+                            "id": "volkite-culverin",
+                            "name": "Volkite culverin",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-culverin"]
+                        },
+                        "plasma-cannon": {
+                            "id": "plasma-cannon",
+                            "name": "Plasma cannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-cannon"]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["multi-melta"]
+                        }
+                    },
+                    "default": "heavy-bolter",
+                    "profileId": "scimitar-chosen-champion"
                 },
                 "option-5": {
                     "id": "option-5",
@@ -19979,12 +20600,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "chosen-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "chosen"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "chosen-champion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "chosen"
                 },
                 {
                     "kind": "weapon",
@@ -20057,7 +20692,68 @@
                             },
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
-                    }
+                    },
+                    "profileId": "chosen"
+                },
+                "bolter-chosen-champion": {
+                    "id": "bolter-chosen-champion",
+                    "name": "Champion Bolter",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one item from the Legion Combi-weapons list, one item from the Legion Sergeant Melee Weapons list or...",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "bolter",
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "astartes-shotgun": {
+                            "id": "astartes-shotgun",
+                            "name": "Astartes shotgun",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["astartes-shotgun"]
+                        },
+                        "disintegrator-rifle": {
+                            "id": "disintegrator-rifle",
+                            "name": "Disintegrator rifle",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["disintegrator-rifle"]
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "Volkite charger",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "profileId": "chosen-champion"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -20268,7 +20964,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "chosen",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-6-chosen-champion": {
+                    "id": "option-6-chosen-champion",
+                    "name": "Champion Bayonets",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "chosen-champion",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-7": {
                     "id": "option-7",
@@ -21266,22 +22022,50 @@
                 {
                     "kind": "weapon",
                     "id": "bolter",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "legionary"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "perModel": true,
+                    "profileId": "rapier-carrier"
                 },
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "legionary"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "rapier-carrier"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "legionary"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "rapier-carrier"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "legionary"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "rapier-carrier"
                 },
                 {
                     "kind": "weapon",
@@ -21502,12 +22286,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "recon-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "recon-legionary"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "recon-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "recon-legionary"
                 },
                 {
                     "kind": "weapon",
@@ -21580,24 +22378,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Recon Legionaries in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "recon-legionary",
-                    "default": "none"
+                    "profileId": "recon-legionary"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -21967,7 +22757,7 @@
                     "name": "Hull (Front) Mounted Sabre missiles",
                     "description": "This Model may have up to four Hull (Front) Mounted Sabre missiles selected for it.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 4
                     },
                     "options": {
@@ -22276,18 +23066,32 @@
                 {
                     "kind": "equipment",
                     "id": "thermal-diffraction-field",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "saturnine-chosen-champion"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "thermal-diffraction-field",
+                    "perModel": true,
+                    "profileId": "saturnine-chosen"
                 },
                 {
                     "kind": "equipment",
                     "id": "saturnine-teleport-synchroniser",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "saturnine-chosen-champion"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "saturnine-teleport-synchroniser",
+                    "perModel": true,
+                    "profileId": "saturnine-chosen"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Paired Saturnine disruption fists",
+                    "name": "Saturnine Chosen Paired Saturnine disruption fists",
                     "description": "Any Model in this Unit may have its paired Saturnine disruption fists exchanged for one of the following:",
                     "perModel": {
                         "type": "some"
@@ -22346,11 +23150,76 @@
                             ]
                         }
                     },
-                    "default": "paired-saturnine-disruption-fists"
+                    "default": "paired-saturnine-disruption-fists",
+                    "profileId": "saturnine-chosen"
+                },
+                "option-1-saturnine-chosen-champion": {
+                    "id": "option-1-saturnine-chosen-champion",
+                    "name": "Champion Paired Saturnine disruption fists",
+                    "description": "Any Model in this Unit may have its paired Saturnine disruption fists exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "paired-saturnine-disruption-fists": {
+                            "id": "paired-saturnine-disruption-fists",
+                            "name": "Paired Saturnine disruption fists",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["paired-saturnine-disruption-fists"]
+                        },
+                        "plasma-bombard-and-one-saturnine-disruption-fist": {
+                            "id": "plasma-bombard-and-one-saturnine-disruption-fist",
+                            "name": "Plasma bombard and one Saturnine disruption fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": [
+                                "plasma-bombard",
+                                "saturnine-disruption-fist"
+                            ]
+                        },
+                        "twin-heavy-disintegrator-and-one-saturnine-disruption-fist": {
+                            "id": "twin-heavy-disintegrator-and-one-saturnine-disruption-fist",
+                            "name": "Twin heavy disintegrator and one Saturnine disruption fist",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": [
+                                "twin-heavy-disintegrator",
+                                "saturnine-disruption-fist"
+                            ]
+                        },
+                        "saturnine-war-axe-and-one-saturnine-disruption-fist": {
+                            "id": "saturnine-war-axe-and-one-saturnine-disruption-fist",
+                            "name": "Saturnine war axe and one Saturnine disruption fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": [
+                                "saturnine-war-axe",
+                                "saturnine-disruption-fist"
+                            ]
+                        },
+                        "saturnine-concussion-hammer-and-one-saturnine-disruption-fis": {
+                            "id": "saturnine-concussion-hammer-and-one-saturnine-disruption-fis",
+                            "name": "Saturnine concussion hammer and one Saturnine disruption fist",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": [
+                                "saturnine-concussion-hammer",
+                                "saturnine-disruption-fist"
+                            ]
+                        }
+                    },
+                    "default": "paired-saturnine-disruption-fists",
+                    "profileId": "saturnine-chosen-champion"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Special weapon",
+                    "name": "Saturnine Chosen Special weapon",
                     "description": "Any Model in this Unit may have one of the following selected for it:",
                     "perModel": {
                         "type": "some"
@@ -22380,7 +23249,43 @@
                             "weaponRefs": ["plasma-blaster"]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "saturnine-chosen"
+                },
+                "option-2-saturnine-chosen-champion": {
+                    "id": "option-2-saturnine-chosen-champion",
+                    "name": "Champion Special weapon",
+                    "description": "Any Model in this Unit may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "particle-shredder": {
+                            "id": "particle-shredder",
+                            "name": "Particle shredder",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["particle-shredder"]
+                        },
+                        "plasma-blaster": {
+                            "id": "plasma-blaster",
+                            "name": "Plasma blaster",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-blaster"]
+                        }
+                    },
+                    "default": "none",
+                    "profileId": "saturnine-chosen-champion"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -22517,12 +23422,26 @@
                 {
                     "kind": "equipment",
                     "id": "occulix-targeting-auspex",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "saturnine-terminator-sergeant"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "occulix-targeting-auspex",
+                    "perModel": true,
+                    "profileId": "saturnine-terminator"
                 },
                 {
                     "kind": "equipment",
                     "id": "thermal-diffraction-field",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "saturnine-terminator-sergeant"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "thermal-diffraction-field",
+                    "perModel": true,
+                    "profileId": "saturnine-terminator"
                 }
             ],
             "upgrades": {
@@ -22551,7 +23470,36 @@
                             "weaponRefs": ["plasma-bombard"]
                         }
                     },
-                    "default": "saturnine-disruption-fist"
+                    "default": "saturnine-disruption-fist",
+                    "profileId": "saturnine-terminator"
+                },
+                "option-1-saturnine-terminator-sergeant": {
+                    "id": "option-1-saturnine-terminator-sergeant",
+                    "name": "Sgt Saturnine disruption fist",
+                    "description": "Any Model in this Unit may have its Saturnine disruption fist exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "saturnine-disruption-fist": {
+                            "id": "saturnine-disruption-fist",
+                            "name": "Saturnine disruption fist",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["saturnine-disruption-fist"]
+                        },
+                        "plasma-bombard": {
+                            "id": "plasma-bombard",
+                            "name": "Plasma bombard",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["plasma-bombard"]
+                        }
+                    },
+                    "default": "saturnine-disruption-fist",
+                    "profileId": "saturnine-terminator-sergeant"
                 },
                 "twin-heavy-disintegrator": {
                     "id": "twin-heavy-disintegrator",
@@ -22591,7 +23539,49 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "saturnine-terminator"
+                },
+                "twin-heavy-disintegrator-saturnine-terminator-sergeant": {
+                    "id": "twin-heavy-disintegrator-saturnine-terminator-sergeant",
+                    "name": "Sgt Plasma bombard to twin heavy disintegrator",
+                    "description": "Any Model in this Unit may have its plasma bombard exchanged for one twin heavy disintegrator for +10 Points per Model.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "twin-heavy-disintegrator": {
+                            "id": "twin-heavy-disintegrator",
+                            "name": "Twin heavy disintegrator",
+                            "cost": {
+                                "points": 10
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "plasma-bombard"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "twin-heavy-disintegrator"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true,
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "plasma-bombard"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "saturnine-terminator-sergeant"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -22618,7 +23608,36 @@
                             "weaponRefs": ["twin-heavy-disintegrator"]
                         }
                     },
-                    "default": "plasma-bombard"
+                    "default": "plasma-bombard",
+                    "profileId": "saturnine-terminator"
+                },
+                "option-2-saturnine-terminator-sergeant": {
+                    "id": "option-2-saturnine-terminator-sergeant",
+                    "name": "Sgt Plasma bombard",
+                    "description": "Any Model in this Unit may have its plasma bombard exchanged for one twin heavy disintegrator.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "plasma-bombard": {
+                            "id": "plasma-bombard",
+                            "name": "Plasma bombard",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["plasma-bombard"]
+                        },
+                        "twin-heavy-disintegrator": {
+                            "id": "twin-heavy-disintegrator",
+                            "name": "twin heavy disintegrator",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["twin-heavy-disintegrator"]
+                        }
+                    },
+                    "default": "plasma-bombard",
+                    "profileId": "saturnine-terminator-sergeant"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -22647,7 +23666,52 @@
                         ],
                         "requiredAnd": true
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "saturnine-terminator",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "saturnine-disruption-fist",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-3-saturnine-terminator-sergeant": {
+                    "id": "option-3-saturnine-terminator-sergeant",
+                    "name": "Sgt Particle shredder",
+                    "description": "Any Model in this Unit with a Saturnine disruption fist may have one particle shredder selected for it.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "particle-shredder": {
+                            "id": "particle-shredder",
+                            "name": "particle shredder",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["particle-shredder"]
+                        }
+                    },
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "saturnine-disruption-fist"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "multiSelect": true,
+                    "profileId": "saturnine-terminator-sergeant",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "saturnine-disruption-fist",
+                            "count": 1
+                        }
+                    ]
                 }
             }
         },
@@ -22750,12 +23814,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "scimitar-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "scimitar-hunter"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "scimitar-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "scimitar-hunter"
                 },
                 {
                     "kind": "weapon",
@@ -22830,7 +23908,32 @@
                             "target": "legion-pistols"
                         }
                     },
-                    "default": "bolt-pistol"
+                    "default": "bolt-pistol",
+                    "profileId": "scimitar-hunter"
+                },
+                "option-3-scimitar-sergeant": {
+                    "id": "option-3-scimitar-sergeant",
+                    "name": "Sgt Bolt pistol",
+                    "description": "Any Model in this Unit may have its bolt pistol exchanged for one item from the Legion Pistols list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "legion-pistols": {
+                            "id": "legion-pistols",
+                            "target": "legion-pistols"
+                        }
+                    },
+                    "default": "bolt-pistol",
+                    "profileId": "scimitar-sergeant"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -22873,7 +23976,52 @@
                             "weaponRefs": ["plasma-cannon"]
                         }
                     },
-                    "default": "heavy-bolter"
+                    "default": "heavy-bolter",
+                    "profileId": "scimitar-hunter"
+                },
+                "option-4-scimitar-sergeant": {
+                    "id": "option-4-scimitar-sergeant",
+                    "name": "Sgt Heavy bolter",
+                    "description": "Any Model in this Unit may have its heavy bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "heavy-bolter": {
+                            "id": "heavy-bolter",
+                            "name": "Heavy bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["heavy-bolter"]
+                        },
+                        "volkite-culverin": {
+                            "id": "volkite-culverin",
+                            "name": "Volkite culverin",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["volkite-culverin"]
+                        },
+                        "multi-melta": {
+                            "id": "multi-melta",
+                            "name": "Multi-melta",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["multi-melta"]
+                        },
+                        "plasma-cannon": {
+                            "id": "plasma-cannon",
+                            "name": "Plasma cannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-cannon"]
+                        }
+                    },
+                    "default": "heavy-bolter",
+                    "profileId": "scimitar-sergeant"
                 }
             }
         },
@@ -23096,12 +24244,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "scout-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "scout"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "scout-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "scout"
                 },
                 {
                     "kind": "weapon",
@@ -23407,7 +24569,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "scout",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-5-scout-sergeant": {
+                    "id": "option-5-scout-sergeant",
+                    "name": "Sgt Bayonets",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "scout-sergeant",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 }
             }
         },
@@ -23504,12 +24726,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "seeker-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "seeker"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "seeker-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "seeker"
                 },
                 {
                     "kind": "weapon",
@@ -23576,7 +24812,32 @@
                             "target": "legion-combi-weapons"
                         }
                     },
-                    "default": "kraken-bolter"
+                    "default": "kraken-bolter",
+                    "profileId": "seeker"
+                },
+                "option-1-seeker-sergeant": {
+                    "id": "option-1-seeker-sergeant",
+                    "name": "Sgt Kraken bolter",
+                    "description": "Any Model in this Unit may have its kraken bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "kraken-bolter": {
+                            "id": "kraken-bolter",
+                            "name": "Kraken bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["kraken-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "kraken-bolter",
+                    "profileId": "seeker-sergeant"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -23620,7 +24881,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "seeker",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "kraken-bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-4-seeker-sergeant": {
+                    "id": "option-4-seeker-sergeant",
+                    "name": "Sgt Bayonets",
+                    "description": "Any Model in this Unit with a kraken bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "kraken-bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "seeker-sergeant",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "kraken-bolter",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-5": {
                     "id": "option-5",
@@ -23647,24 +24968,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Seekers in this Unit may have one item each from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "seeker",
-                    "default": "none"
+                    "profileId": "seeker"
                 }
             }
         },
@@ -24881,12 +26194,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "legionary"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "legionary"
                 },
                 {
                     "kind": "weapon",
@@ -25003,24 +26330,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Legionaries in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "legionary",
-                    "default": "none"
+                    "profileId": "legionary"
                 },
                 "option-7": {
                     "id": "option-7",
@@ -25064,7 +26383,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "legionary",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-7-sergeant": {
+                    "id": "option-7-sergeant",
+                    "name": "Sgt Bayonets",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "sergeant",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 }
             }
         },
@@ -25148,17 +26527,38 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "legionary"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "legionary"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "legionary"
                 }
             ],
             "upgrades": {
@@ -25174,7 +26574,24 @@
                             "id": "legion-special-weapons",
                             "target": "legion-special-weapons"
                         }
-                    }
+                    },
+                    "profileId": "legionary"
+                },
+                "option-1-sergeant": {
+                    "id": "option-1-sergeant",
+                    "name": "Sgt Special Weapons",
+                    "description": "Every Model in this Unit must have one item from the Legion Special Weapons list selected for it. Every Model in this Unit must have the same item selected f...",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "legion-special-weapons": {
+                            "id": "legion-special-weapons",
+                            "target": "legion-special-weapons"
+                        }
+                    },
+                    "profileId": "sergeant",
+                    "mirrorOf": "option-1"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -25244,24 +26661,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Legionaries in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "legionary",
-                    "default": "none"
+                    "profileId": "legionary"
                 }
             }
         },
@@ -25591,7 +27000,56 @@
                             "target": "legion-terminator-melee-weapons"
                         }
                     },
-                    "default": "power-sword"
+                    "default": "power-sword",
+                    "profileId": "tartaros-chosen"
+                },
+                "option-2-tartaros-chosen-champion": {
+                    "id": "option-2-tartaros-chosen-champion",
+                    "name": "Champion Power sword",
+                    "description": "Any Model in this Unit may have its power weapon exchanged for one item from the Legion Terminator Melee Weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-lance"]
+                        },
+                        "legion-terminator-melee-weapons": {
+                            "id": "legion-terminator-melee-weapons",
+                            "target": "legion-terminator-melee-weapons"
+                        }
+                    },
+                    "default": "power-sword",
+                    "profileId": "tartaros-chosen-champion"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -25802,7 +27260,64 @@
                             },
                             "weaponRefs": ["plasma-blaster"]
                         }
-                    }
+                    },
+                    "profileId": "tartaros-terminator"
+                },
+                "combi-bolter-tartaros-terminator-sergeant": {
+                    "id": "combi-bolter-tartaros-terminator-sergeant",
+                    "name": "Sgt Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one volkite charger, or for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "combi-bolter",
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        },
+                        "volkite-charger": {
+                            "id": "volkite-charger",
+                            "name": "volkite charger",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-charger"]
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "Heavy flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-flamer"]
+                        },
+                        "reaper-autocannon": {
+                            "id": "reaper-autocannon",
+                            "name": "Reaper autocannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["reaper-autocannon"]
+                        },
+                        "plasma-blaster": {
+                            "id": "plasma-blaster",
+                            "name": "Plasma blaster",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-blaster"]
+                        }
+                    },
+                    "profileId": "tartaros-terminator-sergeant"
                 },
                 "power-sword": {
                     "id": "power-sword",
@@ -25853,11 +27368,64 @@
                             },
                             "weaponRefs": ["chainfist"]
                         }
-                    }
+                    },
+                    "profileId": "tartaros-terminator"
+                },
+                "power-sword-tartaros-terminator-sergeant": {
+                    "id": "power-sword-tartaros-terminator-sergeant",
+                    "name": "Sgt Power sword",
+                    "description": "Any Model in this Unit may have its power weapon exchanged for one chainfist.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "default": "power-sword",
+                    "options": {
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-lance"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        }
+                    },
+                    "profileId": "tartaros-terminator-sergeant"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Legion Terminator Melee Weapons",
+                    "name": "Sgt Terminator Melee Weapons",
                     "description": "The Terminator Sergeant in this Unit may have its power weapon exchanged for one item from the Legion Terminator Melee Weapons list.",
                     "perModel": {
                         "type": "single"
@@ -25879,7 +27447,8 @@
                     "swapFrom": {
                         "kind": "weapon",
                         "id": "power-sword"
-                    }
+                    },
+                    "profileId": "tartaros-terminator-sergeant"
                 },
                 "option-5": {
                     "id": "option-5",
@@ -26131,7 +27700,56 @@
                             "target": "legion-terminator-melee-weapons"
                         }
                     },
-                    "default": "power-sword"
+                    "default": "power-sword",
+                    "profileId": "tartaros-terminator"
+                },
+                "option-2-tartaros-terminator-sergeant": {
+                    "id": "option-2-tartaros-terminator-sergeant",
+                    "name": "Sgt Power sword",
+                    "description": "Any Model in this Unit may have its power weapon exchanged for one item from the Legion Terminator Melee Weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-lance"]
+                        },
+                        "legion-terminator-melee-weapons": {
+                            "id": "legion-terminator-melee-weapons",
+                            "target": "legion-terminator-melee-weapons"
+                        }
+                    },
+                    "default": "power-sword",
+                    "profileId": "tartaros-terminator-sergeant"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -26800,12 +28418,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-assault-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "assault-veteran"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-assault-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "assault-veteran"
                 }
             ],
             "upgrades": {
@@ -27022,7 +28654,29 @@
                         }
                     },
                     "multiSelect": true,
-                    "replaces": ["bolt-pistol", "chainsword"]
+                    "replaces": ["bolt-pistol", "chainsword"],
+                    "profileId": "assault-veteran"
+                },
+                "option-6-veteran-assault-sergeant": {
+                    "id": "option-6-veteran-assault-sergeant",
+                    "name": "Swap Sgt to pair of lightning claws",
+                    "description": "Any Model in this Unit may have its bolt pistol and chainsword exchanged for one pair of lightning claws.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "replaces": ["bolt-pistol", "chainsword"],
+                    "profileId": "veteran-assault-sergeant"
                 },
                 "option-7": {
                     "id": "option-7",
@@ -27178,17 +28832,38 @@
                 {
                     "kind": "equipment",
                     "id": "boarding-shield",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-breacher-sergeant"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "boarding-shield",
+                    "perModel": true,
+                    "profileId": "breacher-veteran"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-breacher-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "breacher-veteran"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-breacher-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "breacher-veteran"
                 },
                 {
                     "kind": "weapon",
@@ -27440,17 +29115,10 @@
                     "name": "Veteran Special weapon",
                     "description": "For every five Models in this Unit, up to two Breacher Veterans in this Unit may each have their bolter exchanged for one of the following:",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "flamer": {
                             "id": "flamer",
                             "name": "Flamer",
@@ -27528,7 +29196,6 @@
                             ]
                         }
                     },
-                    "default": "none",
                     "profileId": "breacher-veteran"
                 },
                 "option-4": {
@@ -27576,24 +29243,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Breacher Veterans in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "breacher-veteran",
-                    "default": "none"
+                    "profileId": "breacher-veteran"
                 }
             }
         },
@@ -27695,17 +29354,38 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-support-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "support-veteran"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-support-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "support-veteran"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-support-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "support-veteran"
                 }
             ],
             "upgrades": {
@@ -27717,19 +29397,13 @@
                         "type": "every"
                     },
                     "options": {
-                        "one-item-from-the-legion-heavy-weapons-list": {
-                            "id": "one-item-from-the-legion-heavy-weapons-list",
-                            "name": "One item from the Legion Heavy Weapons list.",
-                            "cost": {
-                                "points": 0
-                            }
+                        "legion-heavy-weapons": {
+                            "id": "legion-heavy-weapons",
+                            "target": "legion-heavy-weapons"
                         },
-                        "one-item-from-the-legion-special-weapons-list": {
-                            "id": "one-item-from-the-legion-special-weapons-list",
-                            "name": "One item from the Legion Special Weapons list.",
-                            "cost": {
-                                "points": 0
-                            }
+                        "legion-special-weapons": {
+                            "id": "legion-special-weapons",
+                            "target": "legion-special-weapons"
                         },
                         "one-heavy-disintegrator": {
                             "id": "one-heavy-disintegrator",
@@ -27748,7 +29422,43 @@
                             "weaponRefs": ["disintegrator-blaster"]
                         }
                     },
-                    "default": "one-item-from-the-legion-heavy-weapons-list"
+                    "profileId": "support-veteran"
+                },
+                "option-1-veteran-support-sergeant": {
+                    "id": "option-1-veteran-support-sergeant",
+                    "name": "Sgt Special weapon",
+                    "description": "Every Model in this Unit must have one of the following selected for it:",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "legion-heavy-weapons": {
+                            "id": "legion-heavy-weapons",
+                            "target": "legion-heavy-weapons"
+                        },
+                        "legion-special-weapons": {
+                            "id": "legion-special-weapons",
+                            "target": "legion-special-weapons"
+                        },
+                        "one-heavy-disintegrator": {
+                            "id": "one-heavy-disintegrator",
+                            "name": "One heavy disintegrator",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["heavy-disintegrator"]
+                        },
+                        "one-disintegrator-blaster": {
+                            "id": "one-disintegrator-blaster",
+                            "name": "One disintegrator blaster",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["disintegrator-blaster"]
+                        }
+                    },
+                    "profileId": "veteran-support-sergeant",
+                    "mirrorOf": "option-1"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -27798,24 +29508,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Support Veterans in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "support-veteran",
-                    "default": "none"
+                    "profileId": "support-veteran"
                 }
             }
         },
@@ -27911,12 +29613,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "veteran"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "veteran-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "veteran"
                 },
                 {
                     "kind": "weapon",
@@ -28153,24 +29869,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Veterans in this Unit may have one item each from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "veteran",
-                    "default": "none"
+                    "profileId": "veteran"
                 },
                 "option-7": {
                     "id": "option-7",
@@ -28214,7 +29922,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "veteran",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-7-veteran-sergeant": {
+                    "id": "option-7-veteran-sergeant",
+                    "name": "Sgt Bayonets",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "veteran-sergeant",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 }
             }
         },

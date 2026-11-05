@@ -198,17 +198,38 @@
                 {
                     "kind": "weapon",
                     "id": "axe-rake",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "iconoclast"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "axe-rake",
+                    "perModel": true,
+                    "profileId": "incendiary"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "iconoclast"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "incendiary"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "iconoclast"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "incendiary"
                 },
                 {
                     "kind": "weapon",
@@ -1060,12 +1081,26 @@
                 {
                     "kind": "equipment",
                     "id": "warpfire-mantle",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "phaetus-disciple"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "warpfire-mantle",
+                    "perModel": true,
+                    "profileId": "phaetus-anointed"
                 },
                 {
                     "kind": "equipment",
                     "id": "saturnine-teleport-synchroniser",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "phaetus-disciple"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "saturnine-teleport-synchroniser",
+                    "perModel": true,
+                    "profileId": "phaetus-anointed"
                 }
             ],
             "upgrades": {
@@ -1119,7 +1154,61 @@
                             ]
                         }
                     },
-                    "default": "paired-saturnine-disruption-fists"
+                    "default": "paired-saturnine-disruption-fists",
+                    "profileId": "phaetus-anointed"
+                },
+                "option-1-phaetus-disciple": {
+                    "id": "option-1-phaetus-disciple",
+                    "name": "Disciple Paired Saturnine disruption fists",
+                    "description": "Any Model in this Unit may have its paired Saturnine disruption fists exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "paired-saturnine-disruption-fists": {
+                            "id": "paired-saturnine-disruption-fists",
+                            "name": "Paired Saturnine disruption fists",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["paired-saturnine-disruption-fists"]
+                        },
+                        "plasma-bombard-and-one-saturnine-disruption-fist": {
+                            "id": "plasma-bombard-and-one-saturnine-disruption-fist",
+                            "name": "Plasma bombard and one Saturnine disruption fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": [
+                                "plasma-bombard",
+                                "saturnine-disruption-fist"
+                            ]
+                        },
+                        "twin-heavy-disintegrator-and-one-saturnine-disruption-fist": {
+                            "id": "twin-heavy-disintegrator-and-one-saturnine-disruption-fist",
+                            "name": "Twin heavy disintegrator and one Saturnine disruption fist",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": [
+                                "twin-heavy-disintegrator",
+                                "saturnine-disruption-fist"
+                            ]
+                        },
+                        "saturnine-war-axe-and-one-saturnine-disruption-fist": {
+                            "id": "saturnine-war-axe-and-one-saturnine-disruption-fist",
+                            "name": "Saturnine war axe and one Saturnine disruption fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": [
+                                "saturnine-war-axe",
+                                "saturnine-disruption-fist"
+                            ]
+                        }
+                    },
+                    "default": "paired-saturnine-disruption-fists",
+                    "profileId": "phaetus-disciple"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1138,7 +1227,28 @@
                             "weaponRefs": ["particle-shredder"]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "phaetus-anointed"
+                },
+                "option-2-phaetus-disciple": {
+                    "id": "option-2-phaetus-disciple",
+                    "name": "Disciple Particle shredder",
+                    "description": "Any Model in this Unit may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "particle-shredder": {
+                            "id": "particle-shredder",
+                            "name": "Particle shredder",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["particle-shredder"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "phaetus-disciple"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -1806,24 +1916,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 }
             },
             "when": {

@@ -108,17 +108,38 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "principal"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "disruptor"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "principal"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "disruptor"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "principal"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "disruptor"
                 }
             ],
             "upgrades": {
@@ -170,7 +191,36 @@
                             "weaponRefs": ["nemesis-bolter"]
                         }
                     },
-                    "default": "banestrike-shotgun"
+                    "default": "banestrike-shotgun",
+                    "profileId": "disruptor"
+                },
+                "option-2-principal": {
+                    "id": "option-2-principal",
+                    "name": "Principal Banestrike shotgun to nemesis bolter",
+                    "description": "Any Model in this Unit may have its banestrike shotgun exchanged for one Nemesis bolter.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "banestrike-shotgun": {
+                            "id": "banestrike-shotgun",
+                            "name": "Banestrike Shotgun",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["banestrike-shotgun"]
+                        },
+                        "nemesis-bolter": {
+                            "id": "nemesis-bolter",
+                            "name": "Nemesis bolter",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["nemesis-bolter"]
+                        }
+                    },
+                    "default": "banestrike-shotgun",
+                    "profileId": "principal"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -189,14 +239,35 @@
                             "weaponRefs": ["power-dagger"]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "disruptor"
+                },
+                "option-3-principal": {
+                    "id": "option-3-principal",
+                    "name": "Principal Power dagger",
+                    "description": "Any Model in this Unit may have one power dagger selected for it.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-dagger": {
+                            "id": "power-dagger",
+                            "name": "power dagger",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["power-dagger"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "principal"
                 },
                 "option-4": {
                     "id": "option-4",
                     "name": "Melta bombs",
                     "description": "Every Model in this Unit may have melta bombs selected for it.",
                     "perModel": {
-                        "type": "every"
+                        "type": "single"
                     },
                     "options": {
                         "melta-bombs": {
@@ -346,24 +417,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -813,12 +876,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "headhunter-prime"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "headhunter"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "headhunter-prime"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "headhunter"
                 },
                 {
                     "kind": "weapon",
@@ -1026,7 +1103,29 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "headhunter"
+                },
+                "option-4-headhunter-prime": {
+                    "id": "option-4-headhunter-prime",
+                    "name": "Prime Melta bombs",
+                    "description": "Every Model in this Unit may have melta bombs selected for it.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "melta-bombs": {
+                            "id": "melta-bombs",
+                            "name": "melta bombs",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["melta-bombs"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "headhunter-prime",
+                    "mirrorOf": "option-4"
                 }
             }
         },
@@ -1286,7 +1385,68 @@
                             "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "power-axe"
+                    "default": "power-axe",
+                    "profileId": "lernaean"
+                },
+                "option-2-harrower": {
+                    "id": "option-2-harrower",
+                    "name": "Harrower Power axe",
+                    "description": "Any Model in this Unit may have its power axe exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["lightning-claw"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "power-axe",
+                    "profileId": "harrower"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -2146,8 +2306,9 @@
             "id": "alpha-legion-venom-spheres",
             "name": "Venom Spheres",
             "selector": {
+                "traits": ["Alpha Legion"],
                 "profiles": {
-                    "anyOf": ["alpha-legion-trait-and-the-command", "champion"]
+                    "anyOf": ["command", "champion"]
                 }
             },
             "actions": [
@@ -2161,12 +2322,9 @@
             "id": "alpha-legion-power-daggers",
             "name": "Power Daggers",
             "selector": {
+                "traits": ["Alpha Legion"],
                 "profiles": {
-                    "anyOf": [
-                        "alpha-legion-trait-and-the-command",
-                        "champion",
-                        "sergeant"
-                    ]
+                    "anyOf": ["command", "champion", "sergeant"]
                 }
             },
             "actions": [

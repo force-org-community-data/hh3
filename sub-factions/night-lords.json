@@ -196,7 +196,36 @@
                             "weaponRefs": ["heavy-flamer"]
                         }
                     },
-                    "default": "volkite-cavitor"
+                    "default": "volkite-cavitor",
+                    "profileId": "contekar"
+                },
+                "option-2-dissident": {
+                    "id": "option-2-dissident",
+                    "name": "Dissident Volkite cavitor to heavy flamer",
+                    "description": "Any Model in this Unit may have its volkite cavitor exchanged for one heavy flamer.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "volkite-cavitor": {
+                            "id": "volkite-cavitor",
+                            "name": "Volkite Cavitor",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["volkite-cavitor"]
+                        },
+                        "heavy-flamer": {
+                            "id": "heavy-flamer",
+                            "name": "heavy flamer",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["heavy-flamer"]
+                        }
+                    },
+                    "default": "volkite-cavitor",
+                    "profileId": "dissident"
                 }
             }
         },
@@ -642,7 +671,92 @@
                             "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "power-sword"
+                    "default": "power-sword",
+                    "profileId": "atramentar"
+                },
+                "option-3-atramentar-trucidor": {
+                    "id": "option-3-atramentar-trucidor",
+                    "name": "Trucidor Power sword",
+                    "description": "Any Model in this Unit may have its power weapon exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "power-axe": {
+                            "id": "power-axe",
+                            "name": "Power axe",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-axe"]
+                        },
+                        "power-maul": {
+                            "id": "power-maul",
+                            "name": "Power maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-maul"]
+                        },
+                        "power-lance": {
+                            "id": "power-lance",
+                            "name": "Power lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-lance"]
+                        },
+                        "nostraman-chainglaive": {
+                            "id": "nostraman-chainglaive",
+                            "name": "Nostraman chainglaive",
+                            "cost": {
+                                "points": 0
+                            },
+                            "equipmentRefs": ["nostraman-chainglaive"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "lightning-claw": {
+                            "id": "lightning-claw",
+                            "name": "Lightning claw",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["lightning-claw"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "Chainfist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["chainfist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "power-sword",
+                    "profileId": "atramentar-trucidor"
                 },
                 "option-5": {
                     "id": "option-5",
@@ -800,24 +914,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 }
             }
         },
@@ -945,12 +1051,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "huntmaster"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "night-raptor"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "huntmaster"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "night-raptor"
                 }
             ],
             "upgrades": {
@@ -1447,12 +1567,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "headsman"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "executioner"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "headsman"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "executioner"
                 },
                 {
                     "kind": "weapon",
@@ -1750,7 +1884,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "executioner",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-5-headsman": {
+                    "id": "option-5-headsman",
+                    "name": "Headsman Bayonets",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "headsman",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 }
             }
         }
@@ -2405,12 +2599,9 @@
             "id": "night-lords-nostraman-chain-weapons",
             "name": "Nostraman Chain Weapons",
             "selector": {
+                "traits": ["Night Lords"],
                 "profiles": {
-                    "anyOf": [
-                        "night-lords-trait-and-the-command",
-                        "champion",
-                        "sergeant"
-                    ]
+                    "anyOf": ["command", "champion", "sergeant"]
                 }
             },
             "actions": [

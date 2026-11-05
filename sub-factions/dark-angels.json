@@ -210,7 +210,35 @@
                     "swapFrom": {
                         "kind": "weapon",
                         "id": "combi-bolter"
-                    }
+                    },
+                    "profileId": "cataphractii-companion"
+                },
+                "option-1-cataphractii-oathbearer": {
+                    "id": "option-1-cataphractii-oathbearer",
+                    "name": "Oathbearer Combi-weapons",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "combi-bolter"
+                    },
+                    "profileId": "cataphractii-oathbearer"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -237,7 +265,36 @@
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
                     },
-                    "default": "combi-bolter"
+                    "default": "combi-bolter",
+                    "profileId": "cataphractii-companion"
+                },
+                "option-2-cataphractii-oathbearer": {
+                    "id": "option-2-cataphractii-oathbearer",
+                    "name": "Oathbearer Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter and Calibanite warblade exchanged for one pair of lightning claws.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "default": "combi-bolter",
+                    "profileId": "cataphractii-oathbearer"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -280,7 +337,52 @@
                             "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "calibanite-warblade"
+                    "default": "calibanite-warblade",
+                    "profileId": "cataphractii-companion"
+                },
+                "option-3-cataphractii-oathbearer": {
+                    "id": "option-3-cataphractii-oathbearer",
+                    "name": "Oathbearer Calibanite warblade",
+                    "description": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "calibanite-warblade": {
+                            "id": "calibanite-warblade",
+                            "name": "Calibanite warblade",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["calibanite-warblade"]
+                        },
+                        "terranic-greatsword": {
+                            "id": "terranic-greatsword",
+                            "name": "Terranic greatsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["terranic-greatsword"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "calibanite-warblade",
+                    "profileId": "cataphractii-oathbearer"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -467,7 +569,7 @@
                     "name": "Hunter-killer missiles",
                     "description": "This Model may have up to two hunter-killer missiles selected for it.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
@@ -686,24 +788,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 }
             }
         },
@@ -819,7 +913,14 @@
                 {
                     "kind": "equipment",
                     "id": "plasma-caster",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "order-preceptor"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "plasma-caster",
+                    "perModel": true,
+                    "profileId": "order-cenobite"
                 },
                 {
                     "kind": "weapon",
@@ -853,7 +954,36 @@
                             "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "terranic-greatsword"
+                    "default": "terranic-greatsword",
+                    "profileId": "order-cenobite"
+                },
+                "option-1-order-preceptor": {
+                    "id": "option-1-order-preceptor",
+                    "name": "Preceptor Terranic greatsword to thunder hammer",
+                    "description": "Any Model in this Unit may have its Terranic greatsword exchanged for one thunder hammer.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "terranic-greatsword": {
+                            "id": "terranic-greatsword",
+                            "name": "Terranic greatsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["terranic-greatsword"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "terranic-greatsword",
+                    "profileId": "order-preceptor"
                 }
             }
         },
@@ -987,7 +1117,35 @@
                     "swapFrom": {
                         "kind": "weapon",
                         "id": "combi-bolter"
-                    }
+                    },
+                    "profileId": "tartaros-companion"
+                },
+                "option-1-tartaros-oathbearer": {
+                    "id": "option-1-tartaros-oathbearer",
+                    "name": "Oathbearer Combi-weapons",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "combi-bolter"
+                    },
+                    "profileId": "tartaros-oathbearer"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1014,7 +1172,36 @@
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
                     },
-                    "default": "combi-bolter"
+                    "default": "combi-bolter",
+                    "profileId": "tartaros-companion"
+                },
+                "option-2-tartaros-oathbearer": {
+                    "id": "option-2-tartaros-oathbearer",
+                    "name": "Oathbearer Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter and Calibanite warblade exchanged for one pair of lightning claws.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "default": "combi-bolter",
+                    "profileId": "tartaros-oathbearer"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -1057,7 +1244,52 @@
                             "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "calibanite-warblade"
+                    "default": "calibanite-warblade",
+                    "profileId": "tartaros-companion"
+                },
+                "option-3-tartaros-oathbearer": {
+                    "id": "option-3-tartaros-oathbearer",
+                    "name": "Oathbearer Calibanite warblade",
+                    "description": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "calibanite-warblade": {
+                            "id": "calibanite-warblade",
+                            "name": "Calibanite warblade",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["calibanite-warblade"]
+                        },
+                        "terranic-greatsword": {
+                            "id": "terranic-greatsword",
+                            "name": "Terranic greatsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["terranic-greatsword"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "Thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "calibanite-warblade",
+                    "profileId": "tartaros-oathbearer"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1180,12 +1412,26 @@
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "deathwing-oathbearer"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "deathwing-companion"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "deathwing-oathbearer"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "deathwing-companion"
                 }
             ],
             "upgrades": {
@@ -1222,7 +1468,44 @@
                             "weaponRefs": ["terranic-greatsword"]
                         }
                     },
-                    "default": "calibanite-warblade"
+                    "default": "calibanite-warblade",
+                    "profileId": "deathwing-companion"
+                },
+                "option-1-deathwing-oathbearer": {
+                    "id": "option-1-deathwing-oathbearer",
+                    "name": "Oathbearer Calibanite warblade",
+                    "description": "Any Model in this Unit may have its Calibanite warblade exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "calibanite-warblade": {
+                            "id": "calibanite-warblade",
+                            "name": "Calibanite warblade",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["calibanite-warblade"]
+                        },
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "terranic-greatsword": {
+                            "id": "terranic-greatsword",
+                            "name": "Terranic greatsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["terranic-greatsword"]
+                        }
+                    },
+                    "default": "calibanite-warblade",
+                    "profileId": "deathwing-oathbearer"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1249,7 +1532,36 @@
                             "equipmentRefs": ["cytheron-pattern-aegis"]
                         }
                     },
-                    "default": "bolter"
+                    "default": "bolter",
+                    "profileId": "deathwing-companion"
+                },
+                "option-2-deathwing-oathbearer": {
+                    "id": "option-2-deathwing-oathbearer",
+                    "name": "Oathbearer Bolter to cytheron pattern aegis",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one Cytheron pattern aegis.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "cytheron-pattern-aegis": {
+                            "id": "cytheron-pattern-aegis",
+                            "name": "Cytheron pattern aegis",
+                            "cost": {
+                                "points": 10
+                            },
+                            "equipmentRefs": ["cytheron-pattern-aegis"]
+                        }
+                    },
+                    "default": "bolter",
+                    "profileId": "deathwing-oathbearer"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -1276,14 +1588,43 @@
                             "weaponRefs": ["plasma-pistol"]
                         }
                     },
-                    "default": "bolt-pistol"
+                    "default": "bolt-pistol",
+                    "profileId": "deathwing-companion"
+                },
+                "option-3-deathwing-oathbearer": {
+                    "id": "option-3-deathwing-oathbearer",
+                    "name": "Oathbearer Bolt pistol to plasma pistol",
+                    "description": "Any Model in this Unit may have its bolt pistol exchanged for one plasma pistol.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "bolt-pistol": {
+                            "id": "bolt-pistol",
+                            "name": "Bolt pistol",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol"]
+                        },
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
+                            "name": "plasma pistol",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["plasma-pistol"]
+                        }
+                    },
+                    "default": "bolt-pistol",
+                    "profileId": "deathwing-oathbearer"
                 },
                 "option-4": {
                     "id": "option-4",
                     "name": "Melta bombs",
                     "description": "Every Model in this Unit may have melta bombs selected for them.",
                     "perModel": {
-                        "type": "every"
+                        "type": "single"
                     },
                     "options": {
                         "melta-bombs": {
@@ -1339,7 +1680,67 @@
                             }
                         ],
                         "requiredAnd": true
-                    }
+                    },
+                    "profileId": "deathwing-companion",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-5-deathwing-oathbearer": {
+                    "id": "option-5-deathwing-oathbearer",
+                    "name": "Oathbearer Bayonets",
+                    "description": "Any Model in this Unit with a bolter may have one of the following selected for it:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "bayonet": {
+                            "id": "bayonet",
+                            "name": "Bayonet",
+                            "cost": {
+                                "points": 1
+                            },
+                            "weaponRefs": ["bayonet"]
+                        },
+                        "chain-bayonet": {
+                            "id": "chain-bayonet",
+                            "name": "Chain bayonet",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["chain-bayonet"]
+                        }
+                    },
+                    "default": "none",
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            }
+                        ],
+                        "requiredAnd": true
+                    },
+                    "profileId": "deathwing-oathbearer",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-6": {
                     "id": "option-6",
@@ -1365,7 +1766,35 @@
                     "swapFrom": {
                         "kind": "weapon",
                         "id": "bolter"
-                    }
+                    },
+                    "profileId": "deathwing-companion"
+                },
+                "option-6-deathwing-oathbearer": {
+                    "id": "option-6-deathwing-oathbearer",
+                    "name": "Oathbearer Combi-weapons",
+                    "description": "Any Model in this Unit may have its bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolter"
+                    },
+                    "profileId": "deathwing-oathbearer"
                 },
                 "option-7": {
                     "id": "option-7",
@@ -1488,27 +1917,62 @@
                 {
                     "kind": "weapon",
                     "id": "plasma-burner",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "interemptor-praefectus"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "plasma-burner",
+                    "perModel": true,
+                    "profileId": "interemptor"
                 },
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "interemptor-praefectus"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "interemptor"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "interemptor-praefectus"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "interemptor"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "interemptor-praefectus"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "interemptor"
                 },
                 {
                     "kind": "weapon",
                     "id": "rad-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "interemptor-praefectus"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "rad-grenades",
+                    "perModel": true,
+                    "profileId": "interemptor"
                 }
             ],
             "upgrades": {
@@ -1573,24 +2037,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Interemptors in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "interemptor",
-                    "default": "none"
+                    "profileId": "interemptor"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1741,7 +2197,14 @@
                 {
                     "kind": "weapon",
                     "id": "plasma-caster",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "order-preceptor"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "plasma-caster",
+                    "perModel": true,
+                    "profileId": "order-cenobite"
                 },
                 {
                     "kind": "weapon",
@@ -1775,7 +2238,36 @@
                             "weaponRefs": ["thunder-hammer"]
                         }
                     },
-                    "default": "terranic-greatsword"
+                    "default": "terranic-greatsword",
+                    "profileId": "order-cenobite"
+                },
+                "option-1-order-preceptor": {
+                    "id": "option-1-order-preceptor",
+                    "name": "Preceptor Terranic greatsword to thunder hammer",
+                    "description": "Any Model in this Unit may have its Terranic greatsword exchanged for one thunder hammer.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "terranic-greatsword": {
+                            "id": "terranic-greatsword",
+                            "name": "Terranic greatsword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["terranic-greatsword"]
+                        },
+                        "thunder-hammer": {
+                            "id": "thunder-hammer",
+                            "name": "thunder hammer",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["thunder-hammer"]
+                        }
+                    },
+                    "default": "terranic-greatsword",
+                    "profileId": "order-preceptor"
                 }
             }
         },
@@ -2564,101 +3056,6 @@
                 }
             ]
         },
-        "sustained-fire": {
-            "id": "sustained-fire",
-            "name": "Sustained fire",
-            "template": "ranged",
-            "profiles": [
-                {
-                    "name": "Sustained fire",
-                    "stats": {
-                        "r": "Template",
-                        "fp": "1",
-                        "rs": "5",
-                        "ap": "4",
-                        "d": "1"
-                    },
-                    "traits": ["Plasma"],
-                    "specialRules": [
-                        {
-                            "id": "template"
-                        },
-                        {
-                            "id": "breaching",
-                            "value": "6+"
-                        }
-                    ]
-                },
-                {
-                    "name": "Maximal fire",
-                    "stats": {
-                        "r": "Template",
-                        "fp": "1",
-                        "rs": "6",
-                        "ap": "4",
-                        "d": "1"
-                    },
-                    "traits": ["Plasma"],
-                    "specialRules": [
-                        {
-                            "id": "template"
-                        },
-                        {
-                            "id": "breaching",
-                            "value": "5+"
-                        },
-                        {
-                            "id": "overload",
-                            "value": "1"
-                        }
-                    ]
-                },
-                {
-                    "name": "Sustained fire",
-                    "stats": {
-                        "r": "Template",
-                        "fp": "1",
-                        "rs": "5",
-                        "ap": "4",
-                        "d": "2"
-                    },
-                    "traits": ["Plasma"],
-                    "specialRules": [
-                        {
-                            "id": "template"
-                        },
-                        {
-                            "id": "breaching",
-                            "value": "6+"
-                        }
-                    ]
-                },
-                {
-                    "name": "Maximal fire",
-                    "stats": {
-                        "r": "Template",
-                        "fp": "1",
-                        "rs": "6",
-                        "ap": "4",
-                        "d": "2"
-                    },
-                    "traits": ["Plasma"],
-                    "specialRules": [
-                        {
-                            "id": "template"
-                        },
-                        {
-                            "id": "breaching",
-                            "value": "5+"
-                        },
-                        {
-                            "id": "overload",
-                            "value": "1"
-                        }
-                    ]
-                }
-            ]
-        },
         "plasma-repeater": {
             "id": "plasma-repeater",
             "name": "Plasma repeater",
@@ -2760,31 +3157,6 @@
                             }
                         }
                     ]
-                }
-            },
-            "default": "none"
-        },
-        "dark-angels-plasma-burner-and-plasma-incinerator": {
-            "id": "dark-angels-plasma-burner-and-plasma-incinerator",
-            "name": "Plasma Burner and Plasma Incinerator",
-            "perModel": {
-                "type": "some"
-            },
-            "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
-                "plasma-burner-and-plasma-incinerator": {
-                    "id": "plasma-burner-and-plasma-incinerator",
-                    "name": "Plasma Burner and Plasma Incinerator",
-                    "cost": {
-                        "points": 0
-                    },
-                    "weaponRefs": ["sustained-fire"]
                 }
             },
             "default": "none"
@@ -3130,17 +3502,6 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "dark-angels-blades-of-the-first-legion"
-                }
-            ]
-        },
-        "dark-angels-plasma-burner-and-plasma-incinerator": {
-            "id": "dark-angels-plasma-burner-and-plasma-incinerator",
-            "name": "Plasma Burner and Plasma Incinerator",
-            "selector": {},
-            "actions": [
-                {
-                    "kind": "addUpgrade",
-                    "upgradeId": "dark-angels-plasma-burner-and-plasma-incinerator"
                 }
             ]
         },

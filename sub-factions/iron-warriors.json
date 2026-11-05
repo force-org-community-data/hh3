@@ -430,24 +430,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Inductii in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "inductii",
-                    "default": "none"
+                    "profileId": "inductii"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -594,17 +586,38 @@
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "iron-havoc-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "iron-havoc"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "iron-havoc-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "iron-havoc"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "iron-havoc-sergeant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "iron-havoc"
                 }
             ],
             "upgrades": {
@@ -649,7 +662,53 @@
                             },
                             "weaponRefs": ["lascannon"]
                         }
-                    }
+                    },
+                    "profileId": "iron-havoc"
+                },
+                "shrapnel-cannon-iron-havoc-sergeant": {
+                    "id": "shrapnel-cannon-iron-havoc-sergeant",
+                    "name": "Sgt Shrapnel cannon",
+                    "description": "Every Model in this Unit may have its shrapnel cannon replaced with one of the following options. Every Model in this Unit must have the same option selected...",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "default": "shrapnel-cannon",
+                    "options": {
+                        "shrapnel-cannon": {
+                            "id": "shrapnel-cannon",
+                            "name": "Shrapnel cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["shrapnel-cannon"]
+                        },
+                        "autocannon": {
+                            "id": "autocannon",
+                            "name": "Autocannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["autocannon"]
+                        },
+                        "missile-launcher": {
+                            "id": "missile-launcher",
+                            "name": "Missile launcher",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["missile-launcher"]
+                        },
+                        "lascannon": {
+                            "id": "lascannon",
+                            "name": "Lascannon",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["lascannon"]
+                        }
+                    },
+                    "profileId": "iron-havoc-sergeant",
+                    "mirrorOf": "shrapnel-cannon"
                 },
                 "option-1": {
                     "id": "option-1",
@@ -699,24 +758,16 @@
                     "name": "Legion Equipment",
                     "description": "Up to two Iron Havocs in this Unit may each have one item from the Legion Equipment list selected for them.",
                     "perModel": {
-                        "type": "some",
+                        "type": "multiple",
                         "max": 2
                     },
                     "options": {
-                        "none": {
-                            "id": "none",
-                            "name": "None",
-                            "cost": {
-                                "points": 0
-                            }
-                        },
                         "legion-equipment": {
                             "id": "legion-equipment",
                             "target": "legion-equipment"
                         }
                     },
-                    "profileId": "iron-havoc",
-                    "default": "none"
+                    "profileId": "iron-havoc"
                 }
             }
         },
@@ -1436,7 +1487,14 @@
                 {
                     "kind": "weapon",
                     "id": "tyrant-rocket-launcher",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "siege-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "tyrant-rocket-launcher",
+                    "perModel": true,
+                    "profileId": "tyrant"
                 }
             ],
             "upgrades": {
@@ -1464,7 +1522,35 @@
                     "swapFrom": {
                         "kind": "weapon",
                         "id": "combi-bolter"
-                    }
+                    },
+                    "profileId": "tyrant"
+                },
+                "option-1-siege-master": {
+                    "id": "option-1-siege-master",
+                    "name": "Master Combi-weapons",
+                    "description": "Any Model in this Unit may have its combi-bolter exchanged for one item from the Legion Combi-weapons list.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-combi-weapons": {
+                            "id": "legion-combi-weapons",
+                            "target": "legion-combi-weapons"
+                        }
+                    },
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "combi-bolter"
+                    },
+                    "profileId": "siege-master"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1531,7 +1617,36 @@
                             "weaponRefs": ["pair-of-lightning-claws"]
                         }
                     },
-                    "default": "combi-bolter"
+                    "default": "combi-bolter",
+                    "profileId": "tyrant"
+                },
+                "option-4-siege-master": {
+                    "id": "option-4-siege-master",
+                    "name": "Master Combi-bolter",
+                    "description": "Any Model in this Unit may have its combi-bolter and power fist exchanged for one pair of lightning claws.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter"]
+                        },
+                        "pair-of-lightning-claws": {
+                            "id": "pair-of-lightning-claws",
+                            "name": "pair of lightning claws",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["pair-of-lightning-claws"]
+                        }
+                    },
+                    "default": "combi-bolter",
+                    "profileId": "siege-master"
                 },
                 "option-5": {
                     "id": "option-5",
@@ -1558,7 +1673,36 @@
                             "weaponRefs": ["chainfist"]
                         }
                     },
-                    "default": "power-fist"
+                    "default": "power-fist",
+                    "profileId": "tyrant"
+                },
+                "option-5-siege-master": {
+                    "id": "option-5-siege-master",
+                    "name": "Master Power fist to chainfist",
+                    "description": "Any Model in this Unit may have its power fist exchanged for one chainfist.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "power-fist": {
+                            "id": "power-fist",
+                            "name": "Power fist",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-fist"]
+                        },
+                        "chainfist": {
+                            "id": "chainfist",
+                            "name": "chainfist",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["chainfist"]
+                        }
+                    },
+                    "default": "power-fist",
+                    "profileId": "siege-master"
                 }
             }
         },
@@ -2664,8 +2808,9 @@
             "id": "iron-warriors-graviton-crushers",
             "name": "Graviton Crushers",
             "selector": {
+                "traits": ["Iron Warriors"],
                 "profiles": {
-                    "anyOf": ["iron-warriors-trait-and-the-command", "champion"]
+                    "anyOf": ["command", "champion"]
                 }
             },
             "actions": [
@@ -2678,7 +2823,9 @@
         "iron-warriors-shrapnel-weapons": {
             "id": "iron-warriors-shrapnel-weapons",
             "name": "Shrapnel Weapons",
-            "selector": {},
+            "selector": {
+                "profiles": {}
+            },
             "actions": [
                 {
                     "kind": "addUpgrade",
