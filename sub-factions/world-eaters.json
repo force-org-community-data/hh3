@@ -2853,7 +2853,13 @@
             "slotRoles": ["command"],
             "units": {
                 "traits": ["World Eaters"]
-            }
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Chain-bonded"]
+                }
+            ]
         }
     },
     "unitModifiers": {
@@ -2957,6 +2963,18 @@
                     }
                 }
             ]
+        }
+    },
+    "listRules": {
+        "chain-bonded-once-per-army": {
+            "kind": "count",
+            "id": "chain-bonded-once-per-army",
+            "units": {
+                "traits": ["Chain-bonded"]
+            },
+            "scope": "list",
+            "max": 1,
+            "message": "Chain-bonded can only be selected once per Army"
         }
     }
 }

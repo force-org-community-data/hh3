@@ -2567,7 +2567,13 @@
             "slotRoles": ["command"],
             "units": {
                 "traits": ["Iron Hands"]
-            }
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["The Iron-clad"]
+                }
+            ]
         },
         "gorgon-terminator-armour": {
             "id": "gorgon-terminator-armour",
@@ -2641,5 +2647,17 @@
             "kind": "upgrades",
             "id": "legion-special-weapons"
         }
-    ]
+    ],
+    "listRules": {
+        "the-iron-clad-once-per-army": {
+            "kind": "count",
+            "id": "the-iron-clad-once-per-army",
+            "units": {
+                "traits": ["The Iron-clad"]
+            },
+            "scope": "list",
+            "max": 1,
+            "message": "The Iron-clad can only be selected once per Army"
+        }
+    }
 }

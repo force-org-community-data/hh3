@@ -2482,7 +2482,13 @@
             "units": {
                 "traits": ["Death Guard"],
                 "unitIds": ["centurion", "centurion-in-terminator-armour"]
-            }
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Unnatural Resilience"]
+                }
+            ]
         }
     },
     "unitModifiers": {
@@ -2619,5 +2625,17 @@
             "kind": "upgrades",
             "id": "legion-officer-wargear"
         }
-    ]
+    ],
+    "listRules": {
+        "unnatural-resilience-once-per-army": {
+            "kind": "count",
+            "id": "unnatural-resilience-once-per-army",
+            "units": {
+                "traits": ["Unnatural Resilience"]
+            },
+            "scope": "list",
+            "max": 1,
+            "message": "Unnatural Resilience can only be selected once per Army"
+        }
+    }
 }

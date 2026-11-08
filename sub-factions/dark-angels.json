@@ -3514,7 +3514,13 @@
             "units": {
                 "traits": ["Dark Angels"],
                 "unitIds": ["centurion", "centurion-with-jump-pack"]
-            }
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Paladin of the Hekatonystika"]
+                }
+            ]
         },
         "terminator-paladin-of-the-hekatonystika": {
             "id": "terminator-paladin-of-the-hekatonystika",
@@ -3527,7 +3533,13 @@
                     "centurion-in-terminator-armour",
                     "centurion-in-tartaros-terminator-armour"
                 ]
-            }
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Paladin of the Hekatonystika"]
+                }
+            ]
         },
         "artificia-kill-switch": {
             "id": "artificia-kill-switch",
@@ -3601,5 +3613,17 @@
             "kind": "upgrades",
             "id": "legion-special-weapons"
         }
-    ]
+    ],
+    "listRules": {
+        "paladin-of-the-hekatonystika-once-per-army": {
+            "kind": "count",
+            "id": "paladin-of-the-hekatonystika-once-per-army",
+            "units": {
+                "traits": ["Paladin of the Hekatonystika"]
+            },
+            "scope": "list",
+            "max": 1,
+            "message": "Paladin of the Hekatonystika can only be selected once per Army"
+        }
+    }
 }
