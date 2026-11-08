@@ -1856,20 +1856,14 @@
         "imperial-fists-solarite-power-gauntlet": {
             "id": "imperial-fists-solarite-power-gauntlet",
             "name": "Solarite Power Gauntlet",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Imperial Fists Trait may have its power fist exchanged for one Solarite power gauntlet.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "solarite-power-gauntlet": {
                     "id": "solarite-power-gauntlet",
-                    "name": "Solarite Power Gauntlet",
+                    "name": "Power fist to Solarite power gauntlet",
                     "cost": {
                         "points": 5
                     },
@@ -1887,27 +1881,25 @@
                     ]
                 }
             },
-            "default": "none",
-            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Imperial Fists Trait may have its power fist exchanged for one Solarite power gauntlet."
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-fist",
+                    "count": 1
+                }
+            ]
         },
         "imperial-fists-vigil-pattern-storm-shield": {
             "id": "imperial-fists-vigil-pattern-storm-shield",
             "name": "Vigil Pattern Storm Shield",
             "description": "Any Model with the Command Sub-Type and the Imperial Fists Trait may have its boarding shield or a combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model or its combat shield exchanged for one Vigil pattern storm shield for +10 Points per Model.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "boarding-shield-to-vigil-pattern-storm-shield": {
                     "id": "boarding-shield-to-vigil-pattern-storm-shield",
-                    "name": "Boarding Shield to vigil Pattern Storm Shield",
+                    "name": "Boarding shield to Vigil pattern storm shield",
                     "cost": {
                         "points": 5
                     },
@@ -1923,10 +1915,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "equipment",
+                    "id": "boarding-shield",
+                    "count": 1
+                }
+            ]
+        },
+        "imperial-fists-vigil-pattern-storm-shield-combi-bolter": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-combi-bolter",
+            "name": "Vigil Pattern Storm Shield",
+            "description": "Any Model with the Command Sub-Type and the Imperial Fists Trait may have its boarding shield or a combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model or its combat shield exchanged for one Vigil pattern storm shield for +10 Points per Model.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "combi-bolter-to-vigil-pattern-storm-shield": {
                     "id": "combi-bolter-to-vigil-pattern-storm-shield",
-                    "name": "Combi-bolter to vigil Pattern Storm Shield",
+                    "name": "Combi-bolter to Vigil pattern storm shield",
                     "cost": {
                         "points": 5
                     },
@@ -1942,10 +1951,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "count": 1
+                }
+            ]
+        },
+        "imperial-fists-vigil-pattern-storm-shield-combat-shield": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-combat-shield",
+            "name": "Vigil Pattern Storm Shield",
+            "description": "Any Model with the Command Sub-Type and the Imperial Fists Trait may have its boarding shield or a combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model or its combat shield exchanged for one Vigil pattern storm shield for +10 Points per Model.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "combat-shield-to-vigil-pattern-storm-shield": {
                     "id": "combat-shield-to-vigil-pattern-storm-shield",
-                    "name": "Combat Shield to vigil Pattern Storm Shield",
+                    "name": "Combat shield to Vigil pattern storm shield",
                     "cost": {
                         "points": 10
                     },
@@ -1963,7 +1989,13 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "equipment",
+                    "id": "combat-shield",
+                    "count": 1
+                }
+            ]
         },
         "legion-heavy-weapons": {
             "id": "legion-heavy-weapons",
@@ -2388,8 +2420,12 @@
         "castellan": {
             "id": "castellan",
             "name": "Castellan",
-            "text": "If a Centurion Model that has the Imperial Fists Trait is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Castellan A Model selected to fill a Prime Force Organisation Slot with this Prime Advantage: Gains an augury scanner Cannot select any of the Centurion’s listed options and instead must have their bolter exchanged for one of the following options for Free: Heavy bolter Autocannon Iliastus assault cannon",
-            "slotTag": "prime"
+            "text": "A Model selected to fill a Prime Force Organisation Slot with this Prime Advantage: Gains an augury scanner Cannot select any of the Centurion’s listed options and instead must have their bolter exchanged for one of the following options for Free: Heavy bolter Autocannon Iliastus assault cannon",
+            "slotTag": "prime",
+            "units": {
+                "traits": ["Imperial Fists"],
+                "unitIds": ["centurion"]
+            }
         }
     },
     "unitModifiers": {
@@ -2420,6 +2456,36 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "imperial-fists-vigil-pattern-storm-shield"
+                }
+            ]
+        },
+        "imperial-fists-vigil-pattern-storm-shield-combi-bolter": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-combi-bolter",
+            "name": "Vigil Pattern Storm Shield",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-combi-bolter"
+                }
+            ]
+        },
+        "imperial-fists-vigil-pattern-storm-shield-combat-shield": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-combat-shield",
+            "name": "Vigil Pattern Storm Shield",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-combat-shield"
                 }
             ]
         },

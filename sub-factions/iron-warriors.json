@@ -2106,16 +2106,9 @@
             "name": "Graviton Crushers",
             "description": "Any Model with the Iron Warriors Trait and the Command or Champion Sub-Type may have a thunder hammer exchanged for a graviton crusher.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "thunder-hammer-to-graviton-crusher": {
                     "id": "thunder-hammer-to-graviton-crusher",
                     "name": "Thunder hammer to graviton crusher",
@@ -2136,23 +2129,22 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "thunder-hammer",
+                    "count": 1
+                }
+            ]
         },
         "iron-warriors-shrapnel-weapons": {
             "id": "iron-warriors-shrapnel-weapons",
             "name": "Shrapnel Pistols",
             "description": "In any Unit entirely composed of Models with the Iron Warriors Trait, every Model in that Unit may have its bolt pistol exchanged for one shrapnel pistol.",
             "perModel": {
-                "type": "some"
+                "type": "every"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "bolt-pistol-to-shrapnel-pistol": {
                     "id": "bolt-pistol-to-shrapnel-pistol",
                     "name": "Bolt pistol to shrapnel pistol",
@@ -2172,8 +2164,7 @@
                         }
                     ]
                 }
-            },
-            "default": "none"
+            }
         },
         "legion-sergeant-melee-weapons": {
             "id": "legion-sergeant-melee-weapons",
@@ -2657,16 +2648,9 @@
             "name": "Shrapnel Bolters",
             "description": "In any Unit entirely composed of Models with the Iron Warriors Trait, every Model in that Unit may have its bolter exchanged for one shrapnel bolter.",
             "perModel": {
-                "type": "some"
+                "type": "every"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "bolter-to-shrapnel-bolter": {
                     "id": "bolter-to-shrapnel-bolter",
                     "name": "Bolter to shrapnel bolter",
@@ -2686,8 +2670,7 @@
                         }
                     ]
                 }
-            },
-            "default": "none"
+            }
         }
     },
     "specialRules": {
@@ -2835,8 +2818,14 @@
         "the-unfavoured": {
             "id": "the-unfavoured",
             "name": "The Unfavoured",
-            "text": "If a Unit that has the Iron Warriors Trait that includes only Models with the Infantry Type is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: The Unfavoured All Models in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Expendable (1) Special Rule.",
-            "slotTag": "prime"
+            "text": "All Models in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Expendable (1) Special Rule.",
+            "slotTag": "prime",
+            "units": {
+                "traits": ["Iron Warriors"],
+                "profiles": {
+                    "anyOf": ["infantry"]
+                }
+            }
         }
     },
     "unitModifiers": {

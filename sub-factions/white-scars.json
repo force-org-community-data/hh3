@@ -3138,16 +3138,9 @@
             "name": "Power Glaive",
             "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "power-sword-to-power-glaive": {
                     "id": "power-sword-to-power-glaive",
                     "name": "Power sword to power glaive",
@@ -3166,7 +3159,24 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "white-scars-power-glaive-power-axe": {
+            "id": "white-scars-power-glaive-power-axe",
+            "name": "Power Glaive",
+            "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-axe-to-power-glaive": {
                     "id": "power-axe-to-power-glaive",
                     "name": "Power axe to power glaive",
@@ -3185,7 +3195,24 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "white-scars-power-glaive-power-maul": {
+            "id": "white-scars-power-glaive-power-maul",
+            "name": "Power Glaive",
+            "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-maul-to-power-glaive": {
                     "id": "power-maul-to-power-glaive",
                     "name": "Power maul to power glaive",
@@ -3204,7 +3231,24 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "white-scars-power-glaive-power-lance": {
+            "id": "white-scars-power-glaive-power-lance",
+            "name": "Power Glaive",
+            "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-lance-to-power-glaive": {
                     "id": "power-lance-to-power-glaive",
                     "name": "Power lance to power glaive",
@@ -3225,7 +3269,13 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
         }
     },
     "specialRules": {
@@ -3336,8 +3386,14 @@
         "the-sagyar-mazan": {
             "id": "the-sagyar-mazan",
             "name": "The Sagyar Mazan",
-            "text": "If a Unit which only includes Models with the White Scars Trait and the Infantry or Cavalry Type is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: The Sagyar Mazan All Models in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Expendable (2) Special Rule.",
-            "slotTag": "prime"
+            "text": "All Models in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Expendable (2) Special Rule.",
+            "slotTag": "prime",
+            "units": {
+                "traits": ["White Scars"],
+                "profiles": {
+                    "anyOf": ["infantry", "cavalry"]
+                }
+            }
         }
     },
     "unitModifiers": {
@@ -3353,6 +3409,51 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "white-scars-power-glaive"
+                }
+            ]
+        },
+        "white-scars-power-glaive-power-axe": {
+            "id": "white-scars-power-glaive-power-axe",
+            "name": "Power Glaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "white-scars-power-glaive-power-axe"
+                }
+            ]
+        },
+        "white-scars-power-glaive-power-maul": {
+            "id": "white-scars-power-glaive-power-maul",
+            "name": "Power Glaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "white-scars-power-glaive-power-maul"
+                }
+            ]
+        },
+        "white-scars-power-glaive-power-lance": {
+            "id": "white-scars-power-glaive-power-lance",
+            "name": "Power Glaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "white-scars-power-glaive-power-lance"
                 }
             ]
         },

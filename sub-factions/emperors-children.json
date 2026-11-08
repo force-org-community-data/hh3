@@ -2557,16 +2557,9 @@
             "name": "Surgical Augments",
             "description": "Any Model with the Command or Champion Sub-Type and the Emperor's Children and Traitor Traits may have one of the following selected for it: sonic shriekers, sonic lance.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "sonic-shriekers": {
                     "id": "sonic-shriekers",
                     "name": "Sonic shriekers",
@@ -2591,27 +2584,19 @@
                         "message": "Traitor units only"
                     }
                 }
-            },
-            "default": "none"
+            }
         },
         "emperors-children-phoenix-power-spears": {
             "id": "emperors-children-phoenix-power-spears",
-            "name": "Phoenix Power Spears",
+            "name": "Phoenix Power Spear",
             "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "power-sword-to-phoenix-power-spear": {
                     "id": "power-sword-to-phoenix-power-spear",
-                    "name": "Power sword to phoenix power spear",
+                    "name": "Power sword to Phoenix power spear",
                     "cost": {
                         "points": 10
                     },
@@ -2627,10 +2612,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "emperors-children-phoenix-power-spears-power-axe": {
+            "id": "emperors-children-phoenix-power-spears-power-axe",
+            "name": "Phoenix Power Spear",
+            "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-axe-to-phoenix-power-spear": {
                     "id": "power-axe-to-phoenix-power-spear",
-                    "name": "Power axe to phoenix power spear",
+                    "name": "Power axe to Phoenix power spear",
                     "cost": {
                         "points": 10
                     },
@@ -2646,10 +2648,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "emperors-children-phoenix-power-spears-power-maul": {
+            "id": "emperors-children-phoenix-power-spears-power-maul",
+            "name": "Phoenix Power Spear",
+            "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-maul-to-phoenix-power-spear": {
                     "id": "power-maul-to-phoenix-power-spear",
-                    "name": "Power maul to phoenix power spear",
+                    "name": "Power maul to Phoenix power spear",
                     "cost": {
                         "points": 10
                     },
@@ -2665,10 +2684,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "emperors-children-phoenix-power-spears-power-lance": {
+            "id": "emperors-children-phoenix-power-spears-power-lance",
+            "name": "Phoenix Power Spear",
+            "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-lance-to-phoenix-power-spear": {
                     "id": "power-lance-to-phoenix-power-spear",
-                    "name": "Power lance to phoenix power spear",
+                    "name": "Power lance to Phoenix power spear",
                     "cost": {
                         "points": 10
                     },
@@ -2686,7 +2722,13 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
         },
         "legion-sergeant-melee-weapons": {
             "id": "legion-sergeant-melee-weapons",
@@ -3118,8 +3160,12 @@
         "phoenix-warden": {
             "id": "phoenix-warden",
             "name": "Phoenix Warden",
-            "text": "If a Tartaros Centurion Model that has the Emperor’s Children Trait is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Phoenix Warden A Model selected to fill a Prime Force Organisation Slot with this Prime Advantage: Must have its combi-bolter and power weapon exchanged for a Phoenix power spear for Free. Gains the Skill Unmatched Special Rule.",
-            "slotTag": "prime"
+            "text": "A Model selected to fill a Prime Force Organisation Slot with this Prime Advantage: Must have its combi-bolter and power weapon exchanged for a Phoenix power spear for Free. Gains the Skill Unmatched Special Rule.",
+            "slotTag": "prime",
+            "units": {
+                "traits": ["Emperor’s Children"],
+                "unitIds": ["centurion-in-tartaros-terminator-armour"]
+            }
         }
     },
     "unitModifiers": {
@@ -3140,7 +3186,7 @@
         },
         "emperors-children-phoenix-power-spears": {
             "id": "emperors-children-phoenix-power-spears",
-            "name": "Phoenix Power Spears",
+            "name": "Phoenix Power Spear",
             "selector": {
                 "profiles": {
                     "anyOf": ["command", "champion", "sergeant"]
@@ -3150,6 +3196,51 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "emperors-children-phoenix-power-spears"
+                }
+            ]
+        },
+        "emperors-children-phoenix-power-spears-power-axe": {
+            "id": "emperors-children-phoenix-power-spears-power-axe",
+            "name": "Phoenix Power Spear",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "emperors-children-phoenix-power-spears-power-axe"
+                }
+            ]
+        },
+        "emperors-children-phoenix-power-spears-power-maul": {
+            "id": "emperors-children-phoenix-power-spears-power-maul",
+            "name": "Phoenix Power Spear",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "emperors-children-phoenix-power-spears-power-maul"
+                }
+            ]
+        },
+        "emperors-children-phoenix-power-spears-power-lance": {
+            "id": "emperors-children-phoenix-power-spears-power-lance",
+            "name": "Phoenix Power Spear",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "emperors-children-phoenix-power-spears-power-lance"
                 }
             ]
         },
