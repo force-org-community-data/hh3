@@ -2279,7 +2279,7 @@
         "gorgon-pattern-terminator-armour": {
             "id": "gorgon-pattern-terminator-armour",
             "name": "Gorgon Pattern Terminator Armour",
-            "text": ""
+            "text": "A Model with Gorgon Terminator Armour gains the Heavy Sub-Type and the Feel No Pain (5+) Special Rule."
         },
         "armatus-necrotechnika": {
             "id": "armatus-necrotechnika",
@@ -2412,6 +2412,33 @@
                         "points": 15
                     },
                     "weaponRefs": ["graviton-shredder"]
+                }
+            }
+        },
+        "iron-hands-gorgon-terminator-armour": {
+            "id": "iron-hands-gorgon-terminator-armour",
+            "name": "Gorgon Terminator Armour",
+            "description": "Iron Father and the Tartaros Praetor, Centurion, Warmonger, Librarian, Esoterist, Legion Champion, Chaplain, Herald, Siege Breaker, Forge Lord, Primus Medicae, Delegatus and Mortificator can have Gorgon Terminator Armour selected for them for +30 Points per Model. A Model with Gorgon Terminator Armour gains the Heavy Sub-Type and the Feel No Pain (5+) Special Rule and the Gorgon pattern Terminator Armour Wargear item.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "gorgon-terminator-armour": {
+                    "id": "gorgon-terminator-armour",
+                    "name": "Gorgon Terminator Armour",
+                    "cost": {
+                        "points": 30
+                    },
+                    "equipmentRefs": ["gorgon-pattern-terminator-armour"],
+                    "effects": [
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "feel-no-pain",
+                                "value": "5+"
+                            }
+                        }
+                    ]
                 }
             }
         }
@@ -2570,16 +2597,14 @@
             },
             "effects": [
                 {
+                    "kind": "slot",
+                    "roleChoices": ["war-engine"]
+                },
+                {
                     "kind": "trait",
                     "add": ["The Iron-clad"]
                 }
             ]
-        },
-        "gorgon-terminator-armour": {
-            "id": "gorgon-terminator-armour",
-            "name": "Gorgon Terminator Armour",
-            "text": "The following Models can have Gorgon Terminator Armour selected for them for +30 Points per Model: Iron Father Tartaros Praetor Tartaros Centurion Tartaros Warmonger Tartaros Librarian Tartaros Esoterist Tartaros Legion Champion Tartaros Chaplain Tartaros Herald Tartaros Siege Breaker Tartaros Forge Lord Tartaros Primus Medicae Tartaros Delegatus Tartaros Mortificator A Model with Gorgon Terminator Armour gains the Heavy Sub-Type and the Feel No Pain (5+) Special Rule and the Gorgon pattern Terminator Armour Wargear item.",
-            "slotTag": "prime"
         }
     },
     "unitModifiers": {
@@ -2638,6 +2663,35 @@
                     "rule": {
                         "id": "the-gorgons-scales"
                     }
+                }
+            ]
+        },
+        "iron-hands-gorgon-terminator-armour": {
+            "id": "iron-hands-gorgon-terminator-armour",
+            "name": "Gorgon Terminator Armour",
+            "selector": {
+                "traits": ["Iron Hands"],
+                "unitIds": [
+                    "iron-father",
+                    "praetor-in-tartaros-terminator-armour",
+                    "centurion-in-tartaros-terminator-armour",
+                    "warmonger-in-tartaros-terminator-armour",
+                    "librarian-in-tartaros-terminator-armour",
+                    "esoterist-in-tartaros-terminator-armour",
+                    "legion-champion-in-tartaros-terminator-armour",
+                    "chaplain-in-tartaros-terminator-armour",
+                    "herald-in-tartaros-terminator-armour",
+                    "siege-breaker-in-tartaros-terminator-armour",
+                    "forge-lord-in-tartaros-terminator-armour",
+                    "primus-medicae-in-tartaros-terminator-armour",
+                    "delegatus-in-tartaros-terminator-armour",
+                    "mortificator-in-tartaros-terminator-armour"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-hands-gorgon-terminator-armour"
                 }
             ]
         }

@@ -3122,6 +3122,11 @@
             "id": "stasis-grenades",
             "name": "Stasis Grenades",
             "text": ""
+        },
+        "artificia-kill-switch": {
+            "id": "artificia-kill-switch",
+            "name": "Artificia Kill-switch",
+            "text": "The Controlling Player of a Model with an artificia kill-switch may choose to activate it in the Effects Sub-Phase of any End Phase. When activated, that Player may select one friendly Model that has the Artificia Type that is within 12\" of the Model with the artificia kill-switch. The selected Model with the Artificia Type suffers D6+2 Unsaved Wounds. If this would cause that Model to be Removed as a Casualty , then if that Model has any version of the Explodes (X) Special Rule, that Special Rule is automatically activated. If a Model is Destroyed and Removed from Play due to the activation of an artificia kill-switch, then no Player may score any Victory Points for that Model being removed from play."
         }
     },
     "upgrades": {
@@ -3261,6 +3266,28 @@
                     "count": 1
                 }
             ]
+        },
+        "dark-angels-artificia-kill-switch": {
+            "id": "dark-angels-artificia-kill-switch",
+            "name": "Artificia Kill-switch",
+            "description": "Any Model with the Command Sub-Type selected as part of the Primary Detachment of an Army that includes an Excindio Battle-automata may have an artificia kill-switch selected for it for +10 Points per Model.",
+            "perModel": {
+                "type": "single"
+            },
+            "when": {
+                "if": "group.is(type:primary) and list.has(unit:dark-angels-excindio-battle-automata)",
+                "message": "Primary Detachment of an Army with an Excindio Battle-automata only"
+            },
+            "options": {
+                "artificia-kill-switch": {
+                    "id": "artificia-kill-switch",
+                    "name": "Artificia Kill-switch",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["artificia-kill-switch"]
+                }
+            }
         }
     },
     "specialRules": {
@@ -3517,6 +3544,22 @@
             },
             "effects": [
                 {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "ws",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "order-exemplars"
+                    }
+                },
+                {
                     "kind": "trait",
                     "add": ["Paladin of the Hekatonystika"]
                 }
@@ -3536,16 +3579,26 @@
             },
             "effects": [
                 {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "ws",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "order-exemplars"
+                    }
+                },
+                {
                     "kind": "trait",
                     "add": ["Paladin of the Hekatonystika"]
                 }
             ]
-        },
-        "artificia-kill-switch": {
-            "id": "artificia-kill-switch",
-            "name": "Artificia Kill-switch",
-            "text": "Any Model with the Command Sub-Type selected as part of the Primary Detachment of an Army that includes an Excindio Battle-automata may have an artificia kill-switch selected for it for +10 Points per Model. Artificia Kill-switch The Controlling Player of a Model with an artificia kill-switch may choose to activate it in the Effects Sub-Phase of any End Phase. When activated, that Player may select one friendly Model that has the Artificia Type that is within 12\" of the Model with the artificia kill-switch. The selected Model with the Artificia Type suffers D6+2 Unsaved Wounds. If this would cause that Model to be Removed as a Casualty , then if that Model has any version of the Explodes (X) Special Rule, that Special Rule is automatically activated. If a Model is Destroyed and Removed from Play due to the activation of an artificia kill-switch, then no Player may score any Victory Points for that Model being removed from play.",
-            "slotTag": "prime"
         }
     },
     "unitModifiers": {
@@ -3604,6 +3657,22 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "dark-angels-terranic-greatsword"
+                }
+            ]
+        },
+        "dark-angels-artificia-kill-switch": {
+            "id": "dark-angels-artificia-kill-switch",
+            "name": "Artificia Kill-switch",
+            "selector": {
+                "traits": ["Dark Angels"],
+                "profiles": {
+                    "anyOf": ["command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "dark-angels-artificia-kill-switch"
                 }
             ]
         }
