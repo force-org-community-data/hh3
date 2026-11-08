@@ -2758,22 +2758,15 @@
     "upgrades": {
         "thousand-sons-achea-pattern-force-swords": {
             "id": "thousand-sons-achea-pattern-force-swords",
-            "name": "Achea Pattern Force Swords",
+            "name": "Achea Pattern Force Sword",
             "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "power-sword-to-achea-pattern-force-sword": {
                     "id": "power-sword-to-achea-pattern-force-sword",
-                    "name": "Power sword to achea pattern force sword",
+                    "name": "Power sword to Achea pattern force sword",
                     "cost": {
                         "points": 5
                     },
@@ -2789,10 +2782,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords-power-axe": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-axe",
+            "name": "Achea Pattern Force Sword",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-axe-to-achea-pattern-force-sword": {
                     "id": "power-axe-to-achea-pattern-force-sword",
-                    "name": "Power axe to achea pattern force sword",
+                    "name": "Power axe to Achea pattern force sword",
                     "cost": {
                         "points": 5
                     },
@@ -2808,10 +2818,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords-power-maul": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-maul",
+            "name": "Achea Pattern Force Sword",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-maul-to-achea-pattern-force-sword": {
                     "id": "power-maul-to-achea-pattern-force-sword",
-                    "name": "Power maul to achea pattern force sword",
+                    "name": "Power maul to Achea pattern force sword",
                     "cost": {
                         "points": 5
                     },
@@ -2827,10 +2854,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords-power-lance": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-lance",
+            "name": "Achea Pattern Force Sword",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-lance-to-achea-pattern-force-sword": {
                     "id": "power-lance-to-achea-pattern-force-sword",
-                    "name": "Power lance to achea pattern force sword",
+                    "name": "Power lance to Achea pattern force sword",
                     "cost": {
                         "points": 5
                     },
@@ -2848,23 +2892,22 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
         },
         "thousand-sons-asphyx-weapons": {
             "id": "thousand-sons-asphyx-weapons",
             "name": "Asphyx Pistols",
             "description": "In any Unit entirely composed of Models with the Thousand Sons Trait, every Model in that Unit may have its bolt pistol exchanged for one asphyx pistol.",
             "perModel": {
-                "type": "some"
+                "type": "every"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "bolt-pistol-to-asphyx-pistol": {
                     "id": "bolt-pistol-to-asphyx-pistol",
                     "name": "Bolt pistol to asphyx pistol",
@@ -2884,8 +2927,7 @@
                         }
                     ]
                 }
-            },
-            "default": "none"
+            }
         },
         "legion-pistols": {
             "id": "legion-pistols",
@@ -3240,16 +3282,9 @@
             "name": "Asphyx Bolters",
             "description": "In any Unit entirely composed of Models with the Thousand Sons Trait, every Model in that Unit may have its bolter exchanged for one asphyx bolter.",
             "perModel": {
-                "type": "some"
+                "type": "every"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "bolter-to-asphyx-bolter": {
                     "id": "bolter-to-asphyx-bolter",
                     "name": "Bolter to asphyx bolter",
@@ -3269,8 +3304,7 @@
                         }
                     ]
                 }
-            },
-            "default": "none"
+            }
         }
     },
     "specialRules": {
@@ -3389,8 +3423,12 @@
         "telekine-shift": {
             "id": "telekine-shift",
             "name": "Telekine Shift",
-            "text": "If a Unit which only includes Models with the Thousand Sons Trait and the Troops Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Telekine Shift Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Telekine Shift Special Rule. Telekine Shift: When the Controlling Player chooses to make a Rush Move with a Unit made up of Models with this Special Rule, they may also choose to make a Willpower Check for that Unit. If the Willpower Check is successful, the Unit gains the Antigrav Sub-Type and the Move Through Cover Special Rule until the end of the current Movement Phase . If the Willpower Check is failed, the selected Unit may not Move during the current Movement Phase.",
-            "slotTag": "prime"
+            "text": "Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Telekine Shift Special Rule. Telekine Shift: When the Controlling Player chooses to make a Rush Move with a Unit made up of Models with this Special Rule, they may also choose to make a Willpower Check for that Unit. If the Willpower Check is successful, the Unit gains the Antigrav Sub-Type and the Move Through Cover Special Rule until the end of the current Movement Phase. If the Willpower Check is failed, the selected Unit may not Move during the current Movement Phase.",
+            "slotTag": "prime",
+            "slotRoles": ["troop"],
+            "units": {
+                "traits": ["Thousand Sons"]
+            }
         }
     },
     "unitModifiers": {
@@ -3407,7 +3445,7 @@
         },
         "thousand-sons-achea-pattern-force-swords": {
             "id": "thousand-sons-achea-pattern-force-swords",
-            "name": "Achea Pattern Force Swords",
+            "name": "Achea Pattern Force Sword",
             "selector": {
                 "traits": ["Thousand Sons"],
                 "profiles": {
@@ -3418,6 +3456,54 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "thousand-sons-achea-pattern-force-swords"
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords-power-axe": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-axe",
+            "name": "Achea Pattern Force Sword",
+            "selector": {
+                "traits": ["Thousand Sons"],
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-axe"
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords-power-maul": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-maul",
+            "name": "Achea Pattern Force Sword",
+            "selector": {
+                "traits": ["Thousand Sons"],
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-maul"
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords-power-lance": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-lance",
+            "name": "Achea Pattern Force Sword",
+            "selector": {
+                "traits": ["Thousand Sons"],
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-lance"
                 }
             ]
         },

@@ -3306,17 +3306,11 @@
         "word-bearers-burning-lore": {
             "id": "word-bearers-burning-lore",
             "name": "Burning Lore",
+            "description": "Any Model with the High Command Battlefield Role and Word Bearers Trait may be given the Psyker Trait and the Anathemata Psychic Discipline.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "burning-lore": {
                     "id": "burning-lore",
                     "name": "Burning Lore",
@@ -3325,9 +3319,7 @@
                     },
                     "equipmentRefs": ["burning-lore"]
                 }
-            },
-            "default": "none",
-            "description": "Any Model with the High Command Battlefield Role and Word Bearers Trait may be given the Psyker Trait and the Anathemata Psychic Discipline."
+            }
         },
         "legion-sergeant-melee-weapons": {
             "id": "legion-sergeant-melee-weapons",
@@ -3905,8 +3897,12 @@
         "zealous-assault": {
             "id": "zealous-assault",
             "name": "Zealous Assault",
-            "text": "If a Unit which only includes Models with the Word Bearers Trait and the Troops Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Zealous Assault Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Impact (S) Special Rule.",
-            "slotTag": "prime"
+            "text": "Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Impact (S) Special Rule.",
+            "slotTag": "prime",
+            "slotRoles": ["troop"],
+            "units": {
+                "traits": ["Word Bearers"]
+            }
         }
     },
     "unitModifiers": {

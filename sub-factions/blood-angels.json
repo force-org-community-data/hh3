@@ -2733,22 +2733,15 @@
         },
         "blood-angels-perdition-weapons": {
             "id": "blood-angels-perdition-weapons",
-            "name": "Perdition Weapons",
+            "name": "Blade of Perdition",
             "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Blood Angels Trait may have its power sword, power axe, power spear or power maul exchanged for one Blade of Perdition, one Axe of Perdition, one Spear of Perdition or one Maul of Perdition.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "power-sword-to-blade-of-perdition": {
                     "id": "power-sword-to-blade-of-perdition",
-                    "name": "Power sword to blade of Perdition",
+                    "name": "Power sword to Blade of Perdition",
                     "cost": {
                         "points": 5
                     },
@@ -2764,10 +2757,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "blood-angels-perdition-weapons-power-axe": {
+            "id": "blood-angels-perdition-weapons-power-axe",
+            "name": "Axe of Perdition",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Blood Angels Trait may have its power sword, power axe, power spear or power maul exchanged for one Blade of Perdition, one Axe of Perdition, one Spear of Perdition or one Maul of Perdition.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-axe-to-axe-of-perdition": {
                     "id": "power-axe-to-axe-of-perdition",
-                    "name": "Power axe to axe of Perdition",
+                    "name": "Power axe to Axe of Perdition",
                     "cost": {
                         "points": 5
                     },
@@ -2783,10 +2793,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "blood-angels-perdition-weapons-power-maul": {
+            "id": "blood-angels-perdition-weapons-power-maul",
+            "name": "Maul of Perdition",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Blood Angels Trait may have its power sword, power axe, power spear or power maul exchanged for one Blade of Perdition, one Axe of Perdition, one Spear of Perdition or one Maul of Perdition.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-maul-to-maul-of-perdition": {
                     "id": "power-maul-to-maul-of-perdition",
-                    "name": "Power maul to maul of Perdition",
+                    "name": "Power maul to Maul of Perdition",
                     "cost": {
                         "points": 5
                     },
@@ -2802,10 +2829,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "blood-angels-perdition-weapons-power-lance": {
+            "id": "blood-angels-perdition-weapons-power-lance",
+            "name": "Spear of Perdition",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Blood Angels Trait may have its power sword, power axe, power spear or power maul exchanged for one Blade of Perdition, one Axe of Perdition, one Spear of Perdition or one Maul of Perdition.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-lance-to-spear-of-perdition": {
                     "id": "power-lance-to-spear-of-perdition",
-                    "name": "Power lance to spear of Perdition",
+                    "name": "Power lance to Spear of Perdition",
                     "cost": {
                         "points": 5
                     },
@@ -2823,7 +2867,13 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
         },
         "blood-angels-iliastus-assault-cannon": {
             "id": "blood-angels-iliastus-assault-cannon",
@@ -3284,8 +3334,11 @@
         "revenants": {
             "id": "revenants",
             "name": "Revenants",
-            "text": "If a Unit which only includes Models with the Blood Angels Trait is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Revenants Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Fear (1) Special Rule.",
-            "slotTag": "prime"
+            "text": "Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Fear (1) Special Rule.",
+            "slotTag": "prime",
+            "units": {
+                "traits": ["Blood Angels"]
+            }
         }
     },
     "unitModifiers": {
@@ -3304,7 +3357,7 @@
         },
         "blood-angels-perdition-weapons": {
             "id": "blood-angels-perdition-weapons",
-            "name": "Perdition Weapons",
+            "name": "Blade of Perdition",
             "selector": {
                 "profiles": {
                     "anyOf": ["command", "champion", "sergeant"]
@@ -3314,6 +3367,51 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "blood-angels-perdition-weapons"
+                }
+            ]
+        },
+        "blood-angels-perdition-weapons-power-axe": {
+            "id": "blood-angels-perdition-weapons-power-axe",
+            "name": "Axe of Perdition",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-perdition-weapons-power-axe"
+                }
+            ]
+        },
+        "blood-angels-perdition-weapons-power-maul": {
+            "id": "blood-angels-perdition-weapons-power-maul",
+            "name": "Maul of Perdition",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-perdition-weapons-power-maul"
+                }
+            ]
+        },
+        "blood-angels-perdition-weapons-power-lance": {
+            "id": "blood-angels-perdition-weapons-power-lance",
+            "name": "Spear of Perdition",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-perdition-weapons-power-lance"
                 }
             ]
         },

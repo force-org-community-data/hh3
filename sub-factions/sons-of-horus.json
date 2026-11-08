@@ -2799,19 +2799,12 @@
     "upgrades": {
         "sons-of-horus-banestrike-bolters": {
             "id": "sons-of-horus-banestrike-bolters",
-            "name": "Banestrike Bolters",
+            "name": "Banestrike Bolter",
             "description": "Any Model with the Sons of Horus Trait and the Command or Champion Sub-Type may have its bolter exchanged for one banestrike bolter, or its combi-bolter exchanged for one banestrike combi-bolter.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "bolter-to-banestrike-bolter": {
                     "id": "bolter-to-banestrike-bolter",
                     "name": "Bolter to banestrike bolter",
@@ -2830,10 +2823,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "count": 1
+                }
+            ]
+        },
+        "sons-of-horus-banestrike-bolters-combi-bolter": {
+            "id": "sons-of-horus-banestrike-bolters-combi-bolter",
+            "name": "Banestrike Combi-bolter",
+            "description": "Any Model with the Sons of Horus Trait and the Command or Champion Sub-Type may have its bolter exchanged for one banestrike bolter, or its combi-bolter exchanged for one banestrike combi-bolter.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "combi-bolter-to-banestrike-combi-bolter": {
                     "id": "combi-bolter-to-banestrike-combi-bolter",
-                    "name": "Combi-bolter to banestrike Combi-bolter",
+                    "name": "Combi-bolter to banestrike combi-bolter",
                     "cost": {
                         "points": 5
                     },
@@ -2851,7 +2861,13 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "count": 1
+                }
+            ]
         },
         "sons-of-horus-carsoran-power-axes": {
             "id": "sons-of-horus-carsoran-power-axes",
@@ -3183,8 +3199,12 @@
         "martial-supremacy": {
             "id": "martial-supremacy",
             "name": "Martial Supremacy",
-            "text": "If a Unit which only includes Models with the Sons of Horus Trait and the Elites Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Martial Supremacy One Model in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gains the Champion Sub-Type and the Duellist’s Edge (1) Special Rule.",
-            "slotTag": "prime"
+            "text": "One Model in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gains the Champion Sub-Type and the Duellist’s Edge (1) Special Rule.",
+            "slotTag": "prime",
+            "slotRoles": ["elites"],
+            "units": {
+                "traits": ["Sons of Horus"]
+            }
         },
         "decurion-lanius": {
             "id": "decurion-lanius",
@@ -3207,7 +3227,7 @@
         },
         "sons-of-horus-banestrike-bolters": {
             "id": "sons-of-horus-banestrike-bolters",
-            "name": "Banestrike Bolters",
+            "name": "Banestrike Bolter",
             "selector": {
                 "traits": ["Sons of Horus"],
                 "profiles": {
@@ -3218,6 +3238,22 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "sons-of-horus-banestrike-bolters"
+                }
+            ]
+        },
+        "sons-of-horus-banestrike-bolters-combi-bolter": {
+            "id": "sons-of-horus-banestrike-bolters-combi-bolter",
+            "name": "Banestrike Combi-bolter",
+            "selector": {
+                "traits": ["Sons of Horus"],
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-banestrike-bolters-combi-bolter"
                 }
             ]
         },

@@ -3128,20 +3128,14 @@
         "dark-angels-blades-of-the-first-legion": {
             "id": "dark-angels-blades-of-the-first-legion",
             "name": "Blades of the First Legion",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Dark Angels Trait may have its power sword exchanged for one Calibanite warblade.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "blades-of-the-first-legion": {
                     "id": "blades-of-the-first-legion",
-                    "name": "Blades of the First Legion",
+                    "name": "Power sword to Calibanite warblade",
                     "cost": {
                         "points": 5
                     },
@@ -3159,8 +3153,13 @@
                     ]
                 }
             },
-            "default": "none",
-            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Dark Angels Trait may have its power sword exchanged for one Calibanite warblade."
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
         },
         "legion-special-weapons": {
             "id": "legion-special-weapons",
@@ -3232,19 +3231,12 @@
             "name": "Terranic Greatsword",
             "description": "Any Model with the Command or Champion Sub-Type and the Dark Angels Trait may have its power fist exchanged for one Terranic greatsword.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "power-fist-to-terranic-greatsword": {
                     "id": "power-fist-to-terranic-greatsword",
-                    "name": "Power fist to terranic greatsword",
+                    "name": "Power fist to Terranic greatsword",
                     "cost": {
                         "points": 0
                     },
@@ -3262,7 +3254,13 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-fist",
+                    "count": 1
+                }
+            ]
         }
     },
     "specialRules": {
@@ -3511,14 +3509,25 @@
         "paladin-of-the-hekatonystika": {
             "id": "paladin-of-the-hekatonystika",
             "name": "Paladin of the Hekatonystika",
-            "text": "If a Centurion or Centurion with Jump Pack that has the Dark Angels Trait is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Paladin of the Hekatonystika This Prime Advantage can only be selected once per Army. One Model in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gains the following benefits: Has its Base Weapon Skill Characteristic modified by +1. Must have its bolter exchanged for a Terranic greatsword for Free. Gains the Order Exemplars Special Rule.",
-            "slotTag": "prime"
+            "text": "This Prime Advantage can only be selected once per Army. One Model in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gains the following benefits: Has its Base Weapon Skill Characteristic modified by +1. Must have its bolter exchanged for a Terranic greatsword for Free. Gains the Order Exemplars Special Rule.",
+            "slotTag": "prime",
+            "units": {
+                "traits": ["Dark Angels"],
+                "unitIds": ["centurion", "centurion-with-jump-pack"]
+            }
         },
         "terminator-paladin-of-the-hekatonystika": {
             "id": "terminator-paladin-of-the-hekatonystika",
             "name": "Terminator Paladin of the Hekatonystika",
-            "text": "If a Centurion in Terminator Armour that has the Dark Angels Trait is selected to fill a Prime Force Organisation Slot , the Paladin of the Hekatonystika Prime Advantage can be selected for it. If this Prime Advantage is selected for a Centurion in Terminator Armour, its power weapon is exchanged for a Terranic greatsword for Free instead of its bolter .",
-            "slotTag": "prime"
+            "text": "This Prime Advantage can only be selected once per Army. One Model in the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gains the following benefits: Has its Base Weapon Skill Characteristic modified by +1. Must have its power weapon exchanged for a Terranic greatsword for Free. Gains the Order Exemplars Special Rule.",
+            "slotTag": "prime",
+            "units": {
+                "traits": ["Dark Angels"],
+                "unitIds": [
+                    "centurion-in-terminator-armour",
+                    "centurion-in-tartaros-terminator-armour"
+                ]
+            }
         },
         "artificia-kill-switch": {
             "id": "artificia-kill-switch",

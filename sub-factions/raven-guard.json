@@ -1638,22 +1638,15 @@
     "upgrades": {
         "raven-guard-ravens-talons": {
             "id": "raven-guard-ravens-talons",
-            "name": "Raven’s Talons",
+            "name": "Raven’s Talon",
             "description": "Any Model with the Command Sub-Type and the Raven Guard Trait may have its lightning claw exchanged for one Raven’s Talon, or its pair of lightning claws exchanged for one pair of Raven’s Talons.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "lightning-claw-to-ravens-talon": {
                     "id": "lightning-claw-to-ravens-talon",
-                    "name": "Lightning claw to raven’s Talon",
+                    "name": "Lightning claw to Raven’s Talon",
                     "cost": {
                         "points": 0
                     },
@@ -1669,7 +1662,24 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "lightning-claw",
+                    "count": 1
+                }
+            ]
+        },
+        "raven-guard-ravens-talons-pair-of-lightning-claws": {
+            "id": "raven-guard-ravens-talons-pair-of-lightning-claws",
+            "name": "Pair of Raven’s Talons",
+            "description": "Any Model with the Command Sub-Type and the Raven Guard Trait may have its lightning claw exchanged for one Raven’s Talon, or its pair of lightning claws exchanged for one pair of Raven’s Talons.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "pair-of-lightning-claws-to-pair-of-ravens-talons": {
                     "id": "pair-of-lightning-claws-to-pair-of-ravens-talons",
                     "name": "Pair of lightning claws to pair of Raven’s Talons",
@@ -1690,22 +1700,22 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "pair-of-lightning-claws",
+                    "count": 1
+                }
+            ]
         },
         "raven-guard-corvid-pattern-jump-pack": {
             "id": "raven-guard-corvid-pattern-jump-pack",
             "name": "Corvid Pattern Jump Pack",
+            "description": "Any Praetor with Jump Pack, Centurion with Jump Pack, Optae with Jump Pack or Moritat with the Raven Guard Trait may have one Corvid pattern jump pack selected for it (Movement 14).",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "corvid-pattern-jump-pack": {
                     "id": "corvid-pattern-jump-pack",
                     "name": "Corvid Pattern Jump Pack",
@@ -1726,9 +1736,7 @@
                         }
                     ]
                 }
-            },
-            "default": "none",
-            "description": "Any Praetor with Jump Pack, Centurion with Jump Pack, Optae with Jump Pack or Moritat with the Raven Guard Trait may have one Corvid pattern jump pack selected for it (Movement 14)."
+            }
         }
     },
     "specialRules": {
@@ -1832,14 +1840,18 @@
         "wraiths": {
             "id": "wraiths",
             "name": "Wraiths",
-            "text": "If a Unit which only includes Models with the Raven Guard Trait that has the Troops Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Wraiths Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Wraiths Special Rule. Wraiths: After the Controlling Player makes a Rush Move with a Unit that includes only Models with this Special Rule, they may also choose to make a Willpower Check for that Unit. If the Willpower Check is successful, any Charges targeting the selected Unit in the Assault Phase of the following Player Turn are Disordered . If the Willpower Check is failed, the selected Unit instead gains the Stunned Tactical Status.",
-            "slotTag": "prime"
+            "text": "Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Wraiths Special Rule. Wraiths: After the Controlling Player makes a Rush Move with a Unit that includes only Models with this Special Rule, they may also choose to make a Willpower Check for that Unit. If the Willpower Check is successful, any Charges targeting the selected Unit in the Assault Phase of the following Player Turn are Disordered. If the Willpower Check is failed, the selected Unit instead gains the Stunned Tactical Status.",
+            "slotTag": "prime",
+            "slotRoles": ["troop"],
+            "units": {
+                "traits": ["Raven Guard"]
+            }
         }
     },
     "unitModifiers": {
         "raven-guard-ravens-talons": {
             "id": "raven-guard-ravens-talons",
-            "name": "Raven’s Talons",
+            "name": "Raven’s Talon",
             "selector": {
                 "profiles": {
                     "anyOf": ["command"]
@@ -1849,6 +1861,21 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "raven-guard-ravens-talons"
+                }
+            ]
+        },
+        "raven-guard-ravens-talons-pair-of-lightning-claws": {
+            "id": "raven-guard-ravens-talons-pair-of-lightning-claws",
+            "name": "Pair of Raven’s Talons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "raven-guard-ravens-talons-pair-of-lightning-claws"
                 }
             ]
         },

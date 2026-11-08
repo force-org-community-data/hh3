@@ -2152,20 +2152,14 @@
         "ultramarines-legatine-axe": {
             "id": "ultramarines-legatine-axe",
             "name": "Legatine Axe",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Ultramarines Trait may have its power axe exchanged for one Legatine axe.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "legatine-axe": {
                     "id": "legatine-axe",
-                    "name": "Legatine Axe",
+                    "name": "Power axe to Legatine axe",
                     "cost": {
                         "points": 5
                     },
@@ -2183,23 +2177,22 @@
                     ]
                 }
             },
-            "default": "none",
-            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Ultramarines Trait may have its power axe exchanged for one Legatine axe."
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
         },
         "ultramarines-argyrum-pattern-boarding-shield": {
             "id": "ultramarines-argyrum-pattern-boarding-shield",
             "name": "Argyrum Pattern Boarding Shield",
+            "description": "Any Model with the Command or Champion Sub-Type and the Ultramarines Trait may have one Argyrum pattern boarding shield selected for it.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "argyrum-pattern-boarding-shield": {
                     "id": "argyrum-pattern-boarding-shield",
                     "name": "Argyrum Pattern Boarding Shield",
@@ -2208,9 +2201,7 @@
                     },
                     "equipmentRefs": ["argyrum-pattern-boarding-shield"]
                 }
-            },
-            "default": "none",
-            "description": "Any Model with the Command or Champion Sub-Type and the Ultramarines Trait may have one Argyrum pattern boarding shield selected for it."
+            }
         }
     },
     "specialRules": {
@@ -2304,8 +2295,12 @@
         "logisticae": {
             "id": "logisticae",
             "name": "Logisticae",
-            "text": "If a Unit which only includes Models with the Ultramarines Trait that have the Command Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Logisticae Add one additional Transport or Heavy Transport Battlefield Role Slot to the Detachment that includes the Prime Force Organisation Slot with this Prime Advantage. Modify the Transport Capacity of a Unit that is selected to fill that Slot by +2.",
+            "text": "Add one additional Transport or Heavy Transport Battlefield Role Slot to the Detachment that includes the Prime Force Organisation Slot with this Prime Advantage. Modify the Transport Capacity of a Unit that is selected to fill that Slot by +2.",
             "slotTag": "prime",
+            "slotRoles": ["command"],
+            "units": {
+                "traits": ["Ultramarines"]
+            },
             "effects": [
                 {
                     "kind": "slot",

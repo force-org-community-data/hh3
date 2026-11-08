@@ -1963,17 +1963,11 @@
         "alpha-legion-venom-spheres": {
             "id": "alpha-legion-venom-spheres",
             "name": "Venom Spheres",
+            "description": "Any Model with the Alpha Legion Trait and the Command or Champion Sub-Type may be given venom spheres.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "venom-spheres": {
                     "id": "venom-spheres",
                     "name": "Venom Spheres",
@@ -1982,28 +1976,19 @@
                     },
                     "weaponRefs": ["venom-spheres"]
                 }
-            },
-            "default": "none",
-            "description": "Any Model with the Alpha Legion Trait and the Command or Champion Sub-Type may be given venom spheres."
+            }
         },
         "alpha-legion-power-daggers": {
             "id": "alpha-legion-power-daggers",
-            "name": "Power Daggers",
+            "name": "Power Dagger",
             "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "power-sword-to-power-dagger": {
                     "id": "power-sword-to-power-dagger",
-                    "name": "Power sword to power Dagger",
+                    "name": "Power sword to power dagger",
                     "cost": {
                         "points": 0
                     },
@@ -2019,10 +2004,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "alpha-legion-power-daggers-power-axe": {
+            "id": "alpha-legion-power-daggers-power-axe",
+            "name": "Power Dagger",
+            "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-axe-to-power-dagger": {
                     "id": "power-axe-to-power-dagger",
-                    "name": "Power axe to power Dagger",
+                    "name": "Power axe to power dagger",
                     "cost": {
                         "points": 0
                     },
@@ -2038,10 +2040,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "alpha-legion-power-daggers-power-maul": {
+            "id": "alpha-legion-power-daggers-power-maul",
+            "name": "Power Dagger",
+            "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-maul-to-power-dagger": {
                     "id": "power-maul-to-power-dagger",
-                    "name": "Power maul to power Dagger",
+                    "name": "Power maul to power dagger",
                     "cost": {
                         "points": 0
                     },
@@ -2057,10 +2076,27 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "alpha-legion-power-daggers-power-lance": {
+            "id": "alpha-legion-power-daggers-power-lance",
+            "name": "Power Dagger",
+            "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-lance-to-power-dagger": {
                     "id": "power-lance-to-power-dagger",
-                    "name": "Power lance to power Dagger",
+                    "name": "Power lance to power dagger",
                     "cost": {
                         "points": 0
                     },
@@ -2078,7 +2114,13 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
         },
         "legion-combi-weapons": {
             "id": "legion-combi-weapons",
@@ -2288,8 +2330,12 @@
         "rewards-of-treachery": {
             "id": "rewards-of-treachery",
             "name": "Rewards of Treachery",
-            "text": "If a Unit which only includes Models with the Alpha Legion Trait that has the Command Battlefield Role is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Rewards of Treachery Add one additional Battlefield Role Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. This Slot may be of any Battlefield Role other than High Command , Command , Warlord or Lord of War (note that a Detachment may gain more than one additional Force Organisation Slot if this option is selected for multiple Units in the same Detachment). Each Unit selected to fill such a Slot must: Be from the Legiones Astartes Army List. Not have the Alpha Legion Faction Trait on their Unit Profile. Not include any Models that have the Unique Sub-Type. All Models in any of these Units have their Faction Trait replaced with ‘Alpha Legion’.",
+            "text": "Add one additional Battlefield Role Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. This Slot may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War (note that a Detachment may gain more than one additional Force Organisation Slot if this option is selected for multiple Units in the same Detachment). Each Unit selected to fill such a Slot must: Be from the Legiones Astartes Army List. Not have the Alpha Legion Faction Trait on their Unit Profile. Not include any Models that have the Unique Sub-Type. All Models in any of these Units have their Faction Trait replaced with ‘Alpha Legion’.",
             "slotTag": "prime",
+            "slotRoles": ["command"],
+            "units": {
+                "traits": ["Alpha Legion"]
+            },
             "effects": [
                 {
                     "kind": "slot",
@@ -2384,7 +2430,7 @@
         },
         "alpha-legion-power-daggers": {
             "id": "alpha-legion-power-daggers",
-            "name": "Power Daggers",
+            "name": "Power Dagger",
             "selector": {
                 "traits": ["Alpha Legion"],
                 "profiles": {
@@ -2395,6 +2441,54 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "alpha-legion-power-daggers"
+                }
+            ]
+        },
+        "alpha-legion-power-daggers-power-axe": {
+            "id": "alpha-legion-power-daggers-power-axe",
+            "name": "Power Dagger",
+            "selector": {
+                "traits": ["Alpha Legion"],
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "alpha-legion-power-daggers-power-axe"
+                }
+            ]
+        },
+        "alpha-legion-power-daggers-power-maul": {
+            "id": "alpha-legion-power-daggers-power-maul",
+            "name": "Power Dagger",
+            "selector": {
+                "traits": ["Alpha Legion"],
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "alpha-legion-power-daggers-power-maul"
+                }
+            ]
+        },
+        "alpha-legion-power-daggers-power-lance": {
+            "id": "alpha-legion-power-daggers-power-lance",
+            "name": "Power Dagger",
+            "selector": {
+                "traits": ["Alpha Legion"],
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "alpha-legion-power-daggers-power-lance"
                 }
             ]
         },

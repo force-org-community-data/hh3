@@ -1634,16 +1634,9 @@
             "name": "Power Scythe",
             "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one power scythe for +10 Points per Model or its power fist exchanged for one power scythe for +5 Points.",
             "perModel": {
-                "type": "some"
+                "type": "single"
             },
             "options": {
-                "none": {
-                    "id": "none",
-                    "name": "None",
-                    "cost": {
-                        "points": 0
-                    }
-                },
                 "power-sword-to-power-scythe": {
                     "id": "power-sword-to-power-scythe",
                     "name": "Power sword to power scythe",
@@ -1662,7 +1655,24 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "death-guard-power-scythe-power-axe": {
+            "id": "death-guard-power-scythe-power-axe",
+            "name": "Power Scythe",
+            "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one power scythe for +10 Points per Model or its power fist exchanged for one power scythe for +5 Points.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-axe-to-power-scythe": {
                     "id": "power-axe-to-power-scythe",
                     "name": "Power axe to power scythe",
@@ -1681,7 +1691,24 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "death-guard-power-scythe-power-maul": {
+            "id": "death-guard-power-scythe-power-maul",
+            "name": "Power Scythe",
+            "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one power scythe for +10 Points per Model or its power fist exchanged for one power scythe for +5 Points.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-maul-to-power-scythe": {
                     "id": "power-maul-to-power-scythe",
                     "name": "Power maul to power scythe",
@@ -1700,7 +1727,24 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "death-guard-power-scythe-power-lance": {
+            "id": "death-guard-power-scythe-power-lance",
+            "name": "Power Scythe",
+            "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one power scythe for +10 Points per Model or its power fist exchanged for one power scythe for +5 Points.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-lance-to-power-scythe": {
                     "id": "power-lance-to-power-scythe",
                     "name": "Power lance to power scythe",
@@ -1719,7 +1763,24 @@
                             }
                         }
                     ]
-                },
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "death-guard-power-scythe-power-fist": {
+            "id": "death-guard-power-scythe-power-fist",
+            "name": "Power Scythe",
+            "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one power scythe for +10 Points per Model or its power fist exchanged for one power scythe for +5 Points.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
                 "power-fist-to-power-scythe": {
                     "id": "power-fist-to-power-scythe",
                     "name": "Power fist to power scythe",
@@ -1740,7 +1801,13 @@
                     ]
                 }
             },
-            "default": "none"
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-fist",
+                    "count": 1
+                }
+            ]
         },
         "legion-combi-weapons": {
             "id": "legion-combi-weapons",
@@ -2410,8 +2477,12 @@
         "unnatural-resilience": {
             "id": "unnatural-resilience",
             "name": "Unnatural Resilience",
-            "text": "If a Centurion Model with the Death Guard Trait or a Cataphractii Centurion Model with the Death Guard Trait is selected to fill a Prime Force Organisation Slot , the following Prime Advantage can be selected: Unnatural Resilience This Prime Advantage can only be selected once per Army. A Model selected to fill a Prime Force Organisation Slot with this Prime Advantage: Has its Base Wounds Characteristic modified by +1. Gains the Eternal Warrior (2) Special Rule.",
-            "slotTag": "prime"
+            "text": "This Prime Advantage can only be selected once per Army. A Model selected to fill a Prime Force Organisation Slot with this Prime Advantage: Has its Base Wounds Characteristic modified by +1. Gains the Eternal Warrior (2) Special Rule.",
+            "slotTag": "prime",
+            "units": {
+                "traits": ["Death Guard"],
+                "unitIds": ["centurion", "centurion-in-terminator-armour"]
+            }
         }
     },
     "unitModifiers": {
@@ -2427,6 +2498,66 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "death-guard-power-scythe"
+                }
+            ]
+        },
+        "death-guard-power-scythe-power-axe": {
+            "id": "death-guard-power-scythe-power-axe",
+            "name": "Power Scythe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "death-guard-power-scythe-power-axe"
+                }
+            ]
+        },
+        "death-guard-power-scythe-power-maul": {
+            "id": "death-guard-power-scythe-power-maul",
+            "name": "Power Scythe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "death-guard-power-scythe-power-maul"
+                }
+            ]
+        },
+        "death-guard-power-scythe-power-lance": {
+            "id": "death-guard-power-scythe-power-lance",
+            "name": "Power Scythe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "death-guard-power-scythe-power-lance"
+                }
+            ]
+        },
+        "death-guard-power-scythe-power-fist": {
+            "id": "death-guard-power-scythe-power-fist",
+            "name": "Power Scythe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "death-guard-power-scythe-power-fist"
                 }
             ]
         },
