@@ -2189,6 +2189,51 @@
             "modelCount": 5,
             "profiles": [
                 {
+                    "id": "procurator-with-jump-pack",
+                    "name": "Procurator with Jump Pack",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "flesh-harvester"
+                        },
+                        {
+                            "id": "medic",
+                            "value": "4+"
+                        }
+                    ]
+                },
+                {
                     "id": "procurant-with-jump-pack",
                     "name": "Procurant with Jump Pack",
                     "template": "model",
@@ -2223,13 +2268,6 @@
                         },
                         {
                             "id": "deep-strike"
-                        },
-                        {
-                            "id": "flesh-harvester"
-                        },
-                        {
-                            "id": "medic",
-                            "value": "4+"
                         }
                     ]
                 }
@@ -2247,34 +2285,78 @@
                     "cost": {
                         "points": 20
                     }
+                },
+                {
+                    "id": "procurator-with-jump-pack",
+                    "name": "Procurators with Jump Packs",
+                    "profiles": {
+                        "procurator-with-jump-pack": 1
+                    },
+                    "min": 0,
+                    "max": "floor(unit.models() / 5)",
+                    "cost": {
+                        "points": 20
+                    },
+                    "replaces": {
+                        "block": "procurant-with-jump-pack",
+                        "profile": "procurant-with-jump-pack"
+                    }
                 }
             ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "procurator-with-jump-pack"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "procurant-with-jump-pack"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "procurator-with-jump-pack"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "procurant-with-jump-pack"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "procurator-with-jump-pack"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "procurant-with-jump-pack"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true,
+                    "profileId": "procurant-with-jump-pack"
                 },
                 {
                     "kind": "equipment",
                     "id": "narthecium",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "procurator-with-jump-pack"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Chainsword",
+                    "name": "Procurator Chainsword",
                     "description": "Any Procurator with Jump Pack in this Unit may have its chainsword exchanged for one of the following options:",
                     "perModel": {
                         "type": "some"
@@ -2329,11 +2411,12 @@
                             "weaponRefs": ["power-lance"]
                         }
                     },
-                    "default": "chainsword"
+                    "default": "chainsword",
+                    "profileId": "procurator-with-jump-pack"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Pistol / Melee weapon",
+                    "name": "Procurant Pistol / Melee weapon",
                     "description": "For every five Models in this Unit, one Procurant with Jump Pack in this Unit may:",
                     "perModel": {
                         "type": "one-in-x",
@@ -2347,8 +2430,8 @@
                                 "points": 0
                             }
                         },
-                        "have-its-chainsword-exchanged-for-one-power-fist-for-15-poin": {
-                            "id": "have-its-chainsword-exchanged-for-one-power-fist-for-15-poin",
+                        "power-fist": {
+                            "id": "power-fist",
                             "name": "Power fist",
                             "cost": {
                                 "points": 15
@@ -2366,8 +2449,8 @@
                                 }
                             ]
                         },
-                        "have-its-bolt-pistol-exchanged-for-one-hand-flamer-for-10-po": {
-                            "id": "have-its-bolt-pistol-exchanged-for-one-hand-flamer-for-10-po",
+                        "hand-flamer": {
+                            "id": "hand-flamer",
                             "name": "Hand flamer",
                             "cost": {
                                 "points": 10
@@ -2385,8 +2468,8 @@
                                 }
                             ]
                         },
-                        "have-its-bolt-pistol-exchanged-for-one-plasma-pistol-for-15-": {
-                            "id": "have-its-bolt-pistol-exchanged-for-one-plasma-pistol-for-15-",
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
                             "name": "Plasma pistol",
                             "cost": {
                                 "points": 15
@@ -2404,8 +2487,8 @@
                                 }
                             ]
                         },
-                        "have-its-bolt-pistol-exchanged-for-one-warpfire-pistol-for-1": {
-                            "id": "have-its-bolt-pistol-exchanged-for-one-warpfire-pistol-for-1",
+                        "warpfire-pistol": {
+                            "id": "warpfire-pistol",
                             "name": "Warpfire pistol",
                             "cost": {
                                 "points": 15
@@ -2424,7 +2507,8 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "procurant-with-jump-pack"
                 }
             },
             "when": {
@@ -2442,6 +2526,44 @@
             },
             "modelCount": 5,
             "profiles": [
+                {
+                    "id": "procurator",
+                    "name": "Procurator",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        },
+                        {
+                            "id": "bitter-duty"
+                        },
+                        {
+                            "id": "flesh-harvester"
+                        },
+                        {
+                            "id": "medic",
+                            "value": "4+"
+                        }
+                    ],
+                    "tags": ["Sergeant"]
+                },
                 {
                     "id": "procurant",
                     "name": "Procurant",
@@ -2469,13 +2591,6 @@
                         },
                         {
                             "id": "bitter-duty"
-                        },
-                        {
-                            "id": "flesh-harvester"
-                        },
-                        {
-                            "id": "medic",
-                            "value": "4+"
                         }
                     ]
                 }
@@ -2493,34 +2608,78 @@
                     "cost": {
                         "points": 15
                     }
+                },
+                {
+                    "id": "procurator",
+                    "name": "Procurators",
+                    "profiles": {
+                        "procurator": 1
+                    },
+                    "min": 0,
+                    "max": "floor(unit.models() / 5)",
+                    "cost": {
+                        "points": 20
+                    },
+                    "replaces": {
+                        "block": "procurant",
+                        "profile": "procurant"
+                    }
                 }
             ],
             "defaultWargear": [
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol",
-                    "perModel": true
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "procurator"
                 },
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "procurant"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "procurator"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "procurant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "procurator"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "procurant"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true,
+                    "profileId": "procurant"
                 },
                 {
                     "kind": "equipment",
                     "id": "narthecium",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "procurator"
                 }
             ],
             "upgrades": {
                 "option-1": {
                     "id": "option-1",
-                    "name": "Chainsword",
+                    "name": "Procurator Chainsword",
                     "description": "Any Procurator in this Unit may have its chainsword exchanged for one of the following options:",
                     "perModel": {
                         "type": "some"
@@ -2575,11 +2734,12 @@
                             "weaponRefs": ["power-lance"]
                         }
                     },
-                    "default": "chainsword"
+                    "default": "chainsword",
+                    "profileId": "procurator"
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Pistol / Melee weapon",
+                    "name": "Procurant Pistol / Melee weapon",
                     "description": "For every five Models in this Unit, one Procurant in this Unit may:",
                     "perModel": {
                         "type": "one-in-x",
@@ -2593,8 +2753,8 @@
                                 "points": 0
                             }
                         },
-                        "have-its-chainsword-exchanged-for-one-power-fist-for-15-poin": {
-                            "id": "have-its-chainsword-exchanged-for-one-power-fist-for-15-poin",
+                        "power-fist": {
+                            "id": "power-fist",
                             "name": "Power fist",
                             "cost": {
                                 "points": 15
@@ -2612,8 +2772,8 @@
                                 }
                             ]
                         },
-                        "have-its-bolt-pistol-exchanged-for-one-hand-flamer-for-10-po": {
-                            "id": "have-its-bolt-pistol-exchanged-for-one-hand-flamer-for-10-po",
+                        "hand-flamer": {
+                            "id": "hand-flamer",
                             "name": "Hand flamer",
                             "cost": {
                                 "points": 10
@@ -2631,8 +2791,8 @@
                                 }
                             ]
                         },
-                        "have-its-bolt-pistol-exchanged-for-one-plasma-pistol-for-15-": {
-                            "id": "have-its-bolt-pistol-exchanged-for-one-plasma-pistol-for-15-",
+                        "plasma-pistol": {
+                            "id": "plasma-pistol",
                             "name": "Plasma pistol",
                             "cost": {
                                 "points": 15
@@ -2650,8 +2810,8 @@
                                 }
                             ]
                         },
-                        "have-its-bolt-pistol-exchanged-for-a-warpfire-pistol-for-15-": {
-                            "id": "have-its-bolt-pistol-exchanged-for-a-warpfire-pistol-for-15-",
+                        "warpfire-pistol": {
+                            "id": "warpfire-pistol",
                             "name": "Warpfire pistol",
                             "cost": {
                                 "points": 15
@@ -2670,7 +2830,8 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "procurant"
                 }
             },
             "when": {
