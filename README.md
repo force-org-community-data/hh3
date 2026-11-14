@@ -1,6 +1,6 @@
 # Horus Heresy 3rd Edition data for Force Org
 
-Community-maintained rules data for **The Horus Heresy 3rd Edition**, read by the [Force Org](https://github.com/JosephMassie/force_org) army list builder. It covers the Legiones Astartes and all 18 Legions, the Solar Auxilia and the Mechanicum Taghmata.
+Community-maintained rules data for **The Horus Heresy 3rd Edition**, read by the [Force Org](https://github.com/JosephMassie/force_org) army list builder. It covers the Legiones Astartes and all 18 Legions, the Solar Auxilia, the Mechanicum Taghmata and the Forces of the Emperor (Legio Custodes, Anathema Psykana and Divisio Assassinorum).
 
 > **Unofficial.** This project is not affiliated with or endorsed by Games Workshop or Forge World.
 

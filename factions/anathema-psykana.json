@@ -1,0 +1,809 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@1/schema/faction.schema.json",
+    "id": "anathema-psykana",
+    "version": "1.0.0",
+    "name": "Anathema Psykana",
+    "description": "Units in this Army List always have the Loyalist Trait and can only be selected in an Army with the Loyalist Allegiance.",
+    "game": {
+        "id": "hh3",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "defaultGroup": "crusade-primary-detachment",
+    "units": {
+        "anathema-cadre": {
+            "id": "anathema-cadre",
+            "name": "Anathema Cadre",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 65
+            },
+            "modelCount": 5,
+            "profiles": [
+                {
+                    "id": "null-sister",
+                    "name": "Null Sister",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "3",
+                        "t": "3",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Light"],
+                    "specialRules": [
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Psyker, Malefic"
+                        },
+                        {
+                            "id": "anathema"
+                        }
+                    ]
+                },
+                {
+                    "id": "null-mistress",
+                    "name": "Null Mistress",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "3",
+                        "t": "3",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "7",
+                        "wp": "10",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant", "Light"],
+                    "specialRules": [
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Psyker, Malefic"
+                        },
+                        {
+                            "id": "anathema"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Anathema Psykana", "Talons of the Emperor"],
+            "composition": [
+                {
+                    "id": "null-sister",
+                    "name": "Null Sister",
+                    "profiles": {
+                        "null-sister": 1
+                    },
+                    "min": 4,
+                    "max": 9,
+                    "cost": {
+                        "points": 10
+                    }
+                },
+                {
+                    "id": "null-mistress",
+                    "name": "Null Mistress",
+                    "profiles": {
+                        "null-mistress": 1
+                    },
+                    "min": 1
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Bolter",
+                    "description": "Every Model in this Unit may have its bolter exchanged for one of the following. If this option is selected, every Model in this Unit must have its bolter exchanged for the same item:",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "two-bolt-pistols": {
+                            "id": "two-bolt-pistols",
+                            "name": "Two bolt pistols",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol", "bolt-pistol"]
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"]
+                        },
+                        "execution-blade": {
+                            "id": "execution-blade",
+                            "name": "Execution blade",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["execution-blade"]
+                        }
+                    },
+                    "default": "bolter",
+                    "profileId": "null-sister"
+                },
+                "option-1-null-mistress": {
+                    "id": "option-1-null-mistress",
+                    "name": "Mistress Bolter",
+                    "description": "Every Model in this Unit may have its bolter exchanged for one of the following. If this option is selected, every Model in this Unit must have its bolter exchanged for the same item:",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "bolter": {
+                            "id": "bolter",
+                            "name": "Bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolter"]
+                        },
+                        "two-bolt-pistols": {
+                            "id": "two-bolt-pistols",
+                            "name": "Two bolt pistols",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["bolt-pistol", "bolt-pistol"]
+                        },
+                        "flamer": {
+                            "id": "flamer",
+                            "name": "Flamer",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["flamer"]
+                        },
+                        "execution-blade": {
+                            "id": "execution-blade",
+                            "name": "Execution blade",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["execution-blade"]
+                        }
+                    },
+                    "default": "bolter",
+                    "profileId": "null-mistress",
+                    "mirrorOf": "option-1"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "jenetia-krole": {
+            "id": "jenetia-krole",
+            "name": "Jenetia Krole",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 125
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "jenetia-krole",
+                    "name": "Jenetia Krole",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "3",
+                        "t": "3",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "12",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command", "Light"],
+                    "specialRules": [
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "ex-oblivio"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Psyker, Malefic"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "the-soulless-queen"
+                        },
+                        {
+                            "id": "anathema"
+                        }
+                    ]
+                }
+            ],
+            "traits": [
+                "Anathema Psykana",
+                "Talons of the Emperor",
+                "Investigatus-Militant"
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-sword-of-oblivion"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "archaeotech-pistol"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "kharon-pattern-acquisitor": {
+            "id": "kharon-pattern-acquisitor",
+            "name": "Kharon Pattern Acquisitor",
+            "role": "transport",
+            "type": "vehicle",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "kharon-acquisitor",
+                    "name": "Kharon Acquisitor",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "12",
+                        "bs": "4",
+                        "front": "13",
+                        "side": "12",
+                        "rear": "11",
+                        "hp": "5",
+                        "transport-capacity": "12"
+                    },
+                    "tags": ["Antigrav", "Transport"],
+                    "specialRules": [
+                        {
+                            "id": "assault-vehicle"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "light-transport"
+                        },
+                        {
+                            "id": "outflank"
+                        },
+                        {
+                            "id": "shrouded",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Anathema Psykana", "Talons of the Emperor"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "hellion-heavy-cannon-array",
+                    "note": "Hull (Front) Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "vratine-heavy-missiles",
+                    "note": "Centreline Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "vratine-heavy-missiles",
+                    "note": "Centreline Mounted"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "knight-centura": {
+            "id": "knight-centura",
+            "name": "Knight-Centura",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 75
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "knight-centura",
+                    "name": "Knight-Centura",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "3",
+                        "t": "3",
+                        "w": "3",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "12",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command", "Light"],
+                    "specialRules": [
+                        {
+                            "id": "ex-oblivio"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Psyker, Malefic"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "anathema"
+                        }
+                    ]
+                }
+            ],
+            "traits": [
+                "Anathema Psykana",
+                "Talons of the Emperor",
+                "Investigatus-Militant"
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "paragon-blade"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "archaeotech-pistol": {
+            "id": "archaeotech-pistol",
+            "name": "Archaeotech pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Archaeotech pistol",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "3+"
+                        }
+                    ],
+                    "traits": ["Assault"]
+                }
+            ]
+        },
+        "bolt-pistol": {
+            "id": "bolt-pistol",
+            "name": "Bolt pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Bolt pistol",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        }
+                    ],
+                    "traits": ["Assault", "Bolt"]
+                }
+            ]
+        },
+        "bolter": {
+            "id": "bolter",
+            "name": "Bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Bolter",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"]
+                }
+            ]
+        },
+        "execution-blade": {
+            "id": "execution-blade",
+            "name": "Execution blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Execution blade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "flamer": {
+            "id": "flamer",
+            "name": "Flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Flame"]
+                }
+            ]
+        },
+        "hellion-heavy-cannon-array": {
+            "id": "hellion-heavy-cannon-array",
+            "name": "Hellion heavy cannon array",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Hellion heavy cannon array",
+                    "stats": {
+                        "r": "24",
+                        "fp": "6",
+                        "rs": "7",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "suppressive",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Auto"]
+                }
+            ]
+        },
+        "paragon-blade": {
+            "id": "paragon-blade",
+            "name": "Paragon blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Paragon blade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "the-sword-of-oblivion": {
+            "id": "the-sword-of-oblivion",
+            "name": "The Sword of Oblivion",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Sword of Oblivion",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "duellists-edge",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "vratine-heavy-missiles": {
+            "id": "vratine-heavy-missiles",
+            "name": "Vratine heavy missiles",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Vratine heavy missiles",
+                    "stats": {
+                        "r": "48",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "panic",
+                            "value": "1"
+                        },
+                        {
+                            "id": "psy-shock"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Missile"]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {},
+    "specialRules": {
+        "anathema": {
+            "id": "anathema",
+            "name": "Anathema",
+            "text": "Models with this Special Rule ignore the effects of Psychic Abilities and Psychic Weapons and can only be wounded by a Weapon with the Psychic or Immaterial Trait on a 5+. A Unit which includes any Models with this Special Rule may never be selected as the target of a Psychic Blessing or Psychic Curse, and Models with this Special Rule ignore all Damage inflicted by Psychic Weapons, Psychic Powers, Psychic Reactions or Perils of the Warp. If such a Model is selected as the Target Model of any attack or wound inflicted by a Psychic Weapon, Psychic Power, Psychic Reaction, or Perils of the Warp then all Damage caused has no effect and no Wound Tests, Armour Saves or Damage Mitigation Tests are made. Additionally, Wound Tests made for Weapons with the Psychic or Immaterial Trait that target any Unit that includes only Models with this Special Rule that have an unmodified result of 1, 2, 3 or 4 are never successful, regardless of the Strength Characteristic of a Hit or any Special Rules that set the Target Number for Wound Tests. This Special Rule has no effect on Armour Penetration Tests."
+        },
+        "assault-vehicle": {
+            "id": "assault-vehicle",
+            "name": "Assault Vehicle",
+            "text": "A Vehicle with this Special Rule allows Models to Disembark and Charge without penalty. A Unit that is Disembarked from another Model that has the Assault Vehicle Special Rule may have a Charge declared for it in the Charge Sub-Phase of the same Player Turn without being forced to make a Disordered Charge."
+        },
+        "blast": {
+            "id": "blast",
+            "name": "Blast",
+            "text": "Attacks made with the Blast (X) Special Rule use a Blast Marker to determine how many Hits are caused. When making attacks with a Weapon that has the Blast (X) Special Rule, before any Hit Tests are made, a Blast Marker must first be placed to determine how many Hits may be inflicted by the attack. The Player making the attack must place the Blast Marker indicated in brackets as part of the Special Rule so that the hole in the middle is entirely over the Base of any one Model in the Target Unit. Once the Blast Marker has been placed, the Player making the attack must make a Hit Test for the attack, and each Model from the Target Unit that is fully or partially under the Blast Marker will suffer 1 Hit if the Hit Test is successful. Hits on Other Units If any Models from Units other than the Target Unit are fully or partially covered by the Blast Marker, then a new Fire Group must be created for those Hits and set to one side. Continue resolving the Shooting Attack on the original Target Unit, and once that Shooting Attack has been completely resolved begin a new Shooting Attack to resolve those additional Fire Groups generated for Units other than the original Target Unit. If the Hit Test is unsuccessful then no Hits are inflicted and the Player making the attack must make a Scatter Roll for the Blast Marker. Once a Scatter Roll has been made for the Blast Marker and it has been moved, one Hit is inflicted on a Unit for each Model from that Unit that is wholly or partially covered by the Blast Marker. Hits can be scored on both friendly and enemy Units by attacks using the Blast (X) Special Rule. Hits inflicted by Weapons with the Blast (X) Special Rule are allocated in the same manner as other Hits, regardless of which actual Models were under the Blast Marker and the Blast Marker may not be used to inflict Hits on specific Models. If a Fire Group includes multiple attacks made with the Blast (X) Special Rule, do not place multiple Blast Markers. A single Blast Marker is placed using the Rules detailed above, and a Hit Test is made for each attack in that Fire Group. For each successful Hit Test, one Hit is inflicted for each Model from the target Unit that is fully or partially under the Blast Marker. If any Hit Tests are unsuccessful then, after any Hits made by successful Hit Tests are counted, a single Scatter Roll is made for the Blast Marker, regardless of the total number of unsuccessful Hit Tests. For each Hit Test that was unsuccessful, one Hit is inflicted on a Unit for each Model from that Unit that is wholly or partially covered by the Blast Marker after the Scatter Roll has been resolved.",
+            "configurable": true
+        },
+        "breaching": {
+            "id": "breaching",
+            "name": "Breaching",
+            "text": "When rolling To Wound for a model that has the Breaching (X) special rule, or is attacking with a weapon that has the Breaching (X) special rule, for each To Wound roll equal to or higher than the value listed in brackets, the controlling player must resolve these Wounds at AP 2 instead of the weapon’s normal AP value. This rule has no effect on models that do not have Wounds, such as models with the Vehicle Unit Type. For example, a model with the Breaching (5+) special rule that rolls To Wound and rolls a result of ‘5’ or higher, the Wound inflicted gains an AP of ‘2’ regardless of the AP value listed on the weapon’s profile. Note that a weapon that has both the Breaching (X) and the Gets Hot special rules always uses the base AP of the weapon when rolls of ‘1’ To Hit inflict Wounds on the attacking model.",
+            "configurable": true
+        },
+        "critical-hit": {
+            "id": "critical-hit",
+            "name": "Critical Hit",
+            "text": "Attacks made with the Critical Hit (X) Special Rule have a chance to automatically cause a wound and inflict 1 extra point of Damage. When any Hit Test is made for an attack with the Critical Hit (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Critical Hit (X) Special Rule, then if a Hit is inflicted by that Hit Test, that Hit becomes a ‘Critical Hit’. A Critical Hit automatically inflicts a wound without any Dice being rolled, counting as the roll of a ‘6’ for any variable Special Rules that might be triggered by a Wound Test, and increases the Damage Characteristic of the Hit by +1.",
+            "configurable": true
+        },
+        "duellists-edge": {
+            "id": "duellists-edge",
+            "name": "Duellist’s Edge",
+            "text": "A Weapon with the Duellist’s Edge (X) Special Rule grants a bonus to Focus Rolls in Challenges. In Step 3 of the Challenge Sub-Phase, the Focus Step, if a Player has declared that the Model under their control will use a Weapon with the Duellist’s Edge (X) Special Rule or has the Duellist’s Edge (X) Special Rule, then that Player gains a bonus equal to the value of X on the Focus Roll.",
+            "configurable": true
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "ex-oblivio": {
+            "id": "ex-oblivio",
+            "name": "Ex Oblivio",
+            "text": "Models with this Special Rule automatically inflict Perils of the Warp on any Unit containing Models with the Psyker Trait or Malefic Sub-Type at the end of Combat. If, during Step 1 of the Resolution Sub-Phase of the Combat Phase (after any Models which made attacks as part of a Challenge have been returned to Combat), a Combat includes one or more Models with this Special Rule, then all Units (friendly or enemy) in that Combat which contain at least one Model with the Psyker Trait or the Malefic Sub-Type immediately suffer the Warp Rupture result on the Perils of the Warp Table. Any Models Removed as Casualties as a result of wounds inflicted by this are considered to have been removed in the Fight Sub-Phase for the purpose of scoring Combat Resolution Points. Additionally, a Model with this Special Rule is considered to have the Psyker Trait for the purposes of nominating a Model as the Focus of the Nullify Advanced Reaction, as long as at least one Model from the Target Unit is within 12\" of the Model with this Special Rule."
+        },
+        "fear": {
+            "id": "fear",
+            "name": "Fear",
+            "text": "Models near an enemy Model with the Fear (X) Special Rule must reduce their Advanced Characteristics. When any Model from a Unit is within 12\" of an enemy Model with the Fear (X) Special Rule, all Models in that Unit must reduce their Leadership, Willpower, Cool and Intelligence Characteristics by the value of X. This negative modifier is removed as soon as no Models in a given Unit are within 12\" of any Model with the Fear (X) Special Rule. If a Unit would be affected by multiple instances of the Fear (X) Special Rule, the value of X is not stacked and instead the single highest value is used as a negative modifier.",
+            "configurable": true
+        },
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        },
+        "light-transport": {
+            "id": "light-transport",
+            "name": "Light Transport",
+            "text": "Models with this Special Rule cannot carry Models with the Bulky (X) Special Rule. Models that have any variant of the Bulky (X) Special Rule may not Embark on a Model that has this Special Rule."
+        },
+        "limited": {
+            "id": "limited",
+            "name": "Limited",
+            "text": "A Weapon with the Limited (X) Special Rule can only be used to attack a limited number of times per Battle. A Weapon with the Limited (X) Special Rule may only be used to make attacks as part of a Shooting Attack or Combat a number of times equal to the value of X attached to the specific variant of the Special Rule. Each time it is used to make attacks, the Firepower Characteristic or Attacks Modifier Characteristic of the Weapon is not modified by this Special Rule, only the number of times it may be selected in a given Battle.",
+            "configurable": true
+        },
+        "outflank": {
+            "id": "outflank",
+            "name": "Outflank",
+            "text": "A Unit of Models with the Outflank Special Rule can enter play from outside of Deployment Zones. A Unit made up entirely of Models with this Special Rule that enters play from Reserves may do so from any point on the Battlefield Edge. The Unit may not enter play from any point that is within the Opposing Player’s Deployment Zone or within 7\" of any enemy Model. Note that a Unit Embarked on a Model with the Outflank Special Rule does not need to have the Outflank Special Rule in order for the Model it is Embarked upon to benefit from it. A Model that enters the Battlefield from a point outside of the Controlling Player’s Deployment Zone by means of this Special Rule, and any Units Embarked on such a Model, may not have a Charge declared for them in the Player Turn on which they enter play."
+        },
+        "panic": {
+            "id": "panic",
+            "name": "Panic",
+            "text": "Weapons and other attacks that have the Panic (X) Special Rule have a chance of inflicting the Routed Status on the Target Unit. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit, regardless of whether any Damage is inflicted, that Target Unit must make a Leadership Check in the Morale Sub-Phase of the same Player Turn. If this Check is failed then all Models in the Unit gain the Routed Status, if the Check is passed then there is no further effect. The value of X attached to this Special Rule is applied as a negative modifier to the Leadership Characteristic of Models in the Target Unit when making Checks caused by an attack with this Special Rule. If the attack includes multiple Weapons with different versions of this Special Rule the modifiers do not stack - use only the greatest modifier.",
+            "configurable": true
+        },
+        "pistol": {
+            "id": "pistol",
+            "name": "Pistol",
+            "text": "A Model may attack with two Weapons that have the Pistol Special Rule. During Step 3 of any Shooting Attack, a Player may choose to have a Model under their control make attacks with two Weapons rather than one if both Weapons have the Pistol Special Rule."
+        },
+        "precision": {
+            "id": "precision",
+            "name": "Precision",
+            "text": "Attacks made with the Precision (X) Special Rule are allocated by the Attacking Player, not the Defender. When any Hit Test is made for an attack with the Precision (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Precision (X) Special Rule, then if a Hit is inflicted by that roll, that Hit becomes a ‘Precision Hit’. These Precision Hits must form a separate Fire Group or Strike Group. Wound Tests are made as normal for Precision Hits and cause Precision wounds. In Step 8 of the Shooting Attack process or Step 7 of the Initiative Step sequence, when selecting a Target Model for a Fire Group or Strike Group that is made up of Precision wounds, the Target Model is not selected using the normal Rules. Instead the attacking Player chooses which Model in the Target Unit will be the Target Model, and may select any Model that is a part of that Unit. Note that Models Engaged in a Challenge cannot use this Special Rule to allocate Hits to any Model other than the enemy Model that is Engaged in the same Challenge and that any attacks which are made as Snap Shots, or for Weapons or attacks that have either the Blast (X), Barrage (X), Template or Reaping Blow (X) Special Rules, may never trigger the Precision (X) Special Rule no matter what the result of the Hit Test is.",
+            "configurable": true
+        },
+        "psy-shock": {
+            "id": "psy-shock",
+            "name": "Psy-Shock",
+            "text": "A Unit containing any Models with the Psyker Trait or Malefic Sub-Type which suffers a wound from a Weapon with this Special Rule also suffers Perils of the Warp. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit which contains any Models with the Psyker Trait or Malefic Sub-Type, regardless of whether any Damage is inflicted, that Target Unit suffers the Warp Rupture result on the Perils of the Warp Table at the end of Step 9 of that Shooting Attack."
+        },
+        "rending": {
+            "id": "rending",
+            "name": "Rending",
+            "text": "With a Weapon that has the Rending (X) Special Rule, there is a chance that a Hit Test may result in an automatic wound. When any Hit Test is made for an attack with the Rending (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Rending (X) Special Rule, then if a Hit is inflicted by that Hit Test, that Hit becomes a ‘Rending Hit’. When required to make a Wound Test for a Rending Hit, no Dice are rolled and the Wound Test succeeds automatically regardless of the Weapon’s Strength or the Target’s Toughness. The Wound Test is treated as if the result had been ‘6’ for the purposes of any Rules that would be triggered on certain results of a Wound Test. Wounds caused by a Rending Hit use the AP and Damage Characteristics of the Weapon used to make the attack and retain any Special Rules that Weapon had. If the Target Unit for an attack made with a Weapon that has this Special Rule includes any Models with the Vehicle Type, then this Special Rule has no effect.",
+            "configurable": true
+        },
+        "shrouded": {
+            "id": "shrouded",
+            "name": "Shrouded",
+            "text": "Shrouded (X) is a Damage Mitigation Test that may be taken in addition to a Saving Throw. A Model with the Shrouded (X) Special Rule gains a Shrouded Damage Mitigation Test that may be used in Step 9 of the Shooting Attack process to discard Wounds allocated to the Model. A Damage Mitigation Test may be made after and in addition to a Saving Throw. The Target Number for a Shrouded Damage Mitigation Test is the value of X attached to the specific variant of the Special Rule. A Shrouded Damage Mitigation Test may not be made against wounds inflicted by a Melee Weapon.",
+            "configurable": true
+        },
+        "suppressive": {
+            "id": "suppressive",
+            "name": "Suppressive",
+            "text": "Weapons and other attacks that have the Suppressive (X) Special Rule have a chance of inflicting the Suppressed Status on the Target Unit. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more Hits on a Target Unit, that Target Unit must make a Cool Check in the Morale Sub-Phase of the same Player Turn. If this Check is failed all Models in the Unit gain the Suppressed Status, and if the Check is passed then there is no further effect. The value of X attached to this Rule is applied as a negative modifier to the Cool Characteristic of Models in the Target Unit when making Checks caused by an Attack with this Special Rule, if the attack includes multiple Weapons with different versions of this Special Rule the modifiers do not stack - use only the greatest modifier.",
+            "configurable": true
+        },
+        "template": {
+            "id": "template",
+            "name": "Template",
+            "text": "Weapons and attacks with the Template Special Rule use the Flame Template to determine how many Models they Hit. When making attacks for a Weapon or other effect that has the Template Special Rule, or otherwise uses a Template, no Hit Tests are made for the attack. Instead, when directed to make Hit Tests for such an attack, a single Template is placed to determine how many Hits are generated. A Template must be placed so that its narrow end is touching the Base of the Model, the edge of a Model’s Hull (if it has the Vehicle Type) or other point being used to make the attack, and so that no part of the Template covers or touches a friendly Model’s Base, Hull or otherwise would inflict Hits on a friendly Model. Within these restrictions, the Player making the attack may place the Template in an orientation of their choosing as long as at least one Model from the original Target Unit remains under the Template. If the Template cannot be placed under these restrictions, such as if it cannot be placed without covering or touching friendly Models, then no attack may be made. Once the Template has been placed, a number of Hits using the profile of the Weapon or effect are inflicted on the Target Unit equal to the number of Models touched or covered by the Template. If the Weapon or attack has a Firepower Characteristic greater than 1 then only a single Template is placed, but the number of Hits inflicted per Model touched or covered by the Template is equal to the Firepower Characteristic of the attack or Weapon. If more than one enemy Unit has Models that are touched or covered by the Template in its final position, then Hits are inflicted on all such Units as noted above, Hits on Units other than the original target form a new Fire Group that must be placed to one side and used to resolve a separate Shooting Attack on the additional Target Unit once all attacks and Fire Groups from the original Shooting Attack have been fully resolved. When resolving Armour Penetration Tests for Hits inflicted by a Weapon with this Special Rule, the position of the Model that was used to make the attack is used to determine which Armour Facing is used. Note that the Rules require a Template to be placed in Base Contact with the Model being used to make the attack, but this Model is not counted as having been Hit by the attack and does not stop the attack from being made. However, this only applies to the individual Model being used to make the attack, not to other Models in the same Unit. Weapons with this Special Rule will have their Range Characteristic as ‘Template’. This does not count as a value of ‘0’ or ‘-’. If a Rule requires a number for the Range Characteristic then all Weapons and attacks with this Special Rule are considered to have a Range Characteristic of ‘8’. OTHER TEMPLATES In some rare cases a Weapon may use a different Template than the standard Flame Template, in these cases the Template Rule may be expressed with a bracketed section stating which Template must be used when attacking with that Weapon. Otherwise, the Rules for its use are unchanged from those noted under the Template Special Rule, with the exception of the Range Characteristic it is considered to have. An example of this is the use of the Hellstorm Template for certain very large Weapons. In this case the Rule would be expressed as ‘Template (Hellstorm)’ and the attack would be resolved using the Template Special Rule, but placing the larger Hellstorm Template. Weapons with the Template (Hellstorm) Special Rule are considered to have a Range Characteristic of ‘16’ when a Rule requires such weapons to have a numbered Range Characteristic."
+        },
+        "the-soulless-queen": {
+            "id": "the-soulless-queen",
+            "name": "The Soulless Queen",
+            "text": "This Gambit allows the Controlling Player to apply a modifier to their Focus Roll equal to the difference between Krole’s and the enemy Model’s Willpower Characteristics. While a Model with this Special Rule is in a Challenge, its Controlling Player can select the following Gambit: Abyssal Strike: When this Gambit is selected, the Controlling Player gains a positive modifier to their Focus Roll equal to Jenetia Krole’s Base Willpower Characteristic minus the current Willpower Characteristic of the opposing Model in the Challenge."
+        }
+    },
+    "groups": {},
+    "listRules": {
+        "anathema-psykana-loyalist-only": {
+            "kind": "expression",
+            "id": "anathema-psykana-loyalist-only",
+            "scope": "list",
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Units from the Anathema Psykana Army List can only be selected in an Army with the Loyalist Allegiance"
+            }
+        }
+    }
+}
