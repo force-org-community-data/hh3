@@ -6,7 +6,7 @@ Each data file starts with a `$schema` line so editors give completion and inlin
 
 ```json
 {
-    "$schema": "https://cdn.jsdelivr.net/gh/force-org-community-data/fo_data_validator@1/schema/faction.schema.json"
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@1/schema/faction.schema.json"
 }
 ```
 

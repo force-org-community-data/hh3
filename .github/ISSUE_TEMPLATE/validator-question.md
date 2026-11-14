@@ -8,4 +8,4 @@ labels: validator
 
 **The error or limitation** (paste `npm run validate` output):
 
-Format changes are made in the [validator repository](https://github.com/force-org-community-data/fo_data_validator); a maintainer may move this issue there.
+Format changes are made in the [validator repository](https://github.com/Force-Organization-Army-Builder/fo_data_validator); a maintainer may move this issue there.
