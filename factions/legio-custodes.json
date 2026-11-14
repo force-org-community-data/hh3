@@ -1,0 +1,4038 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@1/schema/faction.schema.json",
+    "id": "legio-custodes",
+    "version": "1.0.0",
+    "name": "Legio Custodes",
+    "description": "Units in this Army List always have the Loyalist Trait and can only be selected in an Army with the Loyalist Allegiance. If an Army’s Primary Detachment is from the Legio Custodes Army List, any Allied Detachments in the Army may only include Units entirely composed of Models with the Talons of the Emperor Trait.",
+    "game": {
+        "id": "hh3",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "defaultGroup": "crusade-primary-detachment",
+    "units": {
+        "adrasite-guard-sodality": {
+            "id": "adrasite-guard-sodality",
+            "name": "Adrasite Guard Sodality",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 360
+            },
+            "modelCount": 6,
+            "profiles": [
+                {
+                    "id": "adrasite-guard",
+                    "name": "Adrasite Guard",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "2",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "6+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "lightning-blows"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "The Sodality"],
+            "composition": [
+                {
+                    "id": "adrasite-guard",
+                    "name": "Adrasite Guard",
+                    "profiles": {
+                        "adrasite-guard": 1
+                    },
+                    "min": 6,
+                    "max": 12,
+                    "cost": {
+                        "points": 60
+                    }
+                }
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "adrasite-spear",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "misericordia",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Adrasite spear to magisterium vexilla",
+                    "description": "One Adrasite Guard in this Unit may have its adrasite spear exchanged for one magisterium vexilla.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "magisterium-vexilla": {
+                            "id": "magisterium-vexilla",
+                            "name": "Magisterium vexilla",
+                            "cost": {
+                                "points": 0
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "adrasite-spear"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "magisterium-vexilla"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "aquilon-terminator-sodality": {
+            "id": "aquilon-terminator-sodality",
+            "name": "Aquilon Terminator Sodality",
+            "role": "heavy-assault",
+            "type": "infantry",
+            "cost": {
+                "points": 255
+            },
+            "modelCount": 3,
+            "profiles": [
+                {
+                    "id": "aquilon-terminator",
+                    "name": "Aquilon Terminator",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "6",
+                        "w": "3",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes"],
+            "composition": [
+                {
+                    "id": "aquilon-terminator",
+                    "name": "Aquilon Terminator",
+                    "profiles": {
+                        "aquilon-terminator": 1
+                    },
+                    "min": 3,
+                    "max": 9,
+                    "cost": {
+                        "points": 85
+                    }
+                }
+            ],
+            "defaultGear": [
+                {
+                    "kind": "equipment",
+                    "id": "misericordia",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Infernus firepike",
+                    "description": "Any Model in this Unit may have its infernus firepike exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "infernus-firepike": {
+                            "id": "infernus-firepike",
+                            "name": "Infernus firepike",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["infernus-firepike"]
+                        },
+                        "lastrum-storm-bolter": {
+                            "id": "lastrum-storm-bolter",
+                            "name": "Lastrum storm bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["lastrum-storm-bolter"]
+                        },
+                        "adrathic-combi-destructor": {
+                            "id": "adrathic-combi-destructor",
+                            "name": "Adrathic combi-destructor",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["adrathic-combi-destructor"]
+                        }
+                    },
+                    "default": "infernus-firepike"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Solarite power talon",
+                    "description": "Any Model in this Unit may have its Solarite power talon exchanged for one Solarite power gauntlet.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "solarite-power-talon": {
+                            "id": "solarite-power-talon",
+                            "name": "Solarite power talon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["solarite-power-talon"]
+                        },
+                        "solarite-power-gauntlet": {
+                            "id": "solarite-power-gauntlet",
+                            "name": "Solarite power gauntlet",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["solarite-power-gauntlet"]
+                        }
+                    },
+                    "default": "solarite-power-talon"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "ares-gunship": {
+            "id": "ares-gunship",
+            "name": "Ares Gunship",
+            "role": "lord-of-war",
+            "type": "vehicle",
+            "cost": {
+                "points": 650
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "ares-gunship",
+                    "name": "Ares Gunship",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "18",
+                        "bs": "5",
+                        "front": "13",
+                        "side": "13",
+                        "rear": "13",
+                        "hp": "12",
+                        "transport-capacity": "-"
+                    },
+                    "tags": ["Super-heavy", "Flyer"]
+                }
+            ],
+            "traits": ["Legio Custodes"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "twin-arachnus-storm-carronade",
+                    "note": "Centreline Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "neutronium-magna-cascade-cannon",
+                    "note": "Hull (Front) Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "infernus-firebomb-clusters",
+                    "note": "Centreline (Front, Rear) Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "infernus-firebomb-clusters",
+                    "note": "Centreline (Front, Rear) Mounted"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "eclipse-shield"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "constantin-valdor": {
+            "id": "constantin-valdor",
+            "name": "Constantin Valdor",
+            "role": "warlord",
+            "type": "paragon",
+            "cost": {
+                "points": 400
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "constantin-valdor",
+                    "name": "Constantin Valdor",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "7",
+                        "bs": "6",
+                        "s": "5",
+                        "t": "5",
+                        "w": "6",
+                        "i": "6",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "4"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Paragon"
+                        },
+                        {
+                            "id": "master-of-the-golden-legion"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "Golden Exemplar", "The Sodality"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-apollonian-spear"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "misericordia"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "arae-shrike"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "contemptor-achillus-dreadnought": {
+            "id": "contemptor-achillus-dreadnought",
+            "name": "Contemptor-Achillus Dreadnought",
+            "role": "war-engine",
+            "type": "walker",
+            "cost": {
+                "points": 250
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "contemptor-achillus",
+                    "name": "Contemptor-Achillus",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "8",
+                        "t": "7",
+                        "w": "6",
+                        "i": "4",
+                        "a": "5",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "9",
+                        "in": "5",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "lightning-blows"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "Smokescreen"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "achillus-dreadspear"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "smoke-launchers"
+                }
+            ],
+            "upgrades": {
+                "first-infernus-incinerator": {
+                    "id": "first-infernus-incinerator",
+                    "name": "First infernus incinerator",
+                    "description": "Each of this Model’s infernus incinerators may be exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "infernus-incinerator": {
+                            "id": "infernus-incinerator",
+                            "name": "Infernus incinerator",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["infernus-incinerator"]
+                        },
+                        "lastrum-storm-bolter": {
+                            "id": "lastrum-storm-bolter",
+                            "name": "Lastrum storm bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["lastrum-storm-bolter"]
+                        },
+                        "adrathic-combi-destructor": {
+                            "id": "adrathic-combi-destructor",
+                            "name": "Adrathic combi-destructor",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["adrathic-combi-destructor"]
+                        }
+                    },
+                    "default": "infernus-incinerator"
+                },
+                "second-infernus-incinerator": {
+                    "id": "second-infernus-incinerator",
+                    "name": "Second infernus incinerator",
+                    "description": "Each of this Model’s infernus incinerators may be exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "infernus-incinerator": {
+                            "id": "infernus-incinerator",
+                            "name": "Infernus incinerator",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["infernus-incinerator"]
+                        },
+                        "lastrum-storm-bolter": {
+                            "id": "lastrum-storm-bolter",
+                            "name": "Lastrum storm bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["lastrum-storm-bolter"]
+                        },
+                        "adrathic-combi-destructor": {
+                            "id": "adrathic-combi-destructor",
+                            "name": "Adrathic combi-destructor",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["adrathic-combi-destructor"]
+                        }
+                    },
+                    "default": "infernus-incinerator"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "contemptor-galatus-dreadnought": {
+            "id": "contemptor-galatus-dreadnought",
+            "name": "Contemptor-Galatus Dreadnought",
+            "role": "war-engine",
+            "type": "walker",
+            "cost": {
+                "points": 225
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "contemptor-galatus",
+                    "name": "Contemptor-Galatus",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "8",
+                        "t": "7",
+                        "w": "6",
+                        "i": "4",
+                        "a": "5",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "9",
+                        "in": "5",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "lightning-blows"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "Shield", "Smokescreen"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "galatus-warblade"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "gravis-praesidium-shield"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "smoke-launchers"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "coronus-grav-carrier": {
+            "id": "coronus-grav-carrier",
+            "name": "Coronus Grav-carrier",
+            "role": "heavy-transport",
+            "type": "vehicle",
+            "cost": {
+                "points": 180
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "coronus-grav-carrier",
+                    "name": "Coronus Grav-carrier",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "12",
+                        "bs": "5",
+                        "front": "13",
+                        "side": "13",
+                        "rear": "11",
+                        "hp": "8",
+                        "transport-capacity": "14"
+                    },
+                    "tags": ["Antigrav", "Transport"],
+                    "specialRules": [
+                        {
+                            "id": "assault-vehicle"
+                        },
+                        {
+                            "id": "auto-repair",
+                            "value": "3+"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "twin-arachnus-blaze-cannon",
+                    "note": "Turret Mounted"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Hull (Front) Mounted twin lastrum bolt cannon",
+                    "description": "This Model may have its Hull (Front) Mounted twin lastrum bolt cannon exchanged for one Hull (Front) Mounted twin neutronium cascade projector.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "twin-lastrum-bolt-cannon": {
+                            "id": "twin-lastrum-bolt-cannon",
+                            "name": "Twin lastrum bolt cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["twin-lastrum-bolt-cannon"]
+                        },
+                        "hull-front-mounted-twin-neutronium-cascade-projector": {
+                            "id": "hull-front-mounted-twin-neutronium-cascade-projector",
+                            "name": "Twin neutronium cascade projector",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["twin-neutronium-cascade-projector"]
+                        }
+                    },
+                    "default": "twin-lastrum-bolt-cannon",
+                    "gearNote": "Hull (Front) Mounted"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "custodian-guard-sodality": {
+            "id": "custodian-guard-sodality",
+            "name": "Custodian Guard Sodality",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 270
+            },
+            "modelCount": 6,
+            "profiles": [
+                {
+                    "id": "custodian-guard",
+                    "name": "Custodian Guard",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "2",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "6+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "lightning-blows"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "The Sodality"],
+            "composition": [
+                {
+                    "id": "custodian-guard",
+                    "name": "Custodian Guard",
+                    "profiles": {
+                        "custodian-guard": 1
+                    },
+                    "min": 6,
+                    "max": 12,
+                    "cost": {
+                        "points": 45
+                    }
+                }
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "guardian-spear",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "misericordia",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Guardian spear to magisterium vexilla",
+                    "description": "One Custodian Guard in this Unit may have its guardian spear exchanged for one magisterium vexilla.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "magisterium-vexilla": {
+                            "id": "magisterium-vexilla",
+                            "name": "Magisterium vexilla",
+                            "cost": {
+                                "points": 0
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "guardian-spear"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "magisterium-vexilla"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "gyrfalcon-jetbike-sodality": {
+            "id": "gyrfalcon-jetbike-sodality",
+            "name": "Gyrfalcon Jetbike Sodality",
+            "role": "fast-attack",
+            "type": "cavalry",
+            "cost": {
+                "points": 140
+            },
+            "modelCount": 2,
+            "profiles": [
+                {
+                    "id": "gyrfalcon-agamatus",
+                    "name": "Gyrfalcon Agamatus",
+                    "template": "model",
+                    "stats": {
+                        "m": "16",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "3",
+                        "i": "5",
+                        "a": "2",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "3+",
+                        "inv": "6+"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "5"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "outflank"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes"],
+            "composition": [
+                {
+                    "id": "gyrfalcon-agamatus",
+                    "name": "Gyrfalcon Agamatus",
+                    "profiles": {
+                        "gyrfalcon-agamatus": 1
+                    },
+                    "min": 2,
+                    "max": 10,
+                    "cost": {
+                        "points": 70
+                    }
+                }
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "solarite-power-lance",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "misericordia",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Lastrum bolt cannon",
+                    "description": "Any Model in this Unit may have its lastrum bolt cannon exchanged for one of the following:",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "lastrum-bolt-cannon": {
+                            "id": "lastrum-bolt-cannon",
+                            "name": "Lastrum bolt cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["lastrum-bolt-cannon"]
+                        },
+                        "adrathic-devastator": {
+                            "id": "adrathic-devastator",
+                            "name": "Adrathic devastator",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["adrathic-devastator"]
+                        },
+                        "twin-corvae-las-pulser": {
+                            "id": "twin-corvae-las-pulser",
+                            "name": "Twin Corvae las-pulser",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["twin-corvae-las-pulser"]
+                        }
+                    },
+                    "default": "lastrum-bolt-cannon"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "orion-assault-dropship": {
+            "id": "orion-assault-dropship",
+            "name": "Orion Assault Dropship",
+            "role": "lord-of-war",
+            "type": "vehicle",
+            "cost": {
+                "points": 600
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "orion-assault-dropship",
+                    "name": "Orion Assault Dropship",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "18",
+                        "bs": "5",
+                        "front": "13",
+                        "side": "13",
+                        "rear": "13",
+                        "hp": "12",
+                        "transport-capacity": "26"
+                    },
+                    "tags": ["Transport", "Super-heavy", "Flyer"],
+                    "specialRules": [
+                        {
+                            "id": "assault-vehicle"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "twin-arachnus-blaze-carronade",
+                    "note": "Centreline Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-lastrum-bolt-cannon",
+                    "note": "Hull (Front) Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-lastrum-bolt-cannon",
+                    "note": "Hull (Front) Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "spiculus-heavy-missile-pod",
+                    "note": "Hull (Front) Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "spiculus-heavy-missile-pod",
+                    "note": "Hull (Front) Mounted"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "eclipse-shield"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "pallas-grav-attack": {
+            "id": "pallas-grav-attack",
+            "name": "Pallas Grav-attack",
+            "role": "fast-attack",
+            "type": "vehicle",
+            "cost": {
+                "points": 105
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "pallas-grav-attack",
+                    "name": "Pallas Grav-attack",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "16",
+                        "bs": "5",
+                        "front": "12",
+                        "side": "11",
+                        "rear": "11",
+                        "hp": "4",
+                        "transport-capacity": "-"
+                    },
+                    "tags": ["Antigrav", "Rapid"],
+                    "specialRules": [
+                        {
+                            "id": "auto-repair",
+                            "value": "3+"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes"],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Centreline Mounted twin Iliastus accelerator fusil",
+                    "description": "This Model may have its Centreline Mounted twin Iliastus accelerator fusil exchanged for one Centreline Mounted twin Arachnus blaze cannon.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "twin-iliastus-accelerator-fusil": {
+                            "id": "twin-iliastus-accelerator-fusil",
+                            "name": "Twin Iliastus accelerator fusil",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["twin-iliastus-accelerator-fusil"]
+                        },
+                        "centreline-mounted-twin-arachnus-blaze-cannon": {
+                            "id": "centreline-mounted-twin-arachnus-blaze-cannon",
+                            "name": "Twin Arachnus blaze cannon",
+                            "cost": {
+                                "points": 25
+                            },
+                            "weaponRefs": ["twin-arachnus-blaze-cannon"]
+                        }
+                    },
+                    "default": "twin-iliastus-accelerator-fusil",
+                    "gearNote": "Centreline Mounted"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "pyrithite-guard-sodality": {
+            "id": "pyrithite-guard-sodality",
+            "name": "Pyrithite Guard Sodality",
+            "role": "elites",
+            "type": "infantry",
+            "cost": {
+                "points": 360
+            },
+            "modelCount": 6,
+            "profiles": [
+                {
+                    "id": "pyrithite-guard",
+                    "name": "Pyrithite Guard",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "2",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "6+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "lightning-blows"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "The Sodality"],
+            "composition": [
+                {
+                    "id": "pyrithite-guard",
+                    "name": "Pyrithite Guard",
+                    "profiles": {
+                        "pyrithite-guard": 1
+                    },
+                    "min": 6,
+                    "max": 12,
+                    "cost": {
+                        "points": 60
+                    }
+                }
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "pyrithite-spear",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "misericordia",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Pyrithite spear to magisterium vexilla",
+                    "description": "One Pyrithite Guard in this Unit may have its pyrithite spear exchanged for one magisterium vexilla.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "magisterium-vexilla": {
+                            "id": "magisterium-vexilla",
+                            "name": "Magisterium vexilla",
+                            "cost": {
+                                "points": 0
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "pyrithite-spear"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "magisterium-vexilla"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "sagittarum-guard-sodality": {
+            "id": "sagittarum-guard-sodality",
+            "name": "Sagittarum Guard Sodality",
+            "role": "support",
+            "type": "infantry",
+            "cost": {
+                "points": 240
+            },
+            "modelCount": 6,
+            "profiles": [
+                {
+                    "id": "sagittarum-guard",
+                    "name": "Sagittarum Guard",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "2",
+                        "i": "5",
+                        "a": "2",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "6+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "The Sodality"],
+            "composition": [
+                {
+                    "id": "sagittarum-guard",
+                    "name": "Sagittarum Guard",
+                    "profiles": {
+                        "sagittarum-guard": 1
+                    },
+                    "min": 6,
+                    "max": 12,
+                    "cost": {
+                        "points": 40
+                    }
+                }
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "adrastus-bolt-caliver",
+                    "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "misericordia",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Adrastus bolt caliver to magisterium vexilla",
+                    "description": "One Sagittarum Guard in this Unit may have its Adrastus bolt caliver exchanged for one magisterium vexilla.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "magisterium-vexilla": {
+                            "id": "magisterium-vexilla",
+                            "name": "Magisterium vexilla",
+                            "cost": {
+                                "points": 0
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "adrastus-bolt-caliver"
+                                    },
+                                    "to": {
+                                        "kind": "equipment",
+                                        "id": "magisterium-vexilla"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "sentinel-guard-sodality": {
+            "id": "sentinel-guard-sodality",
+            "name": "Sentinel Guard Sodality",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 240
+            },
+            "modelCount": 6,
+            "profiles": [
+                {
+                    "id": "sentinel-guard",
+                    "name": "Sentinel Guard",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "2",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "lightning-blows"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ],
+                    "traits": ["Shield"]
+                },
+                {
+                    "id": "sentinel-vexillarius",
+                    "name": "Sentinel Vexillarius",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "2",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "6+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "lightning-blows"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "The Sodality"],
+            "composition": [
+                {
+                    "id": "sentinel-guard",
+                    "name": "Sentinel Guard",
+                    "profiles": {
+                        "sentinel-guard": 1
+                    },
+                    "min": 6,
+                    "max": 12,
+                    "cost": {
+                        "points": 40
+                    }
+                },
+                {
+                    "id": "sentinel-vexillarius",
+                    "name": "Sentinel Vexillarius",
+                    "profiles": {
+                        "sentinel-vexillarius": 1
+                    },
+                    "min": 0,
+                    "max": 1,
+                    "cost": {
+                        "points": 30
+                    },
+                    "replaces": {
+                        "block": "sentinel-guard",
+                        "profile": "sentinel-guard"
+                    }
+                }
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "sentinel-warblade",
+                    "perModel": true,
+                    "profileId": "sentinel-guard"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "sentinel-warblade",
+                    "perModel": true,
+                    "profileId": "sentinel-vexillarius"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "misericordia",
+                    "perModel": true,
+                    "profileId": "sentinel-guard"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "misericordia",
+                    "perModel": true,
+                    "profileId": "sentinel-vexillarius"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "praesidium-shield",
+                    "perModel": true,
+                    "profileId": "sentinel-guard"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "magisterium-vexilla",
+                    "perModel": true,
+                    "profileId": "sentinel-vexillarius"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "shield-captain": {
+            "id": "shield-captain",
+            "name": "Shield Captain",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "shield-captain",
+                    "name": "Shield Captain",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "The Sodality"],
+            "defaultGear": [
+                {
+                    "kind": "equipment",
+                    "id": "misericordia"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Eternity blade and praesidium shield",
+                    "description": "This Model may have its eternity blade and praesidium shield exchanged for one eternity spear.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "eternity-blade-and-praesidium-shield": {
+                            "id": "eternity-blade-and-praesidium-shield",
+                            "name": "Eternity blade and praesidium shield",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["eternity-blade"],
+                            "equipmentRefs": ["praesidium-shield"]
+                        },
+                        "eternity-spear": {
+                            "id": "eternity-spear",
+                            "name": "Eternity spear",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["eternity-spear"]
+                        }
+                    },
+                    "default": "eternity-blade-and-praesidium-shield"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Arae-shrike",
+                    "description": "This Model may have an arae-shrike selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "arae-shrike": {
+                            "id": "arae-shrike",
+                            "name": "Arae-shrike",
+                            "cost": {
+                                "points": 50
+                            },
+                            "equipmentRefs": ["arae-shrike"]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "telemon-heavy-dreadnought": {
+            "id": "telemon-heavy-dreadnought",
+            "name": "Telemon Heavy Dreadnought",
+            "role": "war-engine",
+            "type": "walker",
+            "cost": {
+                "points": 360
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "telemon-heavy-dreadnought",
+                    "name": "Telemon Heavy Dreadnought",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "9",
+                        "t": "8",
+                        "w": "8",
+                        "i": "3",
+                        "a": "3",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "9",
+                        "in": "3",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Heavy"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "8"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "Smokescreen"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "spiculus-missile-launcher"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "smoke-launchers"
+                }
+            ],
+            "upgrades": {
+                "weapon-loadout": {
+                    "id": "weapon-loadout",
+                    "name": "Weapon loadout",
+                    "description": "This Model must have one of the following options selected for it: two options from the arm weapon list, or paired Telemon caestus and two twin neutronium cascade projectors.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "choose-weapons": {
+                            "id": "choose-weapons",
+                            "name": "Two arm weapons",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "paired-telemon-caestus-and-two-twin-neutronium-cascade-projectors": {
+                            "id": "paired-telemon-caestus-and-two-twin-neutronium-cascade-projectors",
+                            "name": "Paired Telemon caestus and two twin neutronium cascade projectors",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": [
+                                "paired-telemon-caestus",
+                                "twin-neutronium-cascade-projector",
+                                "twin-neutronium-cascade-projector"
+                            ]
+                        }
+                    },
+                    "default": "choose-weapons",
+                    "replaces": ["left-arm-weapon", "right-arm-weapon"]
+                },
+                "left-arm-weapon": {
+                    "id": "left-arm-weapon",
+                    "name": "Left arm weapon",
+                    "description": "This Model must have one of the following options selected for it: two options from the following list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "telemon-caestus-and-one-twin-neutronium-cascade-projector": {
+                            "id": "telemon-caestus-and-one-twin-neutronium-cascade-projector",
+                            "name": "Telemon caestus and one twin neutronium cascade projector",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": [
+                                "telemon-caestus",
+                                "twin-neutronium-cascade-projector"
+                            ]
+                        },
+                        "arachnus-storm-cannon": {
+                            "id": "arachnus-storm-cannon",
+                            "name": "Arachnus storm cannon",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["arachnus-storm-cannon"]
+                        },
+                        "adrathic-desolator": {
+                            "id": "adrathic-desolator",
+                            "name": "Adrathic desolator",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["adrathic-desolator"]
+                        },
+                        "iliastus-accelerator-culverin": {
+                            "id": "iliastus-accelerator-culverin",
+                            "name": "Iliastus accelerator culverin",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["iliastus-accelerator-culverin"]
+                        }
+                    },
+                    "default": "telemon-caestus-and-one-twin-neutronium-cascade-projector"
+                },
+                "right-arm-weapon": {
+                    "id": "right-arm-weapon",
+                    "name": "Right arm weapon",
+                    "description": "This Model must have one of the following options selected for it: two options from the following list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "telemon-caestus-and-one-twin-neutronium-cascade-projector": {
+                            "id": "telemon-caestus-and-one-twin-neutronium-cascade-projector",
+                            "name": "Telemon caestus and one twin neutronium cascade projector",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": [
+                                "telemon-caestus",
+                                "twin-neutronium-cascade-projector"
+                            ]
+                        },
+                        "arachnus-storm-cannon": {
+                            "id": "arachnus-storm-cannon",
+                            "name": "Arachnus storm cannon",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["arachnus-storm-cannon"]
+                        },
+                        "adrathic-desolator": {
+                            "id": "adrathic-desolator",
+                            "name": "Adrathic desolator",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["adrathic-desolator"]
+                        },
+                        "iliastus-accelerator-culverin": {
+                            "id": "iliastus-accelerator-culverin",
+                            "name": "Iliastus accelerator culverin",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["iliastus-accelerator-culverin"]
+                        }
+                    },
+                    "default": "telemon-caestus-and-one-twin-neutronium-cascade-projector"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "tribune": {
+            "id": "tribune",
+            "name": "Tribune",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 250
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tribune",
+                    "name": "Tribune",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "7",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "5",
+                        "i": "6",
+                        "a": "6",
+                        "ld": "12",
+                        "cl": "10",
+                        "wp": "10",
+                        "in": "10",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "2"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "Golden Exemplar", "The Sodality"],
+            "defaultGear": [
+                {
+                    "kind": "equipment",
+                    "id": "misericordia"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "arae-shrike"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Eternity spear",
+                    "description": "This Model may have its eternity spear exchanged for one eternity blade and one praesidium shield.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "eternity-spear": {
+                            "id": "eternity-spear",
+                            "name": "Eternity spear",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["eternity-spear"]
+                        },
+                        "eternity-blade-and-praesidium-shield": {
+                            "id": "eternity-blade-and-praesidium-shield",
+                            "name": "Eternity blade and praesidium shield",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["eternity-blade"],
+                            "equipmentRefs": ["praesidium-shield"]
+                        }
+                    },
+                    "default": "eternity-spear"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "venatari-sodality": {
+            "id": "venatari-sodality",
+            "name": "Venatari Sodality",
+            "role": "recon",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 3,
+            "profiles": [
+                {
+                    "id": "venatari",
+                    "name": "Venatari",
+                    "template": "model",
+                    "stats": {
+                        "m": "14",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "2",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "3+",
+                        "inv": "6+"
+                    },
+                    "tags": ["Antigrav", "Light"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "3"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "firestorm"
+                        },
+                        {
+                            "id": "outflank"
+                        },
+                        {
+                            "id": "vanguard",
+                            "value": "3"
+                        },
+                        {
+                            "id": "only-in-death"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes", "The Sodality"],
+            "composition": [
+                {
+                    "id": "venatari",
+                    "name": "Venatari",
+                    "profiles": {
+                        "venatari": 1
+                    },
+                    "min": 3,
+                    "max": 6,
+                    "cost": {
+                        "points": 55
+                    }
+                }
+            ],
+            "defaultGear": [
+                {
+                    "kind": "equipment",
+                    "id": "misericordia",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Kinetic destroyer and tarsus buckler",
+                    "description": "Any Model in this Unit may have its kinetic destroyer and tarsus buckler exchanged for one verutum lance.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "kinetic-destroyer-and-tarsus-buckler": {
+                            "id": "kinetic-destroyer-and-tarsus-buckler",
+                            "name": "Kinetic destroyer and tarsus buckler",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["kinetic-destroyer"],
+                            "equipmentRefs": ["tarsus-buckler"]
+                        },
+                        "verutum-lance": {
+                            "id": "verutum-lance",
+                            "name": "Verutum lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["verutum-lance"]
+                        }
+                    },
+                    "default": "kinetic-destroyer-and-tarsus-buckler"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Neutronium cascade mines",
+                    "description": "Every Model in this Unit may have neutronium cascade mines selected for it.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "neutronium-cascade-mines": {
+                            "id": "neutronium-cascade-mines",
+                            "name": "Neutronium cascade mines",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["neutronium-cascade-mine"]
+                        }
+                    },
+                    "multiSelect": true
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "caladius-grav-tank": {
+            "id": "caladius-grav-tank",
+            "name": "Caladius Grav-tank",
+            "role": "armour",
+            "type": "vehicle",
+            "cost": {
+                "points": 225
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "caladius-grav-tank",
+                    "name": "Caladius Grav-tank",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "14",
+                        "bs": "5",
+                        "front": "13",
+                        "side": "13",
+                        "rear": "11",
+                        "hp": "7",
+                        "transport-capacity": "-"
+                    },
+                    "tags": ["Antigrav", "Rapid"],
+                    "specialRules": [
+                        {
+                            "id": "auto-repair",
+                            "value": "3+"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "twin-iliastus-accelerator-cannon",
+                    "note": "Turret Mounted"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Hull (Front) Mounted twin lastrum bolt cannon",
+                    "description": "This Model may have its Hull (Front) Mounted twin lastrum bolt cannon exchanged for one Hull (Front) Mounted twin neutronium cascade projector.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "twin-lastrum-bolt-cannon": {
+                            "id": "twin-lastrum-bolt-cannon",
+                            "name": "Twin lastrum bolt cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["twin-lastrum-bolt-cannon"]
+                        },
+                        "hull-front-mounted-twin-neutronium-cascade-projector": {
+                            "id": "hull-front-mounted-twin-neutronium-cascade-projector",
+                            "name": "Twin neutronium cascade projector",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["twin-neutronium-cascade-projector"]
+                        }
+                    },
+                    "default": "twin-lastrum-bolt-cannon",
+                    "gearNote": "Hull (Front) Mounted"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "caladius-annihilator-grav-tank": {
+            "id": "caladius-annihilator-grav-tank",
+            "name": "Caladius Annihilator Grav-tank",
+            "role": "armour",
+            "type": "vehicle",
+            "cost": {
+                "points": 235
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "caladius-annihilator-grav-tank",
+                    "name": "Caladius Annihilator Grav-tank",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "14",
+                        "bs": "5",
+                        "front": "13",
+                        "side": "13",
+                        "rear": "11",
+                        "hp": "7",
+                        "transport-capacity": "-"
+                    },
+                    "tags": ["Antigrav", "Rapid"],
+                    "specialRules": [
+                        {
+                            "id": "auto-repair",
+                            "value": "3+"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Custodes"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "twin-arachnus-blaze-carronade",
+                    "note": "Turret Mounted"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Hull (Front) Mounted twin lastrum bolt cannon",
+                    "description": "This Model may have its Hull (Front) Mounted twin lastrum bolt cannon exchanged for one Hull (Front) Mounted twin neutronium cascade projector.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "twin-lastrum-bolt-cannon": {
+                            "id": "twin-lastrum-bolt-cannon",
+                            "name": "Twin lastrum bolt cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["twin-lastrum-bolt-cannon"]
+                        },
+                        "hull-front-mounted-twin-neutronium-cascade-projector": {
+                            "id": "hull-front-mounted-twin-neutronium-cascade-projector",
+                            "name": "Twin neutronium cascade projector",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["twin-neutronium-cascade-projector"]
+                        }
+                    },
+                    "default": "twin-lastrum-bolt-cannon",
+                    "gearNote": "Hull (Front) Mounted"
+                }
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "achillus-dreadspear": {
+            "id": "achillus-dreadspear",
+            "name": "Achillus dreadspear",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Achillus dreadspear (Ranged)",
+                    "stats": {
+                        "r": "18",
+                        "fp": "1",
+                        "rs": "10",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "armour-breaker",
+                            "value": "4+"
+                        }
+                    ],
+                    "traits": ["Las"]
+                },
+                {
+                    "name": "Achillus dreadspear (Melee)",
+                    "template": "melee",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "adrasite-spear": {
+            "id": "adrasite-spear",
+            "name": "Adrasite spear",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Adrasite spear (Ranged)",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        }
+                    ],
+                    "traits": ["Assault", "Disintegrator"]
+                },
+                {
+                    "name": "Adrasite spear (Melee)",
+                    "template": "melee",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "adrastus-bolt-caliver": {
+            "id": "adrastus-bolt-caliver",
+            "name": "Adrastus bolt caliver",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Adrastus bolt caliver - Bolt volley (Primary)",
+                    "stats": {
+                        "r": "36",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "combi"
+                        }
+                    ],
+                    "traits": ["Bolt"]
+                },
+                {
+                    "name": "Adrastus bolt caliver - Adrathic beam (Secondary)",
+                    "stats": {
+                        "r": "24",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        },
+                        {
+                            "id": "combi"
+                        }
+                    ],
+                    "traits": ["Disintegrator"]
+                }
+            ]
+        },
+        "adrathic-combi-destructor": {
+            "id": "adrathic-combi-destructor",
+            "name": "Adrathic combi-destructor",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Adrathic combi-destructor",
+                    "stats": {
+                        "r": "12",
+                        "fp": "2",
+                        "rs": "5",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        }
+                    ],
+                    "traits": ["Disintegrator"]
+                }
+            ]
+        },
+        "adrathic-desolator": {
+            "id": "adrathic-desolator",
+            "name": "Adrathic desolator",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Adrathic desolator",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "7",
+                        "ap": "2",
+                        "d": "4"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "rending",
+                            "value": "4+"
+                        }
+                    ],
+                    "traits": ["Disintegrator"]
+                }
+            ]
+        },
+        "adrathic-devastator": {
+            "id": "adrathic-devastator",
+            "name": "Adrathic devastator",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Adrathic devastator",
+                    "stats": {
+                        "r": "18",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "2",
+                        "d": "4"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "rending",
+                            "value": "5+"
+                        }
+                    ],
+                    "traits": ["Disintegrator"]
+                }
+            ]
+        },
+        "arachnus-storm-cannon": {
+            "id": "arachnus-storm-cannon",
+            "name": "Arachnus storm cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Arachnus storm cannon - Concentrated fire",
+                    "stats": {
+                        "r": "30",
+                        "fp": "2",
+                        "rs": "9",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Las"]
+                },
+                {
+                    "name": "Arachnus storm cannon - Burst fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "4",
+                        "rs": "6",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        }
+                    ],
+                    "traits": ["Las"]
+                }
+            ]
+        },
+        "eternity-blade": {
+            "id": "eternity-blade",
+            "name": "Eternity blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Eternity blade",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "aflame",
+                            "value": "2"
+                        },
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "duellists-edge",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "eternity-spear": {
+            "id": "eternity-spear",
+            "name": "Eternity spear",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Eternity spear (Ranged)",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ],
+                    "traits": ["Assault", "Bolt"]
+                },
+                {
+                    "name": "Eternity spear (Melee)",
+                    "template": "melee",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "aflame",
+                            "value": "2"
+                        },
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "galatus-warblade": {
+            "id": "galatus-warblade",
+            "name": "Galatus warblade",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Galatus warblade (Ranged)",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "2"
+                        }
+                    ],
+                    "traits": ["Flame"]
+                },
+                {
+                    "name": "Galatus warblade (Melee)",
+                    "template": "melee",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "aflame",
+                            "value": "2"
+                        },
+                        {
+                            "id": "reaping-blow",
+                            "value": "3"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "guardian-spear": {
+            "id": "guardian-spear",
+            "name": "Guardian spear",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Guardian spear (Ranged)",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ],
+                    "traits": ["Assault", "Bolt"]
+                },
+                {
+                    "name": "Guardian spear (Melee)",
+                    "template": "melee",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "iliastus-accelerator-culverin": {
+            "id": "iliastus-accelerator-culverin",
+            "name": "Iliastus accelerator culverin",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Iliastus accelerator culverin",
+                    "stats": {
+                        "r": "36",
+                        "fp": "4",
+                        "rs": "9",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "rapid-tracking"
+                        }
+                    ],
+                    "traits": ["Auto"]
+                }
+            ]
+        },
+        "infernus-firebomb-clusters": {
+            "id": "infernus-firebomb-clusters",
+            "name": "Infernus firebomb clusters",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Infernus firebomb clusters",
+                    "stats": {
+                        "r": "18",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "7\""
+                        },
+                        {
+                            "id": "panic",
+                            "value": "2"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Flame"]
+                }
+            ]
+        },
+        "infernus-firepike": {
+            "id": "infernus-firepike",
+            "name": "Infernus firepike",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Infernus firepike",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "2"
+                        }
+                    ],
+                    "traits": ["Flame"]
+                }
+            ]
+        },
+        "infernus-incinerator": {
+            "id": "infernus-incinerator",
+            "name": "Infernus incinerator",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Infernus incinerator",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Flame"]
+                }
+            ]
+        },
+        "kinetic-destroyer": {
+            "id": "kinetic-destroyer",
+            "name": "Kinetic destroyer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Kinetic destroyer",
+                    "stats": {
+                        "r": "12",
+                        "fp": "3",
+                        "rs": "7",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ],
+                    "traits": ["Assault"]
+                }
+            ]
+        },
+        "lastrum-bolt-cannon": {
+            "id": "lastrum-bolt-cannon",
+            "name": "Lastrum bolt cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Lastrum bolt cannon",
+                    "stats": {
+                        "r": "36",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Bolt"]
+                }
+            ]
+        },
+        "lastrum-storm-bolter": {
+            "id": "lastrum-storm-bolter",
+            "name": "Lastrum storm bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Lastrum storm bolter",
+                    "stats": {
+                        "r": "24",
+                        "fp": "4",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ],
+                    "traits": ["Bolt"]
+                }
+            ]
+        },
+        "neutronium-cascade-mine": {
+            "id": "neutronium-cascade-mine",
+            "name": "Neutronium cascade mine",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Neutronium cascade mine",
+                    "stats": {
+                        "im": "-3",
+                        "am": "1",
+                        "sm": "9",
+                        "ap": "3",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "annihilation-cascade",
+                            "value": "9"
+                        },
+                        {
+                            "id": "detonation"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "neutronium-magna-cascade-cannon": {
+            "id": "neutronium-magna-cascade-cannon",
+            "name": "Neutronium magna-cascade cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Neutronium magna-cascade cannon",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "10",
+                        "ap": "3",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template",
+                            "value": "Hellstorm"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "annihilation-cascade",
+                            "value": "10"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        }
+                    ],
+                    "traits": ["Assault"]
+                }
+            ]
+        },
+        "paired-telemon-caestus": {
+            "id": "paired-telemon-caestus",
+            "name": "Paired Telemon caestus",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Paired Telemon caestus",
+                    "stats": {
+                        "im": "I",
+                        "am": "+1",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "4"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "pyrithite-spear": {
+            "id": "pyrithite-spear",
+            "name": "Pyrithite spear",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Pyrithite spear (Ranged)",
+                    "stats": {
+                        "r": "6",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "melta",
+                            "value": "3"
+                        }
+                    ],
+                    "traits": ["Assault", "Melta"]
+                },
+                {
+                    "name": "Pyrithite spear (Melee)",
+                    "template": "melee",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "sentinel-warblade": {
+            "id": "sentinel-warblade",
+            "name": "Sentinel warblade",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Sentinel warblade (Ranged)",
+                    "stats": {
+                        "r": "8",
+                        "fp": "3",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ],
+                    "traits": ["Assault", "Bolt"]
+                },
+                {
+                    "name": "Sentinel warblade (Melee)",
+                    "template": "melee",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "solarite-power-gauntlet": {
+            "id": "solarite-power-gauntlet",
+            "name": "Solarite power gauntlet",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Solarite power gauntlet",
+                    "stats": {
+                        "im": "-3",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "solarite-power-lance": {
+            "id": "solarite-power-lance",
+            "name": "Solarite power lance",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Solarite power lance - Charging strike",
+                    "stats": {
+                        "im": "+4",
+                        "am": "0",
+                        "sm": "+5",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        },
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Power"]
+                },
+                {
+                    "name": "Solarite power lance - Defensive strike",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "solarite-power-talon": {
+            "id": "solarite-power-talon",
+            "name": "Solarite power talon",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Solarite power talon",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "reaping-blow",
+                            "value": "2"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "spiculus-heavy-missile-pod": {
+            "id": "spiculus-heavy-missile-pod",
+            "name": "Spiculus heavy missile pod",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Spiculus heavy missile pod",
+                    "stats": {
+                        "r": "48",
+                        "fp": "4",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "suppressive",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Missile"]
+                }
+            ]
+        },
+        "spiculus-missile-launcher": {
+            "id": "spiculus-missile-launcher",
+            "name": "Spiculus missile launcher",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Spiculus missile launcher",
+                    "stats": {
+                        "r": "36",
+                        "fp": "6",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "suppressive",
+                            "value": "2"
+                        }
+                    ],
+                    "traits": ["Missile"]
+                }
+            ]
+        },
+        "telemon-caestus": {
+            "id": "telemon-caestus",
+            "name": "Telemon caestus",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Telemon caestus",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "the-apollonian-spear": {
+            "id": "the-apollonian-spear",
+            "name": "The Apollonian Spear",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "The Apollonian Spear (Ranged)",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "5",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "suppressive",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Assault", "Bolt"]
+                },
+                {
+                    "name": "The Apollonian Spear (Melee)",
+                    "template": "melee",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "duellists-edge",
+                            "value": "2"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "twin-arachnus-blaze-cannon": {
+            "id": "twin-arachnus-blaze-cannon",
+            "name": "Twin Arachnus blaze cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin Arachnus blaze cannon - Concentrated fire",
+                    "stats": {
+                        "r": "48",
+                        "fp": "2",
+                        "rs": "9",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "D"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Las"]
+                },
+                {
+                    "name": "Twin Arachnus blaze cannon - Burst fire",
+                    "stats": {
+                        "r": "36",
+                        "fp": "5",
+                        "rs": "6",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        }
+                    ],
+                    "traits": ["Las"]
+                }
+            ]
+        },
+        "twin-arachnus-blaze-carronade": {
+            "id": "twin-arachnus-blaze-carronade",
+            "name": "Twin Arachnus blaze carronade",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin Arachnus blaze carronade - Concentrated fire",
+                    "stats": {
+                        "r": "72",
+                        "fp": "2",
+                        "rs": "10",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "ordnance",
+                            "value": "D"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Las"]
+                },
+                {
+                    "name": "Twin Arachnus blaze carronade - Burst fire",
+                    "stats": {
+                        "r": "48",
+                        "fp": "6",
+                        "rs": "7",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        }
+                    ],
+                    "traits": ["Las"]
+                }
+            ]
+        },
+        "twin-arachnus-storm-carronade": {
+            "id": "twin-arachnus-storm-carronade",
+            "name": "Twin Arachnus storm carronade",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin Arachnus storm carronade - Concentrated fire",
+                    "stats": {
+                        "r": "30",
+                        "fp": "2",
+                        "rs": "10",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "D"
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Las"]
+                },
+                {
+                    "name": "Twin Arachnus storm carronade - Burst fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "6",
+                        "rs": "7",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        }
+                    ],
+                    "traits": ["Las"]
+                }
+            ]
+        },
+        "twin-corvae-las-pulser": {
+            "id": "twin-corvae-las-pulser",
+            "name": "Twin Corvae las-pulser",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin Corvae las-pulser",
+                    "stats": {
+                        "r": "18",
+                        "fp": "1",
+                        "rs": "10",
+                        "ap": "3",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "armour-breaker",
+                            "value": "4+"
+                        }
+                    ],
+                    "traits": ["Las"]
+                }
+            ]
+        },
+        "twin-iliastus-accelerator-cannon": {
+            "id": "twin-iliastus-accelerator-cannon",
+            "name": "Twin Iliastus accelerator cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin Iliastus accelerator cannon",
+                    "stats": {
+                        "r": "60",
+                        "fp": "6",
+                        "rs": "8",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "rapid-tracking"
+                        }
+                    ],
+                    "traits": ["Auto"]
+                }
+            ]
+        },
+        "twin-iliastus-accelerator-fusil": {
+            "id": "twin-iliastus-accelerator-fusil",
+            "name": "Twin Iliastus accelerator fusil",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin Iliastus accelerator fusil",
+                    "stats": {
+                        "r": "24",
+                        "fp": "4",
+                        "rs": "7",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "rapid-tracking"
+                        }
+                    ],
+                    "traits": ["Auto"]
+                }
+            ]
+        },
+        "twin-lastrum-bolt-cannon": {
+            "id": "twin-lastrum-bolt-cannon",
+            "name": "Twin lastrum bolt cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin lastrum bolt cannon",
+                    "stats": {
+                        "r": "36",
+                        "fp": "6",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Bolt"]
+                }
+            ]
+        },
+        "twin-neutronium-cascade-projector": {
+            "id": "twin-neutronium-cascade-projector",
+            "name": "Twin neutronium cascade projector",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin neutronium cascade projector",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "7",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "annihilation-cascade",
+                            "value": "10"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        }
+                    ],
+                    "traits": ["Assault"]
+                }
+            ]
+        },
+        "verutum-lance": {
+            "id": "verutum-lance",
+            "name": "Verutum lance",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Verutum lance (Ranged)",
+                    "stats": {
+                        "r": "8",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "stun",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Assault"]
+                },
+                {
+                    "name": "Verutum lance (Melee)",
+                    "template": "melee",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "impact",
+                            "value": "AM"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "arae-shrike": {
+            "id": "arae-shrike",
+            "name": "Arae-shrike",
+            "text": "A Model with an arae-shrike gains the Deep Strike Special Rule and confers it to any Unit it joins, and can apply a penalty to Enemy Reserves Tests. A Model with an arae-shrike gains the Deep Strike Special Rule, and if it joins a Unit entirely composed of Models with the Legio Custodes Trait in Reserves, all Models in that Unit also gain the Deep Strike Special Rule. In addition, in the Effects Sub-Phase of the End Phase of their Player Turn, the Controlling Player of a Model with an arae-shrike which is on the Battlefield can make an Intelligence Check for that Model. If that Check is successful, then the Opposing Player must apply a -1 modifier to the result of the first Reserves Test they make in the Reserves Sub-Phase of the subsequent Player Turn. Any Reserves Test may only be modified by a single arae-shrike in this manner."
+        },
+        "eclipse-shield": {
+            "id": "eclipse-shield",
+            "name": "Eclipse shield",
+            "text": "Eclipse shields grant a 5+ Shrouded Damage Mitigation Roll against Shooting Attacks once a Model suffers a Penetrating Hit. The first time in a Battle Turn a Model with an eclipse shield suffers a Penetrating Hit, it gains a 5+ Shrouded Damage Mitigation Roll against all subsequent Shooting Attacks until it is returned to Aerial Reserves."
+        },
+        "gravis-praesidium-shield": {
+            "id": "gravis-praesidium-shield",
+            "name": "Gravis praesidium shield",
+            "text": "A Model with a gravis praesidium shield gains a 4+ Invulnerable Save and the Shield Trait."
+        },
+        "magisterium-vexilla": {
+            "id": "magisterium-vexilla",
+            "name": "Magisterium vexilla",
+            "text": "A unit that includes at least one model with a Magisterium vexilla may re-roll all failed Leadership tests and may add +1 to the score used to decide if any friendly unit with any models within 12\" of any Magisterium vexilla wins a combat in the Assault phase – a friendly unit may only benefit from a single Magisterium vexilla’s bonus in any given combat, regardless of how many are within range."
+        },
+        "misericordia": {
+            "id": "misericordia",
+            "name": "Misericordia",
+            "text": "A Unit containing any Models with a Misericordia may select a unique aftermath option in which it makes a single attack against an enemy Unit from the same Combat. A Unit which contains any Models with a Misericordia may have the Blade of Mercy aftermath option selected for it in Step 4 of the Resolution Sub-Phase of the Assault Phase for any Combat in which that Unit has won or drawn the Combat. The Blade of Mercy - The Controlling Player selects a single Model in this Unit which has a Misericordia to resolve Steps 4-10 of the Resolving an Initiative Step sequence with, targeting one enemy Unit from the selected Combat which has had the Fall Back aftermath option selected for it. Attacks made as part of this aftermath option are resolved using the following profile: IM AM SM AP D Special Rules Traits I 1 S 3 * Precision (2+), Breaching (5+) Power * This Melee Weapon’s Damage Characteristic is equal to the number of Models with a Misericordia in the Unit for which this aftermath option has been selected."
+        },
+        "praesidium-shield": {
+            "id": "praesidium-shield",
+            "name": "Praesidium shield",
+            "text": "A model with a praesidium shield gains a 5+ Invulnerable Save and the Shield Trait."
+        },
+        "smoke-launchers": {
+            "id": "smoke-launchers",
+            "name": "Smoke launchers",
+            "text": "A Model with smoke launchers has the Smokescreen Trait."
+        },
+        "tarsus-buckler": {
+            "id": "tarsus-buckler",
+            "name": "Tarsus buckler",
+            "text": "The Ranged Strength of attacks made as part of a Volley Attack or Overwatch Reaction are modified by -1 when resolving Wound Tests against a Unit that includes one or more Models with a tarsus buckler."
+        }
+    },
+    "upgrades": {},
+    "specialRules": {
+        "aflame": {
+            "id": "aflame",
+            "name": "Aflame",
+            "text": "A Weapon with this Special Rule causes additional modifiers to a Target’s Leadership Characteristic. If a Melee Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit, regardless of whether any Damage is inflicted, until the end of the Phase, that Unit is considered to be ‘aflame’. If the Controlling Player of a Unit that is aflame is required to make a Leadership Check during that Phase for a Combat that includes that Unit, the value of X on this Special Rule is applied as an additional negative modifier to the Leadership Characteristic being used for that Check.",
+            "configurable": true
+        },
+        "annihilation-cascade": {
+            "id": "annihilation-cascade",
+            "name": "Annihilation Cascade",
+            "text": "Penetrating Hits inflicted by attacks with the Annihilation Cascade (X) Special Rule can cause additional Hits. At the end of Step 9 of the Shooting Attack process or Step 8 of the Resolving an Initiative Step process for any Fire Group or Strike Group that includes Weapons with the Annihilation Cascade (X) Special Rule and which inflicted any Penetrating Hits, create a new Fire Group or Strike Group (respectively). This new Fire Group or Strike Group must then be selected in Step 10 of the Shooting Attack process or Step 9 of the Resolving an Initiative Step process (respectively) and resolved. This new Fire Group or Strike Group includes a number of Hits equal to the number of Hull Points the Target Model lost due to the Fire Group or Strike Group that triggered its creation. These Hits all have a Strength equal to the value of X attached to the variant of the Annihilation Cascade (X) Special Rule possessed by Weapons in the preceding Fire Group or Strike Group, an AP of '.', a Damage of 1 and no Special Rules.",
+            "configurable": true
+        },
+        "armour-breaker": {
+            "id": "armour-breaker",
+            "name": "Armour-breaker",
+            "text": "Attacks made with the Armour-breaker (X) Special Rule can sometimes inflict an extra point of Damage. When any Armour Penetration Test is made for an attack or Model with the Armour-breaker (X) Special Rule, and it results in a Penetrating Hit - roll a Dice. If the result of that Dice roll is equal to or greater than the value of X attached to this variant of the Armour-breaker (X) Special Rule, then the Damage Characteristic of that Penetrating Hit is increased by 1. Note that the Armour-breaker (X) Special Rule may only be triggered by an Armour Penetration Test and has no effect when making a Wound Test.",
+            "configurable": true
+        },
+        "armourbane": {
+            "id": "armourbane",
+            "name": "Armourbane",
+            "text": "A Weapon with the Armourbane Special Rule counts Glancing Hits as Penetrating Hits. When making Armour Penetration Tests for an attack with this Special Rule, a result that is equal to, or greater than, the target Armour Value inflicts a Penetrating Hit. A Weapon with this Special Rule can never inflict a Glancing Hit, and any Rule that would force them to do so instead inflicts a Penetrating Hit."
+        },
+        "assault-vehicle": {
+            "id": "assault-vehicle",
+            "name": "Assault Vehicle",
+            "text": "A Vehicle with this Special Rule allows Models to Disembark and Charge without penalty. A Unit that is Disembarked from another Model that has the Assault Vehicle Special Rule may have a Charge declared for it in the Charge Sub-Phase of the same Player Turn without being forced to make a Disordered Charge."
+        },
+        "auto-repair": {
+            "id": "auto-repair",
+            "name": "Auto-repair",
+            "text": "A Model with this Special Rule has a bonus to Repair Tests to remove Statuses. If the Active Player makes a Repair Test in the Statuses Sub-Phase of the End Phase for a Model with the Vehicle Type with this Special Rule, they ignore the usual Target Number of 6. Instead, the value of X attached to the variant of this Special Rule is used as the Target Number for that Repair Test. For example, a Model with the Auto-repair (4+) Special Rule would pass any Repair Tests made for it on the result of a 4 or higher.",
+            "configurable": true
+        },
+        "blast": {
+            "id": "blast",
+            "name": "Blast",
+            "text": "Attacks made with the Blast (X) Special Rule use a Blast Marker to determine how many Hits are caused. When making attacks with a Weapon that has the Blast (X) Special Rule, before any Hit Tests are made, a Blast Marker must first be placed to determine how many Hits may be inflicted by the attack. The Player making the attack must place the Blast Marker indicated in brackets as part of the Special Rule so that the hole in the middle is entirely over the Base of any one Model in the Target Unit. Once the Blast Marker has been placed, the Player making the attack must make a Hit Test for the attack, and each Model from the Target Unit that is fully or partially under the Blast Marker will suffer 1 Hit if the Hit Test is successful. Hits on Other Units If any Models from Units other than the Target Unit are fully or partially covered by the Blast Marker, then a new Fire Group must be created for those Hits and set to one side. Continue resolving the Shooting Attack on the original Target Unit, and once that Shooting Attack has been completely resolved begin a new Shooting Attack to resolve those additional Fire Groups generated for Units other than the original Target Unit. If the Hit Test is unsuccessful then no Hits are inflicted and the Player making the attack must make a Scatter Roll for the Blast Marker. Once a Scatter Roll has been made for the Blast Marker and it has been moved, one Hit is inflicted on a Unit for each Model from that Unit that is wholly or partially covered by the Blast Marker. Hits can be scored on both friendly and enemy Units by attacks using the Blast (X) Special Rule. Hits inflicted by Weapons with the Blast (X) Special Rule are allocated in the same manner as other Hits, regardless of which actual Models were under the Blast Marker and the Blast Marker may not be used to inflict Hits on specific Models. If a Fire Group includes multiple attacks made with the Blast (X) Special Rule, do not place multiple Blast Markers. A single Blast Marker is placed using the Rules detailed above, and a Hit Test is made for each attack in that Fire Group. For each successful Hit Test, one Hit is inflicted for each Model from the target Unit that is fully or partially under the Blast Marker. If any Hit Tests are unsuccessful then, after any Hits made by successful Hit Tests are counted, a single Scatter Roll is made for the Blast Marker, regardless of the total number of unsuccessful Hit Tests. For each Hit Test that was unsuccessful, one Hit is inflicted on a Unit for each Model from that Unit that is wholly or partially covered by the Blast Marker after the Scatter Roll has been resolved.",
+            "configurable": true
+        },
+        "breaching": {
+            "id": "breaching",
+            "name": "Breaching",
+            "text": "When rolling To Wound for a model that has the Breaching (X) special rule, or is attacking with a weapon that has the Breaching (X) special rule, for each To Wound roll equal to or higher than the value listed in brackets, the controlling player must resolve these Wounds at AP 2 instead of the weapon’s normal AP value. This rule has no effect on models that do not have Wounds, such as models with the Vehicle Unit Type. For example, a model with the Breaching (5+) special rule that rolls To Wound and rolls a result of ‘5’ or higher, the Wound inflicted gains an AP of ‘2’ regardless of the AP value listed on the weapon’s profile. Note that a weapon that has both the Breaching (X) and the Gets Hot special rules always uses the base AP of the weapon when rolls of ‘1’ To Hit inflict Wounds on the attacking model.",
+            "configurable": true
+        },
+        "bulky": {
+            "id": "bulky",
+            "name": "Bulky",
+            "text": "Models with the Bulky (X) Special Rule take up more space on Transport Models. A Model with the Bulky (X) Special Rule does not use up 1 Point of Transport Capacity when it Embarks on a Model with the Transport Sub-Type. Instead it uses up a number of points of Transport Capacity equal to the value of X attached to the variant of the Bulky (X) possessed by that Model.",
+            "configurable": true
+        },
+        "combi": {
+            "id": "combi",
+            "name": "Combi",
+            "text": "A Weapon with this Special Rule can fire multiple profiles simultaneously. Each time a Model makes a Shooting Attack with a Weapon Profile with this Special Rule, the Controlling Player can select another Profile from the same Weapon with this Special Rule and make attacks with it as part of the same Shooting Attack. Note that if that Profile also has the Limited (X) Special Rule, this does not allow it to be selected to make attacks more than the number of times equal to the value of X on that Special Rule."
+        },
+        "critical-hit": {
+            "id": "critical-hit",
+            "name": "Critical Hit",
+            "text": "Attacks made with the Critical Hit (X) Special Rule have a chance to automatically cause a wound and inflict 1 extra point of Damage. When any Hit Test is made for an attack with the Critical Hit (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Critical Hit (X) Special Rule, then if a Hit is inflicted by that Hit Test, that Hit becomes a ‘Critical Hit’. A Critical Hit automatically inflicts a wound without any Dice being rolled, counting as the roll of a ‘6’ for any variable Special Rules that might be triggered by a Wound Test, and increases the Damage Characteristic of the Hit by +1.",
+            "configurable": true
+        },
+        "deep-strike": {
+            "id": "deep-strike",
+            "name": "Deep Strike",
+            "text": "The Deep Strike Special Rule allows a Unit to enter play anywhere on the Battlefield. A Unit that includes only Models with the Deep Strike Special Rule that enters play from Reserves may make a Deep Strike instead of deploying as described in the Reserves Rules. No more than one Unit may attempt a Deep Strike in a given Player Turn. The Unit attempting a Deep Strike may have another Unit without the Deep Strike Special Rule Embarked upon it if the Deep Striking Unit includes Models with the Transport Sub-Type (note that some Missions may allow more Units to attempt a Deep Strike in the same Player Turn. This will be specifically noted in the Mission Special Rules section of that Mission). Note that in Missions where the Reserves Mission Special Rule is not in use, the Deep Strike Special Rule has no effect. Furthermore, Units may not make use of the Deep Strike Special Rule during the first Battle Turn, even if they enter play from Reserves. To perform a Deep Strike, the Active Player must declare an Eligible Unit that has entered play from Reserves in the Reserves Sub-Phase as the Deep Striking Unit. The Active Player must then select one Model from that Unit and place it anywhere on the Battlefield. This Model must be placed at least 1\" away from any enemy Model, Battlefield Edge or piece of Impassable Terrain. Once this first Model has been placed, the remaining Models in the Unit must be placed within Unit Coherency with at least one other Model in the same Unit and within 6\" of the first Model placed. No Models may be placed within 1\" of an enemy Model, any Battlefield Edge or a piece of Impassable Terrain. Any Models that cannot be placed using these Rules must be Removed as a Casualty immediately. This deployment must take place during the Reserves Sub-Phase, and a Unit that deploys as a Deep Strike may not move in the Move Sub-Phase of the same Player Turn or have a Charge declared for it in the Charge Sub-Phase of the same Player Turn, but may make Shooting Attacks as normal. A Unit that is Embarked on a Model that is deployed as part of a Deep Strike may Disembark during the Move Sub-Phase of the same Player Turn, but may not make any move other than the move made to Disembark and may not have a Charge declared for it in the Charge Sub-Phase of the same Player Turn. Enemy Units may declare Intercept Reactions against a Unit deployed as part of a Deep Strike, but not Reposition Reactions."
+        },
+        "detonation": {
+            "id": "detonation",
+            "name": "Detonation",
+            "text": "Weapons with this Special Rule can only attack Vehicles and immobile Models. A Weapon or attack with this Special Rule may only be selected during Step 2 of any Combat in the Fight Sub-Phase if the Unit making attacks is only Locked in Combat with enemy Units composed of Models with the Vehicle Type and Models with a Movement Characteristic of ‘0’ or ‘-’. If a Unit is Locked in Combat with any enemy Units that include any Models that do not have the Vehicle Type or a Movement Characteristic of ‘0’ or ‘-’ then no Model may use a Weapon or other attack that has this Special Rule. A Weapon or other attack with this Special Rule may also be used to make attacks targeting a Model with the Building Type or a Terrain Piece that has a Toughness or Armour Characteristic."
+        },
+        "duellists-edge": {
+            "id": "duellists-edge",
+            "name": "Duellist’s Edge",
+            "text": "A Weapon with the Duellist’s Edge (X) Special Rule grants a bonus to Focus Rolls in Challenges. In Step 3 of the Challenge Sub-Phase, the Focus Step, if a Player has declared that the Model under their control will use a Weapon with the Duellist’s Edge (X) Special Rule or has the Duellist’s Edge (X) Special Rule, then that Player gains a bonus equal to the value of X on the Focus Roll.",
+            "configurable": true
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "explodes": {
+            "id": "explodes",
+            "name": "Explodes",
+            "text": "A Model with this Special Rule can explode and cause Hits to nearby Models and Units. Before a Model with the Explodes (X) Special Rule is Removed as a Casualty, the Controlling Player must roll a Dice. If the result of that roll equals or exceeds the value of X attached to this variant of the Explodes (X) Special Rule, the Model explodes. Every Unit with one or more Models within 6\" of an exploding Model suffers a number of Hits equal to the Base Wounds Characteristic or Base Hull Points Characteristic of the exploding Model. Each such Hit has a Strength of 8, an AP of ‘-’ and a Damage of 1. Once all Hits caused by this Special Rule have been resolved, the Model with the Explodes (X) Special Rule is Removed as a Casualty as normal.",
+            "configurable": true
+        },
+        "firestorm": {
+            "id": "firestorm",
+            "name": "Firestorm",
+            "text": "A Model with this Special Rule does not have to make Volley Attacks as Snap Shots. When a Model with this Special Rule makes Volley Attacks, it is not required to fire Snap Shots. In addition, after making Volley Attacks in Step 4 of the Charge Procedure, a Unit containing any Models with this Special Rule is not required to make a Charge Roll in Step 5. If the Controlling Player chooses not to make a Charge Roll in Step 5 of the Charge Procedure then the Charge Procedure ends immediately."
+        },
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        },
+        "heavy": {
+            "id": "heavy",
+            "name": "Heavy",
+            "text": "Weapons with the Heavy (X) Special Rule gain +1 to a Characteristic when Stationary. When making a Shooting Attack with a Weapon that has the Heavy (X) Special Rule, a modifier of +1 is added to a Characteristic if the Model with that Weapon is part of a Unit that remained Stationary in the Controlling Player’s previous Movement Phase. If the Characteristic listed is AP, then instead it improves the AP by one Step (see the Rules for modifying Saves and AP). The value of X in the specific variant of the Heavy (X) Special Rule determines which Characteristic gains the +1 modifier.",
+            "configurable": true
+        },
+        "impact": {
+            "id": "impact",
+            "name": "Impact",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "implacable-advance": {
+            "id": "implacable-advance",
+            "name": "Implacable Advance",
+            "text": "Models with this Special Rule can make Volley Attacks with other Weapons. The Controlling Player of a Model with this Special Rule treats all Ranged Weapons such a Model has that do not have any variant of the Heavy (X) Special Rule or Ordnance (X) Special Rule as having the Assault Trait."
+        },
+        "lightning-blows": {
+            "id": "lightning-blows",
+            "name": "Lightning Blows",
+            "text": "On a successful Charge, a Model with the Lightning Blows Special Rule temporarily gains the Critical Hit (6+) Special Rule on its Melee Weapons. If a Unit that includes any Models with the Lightning Blows Special Rule makes a successful Charge, then until the end of that Assault Phase, all Models with the Lightning Blows Special Rule in that Unit gain the Critical Hit (6+) Special Rule on any Melee Weapons they have."
+        },
+        "limited": {
+            "id": "limited",
+            "name": "Limited",
+            "text": "A Weapon with the Limited (X) Special Rule can only be used to attack a limited number of times per Battle. A Weapon with the Limited (X) Special Rule may only be used to make attacks as part of a Shooting Attack or Combat a number of times equal to the value of X attached to the specific variant of the Special Rule. Each time it is used to make attacks, the Firepower Characteristic or Attacks Modifier Characteristic of the Weapon is not modified by this Special Rule, only the number of times it may be selected in a given Battle.",
+            "configurable": true
+        },
+        "master-of-the-golden-legion": {
+            "id": "master-of-the-golden-legion",
+            "name": "Master of the Golden Legion",
+            "text": "If a Model with this Special Rule is part of an Army, then the Fear (1) Special Rule is granted to all Models with the Legio Custodes Trait (excluding Models with the Vehicle Type) in the same Army until the end of the first Battle Turn. Furthermore, if a Model with this Special Rule is part of an Army, then once per Turn, when the Controlling Player makes a Reserves Test for a Unit which only contains Models with the Legio Custodes Trait and the Deep Strike Special Rule, before the Reserves Test is made, that Player can choose to modify that roll by + 1. If this modifier is applied, that Unit must be deployed using the Deep Strike Special Rule."
+        },
+        "melta": {
+            "id": "melta",
+            "name": "Melta",
+            "text": "This Special Rule increases the amount of Damage against Vehicles when Shooting Attacks are made within a specific range. If at least one Model in a Unit with the Vehicle Type that is targeted by a Shooting Attack made by a Model using a Weapon with this Special Rule is within a range equal to or less than the value specified by X, that attack has the Armourbane Special Rule and the Damage of Penetrating Hits caused by that attack is doubled.",
+            "configurable": true
+        },
+        "officer-of-the-line": {
+            "id": "officer-of-the-line",
+            "name": "Officer of the Line",
+            "text": "Models with this Special Rule allow more Auxiliary Detachments to be included in an Army. If a Model with this Special Rule is selected to fill a Command Slot in any Detachment in the Crusade Force Organisation Chart, then the Controlling Player may select a number of Auxiliary Detachments equal to the value of X in the specific variant of this Special Rule instead of just one.",
+            "configurable": true
+        },
+        "only-in-death": {
+            "id": "only-in-death",
+            "name": "Only In Death",
+            "text": "Units which only contain Models with this Special Rule become Stunned instead of Routed in Combat and cannot Fall Back or Disengage from a Combat. Whenever a Model with this Special Rule would gain the Routed Tactical Status in the Make Panic Checks Step of the Resolution Sub-Phase of the Assault Phase, that Model instead gains the Stunned Tactical Status, unless there are any Models without this Special Rule in the same Unit as that Model. Additionally, a Unit which only contains Models with this Special Rule may never have the Disengage or Fall Back aftermath options selected for it, unless it is entirely composed of Models which also have the Antigrav Sub-Type, in which case it may still have the Disengage aftermath option selected for it."
+        },
+        "ordnance": {
+            "id": "ordnance",
+            "name": "Ordnance",
+            "text": "Weapons with the Ordnance (X) Special Rule double the value of a Characteristic when Stationary. When making a Shooting Attack with a Weapon that has the Ordnance (X) Special Rule, a modifier of x2 is applied to a Characteristic if the Model with that Weapon is part of a Unit that remained stationary in the Controlling Player’s previous Movement Phase (if that Characteristic is AP, then the AP is instead changed to AP 2). The value of X in the specific variant of the Ordnance (X) Special Rule determines which Characteristic gains the x2 modifier.",
+            "configurable": true
+        },
+        "outflank": {
+            "id": "outflank",
+            "name": "Outflank",
+            "text": "A Unit of Models with the Outflank Special Rule can enter play from outside of Deployment Zones. A Unit made up entirely of Models with this Special Rule that enters play from Reserves may do so from any point on the Battlefield Edge. The Unit may not enter play from any point that is within the Opposing Player’s Deployment Zone or within 7\" of any enemy Model. Note that a Unit Embarked on a Model with the Outflank Special Rule does not need to have the Outflank Special Rule in order for the Model it is Embarked upon to benefit from it. A Model that enters the Battlefield from a point outside of the Controlling Player’s Deployment Zone by means of this Special Rule, and any Units Embarked on such a Model, may not have a Charge declared for them in the Player Turn on which they enter play."
+        },
+        "panic": {
+            "id": "panic",
+            "name": "Panic",
+            "text": "Weapons and other attacks that have the Panic (X) Special Rule have a chance of inflicting the Routed Status on the Target Unit. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit, regardless of whether any Damage is inflicted, that Target Unit must make a Leadership Check in the Morale Sub-Phase of the same Player Turn. If this Check is failed then all Models in the Unit gain the Routed Status, if the Check is passed then there is no further effect. The value of X attached to this Special Rule is applied as a negative modifier to the Leadership Characteristic of Models in the Target Unit when making Checks caused by an attack with this Special Rule. If the attack includes multiple Weapons with different versions of this Special Rule the modifiers do not stack - use only the greatest modifier.",
+            "configurable": true
+        },
+        "phage": {
+            "id": "phage",
+            "name": "Phage",
+            "text": "Unsaved Wounds with the Phage (X) Special Rule reduce a Characteristic by 1. If an attack made for a Weapon or Model with this Special Rule inflicts one or more Unsaved Wounds on a Target Unit, then once the Shooting Attack or Initiative Step in which the Unsaved Wound was inflicted has been completely resolved, all remaining Models in the Unit that was the target of the attack must reduce the Characteristic that is the value of X for that variant of the Phage (X) Special Rule by 1 for the remainder of the Battle. Models in a Unit may have any number of different Characteristics reduced by 1 by the Phage (X) Special Rule, but no individual Characteristic may be reduced by more than 1 by the Phage (X) Special Rule no matter how many Unsaved Wounds with any variant of that Special Rule are allocated to Models in that Unit.",
+            "configurable": true
+        },
+        "precision": {
+            "id": "precision",
+            "name": "Precision",
+            "text": "Attacks made with the Precision (X) Special Rule are allocated by the Attacking Player, not the Defender. When any Hit Test is made for an attack with the Precision (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Precision (X) Special Rule, then if a Hit is inflicted by that roll, that Hit becomes a ‘Precision Hit’. These Precision Hits must form a separate Fire Group or Strike Group. Wound Tests are made as normal for Precision Hits and cause Precision wounds. In Step 8 of the Shooting Attack process or Step 7 of the Initiative Step sequence, when selecting a Target Model for a Fire Group or Strike Group that is made up of Precision wounds, the Target Model is not selected using the normal Rules. Instead the attacking Player chooses which Model in the Target Unit will be the Target Model, and may select any Model that is a part of that Unit. Note that Models Engaged in a Challenge cannot use this Special Rule to allocate Hits to any Model other than the enemy Model that is Engaged in the same Challenge and that any attacks which are made as Snap Shots, or for Weapons or attacks that have either the Blast (X), Barrage (X), Template or Reaping Blow (X) Special Rules, may never trigger the Precision (X) Special Rule no matter what the result of the Hit Test is.",
+            "configurable": true
+        },
+        "rapid-tracking": {
+            "id": "rapid-tracking",
+            "name": "Rapid Tracking",
+            "text": "Weapons with this Special Rule are better able to utilise it for intercepting new arrivals on the Battlefield. Each time a Model makes a Shooting Attack as part of the Intercept Advanced Reaction, its Controlling Player can select a Weapon with this Special Rule for that Shooting Attack, even if it is not a Defensive Weapon."
+        },
+        "reaping-blow": {
+            "id": "reaping-blow",
+            "name": "Reaping Blow",
+            "text": "If a Model with this Special Rule is outnumbered, it gains extra attacks. If a Model is outnumbered in Combat and either has this Special Rule or is made to attack with a Weapon that has this Special Rule, then that Model gains a bonus to its Attacks Characteristic equal to the value of X attached to the variant of this Special Rule it has access to. To be considered outnumbered, the total number of Friendly Models Locked in the same Combat must be less than the total number of Enemy Models Locked in the same Combat. This Special Rule has no effect during the Challenge Sub-Phase, and no Model that is Engaged in a Challenge may gain additional Attacks due to this Special Rule.",
+            "configurable": true
+        },
+        "rending": {
+            "id": "rending",
+            "name": "Rending",
+            "text": "With a Weapon that has the Rending (X) Special Rule, there is a chance that a Hit Test may result in an automatic wound. When any Hit Test is made for an attack with the Rending (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Rending (X) Special Rule, then if a Hit is inflicted by that Hit Test, that Hit becomes a ‘Rending Hit’. When required to make a Wound Test for a Rending Hit, no Dice are rolled and the Wound Test succeeds automatically regardless of the Weapon’s Strength or the Target’s Toughness. The Wound Test is treated as if the result had been ‘6’ for the purposes of any Rules that would be triggered on certain results of a Wound Test. Wounds caused by a Rending Hit use the AP and Damage Characteristics of the Weapon used to make the attack and retain any Special Rules that Weapon had. If the Target Unit for an attack made with a Weapon that has this Special Rule includes any Models with the Vehicle Type, then this Special Rule has no effect.",
+            "configurable": true
+        },
+        "shock": {
+            "id": "shock",
+            "name": "Shock",
+            "text": "Weapons with the Shock (X) Special Rule have a chance of inflicting Statuses on Vehicles even if it does not penetrate their armour. When making a Hit Test for a Weapon with this Special Rule against a Target Unit that includes any Models with the Vehicle Type or Walker Type, the result of the Hit Test before any modifiers are applied must be checked. If any Hit Test for a Weapon with the Shock (X) Special Rule results in a ‘5’ or ‘6’ before any modifiers are applied, then all Models with the Vehicle Type or Walker Type in the Target Unit gain a Status at the end of Step 11 of the Shooting Attack process or Step 10 of the Initiative Step process. The Status gained is indicated by the value of X attached to that variant of the Shock (X) Special Rule. If the Model already has the stated Status or the attack would apply the Status multiple times there is no additional effect and this Special Rule never causes a Model to lose Wounds or Hull Points. Hits inflicted by a Weapon with this Special Rule must still have Wound Tests or Armour Penetration Tests made for them, and are not discarded if they trigger this Special Rule.",
+            "configurable": true
+        },
+        "shred": {
+            "id": "shred",
+            "name": "Shred",
+            "text": "Attacks made with the Shred (X) Special Rule can sometimes inflict an extra point of Damage. When any Wound Test is made for an attack with the Shred (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Shred (X) Special Rule, then if a wound is inflicted by that Wound Test, the Damage Characteristic of that wound is increased by 1. Note that the Shred (X) Special Rule may only be triggered by a Wound Test and has no effect when making an Armour Penetration Test.",
+            "configurable": true
+        },
+        "stun": {
+            "id": "stun",
+            "name": "Stun",
+            "text": "Weapons and other attacks that have the Stun (X) Special Rule have a chance of inflicting the Stunned Status on the Target Unit. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more Hits on a Target Unit, that Target Unit must make a Cool Check in the Morale Sub-Phase of the same Player Turn. If this Check is failed then all Models in the Unit gain the Stunned Status and if the Check is passed then there is no further effect. The value of X attached to this Rule is applied as a negative modifier to the Cool Characteristic of Models in the Target Unit when making Checks caused by an Attack with this Special Rule, if the attack includes multiple Weapons with different versions of this Special Rule the modifiers do not stack - use only the greatest modifier.",
+            "configurable": true
+        },
+        "suppressive": {
+            "id": "suppressive",
+            "name": "Suppressive",
+            "text": "Weapons and other attacks that have the Suppressive (X) Special Rule have a chance of inflicting the Suppressed Status on the Target Unit. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more Hits on a Target Unit, that Target Unit must make a Cool Check in the Morale Sub-Phase of the same Player Turn. If this Check is failed all Models in the Unit gain the Suppressed Status, and if the Check is passed then there is no further effect. The value of X attached to this Rule is applied as a negative modifier to the Cool Characteristic of Models in the Target Unit when making Checks caused by an Attack with this Special Rule, if the attack includes multiple Weapons with different versions of this Special Rule the modifiers do not stack - use only the greatest modifier.",
+            "configurable": true
+        },
+        "template": {
+            "id": "template",
+            "name": "Template",
+            "text": "Weapons and attacks with the Template Special Rule use the Flame Template to determine how many Models they Hit. When making attacks for a Weapon or other effect that has the Template Special Rule, or otherwise uses a Template, no Hit Tests are made for the attack. Instead, when directed to make Hit Tests for such an attack, a single Template is placed to determine how many Hits are generated. A Template must be placed so that its narrow end is touching the Base of the Model, the edge of a Model’s Hull (if it has the Vehicle Type) or other point being used to make the attack, and so that no part of the Template covers or touches a friendly Model’s Base, Hull or otherwise would inflict Hits on a friendly Model. Within these restrictions, the Player making the attack may place the Template in an orientation of their choosing as long as at least one Model from the original Target Unit remains under the Template. If the Template cannot be placed under these restrictions, such as if it cannot be placed without covering or touching friendly Models, then no attack may be made. Once the Template has been placed, a number of Hits using the profile of the Weapon or effect are inflicted on the Target Unit equal to the number of Models touched or covered by the Template. If the Weapon or attack has a Firepower Characteristic greater than 1 then only a single Template is placed, but the number of Hits inflicted per Model touched or covered by the Template is equal to the Firepower Characteristic of the attack or Weapon. If more than one enemy Unit has Models that are touched or covered by the Template in its final position, then Hits are inflicted on all such Units as noted above, Hits on Units other than the original target form a new Fire Group that must be placed to one side and used to resolve a separate Shooting Attack on the additional Target Unit once all attacks and Fire Groups from the original Shooting Attack have been fully resolved. When resolving Armour Penetration Tests for Hits inflicted by a Weapon with this Special Rule, the position of the Model that was used to make the attack is used to determine which Armour Facing is used. Note that the Rules require a Template to be placed in Base Contact with the Model being used to make the attack, but this Model is not counted as having been Hit by the attack and does not stop the attack from being made. However, this only applies to the individual Model being used to make the attack, not to other Models in the same Unit. Weapons with this Special Rule will have their Range Characteristic as ‘Template’. This does not count as a value of ‘0’ or ‘-’. If a Rule requires a number for the Range Characteristic then all Weapons and attacks with this Special Rule are considered to have a Range Characteristic of ‘8’. OTHER TEMPLATES In some rare cases a Weapon may use a different Template than the standard Flame Template, in these cases the Template Rule may be expressed with a bracketed section stating which Template must be used when attacking with that Weapon. Otherwise, the Rules for its use are unchanged from those noted under the Template Special Rule, with the exception of the Range Characteristic it is considered to have. An example of this is the use of the Hellstorm Template for certain very large Weapons. In this case the Rule would be expressed as ‘Template (Hellstorm)’ and the attack would be resolved using the Template Special Rule, but placing the larger Hellstorm Template. Weapons with the Template (Hellstorm) Special Rule are considered to have a Range Characteristic of ‘16’ when a Rule requires such weapons to have a numbered Range Characteristic.",
+            "configurable": true
+        },
+        "vanguard": {
+            "id": "vanguard",
+            "name": "Vanguard",
+            "text": "A Unit that includes Models with this Special Rule can score Victory Points for destroying enemy Units. The Controlling Player of a Unit that includes a majority of Models with the Vanguard (X) Special Rule scores Victory Points equal to the value of X when: An enemy Unit that is within 3\" of an Objective Marker, or was within 3\" of an Objective Marker at the start of the Player Turn has its last model Removed as a Casualty by an attack made by that Unit. An enemy Unit that is within 3\" of an Objective Marker, or was within 3\" of an Objective Marker at the start of the Player Turn gains the Routed Tactical Status while in a Combat with that Unit. The Vanguard (X) Special Rule may only be used to score Victory Points once per Objective per Player Turn. If a Unit includes Models with different values of X for this Special Rule, the Controlling Player may select which one is used. A Unit that includes a majority of Models with the Vanguard (X) Special Rule may only ever score 1 Victory Point for Controlling an Objective, regardless of that Objective’s value or any other bonuses.",
+            "configurable": true
+        }
+    },
+    "groups": {
+        "moritoi-convocation": {
+            "id": "moritoi-convocation",
+            "name": "Moritoi Convocation",
+            "type": "apex",
+            "slots": [
+                {
+                    "roles": ["war-engine"],
+                    "tags": ["prime"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                },
+                {
+                    "roles": ["war-engine"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                }
+            ],
+            "description": "Only Units entirely composed of Models with the Legio Custodes Trait may be selected to fill Force Organisation Slots in this Detachment."
+        },
+        "hykanatoi-convocation": {
+            "id": "hykanatoi-convocation",
+            "name": "Hykanatoi Convocation",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                },
+                {
+                    "roles": ["troop"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                }
+            ],
+            "description": "Only Units entirely composed of Models with the Legio Custodes Trait may be selected to fill Force Organisation Slots in this Detachment."
+        },
+        "tharanatoi-convocation": {
+            "id": "tharanatoi-convocation",
+            "name": "Tharanatoi Convocation",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["heavy-assault"],
+                    "tags": ["prime"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                }
+            ],
+            "description": "Only Units entirely composed of Models with the Legio Custodes Trait may be selected to fill Force Organisation Slots in this Detachment."
+        },
+        "ephoroi-convocation": {
+            "id": "ephoroi-convocation",
+            "name": "Ephoroi Convocation",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["recon"],
+                    "tags": ["prime"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                },
+                {
+                    "roles": ["recon"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                }
+            ],
+            "description": "Only Units entirely composed of Models with the Legio Custodes Trait may be selected to fill Force Organisation Slots in this Detachment."
+        },
+        "kataphractoi-convocation": {
+            "id": "kataphractoi-convocation",
+            "name": "Kataphractoi Convocation",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["fast-attack"],
+                    "tags": ["prime"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                },
+                {
+                    "roles": ["armour"],
+                    "units": {
+                        "traits": ["Legio Custodes"]
+                    }
+                }
+            ],
+            "description": "Only Units entirely composed of Models with the Legio Custodes Trait may be selected to fill Force Organisation Slots in this Detachment."
+        }
+    },
+    "slotOptions": {
+        "prefect": {
+            "id": "prefect",
+            "name": "Prefect",
+            "text": "All Models in the Unit selected to fill a Prime Slot with this Prime Advantage modify their Base Wounds Characteristic by +1 and gain the Officer of the Line (2) Special Rule.",
+            "slotTag": "prime",
+            "units": {
+                "unitIds": ["shield-captain"]
+            },
+            "effects": [
+                {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "w",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "officer-of-the-line",
+                        "value": "2"
+                    }
+                }
+            ]
+        },
+        "hetaeron-guard": {
+            "id": "hetaeron-guard",
+            "name": "Hetaeron Guard",
+            "text": "All Models in the Unit selected to fill a Prime Slot with this Prime Advantage which have the Legio Custodes Trait and the Infantry or Cavalry Type modify the value of X of any version of the Eternal Warrior (X) Special Rule they have to ’2’. This Prime Advantage may only be selected once per Army, unless the Army contains any Models with the Golden Exemplar Trait, in which case a single additional selection of this Prime Advantage may be made for each Model in the Army with that Trait.",
+            "slotTag": "prime",
+            "units": {
+                "traits": ["Legio Custodes"],
+                "profiles": {
+                    "anyOf": ["infantry", "cavalry"]
+                }
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Hetaeron Guard"]
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "eternal-warrior",
+                        "value": "2"
+                    }
+                }
+            ]
+        }
+    },
+    "listRules": {
+        "legio-custodes-loyalist-only": {
+            "kind": "expression",
+            "id": "legio-custodes-loyalist-only",
+            "scope": "list",
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Units from the Legio Custodes Army List can only be selected in an Army with the Loyalist Allegiance"
+            }
+        },
+        "hetaeron-guard-once-per-army": {
+            "kind": "count",
+            "id": "hetaeron-guard-once-per-army",
+            "units": {
+                "traits": ["Hetaeron Guard"]
+            },
+            "scope": "list",
+            "max": "1 + list.count(trait:golden-exemplar)",
+            "message": "Hetaeron Guard can only be selected once per Army, plus once more for each Model with the Golden Exemplar Trait"
+        },
+        "custodes-allies-talons-only": {
+            "kind": "expression",
+            "id": "custodes-allies-talons-only",
+            "scope": "group",
+            "groupTypes": ["allied"],
+            "when": {
+                "if": "not main.is(faction:legio-custodes) or group.sum(points) == group.sum(points, trait:talons-of-the-emperor)",
+                "message": "With a Legio Custodes Primary Detachment, Allied Detachments may only include Units with the Talons of the Emperor Trait"
+            }
+        }
+    }
+}

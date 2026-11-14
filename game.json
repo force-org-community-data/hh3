@@ -530,6 +530,41 @@
                 "percentOfLimit": 25
             },
             "message": "No more than 25% of the points limit may be spent on Warlord and Lord of War units"
+        },
+        "clade-operative-once-per-army": {
+            "kind": "count",
+            "id": "clade-operative-once-per-army",
+            "units": {
+                "traits": ["Clade Operative"]
+            },
+            "scope": "list",
+            "max": 1,
+            "message": "Clade Operative can only be selected for a single Force Organisation Slot in an Army"
+        },
+        "clade-operative-primary-only": {
+            "kind": "expression",
+            "id": "clade-operative-primary-only",
+            "scope": "group",
+            "groupTypes": [
+                "allied",
+                "auxiliary",
+                "apex",
+                "warlord",
+                "lord-of-war"
+            ],
+            "when": {
+                "if": "group.count(trait:clade-operative) == 0",
+                "message": "Clade Operative may only be selected in an Army’s Primary Detachment"
+            }
+        },
+        "clade-operative-loyalist-only": {
+            "kind": "expression",
+            "id": "clade-operative-loyalist-only",
+            "scope": "list",
+            "when": {
+                "if": "choice(allegiance) == loyalist or list.count(trait:clade-operative) == 0",
+                "message": "Clade Operative may only be selected in an Army with the Loyalist Allegiance"
+            }
         }
     },
     "groups": {
@@ -953,6 +988,72 @@
                             "add": ["Logistical"]
                         }
                     ]
+                }
+            ]
+        },
+        "clade-operative": {
+            "id": "clade-operative",
+            "name": "Clade Operative",
+            "text": "Add three additional slots of the Support Battlefield Role to the Detachment that includes the Prime Slot with this Prime Advantage. These Force Organisation Slots may only be filled by Units selected from the Divisio Assassinorum Army List. This Prime Advantage may only be selected for a single Force Organisation Slot in an Army’s Primary Detachment.",
+            "slotTag": "prime",
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Clade Operative"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": ["support"],
+                    "source": {
+                        "faction": "divisio-assassinorum"
+                    },
+                    "units": {
+                        "unitIds": [
+                            "adamus-assassin",
+                            "callidus-assassin",
+                            "culexus-assassin",
+                            "eversor-assassin",
+                            "vanus-infocyte-assassin",
+                            "venenum-assassin",
+                            "vindicare-assassin"
+                        ]
+                    }
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": ["support"],
+                    "source": {
+                        "faction": "divisio-assassinorum"
+                    },
+                    "units": {
+                        "unitIds": [
+                            "adamus-assassin",
+                            "callidus-assassin",
+                            "culexus-assassin",
+                            "eversor-assassin",
+                            "vanus-infocyte-assassin",
+                            "venenum-assassin",
+                            "vindicare-assassin"
+                        ]
+                    }
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": ["support"],
+                    "source": {
+                        "faction": "divisio-assassinorum"
+                    },
+                    "units": {
+                        "unitIds": [
+                            "adamus-assassin",
+                            "callidus-assassin",
+                            "culexus-assassin",
+                            "eversor-assassin",
+                            "vanus-infocyte-assassin",
+                            "venenum-assassin",
+                            "vindicare-assassin"
+                        ]
+                    }
                 }
             ]
         }
