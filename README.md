@@ -1,42 +1,59 @@
-# <your game> data for Force Org
+# Horus Heresy 3rd Edition data for Force Org
 
-Community-maintained rules data for **<your game>**, in the format read by the Force Org list builder. This repository is one data source: `forceorg.json` at the root lists the game and the faction files it provides.
+Community-maintained rules data for **The Horus Heresy 3rd Edition**, read by the [Force Org](https://github.com/JosephMassie/force_org) army list builder. It covers the Legiones Astartes and all 18 Legions, the Solar Auxilia and the Mechanicum Taghmata.
 
-> **Unofficial.** This project is not affiliated with or endorsed by Games Workshop or any other publisher. Contributions must be original data entry of rules values, not copied rulebook text beyond what the data format needs.
+> **Unofficial.** This project is not affiliated with or endorsed by Games Workshop or Forge World.
 
-> **Made from the template?** Work through [docs/after-creating-from-the-template.md](docs/after-creating-from-the-template.md) first, then delete it and this note. The data currently in the repo is a placeholder.
+## What's in the repo
 
-## Create a new data repo from this template
+```
+forceorg.json     manifest: the game and the files it provides
+game.json         the game's vocabulary and shared records
+factions/         one file per faction
+sub-factions/     one file per Legion, cohort or other sub-faction
+```
 
-This repository is a GitHub template. To start a data repo for a game:
+Files not listed in `forceorg.json` are not loaded.
 
-1. On GitHub, open this repository and click **Use this template**, then **Create a new repository**. Pick the owner and a name (for example `fo_data_<game>`), and choose Public so the app and the jsDelivr schema URLs can reach it. Leave "Include all branches" off.
-   Or with the GitHub CLI:
+## Editing the data
+
+You need [Node.js](https://nodejs.org) 22 or newer and git.
+
+1. Clone the repo (or your fork) and install the validator:
 
     ```bash
-    gh repo create <owner>/<new-repo> --template force-org-community-data/game_template --public --clone
+    git clone https://github.com/force-org-community-data/hh3.git
+    cd hh3
+    npm ci
     ```
 
-2. Clone it (the CLI command above already does) and run `npm ci && npm run validate`. It should report `0 errors`; the placeholder data is valid from day one.
-3. Follow [docs/after-creating-from-the-template.md](docs/after-creating-from-the-template.md): rename the game, replace the placeholder source, set reviewers, and re-apply the GitHub settings (branch protection, Actions, Dependabot), because templates copy files but not settings.
-4. Delete that checklist and this section from the new repo's README.
+2. Edit the JSON files. The [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v1.4.0/docs/data_authoring_guide.md) explains the file kinds, ids, costs, upgrades and expressions; [docs/editor-setup.md](docs/editor-setup.md) sets up schema hints in your editor.
+3. Check your change until it reports `0 errors`:
 
-## Use this data in Force Org
+    ```bash
+    npm run validate
+    ```
 
-In the app, open Sources in settings and add this repository's address:
+4. Format the files you changed:
+
+    ```bash
+    npx prettier --write <files you changed>
+    ```
+
+5. Open a pull request. CI runs the same check, and a failing pull request can't be merged. See [CONTRIBUTING.md](CONTRIBUTING.md) for the rules and how releases work.
+
+## Using it in Force Org
+
+Force Org loads this data by default: a new install starts with the source `github.com/force-org-community-data/hh3` at the `v1` tag, so every 1.x release reaches players on its own.
+
+To try other data, open **Settings → Data sources** in the app and add the address with a tag or branch:
 
 ```
-github.com/<owner>/<repo>
-github.com/<owner>/<repo>@<tag-or-branch>
+github.com/force-org-community-data/hh3@v1.0.0
+github.com/force-org-community-data/hh3@my-branch
 ```
 
-Pin a tag (`@v1.0.0`) to stay on a fixed release, or leave the ref off to follow the default branch. Nothing is added to the app by default; every player adds the sources they want.
-
-## Contribute
-
-1. Read [CONTRIBUTING.md](CONTRIBUTING.md) and [docs/getting-started.md](docs/getting-started.md).
-2. Edit or add files, run `npm run validate` until it reports `0 errors`.
-3. Open a pull request. CI runs the same check and a failing pull request cannot be merged.
+Pin a tag to stay on a fixed release, or use a branch to try a pull request's changes before it merges. A fork works the same way with its own address. If a file fails to load, the app refuses the whole source and shows the error; `npm run validate` finds it locally. More in [docs/using-with-the-app.md](docs/using-with-the-app.md).
 
 ## Docs
 
@@ -45,19 +62,4 @@ Pin a tag (`@v1.0.0`) to stay on a fixed release, or leave the ref off to follow
 - [Editor setup](docs/editor-setup.md)
 - [Using this repo with the app](docs/using-with-the-app.md)
 - [Review checklist](docs/review-checklist.md)
-- Validator: [data authoring guide](https://github.com/force-org-community-data/fo_data_validator/blob/v1.4.0/docs/data_authoring_guide.md), [data schema spec](https://github.com/force-org-community-data/fo_data_validator/blob/v1.4.0/docs/specs/data_schema_spec_2026-10-17.md), [expression language spec](https://github.com/force-org-community-data/fo_data_validator/blob/v1.4.0/docs/specs/expression_language_spec_2026-10-17.md)
-
-## Shape of the repo
-
-One source per repository. A repo holds one game, or a few closely associated games that share factions. Unrelated games belong in their own repos so each has its own release cadence, and one broken game cannot stop another from loading.
-
-```
-forceorg.json     manifest: lists the games and files provided
-game.json         the game's vocabulary and shared records
-factions/         one file per faction
-sub-factions/     one file per sub-faction (optional)
-```
-
-Files not listed in `forceorg.json` are not loaded.
-
-Extensions (`extends`: a source that adds to another source's game) validate with the CLI but are not loaded by the app yet.
+- Validator: [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v1.4.0/docs/data_authoring_guide.md), [data schema spec](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v1.4.0/docs/specs/data_schema_spec_2026-10-17.md), [expression language spec](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v1.4.0/docs/specs/expression_language_spec_2026-10-17.md)

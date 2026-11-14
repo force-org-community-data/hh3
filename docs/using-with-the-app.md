@@ -1,20 +1,18 @@
 # Using this repo with Force Org
 
-Force Org points at no data source by default. Players add the sources they want.
+Force Org loads this repo by default: a new install starts with `github.com/force-org-community-data/hh3` at the moving `v1` tag, so each 1.x release reaches players without them doing anything. Players can switch it off, remove it, or add it back from settings.
 
-1. Open Sources in the app's settings.
-2. Add the repo address:
+To use another version:
 
-```
-github.com/<owner>/<repo>
-```
-
-3. To pin a version, add a tag or branch:
+1. Open **Settings → Data sources** in the app.
+2. Add the address with a tag or branch:
 
 ```
-github.com/<owner>/<repo>@v1.0.0
-github.com/<owner>/<repo>@my-branch
+github.com/force-org-community-data/hh3@v1.0.0
+github.com/force-org-community-data/hh3@my-branch
 ```
+
+A fork works the same way with its own address.
 
 A tag or branch applies to the whole repo. Without a ref the default branch is used. Pin a tag for stable lists; use a branch to try a pull request's changes before it merges.
 
