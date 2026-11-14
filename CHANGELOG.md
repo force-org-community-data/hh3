@@ -6,6 +6,7 @@
 - A list rule flags a Legio Custodes or Anathema Psykana contingent in an Army without the Loyalist Allegiance (their units already had a "Loyalist units only" alert each).
 - The Clade Operative Prime Advantage in `game.json`: any Loyalist Primary Detachment's Prime Slot can add three Support slots filled from the Divisio Assassinorum.
 - Uses validator 1.11.0: weapons with a ranged and a melee profile (Custodian spears, Galatus warblade, Verutum lance) are one weapon each; the Shield Trait sits on the Sentinel Guard profile only; vehicle weapons show where they are mounted (`defaultGear` `note`, upgrade `gearNote`).
+- Mount notes for the Legiones Astartes, Solar Auxilia and Mechanicum vehicles (and the legion vehicles in sub-factions), taken from each datasheet's wargear and option text, and on the Pintle and Sponson weapon lists. The Stormhammer gains its co-axial multi-laser, and the Dracosan's "Melee weapon" upgrade is renamed "Vehicle equipment".
 
 ## 1.0.0
 
