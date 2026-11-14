@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping. This repo holds rules data only; the checker lives in the [validator](https://github.com/force-org-community-data/fo_data_validator).
+Thanks for helping. This repo holds rules data only; the checker lives in the [validator](https://github.com/Force-Organization-Army-Builder/fo_data_validator).
 
 ## Flow
 
@@ -22,7 +22,7 @@ Thanks for helping. This repo holds rules data only; the checker lives in the [v
 
 ## Releasing (maintainers)
 
-Players pin a release tag in the app (`github.com/<owner>/<repo>@v1.2.3`, see [docs/using-with-the-app.md](docs/using-with-the-app.md)).
+The app follows the `v1` tag by default, and players can pin a release tag instead (`github.com/force-org-community-data/hh3@v1.2.3`, see [docs/using-with-the-app.md](docs/using-with-the-app.md)).
 
 1. Set the new version in `game.json`, then run `npm run sync-version` to copy it into `package.json` and `package-lock.json`: a **patch** for data fixes, a **minor** for added units, factions or options, a **major** for a change that breaks saved army lists (ids removed or renamed, a new game `version` range).
 2. Add an entry to [CHANGELOG.md](CHANGELOG.md), commit, and merge to `main`.
@@ -32,7 +32,7 @@ Players pin a release tag in the app (`github.com/<owner>/<repo>@v1.2.3`, see [d
 
 ## Recommended branch protection (maintainers)
 
-Template repositories don't copy settings. On `main`, enable:
+On `main`, enable:
 
 - Require a pull request before merging, with at least one approving review
 - Require status checks to pass: **`validate`**
