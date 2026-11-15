@@ -592,11 +592,37 @@
             "values": {
                 "loyalist": {
                     "id": "loyalist",
-                    "name": "Loyalist"
+                    "name": "Loyalist",
+                    "units": {
+                        "exclude": [
+                            {
+                                "traits": ["Traitor"]
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Loyalist"]
+                        }
+                    ]
                 },
                 "traitor": {
                     "id": "traitor",
-                    "name": "Traitor"
+                    "name": "Traitor",
+                    "units": {
+                        "exclude": [
+                            {
+                                "traits": ["Loyalist"]
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Traitor"]
+                        }
+                    ]
                 }
             }
         }
