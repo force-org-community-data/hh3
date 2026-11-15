@@ -11,6 +11,8 @@
 - The Artificia unit type; the Dark Angels Excindio Battle-automata is Artificia, not Automata.
 - Unit types carry their rules text in `description` (from the Wahapedia type tooltips; Vehicle points to the core Vehicle rules).
 - Uses validator 1.12.0: the 16 sub-types used as profile tags (Champion, Command, Sergeant, Unique, Light, Heavy, Antigrav, Transport, Flyer, Super-heavy and the rest) are records in `game.json` `subTypes` with their rules text, so a misspelt tag or `tag:` reference now warns.
+- Unit traits checked against every Wahapedia datasheet: the 169 Legiones Astartes units gain the Legiones Astartes trait, the Forces of the Emperor units their Loyalist trait and the Traitor Mechanicum units their Traitor trait (their allegiance alerts stay), and traits the page gives one model only (Numerologist Diviner and Telepath, Zardu Layak Psyker) move onto that model's profile.
+- Uses validator 1.13.0: the Army's Allegiance gives its trait (Loyalist or Traitor) to every unit in the list that doesn't already carry the other one, as the datasheets' "[Allegiance]" trait says.
 
 ## 1.0.0
 
