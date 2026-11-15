@@ -7,6 +7,10 @@
 - The Clade Operative Prime Advantage in `game.json`: any Loyalist Primary Detachment's Prime Slot can add three Support slots filled from the Divisio Assassinorum.
 - Uses validator 1.11.0: weapons with a ranged and a melee profile (Custodian spears, Galatus warblade, Verutum lance) are one weapon each; the Shield Trait sits on the Sentinel Guard profile only; vehicle weapons show where they are mounted (`defaultGear` `note`, upgrade `gearNote`).
 - Mount notes for the Legiones Astartes, Solar Auxilia and Mechanicum vehicles (and the legion vehicles in sub-factions), taken from each datasheet's wargear and option text, and on the Pintle and Sponson weapon lists. The Stormhammer gains its co-axial multi-laser, and the Dracosan's "Melee weapon" upgrade is renamed "Vehicle equipment".
+- Units the rules limit to one per Army lose the "0-1" prefix from their names, and a list rule now flags a second one: the Dark Angels Excindio Battle-automata, Blood Angels Ofanim Court (with or without Jump Packs, shared), Emperor's Children Sun Killer Squad, Imperial Fists Huscarl Terminator Retinue, Iron Warriors Dominator Cohort, Thousand Sons Numerologist Cabal, Raven Guard Deliverers Squad, and the Solar Auxilia Davinite Lodge Priest and Expeditionary Navigator.
+- The Artificia unit type; the Dark Angels Excindio Battle-automata is Artificia, not Automata.
+- Unit types carry their rules text in `description` (from the Wahapedia type tooltips; Vehicle points to the core Vehicle rules).
+- Uses validator 1.12.0: the 16 sub-types used as profile tags (Champion, Command, Sergeant, Unique, Light, Heavy, Antigrav, Transport, Flyer, Super-heavy and the rest) are records in `game.json` `subTypes` with their rules text, so a misspelt tag or `tag:` reference now warns.
 
 ## 1.0.0
 

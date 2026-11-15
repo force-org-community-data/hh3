@@ -106,27 +106,38 @@
     "unitTypes": {
         "infantry": {
             "id": "infantry",
-            "name": "Infantry"
+            "name": "Infantry",
+            "description": "Infantry is the most basic Type, and is applied to most Models in the game. A Model with the Infantry Type uses the Core Rules without modification, gaining neither benefit nor penalty. Models with the Infantry Type may Embark and Disembark upon Models with the Transport Sub-Type."
         },
         "cavalry": {
             "id": "cavalry",
-            "name": "Cavalry"
+            "name": "Cavalry",
+            "description": "The following Rules apply to all Models with the Cavalry Type: When making a Fall Back Move for a Model with the Cavalry Type, that Model moves a distance equal to the Initiative Characteristic of the Model plus the total of two Dice rolled and added together. Models with the Cavalry Type may not make use of any Cover Save granted by Terrain Features or Areas of Terrain."
         },
         "walker": {
             "id": "walker",
-            "name": "Walker"
+            "name": "Walker",
+            "description": "The following Rules apply to all Models with the Walker Type: When targeting a Unit that includes any Models with the Walker Type, the effects of the Poisoned (X) Special Rule only trigger on a Wound Test with a result of a ‘6’ before modifiers are applied, regardless of the value of X for that variant of the Special Rule. A Model with the Walker Type may attack with all Weapons they have in each Shooting Attack they make, including as part of a Reaction. Note that this does not allow Weapons that do not have the Assault Trait to be used to attack as part of a Volley Attack. In Step 1 of the Resolution Sub-Phase, when deciding how many Models a Player controls in a Combat, a Model with the Walker Type counts as a number of Models equal to that Model’s Base Wounds Value."
         },
         "paragon": {
             "id": "paragon",
-            "name": "Paragon"
+            "name": "Paragon",
+            "description": "The following Rules apply to all Models with the Paragon Type: Any Hits inflicted by a Model with the Paragon Type, as part of either Shooting Attacks or in close combat, are allocated by the attacking Model’s Controlling Player and not the Controlling Player of the Target Unit. Models with the Paragon Type may join and leave a Unit that includes Models with the Infantry Type, and Models with the Infantry Type may join and leave a Unit that includes one or more Models with the Paragon Type. Models with the Paragon Type may Embark and Disembark upon Models with the Transport Sub-Type. A Model with the Paragon Type may Issue and Accept Challenges. The Controlling Player of a Unit that includes one or more Models with the Paragon Type may use the Characteristics of one of those Models to resolve any Characteristic Checks made for that Unit. In Step 1 of the Resolution Sub-Phase, when deciding how many Models a Player controls in a Combat, a Model with the Paragon Type counts as a number of Models equal to that Model’s Base Wounds Value."
         },
         "automata": {
             "id": "automata",
-            "name": "Automata"
+            "name": "Automata",
+            "description": "The following Rules apply to all Models with the Automata Type: Models with the Automata Type cannot gain any Tactical Statuses and are considered to automatically pass any Check made to avoid gaining a Tactical Status. However, if a Unit that contains any Models with the Automata Type also includes any Models that do not have the Automata Type, that Check must be made using the Characteristics of one of the Models that does not have the Automata Type and is not automatically passed. When targeting a Unit that includes any Models with the Automata Type, the effects of the Poisoned (X) Special Rule only trigger on a Wound Test with a result of a ‘6’ before modifiers are applied, regardless of the value of X for that variant of the Special Rule. A Unit that includes one or more Models with the Automata Type may not make Reactions."
+        },
+        "artificia": {
+            "id": "artificia",
+            "name": "Artificia",
+            "description": "The following Rules apply to all Models with the Artificia Type: Models with the Artificia Type cannot gain any Cybertheurgic Statuses, but can gain Tactical Statuses or other kinds of Status effects. When targeting a Unit that includes any Models with the Artificia Type, the effects of the Poisoned (X) Special Rule only trigger on a Wound Test with a result of a ‘6’ before modifiers are applied, regardless of the value of X for that variant of the Special Rule."
         },
         "vehicle": {
             "id": "vehicle",
-            "name": "Vehicle"
+            "name": "Vehicle",
+            "description": "Models with the Vehicle Type follow the Vehicle rules in the Principles of Combat (Vehicles and Units): Repair Tests, Armour Penetration Tests and the Vehicle Damage Table in place of Wound Tests and Saving Throws, firing arcs and weapon mounts, and their own Movement, Shooting and Assault Phase rules."
         },
         "knight": {
             "id": "knight",
@@ -134,7 +145,90 @@
         },
         "ordinatus": {
             "id": "ordinatus",
-            "name": "Ordinatus"
+            "name": "Ordinatus",
+            "description": "The following Rules apply to all Models with the Ordinatus Sub-Type: Models with this Sub-Type are not affected in any way by Difficult Terrain or Dangerous Terrain, and may pass through Impassable Terrain as long as they do not end a Move on or within an area of Impassable Terrain. When making multiple Shooting Attacks in the same Shooting Phase, a Model with this Sub-Type does not have to make all attacks as Snap Shots. A Model with this Sub-Type is limited on when and which Reactions may be made for it. The Rules for applying Damage to a Model with this Sub-Type vary from those used with other Models with the Vehicle Type. The Rules for Shooting Attacks and Combats that involve Ordinatus are changed as noted in this addendum. If a Model with this Sub-Type has a Transport Capacity, then it may transport any number of Units, so long as the number of Models in the transported Units does not exceed the Vehicle’s Transport Capacity. A Model with this Sub-Type cannot gain any Tactical Statuses or Cybertheurgic Statuses. A Model with this Sub-Type cannot be affected by any Psychic Weapon, Psychic Reaction or Psychic Power. A Model with this Sub-Type may not be targeted by the Battlesmith (X) Special Rule."
+        }
+    },
+    "subTypes": {
+        "champion": {
+            "id": "champion",
+            "name": "Champion",
+            "description": "The following Rules apply to all Models with the Champion Sub-Type: A Model with the Champion Sub-Type may Issue and Accept Challenges."
+        },
+        "light": {
+            "id": "light",
+            "name": "Light",
+            "description": "The following Rules apply to all Models with the Light Sub-Type: A Unit that includes only Models with the Light Sub-Type gains a +2 modifier to its Initiative when determining how far that Unit may Rush (this bonus stacks with other bonuses to Rush distance). A Unit that includes only Models with the Light Sub-Type may make Shooting Attacks after having Rushed, but makes all such Shooting Attacks as Snap Shots. Models or Weapons that cannot attack as Snap Shots may not make attacks."
+        },
+        "sergeant": {
+            "id": "sergeant",
+            "name": "Sergeant",
+            "description": "The following Rules apply to all Models with the Sergeant Sub-Type: The Controlling Player of a Unit that includes one or more Models with the Sergeant Sub-Type may use the Characteristics of one of those Models to resolve any Characteristic Check made for that Unit."
+        },
+        "unique": {
+            "id": "unique",
+            "name": "Unique",
+            "description": "The following Rules apply to all Models with the Unique Sub-Type: An Army may not include more than a single instance of a given Model with this Sub-Type. For example, if Model A and Model B both have the Unique Sub-Type then a single Army could include one of Model A and one of Model B, but no more than one of either Model. A Model with the Unique Sub-Type or a Unit composed entirely of Models with the Unique Sub-Type may not have any options other than those included on its Army List Profile selected for them."
+        },
+        "command": {
+            "id": "command",
+            "name": "Command",
+            "description": "The following Rules apply to all Models with the Command Sub-Type: A Model with the Command Sub-Type may join and leave Units. A Model with the Command Sub-Type may Issue and Accept Challenges. The Controlling Player of a Unit that includes one or more Models with the Command Sub-Type may use the Characteristics of one of those Models to resolve any Characteristic Checks made for that Unit."
+        },
+        "antigrav": {
+            "id": "antigrav",
+            "name": "Antigrav",
+            "description": "The following Rules apply to all Models with the Antigrav Sub-Type: A Unit that includes only Models with the Antigrav Sub-Type may ignore the effects of any and all Terrain it passes over during movement, including passing over Impassable Terrain without penalty or restriction. However, such Units may not begin or end their movement in Impassable Terrain, and if beginning or ending their movement in Dangerous Terrain must take Dangerous Terrain Tests as normal. A Unit that includes only Models with the Antigrav Sub-Type may ignore both friendly and enemy Models and Units when moving. However, when moving over a friendly Unit all Models with the Antigrav Sub-Type must end their move at least 1\" away from all Models that are not part of the same Unit, or if moving over an enemy Unit, must end their move at least 1\" away from any enemy Model."
+        },
+        "transport": {
+            "id": "transport",
+            "name": "Transport",
+            "description": "All Models with the Transport Sub-Type are bound by a set of Rules regarding how they operate: All Models with the Transport Sub-Type have a Transport Capacity Characteristic, which determines the maximum number of Models that can Embark upon it - one Model per point of Transport Capacity, unless another Rule states otherwise. Only Models with the Infantry or Paragon Type may Embark or Disembark upon a Model with the Transport Sub-Type. A Unit may only Embark on a Model with the Transport Sub-Type if all Models in the Embarking Unit have the same Faction as the Model with the Transport Sub-Type. A Model with the Transport Sub-Type may only have a single Unit Embarked upon it at any one time (Models with the Specialist Sub-Type, Command Sub-Type or Paragon Type that have joined a Unit are considered part of that Unit and may Embark alongside it). A Unit may not be partially Embarked on a Model with the Transport Sub-Type - either all Models or no Models in a Unit may be Embarked on a given Model. If a Model with the Transport Sub-Type has a Unit Embarked upon it, the Embarked Unit is not considered part of the same Unit. The two remain separate Units for all purposes."
+        },
+        "specialist": {
+            "id": "specialist",
+            "name": "Specialist",
+            "description": "The following Rules apply to all Models with the Specialist Sub-Type: A Model with the Specialist Sub-Type may join and leave Units."
+        },
+        "heavy": {
+            "id": "heavy",
+            "name": "Heavy",
+            "description": "The following Rules apply to all Models with the Heavy Sub-Type: A Unit that includes only Models with the Heavy Sub-Type gains a bonus of +1 to its Cool Characteristic for Checks to avoid gaining Tactical Statuses. A Unit that includes any Models with the Heavy Sub-Type may not Rush. A Unit that includes any Models with the Heavy Sub-Type only uses its Movement Characteristic to determine how far it moves as part of a Set-up Move, not Movement and Initiative totalled."
+        },
+        "super-heavy": {
+            "id": "super-heavy",
+            "name": "Super-heavy",
+            "description": "The following Rules apply to all Models with the Super-heavy Sub-Type: Models with this Sub-Type are not affected in any way by Difficult Terrain or Dangerous Terrain, but may still neither pass through nor end their move in Impassable Terrain. A Model with this Sub-Type always gains any benefits for having remained Stationary when making Shooting Attacks, regardless of whether the Model moved in the preceding Movement Phase or the distance moved. This does not count if the Model has Rushed in the Preceding Movement Phase. When making multiple Shooting Attacks in the same Shooting Phase, a Model with this Sub-Type does not have to make all attacks as Snap Shots. A Model with this Sub-Type may only make Reactions in response to actions undertaken by Units that contain one or more Models with the Paragon Type, Super-heavy Sub-Type, Knight Sub-Type* or Titan Sub-Type*. When a Player is instructed to roll on the Vehicle Damage Table for a Model with this Sub-Type, no roll is made. Instead, the Model loses a single Hull Point. If a Model with this Sub-Type has a Transport Capacity, then it may transport any number of Units, so long as the number of Models in the transported Units does not exceed the Vehicle’s Transport Capacity. *See Liber Questoris for more details on these Unit Sub-Types."
+        },
+        "stable": {
+            "id": "stable",
+            "name": "Stable",
+            "description": "The following Rules apply to all Models with the Stable Sub-Type: A Model with this Sub-Type always gains any benefits for having remained Stationary when making Shooting Attacks, regardless of whether the Model moved in the preceding Movement Phase or the distance moved. This does not count if the Model has Rushed in the preceding Movement Phase. When making multiple Shooting Attacks in the same Shooting Phase, a Model with this Sub-Type does not have to make all attacks as Snap Shots."
+        },
+        "skirmish": {
+            "id": "skirmish",
+            "name": "Skirmish",
+            "description": "The following Rules apply to all Models with the Skirmish Sub-Type: A Unit that includes only Models with the Skirmish Sub-Type has a Unit Coherency range of 3\" rather than 2\"."
+        },
+        "rapid": {
+            "id": "rapid",
+            "name": "Rapid",
+            "description": "The following Rules apply to all Models with the Rapid Sub-Type: A Model with this Sub-Type may Rush - however the additional distance moved when Rushing is not determined by an Initiative Characteristic, but is always an additional 6\". When Rushing, a Model with this Sub-Type may make Shooting Attacks, but all Shooting Attacks are made as Snap Shots. A Model with this Sub-Type may not make multiple Shooting Attacks in the same Turn as one where it Rushes. A Model with both this Sub-Type and the Transport Sub-Type, that the Controlling Player chooses to have Rush in a Turn, may not Disembark any Models in the same Turn (unless required to make an Emergency Disembarkation by another Rule or Special Rule)."
+        },
+        "malefic": {
+            "id": "malefic",
+            "name": "Malefic",
+            "description": "The following Rules apply to all Models with the Malefic Sub-Type: When a Unit composed entirely of Models with the Malefic Sub-Type would gain a Tactical Status of any kind, that Tactical Status is not applied to the Models in the Unit, but instead the Unit suffers D3 automatic wounds with an AP of 2 and a Damage Characteristic of 1 against which no Saving Throws of any kind may be made. Once these wounds are resolved, no Tactical Status is applied to any Model in the Unit. Models with the Malefic Sub-Type are not affected by Special Rules that negatively modify their Leadership, Cool, Willpower or Intelligence Characteristics. No Model that does not also have the Malefic Sub-Type may join or be joined by a Unit that includes one or more Models with the Malefic Sub-Type."
+        },
+        "unstoppable": {
+            "id": "unstoppable",
+            "name": "Unstoppable",
+            "description": "The following Rules apply to all Models with the Unstoppable Sub-Type: A Unit comprised entirely of Models with this Sub-Type is never Locked in Combat, and during the Movement Phase may move normally even if there is an enemy Model in Base Contact with it. Enemy Models in Base Contact with such a Model in the Assault Phase may attack it as though they were Locked in Combat and engaged with it. A Model with this Sub-Type may move through enemy Models if it began the Movement Phase in Base Contact with one or more enemy Models - but may not end a move in the Movement Phase in Base Contact with an enemy Model. A Model with this Sub-Type may never Embark on a Model with the Transport Sub-Type, even if another Special Rule would allow it to do so. While there are one or more enemy Models in Base Contact with a Model with this Sub-Type, the Model with this Sub-Type may not make Shooting Attacks, even though it does not count as being Locked in Combat."
+        },
+        "flyer": {
+            "id": "flyer",
+            "name": "Flyer",
+            "description": "The following Rules are exceptions to the Core Rules that always apply to a Model with the Flyer Sub-Type at all times during a Horus Heresy Battle: Whilst on the Battlefield, a Model with the Flyer Sub-Type does not block Line of Sight or the Movement of any Model. When moving a Model with the Flyer Sub-Type, ignore all Terrain effects and Rules. However, a Model with the Flyer Sub-Type may still not end a move in or on Impassable Terrain, a Terrain Feature or a Building. Models with the Flyer Sub-Type may move through Models with the Vehicle Type, but never inflict Hits on enemy Units they move through and are never eligible to be the Target of the Death or Glory Advanced Reaction. No Model of any kind may join a Unit that includes a Model with the Flyer Sub-Type. A Model with the Flyer Sub-Type can never gain any Tactical Statuses and ignores any Rules that would force it to do so. A Model with the Flyer Sub-Type may never be Locked in Combat or attacked in any way during the Assault Phase and may not be targeted by attacks made using a Melee Weapon. A Model with the Flyer Sub-Type may never make a Reaction of any kind, unless that Reaction specifically states it may be made by Models with the Flyer Sub-Type - but can be targeted by Reactions. When a Player is instructed to roll on the Vehicle Damage Table for a Model with this Sub-Type, no roll is made. Instead, the Model loses a single Hull Point."
         }
     },
     "groupTypes": {
