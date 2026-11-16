@@ -6,11 +6,11 @@ Each data file starts with a `$schema` line so editors give completion and inlin
 
 ```json
 {
-    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@1/schema/faction.schema.json"
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/faction.schema.json"
 }
 ```
 
-Files: `source-manifest`, `game`, `faction`, `sub-faction` (each `<name>.schema.json`). `@1` follows the newest `1.x.x` validator tag and changes only on a major bump; use an exact tag (`@1.0.0`) to freeze it.
+Files: `source-manifest`, `game`, `faction`, `sub-faction` (each `<name>.schema.json`). `@2` follows the newest `2.x.x` validator tag and changes only on a major bump; use an exact tag (`@2.0.0`) to freeze it.
 
 Editors cache the schema, so a change can reach you late.
 

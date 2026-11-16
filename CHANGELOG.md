@@ -14,6 +14,7 @@
 - Unit traits checked against every Wahapedia datasheet: the 169 Legiones Astartes units gain the Legiones Astartes trait, the Forces of the Emperor units their Loyalist trait and the Traitor Mechanicum units their Traitor trait (their allegiance alerts stay), and traits the page gives one model only (Numerologist Diviner and Telepath, Zardu Layak Psyker) move onto that model's profile.
 - Uses validator 1.13.0: the Army's Allegiance gives its trait (Loyalist or Traitor) to every unit in the list that doesn't already carry the other one, as the datasheets' "[Allegiance]" trait says.
 - Uses validator 1.14.0, which requires lowercase kebab-case ids: the Assault Squad's Charnabal sabre option id loses its trailing hyphen.
+- Uses validator 2.0.0 (schema URLs move to `@2`). It rejects fractional counts and a fixed `min` above a fixed `max`, and adds warnings for unreadable versions, fields set where they are never read, and empty units or upgrades; this data already passed, so no records change.
 
 ## 1.0.0
 
