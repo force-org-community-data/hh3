@@ -15,6 +15,7 @@
 - Uses validator 1.13.0: the Army's Allegiance gives its trait (Loyalist or Traitor) to every unit in the list that doesn't already carry the other one, as the datasheets' "[Allegiance]" trait says.
 - Uses validator 1.14.0, which requires lowercase kebab-case ids: the Assault Squad's Charnabal sabre option id loses its trailing hyphen.
 - Uses validator 2.0.0 (schema URLs move to `@2`). It rejects fractional counts and a fixed `min` above a fixed `max`, and adds warnings for unreadable versions, fields set where they are never read, and empty units or upgrades; this data already passed, so no records change.
+- Every upgrade on a single-model unit (one model, one profile) is pinned to that profile with `profileId` (578 upgrades on 215 units), and the six sub-faction modifiers that add upgrades only to single-model units (Sons of Horus Decurion Lanius, Iron Hands Gorgon Terminator Armour, Raven Guard Corvid-pattern jump pack, Word Bearers Burning Lore) select `profiles` so their upgrade lands on the profile too.
 
 ## 1.0.0
 
