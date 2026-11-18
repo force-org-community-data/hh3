@@ -663,7 +663,7 @@
                 },
                 "option-1": {
                     "id": "option-1",
-                    "name": "Legion Sergeant Melee Weapons",
+                    "name": "Sgt Chainsword to Legion Sergeant Melee Weapons",
                     "description": "The Assault Sergeant in this Unit may have its chainsword and/or bolt pistol exchanged for one item each from the Legion Sergeant Melee Weapons list.",
                     "perModel": {
                         "type": "single"
@@ -682,7 +682,38 @@
                         }
                     },
                     "profileId": "assault-sergeant",
-                    "default": "none"
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "chainsword"
+                    }
+                },
+                "option-1-bolt-pistol": {
+                    "id": "option-1-bolt-pistol",
+                    "name": "Sgt Bolt pistol to Legion Sergeant Melee Weapons",
+                    "description": "The Assault Sergeant in this Unit may have its chainsword and/or bolt pistol exchanged for one item each from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "profileId": "assault-sergeant",
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolt-pistol"
+                    }
                 },
                 "option-2": {
                     "id": "option-2",
@@ -740,16 +771,47 @@
                     "options": {
                         "pair-of-lightning-claws": {
                             "id": "pair-of-lightning-claws",
-                            "name": "pair of lightning claws",
+                            "name": "Pair of lightning claws",
                             "cost": {
                                 "points": 10
                             },
                             "swaps": [
                                 {
-                                    "from": {
+                                    "from": [
+                                        {
+                                            "kind": "weapon",
+                                            "id": "bolt-pistol"
+                                        },
+                                        {
+                                            "kind": "weapon",
+                                            "id": "chainsword"
+                                        }
+                                    ],
+                                    "to": {
                                         "kind": "weapon",
-                                        "id": "bolt-pistol"
-                                    },
+                                        "id": "pair-of-lightning-claws"
+                                    }
+                                }
+                            ]
+                        },
+                        "pair-of-lightning-claws-for-combat-shield": {
+                            "id": "pair-of-lightning-claws-for-combat-shield",
+                            "name": "Pair of lightning claws for the combat shield and chainsword",
+                            "cost": {
+                                "points": 10
+                            },
+                            "swaps": [
+                                {
+                                    "from": [
+                                        {
+                                            "kind": "equipment",
+                                            "id": "combat-shield"
+                                        },
+                                        {
+                                            "kind": "weapon",
+                                            "id": "chainsword"
+                                        }
+                                    ],
                                     "to": {
                                         "kind": "weapon",
                                         "id": "pair-of-lightning-claws"
@@ -5209,12 +5271,30 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["combi-bolter"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "multiSelect": true,
                     "gearNote": "Pintle Mounted",
-                    "profileId": "damocles-command-rhino"
+                    "profileId": "damocles-command-rhino",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-2": {
                     "id": "option-2",
@@ -22582,7 +22662,7 @@
                 "option-2": {
                     "id": "option-2",
                     "name": "Quad launcher upgrade",
-                    "description": "If your Army includes a Siege Breaker Model with the same Faction Trait as the Models in this Unit, any Rapier Carrier with a quad launcher in this Unit may ...",
+                    "description": "If your Army includes a Siege Breaker Model with the same Faction Trait as the Models in this Unit, any Rapier Carrier with a quad launcher in this Unit may...",
                     "perModel": {
                         "type": "single"
                     },
@@ -22950,12 +23030,30 @@
                             "cost": {
                                 "points": 5
                             },
-                            "weaponRefs": ["combi-bolter"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "multiSelect": true,
                     "gearNote": "Pintle Mounted",
-                    "profileId": "rhino"
+                    "profileId": "rhino",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-2": {
                     "id": "option-2",
@@ -26254,7 +26352,8 @@
                     "name": "Hull (Left) Mounted Gravis heavy bolter battery",
                     "description": "Any of this Model’s Hull (Left) Mounted twin lascannon may each be exchanged for one Hull (Left) Mounted Gravis heavy bolter battery.",
                     "perModel": {
-                        "type": "single"
+                        "type": "multiple",
+                        "max": 2
                     },
                     "options": {
                         "hull-left-mounted-gravis-heavy-bolter-battery": {
@@ -26263,19 +26362,38 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["gravis-heavy-bolter-battery"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-lascannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "gravis-heavy-bolter-battery"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "multiSelect": true,
                     "gearNote": "Hull (Left) Mounted",
-                    "profileId": "sokar-stormbird"
+                    "profileId": "sokar-stormbird",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "twin-lascannon",
+                            "count": 1
+                        }
+                    ]
                 },
                 "option-2": {
                     "id": "option-2",
                     "name": "Hull (Right) Mounted Gravis heavy bolter battery",
                     "description": "Any of this Model’s Hull (Right) Mounted twin lascannon may each be exchanged for one Hull (Right) Mounted Gravis heavy bolter battery.",
                     "perModel": {
-                        "type": "single"
+                        "type": "multiple",
+                        "max": 2
                     },
                     "options": {
                         "hull-right-mounted-gravis-heavy-bolter-battery": {
@@ -26284,12 +26402,30 @@
                             "cost": {
                                 "points": 0
                             },
-                            "weaponRefs": ["gravis-heavy-bolter-battery"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "twin-lascannon"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "gravis-heavy-bolter-battery"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "multiSelect": true,
                     "gearNote": "Hull (Right) Mounted",
-                    "profileId": "sokar-stormbird"
+                    "profileId": "sokar-stormbird",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "twin-lascannon",
+                            "count": 1
+                        }
+                    ]
                 }
             },
             "traits": ["Legiones Astartes"]
@@ -36989,7 +37125,7 @@
         "augury-scanner": {
             "id": "augury-scanner",
             "name": "Augury Scanner",
-            "text": "Augury scanners allow attacks to ignore Shrouded Damage Mitigation Tests. When a Shooting Attack made by a Unit that includes any Models with an augury scanner inflicts any Hits (excluding Hits from attacks made as Snap Shots ), Shrouded Damage Mitigation Rolls cannot be made against those Hits."
+            "text": "Augury scanners allow attacks to ignore Shrouded Damage Mitigation Tests. When a Shooting Attack made by a Unit that includes any Models with an augury scanner inflicts any Hits (excluding Hits from attacks made as Snap Shots), Shrouded Damage Mitigation Rolls cannot be made against those Hits."
         },
         "biomancy": {
             "id": "biomancy",
@@ -37826,7 +37962,7 @@
         "anathemata-discipline": {
             "id": "anathemata-discipline",
             "name": "Anathemata Discipline",
-            "text": ""
+            "text": "A Model with the Anathemata Discipline gains the following benefits: the Fear (1) Special Rule; the Void Darts Psychic Weapon; if the Model has the Loyalist Trait, it can use the Seal the Veil Psychic Reaction; if the Model has the Traitor Trait, it can use the Breach the Veil Psychic Power; the ‘Anathemata’ Trait."
         },
         "armourbane": {
             "id": "armourbane",
@@ -37985,7 +38121,7 @@
         "heavy": {
             "id": "heavy",
             "name": "Heavy",
-            "text": "Weapons with the Heavy (X) Special Rule gain +1 to a Characteristic when Stationary. When making a Shooting Attack with a Weapon that has the Heavy (X) Special Rule, a modifier of +1 is added to a Characteristic if the Model with that Weapon is part of a Unit that remained Stationary in the Controlling Player’s previous Movement Phase. If the Characteristic listed is AP, then instead it improves the AP by one Step (see the Rules for modifying Saves and AP ). The value of X in the specific variant of the Heavy (X) Special Rule determines which Characteristic gains the +1 modifier.",
+            "text": "Weapons with the Heavy (X) Special Rule gain +1 to a Characteristic when Stationary. When making a Shooting Attack with a Weapon that has the Heavy (X) Special Rule, a modifier of +1 is added to a Characteristic if the Model with that Weapon is part of a Unit that remained Stationary in the Controlling Player’s previous Movement Phase. If the Characteristic listed is AP, then instead it improves the AP by one Step (see the Rules for modifying Saves and AP). The value of X in the specific variant of the Heavy (X) Special Rule determines which Characteristic gains the +1 modifier.",
             "configurable": true
         },
         "heavy-drop-transport": {
@@ -38071,7 +38207,7 @@
         "line": {
             "id": "line",
             "name": "Line",
-            "text": "A Unit of Models with this Special Rule can control Objectives more easily and scores more Victory Points from controlling an Objective. If a Unit that Controls an Objective includes a majority of Models with the Line (X) Special Rule then, whenever the Controlling Player scores Victory Points for Controlling that Objective, an additional number of Victory Points equal to the value of X are scored. For example, a Unit of 10 Models, of which the majority have the Line (3) Special Rule, hold an Objective worth 1 Victory Point, when the Controlling Player scores Victory Points for that Objective, they would score a total of 4 Victory Points. Furthermore, the value of X is added to the Tactical Strength of a Model that has that Special Rule to determine its ability to Control Objectives (see Core Mission Primary Objectives ).",
+            "text": "A Unit of Models with this Special Rule can control Objectives more easily and scores more Victory Points from controlling an Objective. If a Unit that Controls an Objective includes a majority of Models with the Line (X) Special Rule then, whenever the Controlling Player scores Victory Points for Controlling that Objective, an additional number of Victory Points equal to the value of X are scored. For example, a Unit of 10 Models, of which the majority have the Line (3) Special Rule, hold an Objective worth 1 Victory Point, when the Controlling Player scores Victory Points for that Objective, they would score a total of 4 Victory Points. Furthermore, the value of X is added to the Tactical Strength of a Model that has that Special Rule to determine its ability to Control Objectives (see Core Mission Primary Objectives).",
             "configurable": true
         },
         "macro-auspex": {
@@ -38297,7 +38433,7 @@
         "tip-of-the-spear": {
             "id": "tip-of-the-spear",
             "name": "Tip of the Spear",
-            "text": "An Army whose Primary Detachment includes a Model with this Special Rule may select the following Detachment once per Army, following all the normal Rules for selecting Auxiliary Detachments : PLANETFALL SPEARTIP [AUXILIARY DETACHMENT] Retinue Slots in this Detachment may only be used to select Praetorian Command Squad with Jump Packs Units. Elites Slots in this Detachment may only be used to select Veteran Assault Squad Units."
+            "text": "An Army whose Primary Detachment includes a Model with this Special Rule may select the following Detachment once per Army, following all the normal Rules for selecting Auxiliary Detachments: PLANETFALL SPEARTIP [AUXILIARY DETACHMENT] Retinue Slots in this Detachment may only be used to select Praetorian Command Squad with Jump Packs Units. Elites Slots in this Detachment may only be used to select Veteran Assault Squad Units."
         },
         "vanguard": {
             "id": "vanguard",

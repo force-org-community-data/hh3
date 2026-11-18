@@ -855,7 +855,18 @@
                             "cost": {
                                 "points": 10
                             },
-                            "weaponRefs": ["forge-crafted-heavy-flamer"]
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "combi-flamer"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "forge-crafted-heavy-flamer"
+                                    }
+                                }
+                            ]
                         }
                     },
                     "multiSelect": true,
@@ -930,6 +941,40 @@
             "modelCount": 10,
             "profiles": [
                 {
+                    "id": "inductii-master",
+                    "name": "Inductii Master",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "4",
+                        "w": "1",
+                        "i": "4",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "7",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "vanguard",
+                            "value": "2"
+                        },
+                        {
+                            "id": "wargear-of-heroes"
+                        },
+                        {
+                            "id": "inductii"
+                        }
+                    ]
+                },
+                {
                     "id": "inductii",
                     "name": "Inductii",
                     "template": "model",
@@ -976,34 +1021,78 @@
                     "cost": {
                         "points": 9
                     }
+                },
+                {
+                    "id": "inductii-master",
+                    "name": "Inductii Master",
+                    "profiles": {
+                        "inductii-master": 1
+                    },
+                    "min": 0,
+                    "max": 1,
+                    "cost": {
+                        "points": 15
+                    },
+                    "replaces": {
+                        "block": "inductii",
+                        "profile": "inductii"
+                    }
                 }
             ],
             "defaultGear": [
                 {
                     "kind": "weapon",
                     "id": "frag-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "inductii-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "inductii"
                 },
                 {
                     "kind": "weapon",
                     "id": "krak-grenades",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "inductii-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "inductii"
                 },
                 {
                     "kind": "weapon",
                     "id": "bolt-pistol",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "inductii-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol",
+                    "perModel": true,
+                    "profileId": "inductii"
                 },
                 {
                     "kind": "weapon",
                     "id": "chainsword",
-                    "perModel": true
+                    "perModel": true,
+                    "profileId": "inductii-master"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "chainsword",
+                    "perModel": true,
+                    "profileId": "inductii"
                 }
             ],
             "upgrades": {
                 "bolt-pistol": {
                     "id": "bolt-pistol",
-                    "name": "Bolt pistol",
+                    "name": "Sgt Legion Pistols",
                     "description": "Replaces the bolt pistol",
                     "perModel": {
                         "type": "single"
@@ -1017,7 +1106,8 @@
                     "swapFrom": {
                         "kind": "weapon",
                         "id": "bolt-pistol"
-                    }
+                    },
+                    "profileId": "inductii-master"
                 },
                 "option-1": {
                     "id": "option-1",
@@ -1053,7 +1143,45 @@
                             ]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "inductii"
+                },
+                "option-1-inductii-master": {
+                    "id": "option-1-inductii-master",
+                    "name": "Swap Sgt to heavy chainsword",
+                    "description": "Any Model in this Unit may have its chainsword and bolt pistol exchanged for one heavy chainsword.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "heavy-chainsword": {
+                            "id": "heavy-chainsword",
+                            "name": "heavy chainsword",
+                            "cost": {
+                                "points": 5
+                            },
+                            "swaps": [
+                                {
+                                    "from": [
+                                        {
+                                            "kind": "weapon",
+                                            "id": "bolt-pistol"
+                                        },
+                                        {
+                                            "kind": "weapon",
+                                            "id": "chainsword"
+                                        }
+                                    ],
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "heavy-chainsword"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true,
+                    "profileId": "inductii-master"
                 },
                 "option-2": {
                     "id": "option-2",
@@ -1080,7 +1208,8 @@
                     "swapFrom": {
                         "kind": "weapon",
                         "id": "chainsword"
-                    }
+                    },
+                    "profileId": "inductii"
                 },
                 "option-3": {
                     "id": "option-3",
@@ -1156,7 +1285,8 @@
                             ]
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "inductii"
                 },
                 "option-4": {
                     "id": "option-4",
@@ -1196,7 +1326,7 @@
                 },
                 "option-6": {
                     "id": "option-6",
-                    "name": "Master Melee Weapons",
+                    "name": "Sgt Chainsword to Legion Sergeant Melee Weapons",
                     "description": "The Inductii Master in this Unit may have its chainsword and/or bolt pistol exchanged for one item each from the Legion Sergeant Melee Weapons list.",
                     "perModel": {
                         "type": "single"
@@ -1214,11 +1344,43 @@
                             "target": "legion-sergeant-melee-weapons"
                         }
                     },
-                    "default": "none"
+                    "default": "none",
+                    "profileId": "inductii-master",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "chainsword"
+                    }
+                },
+                "option-6-bolt-pistol": {
+                    "id": "option-6-bolt-pistol",
+                    "name": "Sgt Bolt pistol to Legion Sergeant Melee Weapons",
+                    "description": "The Inductii Master in this Unit may have its chainsword and/or bolt pistol exchanged for one item each from the Legion Sergeant Melee Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-sergeant-melee-weapons": {
+                            "id": "legion-sergeant-melee-weapons",
+                            "target": "legion-sergeant-melee-weapons"
+                        }
+                    },
+                    "default": "none",
+                    "profileId": "inductii-master",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolt-pistol"
+                    }
                 },
                 "option-8": {
                     "id": "option-8",
-                    "name": "Swap to pair of lightning claws",
+                    "name": "Swap Sgt to pair of lightning claws",
                     "description": "The Inductii Master in this Unit may have its bolt pistol and chainsword exchanged for one pair of lightning claws.",
                     "perModel": {
                         "type": "single"
@@ -1250,11 +1412,12 @@
                             ]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "inductii-master"
                 },
                 "option-9": {
                     "id": "option-9",
-                    "name": "Melta bombs",
+                    "name": "Sgt Melta bombs",
                     "description": "The Inductii Master in this Unit may have melta bombs selected for it.",
                     "perModel": {
                         "type": "single"
@@ -1269,7 +1432,8 @@
                             "weaponRefs": ["melta-bombs"]
                         }
                     },
-                    "multiSelect": true
+                    "multiSelect": true,
+                    "profileId": "inductii-master"
                 }
             }
         },
@@ -2512,7 +2676,7 @@
         "the-undying-fire": {
             "id": "the-undying-fire",
             "name": "The Undying Fire",
-            "text": "Vulkan may regenerate lost Wounds when this Gambit is selected. While a Model with this Special Rule is in a Challenge, its Controlling Player can select the following Gambit : The Undying Fire: When this Gambit is selected, this Model’s Controlling Player may not apply any positive modifiers to the Focus Roll. However, if this Model is not reduced to 0 Wounds in Step 4 of the Strike Step, this Model increases their Wounds Characteristic by +D3, to a maximum of their Base Wounds Characteristic, before Players return to Step 2 of the Challenge procedure or they move to the Glory Step. Note that any Wounds regained due to this Special Rule do not alter the amount of wounds inflicted by the Opponent for the purposes of Combat Resolution."
+            "text": "Vulkan may regenerate lost Wounds when this Gambit is selected. While a Model with this Special Rule is in a Challenge, its Controlling Player can select the following Gambit: The Undying Fire: When this Gambit is selected, this Model’s Controlling Player may not apply any positive modifiers to the Focus Roll. However, if this Model is not reduced to 0 Wounds in Step 4 of the Strike Step, this Model increases their Wounds Characteristic by +D3, to a maximum of their Base Wounds Characteristic, before Players return to Step 2 of the Challenge procedure or they move to the Glory Step. Note that any Wounds regained due to this Special Rule do not alter the amount of wounds inflicted by the Opponent for the purposes of Combat Resolution."
         },
         "eternal-warrior": {
             "id": "eternal-warrior",
@@ -2523,22 +2687,12 @@
         "promethean-endurance": {
             "id": "promethean-endurance",
             "name": "Promethean Endurance",
-            "text": "LEGION TACTICA All Models with the Salamanders Trait (excluding Models with the Vehicle Type) are subject to the following Special Rules: Wound Tests made against Salamanders fail on the unmodified roll of 1 or 2. Wound Tests that have an unmodified result of 1 or 2 that target any Unit that includes only Models with this Special Rule are never successful regardless of the Strength Characteristic of a Hit or any Special Rules that set the Target Number for Wound Tests. This Special Rule has no effect on Armour Penetration Tests . Units of Salamanders may ignore Tactical Status Checks applied from Flame Weapons. A Unit made up entirely of Models with this Special Rule is unaffected by any variant of the Panic (X) Special Rule on Weapons with the Flame Trait."
+            "text": "All Models with the Salamanders Trait (excluding Models with the Vehicle Type) are subject to the following Special Rules: Wound Tests made against Salamanders fail on the unmodified roll of 1 or 2. Wound Tests that have an unmodified result of 1 or 2 that target any Unit that includes only Models with this Special Rule are never successful regardless of the Strength Characteristic of a Hit or any Special Rules that set the Target Number for Wound Tests. This Special Rule has no effect on Armour Penetration Tests. Units of Salamanders may ignore Tactical Status Checks applied from Flame Weapons. A Unit made up entirely of Models with this Special Rule is unaffected by any variant of the Panic (X) Special Rule on Weapons with the Flame Trait."
         },
         "blood-of-fire": {
             "id": "blood-of-fire",
             "name": "Blood of Fire",
-            "text": "LEGION TACTICA All Models with the Salamanders Trait (excluding Models with the Vehicle Type) are subject to the following Special Rules: Wound Tests made against Salamanders fail on the unmodified roll of 1 or 2. Wound Tests that have an unmodified result of 1 or 2 that target any Unit that includes only Models with this Special Rule are never successful regardless of the Strength Characteristic of a Hit or any Special Rules that set the Target Number for Wound Tests. This Special Rule has no effect on Armour Penetration Tests . Units of Salamanders may ignore Tactical Status Checks applied from Flame Weapons. A Unit made up entirely of Models with this Special Rule is unaffected by any variant of the Panic (X) Special Rule on Weapons with the Flame Trait."
-        },
-        "duty-is-sacrifice": {
-            "id": "duty-is-sacrifice",
-            "name": "Duty is Sacrifice",
-            "text": "GAMBIT When selecting a Gambit , the Controlling Player of a Model with the Salamanders Trait can select Duty is Sacrifice instead of any others available to that Model: This Gambit allows the Player to choose to suffer wounds in return for a bonus to their own Focus Roll. If this Gambit is selected, the Controlling Player can add a bonus of 1, 2 or 3 to their Focus Roll . In the Apply Damage from Unsaved Wounds Step of the opponent’s Strike Step , the Model this Gambit was selected for suffers a number of wounds, each with an AP Characteristic of 5 and a Damage Characteristic of 1, equal to the bonus to the Focus Roll applied by this Gambit, against which only Armour Saves , Invulnerable Saves and Damage Mitigation rolls can be taken as normal."
-        },
-        "selfless-burden": {
-            "id": "selfless-burden",
-            "name": "Selfless Burden (Advanced Reaction)",
-            "text": "This Reaction allows the Reacting Unit to increase certain Characteristics during the Assault Phase. Trigger: Once per Battle, the Reactive Player may declare the Selfless Burden Advanced Reaction at the start of Step 3 of a Charge declared by the Active Player, targeting a Unit under their control which only includes Models with the Salamanders Trait that do not have the Vehicle Type. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare the Selfless Burden Advanced Reaction, this cost paid as soon as the declaration is made. Target: For a Selfless Burden Advanced Reaction, the Reacting Unit is always the Unit that is the target of the Charge that triggered this Reaction. Process All Models in the Reacting Unit have their Weapon Skill, Strength and Attacks Characteristics modified by +1 until the end of the current Assault Phase. In the following Statuses Sub-Phase, the Reactive Player must roll a D6 for each Model in the Reacting Unit. For each result of 1, the Reacting Unit suffers 1 automatic wound with a Damage Characteristic of 1, an AP of ‘-’, against which Saving Throws and Damage Mitigation Rolls may be taken."
+            "text": "All Models with the Salamanders Trait (excluding Models with the Vehicle Type) are subject to the following Special Rules: Wound Tests made against Salamanders fail on the unmodified roll of 1 or 2. Wound Tests that have an unmodified result of 1 or 2 that target any Unit that includes only Models with this Special Rule are never successful regardless of the Strength Characteristic of a Hit or any Special Rules that set the Target Number for Wound Tests. This Special Rule has no effect on Armour Penetration Tests. Units of Salamanders may ignore Tactical Status Checks applied from Flame Weapons. A Unit made up entirely of Models with this Special Rule is unaffected by any variant of the Panic (X) Special Rule on Weapons with the Flame Trait."
         }
     },
     "groups": {
@@ -2743,6 +2897,12 @@
                     "kind": "specialRule",
                     "rule": {
                         "id": "promethean-endurance"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "blood-of-fire"
                     }
                 }
             ]
