@@ -1,0 +1,203 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/faction.schema.json",
+    "id": "cults-abominatio",
+    "version": "1.0.0",
+    "name": "Cults Abominatio",
+    "description": "Units in this Army List always have the Traitor Trait. A Detachment may never have the Cults Abominatio Faction, and as such, Infernus Abominations cannot be selected to fill standard Force Organisation Slots. Instead, Armies with the Traitor Allegiance may include Infernus Abominations by making use of the Cult Operative Prime Advantage.",
+    "game": {
+        "id": "hh3",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "defaultGroup": "crusade-primary-detachment",
+    "units": {
+        "infernus-abomination": {
+            "id": "infernus-abomination",
+            "name": "Infernus Abomination",
+            "role": "support",
+            "type": "infantry",
+            "cost": {
+                "points": 120
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "infernus-abomination",
+                    "name": "Infernus Abomination",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "5",
+                        "t": "5",
+                        "w": "3",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "6",
+                        "sav": "4+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Champion", "Light"],
+                    "specialRules": [
+                        {
+                            "id": "infiltrate",
+                            "value": "9"
+                        },
+                        {
+                            "id": "heedless"
+                        },
+                        {
+                            "id": "move-through-cover"
+                        },
+                        {
+                            "id": "shrouded",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        },
+                        {
+                            "id": "osmeotic-regeneration"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Traitor", "Cults Abominatio"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "boneshard-spitter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "transmutative-claw"
+                }
+            ],
+            "when": {
+                "if": "choice(allegiance) == traitor",
+                "message": "Traitor units only"
+            }
+        }
+    },
+    "weapons": {
+        "boneshard-spitter": {
+            "id": "boneshard-spitter",
+            "name": "Boneshard spitter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Boneshard spitter",
+                    "stats": {
+                        "r": "12",
+                        "fp": "3",
+                        "rs": "3",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "transmutative-claw": {
+            "id": "transmutative-claw",
+            "name": "Transmutative claw",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Transmutative claw",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "transmutation"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {},
+    "specialRules": {
+        "breaching": {
+            "id": "breaching",
+            "name": "Breaching",
+            "text": "With a Weapon that has the Breaching (X) Special Rule there is a chance that a Wound Test may result in the Wound ignoring Armour Saves. When any Wound Test is made for an attack with the Breaching (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Breaching (X) Special Rule, then if a wound is inflicted by that Wound Test, that wound becomes a ‘Breaching Wound’. A Breaching Wound is always treated as having an AP Characteristic of 2 regardless of the Characteristics of the Weapon used to make the attack.",
+            "configurable": true
+        },
+        "fear": {
+            "id": "fear",
+            "name": "Fear",
+            "text": "Models near an enemy Model with the Fear (X) Special Rule must reduce their Advanced Characteristics. When any Model from a Unit is within 12\" of an enemy Model with the Fear (X) Special Rule, all Models in that Unit must reduce their Leadership, Willpower, Cool and Intelligence Characteristics by the value of X. This negative modifier is removed as soon as no Models in a given Unit are within 12\" of any Model with the Fear (X) Special Rule. If a Unit would be affected by multiple instances of the Fear (X) Special Rule, the value of X is not stacked and instead the single highest value is used as a negative modifier.",
+            "configurable": true
+        },
+        "heedless": {
+            "id": "heedless",
+            "name": "Heedless",
+            "text": "A Unit that includes any Models with this Special Rule cannot claim Objectives. A Unit that includes any Models with this Special Rule cannot Control or Contest any Objective Marker - this overrides any other Rule or Special Rule that may apply to the Unit regardless of the source of the Rule or effect."
+        },
+        "infiltrate": {
+            "id": "infiltrate",
+            "name": "Infiltrate",
+            "text": "Models with the Infiltrate (X) Special Rule can deploy outside of their Deployment Zone. At the start of a Mission, when deploying Units, the Controlling Player of a Unit that is composed entirely of Models with the Infiltrate (X) Special Rule may choose to deploy that Unit outside of that Player’s Deployment Zone. That Unit may be deployed anywhere that is either in the Controlling Player’s Deployment Zone or outside of the Opposing Player’s Deployment Zone and is at least a number of inches equal to the highest value of X attached to any variant of the Infiltrate (X) Special Rule in that Unit away from any enemy Model. Units deployed using the Infiltrate (X) Special Rule are deployed at the same time as other Units under a Player’s control, unless the specific Rules of a given Mission state otherwise. The Infiltrate (X) Special Rule only has an effect when deploying Units before the start of the First Turn of a Battle, and Units deploying onto the Battlefield after the First Turn has begun gain no benefit from this Special Rule. A Unit that is deployed outside of the Controlling Player’s Deployment Zone by means of this Special Rule may not have a Charge declared for it in the First Battle Turn.",
+            "configurable": true
+        },
+        "move-through-cover": {
+            "id": "move-through-cover",
+            "name": "Move Through Cover",
+            "text": "The Move Through Cover Special Rule allows the penalties of terrain to be ignored. A Unit that includes at least one Model with the Move Through Cover Special Rule ignores the effects of Difficult Terrain and Dangerous Terrain. If called upon to take a Dangerous Terrain Test then such a Unit is assumed to automatically pass without any Dice being rolled."
+        },
+        "osmeotic-regeneration": {
+            "id": "osmeotic-regeneration",
+            "name": "Osmeotic Regeneration",
+            "text": "An Infernus Assassin may regenerate lost Wounds when this Gambit is selected. While a Model with this Special Rule is in a Challenge, its Controlling Player can select the following Gambit: Osmeotic Regeneration: When this Gambit is selected, this Model’s Controlling Player may not apply any positive modifiers to the Focus Roll. However, if this Model is not reduced to 0 Wounds in Step 4 of the Strike Step, and the opposing Model suffered at least 1 Wound, this Model increases their Wounds Characteristic by +1, to a maximum of their Base Wounds Characteristic, before Players return to Step 2 of the Challenge procedure or they move to the Glory Step. Note that any Wounds regained due to this Special Rule do not alter the amount of wounds inflicted by the Opponent for the purposes of Combat Resolution."
+        },
+        "poisoned": {
+            "id": "poisoned",
+            "name": "Poisoned",
+            "text": "A Weapon with the Poisoned (X) Special Rule has a chance to cause a wound regardless of the target’s Toughness. When making Wound Tests for Hits that have the Poisoned (X) Special Rule, if the result of any Dice rolled is equal to or greater than the value of X attached to the specific variant of this Special Rule then a wound is caused automatically, regardless of the Toughness Characteristic used to determine the Target Number. A Hit that has this Special Rule may still inflict a wound by passing a Wound Test as normal, instead of using this Special Rule, but never inflicts more than 1 wound if it would both pass the Wound Test and trigger the Poisoned (X) Special Rule. Wounds caused using the Poison (X) Special Rule retain the AP and Damage of the Weapon and Saving Throws and Damage Mitigation Tests may be made to discard them as normal. The Poisoned (X) Special Rule has no effect on Models that have the Vehicle Type, and limited effect on Models with the Automata or Walker Types.",
+            "configurable": true
+        },
+        "shrouded": {
+            "id": "shrouded",
+            "name": "Shrouded",
+            "text": "Shrouded (X) is a Damage Mitigation Test that may be taken in addition to a Saving Throw. A Model with the Shrouded (X) Special Rule gains a Shrouded Damage Mitigation Test that may be used in Step 9 of the Shooting Attack process to discard Wounds allocated to the Model. A Damage Mitigation Test may be made after and in addition to a Saving Throw. The Target Number for a Shrouded Damage Mitigation Test is the value of X attached to the specific variant of the Special Rule. A Shrouded Damage Mitigation Test may not be made against wounds inflicted by a Melee Weapon.",
+            "configurable": true
+        },
+        "transmutation": {
+            "id": "transmutation",
+            "name": "Transmutation",
+            "text": "During Step 2 of the Fight Sub-Phase or the Focus Step of a Challenge, when the Controlling Player declares that a Weapon with this Special Rule will be used, they may choose to set the Combat Initiative of the Model that will Attack with this Weapon to match the highest Base Initiative Characteristic of any enemy Model that is part of the same Combat, until the end of the current Phase."
+        }
+    },
+    "groups": {},
+    "listRules": {
+        "no-cults-abominatio-detachments": {
+            "kind": "expression",
+            "id": "no-cults-abominatio-detachments",
+            "scope": "group",
+            "when": {
+                "if": "not contingent.is(faction:cults-abominatio)",
+                "message": "A Detachment may never have the Cults Abominatio Faction: take an Infernus Abomination through the Cult Operative Prime Advantage in a Traitor Primary Detachment"
+            }
+        }
+    }
+}

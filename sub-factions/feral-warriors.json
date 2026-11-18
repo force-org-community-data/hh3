@@ -1,0 +1,162 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "feral-warriors",
+    "version": "1.0.0",
+    "name": "Feral Warriors",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "feral-warriors": {
+            "id": "feral-warriors",
+            "name": "Feral Warriors",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule in this Army gain the Impact (WS) Special Rule. If a Unit in this Army containing any Models with the Irregulars Special Rule is within 8\" of any enemy Units at the start of the Controlling Player’s Charge Sub-Phase and is eligible to make a Charge Move, the Controlling Player must make an Intelligence Check for that Unit. If that Check is failed, the Controlling Player must make a Charge Move for that Unit. The following items are added to the Militia Armaments list and Militia Assault Weapons list: - Paired close combat weapons +3 points"
+        }
+    },
+    "unitModifiers": {
+        "feral-warriors-provenance": {
+            "id": "feral-warriors-provenance",
+            "name": "Feral Warriors",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "feral-warriors"
+                    }
+                }
+            ]
+        },
+        "feral-warriors-provenance-part": {
+            "id": "feral-warriors-provenance-part",
+            "name": "Feral Warriors",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "feral-warriors"
+                    }
+                }
+            ]
+        },
+        "feral-warriors-provenance-part-2": {
+            "id": "feral-warriors-provenance-part-2",
+            "name": "Feral Warriors",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "feral-warriors"
+                    }
+                }
+            ]
+        },
+        "feral-warriors": {
+            "id": "feral-warriors",
+            "name": "Feral Warriors",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "impact",
+                        "value": "WS"
+                    }
+                }
+            ]
+        },
+        "feral-warriors-part": {
+            "id": "feral-warriors-part",
+            "name": "Feral Warriors",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "impact",
+                        "value": "WS"
+                    }
+                }
+            ]
+        },
+        "feral-warriors-part-2": {
+            "id": "feral-warriors-part-2",
+            "name": "Feral Warriors",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "impact",
+                        "value": "WS"
+                    }
+                }
+            ]
+        }
+    }
+}

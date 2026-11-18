@@ -141,12 +141,18 @@
         },
         "knight": {
             "id": "knight",
-            "name": "Knight"
+            "name": "Knight",
+            "description": "Models with the Knight Sub-Type are Vehicles that follow the Knight rules of the Questoris Familia Army List: their own Characteristics (Weapon Skill, Strength, Initiative and Attacks, with Front and Rear Armour Values), movement, shooting, firing arcs and weapon mounts, and combat rules."
         },
         "ordinatus": {
             "id": "ordinatus",
             "name": "Ordinatus",
             "description": "The following Rules apply to all Models with the Ordinatus Sub-Type: Models with this Sub-Type are not affected in any way by Difficult Terrain or Dangerous Terrain, and may pass through Impassable Terrain as long as they do not end a Move on or within an area of Impassable Terrain. When making multiple Shooting Attacks in the same Shooting Phase, a Model with this Sub-Type does not have to make all attacks as Snap Shots. A Model with this Sub-Type is limited on when and which Reactions may be made for it. The Rules for applying Damage to a Model with this Sub-Type vary from those used with other Models with the Vehicle Type. The Rules for Shooting Attacks and Combats that involve Ordinatus are changed as noted in this addendum. If a Model with this Sub-Type has a Transport Capacity, then it may transport any number of Units, so long as the number of Models in the transported Units does not exceed the Vehicle’s Transport Capacity. A Model with this Sub-Type cannot gain any Tactical Statuses or Cybertheurgic Statuses. A Model with this Sub-Type cannot be affected by any Psychic Weapon, Psychic Reaction or Psychic Power. A Model with this Sub-Type may not be targeted by the Battlesmith (X) Special Rule."
+        },
+        "titan": {
+            "id": "titan",
+            "name": "Titan",
+            "description": "The following Rules apply to all Models with the Titan Sub-Type: Models with this Sub-Type are not affected in any way by Difficult Terrain or Dangerous Terrain, and may pass through Impassable Terrain as long as they do not end a Move on or within an area of Impassable Terrain. When making multiple Shooting Attacks in the same Shooting Phase, a Model with this Sub-Type does not have to make all attacks as Snap Shots. A Model with this Sub-Type is limited on when and which Reactions may be made for it, see Titans and Reactions. The Rules for applying Damage to a Model with this Sub-Type vary from those used with other Models with the Vehicle Type, see Titans and Damage. The Rules for Shooting Attacks and Combats that involve Titans are changed as noted in Titans and the Shooting Phase and Titans and the Assault Phase sections. If a Model with this Sub-Type has a Transport Capacity, then it may transport any number of Units, so long as the number of Models in the transported Units does not exceed the Vehicle’s Transport Capacity. A Model with this Sub-Type cannot gain any Tactical Statuses or Cybertheurgic Statuses. A Model with this Sub-Type cannot be affected by any Psychic Weapon, Psychic Reaction or Psychic Power. A Model with this Sub-Type may not be targeted by the Battlesmith (X) Special Rule."
         }
     },
     "subTypes": {
@@ -277,10 +283,18 @@
         "lord-of-war": {
             "id": "lord-of-war",
             "name": "Lord of War",
+            "contingent": "root",
+            "source": "any",
+            "max": 1,
+            "description": "An Army may include one Lord of War Detachment; it may be of any Faction, but all Units in it must be selected from the same Army List or Faction."
+        },
+        "household-additional": {
+            "id": "household-additional",
+            "name": "Knight Household Additional",
             "contingent": {
-                "linksTo": ["primary", "allied"]
+                "linksTo": ["primary", "lord-of-war"]
             },
-            "max": 1
+            "description": "Additional Detachments a Household Rank Prime Advantage or a Household Paradigm adds, linked to the Detachment that allowed them: a Knight Households Primary Detachment or a Lord of War Detachment."
         }
     },
     "slotTags": {
@@ -521,6 +535,37 @@
                         "numeric": true
                     }
                 ]
+            },
+            "titan": {
+                "id": "titan",
+                "name": "Titan",
+                "stats": [
+                    {
+                        "id": "m",
+                        "label": "M",
+                        "numeric": true
+                    },
+                    {
+                        "id": "bs",
+                        "label": "BS",
+                        "numeric": true
+                    },
+                    {
+                        "id": "primary",
+                        "label": "Primary",
+                        "numeric": true
+                    },
+                    {
+                        "id": "exposed",
+                        "label": "Exposed",
+                        "numeric": true
+                    },
+                    {
+                        "id": "hp",
+                        "label": "HP",
+                        "numeric": true
+                    }
+                ]
             }
         },
         "weapon": {
@@ -647,9 +692,9 @@
                 "roles": ["warlord", "lord-of-war"]
             },
             "max": {
-                "percentOfLimit": 25
+                "value": "(main.is(faction:legio-titanicus) or main.is(faction:questoris-familia)) ? list.limit(points) : list.limit(points) * 25 / 100"
             },
-            "message": "No more than 25% of the points limit may be spent on Warlord and Lord of War units"
+            "message": "No more than 25% of the points limit may be spent on Warlord and Lord of War units (no limit with a Titan Ordinal or Knight Households Primary Detachment)"
         },
         "clade-operative-once-per-army": {
             "kind": "count",
@@ -670,7 +715,8 @@
                 "auxiliary",
                 "apex",
                 "warlord",
-                "lord-of-war"
+                "lord-of-war",
+                "household-additional"
             ],
             "when": {
                 "if": "group.count(trait:clade-operative) == 0",
@@ -684,6 +730,42 @@
             "when": {
                 "if": "choice(allegiance) == loyalist or list.count(trait:clade-operative) == 0",
                 "message": "Clade Operative may only be selected in an Army with the Loyalist Allegiance"
+            }
+        },
+        "cult-operative-once-per-army": {
+            "kind": "count",
+            "id": "cult-operative-once-per-army",
+            "units": {
+                "traits": ["Cult Operative"]
+            },
+            "scope": "list",
+            "max": 1,
+            "message": "Cult Operative can only be selected for a single Force Organisation Slot in an Army"
+        },
+        "cult-operative-primary-only": {
+            "kind": "expression",
+            "id": "cult-operative-primary-only",
+            "scope": "group",
+            "groupTypes": [
+                "allied",
+                "auxiliary",
+                "apex",
+                "warlord",
+                "lord-of-war",
+                "household-additional"
+            ],
+            "when": {
+                "if": "group.count(trait:cult-operative) == 0",
+                "message": "Cult Operative may only be selected in an Army’s Primary Detachment"
+            }
+        },
+        "cult-operative-traitor-only": {
+            "kind": "expression",
+            "id": "cult-operative-traitor-only",
+            "scope": "list",
+            "when": {
+                "if": "choice(allegiance) == traitor or list.count(trait:cult-operative) == 0",
+                "message": "Cult Operative may only be selected in an Army with the Traitor Allegiance"
             }
         }
     },
@@ -1173,6 +1255,28 @@
                             "venenum-assassin",
                             "vindicare-assassin"
                         ]
+                    }
+                }
+            ]
+        },
+        "cult-operative": {
+            "id": "cult-operative",
+            "name": "Cult Operative",
+            "text": "Add one additional Support Force Organisation Slot to the Detachment that includes the Prime Slot with this Prime Advantage. This Force Organisation Slot may only be filled by a Unit selected from the Cults Abominatio Army List. This Prime Advantage may only be selected for a single Force Organisation Slot in an Army’s Primary Detachment.",
+            "slotTag": "prime",
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Cult Operative"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": ["support"],
+                    "source": {
+                        "faction": "cults-abominatio"
+                    },
+                    "units": {
+                        "traits": ["Cults Abominatio"]
                     }
                 }
             ]

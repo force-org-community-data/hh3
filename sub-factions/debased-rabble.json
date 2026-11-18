@@ -1,0 +1,190 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "debased-rabble",
+    "version": "1.0.0",
+    "name": "Debased Rabble",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "when": {
+        "if": "choice(allegiance) == traitor",
+        "message": "This Provenance may only be selected for an Army with the Traitor Allegiance"
+    },
+    "specialRules": {
+        "debased-rabble": {
+            "id": "debased-rabble",
+            "name": "Debased Rabble",
+            "text": "This Provenance may only be selected for an Army with the Traitor Allegiance. An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule in this Army have their Base Cool Characteristic modified by +1 and their Base Intelligence Characteristic modified by -1. The following item is added to the Militia Melee Weapons list and Militia Officer Weapons list: - Tainted implements +1 points"
+        }
+    },
+    "unitModifiers": {
+        "debased-rabble-provenance": {
+            "id": "debased-rabble-provenance",
+            "name": "Debased Rabble",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "debased-rabble"
+                    }
+                }
+            ]
+        },
+        "debased-rabble-provenance-part": {
+            "id": "debased-rabble-provenance-part",
+            "name": "Debased Rabble",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "debased-rabble"
+                    }
+                }
+            ]
+        },
+        "debased-rabble-provenance-part-2": {
+            "id": "debased-rabble-provenance-part-2",
+            "name": "Debased Rabble",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "debased-rabble"
+                    }
+                }
+            ]
+        },
+        "debased-rabble": {
+            "id": "debased-rabble",
+            "name": "Debased Rabble",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "cl",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "in",
+                            "op": "add",
+                            "value": -1
+                        }
+                    ]
+                }
+            ]
+        },
+        "debased-rabble-part": {
+            "id": "debased-rabble-part",
+            "name": "Debased Rabble",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "cl",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "in",
+                            "op": "add",
+                            "value": -1
+                        }
+                    ]
+                }
+            ]
+        },
+        "debased-rabble-part-2": {
+            "id": "debased-rabble-part-2",
+            "name": "Debased Rabble",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "cl",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "in",
+                            "op": "add",
+                            "value": -1
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

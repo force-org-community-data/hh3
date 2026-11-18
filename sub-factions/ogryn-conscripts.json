@@ -1,0 +1,104 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "ogryn-conscripts",
+    "version": "1.0.0",
+    "name": "Ogryn Conscripts",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "ogryn-conscripts": {
+            "id": "ogryn-conscripts",
+            "name": "Ogryn Conscripts",
+            "text": "An Army with this Provenance gains the following benefits: All Models in Ogryn Brute Troop Units in this Army lose the Heedless Special Rule while their Unit includes at least one Model with the Instil Order Special Rule. Every Model with an assault shield in an Ogryn Brute Troop Unit in this Army can have its assault shield exchanged for one boarding shield for +2 Points per Model."
+        }
+    },
+    "equipment": {
+        "boarding-shield": {
+            "id": "boarding-shield",
+            "name": "Boarding shield",
+            "text": "Boarding shields grant a 5+ Invulnerable Save, the Shield Trait and the Heavy Sub-Type. A Model with a boarding shield gains a 5+ Invulnerable Save. In addition it gains the Shield Trait and the Heavy Sub-Type."
+        }
+    },
+    "upgrades": {
+        "ogryn-conscripts-boarding-shield": {
+            "id": "ogryn-conscripts-boarding-shield",
+            "name": "Assault shield to boarding shield",
+            "description": "Every Model with an assault shield in an Ogryn Brute Troop Unit in this Army can have its assault shield exchanged for one boarding shield for +2 Points per Model.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "boarding-shield": {
+                    "id": "boarding-shield",
+                    "name": "Boarding shield",
+                    "cost": {
+                        "points": 2
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "equipment",
+                                "id": "assault-shield"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "boarding-shield"
+                            }
+                        }
+                    ]
+                }
+            },
+            "multiSelect": true,
+            "restrictions": {
+                "exclusions": [],
+                "required": [
+                    {
+                        "kind": "equipment",
+                        "id": "assault-shield"
+                    }
+                ],
+                "requiredAnd": true
+            },
+            "limitBy": [
+                {
+                    "kind": "equipment",
+                    "id": "assault-shield",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "ogryn-conscripts-provenance": {
+            "id": "ogryn-conscripts-provenance",
+            "name": "Ogryn Conscripts",
+            "selector": {
+                "unitIds": ["ogryn-brute-troop"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "ogryn-conscripts"
+                    }
+                }
+            ]
+        },
+        "ogryn-conscripts-boarding-shield": {
+            "id": "ogryn-conscripts-boarding-shield",
+            "name": "Assault shield to boarding shield",
+            "selector": {
+                "unitIds": ["ogryn-brute-troop"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "ogryn-conscripts-boarding-shield"
+                }
+            ]
+        }
+    }
+}

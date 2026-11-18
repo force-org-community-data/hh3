@@ -1,0 +1,502 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "arms-of-the-omnissiah",
+    "version": "1.0.0",
+    "name": "Arms of the Omnissiah",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "arms-of-the-omnissiah": {
+            "id": "arms-of-the-omnissiah",
+            "name": "Arms of the Omnissiah",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule and the Infantry Type in this Army gain the Implacable Advance Special Rule. The following item is added to the Militia Armaments list: - Las-lock +1 points The following item is added to the Militia Special Weapons list: - Arc rifle +10 points Triaros Armoured Conveyor Units from the Mechanicum Taghmata Army List may be selected to fill Heavy Transport Force Organisation Slots in any Imperialis Militia Detachments in this Army and Krios Battle Tank Units from the Mechanicum Taghmata Army List may be selected to fill Armour Force Organisation Slots in any Imperialis Militia Detachments in this Army. Any Models in these Units replace the [Mechanicum] or Macrotek Trait with the Imperialis Militia Trait, gain the Third-Line Special Rule and modify their Ballistic Skill Characteristic by -1."
+        },
+        "shock-ram": {
+            "id": "shock-ram",
+            "name": "Shock Ram",
+            "text": "A Vehicle with this Special Rule inflicts more damage when it moves through enemy Units. When a Model with this Special Rule and the Vehicle Type moves through an enemy Unit, the number of Hits inflicted is increased from D6 to D6+3. Furthermore, if the Reactive Player declares a Death or Glory Reaction with a Vehicle that has this Special Rule as the target, then the Vehicle with this Special Rule gains a 6+ Invulnerable save against all Hits inflicted as part of that Reaction."
+        },
+        "phage": {
+            "id": "phage",
+            "name": "Phage",
+            "text": "Unsaved Wounds with the Phage (X) Special Rule reduce a Characteristic by 1. If an attack made for a Weapon or Model with this Special Rule inflicts one or more Unsaved Wounds on a Target Unit, then once the Shooting Attack or Initiative Step in which the Unsaved Wound was inflicted has been completely resolved, all remaining Models in the Unit that was the target of the attack must reduce the Characteristic that is the value of X for that variant of the Phage (X) Special Rule by 1 for the remainder of the Battle. Models in a Unit may have any number of different Characteristics reduced by 1 by the Phage (X) Special Rule, but no individual Characteristic may be reduced by more than 1 by the Phage (X) Special Rule no matter how many Unsaved Wounds with any variant of that Special Rule are allocated to Models in that Unit.",
+            "configurable": true
+        }
+    },
+    "equipment": {
+        "flare-shield": {
+            "id": "flare-shield",
+            "name": "Flare Shield",
+            "text": "Attacks which hit a Model with a flare shield gain no benefit from the Armourbane Special Rule. When Making Armour Penetration Tests against a Model with a flare shield, no Weapon may make use of the Armourbane Special Rule."
+        }
+    },
+    "weapons": {
+        "twin-mauler-bolt-cannon": {
+            "id": "twin-mauler-bolt-cannon",
+            "name": "Twin mauler bolt cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin mauler bolt cannon",
+                    "stats": {
+                        "r": "24",
+                        "fp": "6",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "2"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "4+"
+                        }
+                    ],
+                    "traits": ["Bolt"]
+                }
+            ]
+        },
+        "irradiation-blaster": {
+            "id": "irradiation-blaster",
+            "name": "Irradiation blaster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Irradiation blaster",
+                    "stats": {
+                        "r": "16",
+                        "fp": "1",
+                        "rs": "2",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "5\""
+                        },
+                        {
+                            "id": "ordnance",
+                            "value": "D"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Stunned"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "2"
+                        }
+                    ],
+                    "traits": ["Rad"]
+                }
+            ]
+        },
+        "lightning-cannon": {
+            "id": "lightning-cannon",
+            "name": "Lightning cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Lightning cannon",
+                    "stats": {
+                        "r": "36",
+                        "fp": "1",
+                        "rs": "7",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "5\""
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "suppressive",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Arc"]
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "arms-of-the-omnissiah-provenance": {
+            "id": "arms-of-the-omnissiah-provenance",
+            "name": "Arms of the Omnissiah",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "arms-of-the-omnissiah"
+                    }
+                }
+            ]
+        },
+        "arms-of-the-omnissiah-provenance-part": {
+            "id": "arms-of-the-omnissiah-provenance-part",
+            "name": "Arms of the Omnissiah",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "arms-of-the-omnissiah"
+                    }
+                }
+            ]
+        },
+        "arms-of-the-omnissiah-provenance-part-2": {
+            "id": "arms-of-the-omnissiah-provenance-part-2",
+            "name": "Arms of the Omnissiah",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "arms-of-the-omnissiah"
+                    }
+                }
+            ]
+        },
+        "arms-of-the-omnissiah": {
+            "id": "arms-of-the-omnissiah",
+            "name": "Arms of the Omnissiah",
+            "selector": {
+                "unitIds": [
+                    "command-troop",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "implacable-advance"
+                    }
+                }
+            ]
+        },
+        "arms-of-the-omnissiah-part": {
+            "id": "arms-of-the-omnissiah-part",
+            "name": "Arms of the Omnissiah",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "implacable-advance"
+                    }
+                }
+            ]
+        },
+        "arms-of-the-omnissiah-part-2": {
+            "id": "arms-of-the-omnissiah-part-2",
+            "name": "Arms of the Omnissiah",
+            "selector": {
+                "unitIds": ["discipline-master-cadre"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["infantry"]
+                    },
+                    "rule": {
+                        "id": "implacable-advance"
+                    }
+                }
+            ]
+        },
+        "arms-of-the-omnissiah-part-3": {
+            "id": "arms-of-the-omnissiah-part-3",
+            "name": "Arms of the Omnissiah",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "implacable-advance"
+                    }
+                }
+            ]
+        }
+    },
+    "units": {
+        "triaros-armoured-conveyor": {
+            "id": "triaros-armoured-conveyor",
+            "name": "Triaros Armoured Conveyor",
+            "role": "heavy-transport",
+            "type": "vehicle",
+            "cost": {
+                "points": 200
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "triaros",
+                    "name": "Triaros",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "10",
+                        "bs": "3",
+                        "front": "14",
+                        "side": "12",
+                        "rear": "12",
+                        "hp": "7",
+                        "transport-capacity": "22"
+                    },
+                    "tags": ["Transport"],
+                    "specialRules": [
+                        {
+                            "id": "auto-repair",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "shock-ram"
+                        },
+                        {
+                            "id": "third-line"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Imperialis Militia"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "volkite-caliver",
+                    "note": "Centreline Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "volkite-caliver",
+                    "note": "Centreline Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-mauler-bolt-cannon",
+                    "note": "Pintle Mounted"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "flare-shield"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "searchlights"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have up to two Hull (Front) Mounted hunter-killer missiles selected for it.",
+                    "perModel": {
+                        "type": "multiple",
+                        "max": 2
+                    },
+                    "options": {
+                        "hull-front-mounted-hunter-killer-missile": {
+                            "id": "hull-front-mounted-hunter-killer-missile",
+                            "name": "Hunter-killer missile",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "gearNote": "Hull (Front) Mounted",
+                    "profileId": "triaros"
+                }
+            }
+        },
+        "krios-battle-tank": {
+            "id": "krios-battle-tank",
+            "name": "Krios Battle Tank",
+            "role": "armour",
+            "type": "vehicle",
+            "cost": {
+                "points": 135
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "krios",
+                    "name": "Krios",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "14",
+                        "bs": "3",
+                        "front": "13",
+                        "side": "12",
+                        "rear": "10",
+                        "hp": "5",
+                        "transport-capacity": "-"
+                    },
+                    "tags": ["Rapid"],
+                    "specialRules": [
+                        {
+                            "id": "auto-repair",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "third-line"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Imperialis Militia"],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have up to two Hull (Front) Mounted hunter-killer missiles selected for it.",
+                    "perModel": {
+                        "type": "multiple",
+                        "max": 2
+                    },
+                    "options": {
+                        "hull-front-mounted-hunter-killer-missile": {
+                            "id": "hull-front-mounted-hunter-killer-missile",
+                            "name": "Hunter-killer missile",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "gearNote": "Hull (Front) Mounted",
+                    "profileId": "krios"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Sponson Mounted volkite calivers",
+                    "description": "This Model may have two Sponson Mounted volkite calivers selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "two-sponson-mounted-volkite-calivers": {
+                            "id": "two-sponson-mounted-volkite-calivers",
+                            "name": "Two volkite calivers",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["volkite-caliver", "volkite-caliver"]
+                        }
+                    },
+                    "multiSelect": true,
+                    "gearNote": "Sponson Mounted",
+                    "profileId": "krios"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Centreline Mounted lightning cannon",
+                    "description": "This Model may have its Centreline Mounted lightning cannon exchanged for one Centreline Mounted irradiation blaster.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "lightning-cannon": {
+                            "id": "lightning-cannon",
+                            "name": "Lightning cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["lightning-cannon"]
+                        },
+                        "centreline-mounted-irradiation-blaster": {
+                            "id": "centreline-mounted-irradiation-blaster",
+                            "name": "Irradiation blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["irradiation-blaster"]
+                        }
+                    },
+                    "default": "lightning-cannon",
+                    "gearNote": "Centreline Mounted",
+                    "profileId": "krios"
+                }
+            }
+        }
+    }
+}

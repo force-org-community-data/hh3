@@ -1,0 +1,225 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "armoury-of-old-night",
+    "version": "1.0.0",
+    "name": "Armoury of Old Night",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "armoury-of-old-night": {
+            "id": "armoury-of-old-night",
+            "name": "Armoury of Old Night",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule and the Infantry Type in this Army have their Base Armour Save Characteristic improved by one step and gain the Slow and Purposeful Special Rule. This Provenance may not modify any Model’s Armour Save Characteristic to ‘2+’. The following item is added to the Militia Pistols list and Militia Officer Weapons list: - Volkite serpenta +5 points The following item is added to the Militia Assault Weapons list: - Volkite charger +5 points The following item is added to the Militia Special Weapons list: - Volkite caliver +10 points The following item is added to the Militia Heavy Weapons list: - Volkite culverin +15 points"
+        }
+    },
+    "unitModifiers": {
+        "armoury-of-old-night-provenance": {
+            "id": "armoury-of-old-night-provenance",
+            "name": "Armoury of Old Night",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "armoury-of-old-night"
+                    }
+                }
+            ]
+        },
+        "armoury-of-old-night-provenance-part": {
+            "id": "armoury-of-old-night-provenance-part",
+            "name": "Armoury of Old Night",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "armoury-of-old-night"
+                    }
+                }
+            ]
+        },
+        "armoury-of-old-night-provenance-part-2": {
+            "id": "armoury-of-old-night-provenance-part-2",
+            "name": "Armoury of Old Night",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "armoury-of-old-night"
+                    }
+                }
+            ]
+        },
+        "armoury-of-old-night": {
+            "id": "armoury-of-old-night",
+            "name": "Armoury of Old Night",
+            "selector": {
+                "unitIds": [
+                    "command-troop",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "sav",
+                            "op": "add",
+                            "value": -1,
+                            "min": 3
+                        }
+                    ]
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "slow-and-purposeful"
+                    }
+                }
+            ]
+        },
+        "armoury-of-old-night-part": {
+            "id": "armoury-of-old-night-part",
+            "name": "Armoury of Old Night",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "sav",
+                            "op": "add",
+                            "value": -1,
+                            "min": 3
+                        }
+                    ]
+                },
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "slow-and-purposeful"
+                    }
+                }
+            ]
+        },
+        "armoury-of-old-night-part-2": {
+            "id": "armoury-of-old-night-part-2",
+            "name": "Armoury of Old Night",
+            "selector": {
+                "unitIds": ["discipline-master-cadre"]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "anyOf": ["infantry"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "sav",
+                            "op": "add",
+                            "value": -1,
+                            "min": 3
+                        }
+                    ]
+                },
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["infantry"]
+                    },
+                    "rule": {
+                        "id": "slow-and-purposeful"
+                    }
+                }
+            ]
+        },
+        "armoury-of-old-night-part-3": {
+            "id": "armoury-of-old-night-part-3",
+            "name": "Armoury of Old Night",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "sav",
+                            "op": "add",
+                            "value": -1,
+                            "min": 3
+                        }
+                    ]
+                },
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "slow-and-purposeful"
+                    }
+                }
+            ]
+        }
+    }
+}

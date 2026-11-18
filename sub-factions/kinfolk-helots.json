@@ -1,0 +1,309 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "kinfolk-helots",
+    "version": "1.0.0",
+    "name": "Kinfolk Helots",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "kinfolk-helots": {
+            "id": "kinfolk-helots",
+            "name": "Kinfolk Helots",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule in this Army have their Base Toughness Characteristic modified by +1 and their Base Initiative and Base Movement Characteristics modified by -1. One Grenadier Troop Unit in each Detachment in this Army may be upgraded to be Exo-riggers for +8 Points per Model. All Models in Units which have been upgraded in this way: - Have the Heavy Sub-Type. - Have the Bulky (2) &amp; Slow and Purposeful Special Rules. - Have an Armour Save Characteristic of 3+ and an Invulnerable Save Characteristic of 6+. - Have an Intelligence Characteristic of 7 and the Battlesmith (1) Special Rule if they have the Sergeant Sub-Type. - May each exchange their Militia rifle for one heavy industrial weapon for +8 Points per Model or one pair of industrial weapons for +10 Points per Model."
+        },
+        "battlesmith": {
+            "id": "battlesmith",
+            "name": "Battlesmith",
+            "text": "A Model with the Battlesmith (X) Special Rule can repair Vehicles, Automata and other mechanical Units. In the Controlling Player’s Movement Phase as the Active Player, when a Model with the Battlesmith (X) Special Rule has been selected, but either before or after it has been moved, the Controlling Player of that Model may activate this Special Rule. Once activated, the Controlling Player of the Model with the Battlesmith (X) Special Rule, hereafter referred to as the ‘Acting Model’, must select one friendly Model within 6\" of the Acting Model. The Model selected must have the Vehicle, Automata or Walker Type and is hereafter referred to as the ‘Target Model’. Once a Target Model has been selected, the Player controlling the Acting Model must make an Intelligence Check for the Acting Model. If the Check, is failed there is no further effect, but if the Check is passed then the Player controlling the Acting Model may select one of the following options: Repair – The Target Model gains a number of Wounds or Hull Points equal to the value of X in the Battlesmith (X) Special Rule variant possessed by the Acting Model. This cannot increase the Target Model’s Wounds or Hull Points above its Base Value. Restore – A number of Statuses equal to the value of X in the Battlesmith (X) Special Rule variant possessed by the Acting Model may be removed from the Target Model. Activating the Battlesmith (X) Special Rule does not limit the Acting Model or the Target Model when moving or attacking in the same Turn.",
+            "configurable": true
+        }
+    },
+    "upgrades": {
+        "kinfolk-helots-exo-riggers": {
+            "id": "kinfolk-helots-exo-riggers",
+            "name": "Exo-riggers",
+            "description": "One Grenadier Troop Unit in each Detachment in this Army may be upgraded to be Exo-riggers for +8 Points per Model. All Models in Units which have been upgraded in this way have the Heavy Sub-Type, the Bulky (2) and Slow and Purposeful Special Rules, an Armour Save Characteristic of 3+ and an Invulnerable Save Characteristic of 6+, an Intelligence Characteristic of 7 and the Battlesmith (1) Special Rule if they have the Sergeant Sub-Type, and may each exchange their militia rifle for one heavy industrial weapon or one pair of industrial weapons.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "exo-riggers": {
+                    "id": "exo-riggers",
+                    "name": "Exo-riggers",
+                    "cost": {
+                        "points": "8 * unit.models()"
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Exo-riggers"]
+                        },
+                        {
+                            "kind": "stat",
+                            "changes": [
+                                {
+                                    "stat": "sav",
+                                    "op": "set",
+                                    "value": "3+"
+                                },
+                                {
+                                    "stat": "inv",
+                                    "op": "set",
+                                    "value": "6+"
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "bulky",
+                                "value": "2"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "slow-and-purposeful"
+                            }
+                        },
+                        {
+                            "kind": "stat",
+                            "profiles": {
+                                "anyOf": ["sergeant"]
+                            },
+                            "changes": [
+                                {
+                                    "stat": "in",
+                                    "op": "set",
+                                    "value": "7"
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "specialRule",
+                            "profiles": {
+                                "anyOf": ["sergeant"]
+                            },
+                            "rule": {
+                                "id": "battlesmith",
+                                "value": "1"
+                            }
+                        }
+                    ]
+                }
+            },
+            "multiSelect": true
+        }
+    },
+    "unitModifiers": {
+        "kinfolk-helots-provenance": {
+            "id": "kinfolk-helots-provenance",
+            "name": "Kinfolk Helots",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "kinfolk-helots"
+                    }
+                }
+            ]
+        },
+        "kinfolk-helots-provenance-part": {
+            "id": "kinfolk-helots-provenance-part",
+            "name": "Kinfolk Helots",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "kinfolk-helots"
+                    }
+                }
+            ]
+        },
+        "kinfolk-helots-provenance-part-2": {
+            "id": "kinfolk-helots-provenance-part-2",
+            "name": "Kinfolk Helots",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "kinfolk-helots"
+                    }
+                }
+            ]
+        },
+        "kinfolk-helots": {
+            "id": "kinfolk-helots",
+            "name": "Kinfolk Helots",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "t",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "i",
+                            "op": "add",
+                            "value": -1
+                        },
+                        {
+                            "stat": "m",
+                            "op": "add",
+                            "value": -1
+                        }
+                    ]
+                }
+            ]
+        },
+        "kinfolk-helots-part": {
+            "id": "kinfolk-helots-part",
+            "name": "Kinfolk Helots",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "t",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "i",
+                            "op": "add",
+                            "value": -1
+                        },
+                        {
+                            "stat": "m",
+                            "op": "add",
+                            "value": -1
+                        }
+                    ]
+                }
+            ]
+        },
+        "kinfolk-helots-part-2": {
+            "id": "kinfolk-helots-part-2",
+            "name": "Kinfolk Helots",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "t",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "i",
+                            "op": "add",
+                            "value": -1
+                        },
+                        {
+                            "stat": "m",
+                            "op": "add",
+                            "value": -1
+                        }
+                    ]
+                }
+            ]
+        },
+        "kinfolk-helots-exo-riggers": {
+            "id": "kinfolk-helots-exo-riggers",
+            "name": "Exo-riggers",
+            "selector": {
+                "unitIds": ["grenadier-troop"]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "kinfolk-helots-exo-riggers"
+                }
+            ]
+        }
+    },
+    "listRules": {
+        "exo-riggers-one-per-detachment": {
+            "kind": "count",
+            "id": "exo-riggers-one-per-detachment",
+            "units": {
+                "traits": ["Exo-riggers"]
+            },
+            "scope": "group",
+            "max": 1,
+            "message": "Only one Grenadier Troop Unit in each Detachment may be upgraded to be Exo-riggers"
+        }
+    }
+}

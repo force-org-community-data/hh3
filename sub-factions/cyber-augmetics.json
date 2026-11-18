@@ -1,0 +1,354 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "cyber-augmetics",
+    "version": "1.0.0",
+    "name": "Cyber-augmetics",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "cyber-augmetics": {
+            "id": "cyber-augmetics",
+            "name": "Cyber-augmetics",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule and the Infantry Type in this Army gain the Eternal Warrior (1) Special Rule and their Base Intelligence Characteristic is modified by +1. Any Model with the Irregulars Special Rule and the Command or Sergeant Sub-Type in this Army may have rad grenades selected for it for +5 Points per Model."
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
+            "configurable": true
+        },
+        "phage": {
+            "id": "phage",
+            "name": "Phage",
+            "text": "Unsaved Wounds with the Phage (X) Special Rule reduce a Characteristic by 1. If an attack made for a Weapon or Model with this Special Rule inflicts one or more Unsaved Wounds on a Target Unit, then once the Shooting Attack or Initiative Step in which the Unsaved Wound was inflicted has been completely resolved, all remaining Models in the Unit that was the target of the attack must reduce the Characteristic that is the value of X for that variant of the Phage (X) Special Rule by 1 for the remainder of the Battle. Models in a Unit may have any number of different Characteristics reduced by 1 by the Phage (X) Special Rule, but no individual Characteristic may be reduced by more than 1 by the Phage (X) Special Rule no matter how many Unsaved Wounds with any variant of that Special Rule are allocated to Models in that Unit.",
+            "configurable": true
+        }
+    },
+    "weapons": {
+        "rad-grenades": {
+            "id": "rad-grenades",
+            "name": "Rad grenades",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Rad grenades",
+                    "stats": {
+                        "r": "8",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        }
+                    ],
+                    "traits": ["Rad"]
+                }
+            ]
+        }
+    },
+    "upgrades": {
+        "cyber-augmetics-rad-grenades": {
+            "id": "cyber-augmetics-rad-grenades",
+            "name": "Rad grenades",
+            "description": "Any Model with the Irregulars Special Rule and the Command or Sergeant Sub-Type in this Army may have rad grenades selected for it for +5 Points per Model.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "rad-grenades": {
+                    "id": "rad-grenades",
+                    "name": "Rad grenades",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["rad-grenades"]
+                }
+            },
+            "multiSelect": true
+        },
+        "cyber-augmetics-rad-grenades-squad": {
+            "id": "cyber-augmetics-rad-grenades-squad",
+            "name": "Rad grenades",
+            "description": "Any Model with the Irregulars Special Rule and the Command or Sergeant Sub-Type in this Army may have rad grenades selected for it for +5 Points per Model.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "rad-grenades": {
+                    "id": "rad-grenades",
+                    "name": "Rad grenades",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["rad-grenades"]
+                }
+            },
+            "multiSelect": true
+        }
+    },
+    "unitModifiers": {
+        "cyber-augmetics-provenance": {
+            "id": "cyber-augmetics-provenance",
+            "name": "Cyber-augmetics",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "cyber-augmetics"
+                    }
+                }
+            ]
+        },
+        "cyber-augmetics-provenance-part": {
+            "id": "cyber-augmetics-provenance-part",
+            "name": "Cyber-augmetics",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "cyber-augmetics"
+                    }
+                }
+            ]
+        },
+        "cyber-augmetics-provenance-part-2": {
+            "id": "cyber-augmetics-provenance-part-2",
+            "name": "Cyber-augmetics",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "cyber-augmetics"
+                    }
+                }
+            ]
+        },
+        "cyber-augmetics": {
+            "id": "cyber-augmetics",
+            "name": "Cyber-augmetics",
+            "selector": {
+                "unitIds": [
+                    "command-troop",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "eternal-warrior",
+                        "value": "1"
+                    }
+                },
+                {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "in",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "cyber-augmetics-part": {
+            "id": "cyber-augmetics-part",
+            "name": "Cyber-augmetics",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "eternal-warrior",
+                        "value": "1"
+                    }
+                },
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "in",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "cyber-augmetics-part-2": {
+            "id": "cyber-augmetics-part-2",
+            "name": "Cyber-augmetics",
+            "selector": {
+                "unitIds": ["discipline-master-cadre"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["infantry"]
+                    },
+                    "rule": {
+                        "id": "eternal-warrior",
+                        "value": "1"
+                    }
+                },
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "anyOf": ["infantry"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "in",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "cyber-augmetics-part-3": {
+            "id": "cyber-augmetics-part-3",
+            "name": "Cyber-augmetics",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "eternal-warrior",
+                        "value": "1"
+                    }
+                },
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "in",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "cyber-augmetics-rad-grenades": {
+            "id": "cyber-augmetics-rad-grenades",
+            "name": "Rad grenades",
+            "selector": {
+                "unitIds": [
+                    "cavalry-troop",
+                    "command-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ],
+                "profiles": {
+                    "anyOf": ["command", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "cyber-augmetics-rad-grenades"
+                }
+            ]
+        },
+        "cyber-augmetics-rad-grenades-squad": {
+            "id": "cyber-augmetics-rad-grenades-squad",
+            "name": "Rad grenades",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "discipline-master-cadre",
+                    "heavy-ordnance-battery",
+                    "levy-troop",
+                    "rapier-troop"
+                ],
+                "profiles": {
+                    "anyOf": ["command", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "cyber-augmetics-rad-grenades-squad"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,240 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "warrior-elite",
+    "version": "1.0.0",
+    "name": "Warrior Elite",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "warrior-elite": {
+            "id": "warrior-elite",
+            "name": "Warrior Elite",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule in this Army have their Base Leadership Characteristic modified by +1 to a maximum of 9. Any Model in this Army may have a Militia vexilla exchanged for one auxilia vexilla for Free."
+        }
+    },
+    "equipment": {
+        "auxilia-vexilla": {
+            "id": "auxilia-vexilla",
+            "name": "Auxilia vexilla",
+            "text": "An Auxilia vexilla increases the Casualty threshold when making Panic Checks for a Unit in the Shooting Phase from 25% to 50%. When determining whether a Unit containing at least one Model with an Auxilia vexilla is required to take a Leadership Check in the Morale Sub-Phase of the Shooting Phase due to the number of Models removed from that Unit as Casualties, a Check only has to be made for the Unit if the number of Models removed is equal to 50% or more of the total number of Models in the Unit at the start of that Shooting Attack."
+        }
+    },
+    "upgrades": {
+        "warrior-elite-auxilia-vexilla": {
+            "id": "warrior-elite-auxilia-vexilla",
+            "name": "Militia vexilla to auxilia vexilla",
+            "description": "Any Model in this Army may have a Militia vexilla exchanged for one auxilia vexilla.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "auxilia-vexilla": {
+                    "id": "auxilia-vexilla",
+                    "name": "Auxilia vexilla",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "equipment",
+                                "id": "militia-vexilla"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "auxilia-vexilla"
+                            }
+                        }
+                    ]
+                }
+            },
+            "multiSelect": true,
+            "limitBy": [
+                {
+                    "kind": "equipment",
+                    "id": "militia-vexilla",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "warrior-elite-provenance": {
+            "id": "warrior-elite-provenance",
+            "name": "Warrior Elite",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "warrior-elite"
+                    }
+                }
+            ]
+        },
+        "warrior-elite-provenance-part": {
+            "id": "warrior-elite-provenance-part",
+            "name": "Warrior Elite",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "warrior-elite"
+                    }
+                }
+            ]
+        },
+        "warrior-elite-provenance-part-2": {
+            "id": "warrior-elite-provenance-part-2",
+            "name": "Warrior Elite",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "warrior-elite"
+                    }
+                }
+            ]
+        },
+        "warrior-elite": {
+            "id": "warrior-elite",
+            "name": "Warrior Elite",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "ld",
+                            "op": "add",
+                            "value": 1,
+                            "max": 9
+                        }
+                    ]
+                }
+            ]
+        },
+        "warrior-elite-part": {
+            "id": "warrior-elite-part",
+            "name": "Warrior Elite",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "ld",
+                            "op": "add",
+                            "value": 1,
+                            "max": 9
+                        }
+                    ]
+                }
+            ]
+        },
+        "warrior-elite-part-2": {
+            "id": "warrior-elite-part-2",
+            "name": "Warrior Elite",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "ld",
+                            "op": "add",
+                            "value": 1,
+                            "max": 9
+                        }
+                    ]
+                }
+            ]
+        },
+        "warrior-elite-auxilia-vexilla": {
+            "id": "warrior-elite-auxilia-vexilla",
+            "name": "Militia vexilla to auxilia vexilla",
+            "selector": {
+                "unitIds": [
+                    "cavalry-troop",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "ogryn-brute-troop"
+                ],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "warrior-elite-auxilia-vexilla"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,133 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "infernal-tempest",
+    "version": "1.0.0",
+    "name": "Infernal Tempest",
+    "parent": {
+        "faction": "daemons-of-the-ruinstorm",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "infernal-tempest": {
+            "id": "infernal-tempest",
+            "name": "Infernal Tempest",
+            "text": "Any Model with this Trait gains the Desecrators Special Rule and the Aflame (1) Special Rule. A Model with this Ætheric Dominion Trait that has the Command or Champion Sub-Type may be given the Psyker Trait and may have the Pyromancy Psychic Discipline selected for it for +10 Points."
+        },
+        "desecrators": {
+            "id": "desecrators",
+            "name": "Desecrators",
+            "text": "Models with this Special Rule that pass a Willpower Check gain the Line (X) Special Rule. At the start of each Victory Sub-Phase, the Controlling Player of a Unit composed entirely of Models with this Special Rule may make a Willpower Check. If the Willpower Check is passed all Models in the Unit gain the Line (X) Special Rule until the end of the current Victory Sub-Phase. The value of X is determined by how much the final result of the Check is less than the Willpower Characteristic used for the Check: 0-1 Line (1) 2 Line (2) 3 or more Line (3) If the Willpower Check is failed, the Unit suffers Perils of the Warp."
+        },
+        "aflame": {
+            "id": "aflame",
+            "name": "Aflame",
+            "text": "A Weapon with this Special Rule causes additional modifiers to a Target’s Leadership Characteristic. If a Melee Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit, regardless of whether any Damage is inflicted, until the end of the Phase, that Unit is considered to be ‘aflame’. If the Controlling Player of a Unit that is aflame is required to make a Leadership Check during that Phase for a Combat that includes that Unit, the value of X on this Special Rule is applied as an additional negative modifier to the Leadership Characteristic being used for that Check.",
+            "configurable": true
+        }
+    },
+    "equipment": {
+        "pyromancy": {
+            "id": "pyromancy",
+            "name": "Pyromancy",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "infernal-tempest-psychic-disciplines": {
+            "id": "infernal-tempest-psychic-disciplines",
+            "name": "Psychic Discipline",
+            "description": "A Model with this Ætheric Dominion Trait that has the Command or Champion Sub-Type may be given the Psyker Trait and may have the Pyromancy Psychic Discipline selected for it.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "pyromancy": {
+                    "id": "pyromancy",
+                    "name": "Pyromancy",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pyromancy"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Psyker"]
+                        }
+                    ]
+                }
+            },
+            "multiSelect": true
+        }
+    },
+    "unitModifiers": {
+        "infernal-tempest-trait": {
+            "id": "infernal-tempest-trait",
+            "name": "Infernal Tempest Trait",
+            "selector": {
+                "traits": ["Ætheric Dominion"]
+            },
+            "actions": [
+                {
+                    "kind": "trait",
+                    "replace": {
+                        "from": ["Ætheric Dominion"],
+                        "to": "Infernal Tempest"
+                    }
+                }
+            ]
+        },
+        "infernal-tempest-rules": {
+            "id": "infernal-tempest-rules",
+            "name": "Infernal Tempest",
+            "selector": {
+                "traits": ["Infernal Tempest"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "infernal-tempest"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "desecrators"
+                    }
+                }
+            ]
+        },
+        "infernal-tempest-aflame": {
+            "id": "infernal-tempest-aflame",
+            "name": "Infernal Tempest: Aflame",
+            "selector": {
+                "traits": ["Infernal Tempest"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "aflame",
+                        "value": "1"
+                    }
+                }
+            ]
+        },
+        "infernal-tempest-psychic-disciplines": {
+            "id": "infernal-tempest-psychic-disciplines",
+            "name": "Psychic Discipline",
+            "selector": {
+                "traits": ["Infernal Tempest"],
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "infernal-tempest-psychic-disciplines"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "questoris-mendicant",
+    "version": "1.0.0",
+    "name": "Questoris Mendicant (Freeblade Company)",
+    "parent": {
+        "faction": "questoris-familia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "mendicant-knights": {
+            "id": "mendicant-knights",
+            "name": "Mendicant Knights",
+            "text": "Units selected as part of a Lord of War Detachment in an Army with the Freeblade Company Household Paradigm which are selected from the Questoris Familia Army List may each have a single Household Rank Prime Advantage selected for them as if they had been selected to fill a Prime Force Organisation Slot."
+        }
+    },
+    "unitModifiers": {
+        "questoris-mendicant-trait": {
+            "id": "questoris-mendicant-trait",
+            "name": "Questoris Mendicant Trait",
+            "selector": {
+                "traits": ["Questoris Familia"]
+            },
+            "actions": [
+                {
+                    "kind": "trait",
+                    "replace": {
+                        "from": ["Questoris Familia"],
+                        "to": "Questoris Mendicant"
+                    }
+                }
+            ]
+        },
+        "mendicant-knights": {
+            "id": "mendicant-knights",
+            "name": "Mendicant Knights",
+            "selector": {
+                "traits": ["Questoris Mendicant"]
+            },
+            "actions": [
+                {
+                    "kind": "slotTag",
+                    "add": ["prime"],
+                    "categories": ["household-rank"],
+                    "when": {
+                        "if": "group.is(type:lord-of-war)",
+                        "message": "Mendicant Knights: only in a Lord of War Detachment"
+                    }
+                }
+            ]
+        }
+    }
+}

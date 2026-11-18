@@ -1,0 +1,170 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "legacy-of-the-great-crusade",
+    "version": "1.0.0",
+    "name": "Legacy of the Great Crusade",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "legacy-of-the-great-crusade": {
+            "id": "legacy-of-the-great-crusade",
+            "name": "Legacy of the Great Crusade",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule in this Army which don’t have any version of the Expendable (X) Special Rule have their Base Ballistic Skill Characteristic modified by +1. The following item is added to the Militia Armaments list: - Lasrifle +1 points The following item is added to the Militia Special Weapons list: - Rotor cannon +10 points"
+        }
+    },
+    "unitModifiers": {
+        "legacy-of-the-great-crusade-provenance": {
+            "id": "legacy-of-the-great-crusade-provenance",
+            "name": "Legacy of the Great Crusade",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "legacy-of-the-great-crusade"
+                    }
+                }
+            ]
+        },
+        "legacy-of-the-great-crusade-provenance-part": {
+            "id": "legacy-of-the-great-crusade-provenance-part",
+            "name": "Legacy of the Great Crusade",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "legacy-of-the-great-crusade"
+                    }
+                }
+            ]
+        },
+        "legacy-of-the-great-crusade-provenance-part-2": {
+            "id": "legacy-of-the-great-crusade-provenance-part-2",
+            "name": "Legacy of the Great Crusade",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "legacy-of-the-great-crusade"
+                    }
+                }
+            ]
+        },
+        "legacy-of-the-great-crusade": {
+            "id": "legacy-of-the-great-crusade",
+            "name": "Legacy of the Great Crusade",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "bs",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "legacy-of-the-great-crusade-part": {
+            "id": "legacy-of-the-great-crusade-part",
+            "name": "Legacy of the Great Crusade",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "bs",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "legacy-of-the-great-crusade-part-2": {
+            "id": "legacy-of-the-great-crusade-part-2",
+            "name": "Legacy of the Great Crusade",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "bs",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

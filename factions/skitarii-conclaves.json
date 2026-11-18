@@ -1,0 +1,2154 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/faction.schema.json",
+    "id": "skitarii-conclaves",
+    "version": "1.0.0",
+    "name": "Skitarii Conclaves",
+    "description": "Every Unit from the Skitarii Conclaves Army List replaces its [Skitarii] Trait with one of the Acquisitor, Expurgator, Vindictor (Loyalist Allegiance only) or Scourger (Traitor Allegiance only) Traits. All Units selected as part of a given Detachment must have the same Trait.",
+    "game": {
+        "id": "hh3",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "defaultGroup": "crusade-primary-detachment",
+    "selectors": {
+        "conclave-acquisitor": {
+            "id": "conclave-acquisitor",
+            "name": "Acquisitor Conclave",
+            "match": {
+                "traits": ["Acquisitor"],
+                "exclude": [
+                    {
+                        "traits": ["Logistical"]
+                    }
+                ]
+            }
+        },
+        "conclave-expurgator": {
+            "id": "conclave-expurgator",
+            "name": "Expurgator Conclave",
+            "match": {
+                "traits": ["Expurgator"],
+                "exclude": [
+                    {
+                        "traits": ["Logistical"]
+                    }
+                ]
+            }
+        },
+        "conclave-vindictor": {
+            "id": "conclave-vindictor",
+            "name": "Vindictor Conclave",
+            "match": {
+                "traits": ["Vindictor"],
+                "exclude": [
+                    {
+                        "traits": ["Logistical"]
+                    }
+                ]
+            }
+        },
+        "conclave-scourger": {
+            "id": "conclave-scourger",
+            "name": "Scourger Conclave",
+            "match": {
+                "traits": ["Scourger"],
+                "exclude": [
+                    {
+                        "traits": ["Logistical"]
+                    }
+                ]
+            }
+        }
+    },
+    "units": {
+        "bonepicker-host": {
+            "id": "bonepicker-host",
+            "name": "Bonepicker Host",
+            "role": "support",
+            "type": "infantry",
+            "cost": {
+                "points": 50
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "bonepicker",
+                    "name": "Bonepicker",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "2",
+                        "bs": "2",
+                        "s": "3",
+                        "t": "3",
+                        "w": "1",
+                        "i": "2",
+                        "a": "1",
+                        "ld": "4",
+                        "cl": "4",
+                        "wp": "4",
+                        "in": "4",
+                        "sav": "6+",
+                        "inv": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "expendable",
+                            "value": "2"
+                        },
+                        {
+                            "id": "support-unit",
+                            "value": "1"
+                        },
+                        {
+                            "id": "zealous-followers"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Skitarii"],
+            "composition": [
+                {
+                    "id": "bonepicker",
+                    "name": "Bonepicker",
+                    "profiles": {
+                        "bonepicker": 1
+                    },
+                    "min": 10,
+                    "max": 30,
+                    "cost": {
+                        "points": 5
+                    }
+                }
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "las-lock",
+                    "perModel": true
+                }
+            ],
+            "upgrades": {
+                "conclave": {
+                    "id": "conclave",
+                    "name": "Skitarii Conclave",
+                    "description": "When you add this Unit to your Army, you must select one Skitarii Conclave Trait to replace its [Skitarii] Trait with.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "skitarii-conclave": {
+                            "id": "skitarii-conclave",
+                            "target": "skitarii-conclave"
+                        }
+                    },
+                    "default": "acquisitor"
+                }
+            }
+        },
+        "skitarii-battle-pilgrym-corpus": {
+            "id": "skitarii-battle-pilgrym-corpus",
+            "name": "Skitarii Battle-Pilgrym Corpus",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 8,
+            "profiles": [
+                {
+                    "id": "ordinator",
+                    "name": "Ordinator",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "4",
+                        "bs": "3",
+                        "s": "3",
+                        "t": "4",
+                        "w": "2",
+                        "i": "3",
+                        "a": "3",
+                        "ld": "8",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "7",
+                        "sav": "4+",
+                        "inv": "6+"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "fast",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "id": "battle-pilgrym",
+                    "name": "Battle-Pilgrym",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "3",
+                        "bs": "3",
+                        "s": "3",
+                        "t": "4",
+                        "w": "2",
+                        "i": "3",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "7",
+                        "sav": "4+",
+                        "inv": "6+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "fast",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Skitarii"],
+            "composition": [
+                {
+                    "id": "ordinator",
+                    "name": "Ordinator",
+                    "profiles": {
+                        "ordinator": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "battle-pilgrym",
+                    "name": "Battle-Pilgrym",
+                    "profiles": {
+                        "battle-pilgrym": 1
+                    },
+                    "min": 7,
+                    "max": 15,
+                    "cost": {
+                        "points": 10
+                    }
+                }
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "voltlock-arquebus",
+                    "perModel": true,
+                    "profileId": "ordinator"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "voltlock-arquebus",
+                    "perModel": true,
+                    "profileId": "battle-pilgrym"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "ordinator"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "battle-pilgrym"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "ordinator"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "battle-pilgrym"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Sgt Voltlock arquebus to voltlock handgun and power sword",
+                    "description": "The Skitarii Ordinator in this Unit may have its voltlock arquebus exchanged for one voltlock handgun and one power sword.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "voltlock-handgun-and-one-power-sword": {
+                            "id": "voltlock-handgun-and-one-power-sword",
+                            "name": "Voltlock handgun and one power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"],
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "voltlock-arquebus"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "voltlock-handgun"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "ordinator",
+                    "multiSelect": true
+                },
+                "option-2-ordinator": {
+                    "id": "option-2-ordinator",
+                    "name": "Ordinator Rad charges",
+                    "description": "Any Model in this Unit may have rad charges selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "rad-charges": {
+                            "id": "rad-charges",
+                            "name": "Rad charges",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["rad-charges"]
+                        }
+                    },
+                    "profileId": "ordinator",
+                    "multiSelect": true
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Rad charges",
+                    "description": "Any Model in this Unit may have rad charges selected for it.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "rad-charges": {
+                            "id": "rad-charges",
+                            "name": "Rad charges",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["rad-charges"]
+                        }
+                    },
+                    "profileId": "battle-pilgrym",
+                    "multiSelect": true
+                },
+                "option-3-ordinator": {
+                    "id": "option-3-ordinator",
+                    "name": "Ordinator Haywire grenades",
+                    "description": "Any Model in this Unit may have haywire grenades selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "haywire-grenades": {
+                            "id": "haywire-grenades",
+                            "name": "Haywire grenades",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["haywire-grenades"]
+                        }
+                    },
+                    "profileId": "ordinator",
+                    "multiSelect": true
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Haywire grenades",
+                    "description": "Any Model in this Unit may have haywire grenades selected for it.",
+                    "perModel": {
+                        "type": "some"
+                    },
+                    "options": {
+                        "haywire-grenades": {
+                            "id": "haywire-grenades",
+                            "name": "Haywire grenades",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["haywire-grenades"]
+                        }
+                    },
+                    "profileId": "battle-pilgrym",
+                    "multiSelect": true
+                },
+                "conclave": {
+                    "id": "conclave",
+                    "name": "Skitarii Conclave",
+                    "description": "When you add this Unit to your Army, you must select one Skitarii Conclave Trait to replace its [Skitarii] Trait with.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "skitarii-conclave": {
+                            "id": "skitarii-conclave",
+                            "target": "skitarii-conclave"
+                        }
+                    },
+                    "default": "acquisitor"
+                }
+            }
+        },
+        "skitarii-battle-pilgrym-marshal": {
+            "id": "skitarii-battle-pilgrym-marshal",
+            "name": "Skitarii Battle-Pilgrym Marshal",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "marshal",
+                    "name": "Marshal",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "3",
+                        "t": "4",
+                        "w": "4",
+                        "i": "4",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "4+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "fast",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Skitarii"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "voltlock-handgun"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Auctorit sceptre",
+                    "description": "This Model may have its auctorit sceptre exchanged for one of the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "auctorit-sceptre": {
+                            "id": "auctorit-sceptre",
+                            "name": "Auctorit sceptre",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["auctorit-sceptre"]
+                        },
+                        "phase-claw": {
+                            "id": "phase-claw",
+                            "name": "Phase claw",
+                            "cost": {
+                                "points": 20
+                            },
+                            "weaponRefs": ["phase-claw"]
+                        },
+                        "corposant-stave": {
+                            "id": "corposant-stave",
+                            "name": "Corposant stave",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["corposant-stave"]
+                        }
+                    },
+                    "default": "auctorit-sceptre",
+                    "profileId": "marshal"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Voltlock handgun to archaeotech pistol",
+                    "description": "This Model may have its voltlock handgun exchanged for one archaeotech pistol.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "archaeotech-pistol": {
+                            "id": "archaeotech-pistol",
+                            "name": "Archaeotech pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "voltlock-handgun"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "archaeotech-pistol"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "marshal",
+                    "multiSelect": true
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Rad charges",
+                    "description": "This Model may have rad charges selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "rad-charges": {
+                            "id": "rad-charges",
+                            "name": "Rad charges",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["rad-charges"]
+                        }
+                    },
+                    "profileId": "marshal",
+                    "multiSelect": true
+                },
+                "option-4": {
+                    "id": "option-4",
+                    "name": "Haywire grenades",
+                    "description": "This Model may have haywire grenades selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "haywire-grenades": {
+                            "id": "haywire-grenades",
+                            "name": "Haywire grenades",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["haywire-grenades"]
+                        }
+                    },
+                    "profileId": "marshal",
+                    "multiSelect": true
+                },
+                "conclave": {
+                    "id": "conclave",
+                    "name": "Skitarii Conclave",
+                    "description": "When you add this Unit to your Army, you must select one Skitarii Conclave Trait to replace its [Skitarii] Trait with.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "skitarii-conclave": {
+                            "id": "skitarii-conclave",
+                            "target": "skitarii-conclave"
+                        }
+                    },
+                    "default": "acquisitor",
+                    "profileId": "marshal"
+                }
+            }
+        },
+        "skitarii-karacnos-assault-tank": {
+            "id": "skitarii-karacnos-assault-tank",
+            "name": "Skitarii Karacnos Assault Tank",
+            "role": "armour",
+            "type": "vehicle",
+            "cost": {
+                "points": 235
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "skitarii-karacnos",
+                    "name": "Skitarii Karacnos",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "10",
+                        "bs": "4",
+                        "front": "14",
+                        "side": "12",
+                        "rear": "12",
+                        "hp": "7",
+                        "transport-capacity": "-"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "auto-repair",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "shock-ram"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Skitarii"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "karacnos-mortar-battery",
+                    "note": "Hull (Front) Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "lightning-lock",
+                    "note": "Sponson Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "lightning-lock",
+                    "note": "Sponson Mounted"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "flare-shield"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "searchlights"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have up to two Hull (Front) Mounted hunter-killer missiles selected for it.",
+                    "perModel": {
+                        "type": "multiple",
+                        "max": 2
+                    },
+                    "options": {
+                        "hull-front-mounted-hunter-killer-missile": {
+                            "id": "hull-front-mounted-hunter-killer-missile",
+                            "name": "Hunter-killer missile",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        }
+                    },
+                    "gearNote": "Hull (Front) Mounted",
+                    "profileId": "skitarii-karacnos",
+                    "multiSelect": true
+                },
+                "conclave": {
+                    "id": "conclave",
+                    "name": "Skitarii Conclave",
+                    "description": "When you add this Unit to your Army, you must select one Skitarii Conclave Trait to replace its [Skitarii] Trait with.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "skitarii-conclave": {
+                            "id": "skitarii-conclave",
+                            "target": "skitarii-conclave"
+                        }
+                    },
+                    "default": "acquisitor",
+                    "profileId": "skitarii-karacnos"
+                }
+            }
+        },
+        "skitarii-krios-battle-tank": {
+            "id": "skitarii-krios-battle-tank",
+            "name": "Skitarii Krios Battle Tank",
+            "role": "armour",
+            "type": "vehicle",
+            "cost": {
+                "points": 135
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "skitarii-krios",
+                    "name": "Skitarii Krios",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "14",
+                        "bs": "4",
+                        "front": "13",
+                        "side": "12",
+                        "rear": "10",
+                        "hp": "5",
+                        "transport-capacity": "-"
+                    },
+                    "tags": ["Rapid"],
+                    "specialRules": [
+                        {
+                            "id": "auto-repair",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Skitarii"],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have up to two Hull (Front) Mounted hunter-killer missiles selected for it.",
+                    "perModel": {
+                        "type": "multiple",
+                        "max": 2
+                    },
+                    "options": {
+                        "hull-front-mounted-hunter-killer-missile": {
+                            "id": "hull-front-mounted-hunter-killer-missile",
+                            "name": "Hunter-killer missile",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        }
+                    },
+                    "gearNote": "Hull (Front) Mounted",
+                    "profileId": "skitarii-krios",
+                    "multiSelect": true
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Sponson Mounted volkite calivers",
+                    "description": "This Model may have two Sponson Mounted volkite calivers selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "two-sponson-mounted-volkite-calivers": {
+                            "id": "two-sponson-mounted-volkite-calivers",
+                            "name": "Two volkite calivers",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["volkite-caliver", "volkite-caliver"]
+                        }
+                    },
+                    "gearNote": "Sponson Mounted",
+                    "profileId": "skitarii-krios",
+                    "multiSelect": true
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Centreline Mounted lightning cannon",
+                    "description": "This Model may have its Centreline Mounted lightning cannon exchanged for one Centreline Mounted irradiation blaster.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "lightning-cannon": {
+                            "id": "lightning-cannon",
+                            "name": "Lightning cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["lightning-cannon"]
+                        },
+                        "centreline-mounted-irradiation-blaster": {
+                            "id": "centreline-mounted-irradiation-blaster",
+                            "name": "Irradiation blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["irradiation-blaster"]
+                        }
+                    },
+                    "default": "lightning-cannon",
+                    "gearNote": "Centreline Mounted",
+                    "profileId": "skitarii-krios"
+                },
+                "conclave": {
+                    "id": "conclave",
+                    "name": "Skitarii Conclave",
+                    "description": "When you add this Unit to your Army, you must select one Skitarii Conclave Trait to replace its [Skitarii] Trait with.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "skitarii-conclave": {
+                            "id": "skitarii-conclave",
+                            "target": "skitarii-conclave"
+                        }
+                    },
+                    "default": "acquisitor",
+                    "profileId": "skitarii-krios"
+                }
+            }
+        },
+        "skitarii-krios-venator-tank-destroyer": {
+            "id": "skitarii-krios-venator-tank-destroyer",
+            "name": "Skitarii Krios Venator Tank Destroyer",
+            "role": "armour",
+            "type": "vehicle",
+            "cost": {
+                "points": 160
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "skitarii-krios-venator",
+                    "name": "Skitarii Krios Venator",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "14",
+                        "bs": "4",
+                        "front": "13",
+                        "side": "12",
+                        "rear": "10",
+                        "hp": "5",
+                        "transport-capacity": "-"
+                    },
+                    "tags": ["Rapid"],
+                    "specialRules": [
+                        {
+                            "id": "auto-repair",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Skitarii"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "pulsar-fusil",
+                    "note": "Centreline Mounted"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have up to two Hull (Front) Mounted hunter-killer missiles selected for it.",
+                    "perModel": {
+                        "type": "multiple",
+                        "max": 2
+                    },
+                    "options": {
+                        "hull-front-mounted-hunter-killer-missile": {
+                            "id": "hull-front-mounted-hunter-killer-missile",
+                            "name": "Hunter-killer missile",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        }
+                    },
+                    "gearNote": "Hull (Front) Mounted",
+                    "profileId": "skitarii-krios-venator",
+                    "multiSelect": true
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Sponson Mounted volkite calivers",
+                    "description": "This Model may have two Sponson Mounted volkite calivers selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "two-sponson-mounted-volkite-calivers": {
+                            "id": "two-sponson-mounted-volkite-calivers",
+                            "name": "Two volkite calivers",
+                            "cost": {
+                                "points": 15
+                            },
+                            "weaponRefs": ["volkite-caliver", "volkite-caliver"]
+                        }
+                    },
+                    "gearNote": "Sponson Mounted",
+                    "profileId": "skitarii-krios-venator",
+                    "multiSelect": true
+                },
+                "conclave": {
+                    "id": "conclave",
+                    "name": "Skitarii Conclave",
+                    "description": "When you add this Unit to your Army, you must select one Skitarii Conclave Trait to replace its [Skitarii] Trait with.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "skitarii-conclave": {
+                            "id": "skitarii-conclave",
+                            "target": "skitarii-conclave"
+                        }
+                    },
+                    "default": "acquisitor",
+                    "profileId": "skitarii-krios-venator"
+                }
+            }
+        },
+        "skitarii-triaros-armoured-conveyor": {
+            "id": "skitarii-triaros-armoured-conveyor",
+            "name": "Skitarii Triaros Armoured Conveyor",
+            "role": "heavy-transport",
+            "type": "vehicle",
+            "cost": {
+                "points": 200
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "skitarii-triaros",
+                    "name": "Skitarii Triaros",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "10",
+                        "bs": "4",
+                        "front": "14",
+                        "side": "12",
+                        "rear": "12",
+                        "hp": "7",
+                        "transport-capacity": "22"
+                    },
+                    "tags": ["Transport"],
+                    "specialRules": [
+                        {
+                            "id": "auto-repair",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "shock-ram"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Skitarii"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "volkite-caliver",
+                    "note": "Centreline Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "volkite-caliver",
+                    "note": "Centreline Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-mauler-bolt-cannon",
+                    "note": "Pintle Mounted"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "flare-shield"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "searchlights"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have up to two Hull (Front) Mounted hunter-killer missiles selected for it.",
+                    "perModel": {
+                        "type": "multiple",
+                        "max": 2
+                    },
+                    "options": {
+                        "hull-front-mounted-hunter-killer-missile": {
+                            "id": "hull-front-mounted-hunter-killer-missile",
+                            "name": "Hunter-killer missile",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        }
+                    },
+                    "gearNote": "Hull (Front) Mounted",
+                    "profileId": "skitarii-triaros",
+                    "multiSelect": true
+                },
+                "conclave": {
+                    "id": "conclave",
+                    "name": "Skitarii Conclave",
+                    "description": "When you add this Unit to your Army, you must select one Skitarii Conclave Trait to replace its [Skitarii] Trait with.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "skitarii-conclave": {
+                            "id": "skitarii-conclave",
+                            "target": "skitarii-conclave"
+                        }
+                    },
+                    "default": "acquisitor",
+                    "profileId": "skitarii-triaros"
+                }
+            }
+        },
+        "skitarii-vultarax-stratos-automata": {
+            "id": "skitarii-vultarax-stratos-automata",
+            "name": "Skitarii Vultarax Stratos-Automata",
+            "role": "fast-attack",
+            "type": "automata",
+            "cost": {
+                "points": 100
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "vultarax",
+                    "name": "Vultarax",
+                    "template": "model",
+                    "stats": {
+                        "m": "12",
+                        "ws": "3",
+                        "bs": "3",
+                        "s": "5",
+                        "t": "6",
+                        "w": "6",
+                        "i": "4",
+                        "a": "3",
+                        "ld": "7",
+                        "cl": "12",
+                        "wp": "4",
+                        "in": "4",
+                        "sav": "3+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Antigrav"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "6"
+                        },
+                        {
+                            "id": "implacable-advance"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "firing-protocols",
+                            "value": "2"
+                        },
+                        {
+                            "id": "firestorm"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Skitarii"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "arc-blaster"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "vultarax-missile-launcher"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "dendrite-talons"
+                }
+            ],
+            "upgrades": {
+                "conclave": {
+                    "id": "conclave",
+                    "name": "Skitarii Conclave",
+                    "description": "When you add this Unit to your Army, you must select one Skitarii Conclave Trait to replace its [Skitarii] Trait with.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "skitarii-conclave": {
+                            "id": "skitarii-conclave",
+                            "target": "skitarii-conclave"
+                        }
+                    },
+                    "default": "acquisitor",
+                    "profileId": "vultarax"
+                }
+            }
+        }
+    },
+    "weapons": {
+        "arc-blaster": {
+            "id": "arc-blaster",
+            "name": "Arc blaster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Arc blaster",
+                    "stats": {
+                        "r": "24",
+                        "fp": "6",
+                        "rs": "6",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "suppressive",
+                            "value": "1"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Suppressed"
+                        }
+                    ],
+                    "traits": ["Arc"]
+                }
+            ]
+        },
+        "archaeotech-pistol": {
+            "id": "archaeotech-pistol",
+            "name": "Archaeotech pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Archaeotech pistol",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "3+"
+                        }
+                    ],
+                    "traits": ["Assault"]
+                }
+            ]
+        },
+        "auctorit-sceptre": {
+            "id": "auctorit-sceptre",
+            "name": "Auctorit sceptre",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Auctorit sceptre",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "icon-of-authority"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "corposant-stave": {
+            "id": "corposant-stave",
+            "name": "Corposant stave",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Corposant stave",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "shock",
+                            "value": "Pinning, Stunned, Suppressed"
+                        }
+                    ]
+                }
+            ]
+        },
+        "dendrite-talons": {
+            "id": "dendrite-talons",
+            "name": "Dendrite talons",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Dendrite talons",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "frag-grenades": {
+            "id": "frag-grenades",
+            "name": "Frag grenades",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Frag grenades",
+                    "stats": {
+                        "r": "6",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "6",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        }
+                    ],
+                    "traits": ["Assault"]
+                }
+            ]
+        },
+        "haywire-grenades": {
+            "id": "haywire-grenades",
+            "name": "Haywire grenades",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Haywire grenades",
+                    "stats": {
+                        "r": "8",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "shock",
+                            "value": "Stunned"
+                        }
+                    ],
+                    "traits": ["Haywire", "Assault"]
+                }
+            ]
+        },
+        "hunter-killer-missile": {
+            "id": "hunter-killer-missile",
+            "name": "Hunter-killer missile",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Hunter-killer missile",
+                    "stats": {
+                        "r": "48",
+                        "fp": "1",
+                        "rs": "9",
+                        "ap": "3",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Missile"]
+                }
+            ]
+        },
+        "irradiation-blaster": {
+            "id": "irradiation-blaster",
+            "name": "Irradiation blaster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Irradiation blaster",
+                    "stats": {
+                        "r": "16",
+                        "fp": "1",
+                        "rs": "2",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "5\""
+                        },
+                        {
+                            "id": "ordnance",
+                            "value": "D"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Stunned"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "2"
+                        }
+                    ],
+                    "traits": ["Rad"]
+                }
+            ]
+        },
+        "karacnos-mortar-battery": {
+            "id": "karacnos-mortar-battery",
+            "name": "Karacnos mortar battery",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Karacnos mortar battery",
+                    "stats": {
+                        "r": "60",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "5\""
+                        },
+                        {
+                            "id": "barrage",
+                            "value": "2"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "3"
+                        }
+                    ],
+                    "traits": ["Rad"]
+                }
+            ]
+        },
+        "krak-grenades": {
+            "id": "krak-grenades",
+            "name": "Krak grenades",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Krak grenades",
+                    "stats": {
+                        "im": "-3",
+                        "am": "1",
+                        "sm": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "detonation"
+                        }
+                    ]
+                }
+            ]
+        },
+        "las-lock": {
+            "id": "las-lock",
+            "name": "Las-lock",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Las-lock",
+                    "stats": {
+                        "r": "18",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "6",
+                        "d": "1"
+                    },
+                    "traits": ["Las"]
+                }
+            ]
+        },
+        "lightning-cannon": {
+            "id": "lightning-cannon",
+            "name": "Lightning cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Lightning cannon",
+                    "stats": {
+                        "r": "36",
+                        "fp": "1",
+                        "rs": "7",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "5\""
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "suppressive",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Arc"]
+                }
+            ]
+        },
+        "lightning-lock": {
+            "id": "lightning-lock",
+            "name": "Lightning lock",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Lightning lock",
+                    "stats": {
+                        "r": "36",
+                        "fp": "1",
+                        "rs": "7",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "suppressive",
+                            "value": "0"
+                        }
+                    ],
+                    "traits": ["Arc"]
+                }
+            ]
+        },
+        "phase-claw": {
+            "id": "phase-claw",
+            "name": "Phase claw",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Phase claw",
+                    "stats": {
+                        "im": "-3",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "power-sword": {
+            "id": "power-sword",
+            "name": "Power sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Power sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "pulsar-fusil": {
+            "id": "pulsar-fusil",
+            "name": "Pulsar-fusil",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Pulsar-fusil",
+                    "stats": {
+                        "r": "36",
+                        "fp": "2",
+                        "rs": "9",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "ordnance",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "suppressive",
+                            "value": "2"
+                        }
+                    ],
+                    "traits": ["Las"]
+                }
+            ]
+        },
+        "rad-charges": {
+            "id": "rad-charges",
+            "name": "Rad charges",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Rad charges",
+                    "stats": {
+                        "r": "8",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        }
+                    ],
+                    "traits": ["Rad", "Assault"]
+                }
+            ]
+        },
+        "twin-mauler-bolt-cannon": {
+            "id": "twin-mauler-bolt-cannon",
+            "name": "Twin mauler bolt cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin mauler bolt cannon",
+                    "stats": {
+                        "r": "24",
+                        "fp": "6",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "2"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "4+"
+                        }
+                    ],
+                    "traits": ["Bolt"]
+                }
+            ]
+        },
+        "volkite-caliver": {
+            "id": "volkite-caliver",
+            "name": "Volkite caliver",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Volkite caliver",
+                    "stats": {
+                        "r": "30",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "deflagrate",
+                            "value": "6"
+                        }
+                    ],
+                    "traits": ["Volkite"]
+                }
+            ]
+        },
+        "voltlock-arquebus": {
+            "id": "voltlock-arquebus",
+            "name": "Voltlock arquebus",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Voltlock arquebus (Ranged)",
+                    "stats": {
+                        "r": "20",
+                        "fp": "2",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "deflagrate",
+                            "value": "5"
+                        }
+                    ],
+                    "traits": ["Volkite"]
+                },
+                {
+                    "name": "Voltlock arquebus (Melee)",
+                    "template": "melee",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "I"
+                        }
+                    ]
+                }
+            ]
+        },
+        "voltlock-handgun": {
+            "id": "voltlock-handgun",
+            "name": "Voltlock handgun",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Voltlock handgun",
+                    "stats": {
+                        "r": "10",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "deflagrate",
+                            "value": "5"
+                        }
+                    ],
+                    "traits": ["Volkite", "Assault"]
+                }
+            ]
+        },
+        "vultarax-missile-launcher": {
+            "id": "vultarax-missile-launcher",
+            "name": "Vultarax missile launcher",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Vultarax missile launcher - Airburst",
+                    "stats": {
+                        "r": "36",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "5\""
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "0"
+                        }
+                    ],
+                    "traits": ["Rad"]
+                },
+                {
+                    "name": "Vultarax missile launcher - Shaped charge",
+                    "stats": {
+                        "r": "36",
+                        "fp": "2",
+                        "rs": "10",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "0"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Stunned"
+                        }
+                    ],
+                    "traits": ["Rad"]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "flare-shield": {
+            "id": "flare-shield",
+            "name": "Flare shield",
+            "text": "Attacks which hit a Model with a flare shield gain no benefit from the Armourbane Special Rule. When Making Armour Penetration Tests against a Model with a flare shield, no Weapon may make use of the Armourbane Special Rule."
+        },
+        "searchlights": {
+            "id": "searchlights",
+            "name": "Searchlights",
+            "text": "Searchlights allow attacks to ignore Shrouded Damage Mitigation Rolls. The target number of any Shrouded Damage Mitigation Tests is increased by +1 (to a maximum of 6+) when making Tests as a consequence of wounds, Penetrating Hits or Glancing Hits inflicted by Shooting Attacks made by a Model that has searchlights that has Line of Sight to the Target Unit. Additionally a Model with searchlights may not make Shrouded Damage Mitigation Tests to negate wounds, Penetrating Hits or Glancing Hits."
+        }
+    },
+    "upgrades": {
+        "skitarii-conclave": {
+            "id": "skitarii-conclave",
+            "name": "Skitarii Conclave",
+            "perModel": {
+                "type": "single"
+            },
+            "default": "acquisitor",
+            "options": {
+                "acquisitor": {
+                    "id": "acquisitor",
+                    "name": "Acquisitor",
+                    "cost": {
+                        "points": 0
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Skitarii"],
+                                "to": "Acquisitor"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "profiles": {
+                                "noneOf": ["vehicle"]
+                            },
+                            "rule": {
+                                "id": "acquisitor"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "profiles": {
+                                "noneOf": ["vehicle"]
+                            },
+                            "rule": {
+                                "id": "line",
+                                "value": "1"
+                            }
+                        }
+                    ]
+                },
+                "expurgator": {
+                    "id": "expurgator",
+                    "name": "Expurgator",
+                    "cost": {
+                        "points": 0
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Skitarii"],
+                                "to": "Expurgator"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "profiles": {
+                                "noneOf": ["vehicle"]
+                            },
+                            "rule": {
+                                "id": "expurgator"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "profiles": {
+                                "noneOf": ["vehicle"]
+                            },
+                            "rule": {
+                                "id": "vanguard",
+                                "value": "3"
+                            }
+                        }
+                    ]
+                },
+                "vindictor": {
+                    "id": "vindictor",
+                    "name": "Vindictor",
+                    "cost": {
+                        "points": 0
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Skitarii"],
+                                "to": "Vindictor"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "profiles": {
+                                "noneOf": ["vehicle"]
+                            },
+                            "rule": {
+                                "id": "vindictor"
+                            }
+                        }
+                    ],
+                    "when": {
+                        "if": "choice(allegiance) == loyalist",
+                        "message": "Loyalist Allegiance only"
+                    }
+                },
+                "scourger": {
+                    "id": "scourger",
+                    "name": "Scourger",
+                    "cost": {
+                        "points": 0
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Skitarii"],
+                                "to": "Scourger"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "profiles": {
+                                "noneOf": ["vehicle"]
+                            },
+                            "rule": {
+                                "id": "scourger"
+                            }
+                        }
+                    ],
+                    "when": {
+                        "if": "choice(allegiance) == traitor",
+                        "message": "Traitor Allegiance only"
+                    }
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "acquisitor": {
+            "id": "acquisitor",
+            "name": "Acquisitor",
+            "text": "All Models with the Acquisitor Trait (excluding Models with the Vehicle Type) gain the Line (1) Special Rule."
+        },
+        "armourbane": {
+            "id": "armourbane",
+            "name": "Armourbane",
+            "text": "A Weapon with the Armourbane Special Rule counts Glancing Hits as Penetrating Hits. When making Armour Penetration Tests for an attack with this Special Rule, a result that is equal to, or greater than, the target Armour Value inflicts a Penetrating Hit. A Weapon with this Special Rule can never inflict a Glancing Hit, and any Rule that would force them to do so instead inflicts a Penetrating Hit."
+        },
+        "auto-repair": {
+            "id": "auto-repair",
+            "name": "Auto-repair",
+            "text": "A Model with this Special Rule has a bonus to Repair Tests to remove Statuses. If the Active Player makes a Repair Test in the Statuses Sub-Phase of the End Phase for a Model with the Vehicle Type with this Special Rule, they ignore the usual Target Number of 6. Instead, the value of X attached to the variant of this Special Rule is used as the Target Number for that Repair Test. For example, a Model with the Auto-repair (4+) Special Rule would pass any Repair Tests made for it on the result of a 4 or higher.",
+            "configurable": true
+        },
+        "barrage": {
+            "id": "barrage",
+            "name": "Barrage",
+            "text": "A Weapon with this Special Rule may be used to attack Target Units out of Line of Sight. If a Unit for which a Shooting Attack is made includes any Models with one or more Weapons with this Special Rule, then in Step 2 of the Shooting Attack process they may ignore the restriction on requiring Line of Sight to a Target Unit. If a Player uses this Special Rule to declare a Shooting Attack on a Unit that the attacking Unit cannot draw a Line of Sight to, then in Step 3 of the Shooting Attack process that Player may only declare attacks with Weapons that have this Special Rule. If a Weapon with this Special Rule and the Blast (X) Special Rule is used to attack a Unit without Line of Sight to that Unit, then no Hit Test is made and an Indirect Scatter Roll must be made for the Blast Marker placed as part of the attack. If such a Weapon makes more than a single attack then a separate Indirect Scatter Roll is made for each attack. When making an Indirect Scatter Roll for such an attack, the number of Dice rolled alongside the Scatter Dice is determined by the value of X for the Weapon with the Barrage (X) Special Rule, the value of these Dice is then totalled to find the distance the attack Scatters.",
+            "configurable": true
+        },
+        "blast": {
+            "id": "blast",
+            "name": "Blast",
+            "text": "Attacks made with the Blast (X) Special Rule use a Blast Marker to determine how many Hits are caused. When making attacks with a Weapon that has the Blast (X) Special Rule, before any Hit Tests are made, a Blast Marker must first be placed to determine how many Hits may be inflicted by the attack. The Player making the attack must place the Blast Marker indicated in brackets as part of the Special Rule so that the hole in the middle is entirely over the Base of any one Model in the Target Unit. Once the Blast Marker has been placed, the Player making the attack must make a Hit Test for the attack, and each Model from the Target Unit that is fully or partially under the Blast Marker will suffer 1 Hit if the Hit Test is successful. Hits on Other Units If any Models from Units other than the Target Unit are fully or partially covered by the Blast Marker, then a new Fire Group must be created for those Hits and set to one side. Continue resolving the Shooting Attack on the original Target Unit, and once that Shooting Attack has been completely resolved begin a new Shooting Attack to resolve those additional Fire Groups generated for Units other than the original Target Unit. If the Hit Test is unsuccessful then no Hits are inflicted and the Player making the attack must make a Scatter Roll for the Blast Marker. Once a Scatter Roll has been made for the Blast Marker and it has been moved, one Hit is inflicted on a Unit for each Model from that Unit that is wholly or partially covered by the Blast Marker. Hits can be scored on both friendly and enemy Units by attacks using the Blast (X) Special Rule. Hits inflicted by Weapons with the Blast (X) Special Rule are allocated in the same manner as other Hits, regardless of which actual Models were under the Blast Marker and the Blast Marker may not be used to inflict Hits on specific Models. If a Fire Group includes multiple attacks made with the Blast (X) Special Rule, do not place multiple Blast Markers. A single Blast Marker is placed using the Rules detailed above, and a Hit Test is made for each attack in that Fire Group. For each successful Hit Test, one Hit is inflicted for each Model from the target Unit that is fully or partially under the Blast Marker. If any Hit Tests are unsuccessful then, after any Hits made by successful Hit Tests are counted, a single Scatter Roll is made for the Blast Marker, regardless of the total number of unsuccessful Hit Tests. For each Hit Test that was unsuccessful, one Hit is inflicted on a Unit for each Model from that Unit that is wholly or partially covered by the Blast Marker after the Scatter Roll has been resolved.",
+            "configurable": true
+        },
+        "breaching": {
+            "id": "breaching",
+            "name": "Breaching",
+            "text": "With a Weapon that has the Breaching (X) Special Rule there is a chance that a Wound Test may result in the Wound ignoring Armour Saves. When any Wound Test is made for an attack with the Breaching (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Breaching (X) Special Rule, then if a wound is inflicted by that Wound Test, that wound becomes a ‘Breaching Wound’. A Breaching Wound is always treated as having an AP Characteristic of 2 regardless of the Characteristics of the Weapon used to make the attack.",
+            "configurable": true
+        },
+        "bulky": {
+            "id": "bulky",
+            "name": "Bulky",
+            "text": "Models with the Bulky (X) Special Rule take up more space on Transport Models. A Model with the Bulky (X) Special Rule does not use up 1 Point of Transport Capacity when it Embarks on a Model with the Transport Sub-Type. Instead it uses up a number of points of Transport Capacity equal to the value of X attached to the variant of the Bulky (X) possessed by that Model.",
+            "configurable": true
+        },
+        "deflagrate": {
+            "id": "deflagrate",
+            "name": "Deflagrate",
+            "text": "Unsaved Wounds inflicted by attacks with the Deflagrate (X) Special Rule can cause additional Hits. At the end of Step 9 of the Shooting Attack process for any Fire Group or Strike Group that includes Weapons with the Deflagrate (X) Special Rule, create a new Fire Group or Strike Group that must then be selected in Step 10 and resolved. This new Fire Group or Strike Group includes a number of Hits equal to the number of Unsaved Wounds caused by the Fire Group or Strike Group that triggered its creation. These Hits all have a Strength equal to the value of X attached to the variant of the Deflagrate (X) Special Rule possessed by Weapons in the preceding Fire Group or Strike Group, an AP of ‘-’, a Damage of 1 and no Special Rules.",
+            "configurable": true
+        },
+        "detonation": {
+            "id": "detonation",
+            "name": "Detonation",
+            "text": "Weapons with this Special Rule can only attack Vehicles and immobile Models. A Weapon or attack with this Special Rule may only be selected during Step 2 of any Combat in the Fight Sub-Phase if the Unit making attacks is only Locked in Combat with enemy Units composed of Models with the Vehicle Type and Models with a Movement Characteristic of ‘0’ or ‘-’. If a Unit is Locked in Combat with any enemy Units that include any Models that do not have the Vehicle Type or a Movement Characteristic of ‘0’ or ‘-’ then no Model may use a Weapon or other attack that has this Special Rule. A Weapon or other attack with this Special Rule may also be used to make attacks targeting a Model with the Building Type or a Terrain Piece that has a Toughness or Armour Characteristic."
+        },
+        "expendable": {
+            "id": "expendable",
+            "name": "Expendable",
+            "text": "A Player scores less Victory Points when they destroy a Unit that includes only Models with this Special Rule. The number of Victory Points scored by the opponent when a Unit that includes only Models with this Special Rule is entirely Removed as Casualties, for example, as part of the Vanguard (X) Special Rule, First Strike (X) or Slay the Warlord (X) Mission Special Rules, is reduced by the value of X, to a minimum of 1. If a Unit includes Models with different variants of this Special Rule, then the lowest value of X that was present on any Model in the Unit at the start of the Player Turn in which the last Model in the Unit is Removed as a Casualty is used to determine the effect of this Special Rule on that Unit. Note that, if, at the start of any Player Turn a Unit includes any Models that do not have this Special Rule, then this Special Rule has no effect on that Unit for the duration of that Player Turn regardless of how many other Models in the Unit may have any variant of this Special Rule.",
+            "configurable": true
+        },
+        "explodes": {
+            "id": "explodes",
+            "name": "Explodes",
+            "text": "A Model with this Special Rule can explode and cause Hits to nearby Models and Units. Before a Model with the Explodes (X) Special Rule is Removed as a Casualty, the Controlling Player must roll a Dice. If the result of that roll equals or exceeds the value of X attached to this variant of the Explodes (X) Special Rule, the Model explodes. Every Unit with one or more Models within 6\" of an exploding Model suffers a number of Hits equal to the Base Wounds Characteristic or Base Hull Points Characteristic of the exploding Model. Each such Hit has a Strength of 8, an AP of ‘-’ and a Damage of 1. Once all Hits caused by this Special Rule have been resolved, the Model with the Explodes (X) Special Rule is Removed as a Casualty as normal.",
+            "configurable": true
+        },
+        "expurgator": {
+            "id": "expurgator",
+            "name": "Expurgator",
+            "text": "All Models with the Expurgator Trait (excluding Models with the Vehicle Type) gain the Vanguard (3) Special Rule."
+        },
+        "fast": {
+            "id": "fast",
+            "name": "Fast",
+            "text": "A Unit that only includes Models with the Fast (X) Special Rule gains a bonus to Rush and Charge Moves. When the Player controlling a Unit that is composed entirely of Models with the Fast (X) Special Rule elects to have that Unit Rush, add the value of X attached to the specific variant of Fast (X) to the distance the Unit can move. Likewise, when a Unit composed entirely of Models with the Fast (X) Special Rule is required to make a Charge Move, add the value of X attached to the specific variant of the Fast (X) Special Rule as a positive modifier to the Charge Roll. In any situation where a Unit includes Models with two or more variants of the Fast (X) Special Rule, the lowest possible modifier is used.",
+            "configurable": true
+        },
+        "firestorm": {
+            "id": "firestorm",
+            "name": "Firestorm",
+            "text": "A Model with this Special Rule does not have to make Volley Attacks as Snap Shots. When a Model with this Special Rule makes Volley Attacks, it is not required to fire Snap Shots. In addition, after making Volley Attacks in Step 4 of the Charge Procedure, a Unit containing any Models with this Special Rule is not required to make a Charge Roll in Step 5. If the Controlling Player chooses not to make a Charge Roll in Step 5 of the Charge Procedure then the Charge Procedure ends immediately."
+        },
+        "firing-protocols": {
+            "id": "firing-protocols",
+            "name": "Firing Protocols",
+            "text": "A Model with the Firing Protocols (X) Special Rule may attack with more than one ranged Weapon. A Model with the Firing Protocols (X) Special Rule that makes attacks as part of a Shooting Attack, may make attacks with a number of Weapons equal to the value of X attached to the specific variant of the Firing Protocols (X) Special Rule. The Model must have more than one Ranged Weapon to make use of this Special Rule and may not use the same Weapon more than once in the same Shooting Attack.",
+            "configurable": true
+        },
+        "icon-of-authority": {
+            "id": "icon-of-authority",
+            "name": "Icon of Authority",
+            "text": "When a Weapon with this Special Rule is selected to make Attacks during the Declare Weapons and Set Initiative Steps stage of the Fight Sub-Phase, all Models with the Skitarii Trait that are part of the same Unit as the Model with a Weapon with this Special Rule immediately recover from Pinned, Suppressed and Stunned Tactical Statuses."
+        },
+        "impact": {
+            "id": "impact",
+            "name": "Impact",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "implacable-advance": {
+            "id": "implacable-advance",
+            "name": "Implacable Advance",
+            "text": "Models with this Special Rule can make Volley Attacks with other Weapons. The Controlling Player of a Model with this Special Rule treats all Ranged Weapons such a Model has that do not have any variant of the Heavy (X) Special Rule or Ordnance (X) Special Rule as having the Assault Trait."
+        },
+        "limited": {
+            "id": "limited",
+            "name": "Limited",
+            "text": "A Weapon with the Limited (X) Special Rule can only be used to attack a limited number of times per Battle. A Weapon with the Limited (X) Special Rule may only be used to make attacks as part of a Shooting Attack or Combat a number of times equal to the value of X attached to the specific variant of the Special Rule. Each time it is used to make attacks, the Firepower Characteristic or Attacks Modifier Characteristic of the Weapon is not modified by this Special Rule, only the number of times it may be selected in a given Battle.",
+            "configurable": true
+        },
+        "line": {
+            "id": "line",
+            "name": "Line",
+            "text": "A Unit of Models with this Special Rule can control Objectives more easily and scores more Victory Points from controlling an Objective. If a Unit that Controls an Objective includes a majority of Models with the Line (X) Special Rule then, whenever the Controlling Player scores Victory Points for Controlling that Objective, an additional number of Victory Points equal to the value of X are scored. For example, a Unit of 10 Models, of which the majority have the Line (3) Special Rule, hold an Objective worth 1 Victory Point, when the Controlling Player scores Victory Points for that Objective, they would score a total of 4 Victory Points. Furthermore, the value of X is added to the Tactical Strength of a Model that has that Special Rule to determine its ability to Control Objectives (see Core Mission Primary Objectives).",
+            "configurable": true
+        },
+        "ordnance": {
+            "id": "ordnance",
+            "name": "Ordnance",
+            "text": "Weapons with the Ordnance (X) Special Rule double the value of a Characteristic when Stationary. When making a Shooting Attack with a Weapon that has the Ordnance (X) Special Rule, a modifier of x2 is applied to a Characteristic if the Model with that Weapon is part of a Unit that remained stationary in the Controlling Player’s previous Movement Phase (if that Characteristic is AP, then the AP is instead changed to AP 2). The value of X in the specific variant of the Ordnance (X) Special Rule determines which Characteristic gains the x2 modifier.",
+            "configurable": true
+        },
+        "panic": {
+            "id": "panic",
+            "name": "Panic",
+            "text": "Weapons and other attacks that have the Panic (X) Special Rule have a chance of inflicting the Routed Status on the Target Unit. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit, regardless of whether any Damage is inflicted, that Target Unit must make a Leadership Check in the Morale Sub-Phase of the same Player Turn. If this Check is failed then all Models in the Unit gain the Routed Status, if the Check is passed then there is no further effect. The value of X attached to this Special Rule is applied as a negative modifier to the Leadership Characteristic of Models in the Target Unit when making Checks caused by an attack with this Special Rule. If the attack includes multiple Weapons with different versions of this Special Rule the modifiers do not stack - use only the greatest modifier.",
+            "configurable": true
+        },
+        "phage": {
+            "id": "phage",
+            "name": "Phage",
+            "text": "Unsaved Wounds with the Phage (X) Special Rule reduce a Characteristic by 1. If an attack made for a Weapon or Model with this Special Rule inflicts one or more Unsaved Wounds on a Target Unit, then once the Shooting Attack or Initiative Step in which the Unsaved Wound was inflicted has been completely resolved, all remaining Models in the Unit that was the target of the attack must reduce the Characteristic that is the value of X for that variant of the Phage (X) Special Rule by 1 for the remainder of the Battle. Models in a Unit may have any number of different Characteristics reduced by 1 by the Phage (X) Special Rule, but no individual Characteristic may be reduced by more than 1 by the Phage (X) Special Rule no matter how many Unsaved Wounds with any variant of that Special Rule are allocated to Models in that Unit.",
+            "configurable": true
+        },
+        "pinning": {
+            "id": "pinning",
+            "name": "Pinning",
+            "text": "Weapons and other attacks that have the Pinning (X) Special Rule have a chance of inflicting the Pinned Status on the Target Unit. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit, regardless of whether any Damage is inflicted, that Target Unit must make a Cool Check in the Morale Sub-Phase of the same Player Turn. If this Check is failed then all Models in the Unit gain the Pinned Status, if the Check is passed then there is no further effect. The value of X attached to this Special Rule is applied as a negative modifier to the Cool Characteristic of Models in the Target Unit when making Checks caused by an attack with this Special Rule, if the attack includes multiple Weapons with different versions of this Special Rule the modifiers do not stack - use only the greatest modifier.",
+            "configurable": true
+        },
+        "pistol": {
+            "id": "pistol",
+            "name": "Pistol",
+            "text": "A Model may attack with two Weapons that have the Pistol Special Rule. During Step 3 of any Shooting Attack, a Player may choose to have a Model under their control make attacks with two Weapons rather than one if both Weapons have the Pistol Special Rule."
+        },
+        "poisoned": {
+            "id": "poisoned",
+            "name": "Poisoned",
+            "text": "A Weapon with the Poisoned (X) Special Rule has a chance to cause a wound regardless of the target’s Toughness. When making Wound Tests for Hits that have the Poisoned (X) Special Rule, if the result of any Dice rolled is equal to or greater than the value of X attached to the specific variant of this Special Rule then a wound is caused automatically, regardless of the Toughness Characteristic used to determine the Target Number. A Hit that has this Special Rule may still inflict a wound by passing a Wound Test as normal, instead of using this Special Rule, but never inflicts more than 1 wound if it would both pass the Wound Test and trigger the Poisoned (X) Special Rule. Wounds caused using the Poison (X) Special Rule retain the AP and Damage of the Weapon and Saving Throws and Damage Mitigation Tests may be made to discard them as normal. The Poisoned (X) Special Rule has no effect on Models that have the Vehicle Type, and limited effect on Models with the Automata or Walker Types.",
+            "configurable": true
+        },
+        "rending": {
+            "id": "rending",
+            "name": "Rending",
+            "text": "With a Weapon that has the Rending (X) Special Rule, there is a chance that a Hit Test may result in an automatic wound. When any Hit Test is made for an attack with the Rending (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Rending (X) Special Rule, then if a Hit is inflicted by that Hit Test, that Hit becomes a ‘Rending Hit’. When required to make a Wound Test for a Rending Hit, no Dice are rolled and the Wound Test succeeds automatically regardless of the Weapon’s Strength or the Target’s Toughness. The Wound Test is treated as if the result had been ‘6’ for the purposes of any Rules that would be triggered on certain results of a Wound Test. Wounds caused by a Rending Hit use the AP and Damage Characteristics of the Weapon used to make the attack and retain any Special Rules that Weapon had. If the Target Unit for an attack made with a Weapon that has this Special Rule includes any Models with the Vehicle Type, then this Special Rule has no effect.",
+            "configurable": true
+        },
+        "scourger": {
+            "id": "scourger",
+            "name": "Scourger",
+            "text": "All Models with the Scourger Trait (excluding Models with the Vehicle Type) must add +1\" to Set-up Moves, to a maximum of 6\"."
+        },
+        "shock": {
+            "id": "shock",
+            "name": "Shock",
+            "text": "Weapons with the Shock (X) Special Rule have a chance of inflicting Statuses on Vehicles even if it does not penetrate their armour. When making a Hit Test for a Weapon with this Special Rule against a Target Unit that includes any Models with the Vehicle Type or Walker Type, the result of the Hit Test before any modifiers are applied must be checked. If any Hit Test for a Weapon with the Shock (X) Special Rule results in a ‘5’ or ‘6’ before any modifiers are applied, then all Models with the Vehicle Type or Walker Type in the Target Unit gain a Status at the end of Step 11 of the Shooting Attack process or Step 10 of the Initiative Step process. The Status gained is indicated by the value of X attached to that variant of the Shock (X) Special Rule. If the Model already has the stated Status or the attack would apply the Status multiple times there is no additional effect and this Special Rule never causes a Model to lose Wounds or Hull Points. Hits inflicted by a Weapon with this Special Rule must still have Wound Tests or Armour Penetration Tests made for them, and are not discarded if they trigger this Special Rule.",
+            "configurable": true
+        },
+        "shock-ram": {
+            "id": "shock-ram",
+            "name": "Shock Ram",
+            "text": "A Vehicle with this Special Rule inflicts more damage when it moves through enemy Units. When a Model with this Special Rule and the Vehicle Type moves through an enemy Unit, the number of Hits inflicted is increased from D6 to D6+3. Furthermore, if the Reactive Player declares a Death or Glory Reaction with a Vehicle that has this Special Rule as the target, then the Vehicle with this Special Rule gains a 6+ Invulnerable save against all Hits inflicted as part of that Reaction."
+        },
+        "shred": {
+            "id": "shred",
+            "name": "Shred",
+            "text": "Attacks made with the Shred (X) Special Rule can sometimes inflict an extra point of Damage. When any Wound Test is made for an attack with the Shred (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Shred (X) Special Rule, then if a wound is inflicted by that Wound Test, the Damage Characteristic of that wound is increased by 1. Note that the Shred (X) Special Rule may only be triggered by a Wound Test and has no effect when making an Armour Penetration Test.",
+            "configurable": true
+        },
+        "support-unit": {
+            "id": "support-unit",
+            "name": "Support Unit",
+            "text": "A Unit that contains Models with this Special Rule scores fewer Victory Points for Controlling Objective Markers. A Unit that includes any Models with the Support Unit (X) Special Rule may only ever score a maximum number of Victory Points equal to the value of X for Controlling an Objective, regardless of the Value of that Objective, or any other Special Rules Models in that Unit might have (such as the Line (X) Special Rule).",
+            "configurable": true
+        },
+        "suppressive": {
+            "id": "suppressive",
+            "name": "Suppressive",
+            "text": "Weapons and other attacks that have the Suppressive (X) Special Rule have a chance of inflicting the Suppressed Status on the Target Unit. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more Hits on a Target Unit, that Target Unit must make a Cool Check in the Morale Sub-Phase of the same Player Turn. If this Check is failed all Models in the Unit gain the Suppressed Status, and if the Check is passed then there is no further effect. The value of X attached to this Rule is applied as a negative modifier to the Cool Characteristic of Models in the Target Unit when making Checks caused by an Attack with this Special Rule, if the attack includes multiple Weapons with different versions of this Special Rule the modifiers do not stack - use only the greatest modifier.",
+            "configurable": true
+        },
+        "vanguard": {
+            "id": "vanguard",
+            "name": "Vanguard",
+            "text": "A Unit that includes Models with this Special Rule can score Victory Points for destroying enemy Units. The Controlling Player of a Unit that includes a majority of Models with the Vanguard (X) Special Rule scores Victory Points equal to the value of X when: An enemy Unit that is within 3\" of an Objective Marker, or was within 3\" of an Objective Marker at the start of the Player Turn has its last model Removed as a Casualty by an attack made by that Unit. An enemy Unit that is within 3\" of an Objective Marker, or was within 3\" of an Objective Marker at the start of the Player Turn gains the Routed Tactical Status while in a Combat with that Unit. The Vanguard (X) Special Rule may only be used to score Victory Points once per Objective per Player Turn. If a Unit includes Models with different values of X for this Special Rule, the Controlling Player may select which one is used. A Unit that includes a majority of Models with the Vanguard (X) Special Rule may only ever score 1 Victory Point for Controlling an Objective, regardless of that Objective’s value or any other bonuses.",
+            "configurable": true
+        },
+        "vindictor": {
+            "id": "vindictor",
+            "name": "Vindictor",
+            "text": "All Models with the Vindictor Trait (excluding Models with the Vehicle Type) increase the value of any instance of the Deflagrate (X) Special Rule they, or any Weapons they have, by +1."
+        },
+        "zealous-followers": {
+            "id": "zealous-followers",
+            "name": "Zealous Followers",
+            "text": "Bonepickers may use the Characteristics of nearby Skitarii Units when making Characteristic Checks. When a Characteristic Check is taken for a Unit made up of Models with this Special Rule, the Check may be made against the Base Characteristic of any Friendly Model with the Skitarii Trait that does not have the Routed Tactical Status, that is part of a Unit that has a Model within 6\" and Line of Sight of a Model from the Unit for which the Characteristic Check is made. Note that Modifiers applied to the Unit for which the Characteristic Check is being made, for example, from the Pinning (X) Special Rule, are applied to the Characteristic of the Model with the Skitarii Trait that is used for the Check."
+        }
+    },
+    "groups": {},
+    "listRules": {
+        "one-conclave-per-detachment": {
+            "kind": "expression",
+            "id": "one-conclave-per-detachment",
+            "scope": "group",
+            "when": {
+                "if": "(group.has(@conclave-acquisitor) ? 1 : 0) + (group.has(@conclave-expurgator) ? 1 : 0) + (group.has(@conclave-vindictor) ? 1 : 0) + (group.has(@conclave-scourger) ? 1 : 0) <= 1",
+                "message": "All Units selected as part of a Detachment must have the same Skitarii Conclave Trait (Logistical Benefit slots excepted)"
+            }
+        }
+    }
+}

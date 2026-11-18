@@ -1,0 +1,61 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "heedless-slaughter",
+    "version": "1.0.0",
+    "name": "Heedless Slaughter",
+    "parent": {
+        "faction": "daemons-of-the-ruinstorm",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "heedless-slaughter": {
+            "id": "heedless-slaughter",
+            "name": "Heedless Slaughter",
+            "text": "A Model with this Trait gains the Desecrators Special Rule. Additionally, any Unit that contains at least one Model with this Trait can never be the Focus nor the Target of a Psychic Blessing or Psychic Curse."
+        },
+        "desecrators": {
+            "id": "desecrators",
+            "name": "Desecrators",
+            "text": "Models with this Special Rule that pass a Willpower Check gain the Line (X) Special Rule. At the start of each Victory Sub-Phase, the Controlling Player of a Unit composed entirely of Models with this Special Rule may make a Willpower Check. If the Willpower Check is passed all Models in the Unit gain the Line (X) Special Rule until the end of the current Victory Sub-Phase. The value of X is determined by how much the final result of the Check is less than the Willpower Characteristic used for the Check: 0-1 Line (1) 2 Line (2) 3 or more Line (3) If the Willpower Check is failed, the Unit suffers Perils of the Warp."
+        }
+    },
+    "unitModifiers": {
+        "heedless-slaughter-trait": {
+            "id": "heedless-slaughter-trait",
+            "name": "Heedless Slaughter Trait",
+            "selector": {
+                "traits": ["Ætheric Dominion"]
+            },
+            "actions": [
+                {
+                    "kind": "trait",
+                    "replace": {
+                        "from": ["Ætheric Dominion"],
+                        "to": "Heedless Slaughter"
+                    }
+                }
+            ]
+        },
+        "heedless-slaughter-rules": {
+            "id": "heedless-slaughter-rules",
+            "name": "Heedless Slaughter",
+            "selector": {
+                "traits": ["Heedless Slaughter"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "heedless-slaughter"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "desecrators"
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,161 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "alchem-jackers",
+    "version": "1.0.0",
+    "name": "Alchem-jackers",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "alchem-jackers": {
+            "id": "alchem-jackers",
+            "name": "Alchem-jackers",
+            "text": "An Army with this Provenance gains the following benefits: If the Controlling Player is making a Leadership Check or Cool Check for a Unit in this Army that only contains Models with the Irregulars Special Rule, they may ignore negative modifiers to Leadership or Cool applied by the Panic (X), Pinning (X), Stun (X) or Suppressive (X) Special Rules. Every Model in a Unit that only includes Models with the Irregulars Special Rule and the Infantry Type in this Army can have Frenzon selected for it for +1 Point per Model. A Model with Frenzon gains the Hatred (Infantry, Cavalry, Automata) and Heedless Special Rules."
+        },
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        }
+    },
+    "equipment": {
+        "frenzon": {
+            "id": "frenzon",
+            "name": "Frenzon",
+            "text": "A Model with Frenzon gains the Hatred (Infantry, Cavalry, Automata) and Heedless Special Rules."
+        }
+    },
+    "upgrades": {
+        "alchem-jackers-frenzon": {
+            "id": "alchem-jackers-frenzon",
+            "name": "Frenzon",
+            "description": "Every Model in a Unit that only includes Models with the Irregulars Special Rule and the Infantry Type in this Army can have Frenzon selected for it for +1 Point per Model.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "frenzon": {
+                    "id": "frenzon",
+                    "name": "Frenzon",
+                    "cost": {
+                        "points": "unit.models()"
+                    },
+                    "equipmentRefs": ["frenzon"],
+                    "effects": [
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "hatred",
+                                "value": "Infantry, Cavalry, Automata"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "heedless"
+                            }
+                        }
+                    ]
+                }
+            },
+            "multiSelect": true
+        }
+    },
+    "unitModifiers": {
+        "alchem-jackers-provenance": {
+            "id": "alchem-jackers-provenance",
+            "name": "Alchem-jackers",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "alchem-jackers"
+                    }
+                }
+            ]
+        },
+        "alchem-jackers-provenance-part": {
+            "id": "alchem-jackers-provenance-part",
+            "name": "Alchem-jackers",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "alchem-jackers"
+                    }
+                }
+            ]
+        },
+        "alchem-jackers-provenance-part-2": {
+            "id": "alchem-jackers-provenance-part-2",
+            "name": "Alchem-jackers",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "alchem-jackers"
+                    }
+                }
+            ]
+        },
+        "alchem-jackers-frenzon": {
+            "id": "alchem-jackers-frenzon",
+            "name": "Frenzon",
+            "selector": {
+                "unitIds": [
+                    "command-troop",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "alchem-jackers-frenzon"
+                }
+            ]
+        }
+    }
+}
