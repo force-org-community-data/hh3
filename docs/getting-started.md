@@ -25,7 +25,7 @@ You should see `1 game checked (.): 0 errors, 0 warnings`.
 
 The source is a set of JSON files described by `forceorg.json`. Start by opening a faction file, such as `factions/solar-auxilia.json`, and changing a unit's cost, then validate again. For a new faction see [adding-a-faction.md](adding-a-faction.md).
 
-Read the [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.2.0/docs/data_authoring_guide.md) before writing much: it covers the file kinds, ids, costs, upgrades and expressions.
+Read the [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.3.0/docs/data_authoring_guide.md) before writing much: it covers the file kinds, ids, costs, upgrades and expressions.
 
 ## 4. Validate until clean
 
