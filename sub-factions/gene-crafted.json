@@ -1,0 +1,89 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "gene-crafted",
+    "version": "1.0.0",
+    "name": "Gene-crafted",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "gene-crafted": {
+            "id": "gene-crafted",
+            "name": "Gene-crafted",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule and the Infantry Type in this Army gain the Light Sub-Type, unless they have the Heavy Sub-Type, in which case they instead lose the Heavy Sub-Type. The following item is added to the Militia Pistols list: - Needle pistol +5 points The following item is added to the Militia Assault Weapons list: - Assault needler +5 points The following item is added to the Militia Special Weapons list: - Needle rifle +10 points The following item is added to the Militia Heavy Weapons list: - Needle cannon +15 points"
+        }
+    },
+    "unitModifiers": {
+        "gene-crafted-provenance": {
+            "id": "gene-crafted-provenance",
+            "name": "Gene-crafted",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "gene-crafted"
+                    }
+                }
+            ]
+        },
+        "gene-crafted-provenance-part": {
+            "id": "gene-crafted-provenance-part",
+            "name": "Gene-crafted",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "gene-crafted"
+                    }
+                }
+            ]
+        },
+        "gene-crafted-provenance-part-2": {
+            "id": "gene-crafted-provenance-part-2",
+            "name": "Gene-crafted",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "gene-crafted"
+                    }
+                }
+            ]
+        }
+    }
+}

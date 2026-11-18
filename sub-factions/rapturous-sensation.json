@@ -1,0 +1,131 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "rapturous-sensation",
+    "version": "1.0.0",
+    "name": "Rapturous Sensation",
+    "parent": {
+        "faction": "daemons-of-the-ruinstorm",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "rapturous-sensation": {
+            "id": "rapturous-sensation",
+            "name": "Rapturous Sensation",
+            "text": "A Model with this Trait gains the Desecrators Special Rule. Any Model with this Trait that does not have the Heavy Sub-Type gains the Light Sub-Type. A Model with this Ætheric Dominion Trait that has the Command or Champion Sub-Type may be given the Psyker Trait and have up to two of the following Psychic Disciplines selected for it: - Telekinesis +20 Points per Model - Telepathy +10 Points per Model"
+        },
+        "desecrators": {
+            "id": "desecrators",
+            "name": "Desecrators",
+            "text": "Models with this Special Rule that pass a Willpower Check gain the Line (X) Special Rule. At the start of each Victory Sub-Phase, the Controlling Player of a Unit composed entirely of Models with this Special Rule may make a Willpower Check. If the Willpower Check is passed all Models in the Unit gain the Line (X) Special Rule until the end of the current Victory Sub-Phase. The value of X is determined by how much the final result of the Check is less than the Willpower Characteristic used for the Check: 0-1 Line (1) 2 Line (2) 3 or more Line (3) If the Willpower Check is failed, the Unit suffers Perils of the Warp."
+        }
+    },
+    "equipment": {
+        "telekinesis": {
+            "id": "telekinesis",
+            "name": "Telekinesis",
+            "text": ""
+        },
+        "telepathy": {
+            "id": "telepathy",
+            "name": "Telepathy",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "rapturous-sensation-psychic-disciplines": {
+            "id": "rapturous-sensation-psychic-disciplines",
+            "name": "Psychic Disciplines",
+            "description": "A Model with this Ætheric Dominion Trait that has the Command or Champion Sub-Type may be given the Psyker Trait and have up to two of the following Psychic Disciplines selected for it:",
+            "perModel": {
+                "type": "single",
+                "max": 2
+            },
+            "options": {
+                "telekinesis": {
+                    "id": "telekinesis",
+                    "name": "Telekinesis",
+                    "cost": {
+                        "points": 20
+                    },
+                    "equipmentRefs": ["telekinesis"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Psyker"]
+                        }
+                    ]
+                },
+                "telepathy": {
+                    "id": "telepathy",
+                    "name": "Telepathy",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["telepathy"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Psyker"]
+                        }
+                    ]
+                }
+            },
+            "multiSelect": true
+        }
+    },
+    "unitModifiers": {
+        "rapturous-sensation-trait": {
+            "id": "rapturous-sensation-trait",
+            "name": "Rapturous Sensation Trait",
+            "selector": {
+                "traits": ["Ætheric Dominion"]
+            },
+            "actions": [
+                {
+                    "kind": "trait",
+                    "replace": {
+                        "from": ["Ætheric Dominion"],
+                        "to": "Rapturous Sensation"
+                    }
+                }
+            ]
+        },
+        "rapturous-sensation-rules": {
+            "id": "rapturous-sensation-rules",
+            "name": "Rapturous Sensation",
+            "selector": {
+                "traits": ["Rapturous Sensation"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "rapturous-sensation"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "desecrators"
+                    }
+                }
+            ]
+        },
+        "rapturous-sensation-psychic-disciplines": {
+            "id": "rapturous-sensation-psychic-disciplines",
+            "name": "Psychic Disciplines",
+            "selector": {
+                "traits": ["Rapturous Sensation"],
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "rapturous-sensation-psychic-disciplines"
+                }
+            ]
+        }
+    }
+}

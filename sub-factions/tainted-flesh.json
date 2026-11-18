@@ -1,0 +1,277 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "tainted-flesh",
+    "version": "1.0.0",
+    "name": "Tainted Flesh",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "when": {
+        "if": "choice(allegiance) == traitor",
+        "message": "This Provenance may only be selected for an Army with the Traitor Allegiance"
+    },
+    "specialRules": {
+        "tainted-flesh": {
+            "id": "tainted-flesh",
+            "name": "Tainted Flesh",
+            "text": "This Provenance may only be selected for an Army with the Traitor Allegiance. An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule in this Army gain the Aflame (1) and Impact (I) Special Rules. Each Rogue Psyker Model in this Army may have up to two Psychic Disciplines selected for it from the options available on its profile instead of one."
+        }
+    },
+    "upgrades": {
+        "tainted-flesh-second-discipline": {
+            "id": "tainted-flesh-second-discipline",
+            "name": "Second Psychic Discipline",
+            "description": "Each Rogue Psyker Model in this Army may have up to two Psychic Disciplines selected for it from the options available on its profile instead of one.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "biomancy": {
+                    "id": "biomancy",
+                    "name": "Biomancy",
+                    "cost": {
+                        "points": 20
+                    },
+                    "equipmentRefs": ["biomancy"]
+                },
+                "pyromancy": {
+                    "id": "pyromancy",
+                    "name": "Pyromancy",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pyromancy"]
+                },
+                "telekinesis": {
+                    "id": "telekinesis",
+                    "name": "Telekinesis",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["telekinesis"]
+                },
+                "divination": {
+                    "id": "divination",
+                    "name": "Divination",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["divination"]
+                },
+                "telepathy": {
+                    "id": "telepathy",
+                    "name": "Telepathy",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["telepathy"]
+                },
+                "anathemata": {
+                    "id": "anathemata",
+                    "name": "Anathemata",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["anathemata"]
+                }
+            },
+            "default": "none"
+        }
+    },
+    "unitModifiers": {
+        "tainted-flesh-provenance": {
+            "id": "tainted-flesh-provenance",
+            "name": "Tainted Flesh",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "tainted-flesh"
+                    }
+                }
+            ]
+        },
+        "tainted-flesh-provenance-part": {
+            "id": "tainted-flesh-provenance-part",
+            "name": "Tainted Flesh",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "tainted-flesh"
+                    }
+                }
+            ]
+        },
+        "tainted-flesh-provenance-part-2": {
+            "id": "tainted-flesh-provenance-part-2",
+            "name": "Tainted Flesh",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "tainted-flesh"
+                    }
+                }
+            ]
+        },
+        "tainted-flesh": {
+            "id": "tainted-flesh",
+            "name": "Tainted Flesh",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "aflame",
+                        "value": "1"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "impact",
+                        "value": "I"
+                    }
+                }
+            ]
+        },
+        "tainted-flesh-part": {
+            "id": "tainted-flesh-part",
+            "name": "Tainted Flesh",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "aflame",
+                        "value": "1"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "impact",
+                        "value": "I"
+                    }
+                }
+            ]
+        },
+        "tainted-flesh-part-2": {
+            "id": "tainted-flesh-part-2",
+            "name": "Tainted Flesh",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "aflame",
+                        "value": "1"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "impact",
+                        "value": "I"
+                    }
+                }
+            ]
+        },
+        "tainted-flesh-second-discipline": {
+            "id": "tainted-flesh-second-discipline",
+            "name": "Second Psychic Discipline",
+            "selector": {
+                "unitIds": ["rogue-psyker"],
+                "profiles": {
+                    "anyOf": ["sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "tainted-flesh-second-discipline"
+                }
+            ]
+        }
+    }
+}

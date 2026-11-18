@@ -1,0 +1,89 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "imperialis-provosts",
+    "version": "1.0.0",
+    "name": "Imperialis Provosts",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "imperialis-provosts": {
+            "id": "imperialis-provosts",
+            "name": "Imperialis Provosts",
+            "text": "An Army with this Provenance gains the following benefits: If a Combat includes any Models from this Army with the Irregulars Special Rule but not the Expendable (X) Special Rule, the Controlling Player scores 2 additional Combat Resolution Points if that Combat also includes any enemy Models with one or more Tactical Statuses. The following item is added to the Militia Melee Weapons list and Militia Officer Weapons list: - Shock maul +3 points The following item is added to the Militia Special Weapons list: - Webber +3 points"
+        }
+    },
+    "unitModifiers": {
+        "imperialis-provosts-provenance": {
+            "id": "imperialis-provosts-provenance",
+            "name": "Imperialis Provosts",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "imperialis-provosts"
+                    }
+                }
+            ]
+        },
+        "imperialis-provosts-provenance-part": {
+            "id": "imperialis-provosts-provenance-part",
+            "name": "Imperialis Provosts",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "imperialis-provosts"
+                    }
+                }
+            ]
+        },
+        "imperialis-provosts-provenance-part-2": {
+            "id": "imperialis-provosts-provenance-part-2",
+            "name": "Imperialis Provosts",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "imperialis-provosts"
+                    }
+                }
+            ]
+        }
+    }
+}

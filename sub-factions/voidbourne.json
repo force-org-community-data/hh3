@@ -1,0 +1,246 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "voidbourne",
+    "version": "1.0.0",
+    "name": "Voidbourne",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "voidbourne": {
+            "id": "voidbourne",
+            "name": "Voidbourne",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule but not any version of the Bulky (X) or the Expendable (X) Special Rules in this Army gain the Infiltrate (18) Special Rule. Any Reconnaissance Troop or Command Troop Unit in this Army may be upgraded to be Voidjumpers for +3 Points per Model. All Models in Units which have been upgraded in this way: - Have the Antigrav Sub-Type - Have the Bulky (2), Deep Strike &amp; Firestorm Special Rules. - Set their Base Movement Characteristic to 10. The following items are added to the Militia Armaments list and Militia Assault Weapons list: - Two militia pistols Free - Two laspistols +1 points"
+        },
+        "deep-strike": {
+            "id": "deep-strike",
+            "name": "Deep Strike",
+            "text": "The Deep Strike Special Rule allows a Unit to enter play anywhere on the Battlefield. A Unit that includes only Models with the Deep Strike Special Rule that enters play from Reserves may make a Deep Strike instead of deploying as described in the Reserves Rules. No more than one Unit may attempt a Deep Strike in a given Player Turn. The Unit attempting a Deep Strike may have another Unit without the Deep Strike Special Rule Embarked upon it if the Deep Striking Unit includes Models with the Transport Sub-Type (note that some Missions may allow more Units to attempt a Deep Strike in the same Player Turn. This will be specifically noted in the Mission Special Rules section of that Mission). Note that in Missions where the Reserves Mission Special Rule is not in use, the Deep Strike Special Rule has no effect. Furthermore, Units may not make use of the Deep Strike Special Rule during the first Battle Turn, even if they enter play from Reserves. To perform a Deep Strike, the Active Player must declare an Eligible Unit that has entered play from Reserves in the Reserves Sub-Phase as the Deep Striking Unit. The Active Player must then select one Model from that Unit and place it anywhere on the Battlefield. This Model must be placed at least 1\" away from any enemy Model, Battlefield Edge or piece of Impassable Terrain. Once this first Model has been placed, the remaining Models in the Unit must be placed within Unit Coherency with at least one other Model in the same Unit and within 6\" of the first Model placed. No Models may be placed within 1\" of an enemy Model, any Battlefield Edge or a piece of Impassable Terrain. Any Models that cannot be placed using these Rules must be Removed as a Casualty immediately. This deployment must take place during the Reserves Sub-Phase, and a Unit that deploys as a Deep Strike may not move in the Move Sub-Phase of the same Player Turn or have a Charge declared for it in the Charge Sub-Phase of the same Player Turn, but may make Shooting Attacks as normal. A Unit that is Embarked on a Model that is deployed as part of a Deep Strike may Disembark during the Move Sub-Phase of the same Player Turn, but may not make any move other than the move made to Disembark and may not have a Charge declared for it in the Charge Sub-Phase of the same Player Turn. Enemy Units may declare Intercept Reactions against a Unit deployed as part of a Deep Strike, but not Reposition Reactions."
+        }
+    },
+    "upgrades": {
+        "voidbourne-voidjumpers": {
+            "id": "voidbourne-voidjumpers",
+            "name": "Voidjumpers",
+            "description": "Any Reconnaissance Troop or Command Troop Unit in this Army may be upgraded to be Voidjumpers for +3 Points per Model. All Models in Units which have been upgraded in this way have the Antigrav Sub-Type and the Bulky (2), Deep Strike and Firestorm Special Rules, and set their Base Movement Characteristic to 10.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "voidjumpers": {
+                    "id": "voidjumpers",
+                    "name": "Voidjumpers",
+                    "cost": {
+                        "points": "3 * unit.models()"
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Voidjumpers"]
+                        },
+                        {
+                            "kind": "stat",
+                            "changes": [
+                                {
+                                    "stat": "m",
+                                    "op": "set",
+                                    "value": "10"
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "bulky",
+                                "value": "2"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "deep-strike"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "firestorm"
+                            }
+                        }
+                    ]
+                }
+            },
+            "multiSelect": true
+        }
+    },
+    "unitModifiers": {
+        "voidbourne-provenance": {
+            "id": "voidbourne-provenance",
+            "name": "Voidbourne",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "voidbourne"
+                    }
+                }
+            ]
+        },
+        "voidbourne-provenance-part": {
+            "id": "voidbourne-provenance-part",
+            "name": "Voidbourne",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "voidbourne"
+                    }
+                }
+            ]
+        },
+        "voidbourne-provenance-part-2": {
+            "id": "voidbourne-provenance-part-2",
+            "name": "Voidbourne",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "voidbourne"
+                    }
+                }
+            ]
+        },
+        "voidbourne": {
+            "id": "voidbourne",
+            "name": "Voidbourne",
+            "selector": {
+                "unitIds": [
+                    "command-troop",
+                    "force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "militia-medicae",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "infiltrate",
+                        "value": "18"
+                    }
+                }
+            ]
+        },
+        "voidbourne-part": {
+            "id": "voidbourne-part",
+            "name": "Voidbourne",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "infiltrate",
+                        "value": "18"
+                    }
+                }
+            ]
+        },
+        "voidbourne-part-2": {
+            "id": "voidbourne-part-2",
+            "name": "Voidbourne",
+            "selector": {
+                "unitIds": ["discipline-master-cadre"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["infantry"]
+                    },
+                    "rule": {
+                        "id": "infiltrate",
+                        "value": "18"
+                    }
+                }
+            ]
+        },
+        "voidbourne-part-3": {
+            "id": "voidbourne-part-3",
+            "name": "Voidbourne",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "infiltrate",
+                        "value": "18"
+                    }
+                }
+            ]
+        },
+        "voidbourne-voidjumpers": {
+            "id": "voidbourne-voidjumpers",
+            "name": "Voidjumpers",
+            "selector": {
+                "unitIds": ["reconnaissance-troop", "command-troop"]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "voidbourne-voidjumpers"
+                }
+            ]
+        }
+    }
+}

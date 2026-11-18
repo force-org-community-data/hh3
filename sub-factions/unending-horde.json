@@ -1,0 +1,98 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "unending-horde",
+    "version": "1.0.0",
+    "name": "Unending Horde",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "unending-horde": {
+            "id": "unending-horde",
+            "name": "Unending Horde",
+            "text": "An Army with this Provenance gains the following benefits: All Models in Infantry Troop and Levy Troop Units in this Army gain the Endless Horde (4+) Special Rule. Every Model in a Command Troop or Infantry Troop Unit in this Army can have the Expendable (1) Special Rule selected for it for +1 Point per Model. Endless Horde (X) This Special Rule can replace a Unit that has been wiped out with a new one in Reserves. When a Unit that contains any Models with this Special Rule has its last Model Removed as a Casualty, the Controlling Player may choose to roll a D6. On a result equal to or greater than the value in brackets, a Unit identical to the one that was Removed as Casualties (with all Models and Wargear listed on the Controlling Player’s Army Roster) is placed into Reserves – and treated as a new Unit. On any other result, the Unit is removed as Casualties with no further effect. Any Victory Points that would be scored for the Unit Removed as Casualties are unaffected and scored as normal, and any new Unit that enters Reserves may be used to score Victory Points if also Removed as Casualties. Any other Models that have joined a Unit that contains any Models with this Special Rule either during Deployment, in Reserves or during the Battle are not placed into Reserves with the new Unit."
+        },
+        "endless-horde": {
+            "id": "endless-horde",
+            "name": "Endless Horde",
+            "text": "This Special Rule can replace a Unit that has been wiped out with a new one in Reserves. When a Unit that contains any Models with this Special Rule has its last Model Removed as a Casualty, the Controlling Player may choose to roll a D6. On a result equal to or greater than the value in brackets, a Unit identical to the one that was Removed as Casualties (with all Models and Wargear listed on the Controlling Player’s Army Roster) is placed into Reserves – and treated as a new Unit. On any other result, the Unit is removed as Casualties with no further effect. Any Victory Points that would be scored for the Unit Removed as Casualties are unaffected and scored as normal, and any new Unit that enters Reserves may be used to score Victory Points if also Removed as Casualties. Any other Models that have joined a Unit that contains any Models with this Special Rule either during Deployment, in Reserves or during the Battle are not placed into Reserves with the new Unit.",
+            "configurable": true
+        }
+    },
+    "upgrades": {
+        "unending-horde-expendable": {
+            "id": "unending-horde-expendable",
+            "name": "Expendable",
+            "description": "Every Model in a Command Troop or Infantry Troop Unit in this Army can have the Expendable (1) Special Rule selected for it for +1 Point per Model.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "expendable": {
+                    "id": "expendable",
+                    "name": "Expendable",
+                    "cost": {
+                        "points": "unit.models()"
+                    },
+                    "effects": [
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "expendable",
+                                "value": "1"
+                            }
+                        }
+                    ]
+                }
+            },
+            "multiSelect": true
+        }
+    },
+    "unitModifiers": {
+        "unending-horde-provenance": {
+            "id": "unending-horde-provenance",
+            "name": "Unending Horde",
+            "selector": {
+                "unitIds": ["command-troop", "infantry-troop", "levy-troop"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "unending-horde"
+                    }
+                }
+            ]
+        },
+        "unending-horde": {
+            "id": "unending-horde",
+            "name": "Unending Horde",
+            "selector": {
+                "unitIds": ["infantry-troop", "levy-troop"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "endless-horde",
+                        "value": "4+"
+                    }
+                }
+            ]
+        },
+        "unending-horde-expendable": {
+            "id": "unending-horde-expendable",
+            "name": "Expendable",
+            "selector": {
+                "unitIds": ["command-troop", "infantry-troop"]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "unending-horde-expendable"
+                }
+            ]
+        }
+    }
+}

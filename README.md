@@ -1,6 +1,6 @@
 # Horus Heresy 3rd Edition data for Force Org
 
-Community-maintained rules data for **The Horus Heresy 3rd Edition**, read by the [Force Org](https://github.com/JosephMassie/force_org) army list builder. It covers the Legiones Astartes and all 18 Legions, the Solar Auxilia, the Mechanicum Taghmata and the Forces of the Emperor (Legio Custodes, Anathema Psykana and Divisio Assassinorum).
+Community-maintained rules data for **The Horus Heresy 3rd Edition**, read by the [Force Org](https://github.com/JosephMassie/force_org) army list builder. It covers the Legiones Astartes and all 18 Legions, the Solar Auxilia, the Mechanicum Taghmata, the Forces of the Emperor (Legio Custodes, Anathema Psykana and Divisio Assassinorum), the Imperialis Militia, the Questoris Familia, the Legio Titanicus, the Skitarii Conclaves, the Daemons of the Ruinstorm and the Cults Abominatio.
 
 > **Unofficial.** This project is not affiliated with or endorsed by Games Workshop or Forge World.
 
@@ -27,7 +27,7 @@ You need [Node.js](https://nodejs.org) 22 or newer and git.
     npm ci
     ```
 
-2. Edit the JSON files. The [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.0.0/docs/data_authoring_guide.md) explains the file kinds, ids, costs, upgrades and expressions; [docs/editor-setup.md](docs/editor-setup.md) sets up schema hints in your editor.
+2. Edit the JSON files. The [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.2.0/docs/data_authoring_guide.md) explains the file kinds, ids, costs, upgrades and expressions; [docs/editor-setup.md](docs/editor-setup.md) sets up schema hints in your editor.
 3. Check your change until it reports `0 errors`:
 
     ```bash
@@ -62,4 +62,4 @@ Pin a tag to stay on a fixed release, or use a branch to try a pull request's ch
 - [Editor setup](docs/editor-setup.md)
 - [Using this repo with the app](docs/using-with-the-app.md)
 - [Review checklist](docs/review-checklist.md)
-- Validator: [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.0.0/docs/data_authoring_guide.md), [data schema spec](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.0.0/docs/specs/data_schema_spec_2026-10-17.md), [expression language spec](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.0.0/docs/specs/expression_language_spec_2026-10-17.md)
+- Validator: [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.2.0/docs/data_authoring_guide.md), [data schema spec](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.2.0/docs/specs/data_schema_spec_2026-10-17.md), [expression language spec](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.2.0/docs/specs/expression_language_spec_2026-10-17.md)

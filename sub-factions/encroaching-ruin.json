@@ -1,0 +1,170 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "encroaching-ruin",
+    "version": "1.0.0",
+    "name": "Encroaching Ruin",
+    "parent": {
+        "faction": "daemons-of-the-ruinstorm",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "encroaching-ruin": {
+            "id": "encroaching-ruin",
+            "name": "Encroaching Ruin",
+            "text": "A Model with this Trait gains the Deep Strike Special Rule and the Desecrators Special Rule. Additionally, a Model with this Etheric Dominion Trait that has the Command or Champion Sub-Type may be given the Psyker Trait and have up to two of the following Psychic Disciplines selected for it: - Pyromancy +10 Points per Model - Telekinesis +20 Points per Model - Divination +20 Points per Model"
+        },
+        "desecrators": {
+            "id": "desecrators",
+            "name": "Desecrators",
+            "text": "Models with this Special Rule that pass a Willpower Check gain the Line (X) Special Rule. At the start of each Victory Sub-Phase, the Controlling Player of a Unit composed entirely of Models with this Special Rule may make a Willpower Check. If the Willpower Check is passed all Models in the Unit gain the Line (X) Special Rule until the end of the current Victory Sub-Phase. The value of X is determined by how much the final result of the Check is less than the Willpower Characteristic used for the Check: 0-1 Line (1) 2 Line (2) 3 or more Line (3) If the Willpower Check is failed, the Unit suffers Perils of the Warp."
+        }
+    },
+    "equipment": {
+        "pyromancy": {
+            "id": "pyromancy",
+            "name": "Pyromancy",
+            "text": ""
+        },
+        "telekinesis": {
+            "id": "telekinesis",
+            "name": "Telekinesis",
+            "text": ""
+        },
+        "divination": {
+            "id": "divination",
+            "name": "Divination",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "encroaching-ruin-psychic-disciplines": {
+            "id": "encroaching-ruin-psychic-disciplines",
+            "name": "Psychic Disciplines",
+            "description": "A Model with this Ætheric Dominion Trait that has the Command or Champion Sub-Type may be given the Psyker Trait and a Psychic Discipline.",
+            "perModel": {
+                "type": "single",
+                "max": 2
+            },
+            "options": {
+                "pyromancy": {
+                    "id": "pyromancy",
+                    "name": "Pyromancy",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pyromancy"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Psyker"]
+                        }
+                    ]
+                },
+                "telekinesis": {
+                    "id": "telekinesis",
+                    "name": "Telekinesis",
+                    "cost": {
+                        "points": 20
+                    },
+                    "equipmentRefs": ["telekinesis"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Psyker"]
+                        }
+                    ]
+                },
+                "divination": {
+                    "id": "divination",
+                    "name": "Divination",
+                    "cost": {
+                        "points": 20
+                    },
+                    "equipmentRefs": ["divination"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Psyker"]
+                        }
+                    ]
+                }
+            },
+            "multiSelect": true
+        }
+    },
+    "unitModifiers": {
+        "encroaching-ruin-trait": {
+            "id": "encroaching-ruin-trait",
+            "name": "Encroaching Ruin Trait",
+            "selector": {
+                "traits": ["Ætheric Dominion"]
+            },
+            "actions": [
+                {
+                    "kind": "trait",
+                    "replace": {
+                        "from": ["Ætheric Dominion"],
+                        "to": "Encroaching Ruin"
+                    }
+                }
+            ]
+        },
+        "encroaching-ruin-rules": {
+            "id": "encroaching-ruin-rules",
+            "name": "Encroaching Ruin",
+            "selector": {
+                "traits": ["Encroaching Ruin"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "encroaching-ruin"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "desecrators"
+                    }
+                }
+            ]
+        },
+        "encroaching-ruin-deep-strike": {
+            "id": "encroaching-ruin-deep-strike",
+            "name": "Encroaching Ruin: Deep Strike",
+            "selector": {
+                "traits": ["Encroaching Ruin"],
+                "exclude": [
+                    {
+                        "unitIds": ["samus"]
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "deep-strike"
+                    }
+                }
+            ]
+        },
+        "encroaching-ruin-psychic-disciplines": {
+            "id": "encroaching-ruin-psychic-disciplines",
+            "name": "Psychic Disciplines",
+            "selector": {
+                "traits": ["Encroaching Ruin"],
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "encroaching-ruin-psychic-disciplines"
+                }
+            ]
+        }
+    }
+}

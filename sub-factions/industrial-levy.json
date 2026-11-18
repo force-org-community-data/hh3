@@ -1,0 +1,159 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "industrial-levy",
+    "version": "1.0.0",
+    "name": "Industrial Levy",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "industrial-levy": {
+            "id": "industrial-levy",
+            "name": "Industrial Levy",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule in this Army gain the Move Through Cover Special Rule. The following item is added to the Militia Assault Weapons list: - Heavy industrial weapon +8 points The following items are added to the Militia Special Weapons list: - Mining laser +15 points - Seismic cannon +15 points The following items are added to the Militia Heavy Weapons list: - Heavy mining laser +25 points - Heavy seismic cannon +25 points"
+        }
+    },
+    "unitModifiers": {
+        "industrial-levy-provenance": {
+            "id": "industrial-levy-provenance",
+            "name": "Industrial Levy",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "industrial-levy"
+                    }
+                }
+            ]
+        },
+        "industrial-levy-provenance-part": {
+            "id": "industrial-levy-provenance-part",
+            "name": "Industrial Levy",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "industrial-levy"
+                    }
+                }
+            ]
+        },
+        "industrial-levy-provenance-part-2": {
+            "id": "industrial-levy-provenance-part-2",
+            "name": "Industrial Levy",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "industrial-levy"
+                    }
+                }
+            ]
+        },
+        "industrial-levy": {
+            "id": "industrial-levy",
+            "name": "Industrial Levy",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "move-through-cover"
+                    }
+                }
+            ]
+        },
+        "industrial-levy-part": {
+            "id": "industrial-levy-part",
+            "name": "Industrial Levy",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "move-through-cover"
+                    }
+                }
+            ]
+        },
+        "industrial-levy-part-2": {
+            "id": "industrial-levy-part-2",
+            "name": "Industrial Levy",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "move-through-cover"
+                    }
+                }
+            ]
+        }
+    }
+}

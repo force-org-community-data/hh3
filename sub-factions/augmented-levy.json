@@ -1,0 +1,223 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "augmented-levy",
+    "version": "1.0.0",
+    "name": "Augmented Levy",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "augmented-levy": {
+            "id": "augmented-levy",
+            "name": "Augmented Levy",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule and the Infantry Type in this Army gain the Rite of Pure Thought Special Rule. Every Model in a Command Troop Unit in this Army can have the Repair Automata Special Rule selected for it for +2 Points per Model."
+        },
+        "rite-of-pure-thought": {
+            "id": "rite-of-pure-thought",
+            "name": "Rite of Pure Thought",
+            "text": "A Model with this Special Rule may not make Reactions or Volley Attacks and suffers other limitations. A Model with this Special Rule may never make Reactions of any kind, make Volley Attacks or select any options other than Hold, Fall Back or Consolidate in the Resolution Sub-Phase. A Unit composed of a majority of Models with this Special Rule does not take Leadership Checks due to Models lost to a Shooting Attack, but does still make Checks due to the Panic (X) Special Rule. Furthermore, when Locked in Combat, no Combat Resolution Points are scored by any Player when a Model with this Special Rule is Removed as a Casualty."
+        },
+        "repair-automata": {
+            "id": "repair-automata",
+            "name": "Repair Automata",
+            "text": "A Unit that includes Models with this Special Rule may attempt to repair certain Models as if it was a single Model with the Battlesmith (X) Special Rule. A Unit that includes one or more Models with this Special Rule may be used to activate the Battlesmith (X) Special Rule as if it was a single Model with that Special Rule. When activating the Battlesmith (X) Special Rule for a Unit that includes one or more Models with the Repair Automata Special Rule, select one Model in the Unit with the Repair Automata Special Rule to be the Acting Model and determine the value of X for this use of the Battlesmith (X) Special Rule based on the number of Models in the Unit with the Repair Automata Special Rule using the table below: NUMBER OF MODELS VALUE OF X 1-4 1 5-8 2 9-12 3"
+        }
+    },
+    "upgrades": {
+        "augmented-levy-repair-automata": {
+            "id": "augmented-levy-repair-automata",
+            "name": "Repair Automata",
+            "description": "Every Model in a Command Troop Unit in this Army can have the Repair Automata Special Rule selected for it for +2 Points per Model.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "repair-automata": {
+                    "id": "repair-automata",
+                    "name": "Repair Automata",
+                    "cost": {
+                        "points": "2 * unit.models()"
+                    },
+                    "effects": [
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "repair-automata"
+                            }
+                        }
+                    ]
+                }
+            },
+            "multiSelect": true
+        }
+    },
+    "unitModifiers": {
+        "augmented-levy-provenance": {
+            "id": "augmented-levy-provenance",
+            "name": "Augmented Levy",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "augmented-levy"
+                    }
+                }
+            ]
+        },
+        "augmented-levy-provenance-part": {
+            "id": "augmented-levy-provenance-part",
+            "name": "Augmented Levy",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "augmented-levy"
+                    }
+                }
+            ]
+        },
+        "augmented-levy-provenance-part-2": {
+            "id": "augmented-levy-provenance-part-2",
+            "name": "Augmented Levy",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "augmented-levy"
+                    }
+                }
+            ]
+        },
+        "augmented-levy": {
+            "id": "augmented-levy",
+            "name": "Augmented Levy",
+            "selector": {
+                "unitIds": [
+                    "command-troop",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "rite-of-pure-thought"
+                    }
+                }
+            ]
+        },
+        "augmented-levy-part": {
+            "id": "augmented-levy-part",
+            "name": "Augmented Levy",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "rite-of-pure-thought"
+                    }
+                }
+            ]
+        },
+        "augmented-levy-part-2": {
+            "id": "augmented-levy-part-2",
+            "name": "Augmented Levy",
+            "selector": {
+                "unitIds": ["discipline-master-cadre"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["infantry"]
+                    },
+                    "rule": {
+                        "id": "rite-of-pure-thought"
+                    }
+                }
+            ]
+        },
+        "augmented-levy-part-3": {
+            "id": "augmented-levy-part-3",
+            "name": "Augmented Levy",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "rite-of-pure-thought"
+                    }
+                }
+            ]
+        },
+        "augmented-levy-repair-automata": {
+            "id": "augmented-levy-repair-automata",
+            "name": "Repair Automata",
+            "selector": {
+                "unitIds": ["command-troop"]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "augmented-levy-repair-automata"
+                }
+            ]
+        }
+    }
+}

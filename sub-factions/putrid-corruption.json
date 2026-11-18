@@ -1,0 +1,164 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "putrid-corruption",
+    "version": "1.0.0",
+    "name": "Putrid Corruption",
+    "parent": {
+        "faction": "daemons-of-the-ruinstorm",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "putrid-corruption": {
+            "id": "putrid-corruption",
+            "name": "Putrid Corruption",
+            "text": "Any Model with this Trait gains the Desecrators Special Rule, the Feel No Pain (6+) Special Rule and the Heavy Sub-Type. Additionally, each Model with this Trait that also has any variant of the Bulky (X) Special Rule also gains the Explodes (5+) Special Rule. A Model with this Ætheric Dominion Trait that has the Command or Champion Sub-Type may be given the Psyker Trait and may have the Biomancy Psychic Discipline selected for it for +20 Points."
+        },
+        "desecrators": {
+            "id": "desecrators",
+            "name": "Desecrators",
+            "text": "Models with this Special Rule that pass a Willpower Check gain the Line (X) Special Rule. At the start of each Victory Sub-Phase, the Controlling Player of a Unit composed entirely of Models with this Special Rule may make a Willpower Check. If the Willpower Check is passed all Models in the Unit gain the Line (X) Special Rule until the end of the current Victory Sub-Phase. The value of X is determined by how much the final result of the Check is less than the Willpower Characteristic used for the Check: 0-1 Line (1) 2 Line (2) 3 or more Line (3) If the Willpower Check is failed, the Unit suffers Perils of the Warp."
+        }
+    },
+    "equipment": {
+        "biomancy": {
+            "id": "biomancy",
+            "name": "Biomancy",
+            "text": ""
+        }
+    },
+    "upgrades": {
+        "putrid-corruption-psychic-disciplines": {
+            "id": "putrid-corruption-psychic-disciplines",
+            "name": "Psychic Discipline",
+            "description": "A Model with this Ætheric Dominion Trait that has the Command or Champion Sub-Type may be given the Psyker Trait and may have the Biomancy Psychic Discipline selected for it.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "biomancy": {
+                    "id": "biomancy",
+                    "name": "Biomancy",
+                    "cost": {
+                        "points": 20
+                    },
+                    "equipmentRefs": ["biomancy"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Psyker"]
+                        }
+                    ]
+                }
+            },
+            "multiSelect": true
+        }
+    },
+    "unitModifiers": {
+        "putrid-corruption-trait": {
+            "id": "putrid-corruption-trait",
+            "name": "Putrid Corruption Trait",
+            "selector": {
+                "traits": ["Ætheric Dominion"]
+            },
+            "actions": [
+                {
+                    "kind": "trait",
+                    "replace": {
+                        "from": ["Ætheric Dominion"],
+                        "to": "Putrid Corruption"
+                    }
+                }
+            ]
+        },
+        "putrid-corruption-rules": {
+            "id": "putrid-corruption-rules",
+            "name": "Putrid Corruption",
+            "selector": {
+                "traits": ["Putrid Corruption"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "putrid-corruption"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "desecrators"
+                    }
+                }
+            ]
+        },
+        "putrid-corruption-feel-no-pain": {
+            "id": "putrid-corruption-feel-no-pain",
+            "name": "Putrid Corruption: Feel No Pain",
+            "selector": {
+                "traits": ["Putrid Corruption"],
+                "exclude": [
+                    {
+                        "unitIds": ["corbax-utterblight"]
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "feel-no-pain",
+                        "value": "6+"
+                    }
+                }
+            ]
+        },
+        "putrid-corruption-explodes": {
+            "id": "putrid-corruption-explodes",
+            "name": "Putrid Corruption: Explodes",
+            "selector": {
+                "unitIds": [
+                    "kabandha",
+                    "ruinstorm-daemon-beasts",
+                    "ruinstorm-daemon-behemoth",
+                    "ruinstorm-daemon-brutes",
+                    "ruinstorm-daemon-harbinger",
+                    "ruinstorm-daemon-harriers",
+                    "ruinstorm-daemon-hierarch",
+                    "ruinstorm-daemon-hierarch-with-wings",
+                    "ruinstorm-daemon-riders",
+                    "ruinstorm-daemon-sovereign",
+                    "ruinstorm-daemon-sovereign-with-wings",
+                    "ruinstorm-daemon-swarms",
+                    "ruinstorm-greater-daemon-beast",
+                    "samus"
+                ],
+                "traits": ["Putrid Corruption"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "explodes",
+                        "value": "5+"
+                    }
+                }
+            ]
+        },
+        "putrid-corruption-psychic-disciplines": {
+            "id": "putrid-corruption-psychic-disciplines",
+            "name": "Psychic Discipline",
+            "selector": {
+                "traits": ["Putrid Corruption"],
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "putrid-corruption-psychic-disciplines"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,148 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "malevolent-artifice",
+    "version": "1.0.0",
+    "name": "Malevolent Artifice",
+    "parent": {
+        "faction": "daemons-of-the-ruinstorm",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "malevolent-artifice": {
+            "id": "malevolent-artifice",
+            "name": "Malevolent Artifice",
+            "text": "Any Model with this Trait gains the Desecrators Special Rule and the Armour-breaker (4+) Special Rule. If a Unit that is made up of Models with this Ætheric Dominion is selected to fill a Prime Slot, the following Prime Advantage may be selected: Add one additional Force Organisation Slot to the Detachment that includes the Prime Slot, this Slot may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War and can only be filled by a Unit selected from the Machina Malefica section of the Mechanicum Taghmata Army List (see Liber Mechanicum). This Advantage may only be selected once per Detachment. Note that the Paragon of Malevolence Prime Advantage may be selected if the Unit chosen to fill the Prime Slot has the Unique Sub-Type, in the same manner as the Logistical Benefit Prime Advantage. However, the Paragon of Malevolence Prime Advantage can only be selected once per Detachment and cannot be selected if the Logistical Benefit Prime Advantage is also selected for that Detachment."
+        },
+        "desecrators": {
+            "id": "desecrators",
+            "name": "Desecrators",
+            "text": "Models with this Special Rule that pass a Willpower Check gain the Line (X) Special Rule. At the start of each Victory Sub-Phase, the Controlling Player of a Unit composed entirely of Models with this Special Rule may make a Willpower Check. If the Willpower Check is passed all Models in the Unit gain the Line (X) Special Rule until the end of the current Victory Sub-Phase. The value of X is determined by how much the final result of the Check is less than the Willpower Characteristic used for the Check: 0-1 Line (1) 2 Line (2) 3 or more Line (3) If the Willpower Check is failed, the Unit suffers Perils of the Warp."
+        },
+        "armour-breaker": {
+            "id": "armour-breaker",
+            "name": "Armour-breaker",
+            "text": "Attacks made with the Armour-breaker (X) Special Rule can sometimes inflict an extra point of Damage. When any Armour Penetration Test is made for an attack or Model with the Armour-breaker (X) Special Rule, and it results in a Penetrating Hit - roll a Dice. If the result of that Dice roll is equal to or greater than the value of X attached to this variant of the Armour-breaker (X) Special Rule, then the Damage Characteristic of that Penetrating Hit is increased by 1. Note that the Armour-breaker (X) Special Rule may only be triggered by an Armour Penetration Test and has no effect when making a Wound Test.",
+            "configurable": true
+        }
+    },
+    "unitModifiers": {
+        "malevolent-artifice-trait": {
+            "id": "malevolent-artifice-trait",
+            "name": "Malevolent Artifice Trait",
+            "selector": {
+                "traits": ["Ætheric Dominion"]
+            },
+            "actions": [
+                {
+                    "kind": "trait",
+                    "replace": {
+                        "from": ["Ætheric Dominion"],
+                        "to": "Malevolent Artifice"
+                    }
+                }
+            ]
+        },
+        "malevolent-artifice-rules": {
+            "id": "malevolent-artifice-rules",
+            "name": "Malevolent Artifice",
+            "selector": {
+                "traits": ["Malevolent Artifice"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "malevolent-artifice"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "desecrators"
+                    }
+                }
+            ]
+        },
+        "malevolent-artifice-armour-breaker": {
+            "id": "malevolent-artifice-armour-breaker",
+            "name": "Malevolent Artifice: Armour Breaker",
+            "selector": {
+                "traits": ["Malevolent Artifice"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "armour-breaker",
+                        "value": "4+"
+                    }
+                }
+            ]
+        }
+    },
+    "slotOptions": {
+        "paragon-of-malevolence": {
+            "id": "paragon-of-malevolence",
+            "name": "Paragon of Malevolence",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Prime Slot, this Slot may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War and can only be filled by a Unit selected from the Machina Malefica section of the Mechanicum Taghmata Army List (see Liber Mechanicum). This Advantage may only be selected once per Detachment. Note that the Paragon of Malevolence Prime Advantage may be selected if the Unit chosen to fill the Prime Slot has the Unique Sub-Type, in the same manner as the Logistical Benefit Prime Advantage. However, the Paragon of Malevolence Prime Advantage can only be selected once per Detachment and cannot be selected if the Logistical Benefit Prime Advantage is also selected for that Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "traits": ["Malevolent Artifice"]
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Paragon of Malevolence"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "troop",
+                        "war-engine",
+                        "retinue",
+                        "elites",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "mechanicum-taghmata"
+                    },
+                    "units": {
+                        "unitIds": [
+                            "blood-slaughterer",
+                            "decimator",
+                            "brass-scorpion",
+                            "kytan-daemon-engine"
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "listRules": {
+        "paragon-of-malevolence-once-per-detachment": {
+            "kind": "count",
+            "id": "paragon-of-malevolence-once-per-detachment",
+            "units": {
+                "traits": ["Paragon of Malevolence"]
+            },
+            "scope": "group",
+            "max": 1,
+            "message": "Paragon of Malevolence can only be selected once per Detachment"
+        },
+        "paragon-of-malevolence-not-with-logistical-benefit": {
+            "kind": "expression",
+            "id": "paragon-of-malevolence-not-with-logistical-benefit",
+            "scope": "group",
+            "when": {
+                "if": "group.count(trait:paragon-of-malevolence) == 0 or group.count(trait:logistical) == 0",
+                "message": "Paragon of Malevolence cannot be selected if the Logistical Benefit Prime Advantage is also selected for that Detachment"
+            }
+        }
+    }
+}

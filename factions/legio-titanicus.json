@@ -1,0 +1,2947 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/faction.schema.json",
+    "id": "legio-titanicus",
+    "version": "1.0.0",
+    "name": "Legio Titanicus",
+    "description": "The Units of the Legio Titanicus Army List can be fielded by selecting a single Lord of War as part of a Lord of War Detachment in an Army using another Army List to fill its Primary Detachment, in an Allied Detachment, or by using the Titan Ordinal Primary Detachment as part of the Engine Kill Mission Pack. The Mechanicum Ordinatus Units listed with this Army List are found in the Mechanicum Taghmata Army List.",
+    "game": {
+        "id": "hh3",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "defaultGroup": "titan-ordinal",
+    "units": {
+        "reaver-titan": {
+            "id": "reaver-titan",
+            "name": "Reaver Titan",
+            "role": "lord-of-war",
+            "type": "titan",
+            "cost": {
+                "points": 1500
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "head",
+                    "name": "Head",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "-",
+                        "primary": "14",
+                        "exposed": "12",
+                        "hp": "10"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "2"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D3+1"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "4"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "id": "carapace",
+                    "name": "Carapace",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "3",
+                        "primary": "15",
+                        "exposed": "14",
+                        "hp": "12"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "2"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D3+1"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "4"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "id": "arms",
+                    "name": "Arms",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "3",
+                        "primary": "14",
+                        "exposed": "12",
+                        "hp": "10"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "2"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D3+1"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "4"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "1"
+                        }
+                    ]
+                },
+                {
+                    "id": "legs",
+                    "name": "Legs",
+                    "template": "titan",
+                    "stats": {
+                        "m": "15",
+                        "bs": "-",
+                        "primary": "15",
+                        "exposed": "14",
+                        "hp": "12"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "2"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D3+1"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "4"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Titanicus", "Light Battle", "Crew"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "apocalypse-missile-launcher",
+                    "profileId": "carapace",
+                    "note": "Carapace Mounted"
+                }
+            ],
+            "upgrades": {
+                "crew": {
+                    "id": "crew",
+                    "name": "Crew",
+                    "description": "When this Model is selected as part of an Army, the Controlling Player must exchange the [Crew] Trait for one of the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "minoris": {
+                            "id": "minoris",
+                            "name": "Minoris",
+                            "cost": {
+                                "points": 0
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Minoris"
+                                    }
+                                }
+                            ]
+                        },
+                        "senioris": {
+                            "id": "senioris",
+                            "name": "Senioris",
+                            "cost": {
+                                "points": 100
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Senioris"
+                                    }
+                                },
+                                {
+                                    "kind": "stat",
+                                    "changes": [
+                                        {
+                                            "stat": "bs",
+                                            "op": "add",
+                                            "value": 1
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "Increase the BS Characteristic of this Model’s Arms Profile and Carapace Profile to 4."
+                        },
+                        "majoris": {
+                            "id": "majoris",
+                            "name": "Majoris",
+                            "cost": {
+                                "points": 200
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Majoris"
+                                    }
+                                },
+                                {
+                                    "kind": "stat",
+                                    "changes": [
+                                        {
+                                            "stat": "bs",
+                                            "op": "add",
+                                            "value": 2
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "Increase the BS Characteristic of this Model’s Arms Profile and Carapace Profile to 5."
+                        }
+                    },
+                    "default": "minoris"
+                },
+                "left-arm-weapon": {
+                    "id": "left-arm-weapon",
+                    "name": "Left arm weapon",
+                    "description": "This Model must have two Arm Mounted Weapons selected for it from the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "arm-mounted-titan-gatling-blaster": {
+                            "id": "arm-mounted-titan-gatling-blaster",
+                            "name": "Titan gatling blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-gatling-blaster"]
+                        },
+                        "arm-mounted-titan-laser-blaster": {
+                            "id": "arm-mounted-titan-laser-blaster",
+                            "name": "Titan laser blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-laser-blaster"]
+                        },
+                        "arm-mounted-titan-melta-cannon": {
+                            "id": "arm-mounted-titan-melta-cannon",
+                            "name": "Titan melta cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-melta-cannon"]
+                        },
+                        "arm-mounted-titan-power-fist": {
+                            "id": "arm-mounted-titan-power-fist",
+                            "name": "Titan power fist",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-power-fist"]
+                        },
+                        "arm-mounted-titan-volcano-cannon": {
+                            "id": "arm-mounted-titan-volcano-cannon",
+                            "name": "Titan volcano cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-volcano-cannon"]
+                        }
+                    },
+                    "default": "arm-mounted-titan-gatling-blaster",
+                    "gearNote": "Arm Mounted",
+                    "profileId": "arms"
+                },
+                "right-arm-weapon": {
+                    "id": "right-arm-weapon",
+                    "name": "Right arm weapon",
+                    "description": "This Model must have two Arm Mounted Weapons selected for it from the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "arm-mounted-titan-gatling-blaster": {
+                            "id": "arm-mounted-titan-gatling-blaster",
+                            "name": "Titan gatling blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-gatling-blaster"]
+                        },
+                        "arm-mounted-titan-laser-blaster": {
+                            "id": "arm-mounted-titan-laser-blaster",
+                            "name": "Titan laser blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-laser-blaster"]
+                        },
+                        "arm-mounted-titan-melta-cannon": {
+                            "id": "arm-mounted-titan-melta-cannon",
+                            "name": "Titan melta cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-melta-cannon"]
+                        },
+                        "arm-mounted-titan-power-fist": {
+                            "id": "arm-mounted-titan-power-fist",
+                            "name": "Titan power fist",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-power-fist"]
+                        },
+                        "arm-mounted-titan-volcano-cannon": {
+                            "id": "arm-mounted-titan-volcano-cannon",
+                            "name": "Titan volcano cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-volcano-cannon"]
+                        }
+                    },
+                    "default": "arm-mounted-titan-gatling-blaster",
+                    "gearNote": "Arm Mounted",
+                    "profileId": "arms"
+                }
+            }
+        },
+        "secutarii-axiarch": {
+            "id": "secutarii-axiarch",
+            "name": "Secutarii Axiarch",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 95
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "axiarch",
+                    "name": "Axiarch",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "3",
+                        "w": "3",
+                        "i": "4",
+                        "a": "4",
+                        "ld": "9",
+                        "cl": "10",
+                        "wp": "8",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "legio-armsmen"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Titanicus", "Shield"],
+            "defaultGear": [
+                {
+                    "kind": "equipment",
+                    "id": "mag-inverter-shield"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Arc lance",
+                    "description": "This Model may have its arc lance exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "arc-lance": {
+                            "id": "arc-lance",
+                            "name": "Arc lance",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["arc-lance"]
+                        },
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "arc-maul": {
+                            "id": "arc-maul",
+                            "name": "Arc maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["arc-maul"]
+                        }
+                    },
+                    "default": "arc-lance",
+                    "profileId": "axiarch"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Wargear",
+                    "description": "This Model may have any of the following options selected for it:",
+                    "perModel": {
+                        "type": "single",
+                        "max": 2
+                    },
+                    "options": {
+                        "rad-grenades": {
+                            "id": "rad-grenades",
+                            "name": "Rad grenades",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["rad-grenades"]
+                        },
+                        "cyber-familiar": {
+                            "id": "cyber-familiar",
+                            "name": "Cyber-familiar",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["cyber-familiar"]
+                        }
+                    },
+                    "profileId": "axiarch",
+                    "multiSelect": true
+                }
+            }
+        },
+        "secutarii-cohort": {
+            "id": "secutarii-cohort",
+            "name": "Secutarii Cohort",
+            "role": "troop",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 10,
+            "profiles": [
+                {
+                    "id": "secutarii",
+                    "name": "Secutarii",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "3",
+                        "w": "1",
+                        "i": "3",
+                        "a": "2",
+                        "ld": "7",
+                        "cl": "8",
+                        "wp": "7",
+                        "in": "8",
+                        "sav": "4+",
+                        "inv": "6+"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "legio-armsmen"
+                        }
+                    ]
+                },
+                {
+                    "id": "secutarii-alpha",
+                    "name": "Secutarii Alpha",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "4",
+                        "bs": "4",
+                        "s": "4",
+                        "t": "3",
+                        "w": "1",
+                        "i": "3",
+                        "a": "2",
+                        "ld": "8",
+                        "cl": "9",
+                        "wp": "7",
+                        "in": "8",
+                        "sav": "4+",
+                        "inv": "6+"
+                    },
+                    "tags": ["Sergeant"],
+                    "specialRules": [
+                        {
+                            "id": "legio-armsmen"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Titanicus", "Shield"],
+            "composition": [
+                {
+                    "id": "secutarii",
+                    "name": "Secutarii",
+                    "profiles": {
+                        "secutarii": 1
+                    },
+                    "min": 9,
+                    "max": 19,
+                    "cost": {
+                        "points": 15
+                    }
+                },
+                {
+                    "id": "secutarii-alpha",
+                    "name": "Secutarii Alpha",
+                    "profiles": {
+                        "secutarii-alpha": 1
+                    },
+                    "min": 1
+                }
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "secutarii"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "secutarii-alpha"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Arc lance and mag-inverter shield",
+                    "description": "All Models in this Unit may have their arc lance and mag-inverter shield exchanged for one galvanic caster.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "arc-lance-and-mag-inverter-shield": {
+                            "id": "arc-lance-and-mag-inverter-shield",
+                            "name": "Arc lance and mag-inverter shield",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["arc-lance"],
+                            "equipmentRefs": ["mag-inverter-shield"]
+                        },
+                        "galvanic-caster": {
+                            "id": "galvanic-caster",
+                            "name": "Galvanic caster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["galvanic-caster"]
+                        }
+                    },
+                    "default": "arc-lance-and-mag-inverter-shield",
+                    "profileId": "secutarii"
+                },
+                "option-1-secutarii-alpha": {
+                    "id": "option-1-secutarii-alpha",
+                    "name": "Alpha Arc lance and mag-inverter shield",
+                    "description": "All Models in this Unit may have their arc lance and mag-inverter shield exchanged for one galvanic caster.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "arc-lance-and-mag-inverter-shield": {
+                            "id": "arc-lance-and-mag-inverter-shield",
+                            "name": "Arc lance and mag-inverter shield",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["arc-lance"],
+                            "equipmentRefs": ["mag-inverter-shield"]
+                        },
+                        "galvanic-caster": {
+                            "id": "galvanic-caster",
+                            "name": "Galvanic caster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["galvanic-caster"]
+                        }
+                    },
+                    "default": "arc-lance-and-mag-inverter-shield",
+                    "profileId": "secutarii-alpha",
+                    "mirrorOf": "option-1"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Rad grenades",
+                    "description": "All Models in the Unit may have rad grenades selected for them.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "rad-grenades": {
+                            "id": "rad-grenades",
+                            "name": "Rad grenades",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["rad-grenades"]
+                        }
+                    },
+                    "profileId": "secutarii",
+                    "multiSelect": true
+                },
+                "option-2-secutarii-alpha": {
+                    "id": "option-2-secutarii-alpha",
+                    "name": "Alpha Rad grenades",
+                    "description": "All Models in the Unit may have rad grenades selected for them.",
+                    "perModel": {
+                        "type": "every"
+                    },
+                    "options": {
+                        "rad-grenades": {
+                            "id": "rad-grenades",
+                            "name": "Rad grenades",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["rad-grenades"]
+                        }
+                    },
+                    "profileId": "secutarii-alpha",
+                    "mirrorOf": "option-2",
+                    "multiSelect": true
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Alpha Weapons",
+                    "description": "The Secutarii Alpha may have any of the following options selected for it:",
+                    "perModel": {
+                        "type": "single",
+                        "max": 4
+                    },
+                    "options": {
+                        "power-sword": {
+                            "id": "power-sword",
+                            "name": "Power sword",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["power-sword"]
+                        },
+                        "arc-maul": {
+                            "id": "arc-maul",
+                            "name": "Arc maul",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["arc-maul"]
+                        },
+                        "volkite-serpenta": {
+                            "id": "volkite-serpenta",
+                            "name": "Volkite serpenta",
+                            "cost": {
+                                "points": 2
+                            },
+                            "weaponRefs": ["volkite-serpenta"]
+                        },
+                        "arc-pistol": {
+                            "id": "arc-pistol",
+                            "name": "Arc pistol",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["arc-pistol"]
+                        }
+                    },
+                    "profileId": "secutarii-alpha",
+                    "multiSelect": true
+                }
+            }
+        },
+        "triaros-armoured-conveyor": {
+            "id": "triaros-armoured-conveyor",
+            "name": "Triaros Armoured Conveyor",
+            "role": "transport",
+            "type": "vehicle",
+            "cost": {
+                "points": 200
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "triaros",
+                    "name": "Triaros",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "10",
+                        "bs": "4",
+                        "front": "14",
+                        "side": "12",
+                        "rear": "12",
+                        "hp": "7",
+                        "transport-capacity": "22"
+                    },
+                    "tags": ["Transport"],
+                    "specialRules": [
+                        {
+                            "id": "auto-repair",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "shock-ram"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Titanicus"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "volkite-caliver",
+                    "note": "Centreline Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "volkite-caliver",
+                    "note": "Centreline Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-mauler-bolt-cannon",
+                    "note": "Pintle Mounted"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "flare-shield"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "searchlights"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Hull (Front) Mounted hunter-killer missile",
+                    "description": "This Model may have up to two Hull (Front) Mounted hunter-killer missiles selected for it.",
+                    "perModel": {
+                        "type": "multiple",
+                        "max": 2
+                    },
+                    "options": {
+                        "hull-front-mounted-hunter-killer-missile": {
+                            "id": "hull-front-mounted-hunter-killer-missile",
+                            "name": "Hunter-killer missile",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        }
+                    },
+                    "gearNote": "Hull (Front) Mounted",
+                    "profileId": "triaros",
+                    "multiSelect": true
+                }
+            }
+        },
+        "warbringer-nemesis-titan": {
+            "id": "warbringer-nemesis-titan",
+            "name": "Warbringer Nemesis Titan",
+            "role": "lord-of-war",
+            "type": "titan",
+            "cost": {
+                "points": 2000
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "head",
+                    "name": "Head",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "-",
+                        "primary": "14",
+                        "exposed": "12",
+                        "hp": "12"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "3"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D6"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "6"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "id": "carapace",
+                    "name": "Carapace",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "3",
+                        "primary": "16",
+                        "exposed": "14",
+                        "hp": "18"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "3"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D6"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "6"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "id": "arms",
+                    "name": "Arms",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "3",
+                        "primary": "14",
+                        "exposed": "12",
+                        "hp": "12"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "3"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D6"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "6"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "id": "legs",
+                    "name": "Legs",
+                    "template": "titan",
+                    "stats": {
+                        "m": "10",
+                        "bs": "-",
+                        "primary": "15",
+                        "exposed": "14",
+                        "hp": "14"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "3"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D6"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "6"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Titanicus", "Battle", "Crew"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "defensor-autocannon",
+                    "profileId": "carapace",
+                    "note": "Carapace Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "defensor-autocannon",
+                    "profileId": "carapace",
+                    "note": "Carapace Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "defensor-bolt-cannon",
+                    "profileId": "carapace",
+                    "note": "Front Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "defensor-bolt-cannon",
+                    "profileId": "carapace",
+                    "note": "Front Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "defensor-bolt-cannon",
+                    "profileId": "carapace",
+                    "note": "Rear Mounted"
+                }
+            ],
+            "upgrades": {
+                "crew": {
+                    "id": "crew",
+                    "name": "Crew",
+                    "description": "When this Model is selected as part of an Army, the Controlling Player must exchange the [Crew] Trait for one of the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "minoris": {
+                            "id": "minoris",
+                            "name": "Minoris",
+                            "cost": {
+                                "points": 0
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Minoris"
+                                    }
+                                }
+                            ]
+                        },
+                        "senioris": {
+                            "id": "senioris",
+                            "name": "Senioris",
+                            "cost": {
+                                "points": 200
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Senioris"
+                                    }
+                                },
+                                {
+                                    "kind": "stat",
+                                    "changes": [
+                                        {
+                                            "stat": "bs",
+                                            "op": "add",
+                                            "value": 1
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "Increase the BS Characteristic of this Model’s Arms Profile and Carapace Profile to 4."
+                        },
+                        "majoris": {
+                            "id": "majoris",
+                            "name": "Majoris",
+                            "cost": {
+                                "points": 350
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Majoris"
+                                    }
+                                },
+                                {
+                                    "kind": "stat",
+                                    "changes": [
+                                        {
+                                            "stat": "bs",
+                                            "op": "add",
+                                            "value": 2
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "Increase the BS Characteristic of this Model’s Arms Profile and Carapace Profile to 5."
+                        }
+                    },
+                    "default": "minoris"
+                },
+                "boresight-weapon": {
+                    "id": "boresight-weapon",
+                    "name": "Boresight Mounted weapon",
+                    "description": "This Model must have one Boresight Mounted Weapon selected for it from the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "boresight-mounted-nemesis-quake-cannon": {
+                            "id": "boresight-mounted-nemesis-quake-cannon",
+                            "name": "Nemesis quake cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["nemesis-quake-cannon"]
+                        },
+                        "boresight-mounted-nemesis-volcano-cannon": {
+                            "id": "boresight-mounted-nemesis-volcano-cannon",
+                            "name": "Nemesis volcano cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["nemesis-volcano-cannon"]
+                        }
+                    },
+                    "default": "boresight-mounted-nemesis-quake-cannon",
+                    "gearNote": "Boresight Mounted",
+                    "profileId": "carapace"
+                },
+                "left-arm-weapon": {
+                    "id": "left-arm-weapon",
+                    "name": "Left arm weapon",
+                    "description": "This Model must have two Arm Mounted Weapons selected for it from the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "arm-mounted-titan-gatling-blaster": {
+                            "id": "arm-mounted-titan-gatling-blaster",
+                            "name": "Titan gatling blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-gatling-blaster"]
+                        },
+                        "arm-mounted-titan-laser-blaster": {
+                            "id": "arm-mounted-titan-laser-blaster",
+                            "name": "Titan laser blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-laser-blaster"]
+                        },
+                        "arm-mounted-titan-volcano-cannon": {
+                            "id": "arm-mounted-titan-volcano-cannon",
+                            "name": "Titan volcano cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-volcano-cannon"]
+                        },
+                        "arm-mounted-titan-melta-cannon": {
+                            "id": "arm-mounted-titan-melta-cannon",
+                            "name": "Titan melta cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-melta-cannon"]
+                        }
+                    },
+                    "default": "arm-mounted-titan-gatling-blaster",
+                    "gearNote": "Arm Mounted",
+                    "profileId": "arms"
+                },
+                "right-arm-weapon": {
+                    "id": "right-arm-weapon",
+                    "name": "Right arm weapon",
+                    "description": "This Model must have two Arm Mounted Weapons selected for it from the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "arm-mounted-titan-gatling-blaster": {
+                            "id": "arm-mounted-titan-gatling-blaster",
+                            "name": "Titan gatling blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-gatling-blaster"]
+                        },
+                        "arm-mounted-titan-laser-blaster": {
+                            "id": "arm-mounted-titan-laser-blaster",
+                            "name": "Titan laser blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-laser-blaster"]
+                        },
+                        "arm-mounted-titan-volcano-cannon": {
+                            "id": "arm-mounted-titan-volcano-cannon",
+                            "name": "Titan volcano cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-volcano-cannon"]
+                        },
+                        "arm-mounted-titan-melta-cannon": {
+                            "id": "arm-mounted-titan-melta-cannon",
+                            "name": "Titan melta cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-melta-cannon"]
+                        }
+                    },
+                    "default": "arm-mounted-titan-gatling-blaster",
+                    "gearNote": "Arm Mounted",
+                    "profileId": "arms"
+                }
+            }
+        },
+        "warhound-titan": {
+            "id": "warhound-titan",
+            "name": "Warhound Titan",
+            "role": "lord-of-war",
+            "type": "titan",
+            "cost": {
+                "points": 750
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "head",
+                    "name": "Head",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "-",
+                        "primary": "14",
+                        "exposed": "12",
+                        "hp": "8"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "1"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D3"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "id": "carapace",
+                    "name": "Carapace",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "-",
+                        "primary": "14",
+                        "exposed": "12",
+                        "hp": "10"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "1"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D3"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "id": "arms",
+                    "name": "Arms",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "3",
+                        "primary": "12",
+                        "exposed": "10",
+                        "hp": "8"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "1"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D3"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "2"
+                        }
+                    ]
+                },
+                {
+                    "id": "legs",
+                    "name": "Legs",
+                    "template": "titan",
+                    "stats": {
+                        "m": "20",
+                        "bs": "-",
+                        "primary": "14",
+                        "exposed": "12",
+                        "hp": "10"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "1"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D3"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Titanicus", "Scout", "Crew"],
+            "upgrades": {
+                "crew": {
+                    "id": "crew",
+                    "name": "Crew",
+                    "description": "When this Model is selected as part of an Army, the Controlling Player must exchange the [Crew] Trait for one of the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "minoris": {
+                            "id": "minoris",
+                            "name": "Minoris",
+                            "cost": {
+                                "points": 0
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Minoris"
+                                    }
+                                }
+                            ]
+                        },
+                        "senioris": {
+                            "id": "senioris",
+                            "name": "Senioris",
+                            "cost": {
+                                "points": 50
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Senioris"
+                                    }
+                                },
+                                {
+                                    "kind": "stat",
+                                    "changes": [
+                                        {
+                                            "stat": "bs",
+                                            "op": "add",
+                                            "value": 1
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "Increase the BS Characteristic of this Model’s Arms Profile to 4."
+                        },
+                        "majoris": {
+                            "id": "majoris",
+                            "name": "Majoris",
+                            "cost": {
+                                "points": 100
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Majoris"
+                                    }
+                                },
+                                {
+                                    "kind": "stat",
+                                    "changes": [
+                                        {
+                                            "stat": "bs",
+                                            "op": "add",
+                                            "value": 2
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "Increase the BS Characteristic of this Model’s Arms Profile to 5."
+                        }
+                    },
+                    "default": "minoris"
+                },
+                "left-arm-weapon": {
+                    "id": "left-arm-weapon",
+                    "name": "Left arm weapon",
+                    "description": "This Model must have two Arm Mounted Weapons selected for it from the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "arm-mounted-vulcan-mega-bolter": {
+                            "id": "arm-mounted-vulcan-mega-bolter",
+                            "name": "Vulcan mega-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["vulcan-mega-bolter"]
+                        },
+                        "arm-mounted-titan-inferno-cannon": {
+                            "id": "arm-mounted-titan-inferno-cannon",
+                            "name": "Titan inferno cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-inferno-cannon"]
+                        },
+                        "arm-mounted-titan-plasma-blastgun": {
+                            "id": "arm-mounted-titan-plasma-blastgun",
+                            "name": "Titan plasma blastgun",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-plasma-blastgun"]
+                        },
+                        "arm-mounted-titan-turbo-laser-destructor": {
+                            "id": "arm-mounted-titan-turbo-laser-destructor",
+                            "name": "Titan turbo laser destructor",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-turbo-laser-destructor"]
+                        }
+                    },
+                    "default": "arm-mounted-vulcan-mega-bolter",
+                    "gearNote": "Arm Mounted",
+                    "profileId": "arms"
+                },
+                "right-arm-weapon": {
+                    "id": "right-arm-weapon",
+                    "name": "Right arm weapon",
+                    "description": "This Model must have two Arm Mounted Weapons selected for it from the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "arm-mounted-vulcan-mega-bolter": {
+                            "id": "arm-mounted-vulcan-mega-bolter",
+                            "name": "Vulcan mega-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["vulcan-mega-bolter"]
+                        },
+                        "arm-mounted-titan-inferno-cannon": {
+                            "id": "arm-mounted-titan-inferno-cannon",
+                            "name": "Titan inferno cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-inferno-cannon"]
+                        },
+                        "arm-mounted-titan-plasma-blastgun": {
+                            "id": "arm-mounted-titan-plasma-blastgun",
+                            "name": "Titan plasma blastgun",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-plasma-blastgun"]
+                        },
+                        "arm-mounted-titan-turbo-laser-destructor": {
+                            "id": "arm-mounted-titan-turbo-laser-destructor",
+                            "name": "Titan turbo laser destructor",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["titan-turbo-laser-destructor"]
+                        }
+                    },
+                    "default": "arm-mounted-vulcan-mega-bolter",
+                    "gearNote": "Arm Mounted",
+                    "profileId": "arms"
+                }
+            }
+        },
+        "warlord-titan": {
+            "id": "warlord-titan",
+            "name": "Warlord Titan",
+            "role": "lord-of-war",
+            "type": "titan",
+            "cost": {
+                "points": 3000
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "head",
+                    "name": "Head",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "-",
+                        "primary": "14",
+                        "exposed": "12",
+                        "hp": "14"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "4"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D6+1"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "8"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "id": "carapace",
+                    "name": "Carapace",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "3",
+                        "primary": "15",
+                        "exposed": "14",
+                        "hp": "18"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "4"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D6+1"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "8"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "id": "arms",
+                    "name": "Arms",
+                    "template": "titan",
+                    "stats": {
+                        "m": "-",
+                        "bs": "3",
+                        "primary": "14",
+                        "exposed": "12",
+                        "hp": "14"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "4"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D6+1"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "8"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
+                    "id": "legs",
+                    "name": "Legs",
+                    "template": "titan",
+                    "stats": {
+                        "m": "10",
+                        "bs": "-",
+                        "primary": "15",
+                        "exposed": "14",
+                        "hp": "16"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "titan-war-horn",
+                            "value": "4"
+                        },
+                        {
+                            "id": "repair-crew",
+                            "value": "D6+1"
+                        },
+                        {
+                            "id": "titan-void-shield-array",
+                            "value": "8"
+                        },
+                        {
+                            "id": "reinforced-structure",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Legio Titanicus", "Battle", "Crew"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "defensor-bolt-cannon",
+                    "profileId": "carapace",
+                    "note": "Front Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "defensor-bolt-cannon",
+                    "profileId": "carapace",
+                    "note": "Front Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "defensor-lascannon",
+                    "profileId": "carapace",
+                    "note": "Rear Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "defensor-lascannon",
+                    "profileId": "carapace",
+                    "note": "Rear Mounted"
+                }
+            ],
+            "upgrades": {
+                "crew": {
+                    "id": "crew",
+                    "name": "Crew",
+                    "description": "When this Model is selected as part of an Army, the Controlling Player must exchange the [Crew] Trait for one of the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "minoris": {
+                            "id": "minoris",
+                            "name": "Minoris",
+                            "cost": {
+                                "points": 0
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Minoris"
+                                    }
+                                }
+                            ]
+                        },
+                        "senioris": {
+                            "id": "senioris",
+                            "name": "Senioris",
+                            "cost": {
+                                "points": 300
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Senioris"
+                                    }
+                                },
+                                {
+                                    "kind": "stat",
+                                    "changes": [
+                                        {
+                                            "stat": "bs",
+                                            "op": "add",
+                                            "value": 1
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "Increase the BS Characteristic of this Model’s Arms Profile and Carapace Profile to 4."
+                        },
+                        "majoris": {
+                            "id": "majoris",
+                            "name": "Majoris",
+                            "cost": {
+                                "points": 500
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "replace": {
+                                        "from": ["Crew"],
+                                        "to": "Majoris"
+                                    }
+                                },
+                                {
+                                    "kind": "stat",
+                                    "changes": [
+                                        {
+                                            "stat": "bs",
+                                            "op": "add",
+                                            "value": 2
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "Increase the BS Characteristic of this Model’s Arms Profile and Carapace Profile to 5."
+                        }
+                    },
+                    "default": "minoris"
+                },
+                "carapace-weapons": {
+                    "id": "carapace-weapons",
+                    "name": "Carapace Mounted weapons",
+                    "description": "This Model must have one of the following options selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "two-carapace-mounted-apocalypse-missile-launchers": {
+                            "id": "two-carapace-mounted-apocalypse-missile-launchers",
+                            "name": "Two apocalypse missile launchers",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": [
+                                "apocalypse-missile-launcher",
+                                "apocalypse-missile-launcher"
+                            ]
+                        },
+                        "two-carapace-mounted-titan-laser-blasters": {
+                            "id": "two-carapace-mounted-titan-laser-blasters",
+                            "name": "Two titan laser blasters",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": [
+                                "titan-laser-blaster",
+                                "titan-laser-blaster"
+                            ]
+                        }
+                    },
+                    "default": "two-carapace-mounted-apocalypse-missile-launchers",
+                    "gearNote": "Carapace Mounted",
+                    "profileId": "carapace"
+                },
+                "left-arm-weapon": {
+                    "id": "left-arm-weapon",
+                    "name": "Left arm weapon",
+                    "description": "This Model must have two Arm Mounted Weapons selected for it from the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "arm-mounted-mori-quake-cannon": {
+                            "id": "arm-mounted-mori-quake-cannon",
+                            "name": "Mori quake cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["mori-quake-cannon"]
+                        },
+                        "arm-mounted-belicosa-volcano-cannon": {
+                            "id": "arm-mounted-belicosa-volcano-cannon",
+                            "name": "Belicosa volcano cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["belicosa-volcano-cannon"]
+                        },
+                        "arm-mounted-macro-gatling-blaster": {
+                            "id": "arm-mounted-macro-gatling-blaster",
+                            "name": "Macro-gatling blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["macro-gatling-blaster"]
+                        },
+                        "arm-mounted-sunfury-plasma-annihilator": {
+                            "id": "arm-mounted-sunfury-plasma-annihilator",
+                            "name": "Sunfury plasma annihilator",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["sunfury-plasma-annihilator"]
+                        },
+                        "arm-mounted-arioch-power-claw-with-a-vulcan-mega-bolter": {
+                            "id": "arm-mounted-arioch-power-claw-with-a-vulcan-mega-bolter",
+                            "name": "Arioch power claw with a Vulcan mega-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": [
+                                "arioch-power-claw",
+                                "vulcan-mega-bolter"
+                            ]
+                        }
+                    },
+                    "default": "arm-mounted-mori-quake-cannon",
+                    "gearNote": "Arm Mounted",
+                    "profileId": "arms"
+                },
+                "right-arm-weapon": {
+                    "id": "right-arm-weapon",
+                    "name": "Right arm weapon",
+                    "description": "This Model must have two Arm Mounted Weapons selected for it from the following options:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "arm-mounted-mori-quake-cannon": {
+                            "id": "arm-mounted-mori-quake-cannon",
+                            "name": "Mori quake cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["mori-quake-cannon"]
+                        },
+                        "arm-mounted-belicosa-volcano-cannon": {
+                            "id": "arm-mounted-belicosa-volcano-cannon",
+                            "name": "Belicosa volcano cannon",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["belicosa-volcano-cannon"]
+                        },
+                        "arm-mounted-macro-gatling-blaster": {
+                            "id": "arm-mounted-macro-gatling-blaster",
+                            "name": "Macro-gatling blaster",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["macro-gatling-blaster"]
+                        },
+                        "arm-mounted-sunfury-plasma-annihilator": {
+                            "id": "arm-mounted-sunfury-plasma-annihilator",
+                            "name": "Sunfury plasma annihilator",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["sunfury-plasma-annihilator"]
+                        },
+                        "arm-mounted-arioch-power-claw-with-a-vulcan-mega-bolter": {
+                            "id": "arm-mounted-arioch-power-claw-with-a-vulcan-mega-bolter",
+                            "name": "Arioch power claw with a Vulcan mega-bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": [
+                                "arioch-power-claw",
+                                "vulcan-mega-bolter"
+                            ]
+                        }
+                    },
+                    "default": "arm-mounted-mori-quake-cannon",
+                    "gearNote": "Arm Mounted",
+                    "profileId": "arms"
+                }
+            }
+        }
+    },
+    "weapons": {
+        "apocalypse-missile-launcher": {
+            "id": "apocalypse-missile-launcher",
+            "name": "Apocalypse missile launcher",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Apocalypse missile launcher",
+                    "stats": {
+                        "r": "150",
+                        "fp": "1",
+                        "rs": "9",
+                        "ap": "3",
+                        "d": "4"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "10\""
+                        },
+                        {
+                            "id": "shield-breaker",
+                            "value": "3"
+                        }
+                    ],
+                    "traits": ["Missile", "Strategic"]
+                }
+            ]
+        },
+        "arc-lance": {
+            "id": "arc-lance",
+            "name": "Arc lance",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Arc lance",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Suppressed"
+                        }
+                    ],
+                    "traits": ["Arc"]
+                }
+            ]
+        },
+        "arc-maul": {
+            "id": "arc-maul",
+            "name": "Arc maul",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Arc maul",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "shock",
+                            "value": "Suppressed"
+                        }
+                    ],
+                    "traits": ["Arc"]
+                }
+            ]
+        },
+        "arc-pistol": {
+            "id": "arc-pistol",
+            "name": "Arc pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Arc pistol",
+                    "stats": {
+                        "r": "12",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "suppressive",
+                            "value": "1"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Suppressed"
+                        }
+                    ],
+                    "traits": ["Arc", "Assault"]
+                }
+            ]
+        },
+        "arioch-power-claw": {
+            "id": "arioch-power-claw",
+            "name": "Arioch power claw",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Arioch power claw",
+                    "stats": {
+                        "r": "8",
+                        "fp": "1",
+                        "rs": "13",
+                        "ap": "2",
+                        "d": "12"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Strike"]
+                }
+            ]
+        },
+        "belicosa-volcano-cannon": {
+            "id": "belicosa-volcano-cannon",
+            "name": "Belicosa volcano cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Belicosa volcano cannon",
+                    "stats": {
+                        "r": "150",
+                        "fp": "1",
+                        "rs": "13",
+                        "ap": "2",
+                        "d": "12"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "macro-auspex"
+                        }
+                    ],
+                    "traits": ["Las", "Strategic"]
+                }
+            ]
+        },
+        "defensor-autocannon": {
+            "id": "defensor-autocannon",
+            "name": "Defensor autocannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Defensor autocannon",
+                    "stats": {
+                        "r": "48",
+                        "fp": "3",
+                        "rs": "7",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "skyfire"
+                        }
+                    ],
+                    "traits": ["Auto", "Tactical"]
+                }
+            ]
+        },
+        "defensor-bolt-cannon": {
+            "id": "defensor-bolt-cannon",
+            "name": "Defensor bolt cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Defensor bolt cannon",
+                    "stats": {
+                        "r": "36",
+                        "fp": "6",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt", "Tactical"]
+                }
+            ]
+        },
+        "defensor-lascannon": {
+            "id": "defensor-lascannon",
+            "name": "Defensor lascannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Defensor lascannon",
+                    "stats": {
+                        "r": "48",
+                        "fp": "2",
+                        "rs": "9",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Las", "Tactical"]
+                }
+            ]
+        },
+        "frag-grenades": {
+            "id": "frag-grenades",
+            "name": "Frag grenades",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Frag grenades",
+                    "stats": {
+                        "r": "6",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "6",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        }
+                    ],
+                    "traits": ["Assault"]
+                }
+            ]
+        },
+        "galvanic-caster": {
+            "id": "galvanic-caster",
+            "name": "Galvanic caster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Galvanic caster",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "3",
+                        "ap": "6",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "rending",
+                            "value": "5+"
+                        }
+                    ],
+                    "traits": ["Arc", "Assault"]
+                }
+            ]
+        },
+        "hunter-killer-missile": {
+            "id": "hunter-killer-missile",
+            "name": "Hunter-killer missile",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Hunter-killer missile",
+                    "stats": {
+                        "r": "48",
+                        "fp": "1",
+                        "rs": "9",
+                        "ap": "3",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        }
+                    ],
+                    "traits": ["Missile"]
+                }
+            ]
+        },
+        "macro-gatling-blaster": {
+            "id": "macro-gatling-blaster",
+            "name": "Macro-gatling blaster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Macro-gatling blaster",
+                    "stats": {
+                        "r": "96",
+                        "fp": "5",
+                        "rs": "10",
+                        "ap": "2",
+                        "d": "5"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "macro-auspex"
+                        }
+                    ],
+                    "traits": ["Auto", "Strategic"]
+                }
+            ]
+        },
+        "mori-quake-cannon": {
+            "id": "mori-quake-cannon",
+            "name": "Mori quake cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Mori quake cannon",
+                    "stats": {
+                        "r": "150",
+                        "fp": "1",
+                        "rs": "12",
+                        "ap": "2",
+                        "d": "10"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "5\""
+                        },
+                        {
+                            "id": "macro-auspex"
+                        }
+                    ],
+                    "traits": ["Auto", "Strategic"]
+                }
+            ]
+        },
+        "nemesis-quake-cannon": {
+            "id": "nemesis-quake-cannon",
+            "name": "Nemesis quake cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Nemesis quake cannon",
+                    "stats": {
+                        "r": "150",
+                        "fp": "1",
+                        "rs": "12",
+                        "ap": "2",
+                        "d": "10"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "5\""
+                        },
+                        {
+                            "id": "power-hungry"
+                        },
+                        {
+                            "id": "macro-auspex"
+                        }
+                    ],
+                    "traits": ["Auto", "Strategic"]
+                }
+            ]
+        },
+        "nemesis-volcano-cannon": {
+            "id": "nemesis-volcano-cannon",
+            "name": "Nemesis volcano cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Nemesis volcano cannon",
+                    "stats": {
+                        "r": "150",
+                        "fp": "1",
+                        "rs": "13",
+                        "ap": "2",
+                        "d": "12"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "power-hungry"
+                        },
+                        {
+                            "id": "macro-auspex"
+                        }
+                    ],
+                    "traits": ["Las", "Strategic"]
+                }
+            ]
+        },
+        "power-sword": {
+            "id": "power-sword",
+            "name": "Power sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Power sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ],
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "rad-grenades": {
+            "id": "rad-grenades",
+            "name": "Rad grenades",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Rad grenades",
+                    "stats": {
+                        "r": "8",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "T"
+                        }
+                    ],
+                    "traits": ["Rad"]
+                }
+            ]
+        },
+        "sunfury-plasma-annihilator": {
+            "id": "sunfury-plasma-annihilator",
+            "name": "Sunfury plasma annihilator",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Sunfury plasma annihilator - Sustained fire",
+                    "stats": {
+                        "r": "82",
+                        "fp": "1",
+                        "rs": "9",
+                        "ap": "2",
+                        "d": "6"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "5\""
+                        },
+                        {
+                            "id": "macro-auspex"
+                        }
+                    ],
+                    "traits": ["Plasma", "Strategic"]
+                },
+                {
+                    "name": "Sunfury plasma annihilator - Maximal fire",
+                    "stats": {
+                        "r": "82",
+                        "fp": "1",
+                        "rs": "12",
+                        "ap": "2",
+                        "d": "9"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "7\""
+                        },
+                        {
+                            "id": "power-hungry"
+                        },
+                        {
+                            "id": "macro-auspex"
+                        }
+                    ],
+                    "traits": ["Plasma", "Strategic"]
+                }
+            ]
+        },
+        "titan-gatling-blaster": {
+            "id": "titan-gatling-blaster",
+            "name": "Titan gatling blaster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Titan gatling blaster",
+                    "stats": {
+                        "r": "82",
+                        "fp": "5",
+                        "rs": "9",
+                        "ap": "2",
+                        "d": "4"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Auto", "Strategic"]
+                }
+            ]
+        },
+        "titan-inferno-cannon": {
+            "id": "titan-inferno-cannon",
+            "name": "Titan inferno cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Titan inferno cannon",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "7",
+                        "ap": "3",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template",
+                            "value": "Hellstorm"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "3"
+                        }
+                    ],
+                    "traits": ["Flame", "Strategic"]
+                }
+            ]
+        },
+        "titan-laser-blaster": {
+            "id": "titan-laser-blaster",
+            "name": "Titan laser blaster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Titan laser blaster",
+                    "stats": {
+                        "r": "82",
+                        "fp": "3",
+                        "rs": "10",
+                        "ap": "2",
+                        "d": "5"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Las", "Strategic"]
+                }
+            ]
+        },
+        "titan-melta-cannon": {
+            "id": "titan-melta-cannon",
+            "name": "Titan melta cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Titan melta cannon",
+                    "stats": {
+                        "r": "60",
+                        "fp": "1",
+                        "rs": "12",
+                        "ap": "2",
+                        "d": "8"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "5\""
+                        },
+                        {
+                            "id": "melta",
+                            "value": "48"
+                        }
+                    ],
+                    "traits": ["Las", "Strategic"]
+                }
+            ]
+        },
+        "titan-plasma-blastgun": {
+            "id": "titan-plasma-blastgun",
+            "name": "Titan plasma blastgun",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Titan plasma blastgun - Sustained fire",
+                    "stats": {
+                        "r": "60",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "5"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        }
+                    ],
+                    "traits": ["Plasma", "Strategic"]
+                },
+                {
+                    "name": "Titan plasma blastgun - Maximal fire",
+                    "stats": {
+                        "r": "60",
+                        "fp": "1",
+                        "rs": "9",
+                        "ap": "2",
+                        "d": "7"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "5\""
+                        },
+                        {
+                            "id": "power-hungry"
+                        }
+                    ],
+                    "traits": ["Plasma", "Strategic"]
+                }
+            ]
+        },
+        "titan-power-fist": {
+            "id": "titan-power-fist",
+            "name": "Titan power fist",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Titan power fist",
+                    "stats": {
+                        "r": "6",
+                        "fp": "1",
+                        "rs": "12",
+                        "ap": "2",
+                        "d": "10"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Strike"]
+                }
+            ]
+        },
+        "titan-turbo-laser-destructor": {
+            "id": "titan-turbo-laser-destructor",
+            "name": "Titan turbo laser destructor",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Titan turbo laser destructor",
+                    "stats": {
+                        "r": "96",
+                        "fp": "1",
+                        "rs": "12",
+                        "ap": "2",
+                        "d": "6"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "armourbane"
+                        }
+                    ],
+                    "traits": ["Las", "Strategic"]
+                }
+            ]
+        },
+        "titan-volcano-cannon": {
+            "id": "titan-volcano-cannon",
+            "name": "Titan volcano cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Titan volcano cannon",
+                    "stats": {
+                        "r": "120",
+                        "fp": "1",
+                        "rs": "13",
+                        "ap": "2",
+                        "d": "12"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "power-hungry"
+                        },
+                        {
+                            "id": "macro-auspex"
+                        }
+                    ],
+                    "traits": ["Las", "Strategic"]
+                }
+            ]
+        },
+        "twin-mauler-bolt-cannon": {
+            "id": "twin-mauler-bolt-cannon",
+            "name": "Twin mauler bolt cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin mauler bolt cannon",
+                    "stats": {
+                        "r": "24",
+                        "fp": "6",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "2"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "4+"
+                        }
+                    ],
+                    "traits": ["Bolt"]
+                }
+            ]
+        },
+        "volkite-caliver": {
+            "id": "volkite-caliver",
+            "name": "Volkite caliver",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Volkite caliver",
+                    "stats": {
+                        "r": "30",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "deflagrate",
+                            "value": "6"
+                        }
+                    ],
+                    "traits": ["Volkite"]
+                }
+            ]
+        },
+        "volkite-serpenta": {
+            "id": "volkite-serpenta",
+            "name": "Volkite serpenta",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Volkite serpenta",
+                    "stats": {
+                        "r": "10",
+                        "fp": "2",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "deflagrate",
+                            "value": "5"
+                        }
+                    ],
+                    "traits": ["Assault", "Volkite"]
+                }
+            ]
+        },
+        "vulcan-mega-bolter": {
+            "id": "vulcan-mega-bolter",
+            "name": "Vulcan mega-bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Vulcan mega-bolter",
+                    "stats": {
+                        "r": "48",
+                        "fp": "12",
+                        "rs": "7",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "suppressive",
+                            "value": "3"
+                        }
+                    ],
+                    "traits": ["Bolt", "Strategic"]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "cyber-familiar": {
+            "id": "cyber-familiar",
+            "name": "Cyber-familiar",
+            "text": "Cyber-familiars grant a bonus to Intelligence Checks. The Controlling Player of a Model with a cyber-familiar can modify the results of Intelligence Checks made for that Model by -2."
+        },
+        "flare-shield": {
+            "id": "flare-shield",
+            "name": "Flare shield",
+            "text": "Attacks which hit a Model with a flare shield gain no benefit from the Armourbane Special Rule. When Making Armour Penetration Tests against a Model with a flare shield, no Weapon may make use of the Armourbane Special Rule."
+        },
+        "mag-inverter-shield": {
+            "id": "mag-inverter-shield",
+            "name": "Mag-inverter shield",
+            "text": "A mag-inverter shield reduces the distance moved by enemy Units that Charge. A Model with a mag-inverter shield gains the Shield Trait. If a Unit that includes a majority of Models that have mag-inverter shields is the target of a Charge, reduce the distance moved by the Charging Unit by 1\", to a minimum of 1\"."
+        },
+        "searchlights": {
+            "id": "searchlights",
+            "name": "Searchlights",
+            "text": "Searchlights allow attacks to ignore Shrouded Damage Mitigation Rolls. The target number of any Shrouded Damage Mitigation Tests is increased by +1 (to a maximum of 6+) when making Tests as a consequence of wounds, Penetrating Hits or Glancing Hits inflicted by Shooting Attacks made by a Model that has searchlights that has Line of Sight to the Target Unit. Additionally a Model with searchlights may not make Shrouded Damage Mitigation Tests to negate wounds, Penetrating Hits or Glancing Hits."
+        }
+    },
+    "upgrades": {},
+    "specialRules": {
+        "armourbane": {
+            "id": "armourbane",
+            "name": "Armourbane",
+            "text": "A Weapon with the Armourbane Special Rule counts Glancing Hits as Penetrating Hits. When making Armour Penetration Tests for an attack with this Special Rule, a result that is equal to, or greater than, the target Armour Value inflicts a Penetrating Hit. A Weapon with this Special Rule can never inflict a Glancing Hit, and any Rule that would force them to do so instead inflicts a Penetrating Hit."
+        },
+        "auto-repair": {
+            "id": "auto-repair",
+            "name": "Auto-repair",
+            "text": "A Model with this Special Rule has a bonus to Repair Tests to remove Statuses. If the Active Player makes a Repair Test in the Statuses Sub-Phase of the End Phase for a Model with the Vehicle Type with this Special Rule, they ignore the usual Target Number of 6. Instead, the value of X attached to the variant of this Special Rule is used as the Target Number for that Repair Test. For example, a Model with the Auto-repair (4+) Special Rule would pass any Repair Tests made for it on the result of a 4 or higher.",
+            "configurable": true
+        },
+        "blast": {
+            "id": "blast",
+            "name": "Blast",
+            "text": "Attacks made with the Blast (X) Special Rule use a Blast Marker to determine how many Hits are caused. When making attacks with a Weapon that has the Blast (X) Special Rule, before any Hit Tests are made, a Blast Marker must first be placed to determine how many Hits may be inflicted by the attack. The Player making the attack must place the Blast Marker indicated in brackets as part of the Special Rule so that the hole in the middle is entirely over the Base of any one Model in the Target Unit. Once the Blast Marker has been placed, the Player making the attack must make a Hit Test for the attack, and each Model from the Target Unit that is fully or partially under the Blast Marker will suffer 1 Hit if the Hit Test is successful. Hits on Other Units If any Models from Units other than the Target Unit are fully or partially covered by the Blast Marker, then a new Fire Group must be created for those Hits and set to one side. Continue resolving the Shooting Attack on the original Target Unit, and once that Shooting Attack has been completely resolved begin a new Shooting Attack to resolve those additional Fire Groups generated for Units other than the original Target Unit. If the Hit Test is unsuccessful then no Hits are inflicted and the Player making the attack must make a Scatter Roll for the Blast Marker. Once a Scatter Roll has been made for the Blast Marker and it has been moved, one Hit is inflicted on a Unit for each Model from that Unit that is wholly or partially covered by the Blast Marker. Hits can be scored on both friendly and enemy Units by attacks using the Blast (X) Special Rule. Hits inflicted by Weapons with the Blast (X) Special Rule are allocated in the same manner as other Hits, regardless of which actual Models were under the Blast Marker and the Blast Marker may not be used to inflict Hits on specific Models. If a Fire Group includes multiple attacks made with the Blast (X) Special Rule, do not place multiple Blast Markers. A single Blast Marker is placed using the Rules detailed above, and a Hit Test is made for each attack in that Fire Group. For each successful Hit Test, one Hit is inflicted for each Model from the target Unit that is fully or partially under the Blast Marker. If any Hit Tests are unsuccessful then, after any Hits made by successful Hit Tests are counted, a single Scatter Roll is made for the Blast Marker, regardless of the total number of unsuccessful Hit Tests. For each Hit Test that was unsuccessful, one Hit is inflicted on a Unit for each Model from that Unit that is wholly or partially covered by the Blast Marker after the Scatter Roll has been resolved.",
+            "configurable": true
+        },
+        "breaching": {
+            "id": "breaching",
+            "name": "Breaching",
+            "text": "With a Weapon that has the Breaching (X) Special Rule there is a chance that a Wound Test may result in the Wound ignoring Armour Saves. When any Wound Test is made for an attack with the Breaching (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Breaching (X) Special Rule, then if a wound is inflicted by that Wound Test, that wound becomes a ‘Breaching Wound’. A Breaching Wound is always treated as having an AP Characteristic of 2 regardless of the Characteristics of the Weapon used to make the attack.",
+            "configurable": true
+        },
+        "deflagrate": {
+            "id": "deflagrate",
+            "name": "Deflagrate",
+            "text": "Unsaved Wounds inflicted by attacks with the Deflagrate (X) Special Rule can cause additional Hits. At the end of Step 9 of the Shooting Attack process for any Fire Group or Strike Group that includes Weapons with the Deflagrate (X) Special Rule, create a new Fire Group or Strike Group that must then be selected in Step 10 and resolved. This new Fire Group or Strike Group includes a number of Hits equal to the number of Unsaved Wounds caused by the Fire Group or Strike Group that triggered its creation. These Hits all have a Strength equal to the value of X attached to the variant of the Deflagrate (X) Special Rule possessed by Weapons in the preceding Fire Group or Strike Group, an AP of ‘-’, a Damage of 1 and no Special Rules.",
+            "configurable": true
+        },
+        "legio-armsmen": {
+            "id": "legio-armsmen",
+            "name": "Legio Armsmen",
+            "text": "Models with this Special Rule gain benefits when fighting alongside a friendly Titan. A Unit composed entirely of Models with this Special Rule ignores all penalties applied by the Titan War Horn (X) Special Rule. Furthermore, while a friendly Titan is on the Battlefield, all Models with this Special Rule add a modifier of +1 to their Leadership Characteristic. However, whenever a friendly Titan is Removed as a Casualty or otherwise destroyed then all Units that include any Models with this Special Rule must make an immediate Panic Check."
+        },
+        "limited": {
+            "id": "limited",
+            "name": "Limited",
+            "text": "A Weapon with the Limited (X) Special Rule can only be used to attack a limited number of times per Battle. A Weapon with the Limited (X) Special Rule may only be used to make attacks as part of a Shooting Attack or Combat a number of times equal to the value of X attached to the specific variant of the Special Rule. Each time it is used to make attacks, the Firepower Characteristic or Attacks Modifier Characteristic of the Weapon is not modified by this Special Rule, only the number of times it may be selected in a given Battle.",
+            "configurable": true
+        },
+        "macro-auspex": {
+            "id": "macro-auspex",
+            "name": "Macro-auspex",
+            "text": "When not attacking Titans, Knights or Super-heavies, a Weapon with this Special Rule must make Snap Shots. If the target of a Shooting Attack is not a Unit entirely composed of Models with the Titan, Knight or Super-heavy Sub-Type or other Models with a Base Wounds Characteristic of 10 or more, then all attacks made for a Weapon with this Special Rule must be made as Snap Shots."
+        },
+        "melta": {
+            "id": "melta",
+            "name": "Melta",
+            "text": "This Special Rule increases the amount of Damage against Vehicles when Shooting Attacks are made within a specific range. If at least one Model in a Unit with the Vehicle Type that is targeted by a Shooting Attack made by a Model using a Weapon with this Special Rule is within a range equal to or less than the value specified by X, that attack has the Armourbane Special Rule and the Damage of Penetrating Hits caused by that attack is doubled.",
+            "configurable": true
+        },
+        "panic": {
+            "id": "panic",
+            "name": "Panic",
+            "text": "Weapons and other attacks that have the Panic (X) Special Rule have a chance of inflicting the Routed Status on the Target Unit. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit, regardless of whether any Damage is inflicted, that Target Unit must make a Leadership Check in the Morale Sub-Phase of the same Player Turn. If this Check is failed then all Models in the Unit gain the Routed Status, if the Check is passed then there is no further effect. The value of X attached to this Special Rule is applied as a negative modifier to the Leadership Characteristic of Models in the Target Unit when making Checks caused by an attack with this Special Rule. If the attack includes multiple Weapons with different versions of this Special Rule the modifiers do not stack - use only the greatest modifier.",
+            "configurable": true
+        },
+        "phage": {
+            "id": "phage",
+            "name": "Phage",
+            "text": "Unsaved Wounds with the Phage (X) Special Rule reduce a Characteristic by 1. If an attack made for a Weapon or Model with this Special Rule inflicts one or more Unsaved Wounds on a Target Unit, then once the Shooting Attack or Initiative Step in which the Unsaved Wound was inflicted has been completely resolved, all remaining Models in the Unit that was the target of the attack must reduce the Characteristic that is the value of X for that variant of the Phage (X) Special Rule by 1 for the remainder of the Battle. Models in a Unit may have any number of different Characteristics reduced by 1 by the Phage (X) Special Rule, but no individual Characteristic may be reduced by more than 1 by the Phage (X) Special Rule no matter how many Unsaved Wounds with any variant of that Special Rule are allocated to Models in that Unit.",
+            "configurable": true
+        },
+        "pinning": {
+            "id": "pinning",
+            "name": "Pinning",
+            "text": "Weapons and other attacks that have the Pinning (X) Special Rule have a chance of inflicting the Pinned Status on the Target Unit. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit, regardless of whether any Damage is inflicted, that Target Unit must make a Cool Check in the Morale Sub-Phase of the same Player Turn. If this Check is failed then all Models in the Unit gain the Pinned Status, if the Check is passed then there is no further effect. The value of X attached to this Special Rule is applied as a negative modifier to the Cool Characteristic of Models in the Target Unit when making Checks caused by an attack with this Special Rule, if the attack includes multiple Weapons with different versions of this Special Rule the modifiers do not stack - use only the greatest modifier.",
+            "configurable": true
+        },
+        "pistol": {
+            "id": "pistol",
+            "name": "Pistol",
+            "text": "A Model may attack with two Weapons that have the Pistol Special Rule. During Step 3 of any Shooting Attack, a Player may choose to have a Model under their control make attacks with two Weapons rather than one if both Weapons have the Pistol Special Rule."
+        },
+        "poisoned": {
+            "id": "poisoned",
+            "name": "Poisoned",
+            "text": "A Weapon with the Poisoned (X) Special Rule has a chance to cause a wound regardless of the target’s Toughness. When making Wound Tests for Hits that have the Poisoned (X) Special Rule, if the result of any Dice rolled is equal to or greater than the value of X attached to the specific variant of this Special Rule then a wound is caused automatically, regardless of the Toughness Characteristic used to determine the Target Number. A Hit that has this Special Rule may still inflict a wound by passing a Wound Test as normal, instead of using this Special Rule, but never inflicts more than 1 wound if it would both pass the Wound Test and trigger the Poisoned (X) Special Rule. Wounds caused using the Poison (X) Special Rule retain the AP and Damage of the Weapon and Saving Throws and Damage Mitigation Tests may be made to discard them as normal. The Poisoned (X) Special Rule has no effect on Models that have the Vehicle Type, and limited effect on Models with the Automata or Walker Types.",
+            "configurable": true
+        },
+        "power-hungry": {
+            "id": "power-hungry",
+            "name": "Power Hungry",
+            "text": "A Weapon with this Special Rule makes other Weapons attack as Snap Shots when used. If a Weapon with this Special Rule is used as part of a Model’s Shooting Attack, then all other Weapons used in that or any other Shooting Attack made by that Model in the same Phase, must attack as Snap Shots. If other Shooting Attacks have already been made in the same Phase by a Model with a Weapon that has this Special Rule and those attacks were not made as Snap Shots, then a Weapon with this Special Rule may not be fired in the same Shooting Phase. Furthermore, a Weapon with this Special Rule may not be used to attack as part of any Shooting Attack made as part of any Reaction."
+        },
+        "precision": {
+            "id": "precision",
+            "name": "Precision",
+            "text": "Attacks made with the Precision (X) Special Rule are allocated by the Attacking Player, not the Defender. When any Hit Test is made for an attack with the Precision (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Precision (X) Special Rule, then if a Hit is inflicted by that roll, that Hit becomes a ‘Precision Hit’. These Precision Hits must form a separate Fire Group or Strike Group. Wound Tests are made as normal for Precision Hits and cause Precision wounds. In Step 8 of the Shooting Attack process or Step 7 of the Initiative Step sequence, when selecting a Target Model for a Fire Group or Strike Group that is made up of Precision wounds, the Target Model is not selected using the normal Rules. Instead the attacking Player chooses which Model in the Target Unit will be the Target Model, and may select any Model that is a part of that Unit. Note that Models Engaged in a Challenge cannot use this Special Rule to allocate Hits to any Model other than the enemy Model that is Engaged in the same Challenge and that any attacks which are made as Snap Shots, or for Weapons or attacks that have either the Blast (X), Barrage (X), Template or Reaping Blow (X) Special Rules, may never trigger the Precision (X) Special Rule no matter what the result of the Hit Test is.",
+            "configurable": true
+        },
+        "reinforced-structure": {
+            "id": "reinforced-structure",
+            "name": "Reinforced Structure",
+            "text": "A Model with this Special Rule suffers less Damage from most Weapons. A Model with this Special Rule reduces the Damage of all Hits inflicted by Weapons that do not have the Strategic Trait or the Ordnance (X) Special Rule by the value of X attached to that variant of this Special Rule. This cannot reduce the Damage of a Hit below 1.",
+            "configurable": true
+        },
+        "rending": {
+            "id": "rending",
+            "name": "Rending",
+            "text": "With a Weapon that has the Rending (X) Special Rule, there is a chance that a Hit Test may result in an automatic wound. When any Hit Test is made for an attack with the Rending (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Rending (X) Special Rule, then if a Hit is inflicted by that Hit Test, that Hit becomes a ‘Rending Hit’. When required to make a Wound Test for a Rending Hit, no Dice are rolled and the Wound Test succeeds automatically regardless of the Weapon’s Strength or the Target’s Toughness. The Wound Test is treated as if the result had been ‘6’ for the purposes of any Rules that would be triggered on certain results of a Wound Test. Wounds caused by a Rending Hit use the AP and Damage Characteristics of the Weapon used to make the attack and retain any Special Rules that Weapon had. If the Target Unit for an attack made with a Weapon that has this Special Rule includes any Models with the Vehicle Type, then this Special Rule has no effect.",
+            "configurable": true
+        },
+        "repair-crew": {
+            "id": "repair-crew",
+            "name": "Repair Crew",
+            "text": "A Model with the Repair Crew (X) Special Rule can repair itself. In the Controlling Player’s Start Phase, during the Effects Sub-Phase they may choose to activate this Special Rule. Once activated, the Controlling Player of a Model with the Repair Crew (X) Special Rule, may restore a number of Hull Points equal to the value of the variant of this Special Rule possessed by a Model to any one of that Model’s Profiles. If the value of the variant of this Special Rule is greater than the number of lost Hull Points on the chosen Profile then the excess Hull Points may not be transferred to another Profile and cannot increase the value of the chosen Profile’s Hull Point Characteristic above its Base Value. This Special Rule can restore Hull Points to a Profile that has been Crippled, and if a Profile is restored to one or more Hull Points then it is no longer Crippled. Activating the Repair Crew (X) Special Rule does not limit the Model with that Special Rule when moving or attacking in the same Turn.",
+            "configurable": true
+        },
+        "shield-breaker": {
+            "id": "shield-breaker",
+            "name": "Shield-breaker",
+            "text": "A Weapon with this Special Rule can collapse more than one Void Shield with a single attack. A Weapon with this Special Rule that successfully collapses a void shield (either from the Void Shields (X) or Titan Void Shield Array (X) Special Rules), collapses a number of void shields equal to the value of X attached to the specific variant of this Special Rule that it has instead of just 1.",
+            "configurable": true
+        },
+        "shock": {
+            "id": "shock",
+            "name": "Shock",
+            "text": "Weapons with the Shock (X) Special Rule have a chance of inflicting Statuses on Vehicles even if it does not penetrate their armour. When making a Hit Test for a Weapon with this Special Rule against a Target Unit that includes any Models with the Vehicle Type or Walker Type, the result of the Hit Test before any modifiers are applied must be checked. If any Hit Test for a Weapon with the Shock (X) Special Rule results in a ‘5’ or ‘6’ before any modifiers are applied, then all Models with the Vehicle Type or Walker Type in the Target Unit gain a Status at the end of Step 11 of the Shooting Attack process or Step 10 of the Initiative Step process. The Status gained is indicated by the value of X attached to that variant of the Shock (X) Special Rule. If the Model already has the stated Status or the attack would apply the Status multiple times there is no additional effect and this Special Rule never causes a Model to lose Wounds or Hull Points. Hits inflicted by a Weapon with this Special Rule must still have Wound Tests or Armour Penetration Tests made for them, and are not discarded if they trigger this Special Rule.",
+            "configurable": true
+        },
+        "shock-ram": {
+            "id": "shock-ram",
+            "name": "Shock Ram",
+            "text": "A Vehicle with this Special Rule inflicts more damage when it moves through enemy Units. When a Model with this Special Rule and the Vehicle Type moves through an enemy Unit, the number of Hits inflicted is increased from D6 to D6+3. Furthermore, if the Reactive Player declares a Death or Glory Reaction with a Vehicle that has this Special Rule as the target, then the Vehicle with this Special Rule gains a 6+ Invulnerable save against all Hits inflicted as part of that Reaction."
+        },
+        "shred": {
+            "id": "shred",
+            "name": "Shred",
+            "text": "Attacks made with the Shred (X) Special Rule can sometimes inflict an extra point of Damage. When any Wound Test is made for an attack with the Shred (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Shred (X) Special Rule, then if a wound is inflicted by that Wound Test, the Damage Characteristic of that wound is increased by 1. Note that the Shred (X) Special Rule may only be triggered by a Wound Test and has no effect when making an Armour Penetration Test.",
+            "configurable": true
+        },
+        "skyfire": {
+            "id": "skyfire",
+            "name": "Skyfire",
+            "text": "Attacks made with the Skyfire Special Rule ignore penalties when attacking Flyers. A Hit Test made for a Weapon with the Skyfire Special Rule ignores any rule that would require attacks made targeting an enemy Unit that contains any Models with the Flyer Sub-Type to be made as Snap Shots. Instead such an attack makes a normal Hit Test using the Ballistic Skill of the attacking Model - this includes attacks made as part of any Reaction. A Unit that includes any Models with any Tactical Status may not benefit from the effects of this Special Rule."
+        },
+        "suppressive": {
+            "id": "suppressive",
+            "name": "Suppressive",
+            "text": "Weapons and other attacks that have the Suppressive (X) Special Rule have a chance of inflicting the Suppressed Status on the Target Unit. If a Shooting Attack made for a Weapon or Model with this Special Rule inflicts one or more Hits on a Target Unit, that Target Unit must make a Cool Check in the Morale Sub-Phase of the same Player Turn. If this Check is failed all Models in the Unit gain the Suppressed Status, and if the Check is passed then there is no further effect. The value of X attached to this Rule is applied as a negative modifier to the Cool Characteristic of Models in the Target Unit when making Checks caused by an Attack with this Special Rule, if the attack includes multiple Weapons with different versions of this Special Rule the modifiers do not stack - use only the greatest modifier.",
+            "configurable": true
+        },
+        "template": {
+            "id": "template",
+            "name": "Template",
+            "text": "Weapons and attacks with the Template Special Rule use the Flame Template to determine how many Models they Hit. When making attacks for a Weapon or other effect that has the Template Special Rule, or otherwise uses a Template, no Hit Tests are made for the attack. Instead, when directed to make Hit Tests for such an attack, a single Template is placed to determine how many Hits are generated. A Template must be placed so that its narrow end is touching the Base of the Model, the edge of a Model’s Hull (if it has the Vehicle Type) or other point being used to make the attack, and so that no part of the Template covers or touches a friendly Model’s Base, Hull or otherwise would inflict Hits on a friendly Model. Within these restrictions, the Player making the attack may place the Template in an orientation of their choosing as long as at least one Model from the original Target Unit remains under the Template. If the Template cannot be placed under these restrictions, such as if it cannot be placed without covering or touching friendly Models, then no attack may be made. Once the Template has been placed, a number of Hits using the profile of the Weapon or effect are inflicted on the Target Unit equal to the number of Models touched or covered by the Template. If the Weapon or attack has a Firepower Characteristic greater than 1 then only a single Template is placed, but the number of Hits inflicted per Model touched or covered by the Template is equal to the Firepower Characteristic of the attack or Weapon. If more than one enemy Unit has Models that are touched or covered by the Template in its final position, then Hits are inflicted on all such Units as noted above, Hits on Units other than the original target form a new Fire Group that must be placed to one side and used to resolve a separate Shooting Attack on the additional Target Unit once all attacks and Fire Groups from the original Shooting Attack have been fully resolved. When resolving Armour Penetration Tests for Hits inflicted by a Weapon with this Special Rule, the position of the Model that was used to make the attack is used to determine which Armour Facing is used. Note that the Rules require a Template to be placed in Base Contact with the Model being used to make the attack, but this Model is not counted as having been Hit by the attack and does not stop the attack from being made. However, this only applies to the individual Model being used to make the attack, not to other Models in the same Unit. Weapons with this Special Rule will have their Range Characteristic as ‘Template’. This does not count as a value of ‘0’ or ‘-’. If a Rule requires a number for the Range Characteristic then all Weapons and attacks with this Special Rule are considered to have a Range Characteristic of ‘8’. OTHER TEMPLATES In some rare cases a Weapon may use a different Template than the standard Flame Template, in these cases the Template Rule may be expressed with a bracketed section stating which Template must be used when attacking with that Weapon. Otherwise, the Rules for its use are unchanged from those noted under the Template Special Rule, with the exception of the Range Characteristic it is considered to have. An example of this is the use of the Hellstorm Template for certain very large Weapons. In this case the Rule would be expressed as ‘Template (Hellstorm)’ and the attack would be resolved using the Template Special Rule, but placing the larger Hellstorm Template. Weapons with the Template (Hellstorm) Special Rule are considered to have a Range Characteristic of ‘16’ when a Rule requires such weapons to have a numbered Range Characteristic.",
+            "configurable": true
+        },
+        "titan-void-shield-array": {
+            "id": "titan-void-shield-array",
+            "name": "Titan Void Shield Array",
+            "text": "A Model with this Special Rule gains an extra layer of defence against Shooting Attacks. A Model with this Special Rule has a number of void shields equal to the value of X. While a Model with this Special Rule still has void shields, each time that Model suffers a Hit from a Shooting Attack it must be allocated to the void shields. Once all void shields have collapsed, any remaining Hits from Shooting Attacks must be allocated to the Titan Profile targeted by the attack. A void shield has an Armour Value of 13, and any Glancing Hit or Penetrating Hit inflicted on it will cause that void shield to collapse. Regardless of the Damage value of a Hit it may not collapse more than one void shield, and once a Hit has collapsed a void shield or failed an Armour Penetration Test made against one it is discarded. If, in the Effects Sub-Phase of the Controlling Player’s End Phase, a Titan has any collapsed void shields, the Controlling Player may roll a Dice for each collapsed void shield. Any Dice whose result is equal to or higher than the target number restores one void shield - with the target number decided by checking the [Crew] Trait of the Titan using the table below: Minoris: 6 Senioris: 5+ Majoris: 4+ Ultima: 3+",
+            "configurable": true
+        },
+        "titan-war-horn": {
+            "id": "titan-war-horn",
+            "name": "Titan War Horn",
+            "text": "Models near a Model that activates the Titan War Horn (X) Special Rule must reduce their Advanced Characteristics. Once per Battle, the Controlling Player of a Model with this Special Rule may choose to activate it in the Effects Sub-Phase of the End Phase of their Turn. When any Model from a Unit is within 24\" of any part of a Model that has activated this Special Rule, all Models in that Unit must reduce their Leadership, Willpower, Cool and Intelligence Characteristics by the value of X. This negative modifier is removed as soon as no Models in a given Unit are within 24\" of any Model with the Titan War Horn (X) Special Rule. If a Unit would be affected by multiple instances of this Special Rule or the Fear (X) Special Rule, the value of X is not stacked and instead the single highest value is used as a negative modifier. Once activated, the effects of this Special Rule last until the Effects Sub-Phase of the Controlling Player’s next Start Phase, or until the Titan is removed from play for any reason.",
+            "configurable": true
+        }
+    },
+    "groups": {
+        "titan-ordinal": {
+            "id": "titan-ordinal",
+            "name": "Titan Ordinal",
+            "type": "primary",
+            "slots": [
+                {
+                    "roles": ["lord-of-war"]
+                },
+                {
+                    "roles": ["high-command"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["transport"]
+                },
+                {
+                    "roles": ["transport"]
+                },
+                {
+                    "roles": ["transport"]
+                },
+                {
+                    "roles": ["transport"]
+                }
+            ],
+            "units": {
+                "traits": ["Legio Titanicus"]
+            },
+            "description": "This Primary Detachment may only be used if the Battle is being resolved using one of the Engine Kill Missions, or another Mission that specifically states that it may be used. A Player may not use this Primary Detachment when selecting an Army for use in any of the Core Missions. When using this Primary Detachment, all limits on the number or percentage of an Army’s Points that can be spent on Lords of War are ignored in all Detachments included as part of the Army - if a Player wishes, all of the Points available for selecting an Army using this Primary Detachment may be spent on a single Lord of War choice! An Army that uses this Primary Detachment may also include a Lord of War Detachment - but such a Detachment may not include any Units selected from the Legio Titanicus Army List. The Slots in this Primary Detachment may only be filled by Units with the Legio Titanicus Faction Trait. If a Player wishes to include Units of a different Faction as part of this Army, they will need to select an Allied Detachment of that Faction."
+        }
+    },
+    "listRules": {
+        "titan-ordinal-primary": {
+            "kind": "expression",
+            "id": "titan-ordinal-primary",
+            "scope": "group",
+            "groupTypes": ["primary"],
+            "when": {
+                "if": "group.is(group:titan-ordinal)",
+                "message": "A Legio Titanicus Primary Detachment must be a Titan Ordinal (Engine Kill Missions only); otherwise take Legio Titanicus Units in an Allied Detachment or as a Lord of War"
+            }
+        },
+        "titan-ordinal-lord-of-war-detachment": {
+            "kind": "expression",
+            "id": "titan-ordinal-lord-of-war-detachment",
+            "scope": "group",
+            "groupTypes": ["lord-of-war"],
+            "when": {
+                "if": "main.count(group:titan-ordinal) == 0 or group.count(trait:legio-titanicus) == 0",
+                "message": "A Lord of War Detachment in a Titan Ordinal Army may not include any Units selected from the Legio Titanicus Army List"
+            }
+        }
+    }
+}

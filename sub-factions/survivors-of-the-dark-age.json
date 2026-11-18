@@ -1,0 +1,850 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "survivors-of-the-dark-age",
+    "version": "1.0.0",
+    "name": "Survivors of the Dark Age",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "survivors-of-the-dark-age": {
+            "id": "survivors-of-the-dark-age",
+            "name": "Survivors of the Dark Age",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Vehicle Type and the Imperialis Militia Trait in this Army gain the Auto-Repair (5+) Special Rule. Rhino and Termite Units from the Legiones Astartes Army List may be selected to fill Transport Force Organisation Slots in any Imperialis Militia Detachments in this Army and Land Raider Carrier Units from the Legiones Astartes Army List may be selected to fill Heavy Transport Force Organisation Slots in any Imperialis Militia Detachments in this Army. Any Models in these Units replace the Legiones Astartes Trait with the Imperialis Militia Trait, gain the Third-Line Special Rule and modify their Ballistic Skill Characteristic by -1."
+        },
+        "combi": {
+            "id": "combi",
+            "name": "Combi",
+            "text": "A Weapon with this Special Rule can fire multiple profiles simultaneously. Each time a Model makes a Shooting Attack with a Weapon Profile with this Special Rule, the Controlling Player can select another Profile from the same Weapon with this Special Rule and make attacks with it as part of the same Shooting Attack. Note that if that Profile also has the Limited (X) Special Rule, this does not allow it to be selected to make attacks more than the number of times equal to the value of X on that Special Rule."
+        },
+        "deep-strike": {
+            "id": "deep-strike",
+            "name": "Deep Strike",
+            "text": "The Deep Strike Special Rule allows a Unit to enter play anywhere on the Battlefield. A Unit that includes only Models with the Deep Strike Special Rule that enters play from Reserves may make a Deep Strike instead of deploying as described in the Reserves Rules. No more than one Unit may attempt a Deep Strike in a given Player Turn. The Unit attempting a Deep Strike may have another Unit without the Deep Strike Special Rule Embarked upon it if the Deep Striking Unit includes Models with the Transport Sub-Type (note that some Missions may allow more Units to attempt a Deep Strike in the same Player Turn. This will be specifically noted in the Mission Special Rules section of that Mission). Note that in Missions where the Reserves Mission Special Rule is not in use, the Deep Strike Special Rule has no effect. Furthermore, Units may not make use of the Deep Strike Special Rule during the first Battle Turn, even if they enter play from Reserves. To perform a Deep Strike, the Active Player must declare an Eligible Unit that has entered play from Reserves in the Reserves Sub-Phase as the Deep Striking Unit. The Active Player must then select one Model from that Unit and place it anywhere on the Battlefield. This Model must be placed at least 1\" away from any enemy Model, Battlefield Edge or piece of Impassable Terrain. Once this first Model has been placed, the remaining Models in the Unit must be placed within Unit Coherency with at least one other Model in the same Unit and within 6\" of the first Model placed. No Models may be placed within 1\" of an enemy Model, any Battlefield Edge or a piece of Impassable Terrain. Any Models that cannot be placed using these Rules must be Removed as a Casualty immediately. This deployment must take place during the Reserves Sub-Phase, and a Unit that deploys as a Deep Strike may not move in the Move Sub-Phase of the same Player Turn or have a Charge declared for it in the Charge Sub-Phase of the same Player Turn, but may make Shooting Attacks as normal. A Unit that is Embarked on a Model that is deployed as part of a Deep Strike may Disembark during the Move Sub-Phase of the same Player Turn, but may not make any move other than the move made to Disembark and may not have a Charge declared for it in the Charge Sub-Phase of the same Player Turn. Enemy Units may declare Intercept Reactions against a Unit deployed as part of a Deep Strike, but not Reposition Reactions."
+        }
+    },
+    "weapons": {
+        "combi-flamer": {
+            "id": "combi-flamer",
+            "name": "Combi-flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Bolter (Primary)",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                },
+                {
+                    "name": "Flamer (Secondary)",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Flame"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "1"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        },
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                }
+            ]
+        },
+        "combi-melta": {
+            "id": "combi-melta",
+            "name": "Combi-melta",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Bolter (Primary)",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                },
+                {
+                    "name": "Meltagun (Secondary)",
+                    "stats": {
+                        "r": "12",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Melta"],
+                    "specialRules": [
+                        {
+                            "id": "melta",
+                            "value": "6"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        },
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                }
+            ]
+        },
+        "combi-plasma": {
+            "id": "combi-plasma",
+            "name": "Combi-plasma",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Bolter (Primary)",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                },
+                {
+                    "name": "Plasma gun (Secondary)",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        },
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                }
+            ]
+        },
+        "combi-volkite": {
+            "id": "combi-volkite",
+            "name": "Combi-volkite",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Bolter (Primary)",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                },
+                {
+                    "name": "Volkite charger (Secondary)",
+                    "stats": {
+                        "r": "15",
+                        "fp": "2",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Volkite"],
+                    "specialRules": [
+                        {
+                            "id": "deflagrate",
+                            "value": "5"
+                        },
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                }
+            ]
+        },
+        "havoc-launcher": {
+            "id": "havoc-launcher",
+            "name": "Havoc launcher",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Havoc launcher",
+                    "stats": {
+                        "r": "48",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Missile"],
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "stun",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "melta-cutters": {
+            "id": "melta-cutters",
+            "name": "Melta cutters",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Melta cutters",
+                    "stats": {
+                        "r": "6",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "RS"
+                        },
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "melta",
+                            "value": "3"
+                        }
+                    ],
+                    "traits": ["Melta"]
+                }
+            ]
+        },
+        "twin-volkite-charger": {
+            "id": "twin-volkite-charger",
+            "name": "Twin volkite charger",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Twin volkite charger",
+                    "stats": {
+                        "r": "15",
+                        "fp": "3",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Volkite"],
+                    "specialRules": [
+                        {
+                            "id": "deflagrate",
+                            "value": "5"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "upgrades": {
+        "legion-pintle-weapons": {
+            "id": "legion-pintle-weapons",
+            "name": "Legion Pintle Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "pintle-mounted-combi-bolter": {
+                    "id": "pintle-mounted-combi-bolter",
+                    "name": "Combi-bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["combi-bolter"]
+                },
+                "pintle-mounted-combi-flamer": {
+                    "id": "pintle-mounted-combi-flamer",
+                    "name": "Combi-flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["combi-flamer"]
+                },
+                "pintle-mounted-combi-plasma": {
+                    "id": "pintle-mounted-combi-plasma",
+                    "name": "Combi-plasma",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["combi-plasma"]
+                },
+                "pintle-mounted-combi-melta": {
+                    "id": "pintle-mounted-combi-melta",
+                    "name": "Combi-melta",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["combi-melta"]
+                },
+                "pintle-mounted-combi-volkite": {
+                    "id": "pintle-mounted-combi-volkite",
+                    "name": "Combi-volkite",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["combi-volkite"]
+                },
+                "pintle-mounted-havoc-launcher": {
+                    "id": "pintle-mounted-havoc-launcher",
+                    "name": "Havoc launcher",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["havoc-launcher"]
+                },
+                "pintle-mounted-heavy-bolter": {
+                    "id": "pintle-mounted-heavy-bolter",
+                    "name": "Heavy bolter",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-bolter"]
+                },
+                "pintle-mounted-heavy-flamer": {
+                    "id": "pintle-mounted-heavy-flamer",
+                    "name": "Heavy flamer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["heavy-flamer"]
+                },
+                "pintle-mounted-multi-melta": {
+                    "id": "pintle-mounted-multi-melta",
+                    "name": "Multi-melta",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["multi-melta"]
+                }
+            },
+            "gearNote": "Pintle Mounted"
+        }
+    },
+    "unitModifiers": {
+        "survivors-of-the-dark-age-provenance": {
+            "id": "survivors-of-the-dark-age-provenance",
+            "name": "Survivors of the Dark Age",
+            "selector": {
+                "unitIds": [
+                    "militia-arvus-lighter",
+                    "militia-baneblade-super-heavy-battle-tank",
+                    "militia-gorgon-transporter",
+                    "militia-industrial-rig",
+                    "militia-explorator-rig",
+                    "militia-leman-russ-tank",
+                    "militia-malcador-heavy-tank",
+                    "militia-scout-rover",
+                    "militia-ridgerunner-scout-rover",
+                    "militia-thunderbolt-heavy-fighter",
+                    "militia-utility-hauler",
+                    "militia-armoured-hauler"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "survivors-of-the-dark-age"
+                    }
+                }
+            ]
+        },
+        "survivors-of-the-dark-age": {
+            "id": "survivors-of-the-dark-age",
+            "name": "Survivors of the Dark Age",
+            "selector": {
+                "unitIds": [
+                    "militia-arvus-lighter",
+                    "militia-baneblade-super-heavy-battle-tank",
+                    "militia-gorgon-transporter",
+                    "militia-industrial-rig",
+                    "militia-explorator-rig",
+                    "militia-leman-russ-tank",
+                    "militia-malcador-heavy-tank",
+                    "militia-scout-rover",
+                    "militia-ridgerunner-scout-rover",
+                    "militia-thunderbolt-heavy-fighter",
+                    "militia-utility-hauler",
+                    "militia-armoured-hauler",
+                    "rhino",
+                    "termite",
+                    "land-raider-carrier"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "auto-repair",
+                        "value": "5+"
+                    }
+                }
+            ]
+        }
+    },
+    "units": {
+        "rhino": {
+            "id": "rhino",
+            "name": "Rhino",
+            "role": "transport",
+            "type": "vehicle",
+            "cost": {
+                "points": 60
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "rhino",
+                    "name": "Rhino",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "12",
+                        "bs": "3",
+                        "front": "12",
+                        "side": "11",
+                        "rear": "10",
+                        "hp": "5",
+                        "transport-capacity": "12"
+                    },
+                    "tags": ["Transport"],
+                    "specialRules": [
+                        {
+                            "id": "light-transport"
+                        },
+                        {
+                            "id": "auto-repair",
+                            "value": "4+"
+                        },
+                        {
+                            "id": "third-line"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Imperialis Militia", "Smokescreen"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "note": "Pintle Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "note": "Pintle Mounted"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Pintle Mounted combi-bolter",
+                    "description": "Each of this Model’s Pintle Mounted bolters may be exchanged for one Pintle Mounted combi-bolter.",
+                    "perModel": {
+                        "type": "multiple",
+                        "max": 2
+                    },
+                    "options": {
+                        "pintle-mounted-combi-bolter": {
+                            "id": "pintle-mounted-combi-bolter",
+                            "name": "Combi-bolter",
+                            "cost": {
+                                "points": 5
+                            },
+                            "swaps": [
+                                {
+                                    "from": {
+                                        "kind": "weapon",
+                                        "id": "bolter"
+                                    },
+                                    "to": {
+                                        "kind": "weapon",
+                                        "id": "combi-bolter"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "multiSelect": true,
+                    "gearNote": "Pintle Mounted",
+                    "profileId": "rhino",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "bolter",
+                            "count": 1
+                        }
+                    ]
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Legion Pintle Weapons",
+                    "description": "One of this Model’s Pintle Mounted bolters may be exchanged for one item from the Legion Pintle Weapons list.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pintle-weapons": {
+                            "id": "legion-pintle-weapons",
+                            "target": "legion-pintle-weapons"
+                        }
+                    },
+                    "default": "none",
+                    "swapFrom": {
+                        "kind": "weapon",
+                        "id": "bolter"
+                    },
+                    "gearNote": "Pintle Mounted",
+                    "profileId": "rhino"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Vehicle equipment",
+                    "description": "This Model may have one of each of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "searchlights": {
+                            "id": "searchlights",
+                            "name": "Searchlights",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["searchlights"]
+                        },
+                        "one-hull-front-mounted-hunter-killer-missile": {
+                            "id": "one-hull-front-mounted-hunter-killer-missile",
+                            "name": "One Hull (Front) Mounted hunter-killer missile",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        },
+                        "dozer-blade": {
+                            "id": "dozer-blade",
+                            "name": "Dozer blade",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["dozer-blade"]
+                        }
+                    },
+                    "default": "none",
+                    "profileId": "rhino"
+                }
+            }
+        },
+        "termite": {
+            "id": "termite",
+            "name": "Termite",
+            "role": "transport",
+            "type": "vehicle",
+            "cost": {
+                "points": 80
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "termite",
+                    "name": "Termite",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "6",
+                        "bs": "3",
+                        "front": "12",
+                        "side": "12",
+                        "rear": "10",
+                        "hp": "5",
+                        "transport-capacity": "12"
+                    },
+                    "tags": ["Transport"],
+                    "specialRules": [
+                        {
+                            "id": "light-transport"
+                        },
+                        {
+                            "id": "deep-strike"
+                        },
+                        {
+                            "id": "third-line"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Imperialis Militia", "Smokescreen"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "melta-cutters",
+                    "note": "Centreline Mounted"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Pintle Mounted combi-bolters",
+                    "description": "Both of this Model’s combi-bolters may be exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "combi-bolter": {
+                            "id": "combi-bolter",
+                            "name": "Two combi-bolters",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["combi-bolter", "combi-bolter"]
+                        },
+                        "two-pintle-mounted-twin-volkite-chargers": {
+                            "id": "two-pintle-mounted-twin-volkite-chargers",
+                            "name": "Two twin volkite chargers",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": [
+                                "twin-volkite-charger",
+                                "twin-volkite-charger"
+                            ]
+                        },
+                        "two-pintle-mounted-heavy-flamers": {
+                            "id": "two-pintle-mounted-heavy-flamers",
+                            "name": "Two heavy flamers",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["heavy-flamer", "heavy-flamer"]
+                        }
+                    },
+                    "default": "combi-bolter",
+                    "gearNote": "Pintle Mounted",
+                    "profileId": "termite"
+                }
+            }
+        },
+        "land-raider-carrier": {
+            "id": "land-raider-carrier",
+            "name": "Land Raider Carrier",
+            "role": "heavy-transport",
+            "type": "vehicle",
+            "cost": {
+                "points": 265
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "land-raider-carrier",
+                    "name": "Land Raider Carrier",
+                    "template": "vehicle",
+                    "stats": {
+                        "m": "10",
+                        "bs": "3",
+                        "front": "14",
+                        "side": "14",
+                        "rear": "14",
+                        "hp": "8",
+                        "transport-capacity": "12"
+                    },
+                    "tags": ["Transport"],
+                    "specialRules": [
+                        {
+                            "id": "assault-vehicle"
+                        },
+                        {
+                            "id": "auto-repair",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "third-line"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Imperialis Militia", "Smokescreen"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "twin-lascannon",
+                    "note": "Sponson Mounted"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "twin-lascannon",
+                    "note": "Sponson Mounted"
+                }
+            ],
+            "upgrades": {
+                "option-1": {
+                    "id": "option-1",
+                    "name": "Hull (Front) Mounted twin heavy bolter",
+                    "description": "This Model may have its Hull (Front) Mounted twin heavy bolter exchanged for one of the following:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "twin-heavy-bolter": {
+                            "id": "twin-heavy-bolter",
+                            "name": "Twin heavy bolter",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["twin-heavy-bolter"]
+                        },
+                        "hull-front-mounted-twin-heavy-flamer": {
+                            "id": "hull-front-mounted-twin-heavy-flamer",
+                            "name": "Twin heavy flamer",
+                            "cost": {
+                                "points": 0
+                            },
+                            "weaponRefs": ["twin-heavy-flamer"]
+                        },
+                        "hull-front-mounted-twin-lascannon": {
+                            "id": "hull-front-mounted-twin-lascannon",
+                            "name": "Twin lascannon",
+                            "cost": {
+                                "points": 10
+                            },
+                            "weaponRefs": ["twin-lascannon"]
+                        }
+                    },
+                    "default": "twin-heavy-bolter",
+                    "gearNote": "Hull (Front) Mounted",
+                    "profileId": "land-raider-carrier"
+                },
+                "option-2": {
+                    "id": "option-2",
+                    "name": "Legion Pintle Weapons",
+                    "description": "This Model may have one item from the Legion Pintle Weapons list selected for it.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "legion-pintle-weapons": {
+                            "id": "legion-pintle-weapons",
+                            "target": "legion-pintle-weapons"
+                        }
+                    },
+                    "default": "none",
+                    "profileId": "land-raider-carrier"
+                },
+                "option-3": {
+                    "id": "option-3",
+                    "name": "Vehicle equipment",
+                    "description": "This Model may have one of each of the following selected for it:",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "options": {
+                        "none": {
+                            "id": "none",
+                            "name": "None",
+                            "cost": {
+                                "points": 0
+                            }
+                        },
+                        "one-hull-front-mounted-hunter-killer-missile": {
+                            "id": "one-hull-front-mounted-hunter-killer-missile",
+                            "name": "One Hull (Front) Mounted hunter-killer missile",
+                            "cost": {
+                                "points": 5
+                            },
+                            "weaponRefs": ["hunter-killer-missile"]
+                        },
+                        "searchlights": {
+                            "id": "searchlights",
+                            "name": "Searchlights",
+                            "cost": {
+                                "points": 5
+                            },
+                            "equipmentRefs": ["searchlights"]
+                        }
+                    },
+                    "default": "none",
+                    "profileId": "land-raider-carrier"
+                }
+            }
+        }
+    }
+}

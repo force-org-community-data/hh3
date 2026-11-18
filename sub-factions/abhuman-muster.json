@@ -1,0 +1,213 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "abhuman-muster",
+    "version": "1.0.0",
+    "name": "Abhuman Muster",
+    "parent": {
+        "faction": "imperialis-militia",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "specialRules": {
+        "abhuman-muster": {
+            "id": "abhuman-muster",
+            "name": "Abhuman Muster",
+            "text": "An Army with this Provenance gains the following benefits: All Models with the Irregulars Special Rule in this Army have their Base Strength Characteristic modified by +1, their Base Ballistic Skill Characteristic modified by -1, and gain the Impact (LD) Special Rule. The following item is added to the Militia Armaments list: - Assault shield +1 points"
+        }
+    },
+    "unitModifiers": {
+        "abhuman-muster-provenance": {
+            "id": "abhuman-muster-provenance",
+            "name": "Abhuman Muster",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "abhuman-muster"
+                    }
+                }
+            ]
+        },
+        "abhuman-muster-provenance-part": {
+            "id": "abhuman-muster-provenance-part",
+            "name": "Abhuman Muster",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "abhuman-muster"
+                    }
+                }
+            ]
+        },
+        "abhuman-muster-provenance-part-2": {
+            "id": "abhuman-muster-provenance-part-2",
+            "name": "Abhuman Muster",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "abhuman-muster"
+                    }
+                }
+            ]
+        },
+        "abhuman-muster": {
+            "id": "abhuman-muster",
+            "name": "Abhuman Muster",
+            "selector": {
+                "unitIds": [
+                    "all-terrain-patrol",
+                    "cavalry-troop",
+                    "command-troop",
+                    "discipline-master-cadre",
+                    "field-gun-battery",
+                    "fire-support-troop",
+                    "force-commander",
+                    "mounted-force-commander",
+                    "grenadier-troop",
+                    "infantry-troop",
+                    "levy-troop",
+                    "militia-medicae",
+                    "mounted-command-troop",
+                    "reconnaissance-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "s",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "bs",
+                            "op": "add",
+                            "value": -1
+                        }
+                    ]
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "impact",
+                        "value": "LD"
+                    }
+                }
+            ]
+        },
+        "abhuman-muster-part": {
+            "id": "abhuman-muster-part",
+            "name": "Abhuman Muster",
+            "selector": {
+                "unitIds": [
+                    "beastmaster-troop",
+                    "heavy-ordnance-battery",
+                    "rapier-troop"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "s",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "bs",
+                            "op": "add",
+                            "value": -1
+                        }
+                    ]
+                },
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "impact",
+                        "value": "LD"
+                    }
+                }
+            ]
+        },
+        "abhuman-muster-part-2": {
+            "id": "abhuman-muster-part-2",
+            "name": "Abhuman Muster",
+            "selector": {
+                "unitIds": ["rogue-psyker"]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "s",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "bs",
+                            "op": "add",
+                            "value": -1
+                        }
+                    ]
+                },
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "rule": {
+                        "id": "impact",
+                        "value": "LD"
+                    }
+                }
+            ]
+        }
+    }
+}
