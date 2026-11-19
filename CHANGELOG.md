@@ -32,6 +32,7 @@
 - Uses validator 2.0.0 (schema URLs move to `@2`). It rejects fractional counts and a fixed `min` above a fixed `max`, and adds warnings for unreadable versions, fields set where they are never read, and empty units or upgrades; this data already passed, so no records change.
 - Every upgrade on a single-model unit (one model, one profile) is pinned to that profile with `profileId` (578 upgrades on 215 units), and the six sub-faction modifiers that add upgrades only to single-model units (Sons of Horus Decurion Lanius, Iron Hands Gorgon Terminator Armour, Raven Guard Corvid-pattern jump pack, Word Bearers Burning Lore) select `profiles` so their upgrade lands on the profile too.
 - The Crusade Primary Detachment is now named "Crusade" (its id, `crusade-primary-detachment`, is unchanged, so saved lists still load).
+- A Legion's trait replaces the `[Legiones Astartes]` placeholder trait on the generic Legiones Astartes units instead of being added beside it, as the Legiones Astartes Faction rule says, so those units no longer show both (all 18 Legions).
 
 ## 1.0.0
 
