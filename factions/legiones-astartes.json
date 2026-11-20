@@ -39678,7 +39678,7 @@
                     }
                 }
             ],
-            "description": "Replaces the Crusade Primary Detachment. Recommended for pre-arranged games only. Benefits: for each non-Vehicle Unit in an Army using this Primary Detachment, one Transport or Heavy Transport Slot may be added to this Detachment. Restrictions: Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following other Detachments may be selected: Tactical Support, First Strike (maximum of 1), Shock Assault, Heavy Support, Warlord, Lord of War. All Units must use the Orbital Drop Protocols deployment method: Units with the Deep Strike or Orbital Assault Vehicle Special Rule start in Reserves, Units with the Flyer Sub-Type in Aerial Reserves, and every other Unit (with any Models joined to it) must start Embarked on a Transport in Reserves or Aerial Reserves or is Destroyed; Models with the Orbital Assault Vehicle Special Rule and the Transport Sub-Type without an Embarked Unit are Destroyed (not checked).",
+            "description": "Replaces the Crusade Primary Detachment. Recommended for pre-arranged games only. Benefits: for each non-Vehicle Unit in an Army using this Primary Detachment, one Transport or Heavy Transport Slot may be added to this Detachment. Restrictions: Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following other Detachments may be selected: Tactical Support, First Strike (maximum of 1), Shock Assault, Heavy Support, Warlord, Lord of War. All Units must use the Orbital Drop Protocols deployment method: Units with the Deep Strike or Orbital Assault Vehicle Special Rule start in Reserves, Units with the Flyer Sub-Type in Aerial Reserves, and every other Unit (with any Models joined to it) must start Embarked on a Transport in Reserves or Aerial Reserves or is Destroyed; Models with the Orbital Assault Vehicle Special Rule and the Transport Sub-Type without an Embarked Unit are Destroyed. Checked by count: Units without Deep Strike, Orbital Assault Vehicle or the Flyer Sub-Type (Command and High Command Units aside) may not outnumber the Transports with the Flyer Sub-Type, Deep Strike or Orbital Assault Vehicle.",
             "addedSlotRoles": []
         }
     },
@@ -39780,6 +39780,45 @@
                     {
                         "profiles": {
                             "noneOf": ["transport"]
+                        }
+                    }
+                ]
+            }
+        },
+        "orbital-drop-passengers": {
+            "id": "orbital-drop-passengers",
+            "name": "Units without Deep Strike, Orbital Assault Vehicle or the Flyer Sub-Type, other than Command and High Command Units",
+            "match": {
+                "exclude": [
+                    {
+                        "specialRules": [
+                            "deep-strike",
+                            "orbital-assault-vehicle"
+                        ]
+                    },
+                    {
+                        "profiles": {
+                            "anyOf": ["flyer"]
+                        }
+                    },
+                    {
+                        "roles": ["command", "high-command"]
+                    }
+                ]
+            }
+        },
+        "orbital-drop-transports": {
+            "id": "orbital-drop-transports",
+            "name": "Transports with Deep Strike or Orbital Assault Vehicle (not Flyers)",
+            "match": {
+                "profiles": {
+                    "anyOf": ["transport"]
+                },
+                "specialRules": ["deep-strike", "orbital-assault-vehicle"],
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["flyer"]
                         }
                     }
                 ]
@@ -39992,6 +40031,15 @@
             "when": {
                 "if": "main.count(group:sky-hunter-phalanx) == 0 or list.count(@sky-hunter-passengers) <= list.count(@flyer-transports)",
                 "message": "With the Sky-Hunter Phalanx Primary Detachment, each Unit with a Model that is neither Antigrav nor a Flyer (Command and High Command Units aside) must begin Embarked on its own Flyer Transport: take at least as many Flyer Transports as such Units"
+            }
+        },
+        "orbital-drop-assault-transports": {
+            "kind": "expression",
+            "id": "orbital-drop-assault-transports",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:orbital-drop-assault) == 0 or list.count(@orbital-drop-passengers) <= list.count(@flyer-transports) + list.count(@orbital-drop-transports)",
+                "message": "With the Orbital Drop Assault Primary Detachment, each Unit without Deep Strike, Orbital Assault Vehicle or the Flyer Sub-Type (Command and High Command Units aside) must begin Embarked on its own Transport with the Flyer Sub-Type, Deep Strike or Orbital Assault Vehicle: take at least as many such Transports as such Units"
             }
         }
     }
