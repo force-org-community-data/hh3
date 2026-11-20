@@ -7146,9 +7146,6 @@
                         {
                             "id": "medic",
                             "value": "4+"
-                        },
-                        {
-                            "id": "triage"
                         }
                     ]
                 },
@@ -7176,7 +7173,31 @@
                     "specialRules": [
                         {
                             "id": "surgical-suite"
-                        },
+                        }
+                    ]
+                },
+                {
+                    "id": "medicae-orderly",
+                    "name": "Medicae Orderly",
+                    "template": "model",
+                    "stats": {
+                        "m": "6",
+                        "ws": "3",
+                        "bs": "3",
+                        "s": "3",
+                        "t": "3",
+                        "w": "1",
+                        "i": "3",
+                        "a": "1",
+                        "ld": "6",
+                        "cl": "6",
+                        "wp": "6",
+                        "in": "7",
+                        "sav": "4+",
+                        "inv": "-"
+                    },
+                    "tags": ["Unique", "Specialist"],
+                    "specialRules": [
                         {
                             "id": "triage"
                         }
@@ -7200,6 +7221,18 @@
                         "auto-gurney": 1
                     },
                     "min": 1
+                },
+                {
+                    "id": "medicae-orderly",
+                    "name": "Medicae Orderlies",
+                    "profiles": {
+                        "medicae-orderly": 1
+                    },
+                    "min": 0,
+                    "max": 2,
+                    "cost": {
+                        "points": 10
+                    }
                 }
             ],
             "defaultGear": [
@@ -7209,18 +7242,6 @@
                     "profileId": "aevos-jovan"
                 },
                 {
-                    "kind": "weapon",
-                    "id": "needle-pistol",
-                    "perModel": true,
-                    "profileId": "aevos-jovan"
-                },
-                {
-                    "kind": "weapon",
-                    "id": "needle-pistol",
-                    "perModel": true,
-                    "profileId": "auto-gurney"
-                },
-                {
                     "kind": "equipment",
                     "id": "frag-grenades",
                     "perModel": true,
@@ -7243,8 +7264,31 @@
                     "id": "krak-grenades",
                     "perModel": true,
                     "profileId": "auto-gurney"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "needle-pistol",
+                    "perModel": true,
+                    "profileId": "medicae-orderly"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "frag-grenades",
+                    "perModel": true,
+                    "profileId": "medicae-orderly"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades",
+                    "perModel": true,
+                    "profileId": "medicae-orderly"
                 }
             ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
             "when": {
                 "if": "choice(allegiance) == loyalist",
                 "message": "Loyalist units only"

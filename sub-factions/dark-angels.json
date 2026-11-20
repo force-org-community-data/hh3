@@ -68,6 +68,11 @@
                     "id": "krak-grenades"
                 }
             ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
             "when": {
                 "if": "choice(allegiance) == loyalist",
                 "message": "Loyalist units only"
@@ -2456,6 +2461,11 @@
                     "id": "the-death-of-worlds"
                 }
             ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
             "when": {
                 "if": "choice(allegiance) == loyalist",
                 "message": "Loyalist units only"
@@ -3517,6 +3527,74 @@
                     }
                 }
             ]
+        },
+        "linebreaker-echelon-cataphractii": {
+            "id": "linebreaker-echelon-cataphractii",
+            "name": "Linebreaker Echelon (Cataphractii)",
+            "type": "apex",
+            "slots": [
+                {
+                    "roles": ["heavy-assault"],
+                    "units": {
+                        "unitIds": ["cataphractii-terminator-squad"]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "units": {
+                        "unitIds": ["cataphractii-terminator-squad"]
+                    }
+                },
+                {
+                    "roles": ["retinue"],
+                    "units": {
+                        "unitIds": [
+                            "cataphractii-terminator-command-squad",
+                            "dark-angels-cataphractii-terminator-deathwing-companions"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["war-engine"]
+                }
+            ]
+        },
+        "linebreaker-echelon-tartaros": {
+            "id": "linebreaker-echelon-tartaros",
+            "name": "Linebreaker Echelon (Tartaros)",
+            "type": "apex",
+            "slots": [
+                {
+                    "roles": ["heavy-assault"],
+                    "units": {
+                        "unitIds": [
+                            "tartaros-terminator-siege-squad",
+                            "tartaros-terminator-squad"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "units": {
+                        "unitIds": [
+                            "tartaros-terminator-siege-squad",
+                            "tartaros-terminator-squad"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["retinue"],
+                    "units": {
+                        "unitIds": [
+                            "tartaros-terminator-command-squad",
+                            "dark-angels-tartaros-terminator-deathwing-companions"
+                        ]
+                    }
+                },
+                {
+                    "roles": ["war-engine"]
+                }
+            ]
         }
     },
     "slotOptions": {
@@ -3692,6 +3770,14 @@
         {
             "kind": "upgrades",
             "id": "legion-special-weapons"
+        },
+        {
+            "kind": "groups",
+            "id": "linebreaker-echelon-cataphractii"
+        },
+        {
+            "kind": "groups",
+            "id": "linebreaker-echelon-tartaros"
         }
     ],
     "listRules": {

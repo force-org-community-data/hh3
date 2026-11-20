@@ -70,6 +70,11 @@
                     "id": "krak-grenades"
                 }
             ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
             "when": {
                 "if": "choice(allegiance) == traitor",
                 "message": "Traitor units only"
@@ -767,6 +772,11 @@
                     "id": "krak-grenades"
                 }
             ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
             "when": {
                 "if": "choice(allegiance) == traitor",
                 "message": "Traitor units only"
@@ -1896,7 +1906,16 @@
                         "inv": "-"
                     },
                     "tags": ["Sergeant"],
-                    "traits": ["Diviner", "Telepath"]
+                    "traits": ["Diviner", "Telepath"],
+                    "specialRules": [
+                        {
+                            "id": "numerologist-order"
+                        },
+                        {
+                            "id": "battlesmith",
+                            "value": "2"
+                        }
+                    ]
                 },
                 {
                     "id": "life-ward",
@@ -1917,7 +1936,12 @@
                         "in": "7",
                         "sav": "3+",
                         "inv": "-"
-                    }
+                    },
+                    "specialRules": [
+                        {
+                            "id": "life-wards"
+                        }
+                    ]
                 }
             ],
             "traits": ["Thousand Sons", "Psyker"],
@@ -3383,6 +3407,16 @@
             "id": "telekine-shift",
             "name": "Telekine Shift",
             "text": "When the Controlling Player chooses to make a Rush Move with a Unit made up of Models with this Special Rule, they may also choose to make a Willpower Check for that Unit. If the Willpower Check is successful, the Unit gains the Antigrav Sub-Type and the Move Through Cover Special Rule until the end of the current Movement Phase. If the Willpower Check is failed, the selected Unit may not Move during the current Movement Phase."
+        },
+        "numerologist-order": {
+            "id": "numerologist-order",
+            "name": "Numerologist Order",
+            "text": "A Model with this Special Rule has the following Psychic Powers but a Unit that contains a Model with this Special Rule cannot have a Prosperine Arcana selected for it as normal. In addition, it has the Telepath and Diviner Traits: Foresight’s Blessing (Divination Discipline), Mind-burst (Telepathy Discipline)."
+        },
+        "life-wards": {
+            "id": "life-wards",
+            "name": "Life Wards",
+            "text": "While a Numerologist Model is part of a Unit that contains any Models with this Special Rule, Wounds caused as part of a Shooting Attack made by a Weapon or Model with the Precision (X) Special Rule cannot be allocated to that Numerologist Model."
         }
     },
     "groups": {
