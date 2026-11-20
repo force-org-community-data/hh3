@@ -73,6 +73,11 @@
                     "id": "krak-grenades"
                 }
             ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
             "when": {
                 "if": "choice(allegiance) == traitor",
                 "message": "Traitor units only"
@@ -392,6 +397,11 @@
                     "id": "krak-grenades"
                 }
             ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
             "when": {
                 "if": "choice(allegiance) == traitor",
                 "message": "Traitor units only"
@@ -744,6 +754,11 @@
                     "id": "digi-flamer"
                 }
             ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
             "when": {
                 "if": "choice(allegiance) == traitor",
                 "message": "Traitor units only"
@@ -1075,7 +1090,11 @@
                     "profiles": {
                         "phaetus-anointed": 1
                     },
-                    "min": 2
+                    "min": 2,
+                    "max": 5,
+                    "cost": {
+                        "points": 65
+                    }
                 }
             ],
             "defaultGear": [
@@ -2879,40 +2898,125 @@
                         "inv": "4+"
                     },
                     "tags": ["Unique", "Command", "Malefic"],
-                    "traits": ["Psyker"]
+                    "traits": ["Psyker"],
+                    "specialRules": [
+                        {
+                            "id": "hatred",
+                            "value": "Loyalist"
+                        },
+                        {
+                            "id": "binder-of-souls"
+                        }
+                    ]
+                },
+                {
+                    "id": "anakatis-kul",
+                    "name": "Anakatis Kul",
+                    "template": "model",
+                    "stats": {
+                        "m": "8",
+                        "ws": "5",
+                        "bs": "4",
+                        "s": "5",
+                        "t": "5",
+                        "w": "3",
+                        "i": "5",
+                        "a": "3",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "4",
+                        "in": "4",
+                        "sav": "3+",
+                        "inv": "-"
+                    },
+                    "tags": ["Champion", "Malefic"],
+                    "specialRules": [
+                        {
+                            "id": "bulky",
+                            "value": "2"
+                        },
+                        {
+                            "id": "feel-no-pain",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "explodes",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "fear",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "composition": [
+                {
+                    "id": "zardu-layak",
+                    "name": "Zardu Layak",
+                    "profiles": {
+                        "zardu-layak": 1
+                    },
+                    "min": 1
+                },
+                {
+                    "id": "anakatis-kul",
+                    "name": "Anakatis Kul",
+                    "profiles": {
+                        "anakatis-kul": 1
+                    },
+                    "min": 0,
+                    "max": 2,
+                    "cost": {
+                        "points": 60
+                    }
                 }
             ],
             "traits": ["Traitor", "Word Bearers"],
             "defaultGear": [
                 {
                     "kind": "weapon",
-                    "id": "the-azurda-charis"
+                    "id": "the-azurda-charis",
+                    "profileId": "zardu-layak"
                 },
                 {
                     "kind": "weapon",
-                    "id": "bolt-pistol"
+                    "id": "bolt-pistol",
+                    "profileId": "zardu-layak"
                 },
                 {
                     "kind": "equipment",
-                    "id": "the-panoply-of-flame"
+                    "id": "the-panoply-of-flame",
+                    "profileId": "zardu-layak"
                 },
                 {
                     "kind": "equipment",
-                    "id": "frag-grenades"
+                    "id": "frag-grenades",
+                    "profileId": "zardu-layak"
                 },
                 {
                     "kind": "weapon",
-                    "id": "krak-grenades"
+                    "id": "krak-grenades",
+                    "profileId": "zardu-layak"
                 },
                 {
                     "kind": "weapon",
-                    "id": "anakatis-blade"
+                    "id": "anakatis-blade",
+                    "perModel": true,
+                    "profileId": "anakatis-kul"
                 },
                 {
                     "kind": "weapon",
-                    "id": "plasma-pistol"
+                    "id": "plasma-pistol",
+                    "perModel": true,
+                    "profileId": "anakatis-kul"
                 }
             ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
             "when": {
                 "if": "choice(allegiance) == traitor",
                 "message": "Traitor units only"
@@ -4025,6 +4129,11 @@
             "name": "Impact",
             "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
             "configurable": true
+        },
+        "binder-of-souls": {
+            "id": "binder-of-souls",
+            "name": "Binder of Souls",
+            "text": "Zardu Layak has specific Psychic Powers. A Model with this Special Rule gains the Soul Binding Psychic Power and the Breach the Veil Psychic Power. SOUL BINDING (Psychic Power, Curse) Trigger: The Active Player may choose to Manifest the Soul Binding Psychic Power in the Assault Phase, at the start of the Declare Weapons and Set Initiative Steps Step of the Fight Sub-Phase. Focus: The Focus of the Power must be a Zardu Layak Model. Target: The Target Unit must be an enemy Unit in the same Combat as the Focus Model. Duration: If successfully Manifested, the effects of this Psychic Power last until the end of the Make Final Pile-in Moves Step of that Combat. Process Once the Focus and Target Unit have been decided, the Target Unit’s Controlling Player makes a Resistance Check for that Unit. If the Resistance Check is failed, the Controlling Player of the Focus Model can select one Model with a Willpower Characteristic of 7 or less from the Target Unit. For the Duration of this Psychic Power, the selected Model is considered to be under the control of the Controlling Player of the Focus of this Power. If the Resistance Check succeeds then there is no further effect."
         }
     },
     "groups": {
