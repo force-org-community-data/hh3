@@ -1838,6 +1838,73 @@
                     ]
                 }
             ]
+        },
+        "decurion-sagittar-iliastus-assault-cannon": {
+            "id": "decurion-sagittar-iliastus-assault-cannon",
+            "name": "Iliastus Assault Cannon (Decurion Sagittar)",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Sustained fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "skyfire"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Maximal fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "5",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        },
+                        {
+                            "id": "skyfire"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {
@@ -2292,6 +2359,141 @@
                 }
             },
             "default": "none"
+        },
+        "imperial-fists-decurion-sagittar-predator": {
+            "id": "imperial-fists-decurion-sagittar-predator",
+            "name": "Decurion Sagittar",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Imperial Fists Trait that has no Pintle Mounted Weapons. A Model with this upgrade gains a Pintle Mounted Iliastus assault cannon and an augury scanner; that Iliastus assault cannon gains the Skyfire and Precision (6+) Special Rules. No Unit may have more than one Legiones Decurion upgrade.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "decurion-sagittar": {
+                    "id": "decurion-sagittar",
+                    "name": "Decurion Sagittar",
+                    "cost": {
+                        "points": 30
+                    },
+                    "weaponRefs": ["decurion-sagittar-iliastus-assault-cannon"],
+                    "equipmentRefs": ["augury-scanner"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Legiones Decurion"]
+                        }
+                    ]
+                }
+            },
+            "replaces": ["option-3"],
+            "restrictions": {
+                "exclusions": [
+                    {
+                        "kind": "equipment",
+                        "id": "point-defence"
+                    },
+                    {
+                        "kind": "equipment",
+                        "id": "locus-strike"
+                    }
+                ],
+                "required": [],
+                "requiredAnd": false
+            },
+            "gearNote": "Pintle Mounted"
+        },
+        "imperial-fists-decurion-sagittar-kratos-assault-tank": {
+            "id": "imperial-fists-decurion-sagittar-kratos-assault-tank",
+            "name": "Decurion Sagittar",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Imperial Fists Trait that has no Pintle Mounted Weapons. A Model with this upgrade gains a Pintle Mounted Iliastus assault cannon and an augury scanner; that Iliastus assault cannon gains the Skyfire and Precision (6+) Special Rules. No Unit may have more than one Legiones Decurion upgrade.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "decurion-sagittar": {
+                    "id": "decurion-sagittar",
+                    "name": "Decurion Sagittar",
+                    "cost": {
+                        "points": 30
+                    },
+                    "weaponRefs": ["decurion-sagittar-iliastus-assault-cannon"],
+                    "equipmentRefs": ["augury-scanner"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Legiones Decurion"]
+                        }
+                    ]
+                }
+            },
+            "replaces": ["option-5"],
+            "restrictions": {
+                "exclusions": [
+                    {
+                        "kind": "equipment",
+                        "id": "point-defence"
+                    },
+                    {
+                        "kind": "equipment",
+                        "id": "locus-strike"
+                    }
+                ],
+                "required": [],
+                "requiredAnd": false
+            },
+            "gearNote": "Pintle Mounted"
+        },
+        "imperial-fists-decurion-sagittar-sicaran": {
+            "id": "imperial-fists-decurion-sagittar-sicaran",
+            "name": "Decurion Sagittar",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Imperial Fists Trait that has no Pintle Mounted Weapons. A Model with this upgrade gains a Pintle Mounted Iliastus assault cannon and an augury scanner; that Iliastus assault cannon gains the Skyfire and Precision (6+) Special Rules. No Unit may have more than one Legiones Decurion upgrade.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "decurion-sagittar": {
+                    "id": "decurion-sagittar",
+                    "name": "Decurion Sagittar",
+                    "cost": {
+                        "points": 30
+                    },
+                    "weaponRefs": ["decurion-sagittar-iliastus-assault-cannon"],
+                    "equipmentRefs": ["augury-scanner"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Legiones Decurion"]
+                        }
+                    ]
+                }
+            },
+            "replaces": ["option-3"],
+            "restrictions": {
+                "exclusions": [
+                    {
+                        "kind": "equipment",
+                        "id": "point-defence"
+                    },
+                    {
+                        "kind": "equipment",
+                        "id": "locus-strike"
+                    }
+                ],
+                "required": [
+                    {
+                        "kind": "weapon",
+                        "id": "twin-accelerator-autocannon"
+                    },
+                    {
+                        "kind": "weapon",
+                        "id": "punisher-rotary-cannon"
+                    }
+                ],
+                "requiredAnd": false
+            },
+            "gearNote": "Pintle Mounted"
         }
     },
     "specialRules": {
@@ -2325,12 +2527,6 @@
             "id": "executioners-tax",
             "name": "Executioner’s Tax",
             "text": "Fafnir Rann may suffer a negative modifier to the Focus Roll in exchange for improved attacks. While a Model with this Special Rule is in a Challenge, its Controlling Player can select the following Gambit: Executioner’s Tax: When this Gambit is selected, the Controlling Player must roll an additional Dice in the Focus Step and must discard the highest result. Attacks made in the following Strike Phase gain the Critical Hit (6+) Special Rule."
-        },
-        "eternal-warrior": {
-            "id": "eternal-warrior",
-            "name": "Eternal Warrior",
-            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
-            "configurable": true
         },
         "supporting-fire": {
             "id": "supporting-fire",
@@ -2569,6 +2765,48 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "imperial-fists-vigil-pattern-storm-shield-cataphractii"
+                }
+            ]
+        },
+        "imperial-fists-decurion-sagittar-predator": {
+            "id": "imperial-fists-decurion-sagittar-predator",
+            "name": "Decurion Sagittar",
+            "selector": {
+                "unitIds": ["predator"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-decurion-sagittar-predator"
+                }
+            ]
+        },
+        "imperial-fists-decurion-sagittar-kratos-assault-tank": {
+            "id": "imperial-fists-decurion-sagittar-kratos-assault-tank",
+            "name": "Decurion Sagittar",
+            "selector": {
+                "unitIds": ["kratos-assault-tank"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-decurion-sagittar-kratos-assault-tank"
+                }
+            ]
+        },
+        "imperial-fists-decurion-sagittar-sicaran": {
+            "id": "imperial-fists-decurion-sagittar-sicaran",
+            "name": "Decurion Sagittar",
+            "selector": {
+                "unitIds": ["sicaran"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-decurion-sagittar-sicaran"
                 }
             ]
         }
