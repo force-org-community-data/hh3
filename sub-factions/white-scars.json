@@ -3315,12 +3315,6 @@
             "name": "Death by a Thousand Cuts",
             "text": "This Gambit reduces the strength of an opponent when they are wounded. While a Model with this Special Rule is engaged in a Challenge, the Controlling Player can select the following Gambit: Death by a Thousand Cuts: If this Gambit is selected, during the Strike Step, the Strength of attacks made by the enemy Model are modified by -1 if that Model’s Wounds Characteristic has been reduced from its Base Value. This cannot reduce the Strength Characteristic of an attack below 1."
         },
-        "eternal-warrior": {
-            "id": "eternal-warrior",
-            "name": "Eternal Warrior",
-            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
-            "configurable": true
-        },
         "chosen-of-the-khagan": {
             "id": "chosen-of-the-khagan",
             "name": "Chosen of the Khagan",
@@ -3385,6 +3379,93 @@
                     }
                 }
             ]
+        },
+        "sky-hunter-phalanx": {
+            "id": "sky-hunter-phalanx",
+            "name": "Sky-Hunter Phalanx",
+            "type": "primary",
+            "slots": [
+                {
+                    "roles": ["high-command"]
+                },
+                {
+                    "roles": ["command"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["command"]
+                },
+                {
+                    "roles": ["retinue", "elites"],
+                    "units": "@sky-hunter-retinue-or-golden-keshig"
+                },
+                {
+                    "roles": ["retinue", "elites"],
+                    "units": "@sky-hunter-retinue-or-golden-keshig"
+                },
+                {
+                    "roles": ["fast-attack", "support"],
+                    "effects": [
+                        {
+                            "kind": "slotTag",
+                            "add": ["prime"],
+                            "when": {
+                                "if": "unit.is(role:fast-attack)",
+                                "message": "Prime only while it holds a Fast Attack Unit"
+                            }
+                        }
+                    ],
+                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                },
+                {
+                    "roles": ["fast-attack", "support"],
+                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                },
+                {
+                    "roles": ["fast-attack", "support"],
+                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                },
+                {
+                    "roles": ["fast-attack", "support"],
+                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                },
+                {
+                    "roles": ["fast-attack", "support"],
+                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                },
+                {
+                    "roles": ["fast-attack", "support"],
+                    "effects": [
+                        {
+                            "kind": "slotTag",
+                            "add": ["prime"],
+                            "when": {
+                                "if": "unit.is(role:fast-attack)",
+                                "message": "Prime only while it holds a Fast Attack Unit"
+                            }
+                        }
+                    ],
+                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                },
+                {
+                    "roles": ["fast-attack", "support"],
+                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                },
+                {
+                    "roles": ["fast-attack", "support"],
+                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                },
+                {
+                    "roles": ["fast-attack", "support"],
+                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                },
+                {
+                    "roles": ["fast-attack", "support"],
+                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                }
+            ],
+            "description": "Replaces the Crusade Primary Detachment. Benefits: Prime Slots in this Detachment may have the Skilled Riders Prime Advantage selected for them. Restrictions: Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following additional Detachments may be selected: First Strike, Combat Pioneer, Lord of War. Every Unit in an Army with this Primary Detachment must only include Models with the Antigrav or Flyer Sub-Type or begin the Battle Embarked on a Transport with the Flyer Sub-Type; any other Units may not be Deployed and are Removed as Casualties (checked by count: such Units, Command and High Command Units aside, may not outnumber the Flyer Transports, since each Transport carries one Unit and the Characters joined to it). White Scars: any number of Retinue Slots may each be exchanged for one Elites Slot that may only be filled with Golden Keshig Units, and any number of Fast Attack Slots may each be exchanged for one Support Slot that may only be filled with Kyzagan Assault Speeder Units.",
+            "addedSlotRoles": []
         }
     },
     "slotOptions": {
@@ -3529,6 +3610,52 @@
                     }
                 }
             ]
+        }
+    },
+    "overrides": [
+        {
+            "kind": "groups",
+            "id": "sky-hunter-phalanx"
+        }
+    ],
+    "selectors": {
+        "sky-hunter-retinue-or-golden-keshig": {
+            "id": "sky-hunter-retinue-or-golden-keshig",
+            "name": "Retinue Units or Golden Keshig",
+            "match": {
+                "exclude": [
+                    {
+                        "roles": ["elites"],
+                        "unitIds": [
+                            "seeker-squad",
+                            "veteran-assault-squad",
+                            "veteran-breacher-squad",
+                            "veteran-heavy-support-squad",
+                            "veteran-tactical-squad"
+                        ]
+                    }
+                ]
+            }
+        },
+        "sky-hunter-fast-attack-or-kyzagan": {
+            "id": "sky-hunter-fast-attack-or-kyzagan",
+            "name": "Fast Attack Units or Kyzagan Assault Speeders",
+            "match": {
+                "exclude": [
+                    {
+                        "roles": ["support"],
+                        "unitIds": [
+                            "apothecary",
+                            "araknae-quad-accelerator-platform",
+                            "deathstorm-drop-pod",
+                            "heavy-support-squad",
+                            "rapier-battery",
+                            "tactical-support-squad",
+                            "techmarine"
+                        ]
+                    }
+                ]
+            }
         }
     }
 }

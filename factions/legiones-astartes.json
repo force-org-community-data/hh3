@@ -7909,6 +7909,26 @@
                     },
                     "default": "none",
                     "profileId": "falchion"
+                },
+                "decurion-magna": {
+                    "id": "decurion-magna",
+                    "name": "Decurion Magna",
+                    "description": "A Model with this upgrade has an Incursor pattern command array. No Unit may have more than one Legiones Decurion upgrade.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "profileId": "falchion",
+                    "options": {
+                        "decurion-magna": {
+                            "id": "decurion-magna",
+                            "name": "Decurion Magna",
+                            "cost": {
+                                "points": 60
+                            },
+                            "equipmentRefs": ["incursor-pattern-command-array"]
+                        }
+                    }
                 }
             }
         },
@@ -8086,6 +8106,26 @@
                     },
                     "default": "none",
                     "profileId": "fellblade"
+                },
+                "decurion-magna": {
+                    "id": "decurion-magna",
+                    "name": "Decurion Magna",
+                    "description": "A Model with this upgrade has an Incursor pattern command array. No Unit may have more than one Legiones Decurion upgrade.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "profileId": "fellblade",
+                    "options": {
+                        "decurion-magna": {
+                            "id": "decurion-magna",
+                            "name": "Decurion Magna",
+                            "cost": {
+                                "points": 60
+                            },
+                            "equipmentRefs": ["incursor-pattern-command-array"]
+                        }
+                    }
                 }
             }
         },
@@ -10573,6 +10613,60 @@
                     },
                     "default": "none",
                     "profileId": "kratos"
+                },
+                "decurion-defensor": {
+                    "id": "decurion-defensor",
+                    "name": "Decurion Defensor",
+                    "description": "A Model with this upgrade must also have a Pintle Mounted Weapon (excluding a Pintle Mounted havoc launcher). A Model with this upgrade gains the Point Defence Special Rule. No Unit may have more than one Legiones Decurion upgrade.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "profileId": "kratos",
+                    "options": {
+                        "decurion-defensor": {
+                            "id": "decurion-defensor",
+                            "name": "Decurion Defensor",
+                            "cost": {
+                                "points": 30
+                            },
+                            "equipmentRefs": ["point-defence"]
+                        }
+                    },
+                    "when": {
+                        "if": "unit.has(weapon:combi-bolter) or unit.has(weapon:combi-flamer) or unit.has(weapon:combi-plasma) or unit.has(weapon:combi-melta) or unit.has(weapon:combi-volkite) or unit.has(weapon:multi-melta) or unit.count(weapon:heavy-bolter) - 2 * floor(unit.count(weapon:heavy-bolter) / 2) == 1 or unit.count(weapon:heavy-flamer) - 2 * floor(unit.count(weapon:heavy-flamer) / 2) == 1",
+                        "message": "Needs a Pintle Mounted Weapon other than a havoc launcher"
+                    }
+                },
+                "decurion-locus": {
+                    "id": "decurion-locus",
+                    "name": "Decurion Locus",
+                    "description": "A Model with this upgrade has an augury scanner and gains the Locus Strike Special Rule. No Unit may have more than one Legiones Decurion upgrade.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "profileId": "kratos",
+                    "options": {
+                        "decurion-locus": {
+                            "id": "decurion-locus",
+                            "name": "Decurion Locus",
+                            "cost": {
+                                "points": 40
+                            },
+                            "equipmentRefs": ["augury-scanner", "locus-strike"]
+                        }
+                    },
+                    "restrictions": {
+                        "exclusions": [
+                            {
+                                "kind": "equipment",
+                                "id": "point-defence"
+                            }
+                        ],
+                        "required": [],
+                        "requiredAnd": false
+                    }
                 }
             }
         },
@@ -21841,6 +21935,60 @@
                     },
                     "default": "none",
                     "profileId": "predator"
+                },
+                "decurion-defensor": {
+                    "id": "decurion-defensor",
+                    "name": "Decurion Defensor",
+                    "description": "A Model with this upgrade must also have a Pintle Mounted Weapon (excluding a Pintle Mounted havoc launcher). A Model with this upgrade gains the Point Defence Special Rule. No Unit may have more than one Legiones Decurion upgrade.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "profileId": "predator",
+                    "options": {
+                        "decurion-defensor": {
+                            "id": "decurion-defensor",
+                            "name": "Decurion Defensor",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["point-defence"]
+                        }
+                    },
+                    "when": {
+                        "if": "unit.has(weapon:combi-bolter) or unit.has(weapon:combi-flamer) or unit.has(weapon:combi-plasma) or unit.has(weapon:combi-melta) or unit.has(weapon:combi-volkite) or unit.has(weapon:multi-melta) or unit.count(weapon:heavy-bolter) - 2 * floor(unit.count(weapon:heavy-bolter) / 2) == 1 or unit.count(weapon:heavy-flamer) - 2 * floor(unit.count(weapon:heavy-flamer) / 2) == 1",
+                        "message": "Needs a Pintle Mounted Weapon other than a havoc launcher"
+                    }
+                },
+                "decurion-locus": {
+                    "id": "decurion-locus",
+                    "name": "Decurion Locus",
+                    "description": "A Model with this upgrade has an augury scanner and gains the Locus Strike Special Rule. No Unit may have more than one Legiones Decurion upgrade.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "profileId": "predator",
+                    "options": {
+                        "decurion-locus": {
+                            "id": "decurion-locus",
+                            "name": "Decurion Locus",
+                            "cost": {
+                                "points": 30
+                            },
+                            "equipmentRefs": ["augury-scanner", "locus-strike"]
+                        }
+                    },
+                    "restrictions": {
+                        "exclusions": [
+                            {
+                                "kind": "equipment",
+                                "id": "point-defence"
+                            }
+                        ],
+                        "required": [],
+                        "requiredAnd": false
+                    }
                 }
             }
         },
@@ -25821,6 +25969,83 @@
                     },
                     "default": "none",
                     "profileId": "sicaran"
+                },
+                "decurion-defensor": {
+                    "id": "decurion-defensor",
+                    "name": "Decurion Defensor",
+                    "description": "A Model with this upgrade must also have a Pintle Mounted Weapon (excluding a Pintle Mounted havoc launcher). A Model with this upgrade gains the Point Defence Special Rule. No Unit may have more than one Legiones Decurion upgrade. Sicaran: Models with twin accelerator autocannon or punisher rotary cannon only.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "profileId": "sicaran",
+                    "options": {
+                        "decurion-defensor": {
+                            "id": "decurion-defensor",
+                            "name": "Decurion Defensor",
+                            "cost": {
+                                "points": 20
+                            },
+                            "equipmentRefs": ["point-defence"]
+                        }
+                    },
+                    "when": {
+                        "if": "unit.has(weapon:combi-bolter) or unit.has(weapon:combi-flamer) or unit.has(weapon:combi-plasma) or unit.has(weapon:combi-melta) or unit.has(weapon:combi-volkite) or unit.has(weapon:multi-melta) or unit.count(weapon:heavy-bolter) - 2 * floor(unit.count(weapon:heavy-bolter) / 2) == 1 or unit.count(weapon:heavy-flamer) - 2 * floor(unit.count(weapon:heavy-flamer) / 2) == 1",
+                        "message": "Needs a Pintle Mounted Weapon other than a havoc launcher"
+                    },
+                    "restrictions": {
+                        "exclusions": [],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "twin-accelerator-autocannon"
+                            },
+                            {
+                                "kind": "weapon",
+                                "id": "punisher-rotary-cannon"
+                            }
+                        ],
+                        "requiredAnd": false
+                    }
+                },
+                "decurion-locus": {
+                    "id": "decurion-locus",
+                    "name": "Decurion Locus",
+                    "description": "A Model with this upgrade has an augury scanner and gains the Locus Strike Special Rule. No Unit may have more than one Legiones Decurion upgrade. Sicaran: Models with twin accelerator autocannon or punisher rotary cannon only.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "profileId": "sicaran",
+                    "options": {
+                        "decurion-locus": {
+                            "id": "decurion-locus",
+                            "name": "Decurion Locus",
+                            "cost": {
+                                "points": 30
+                            },
+                            "equipmentRefs": ["augury-scanner", "locus-strike"]
+                        }
+                    },
+                    "restrictions": {
+                        "exclusions": [
+                            {
+                                "kind": "equipment",
+                                "id": "point-defence"
+                            }
+                        ],
+                        "required": [
+                            {
+                                "kind": "weapon",
+                                "id": "twin-accelerator-autocannon"
+                            },
+                            {
+                                "kind": "weapon",
+                                "id": "punisher-rotary-cannon"
+                            }
+                        ],
+                        "requiredAnd": false
+                    }
                 }
             }
         },
@@ -37190,10 +37415,20 @@
             "name": "Icon of Allegiance",
             "text": "A Model with an Icon of Allegiance immediately gains 1 Honour Point each time: That Model is the winner of a Challenge. That Model is part of a Combat that included at least one enemy Model that does not have the Vehicle Type, of which the Controlling Player is declared the winner. All Honour Points gained by a Model are lost when: That Model is Removed as a Casualty. That Model is part of a Unit in which any Model gains the Disgraced Tactical Status. During the Decide Victor Step, at the end of the Battle, the Controlling Player of any Models with an Icon of Allegiance scores a number of Victory Points equal to the amount of Honour Points that any one of those Models, selected by the Controlling Player, currently has."
         },
+        "incursor-pattern-command-array": {
+            "id": "incursor-pattern-command-array",
+            "name": "Incursor pattern command array",
+            "text": "A Model with the Super-heavy Sub-Type and an Incursor pattern command array is able to make the Overwatch and Return Fire Reactions in response to actions made by any Unit instead of only Units that contain Models with the Paragon Type, Super-heavy Sub-Type, Knight Sub-Type or Titan Sub-Type. In addition, while a Model with an Incursor pattern command array has the Suppressed or Stunned Tactical Status, it has the Auto-repair (4+) Special Rule."
+        },
         "legion-standard": {
             "id": "legion-standard",
             "name": "Legion Standard",
             "text": "Legion standards grant bonuses to Combat Resolution. When resolving a Combat in the Resolution Sub-Phase of the Assault Phase, score 2 Combat Resolution Points for each Unit in that Combat that has any Models that have a Legion standard. In addition, a Model with a Legion standard counts as an additional 6 Models for the purposes of Outside Support in a Challenge."
+        },
+        "locus-strike": {
+            "id": "locus-strike",
+            "name": "Locus Strike",
+            "text": "When making a Return Fire Reaction for a Model with this Special Rule, any Turret Mounted Weapons are treated as Defensive Weapons regardless of their Characteristics. If the Turret Mounted Weapon on a Model with this Special Rule is already a Defensive Weapon, the Controlling Player of that Model can instead add +1 to Hit Tests made for that Weapon’s Fire Group when making that Reaction."
         },
         "machinator-array": {
             "id": "machinator-array",
@@ -37219,6 +37454,11 @@
             "id": "phosphex-shells",
             "name": "phosphex shells",
             "text": "Phosphex shells let this Model’s Morbus bombard use its Phosphex shell* profile, which it may only use if this Model has phosphex shells."
+        },
+        "point-defence": {
+            "id": "point-defence",
+            "name": "Point Defence",
+            "text": "When a Model with this Special Rule is the Target of a Charge, during Step 4 of the Charge Procedure, a Model with this Special Rule may make an additional Volley Attack. This additional Volley Attack is made as a separate Shooting Attack after resolving its first Volley Attack and the Controlling Player must select only one Pintle Mounted Weapon to make attacks as part of this second Volley Attack. If any Models are Removed as a Casualty as a result of this Model’s Shooting Attacks as part of this Volley Attack, the Charging Unit subtracts 1 from the result of any Charge Rolls made during this Phase."
         },
         "proteus-pattern-storm-shield": {
             "id": "proteus-pattern-storm-shield",
@@ -38033,6 +38273,11 @@
             "text": "Models with the Bulky (X) Special Rule take up more space on Transport Models. A Model with the Bulky (X) Special Rule does not use up 1 Point of Transport Capacity when it Embarks on a Model with the Transport Sub-Type. Instead it uses up a number of points of Transport Capacity equal to the value of X attached to the variant of the Bulky (X) possessed by that Model.",
             "configurable": true
         },
+        "combi": {
+            "id": "combi",
+            "name": "Combi",
+            "text": "A Weapon with this Special Rule can fire multiple profiles simultaneously. Each time a Model makes a Shooting Attack with a Weapon Profile with this Special Rule, the Controlling Player can select another Profile from the same Weapon with this Special Rule and make attacks with it as part of the same Shooting Attack. Note that if that Profile also has the Limited (X) Special Rule, this does not allow it to be selected to make attacks more than the number of times equal to the value of X on that Special Rule."
+        },
         "critical-hit": {
             "id": "critical-hit",
             "name": "Critical Hit",
@@ -38074,6 +38319,12 @@
             "id": "duellists-edge",
             "name": "Duellist’s Edge",
             "text": "A Weapon with the Duellist’s Edge (X) Special Rule grants a bonus to Focus Rolls in Challenges. In Step 3 of the Challenge Sub-Phase, the Focus Step, if a Player has declared that the Model under their control will use a Weapon with the Duellist’s Edge (X) Special Rule or has the Duellist’s Edge (X) Special Rule, then that Player gains a bonus equal to the value of X on the Focus Roll.",
+            "configurable": true
+        },
+        "eternal-warrior": {
+            "id": "eternal-warrior",
+            "name": "Eternal Warrior",
+            "text": "A Model with this Special Rule takes less Damage from attacks. When a Model with the Eternal Warrior (X) Special Rule is allocated an Unsaved Wound, the Damage of the Unsaved Wound is reduced by the value of X attached to the specific variant of the Eternal Warrior (X) Special Rule. The effects of this Special Rule cannot reduce the Damage of an Unsaved Wound to less than 1, regardless of the value of X.",
             "configurable": true
         },
         "expendable": {
@@ -38390,6 +38641,12 @@
             "text": "Attacks made with the Shred (X) Special Rule can sometimes inflict an extra point of Damage. When any Wound Test is made for an attack with the Shred (X) Special Rule, if the result of the Dice roll, before any modifiers are applied, is equal to or greater than the value of X attached to this variant of the Shred (X) Special Rule, then if a wound is inflicted by that Wound Test, the Damage Characteristic of that wound is increased by 1. Note that the Shred (X) Special Rule may only be triggered by a Wound Test and has no effect when making an Armour Penetration Test.",
             "configurable": true
         },
+        "shrouded": {
+            "id": "shrouded",
+            "name": "Shrouded",
+            "text": "Shrouded (X) is a Damage Mitigation Test that may be taken in addition to a Saving Throw. A Model with the Shrouded (X) Special Rule gains a Shrouded Damage Mitigation Test that may be used in Step 9 of the Shooting Attack process to discard Wounds allocated to the Model. A Damage Mitigation Test may be made after and in addition to a Saving Throw. The Target Number for a Shrouded Damage Mitigation Test is the value of X attached to the specific variant of the Special Rule. A Shrouded Damage Mitigation Test may not be made against wounds inflicted by a Melee Weapon.",
+            "configurable": true
+        },
         "skyfire": {
             "id": "skyfire",
             "name": "Skyfire",
@@ -38399,6 +38656,11 @@
             "id": "slow-and-purposeful",
             "name": "Slow and Purposeful",
             "text": "Models with this Special Rule cannot Pursue fleeing enemy Units. In Step 4 of the Resolution Sub-Phase, a Player that has won Combat cannot choose for a Unit that includes any Models with this Special Rule to Pursue, and must instead select another eligible option for that Unit."
+        },
+        "squadron-tactics": {
+            "id": "squadron-tactics",
+            "name": "Squadron Tactics",
+            "text": "While a Model with this Special Rule is within 6\" of another Model with this Special Rule, the Controlling Player may add 2 to Repair Rolls made for that Model."
         },
         "stormbird-transport-bay": {
             "id": "stormbird-transport-bay",
@@ -38449,11 +38711,6 @@
             "name": "Void Shields",
             "text": "A Model with this Special Rule ignores Penetrating Hits as long as it still has active void shields. A Model with this Special Rule has a number of void shields equal to the value of X. While a Model with this Special Rule still has void shields, each time that Model suffers a Penetrating Hit as a result of a Shooting Attack, reduce the Damage of that Penetrating Hit to ‘0’ and reduce the number of void shields this Model has by 1. If the number of void shields a Model has is reduced to 0, this Special Rule has no further effect during that battle.",
             "configurable": true
-        },
-        "combi": {
-            "id": "combi",
-            "name": "Combi",
-            "text": "A Weapon with this Special Rule can fire multiple profiles simultaneously. Each time a Model makes a Shooting Attack with a Weapon Profile with this Special Rule, the Controlling Player can select another Profile from the same Weapon with this Special Rule and make attacks with it as part of the same Shooting Attack. Note that if that Profile also has the Limited (X) Special Rule, this does not allow it to be selected to make attacks more than the number of times equal to the value of X on that Special Rule."
         }
     },
     "groups": {
@@ -38820,6 +39077,922 @@
                 }
             ],
             "requirementText": "Requires a Mortificator or Mortificator in Terminator Armour in a Command slot"
+        },
+        "pride-of-the-legion": {
+            "id": "pride-of-the-legion",
+            "name": "Pride of the Legion",
+            "type": "primary",
+            "slots": [
+                {
+                    "roles": ["high-command"]
+                },
+                {
+                    "roles": ["command"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["command"]
+                },
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                },
+                {
+                    "roles": ["elites"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["elites"]
+                },
+                {
+                    "roles": ["elites"]
+                },
+                {
+                    "roles": ["elites"]
+                },
+                {
+                    "roles": ["elites"]
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 1",
+                        "message": "Needs 1 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 2",
+                        "message": "Needs 2 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 3",
+                        "message": "Needs 3 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 4",
+                        "message": "Needs 4 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 5",
+                        "message": "Needs 5 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 6",
+                        "message": "Needs 6 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 7",
+                        "message": "Needs 7 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 8",
+                        "message": "Needs 8 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 9",
+                        "message": "Needs 9 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 10",
+                        "message": "Needs 10 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 11",
+                        "message": "Needs 11 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 12",
+                        "message": "Needs 12 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                },
+                {
+                    "roles": ["heavy-transport"],
+                    "when": {
+                        "if": "group.count(role:retinue) + group.count(role:heavy-assault) + group.count(role:elites) >= 13",
+                        "message": "Needs 13 or more Retinue, Heavy Assault or Elites Units in this Detachment"
+                    }
+                }
+            ],
+            "description": "Replaces the Crusade Primary Detachment. Benefits: for each Retinue, Heavy Assault or Elites Battlefield Role Slot filled, one Heavy Transport Slot may be added to this Detachment. When adding a Unit in this Detachment to an Army Roster, all Models in that Unit with the Vanguard (X) Special Rule may have it exchanged for the Line (1) Special Rule. Restrictions: the Army must include at least one Model with the Master of the Legion Trait. Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following additional Detachments may be selected: Officer Cadre, Shock Assault, Heavy Support, Warlord, and Lord of War (may only be used to select Models with the Transport Sub-Type).",
+            "effects": [
+                {
+                    "kind": "slotTag",
+                    "add": ["pride-of-the-legion"]
+                }
+            ],
+            "addedSlotRoles": []
+        },
+        "fury-of-the-ancients": {
+            "id": "fury-of-the-ancients",
+            "name": "Fury of the Ancients",
+            "type": "primary",
+            "slots": [
+                {
+                    "roles": ["high-command"]
+                },
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["command"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["command"]
+                },
+                {
+                    "roles": ["war-engine"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["war-engine"]
+                },
+                {
+                    "roles": ["war-engine"]
+                },
+                {
+                    "roles": ["war-engine"]
+                },
+                {
+                    "roles": ["war-engine"]
+                },
+                {
+                    "roles": ["war-engine"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["war-engine"]
+                },
+                {
+                    "roles": ["war-engine"]
+                },
+                {
+                    "roles": ["war-engine"]
+                },
+                {
+                    "roles": ["war-engine"]
+                }
+            ],
+            "description": "Replaces the Crusade Primary Detachment. Benefits: Prime Slots in this Detachment may have the Ancient of War Prime Advantage selected for them. Restrictions: Models with the Command and Specialist Sub-Types may only be selected if they also have the Battlesmith (X) Special Rule. Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected, unless that Battlefield Role is War-engine. Only the following additional Detachments may be selected: Techmarine Covenant, Heavy Support, and Lord of War (may only be used to select Models with the Transport Sub-Type).",
+            "addedSlotRoles": ["war-engine"]
+        },
+        "sky-hunter-phalanx": {
+            "id": "sky-hunter-phalanx",
+            "name": "Sky-Hunter Phalanx",
+            "type": "primary",
+            "slots": [
+                {
+                    "roles": ["high-command"]
+                },
+                {
+                    "roles": ["command"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["command"]
+                },
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["fast-attack"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                },
+                {
+                    "roles": ["fast-attack"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                },
+                {
+                    "roles": ["fast-attack"]
+                }
+            ],
+            "description": "Replaces the Crusade Primary Detachment. Benefits: Prime Slots in this Detachment may have the Skilled Riders Prime Advantage selected for them. Restrictions: Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following additional Detachments may be selected: First Strike, Combat Pioneer, Lord of War. Every Unit in an Army with this Primary Detachment must only include Models with the Antigrav or Flyer Sub-Type or begin the Battle Embarked on a Transport with the Flyer Sub-Type; any other Units may not be Deployed and are Removed as Casualties (checked by count: such Units, Command and High Command Units aside, may not outnumber the Flyer Transports, since each Transport carries one Unit and the Characters joined to it).",
+            "addedSlotRoles": []
+        },
+        "armoured-spearhead": {
+            "id": "armoured-spearhead",
+            "name": "Armoured Spearhead",
+            "type": "primary",
+            "slots": [
+                {
+                    "roles": ["high-command", "lord-of-war"],
+                    "unitWhen": {
+                        "if": "unit.is(role:high-command) or unit.has(equipment:incursor-pattern-command-array)",
+                        "message": "A Lord of War fills this High Command Slot only with the Decurion Magna upgrade"
+                    }
+                },
+                {
+                    "roles": ["command", "armour"],
+                    "unitWhen": {
+                        "if": "unit.is(role:command) or unit.has(equipment:point-defence) or unit.has(equipment:locus-strike) or unit.is(trait:legiones-decurion)",
+                        "message": "An Armour Unit fills this Command Slot only with a Legiones Decurion upgrade"
+                    }
+                },
+                {
+                    "roles": ["command", "armour"],
+                    "unitWhen": {
+                        "if": "unit.is(role:command) or unit.has(equipment:point-defence) or unit.has(equipment:locus-strike) or unit.is(trait:legiones-decurion)",
+                        "message": "An Armour Unit fills this Command Slot only with a Legiones Decurion upgrade"
+                    }
+                },
+                {
+                    "roles": ["command", "armour"],
+                    "unitWhen": {
+                        "if": "unit.is(role:command) or unit.has(equipment:point-defence) or unit.has(equipment:locus-strike) or unit.is(trait:legiones-decurion)",
+                        "message": "An Armour Unit fills this Command Slot only with a Legiones Decurion upgrade"
+                    }
+                },
+                {
+                    "roles": ["support"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                },
+                {
+                    "roles": ["armour"]
+                }
+            ],
+            "listEffects": [
+                {
+                    "units": {
+                        "profiles": {
+                            "anyOf": ["vehicle"]
+                        }
+                    },
+                    "effects": [
+                        {
+                            "kind": "specialRule",
+                            "profiles": {
+                                "anyOf": ["vehicle"]
+                            },
+                            "rule": {
+                                "id": "squadron-tactics"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "description": "Replaces the Crusade Primary Detachment. Benefits: Models with the Vehicle Type in an Army using this Primary Detachment gain the Squadron Tactics Special Rule. Models with the Decurion Magna upgrade may be used to fill High Command Slots in this Detachment; Models with other Decurion upgrades may be used to fill Command Slots in this Detachment. Restrictions: Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following additional Detachments may be selected: Armoured Support, Combat Pioneer, First Strike, Techmarine Covenant, Armoured Fist, Lord of War. Models without the Vehicle Type may only be included if they have the Battlesmith (X) Special Rule. Units that include any Models with a Move Characteristic of '0' or '-' may not be selected.",
+            "addedSlotRoles": []
+        },
+        "orbital-drop-assault": {
+            "id": "orbital-drop-assault",
+            "name": "Orbital Drop Assault",
+            "type": "primary",
+            "slots": [
+                {
+                    "roles": ["high-command"]
+                },
+                {
+                    "roles": ["command"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["command"]
+                },
+                {
+                    "roles": ["retinue"]
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["heavy-assault"]
+                },
+                {
+                    "roles": ["troop"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["troop"]
+                },
+                {
+                    "roles": ["elites"],
+                    "tags": ["prime"]
+                },
+                {
+                    "roles": ["elites"]
+                },
+                {
+                    "roles": ["support"]
+                },
+                {
+                    "roles": ["support"]
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 1",
+                        "message": "Needs 1 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 2",
+                        "message": "Needs 2 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 3",
+                        "message": "Needs 3 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 4",
+                        "message": "Needs 4 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 5",
+                        "message": "Needs 5 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 6",
+                        "message": "Needs 6 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 7",
+                        "message": "Needs 7 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 8",
+                        "message": "Needs 8 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 9",
+                        "message": "Needs 9 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 10",
+                        "message": "Needs 10 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 11",
+                        "message": "Needs 11 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 12",
+                        "message": "Needs 12 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 13",
+                        "message": "Needs 13 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 14",
+                        "message": "Needs 14 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 15",
+                        "message": "Needs 15 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 16",
+                        "message": "Needs 16 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 17",
+                        "message": "Needs 17 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 18",
+                        "message": "Needs 18 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 19",
+                        "message": "Needs 19 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 20",
+                        "message": "Needs 20 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 21",
+                        "message": "Needs 21 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 22",
+                        "message": "Needs 22 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 23",
+                        "message": "Needs 23 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 24",
+                        "message": "Needs 24 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 25",
+                        "message": "Needs 25 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 26",
+                        "message": "Needs 26 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 27",
+                        "message": "Needs 27 or more non-Vehicle Units in the Army"
+                    }
+                },
+                {
+                    "roles": ["transport", "heavy-transport"],
+                    "when": {
+                        "if": "list.count(@non-vehicle-units) >= 28",
+                        "message": "Needs 28 or more non-Vehicle Units in the Army"
+                    }
+                }
+            ],
+            "description": "Replaces the Crusade Primary Detachment. Recommended for pre-arranged games only. Benefits: for each non-Vehicle Unit in an Army using this Primary Detachment, one Transport or Heavy Transport Slot may be added to this Detachment. Restrictions: Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following other Detachments may be selected: Tactical Support, First Strike (maximum of 1), Shock Assault, Heavy Support, Warlord, Lord of War. All Units must use the Orbital Drop Protocols deployment method: Units with the Deep Strike or Orbital Assault Vehicle Special Rule start in Reserves, Units with the Flyer Sub-Type in Aerial Reserves, and every other Unit (with any Models joined to it) must start Embarked on a Transport in Reserves or Aerial Reserves or is Destroyed; Models with the Orbital Assault Vehicle Special Rule and the Transport Sub-Type without an Embarked Unit are Destroyed (not checked).",
+            "addedSlotRoles": []
+        }
+    },
+    "selectors": {
+        "non-vehicle-units": {
+            "id": "non-vehicle-units",
+            "name": "Units with a non-Vehicle Model",
+            "match": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            }
+        },
+        "logistical-not-war-engine": {
+            "id": "logistical-not-war-engine",
+            "name": "Logistical Benefit Units outside a War-engine Slot",
+            "match": {
+                "traits": ["Logistical"],
+                "exclude": [
+                    {
+                        "roles": ["war-engine"]
+                    }
+                ]
+            }
+        },
+        "immobile-units": {
+            "id": "immobile-units",
+            "name": "Units with a Move Characteristic of 0 or -",
+            "match": {
+                "unitIds": [
+                    "araknae-quad-accelerator-platform",
+                    "deathstorm-drop-pod",
+                    "dreadnought-drop-pod",
+                    "drop-pod",
+                    "tarantula-sentry-gun"
+                ]
+            }
+        },
+        "non-transport-lords-of-war": {
+            "id": "non-transport-lords-of-war",
+            "name": "Lord of War Units with a Model without the Transport Sub-Type",
+            "match": {
+                "roles": ["lord-of-war"],
+                "profiles": {
+                    "noneOf": ["transport"]
+                }
+            }
+        },
+        "fury-disallowed-leaders": {
+            "id": "fury-disallowed-leaders",
+            "name": "Command or Specialist Units without Battlesmith",
+            "match": {
+                "profiles": {
+                    "anyOf": ["command", "specialist"]
+                },
+                "exclude": [
+                    {
+                        "specialRules": ["battlesmith"]
+                    }
+                ]
+            }
+        },
+        "spearhead-disallowed-units": {
+            "id": "spearhead-disallowed-units",
+            "name": "Units with a non-Vehicle Model, without Battlesmith",
+            "match": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                },
+                "exclude": [
+                    {
+                        "specialRules": ["battlesmith"]
+                    }
+                ]
+            }
+        },
+        "sky-hunter-passengers": {
+            "id": "sky-hunter-passengers",
+            "name": "Units with a Model that is neither Antigrav nor a Flyer, other than Command and High Command Units",
+            "match": {
+                "profiles": {
+                    "noneOf": ["antigrav", "flyer"]
+                },
+                "exclude": [
+                    {
+                        "roles": ["command", "high-command"]
+                    }
+                ]
+            }
+        },
+        "flyer-transports": {
+            "id": "flyer-transports",
+            "name": "Flyer Transports",
+            "match": {
+                "profiles": {
+                    "anyOf": ["flyer"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "noneOf": ["transport"]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "slotOptions": {
+        "ancient-of-war": {
+            "id": "ancient-of-war",
+            "name": "Ancient of War",
+            "text": "Models in a Unit selected to fill a Slot with this Prime Advantage gain the Eternal Warrior (1) Special Rule. Only for Prime Slots in a Fury of the Ancients Primary Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "profiles": {
+                    "anyOf": ["walker"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["malefic"]
+                        }
+                    }
+                ]
+            },
+            "when": {
+                "if": "group.is(group:fury-of-the-ancients)",
+                "message": "Fury of the Ancients Prime Slots only"
+            },
+            "effects": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "eternal-warrior",
+                        "value": "1"
+                    }
+                }
+            ]
+        },
+        "skilled-riders": {
+            "id": "skilled-riders",
+            "name": "Skilled Riders",
+            "text": "Models with the Cavalry Type in a Unit selected to fill a Slot with this Prime Advantage gain the Shrouded (6+) and Move Through Cover Special Rules. Only for Prime Slots in a Sky-Hunter Phalanx Primary Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "profiles": {
+                    "anyOf": ["cavalry"]
+                }
+            },
+            "when": {
+                "if": "group.is(group:sky-hunter-phalanx)",
+                "message": "Sky-Hunter Phalanx Prime Slots only"
+            },
+            "effects": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["cavalry"]
+                    },
+                    "rule": {
+                        "id": "shrouded",
+                        "value": "6+"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["cavalry"]
+                    },
+                    "rule": {
+                        "id": "move-through-cover"
+                    }
+                }
+            ]
+        },
+        "pride-vanguard-to-line": {
+            "id": "pride-vanguard-to-line",
+            "name": "Exchange Vanguard for Line (1)",
+            "text": "When adding a Unit in a Pride of the Legion Detachment to an Army Roster, all Models in that Unit with the Vanguard (X) Special Rule may have it exchanged for the Line (1) Special Rule.",
+            "slotTag": "pride-of-the-legion",
+            "units": {
+                "specialRules": ["vanguard"]
+            },
+            "effects": [
+                {
+                    "kind": "specialRule",
+                    "replace": {
+                        "from": ["vanguard"],
+                        "to": {
+                            "id": "line",
+                            "value": "1"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "listRules": {
+        "pride-of-the-legion-master-of-the-legion": {
+            "kind": "expression",
+            "id": "pride-of-the-legion-master-of-the-legion",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:pride-of-the-legion) == 0 or list.count(trait:master-of-the-legion) > 0",
+                "message": "An Army using the Pride of the Legion Primary Detachment must include at least one Model with the Master of the Legion Trait"
+            }
+        },
+        "primary-no-slot-prime-advantages": {
+            "kind": "expression",
+            "id": "primary-no-slot-prime-advantages",
+            "scope": "list",
+            "when": {
+                "if": "(main.count(group:pride-of-the-legion) == 0 and main.count(group:sky-hunter-phalanx) == 0 and main.count(group:armoured-spearhead) == 0 and main.count(group:orbital-drop-assault) == 0) or list.count(trait:logistical) + list.count(trait:clade-operative) + list.count(trait:cult-operative) + list.count(trait:the-iron-clad) + list.count(trait:rewards-of-treachery) + list.count(trait:logisticae) + list.count(trait:paragon-of-malevolence) == 0",
+                "message": "With the Pride of the Legion, Sky-Hunter Phalanx, Armoured Spearhead or Orbital Drop Assault Primary Detachment, Prime Advantages which add additional Battlefield Role Slots may not be selected"
+            }
+        },
+        "fury-of-the-ancients-slot-prime-advantages": {
+            "kind": "expression",
+            "id": "fury-of-the-ancients-slot-prime-advantages",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:fury-of-the-ancients) == 0 or list.count(@logistical-not-war-engine) + list.count(trait:clade-operative) + list.count(trait:cult-operative) + list.count(trait:rewards-of-treachery) + list.count(trait:logisticae) + list.count(trait:paragon-of-malevolence) == 0",
+                "message": "With the Fury of the Ancients Primary Detachment, Prime Advantages which add additional Battlefield Role Slots may only add War-engine Slots"
+            }
+        },
+        "pride-of-the-legion-additional-detachments": {
+            "kind": "expression",
+            "id": "pride-of-the-legion-additional-detachments",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:pride-of-the-legion) == 0 or list.count(group:allied) + list.count(group:household-additional) + list.count(group:auxiliary) + list.count(group:apex) - list.count(group:officer-cadre) - list.count(group:shock-assault) - list.count(group:heavy-support) == 0",
+                "message": "An Army with the Pride of the Legion Primary Detachment may only include the Officer Cadre, Shock Assault, Heavy Support, Warlord and Lord of War Detachments (no Allied Detachment)"
+            }
+        },
+        "fury-of-the-ancients-additional-detachments": {
+            "kind": "expression",
+            "id": "fury-of-the-ancients-additional-detachments",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:fury-of-the-ancients) == 0 or list.count(group:allied) + list.count(group:household-additional) + list.count(group:auxiliary) + list.count(group:apex) + list.count(group:warlord) - list.count(group:techmarine-covenant) - list.count(group:heavy-support) == 0",
+                "message": "An Army with the Fury of the Ancients Primary Detachment may only include the Techmarine Covenant, Heavy Support and Lord of War Detachments (no Allied Detachment)"
+            }
+        },
+        "sky-hunter-phalanx-additional-detachments": {
+            "kind": "expression",
+            "id": "sky-hunter-phalanx-additional-detachments",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:sky-hunter-phalanx) == 0 or list.count(group:allied) + list.count(group:household-additional) + list.count(group:auxiliary) + list.count(group:apex) + list.count(group:warlord) - list.count(group:first-strike) - list.count(group:combat-pioneer) == 0",
+                "message": "An Army with the Sky-Hunter Phalanx Primary Detachment may only include the First Strike, Combat Pioneer and Lord of War Detachments (no Allied Detachment)"
+            }
+        },
+        "armoured-spearhead-additional-detachments": {
+            "kind": "expression",
+            "id": "armoured-spearhead-additional-detachments",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:armoured-spearhead) == 0 or list.count(group:allied) + list.count(group:household-additional) + list.count(group:auxiliary) + list.count(group:apex) + list.count(group:warlord) - list.count(group:armoured-support) - list.count(group:combat-pioneer) - list.count(group:first-strike) - list.count(group:techmarine-covenant) - list.count(group:armoured-fist) == 0",
+                "message": "An Army with the Armoured Spearhead Primary Detachment may only include the Armoured Support, Combat Pioneer, First Strike, Techmarine Covenant, Armoured Fist and Lord of War Detachments (no Allied Detachment)"
+            }
+        },
+        "orbital-drop-assault-additional-detachments": {
+            "kind": "expression",
+            "id": "orbital-drop-assault-additional-detachments",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:orbital-drop-assault) == 0 or list.count(group:allied) + list.count(group:household-additional) + list.count(group:auxiliary) + list.count(group:apex) - list.count(group:tactical-support) - list.count(group:first-strike) - list.count(group:shock-assault) - list.count(group:heavy-support) == 0",
+                "message": "An Army with the Orbital Drop Assault Primary Detachment may only include the Tactical Support, First Strike, Shock Assault, Heavy Support, Warlord and Lord of War Detachments (no Allied Detachment)"
+            }
+        },
+        "orbital-drop-assault-first-strike-cap": {
+            "kind": "expression",
+            "id": "orbital-drop-assault-first-strike-cap",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:orbital-drop-assault) == 0 or list.count(group:first-strike) <= 1",
+                "message": "An Army with the Orbital Drop Assault Primary Detachment may include no more than one First Strike Detachment"
+            }
+        },
+        "primary-lord-of-war-transports-only": {
+            "kind": "expression",
+            "id": "primary-lord-of-war-transports-only",
+            "scope": "list",
+            "when": {
+                "if": "(main.count(group:pride-of-the-legion) == 0 and main.count(group:fury-of-the-ancients) == 0) or list.count(@non-transport-lords-of-war) == 0",
+                "message": "With the Pride of the Legion or Fury of the Ancients Primary Detachment, the Lord of War Detachment may only select Models with the Transport Sub-Type"
+            }
+        },
+        "fury-of-the-ancients-battlesmith": {
+            "kind": "expression",
+            "id": "fury-of-the-ancients-battlesmith",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:fury-of-the-ancients) == 0 or list.count(@fury-disallowed-leaders) == 0",
+                "message": "With the Fury of the Ancients Primary Detachment, Models with the Command or Specialist Sub-Type must have the Battlesmith (X) Special Rule"
+            }
+        },
+        "armoured-spearhead-vehicles-only": {
+            "kind": "expression",
+            "id": "armoured-spearhead-vehicles-only",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:armoured-spearhead) == 0 or list.count(@spearhead-disallowed-units) + list.count(@immobile-units) == 0",
+                "message": "With the Armoured Spearhead Primary Detachment, Models without the Vehicle Type must have the Battlesmith (X) Special Rule, and Units with a Move of 0 or - may not be selected"
+            }
+        },
+        "sky-hunter-phalanx-flyer-transports": {
+            "kind": "expression",
+            "id": "sky-hunter-phalanx-flyer-transports",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:sky-hunter-phalanx) == 0 or list.count(@sky-hunter-passengers) <= list.count(@flyer-transports)",
+                "message": "With the Sky-Hunter Phalanx Primary Detachment, each Unit with a Model that is neither Antigrav nor a Flyer (Command and High Command Units aside) must begin Embarked on its own Flyer Transport: take at least as many Flyer Transports as such Units"
+            }
         }
     }
 }
