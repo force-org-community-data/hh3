@@ -23,12 +23,60 @@
         "telekinesis": {
             "id": "telekinesis",
             "name": "Telekinesis",
-            "text": "A Model with the Telekinesis Discipline gains the following benefits: the Shrouded (4+) Special Rule; the Force Barrier Psychic Reaction; the Immovable Force Psychic Weapon; the ‘Telekine’ Trait."
+            "text": "A Model with the Telekinesis Discipline gains the following benefits: the Shrouded (4+) Special Rule; the Force Barrier Psychic Reaction; the Immovable Force Psychic Weapon; the ‘Telekine’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Immovable Force",
+                        "stats": {
+                            "r": "18",
+                            "fp": "3",
+                            "rs": "6",
+                            "ap": "4",
+                            "d": "1"
+                        },
+                        "traits": ["Ranged", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "pinning",
+                                "value": "2"
+                            },
+                            {
+                                "id": "force",
+                                "value": "Firepower"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "telepathy": {
             "id": "telepathy",
             "name": "Telepathy",
-            "text": "A Model with the Telepathy Discipline gains the following benefits: the Fear (1) Special Rule; the Mind-burst Psychic Power; the Cursed Whispers Psychic Weapon; the ‘Telepath’ Trait."
+            "text": "A Model with the Telepathy Discipline gains the following benefits: the Fear (1) Special Rule; the Mind-burst Psychic Power; the Cursed Whispers Psychic Weapon; the ‘Telepath’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Cursed Whispers",
+                        "stats": {
+                            "r": "18",
+                            "fp": "2D6",
+                            "rs": "3",
+                            "ap": "-",
+                            "d": "1"
+                        },
+                        "traits": ["Ranged", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "stun",
+                                "value": "-"
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     },
     "upgrades": {

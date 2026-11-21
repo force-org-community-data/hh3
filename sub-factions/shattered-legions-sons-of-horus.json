@@ -1,0 +1,807 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "shattered-legions-sons-of-horus",
+    "version": "1.0.0",
+    "name": "Sons of Horus (Shattered Legions)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "shattered-legions",
+    "description": "Sons of Horus selected for a Shattered Legions Army: the Brutal Tradition Mutable Tactics benefit, the Armoury of the Sons of Horus (options a Legion adds to the shared Legion wargear lists are not included), the Exemplars of the Legion Prime Advantage for Sons of Horus Units, and Garviel Loken as a Commander of the Shattered Legions.",
+    "when": {
+        "if": "contingent.is(subfaction:shattered-legions)",
+        "message": "Shattered Legions Armies only"
+    },
+    "units": {
+        "garviel-loken": {
+            "id": "garviel-loken",
+            "name": "Garviel Loken",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "garviel-loken",
+                    "name": "Garviel Loken",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "hatred",
+                            "value": "Traitor"
+                        },
+                        {
+                            "id": "born-survivor"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Sons of Horus", "Master of the Legion"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "paragon-blade"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "banestrike-bolt-cannon": {
+            "id": "banestrike-bolt-cannon",
+            "name": "Banestrike bolt cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike bolt cannon",
+                    "stats": {
+                        "r": "24",
+                        "fp": "4",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "banestrike-bolter": {
+            "id": "banestrike-bolter",
+            "name": "Banestrike bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "carsoran-power-axe": {
+            "id": "carsoran-power-axe",
+            "name": "Carsoran power axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Carsoran power axe",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "carsoran-power-tabar": {
+            "id": "carsoran-power-tabar",
+            "name": "Carsoran power tabar",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Carsoran power tabar",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "banestrike-combi-bolter": {
+            "id": "banestrike-combi-bolter",
+            "name": "Banestrike Combi-bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike combi-bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "4",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "brutal-enforcement": {
+            "id": "brutal-enforcement",
+            "name": "Brutal Enforcement",
+            "text": "A Model with this Special Rule may target a friendly Unit with a Shooting Attack and the targeted Unit loses the Routed Tactical Status. At the start of the Move Sub-Phase, the Controlling Player of a Model with this Special Rule can select one Unit from their Army with the Routed Tactical Status that is within 12\" of the Model with this Special Rule. If they do, the Model with this Special Rule immediately makes a Shooting Attack, targeting that Unit, using only its Banestrike bolt cannon. This Shooting Attack does not cause any Leadership Checks. Once this Shooting Attack has been resolved, the Target Unit loses the Routed Tactical Status."
+        }
+    },
+    "upgrades": {
+        "sons-of-horus-decurion-lanius-sicaran": {
+            "id": "sons-of-horus-decurion-lanius-sicaran",
+            "name": "Decurion Lanius",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Sons of Horus Trait that has no Pintle Mounted Weapons. A Model with this upgrade has a Pintle Mounted Banestrike bolt cannon and gains the Brutal Enforcement Special Rule.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "decurion-lanius": {
+                    "id": "decurion-lanius",
+                    "name": "Decurion Lanius",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["banestrike-bolt-cannon"],
+                    "equipmentRefs": ["brutal-enforcement"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Legiones Decurion"]
+                        }
+                    ]
+                }
+            },
+            "replaces": ["option-3"],
+            "restrictions": {
+                "exclusions": [
+                    {
+                        "kind": "equipment",
+                        "id": "point-defence"
+                    },
+                    {
+                        "kind": "equipment",
+                        "id": "locus-strike"
+                    }
+                ],
+                "required": [
+                    {
+                        "kind": "weapon",
+                        "id": "twin-accelerator-autocannon"
+                    },
+                    {
+                        "kind": "weapon",
+                        "id": "punisher-rotary-cannon"
+                    }
+                ],
+                "requiredAnd": false
+            },
+            "gearNote": "Pintle Mounted"
+        },
+        "sons-of-horus-decurion-lanius-kratos-assault-tank": {
+            "id": "sons-of-horus-decurion-lanius-kratos-assault-tank",
+            "name": "Decurion Lanius",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Sons of Horus Trait that has no Pintle Mounted Weapons. A Model with this upgrade has a Pintle Mounted Banestrike bolt cannon and gains the Brutal Enforcement Special Rule.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "decurion-lanius": {
+                    "id": "decurion-lanius",
+                    "name": "Decurion Lanius",
+                    "cost": {
+                        "points": 30
+                    },
+                    "weaponRefs": ["banestrike-bolt-cannon"],
+                    "equipmentRefs": ["brutal-enforcement"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Legiones Decurion"]
+                        }
+                    ]
+                }
+            },
+            "replaces": ["option-5"],
+            "gearNote": "Pintle Mounted",
+            "restrictions": {
+                "exclusions": [
+                    {
+                        "kind": "equipment",
+                        "id": "point-defence"
+                    },
+                    {
+                        "kind": "equipment",
+                        "id": "locus-strike"
+                    }
+                ],
+                "required": [],
+                "requiredAnd": false
+            }
+        },
+        "sons-of-horus-decurion-lanius-predator": {
+            "id": "sons-of-horus-decurion-lanius-predator",
+            "name": "Decurion Lanius",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Sons of Horus Trait that has no Pintle Mounted Weapons. A Model with this upgrade has a Pintle Mounted Banestrike bolt cannon and gains the Brutal Enforcement Special Rule.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "decurion-lanius": {
+                    "id": "decurion-lanius",
+                    "name": "Decurion Lanius",
+                    "cost": {
+                        "points": 25
+                    },
+                    "weaponRefs": ["banestrike-bolt-cannon"],
+                    "equipmentRefs": ["brutal-enforcement"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Legiones Decurion"]
+                        }
+                    ]
+                }
+            },
+            "replaces": ["option-3"],
+            "gearNote": "Pintle Mounted",
+            "restrictions": {
+                "exclusions": [
+                    {
+                        "kind": "equipment",
+                        "id": "point-defence"
+                    },
+                    {
+                        "kind": "equipment",
+                        "id": "locus-strike"
+                    }
+                ],
+                "required": [],
+                "requiredAnd": false
+            }
+        },
+        "sons-of-horus-banestrike-bolters-veterans": {
+            "id": "sons-of-horus-banestrike-bolters-veterans",
+            "name": "Banestrike Bolters",
+            "description": "Any Model in a Veteran Tactical Squad with the Sons of Horus Trait may have its bolter exchanged for one banestrike bolter.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "bolter-to-banestrike-bolter": {
+                    "id": "bolter-to-banestrike-bolter",
+                    "name": "Bolter to banestrike bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "banestrike-bolter"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "sons-of-horus-banestrike-bolters-seekers": {
+            "id": "sons-of-horus-banestrike-bolters-seekers",
+            "name": "Banestrike Bolters",
+            "description": "Any Model in a Seeker Squad with the Sons of Horus Trait may have its kraken bolter exchanged for one banestrike bolter.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "kraken-bolter-to-banestrike-bolter": {
+                    "id": "kraken-bolter-to-banestrike-bolter",
+                    "name": "Kraken bolter to banestrike bolter",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "kraken-bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "banestrike-bolter"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "sons-of-horus-carsoran-power-axes": {
+            "id": "sons-of-horus-carsoran-power-axes",
+            "name": "Carsoran Power Axes",
+            "description": "Any Model with the Sons of Horus Trait may have its power axe exchanged for one Carsoran power axe or one Carsoran power tabar.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "power-axe-to-carsoran-power-axe": {
+                    "id": "power-axe-to-carsoran-power-axe",
+                    "name": "Power axe to carsoran power axe",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "carsoran-power-axe"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-carsoran-power-tabar": {
+                    "id": "power-axe-to-carsoran-power-tabar",
+                    "name": "Power axe to carsoran power tabar",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "carsoran-power-tabar"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "sons-of-horus-banestrike-bolters-combi-bolter": {
+            "id": "sons-of-horus-banestrike-bolters-combi-bolter",
+            "name": "Banestrike Combi-bolter",
+            "description": "Any Model with the Sons of Horus Trait and the Command or Champion Sub-Type may have its bolter exchanged for one banestrike bolter, or its combi-bolter exchanged for one banestrike combi-bolter.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "combi-bolter-to-banestrike-combi-bolter": {
+                    "id": "combi-bolter-to-banestrike-combi-bolter",
+                    "name": "Combi-bolter to banestrike combi-bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "combi-bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "banestrike-combi-bolter"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "count": 1
+                }
+            ]
+        },
+        "sons-of-horus-banestrike-bolters": {
+            "id": "sons-of-horus-banestrike-bolters",
+            "name": "Banestrike Bolter",
+            "description": "Any Model with the Sons of Horus Trait and the Command or Champion Sub-Type may have its bolter exchanged for one banestrike bolter, or its combi-bolter exchanged for one banestrike combi-bolter.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "bolter-to-banestrike-bolter": {
+                    "id": "bolter-to-banestrike-bolter",
+                    "name": "Bolter to banestrike bolter",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "banestrike-bolter"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "bolter",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        },
+        "born-survivor": {
+            "id": "born-survivor",
+            "name": "Born Survivor",
+            "text": "This Special Rule allows Garviel Loken to avoid being Removed as a Casualty. If the Wounds Characteristic of a Model with this Special Rule is reduced to 0 or less, the Controlling Player can roll one Dice. On a 4+, this Model is not Removed as a Casualty and has its current Wounds Characteristic set to ‘1’."
+        },
+        "mutable-tactics-sons-of-horus": {
+            "id": "mutable-tactics-sons-of-horus",
+            "name": "Brutal Tradition (Mutable Tactics)",
+            "text": "Those who fight alongside the Warmaster’s own sons soon learn that mercy is weakness. When surrounded by foes, only tenacity and skill count. Models subject to this benefit gain a bonus to Hit Tests while outnumbered. If the Sons of Horus Legion was selected for this Army’s Shattered Legions Trait, when making a Hit Test for a Model from that Army subject to the Mutable Tactics Special Rule, add a modifier of +1 to the result if its Controlling Player controls the fewest Models in that Combat. Models with the Bulky (X) Special Rule count as a number of Models equal to the value of X in the variant of the Bulky (X) Special Rule that Model has."
+        },
+        "legion-specialists": {
+            "id": "legion-specialists",
+            "name": "Legion Specialists",
+            "text": "If Models in this Unit would benefit from the Mutable Tactics Legion Tactica, they may only benefit from the bonus related to their Legion whose Trait was replaced as part of the Exemplars of the Legion Prime Advantage."
+        }
+    },
+    "groups": {},
+    "slotOptions": {
+        "exemplars-of-the-legion-sons-of-horus": {
+            "id": "exemplars-of-the-legion-sons-of-horus",
+            "name": "Exemplars of the Legion (Sons of Horus)",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. The Slot added may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War. Each Unit selected to fill such a Slot must be from the Legiones Astartes Army List, not include any Models that have the Unique Sub-Type, and have a Faction Trait that matches the Legion represented by the Model that was selected to fill the Slot with this Prime Advantage. All Models in any of these Units have their Faction Trait replaced with ‘Shattered Legions’ and have the Legion Specialists Special Rule. Only for a Unit with the Command Battlefield Role in a Shattered Legions Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "roles": ["command"]
+            },
+            "when": {
+                "if": "contingent.is(subfaction:shattered-legions)",
+                "message": "Shattered Legions Detachments only"
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Exemplars of the Legion"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "retinue",
+                        "elites",
+                        "war-engine",
+                        "troop",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "legiones-astartes",
+                        "subFactions": ["sons-of-horus"]
+                    },
+                    "units": {
+                        "exclude": [
+                            {
+                                "profiles": {
+                                    "anyOf": ["Unique"]
+                                }
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Legiones Astartes", "Sons of Horus"],
+                                "to": "Shattered Legions"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "legion-specialists"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "shattered-legions-sons-of-horus-mutable-tactics": {
+            "id": "shattered-legions-sons-of-horus-mutable-tactics",
+            "name": "Brutal Tradition (Mutable Tactics)",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "mutable-tactics-sons-of-horus"
+                    }
+                }
+            ]
+        },
+        "shattered-legions-sons-of-horus-banestrike-bolters": {
+            "id": "shattered-legions-sons-of-horus-banestrike-bolters",
+            "name": "Banestrike Bolter",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-banestrike-bolters"
+                }
+            ]
+        },
+        "shattered-legions-sons-of-horus-banestrike-bolters-combi-bolter": {
+            "id": "shattered-legions-sons-of-horus-banestrike-bolters-combi-bolter",
+            "name": "Banestrike Combi-bolter",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-banestrike-bolters-combi-bolter"
+                }
+            ]
+        },
+        "shattered-legions-sons-of-horus-carsoran-power-axes": {
+            "id": "shattered-legions-sons-of-horus-carsoran-power-axes",
+            "name": "Carsoran Power Axes",
+            "selector": {
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-carsoran-power-axes"
+                }
+            ]
+        },
+        "shattered-legions-sons-of-horus-banestrike-bolters-seekers": {
+            "id": "shattered-legions-sons-of-horus-banestrike-bolters-seekers",
+            "name": "Banestrike Bolters (Seeker Squad)",
+            "selector": {
+                "unitIds": ["seeker-squad"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-banestrike-bolters-seekers"
+                }
+            ]
+        },
+        "shattered-legions-sons-of-horus-banestrike-bolters-veterans": {
+            "id": "shattered-legions-sons-of-horus-banestrike-bolters-veterans",
+            "name": "Banestrike Bolters (Veteran Tactical Squad)",
+            "selector": {
+                "unitIds": ["veteran-tactical-squad"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-banestrike-bolters-veterans"
+                }
+            ]
+        },
+        "shattered-legions-sons-of-horus-decurion-lanius-predator": {
+            "id": "shattered-legions-sons-of-horus-decurion-lanius-predator",
+            "name": "Decurion Lanius",
+            "selector": {
+                "unitIds": ["predator"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-decurion-lanius-predator"
+                }
+            ]
+        },
+        "shattered-legions-sons-of-horus-decurion-lanius-kratos-assault-tank": {
+            "id": "shattered-legions-sons-of-horus-decurion-lanius-kratos-assault-tank",
+            "name": "Decurion Lanius",
+            "selector": {
+                "unitIds": ["kratos-assault-tank"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-decurion-lanius-kratos-assault-tank"
+                }
+            ]
+        },
+        "shattered-legions-sons-of-horus-decurion-lanius-sicaran": {
+            "id": "shattered-legions-sons-of-horus-decurion-lanius-sicaran",
+            "name": "Decurion Lanius",
+            "selector": {
+                "unitIds": ["sicaran"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "sons-of-horus-decurion-lanius-sicaran"
+                }
+            ]
+        }
+    }
+}

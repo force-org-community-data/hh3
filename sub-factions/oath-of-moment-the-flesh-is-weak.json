@@ -1,0 +1,109 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-the-flesh-is-weak",
+    "version": "1.0.0",
+    "name": "Oath of Moment: The Flesh is Weak",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "The Horus Heresy brought many warriors to madness, for it shattered oaths and broke all bonds of loyalty. In such times of turmoil, many would turn to the most extreme of methods to restore their sanity, some giving themselves over to the machine, remaking themselves in steel and cogitator. A Model with this Special Rule gains the Automata Type and other Special Rules. All Models with the Blackshields Trait and the Infantry Type in a Detachment with this Oath of Moment must replace the Infantry Type with the Automata Type. They also replace the Blackshields Tactica Special Rule, Bastard Sons of Fate, with the following Special Rule: Not modelled: Infantry Models do not change to the Automata Type in the data.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields)",
+        "message": "Blackshields Detachments only"
+    },
+    "units": {},
+    "weapons": {},
+    "equipment": {},
+    "upgrades": {},
+    "specialRules": {
+        "oath-of-moment-the-flesh-is-weak": {
+            "id": "oath-of-moment-the-flesh-is-weak",
+            "name": "Oath of Moment: The Flesh is Weak",
+            "text": "The Horus Heresy brought many warriors to madness, for it shattered oaths and broke all bonds of loyalty. In such times of turmoil, many would turn to the most extreme of methods to restore their sanity, some giving themselves over to the machine, remaking themselves in steel and cogitator. A Model with this Special Rule gains the Automata Type and other Special Rules. All Models with the Blackshields Trait and the Infantry Type in a Detachment with this Oath of Moment must replace the Infantry Type with the Automata Type. They also replace the Blackshields Tactica Special Rule, Bastard Sons of Fate, with the following Special Rule:"
+        },
+        "linked-cogitator-units": {
+            "id": "linked-cogitator-units",
+            "name": "Linked Cogitator Units",
+            "text": "Along with more commonplace augmetics, Space Marines that have given themselves over to the machine also sported other more esoteric enhancements. With human logic proven fallible by the Horus Heresy, only the cold logic of the machine seemed true to such warriors. Models with this Special Rule can Control Objectives, and score bonus Victory Points based on the size of the Unit. A Model with this Special Rule and the Automata Type can Control and Contest Objectives. However, such Models may not benefit from the Line (X) Special Rule, but instead gain a bonus to the number of Victory Points scored when controlling an Objective based on the number of Models with this Special Rule in the Unit. If the Unit contains four or less Models with this Special Rule then it scores one less Victory Point when Controlling an Objective, to a minimum of 0. If the Unit contains ten or more Models with this Special Rule then it scores one additional Victory Point when Controlling an Objective. Further, any Model with the Transport Sub-Type selected as part of a Detachment that has this Oath of Moment gains the following Special Rule:"
+        },
+        "augmetic-transport-bay": {
+            "id": "augmetic-transport-bay",
+            "name": "Augmetic Transport Bay",
+            "text": "Just as they remodelled themselves, warriors given over to the machine rebuilt their transports to facilitate their new forms. Transports can embark Automata and have increased Capacity. A Model with this Special Rule may only have Models with the Automata Type and the Blackshields Trait Embark upon it. In addition, a Model with this Special Rule also increases its Transport Capacity by 3."
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "oath-of-moment-the-flesh-is-weak": {
+            "id": "oath-of-moment-the-flesh-is-weak",
+            "name": "Oath of Moment: The Flesh is Weak",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "oath-of-moment-the-flesh-is-weak"
+                    }
+                }
+            ]
+        },
+        "flesh-is-weak-linked-cogitator-units": {
+            "id": "flesh-is-weak-linked-cogitator-units",
+            "name": "Linked Cogitator Units",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["infantry"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["infantry"]
+                    },
+                    "replace": {
+                        "from": ["bastard-sons-of-fate"],
+                        "to": {
+                            "id": "linked-cogitator-units"
+                        }
+                    }
+                }
+            ]
+        },
+        "flesh-is-weak-augmetic-transport-bay": {
+            "id": "flesh-is-weak-augmetic-transport-bay",
+            "name": "Augmetic Transport Bay",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["transport"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": ["transport"]
+                    },
+                    "rule": {
+                        "id": "augmetic-transport-bay"
+                    }
+                },
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "anyOf": ["transport"]
+                    },
+                    "changes": [
+                        {
+                            "stat": "transport-capacity",
+                            "op": "add",
+                            "value": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

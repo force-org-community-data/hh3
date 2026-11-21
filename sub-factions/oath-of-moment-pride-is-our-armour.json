@@ -1,0 +1,55 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-pride-is-our-armour",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Pride is our Armour",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Whether Terran recruits from the original Crusade fleets, battle-scarred survivors of the Great Crusade or elite warriors from the far-flung Legion home worlds, some Blackshields bands were composed only of the most renowned veterans of their Legion. Any Detachment with this Special Rule must have all Troops Slots in a Primary or Allied Detachment replaced with Elites Slots. A Primary or Allied Detachment with this Oath of Moment replaces all Troops Slots with Elites Slots. Furthermore, a Detachment with this Oath of Moment may not include any Troops Choices, including in any Auxiliary or Apex Detachment attached to that Detachment. Not modelled: Troops Slots are not turned into Elites Slots; the list only flags Troops Choices.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields)",
+        "message": "Blackshields Detachments only"
+    },
+    "units": {},
+    "weapons": {},
+    "equipment": {},
+    "upgrades": {},
+    "specialRules": {
+        "oath-of-moment-pride-is-our-armour": {
+            "id": "oath-of-moment-pride-is-our-armour",
+            "name": "Oath of Moment: Pride is our Armour",
+            "text": "Whether Terran recruits from the original Crusade fleets, battle-scarred survivors of the Great Crusade or elite warriors from the far-flung Legion home worlds, some Blackshields bands were composed only of the most renowned veterans of their Legion. Any Detachment with this Special Rule must have all Troops Slots in a Primary or Allied Detachment replaced with Elites Slots. A Primary or Allied Detachment with this Oath of Moment replaces all Troops Slots with Elites Slots. Furthermore, a Detachment with this Oath of Moment may not include any Troops Choices, including in any Auxiliary or Apex Detachment attached to that Detachment."
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "oath-of-moment-pride-is-our-armour": {
+            "id": "oath-of-moment-pride-is-our-armour",
+            "name": "Oath of Moment: Pride is our Armour",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "oath-of-moment-pride-is-our-armour"
+                    }
+                }
+            ]
+        }
+    },
+    "listRules": {
+        "pride-is-our-armour-no-troops": {
+            "kind": "count",
+            "id": "pride-is-our-armour-no-troops",
+            "units": {
+                "roles": ["troop"]
+            },
+            "scope": "contingent",
+            "max": 0,
+            "message": "A Detachment with the Pride is our Armour Oath of Moment may not include any Troops Choices"
+        }
+    }
+}

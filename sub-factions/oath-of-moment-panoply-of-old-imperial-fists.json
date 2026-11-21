@@ -1,0 +1,640 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-imperial-fists",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (Imperial Fists)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: Imperial Fists. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-dark-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-warriors) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-night-lords) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-blood-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-hands) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-world-eaters) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-thousand-sons) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-word-bearers) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-salamanders) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-raven-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-alpha-legion)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {
+        "decurion-sagittar-iliastus-assault-cannon": {
+            "id": "decurion-sagittar-iliastus-assault-cannon",
+            "name": "Iliastus Assault Cannon (Decurion Sagittar)",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Sustained fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "skyfire"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Maximal fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "5",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        },
+                        {
+                            "id": "skyfire"
+                        },
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "solarite-power-gauntlet": {
+            "id": "solarite-power-gauntlet",
+            "name": "Solarite Power Gauntlet",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Solarite power gauntlet",
+                    "stats": {
+                        "im": "-3",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "vigil-pattern-storm-shield": {
+            "id": "vigil-pattern-storm-shield",
+            "name": "Vigil Pattern Storm Shield",
+            "text": "This is an item of Wargear providing additional protection to specialist Imperial Fists Models. Any Model with the Command Sub-Type and the Imperial Fists Trait may have its boarding shield or a combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model or its combat shield exchanged for one Vigil pattern storm shield for +10 Points per Model. Any Model with the Imperial Fists Trait in a Tartaros Terminator Command Squad or Tartaros Terminator Squad may have its combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model. Any Model with the Imperial Fists Trait in a Cataphractii Terminator Command Squad or Cataphractii Terminator Squad may have its combi-bolter exchanged for one Vigil pattern storm shield for Free. A Model with a Vigil pattern storm shield has a 4+ Invulnerable Save. In addition, it gains the Shield Trait and the Heavy Sub-Type."
+        }
+    },
+    "upgrades": {
+        "imperial-fists-decurion-sagittar-sicaran": {
+            "id": "imperial-fists-decurion-sagittar-sicaran",
+            "name": "Decurion Sagittar",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Imperial Fists Trait that has no Pintle Mounted Weapons. A Model with this upgrade gains a Pintle Mounted Iliastus assault cannon and an augury scanner; that Iliastus assault cannon gains the Skyfire and Precision (6+) Special Rules. No Unit may have more than one Legiones Decurion upgrade.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "decurion-sagittar": {
+                    "id": "decurion-sagittar",
+                    "name": "Decurion Sagittar",
+                    "cost": {
+                        "points": 30
+                    },
+                    "weaponRefs": ["decurion-sagittar-iliastus-assault-cannon"],
+                    "equipmentRefs": ["augury-scanner"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Legiones Decurion"]
+                        }
+                    ]
+                }
+            },
+            "replaces": ["option-3"],
+            "restrictions": {
+                "exclusions": [
+                    {
+                        "kind": "equipment",
+                        "id": "point-defence"
+                    },
+                    {
+                        "kind": "equipment",
+                        "id": "locus-strike"
+                    }
+                ],
+                "required": [
+                    {
+                        "kind": "weapon",
+                        "id": "twin-accelerator-autocannon"
+                    },
+                    {
+                        "kind": "weapon",
+                        "id": "punisher-rotary-cannon"
+                    }
+                ],
+                "requiredAnd": false
+            },
+            "gearNote": "Pintle Mounted"
+        },
+        "imperial-fists-decurion-sagittar-kratos-assault-tank": {
+            "id": "imperial-fists-decurion-sagittar-kratos-assault-tank",
+            "name": "Decurion Sagittar",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Imperial Fists Trait that has no Pintle Mounted Weapons. A Model with this upgrade gains a Pintle Mounted Iliastus assault cannon and an augury scanner; that Iliastus assault cannon gains the Skyfire and Precision (6+) Special Rules. No Unit may have more than one Legiones Decurion upgrade.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "decurion-sagittar": {
+                    "id": "decurion-sagittar",
+                    "name": "Decurion Sagittar",
+                    "cost": {
+                        "points": 30
+                    },
+                    "weaponRefs": ["decurion-sagittar-iliastus-assault-cannon"],
+                    "equipmentRefs": ["augury-scanner"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Legiones Decurion"]
+                        }
+                    ]
+                }
+            },
+            "replaces": ["option-5"],
+            "restrictions": {
+                "exclusions": [
+                    {
+                        "kind": "equipment",
+                        "id": "point-defence"
+                    },
+                    {
+                        "kind": "equipment",
+                        "id": "locus-strike"
+                    }
+                ],
+                "required": [],
+                "requiredAnd": false
+            },
+            "gearNote": "Pintle Mounted"
+        },
+        "imperial-fists-decurion-sagittar-predator": {
+            "id": "imperial-fists-decurion-sagittar-predator",
+            "name": "Decurion Sagittar",
+            "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Imperial Fists Trait that has no Pintle Mounted Weapons. A Model with this upgrade gains a Pintle Mounted Iliastus assault cannon and an augury scanner; that Iliastus assault cannon gains the Skyfire and Precision (6+) Special Rules. No Unit may have more than one Legiones Decurion upgrade.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "decurion-sagittar": {
+                    "id": "decurion-sagittar",
+                    "name": "Decurion Sagittar",
+                    "cost": {
+                        "points": 30
+                    },
+                    "weaponRefs": ["decurion-sagittar-iliastus-assault-cannon"],
+                    "equipmentRefs": ["augury-scanner"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Legiones Decurion"]
+                        }
+                    ]
+                }
+            },
+            "replaces": ["option-3"],
+            "restrictions": {
+                "exclusions": [
+                    {
+                        "kind": "equipment",
+                        "id": "point-defence"
+                    },
+                    {
+                        "kind": "equipment",
+                        "id": "locus-strike"
+                    }
+                ],
+                "required": [],
+                "requiredAnd": false
+            },
+            "gearNote": "Pintle Mounted"
+        },
+        "imperial-fists-vigil-pattern-storm-shield-cataphractii": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-cataphractii",
+            "name": "Vigil Pattern Storm Shield",
+            "description": "Any Model with the Imperial Fists Trait in a Cataphractii Terminator Command Squad or Cataphractii Terminator Squad may have its combi-bolter exchanged for one Vigil pattern storm shield.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "combi-bolter-to-vigil-pattern-storm-shield": {
+                    "id": "combi-bolter-to-vigil-pattern-storm-shield",
+                    "name": "Combi-bolter to vigil Pattern Storm Shield",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "combi-bolter"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "vigil-pattern-storm-shield"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "imperial-fists-vigil-pattern-storm-shield-tartaros": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-tartaros",
+            "name": "Vigil Pattern Storm Shield",
+            "description": "Any Model with the Imperial Fists Trait in a Tartaros Terminator Command Squad or Tartaros Terminator Squad may have its combi-bolter exchanged for one Vigil pattern storm shield.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "combi-bolter-to-vigil-pattern-storm-shield": {
+                    "id": "combi-bolter-to-vigil-pattern-storm-shield",
+                    "name": "Combi-bolter to vigil Pattern Storm Shield",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "combi-bolter"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "vigil-pattern-storm-shield"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        },
+        "imperial-fists-vigil-pattern-storm-shield-combat-shield": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-combat-shield",
+            "name": "Vigil Pattern Storm Shield",
+            "description": "Any Model with the Command Sub-Type and the Imperial Fists Trait may have its boarding shield or a combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model or its combat shield exchanged for one Vigil pattern storm shield for +10 Points per Model.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "combat-shield-to-vigil-pattern-storm-shield": {
+                    "id": "combat-shield-to-vigil-pattern-storm-shield",
+                    "name": "Combat shield to Vigil pattern storm shield",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "equipment",
+                                "id": "combat-shield"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "vigil-pattern-storm-shield"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "equipment",
+                    "id": "combat-shield",
+                    "count": 1
+                }
+            ]
+        },
+        "imperial-fists-vigil-pattern-storm-shield-combi-bolter": {
+            "id": "imperial-fists-vigil-pattern-storm-shield-combi-bolter",
+            "name": "Vigil Pattern Storm Shield",
+            "description": "Any Model with the Command Sub-Type and the Imperial Fists Trait may have its boarding shield or a combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model or its combat shield exchanged for one Vigil pattern storm shield for +10 Points per Model.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "combi-bolter-to-vigil-pattern-storm-shield": {
+                    "id": "combi-bolter-to-vigil-pattern-storm-shield",
+                    "name": "Combi-bolter to Vigil pattern storm shield",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "combi-bolter"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "vigil-pattern-storm-shield"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "combi-bolter",
+                    "count": 1
+                }
+            ]
+        },
+        "imperial-fists-vigil-pattern-storm-shield": {
+            "id": "imperial-fists-vigil-pattern-storm-shield",
+            "name": "Vigil Pattern Storm Shield",
+            "description": "Any Model with the Command Sub-Type and the Imperial Fists Trait may have its boarding shield or a combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model or its combat shield exchanged for one Vigil pattern storm shield for +10 Points per Model.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "boarding-shield-to-vigil-pattern-storm-shield": {
+                    "id": "boarding-shield-to-vigil-pattern-storm-shield",
+                    "name": "Boarding shield to Vigil pattern storm shield",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "equipment",
+                                "id": "boarding-shield"
+                            },
+                            "to": {
+                                "kind": "equipment",
+                                "id": "vigil-pattern-storm-shield"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "equipment",
+                    "id": "boarding-shield",
+                    "count": 1
+                }
+            ]
+        },
+        "imperial-fists-solarite-power-gauntlet": {
+            "id": "imperial-fists-solarite-power-gauntlet",
+            "name": "Solarite Power Gauntlet",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Imperial Fists Trait may have its power fist exchanged for one Solarite power gauntlet.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "solarite-power-gauntlet": {
+                    "id": "solarite-power-gauntlet",
+                    "name": "Power fist to Solarite power gauntlet",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-fist"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "solarite-power-gauntlet"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-fist",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {},
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-imperial-fists-solarite-power-gauntlet": {
+            "id": "panoply-of-old-imperial-fists-solarite-power-gauntlet",
+            "name": "Solarite Power Gauntlet",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-solarite-power-gauntlet"
+                }
+            ]
+        },
+        "panoply-of-old-imperial-fists-vigil-pattern-storm-shield": {
+            "id": "panoply-of-old-imperial-fists-vigil-pattern-storm-shield",
+            "name": "Vigil Pattern Storm Shield",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield"
+                }
+            ]
+        },
+        "panoply-of-old-imperial-fists-vigil-pattern-storm-shield-combi-bolter": {
+            "id": "panoply-of-old-imperial-fists-vigil-pattern-storm-shield-combi-bolter",
+            "name": "Vigil Pattern Storm Shield",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-combi-bolter"
+                }
+            ]
+        },
+        "panoply-of-old-imperial-fists-vigil-pattern-storm-shield-combat-shield": {
+            "id": "panoply-of-old-imperial-fists-vigil-pattern-storm-shield-combat-shield",
+            "name": "Vigil Pattern Storm Shield",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-combat-shield"
+                }
+            ]
+        },
+        "panoply-of-old-imperial-fists-vigil-pattern-storm-shield-tartaros": {
+            "id": "panoply-of-old-imperial-fists-vigil-pattern-storm-shield-tartaros",
+            "name": "Vigil Pattern Storm Shield (Tartaros)",
+            "selector": {
+                "unitIds": [
+                    "tartaros-terminator-command-squad",
+                    "tartaros-terminator-squad"
+                ],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-tartaros"
+                }
+            ]
+        },
+        "panoply-of-old-imperial-fists-vigil-pattern-storm-shield-cataphractii": {
+            "id": "panoply-of-old-imperial-fists-vigil-pattern-storm-shield-cataphractii",
+            "name": "Vigil Pattern Storm Shield (Cataphractii)",
+            "selector": {
+                "unitIds": [
+                    "cataphractii-terminator-command-squad",
+                    "cataphractii-terminator-squad"
+                ],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-cataphractii"
+                }
+            ]
+        },
+        "panoply-of-old-imperial-fists-decurion-sagittar-predator": {
+            "id": "panoply-of-old-imperial-fists-decurion-sagittar-predator",
+            "name": "Decurion Sagittar",
+            "selector": {
+                "unitIds": ["predator"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-decurion-sagittar-predator"
+                }
+            ]
+        },
+        "panoply-of-old-imperial-fists-decurion-sagittar-kratos-assault-tank": {
+            "id": "panoply-of-old-imperial-fists-decurion-sagittar-kratos-assault-tank",
+            "name": "Decurion Sagittar",
+            "selector": {
+                "unitIds": ["kratos-assault-tank"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-decurion-sagittar-kratos-assault-tank"
+                }
+            ]
+        },
+        "panoply-of-old-imperial-fists-decurion-sagittar-sicaran": {
+            "id": "panoply-of-old-imperial-fists-decurion-sagittar-sicaran",
+            "name": "Decurion Sagittar",
+            "selector": {
+                "unitIds": ["sicaran"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "imperial-fists-decurion-sagittar-sicaran"
+                }
+            ]
+        }
+    }
+}

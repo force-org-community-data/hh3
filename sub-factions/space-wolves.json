@@ -4147,7 +4147,36 @@
         "runecasting": {
             "id": "runecasting",
             "name": "Runecasting",
-            "text": "A Model with the Runecasting Discipline gains the following benefits: the Hatred (Psyker) Special Rule; the Wrath of the Death Wolf Psychic Weapon; the Stormwrought Psychic Power; the ‘Caster of Runes’ Trait."
+            "text": "A Model with the Runecasting Discipline gains the following benefits: the Hatred (Psyker) Special Rule; the Wrath of the Death Wolf Psychic Weapon; the Stormwrought Psychic Power; the ‘Caster of Runes’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Wrath of the Death Wolf",
+                        "stats": {
+                            "r": "Template",
+                            "fp": "1",
+                            "rs": "6",
+                            "ap": "4",
+                            "d": "1"
+                        },
+                        "traits": ["Psychic", "Assault"],
+                        "specialRules": [
+                            {
+                                "id": "template"
+                            },
+                            {
+                                "id": "stun",
+                                "value": "1"
+                            },
+                            {
+                                "id": "force",
+                                "value": "D"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "ymira-class-stasis-bombs": {
             "id": "ymira-class-stasis-bombs",
@@ -4527,12 +4556,6 @@
         }
     },
     "specialRules": {
-        "force": {
-            "id": "force",
-            "name": "Force",
-            "text": "A Weapon with this Special Rule may double a Characteristic with a Willpower Check, but may suffer Perils of the Warp. When selected to be used as part of a Combat or Shooting Attack, a Willpower Check may be made for the Model that will use this Weapon to make attacks. If it is successful then the Characteristic listed as X is doubled (if that Characteristic is AP, then the AP is instead changed to AP 2). If a double is rolled when making this Willpower Check then the Model using the Weapon to make attacks suffers Perils of the Warp.",
-            "configurable": true
-        },
         "the-dreams-of-the-death-wolf": {
             "id": "the-dreams-of-the-death-wolf",
             "name": "The Dreams of the Death Wolf",

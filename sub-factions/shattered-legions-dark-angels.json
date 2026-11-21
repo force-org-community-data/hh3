@@ -1,0 +1,283 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "shattered-legions-dark-angels",
+    "version": "1.0.0",
+    "name": "Dark Angels (Shattered Legions)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "shattered-legions",
+    "description": "Dark Angels selected for a Shattered Legions Army: the Children of Old Night Mutable Tactics benefit, the Armoury of the Dark Angels (options a Legion adds to the shared Legion wargear lists are not included), the Exemplars of the Legion Prime Advantage for Dark Angels Units.",
+    "when": {
+        "if": "contingent.is(subfaction:shattered-legions)",
+        "message": "Shattered Legions Armies only"
+    },
+    "units": {},
+    "weapons": {
+        "terranic-greatsword": {
+            "id": "terranic-greatsword",
+            "name": "Terranic greatsword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Terranic greatsword",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Sword of the Order"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "calibanite-warblade": {
+            "id": "calibanite-warblade",
+            "name": "Calibanite warblade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Calibanite warblade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Sword of the Order"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {
+        "dark-angels-terranic-greatsword": {
+            "id": "dark-angels-terranic-greatsword",
+            "name": "Terranic Greatsword",
+            "description": "Any Model with the Command or Champion Sub-Type and the Dark Angels Trait may have its power fist exchanged for one Terranic greatsword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-fist-to-terranic-greatsword": {
+                    "id": "power-fist-to-terranic-greatsword",
+                    "name": "Power fist to Terranic greatsword",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-fist"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "terranic-greatsword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-fist",
+                    "count": 1
+                }
+            ]
+        },
+        "dark-angels-blades-of-the-first-legion": {
+            "id": "dark-angels-blades-of-the-first-legion",
+            "name": "Blades of the First Legion",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Dark Angels Trait may have its power sword exchanged for one Calibanite warblade.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "blades-of-the-first-legion": {
+                    "id": "blades-of-the-first-legion",
+                    "name": "Power sword to Calibanite warblade",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "calibanite-warblade"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {
+        "mutable-tactics-dark-angels": {
+            "id": "mutable-tactics-dark-angels",
+            "name": "Children of Old Night (Mutable Tactics)",
+            "text": "The Ist Legion have fought all the horrors the galaxy has to offer, steadfastly holding their ground no matter what assails them. Models subject to this benefit are only affected by the Fear (X) Special Rule while they are within 6\" of a Model with that Special Rule instead of 12\". If the Dark Angels Legion was selected for this Army’s Shattered Legions Trait, Models from that Army subject to the Mutable Tactics Special Rule are only affected by the Fear (X) Special Rule while within 6\" of a Model with that Special Rule instead of while within 12\"."
+        },
+        "legion-specialists": {
+            "id": "legion-specialists",
+            "name": "Legion Specialists",
+            "text": "If Models in this Unit would benefit from the Mutable Tactics Legion Tactica, they may only benefit from the bonus related to their Legion whose Trait was replaced as part of the Exemplars of the Legion Prime Advantage."
+        }
+    },
+    "groups": {},
+    "slotOptions": {
+        "exemplars-of-the-legion-dark-angels": {
+            "id": "exemplars-of-the-legion-dark-angels",
+            "name": "Exemplars of the Legion (Dark Angels)",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. The Slot added may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War. Each Unit selected to fill such a Slot must be from the Legiones Astartes Army List, not include any Models that have the Unique Sub-Type, and have a Faction Trait that matches the Legion represented by the Model that was selected to fill the Slot with this Prime Advantage. All Models in any of these Units have their Faction Trait replaced with ‘Shattered Legions’ and have the Legion Specialists Special Rule. Only for a Unit with the Command Battlefield Role in a Shattered Legions Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "roles": ["command"]
+            },
+            "when": {
+                "if": "contingent.is(subfaction:shattered-legions)",
+                "message": "Shattered Legions Detachments only"
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Exemplars of the Legion"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "retinue",
+                        "elites",
+                        "war-engine",
+                        "troop",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "legiones-astartes",
+                        "subFactions": ["dark-angels"]
+                    },
+                    "units": {
+                        "exclude": [
+                            {
+                                "profiles": {
+                                    "anyOf": ["Unique"]
+                                }
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Legiones Astartes", "Dark Angels"],
+                                "to": "Shattered Legions"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "legion-specialists"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "shattered-legions-dark-angels-mutable-tactics": {
+            "id": "shattered-legions-dark-angels-mutable-tactics",
+            "name": "Children of Old Night (Mutable Tactics)",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "mutable-tactics-dark-angels"
+                    }
+                }
+            ]
+        },
+        "shattered-legions-dark-angels-blades-of-the-first-legion": {
+            "id": "shattered-legions-dark-angels-blades-of-the-first-legion",
+            "name": "Blades of the First Legion",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "dark-angels-blades-of-the-first-legion"
+                }
+            ]
+        },
+        "shattered-legions-dark-angels-terranic-greatsword": {
+            "id": "shattered-legions-dark-angels-terranic-greatsword",
+            "name": "Terranic Greatsword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "dark-angels-terranic-greatsword"
+                }
+            ]
+        }
+    }
+}

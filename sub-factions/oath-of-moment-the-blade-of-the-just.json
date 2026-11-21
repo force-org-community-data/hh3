@@ -1,0 +1,155 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-the-blade-of-the-just",
+    "version": "1.0.0",
+    "name": "Oath of Moment: The Blade of the Just",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "With the noble goals of the Great Crusade sundered by the outbreak of the Horus Heresy, some Blackshield bands have made it their purpose to embody what has been lost. These doomed seekers go from one lost cause to another, defending the weak and opposing those they see as unjust. They cannot stop the darkness to come, nor mend the wound that has felled the Imperium, but they have vowed to die in the attempt. A Unit which includes mostly Models with this Special Rule scores additional Victory Points for winning hard combats. All Models with the Blackshields Trait in a Detachment that has this Oath of Moment lose all variants of the Line (X) or Vanguard (X) Special Rule and may not thereafter gain any version of Line (X) or Vanguard (X) from any source. Such Models gain the Doomed Heroics (X) Special Rule, with the value of X on Doomed Heroics being equal to twice the value of X on the Special Rule lost. Models with the Blackshields Trait in a Detachment that has this Oath of Moment that do not have the Heedless Special Rule and no variant of either the Line (X) or Vanguard (X) Special Rule, gain the Doomed Heroics (3) Special Rule.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-reapers-of-lives) and not contingent.is(subfaction:oath-of-moment-the-spoils-of-victory)",
+        "message": "Blackshields Detachments only; not with Reapers of Lives or The Spoils of Victory"
+    },
+    "units": {},
+    "weapons": {},
+    "equipment": {},
+    "upgrades": {},
+    "specialRules": {
+        "oath-of-moment-the-blade-of-the-just": {
+            "id": "oath-of-moment-the-blade-of-the-just",
+            "name": "Oath of Moment: The Blade of the Just",
+            "text": "With the noble goals of the Great Crusade sundered by the outbreak of the Horus Heresy, some Blackshield bands have made it their purpose to embody what has been lost. These doomed seekers go from one lost cause to another, defending the weak and opposing those they see as unjust. They cannot stop the darkness to come, nor mend the wound that has felled the Imperium, but they have vowed to die in the attempt. A Unit which includes mostly Models with this Special Rule scores additional Victory Points for winning hard combats. All Models with the Blackshields Trait in a Detachment that has this Oath of Moment lose all variants of the Line (X) or Vanguard (X) Special Rule and may not thereafter gain any version of Line (X) or Vanguard (X) from any source. Such Models gain the Doomed Heroics (X) Special Rule, with the value of X on Doomed Heroics being equal to twice the value of X on the Special Rule lost. Models with the Blackshields Trait in a Detachment that has this Oath of Moment that do not have the Heedless Special Rule and no variant of either the Line (X) or Vanguard (X) Special Rule, gain the Doomed Heroics (3) Special Rule."
+        },
+        "doomed-heroics": {
+            "id": "doomed-heroics",
+            "name": "Doomed Heroics",
+            "configurable": true,
+            "text": "Whenever at least one Unit that includes a majority of Models with this Special Rule is on the winning side of a Combat where one or more of the following was true at the start of the Fight Sub-Phase, then the Controlling Player scores a number of Victory Points equal to the value of X (where there are multiple variants of this Special Rule in a Combat, use only the single highest value of X): The total number of Models on the enemy side is more than twice the number of Models on the Blackshields side. The enemy side includes more Models with the Command Trait or any Models with the Paragon Type. The enemy side includes a majority of Models with a higher Weapon Skill Characteristic than the majority of Models on the Blackshields side. This Oath of Moment may not be selected if the Detachment already has the Reapers of Lives or Spoils of Victory Oaths of Moment."
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "oath-of-moment-the-blade-of-the-just": {
+            "id": "oath-of-moment-the-blade-of-the-just",
+            "name": "Oath of Moment: The Blade of the Just",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "oath-of-moment-the-blade-of-the-just"
+                    }
+                }
+            ]
+        },
+        "blade-of-the-just-doomed-heroics-4": {
+            "id": "blade-of-the-just-doomed-heroics-4",
+            "name": "Doomed Heroics (4)",
+            "selector": {
+                "unitIds": [
+                    "assault-squad",
+                    "despoiler-squad",
+                    "destroyer-assault-squad",
+                    "mortalis-destroyer-squad",
+                    "tactical-squad"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "remove": ["line", "vanguard"],
+                    "rule": {
+                        "id": "doomed-heroics",
+                        "value": "4"
+                    }
+                }
+            ]
+        },
+        "blade-of-the-just-doomed-heroics-2": {
+            "id": "blade-of-the-just-doomed-heroics-2",
+            "name": "Doomed Heroics (2)",
+            "selector": {
+                "unitIds": [
+                    "breacher-squad",
+                    "outrider-squadron",
+                    "veteran-tactical-squad"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "remove": ["line", "vanguard"],
+                    "rule": {
+                        "id": "doomed-heroics",
+                        "value": "2"
+                    }
+                }
+            ]
+        },
+        "blade-of-the-just-doomed-heroics-6": {
+            "id": "blade-of-the-just-doomed-heroics-6",
+            "name": "Doomed Heroics (6)",
+            "selector": {
+                "unitIds": [
+                    "cataphractii-terminator-squad",
+                    "indomitus-terminator-squad",
+                    "tartaros-terminator-siege-squad",
+                    "tartaros-terminator-squad",
+                    "veteran-assault-squad",
+                    "veteran-breacher-squad"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "remove": ["line", "vanguard"],
+                    "rule": {
+                        "id": "doomed-heroics",
+                        "value": "6"
+                    }
+                }
+            ]
+        },
+        "blade-of-the-just-doomed-heroics-3": {
+            "id": "blade-of-the-just-doomed-heroics-3",
+            "name": "Doomed Heroics (3)",
+            "selector": {
+                "exclude": [
+                    {
+                        "unitIds": [
+                            "assault-squad",
+                            "breacher-squad",
+                            "cataphractii-terminator-squad",
+                            "despoiler-squad",
+                            "destroyer-assault-squad",
+                            "indomitus-terminator-squad",
+                            "mortalis-destroyer-squad",
+                            "outrider-squadron",
+                            "tactical-squad",
+                            "tartaros-terminator-siege-squad",
+                            "tartaros-terminator-squad",
+                            "veteran-assault-squad",
+                            "veteran-breacher-squad",
+                            "veteran-tactical-squad"
+                        ]
+                    },
+                    {
+                        "specialRules": ["heedless"]
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "doomed-heroics",
+                        "value": "3"
+                    }
+                }
+            ]
+        }
+    }
+}

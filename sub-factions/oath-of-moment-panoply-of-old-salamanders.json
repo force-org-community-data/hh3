@@ -1,0 +1,572 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-salamanders",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (Salamanders)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: Salamanders. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-dark-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-warriors) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-imperial-fists) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-night-lords) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-blood-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-hands) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-world-eaters) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-thousand-sons) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-word-bearers) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-raven-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-alpha-legion)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {
+        "forge-crafted-hand-flamer": {
+            "id": "forge-crafted-hand-flamer",
+            "name": "Forge-crafted hand flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Forge-crafted hand flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "-",
+                        "d": "2"
+                    },
+                    "traits": ["Flame", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "pistol"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-thunder-hammer": {
+            "id": "forge-crafted-thunder-hammer",
+            "name": "Forge-crafted thunder hammer",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted thunder hammer",
+                    "stats": {
+                        "im": "-2",
+                        "am": "+1",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "forge-crafted-power-fist": {
+            "id": "forge-crafted-power-fist",
+            "name": "Forge-crafted power fist",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power fist",
+                    "stats": {
+                        "im": "-3",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "forge-crafted-power-lance": {
+            "id": "forge-crafted-power-lance",
+            "name": "Forge-crafted power lance",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power lance",
+                    "stats": {
+                        "im": "+1",
+                        "am": "+1",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-power-maul": {
+            "id": "forge-crafted-power-maul",
+            "name": "Forge-crafted power maul",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power maul",
+                    "stats": {
+                        "im": "-1",
+                        "am": "+1",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-power-axe": {
+            "id": "forge-crafted-power-axe",
+            "name": "Forge-crafted power axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power axe",
+                    "stats": {
+                        "im": "-1",
+                        "am": "+1",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-power-sword": {
+            "id": "forge-crafted-power-sword",
+            "name": "Forge-crafted power sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "+1",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "drakenscale": {
+            "id": "drakenscale",
+            "name": "Drakenscale",
+            "text": "Drakenscale reduces the Damage of wounds inflicted by Weapons with specific Traits. Any Model with the Command or Champion Sub-Type and the Salamanders Trait may have Drakenscale selected for it for +10 Points per Model. Wounds with the Flame, Plasma, Melta or Volkite Trait allocated to a Model with Drakenscale have their Damage Characteristic set to 1."
+        }
+    },
+    "upgrades": {
+        "salamanders-forge-crafted-flame-weapons": {
+            "id": "salamanders-forge-crafted-flame-weapons",
+            "name": "Forge-crafted Flame Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-flame-weapons": {
+                    "id": "forge-crafted-flame-weapons",
+                    "name": "Forge-crafted Flame Weapons",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "hand-flamer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-hand-flamer"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "hand-flamer",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-thunder-hammer": {
+            "id": "salamanders-forge-crafted-thunder-hammer",
+            "name": "Forge-crafted Thunder Hammer",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-thunder-hammer": {
+                    "id": "forge-crafted-thunder-hammer",
+                    "name": "Forge-crafted Thunder Hammer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "thunder-hammer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-thunder-hammer"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "thunder-hammer",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-fist": {
+            "id": "salamanders-forge-crafted-power-fist",
+            "name": "Forge-crafted Power Fist",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-fist": {
+                    "id": "forge-crafted-power-fist",
+                    "name": "Forge-crafted Power Fist",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-fist"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-fist"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-fist",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-lance": {
+            "id": "salamanders-forge-crafted-power-lance",
+            "name": "Forge-crafted Power Lance",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-lance": {
+                    "id": "forge-crafted-power-lance",
+                    "name": "Forge-crafted Power Lance",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-lance"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-maul": {
+            "id": "salamanders-forge-crafted-power-maul",
+            "name": "Forge-crafted Power Maul",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-maul": {
+                    "id": "forge-crafted-power-maul",
+                    "name": "Forge-crafted Power Maul",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-maul"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-axe": {
+            "id": "salamanders-forge-crafted-power-axe",
+            "name": "Forge-crafted Power Axe",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-axe": {
+                    "id": "forge-crafted-power-axe",
+                    "name": "Forge-crafted Power Axe",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-axe"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-sword": {
+            "id": "salamanders-forge-crafted-power-sword",
+            "name": "Forge-crafted Power Sword",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-sword": {
+                    "id": "forge-crafted-power-sword",
+                    "name": "Forge-crafted Power Sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-sword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-drakenscale": {
+            "id": "salamanders-drakenscale",
+            "name": "Drakenscale",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "drakenscale": {
+                    "id": "drakenscale",
+                    "name": "Drakenscale",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["drakenscale"]
+                }
+            }
+        }
+    },
+    "specialRules": {},
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-salamanders-drakenscale": {
+            "id": "panoply-of-old-salamanders-drakenscale",
+            "name": "Drakenscale",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-drakenscale"
+                }
+            ]
+        },
+        "panoply-of-old-salamanders-forge-crafted-power-sword": {
+            "id": "panoply-of-old-salamanders-forge-crafted-power-sword",
+            "name": "Forge-crafted Power Sword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-sword"
+                }
+            ]
+        },
+        "panoply-of-old-salamanders-forge-crafted-power-axe": {
+            "id": "panoply-of-old-salamanders-forge-crafted-power-axe",
+            "name": "Forge-crafted Power Axe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-axe"
+                }
+            ]
+        },
+        "panoply-of-old-salamanders-forge-crafted-power-maul": {
+            "id": "panoply-of-old-salamanders-forge-crafted-power-maul",
+            "name": "Forge-crafted Power Maul",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-maul"
+                }
+            ]
+        },
+        "panoply-of-old-salamanders-forge-crafted-power-lance": {
+            "id": "panoply-of-old-salamanders-forge-crafted-power-lance",
+            "name": "Forge-crafted Power Lance",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-lance"
+                }
+            ]
+        },
+        "panoply-of-old-salamanders-forge-crafted-power-fist": {
+            "id": "panoply-of-old-salamanders-forge-crafted-power-fist",
+            "name": "Forge-crafted Power Fist",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-fist"
+                }
+            ]
+        },
+        "panoply-of-old-salamanders-forge-crafted-thunder-hammer": {
+            "id": "panoply-of-old-salamanders-forge-crafted-thunder-hammer",
+            "name": "Forge-crafted Thunder Hammer",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-thunder-hammer"
+                }
+            ]
+        },
+        "panoply-of-old-salamanders-forge-crafted-flame-weapons": {
+            "id": "panoply-of-old-salamanders-forge-crafted-flame-weapons",
+            "name": "Forge-crafted Flame Weapons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-flame-weapons"
+                }
+            ]
+        }
+    }
+}

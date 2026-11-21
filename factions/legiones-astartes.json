@@ -14,6 +14,26 @@
             "min": 1,
             "max": 1,
             "description": "A Legiones Astartes army must belong to exactly one Legion."
+        },
+        "rite-of-war": {
+            "id": "rite-of-war",
+            "name": "Rite of War",
+            "max": 1,
+            "description": "Some Legions may select a Rite of War other than their Legiones Astartes Rite of War."
+        },
+        "shattered-legions": {
+            "id": "shattered-legions",
+            "name": "Shattered Legions: Legions",
+            "min": "contingent.is(subfaction:shattered-legions) ? 2 : 0",
+            "max": "contingent.is(subfaction:shattered-legions) ? 3 : 0",
+            "description": "A Shattered Legions Army selects two or three Legions. Each gives Models subject to Mutable Tactics its benefit, lets Models take options from its Armoury, offers its Exemplars of the Legion Prime Advantage and its Commanders of the Shattered Legions."
+        },
+        "oaths-of-moment": {
+            "id": "oaths-of-moment",
+            "name": "Oaths of Moment",
+            "min": 0,
+            "max": "contingent.is(subfaction:blackshields) ? (root.is(type:allied) ? 1 : 2) : 0",
+            "description": "A Blackshields Primary Detachment may select two Oaths of Moment and an Allied Detachment one; Auxiliary and Apex Detachments attached to them use the same Oaths of Moment."
         }
     },
     "defaultGroup": "crusade-primary-detachment",
@@ -7318,6 +7338,10 @@
                 {
                     "kind": "equipment",
                     "id": "force-weapons"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "void-darts"
                 }
             ],
             "upgrades": {
@@ -7405,6 +7429,10 @@
                 {
                     "kind": "equipment",
                     "id": "force-weapons"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "void-darts"
                 }
             ],
             "upgrades": {
@@ -7504,6 +7532,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "void-darts"
                 }
             ]
         },
@@ -7575,6 +7607,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "void-darts"
                 }
             ],
             "upgrades": {
@@ -7670,6 +7706,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "void-darts"
                 }
             ],
             "upgrades": {
@@ -7774,6 +7814,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "void-darts"
                 }
             ]
         },
@@ -37314,6 +37358,34 @@
                     ]
                 }
             ]
+        },
+        "void-darts": {
+            "id": "void-darts",
+            "name": "Void Darts",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Void Darts",
+                    "stats": {
+                        "r": "18",
+                        "fp": "D6",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "force",
+                            "value": "D"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {
@@ -37335,7 +37407,32 @@
         "biomancy": {
             "id": "biomancy",
             "name": "Biomancy",
-            "text": "A Model with the Biomancy Discipline gains the following benefits: the Impact (Strength) Special Rule; the Biomantic Rage Psychic Power; the Biomantic Slam Psychic Weapon; the ‘Biomancer’ Trait."
+            "text": "A Model with the Biomancy Discipline gains the following benefits: the Impact (Strength) Special Rule; the Biomantic Rage Psychic Power; the Biomantic Slam Psychic Weapon; the ‘Biomancer’ Trait.",
+            "weapon": {
+                "template": "melee",
+                "profiles": [
+                    {
+                        "name": "Biomantic Slam",
+                        "stats": {
+                            "im": "3",
+                            "am": "1",
+                            "sm": "12",
+                            "ap": "2",
+                            "d": "2"
+                        },
+                        "traits": ["Melee", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "armourbane"
+                            },
+                            {
+                                "id": "force",
+                                "value": "Damage"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "boarding-shield": {
             "id": "boarding-shield",
@@ -37477,7 +37574,54 @@
         "pyromancy": {
             "id": "pyromancy",
             "name": "Pyromancy",
-            "text": "A Model with the Pyromancy Discipline gains the following benefits: the Explodes (4+) Special Rule; the Wildfire Psychic Weapon; the Conflagration Psychic Weapon; the ‘Pyromancer’ Trait."
+            "text": "A Model with the Pyromancy Discipline gains the following benefits: the Explodes (4+) Special Rule; the Wildfire Psychic Weapon; the Conflagration Psychic Weapon; the ‘Pyromancer’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Wildfire",
+                        "stats": {
+                            "r": "18",
+                            "fp": "1",
+                            "rs": "4",
+                            "ap": "4",
+                            "d": "1"
+                        },
+                        "traits": ["Ranged", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "panic",
+                                "value": "1"
+                            },
+                            {
+                                "id": "blast",
+                                "value": "5\""
+                            },
+                            {
+                                "id": "force",
+                                "value": "Strength"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Conflagration",
+                        "stats": {
+                            "r": "-1",
+                            "fp": "6+D3",
+                            "rs": "5",
+                            "ap": "4",
+                            "d": "1"
+                        },
+                        "traits": ["Melee", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "deflagrate",
+                                "value": "5"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "saturnine-teleport-synchroniser": {
             "id": "saturnine-teleport-synchroniser",
@@ -37512,12 +37656,60 @@
         "telekinesis": {
             "id": "telekinesis",
             "name": "Telekinesis",
-            "text": "A Model with the Telekinesis Discipline gains the following benefits: the Shrouded (4+) Special Rule; the Force Barrier Psychic Reaction; the Immovable Force Psychic Weapon; the ‘Telekine’ Trait."
+            "text": "A Model with the Telekinesis Discipline gains the following benefits: the Shrouded (4+) Special Rule; the Force Barrier Psychic Reaction; the Immovable Force Psychic Weapon; the ‘Telekine’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Immovable Force",
+                        "stats": {
+                            "r": "18",
+                            "fp": "3",
+                            "rs": "6",
+                            "ap": "4",
+                            "d": "1"
+                        },
+                        "traits": ["Ranged", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "pinning",
+                                "value": "2"
+                            },
+                            {
+                                "id": "force",
+                                "value": "Firepower"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "telepathy": {
             "id": "telepathy",
             "name": "Telepathy",
-            "text": "A Model with the Telepathy Discipline gains the following benefits: the Fear (1) Special Rule; the Mind-burst Psychic Power; the Cursed Whispers Psychic Weapon; the ‘Telepath’ Trait."
+            "text": "A Model with the Telepathy Discipline gains the following benefits: the Fear (1) Special Rule; the Mind-burst Psychic Power; the Cursed Whispers Psychic Weapon; the ‘Telepath’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Cursed Whispers",
+                        "stats": {
+                            "r": "18",
+                            "fp": "2D6",
+                            "rs": "3",
+                            "ap": "-",
+                            "d": "1"
+                        },
+                        "traits": ["Ranged", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "stun",
+                                "value": "-"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "thaumaturgy": {
             "id": "thaumaturgy",
@@ -38715,6 +38907,17 @@
             "name": "Void Shields",
             "text": "A Model with this Special Rule ignores Penetrating Hits as long as it still has active void shields. A Model with this Special Rule has a number of void shields equal to the value of X. While a Model with this Special Rule still has void shields, each time that Model suffers a Penetrating Hit as a result of a Shooting Attack, reduce the Damage of that Penetrating Hit to ‘0’ and reduce the number of void shields this Model has by 1. If the number of void shields a Model has is reduced to 0, this Special Rule has no further effect during that battle.",
             "configurable": true
+        },
+        "concealed-positions": {
+            "id": "concealed-positions",
+            "name": "Concealed Positions",
+            "text": "Whether utilising camouflage shrouding, hidden fastnesses or simply obscuring themselves from view, many forces exercise subterfuge to ambush their foe. A Unit that only contains Models with this Special Rule may arrive from Reserves in close proximity to an enemy Unit."
+        },
+        "force": {
+            "id": "force",
+            "name": "Force",
+            "text": "A Weapon with this Special Rule may double a Characteristic with a Willpower Check, but may suffer Perils of the Warp. When selected to be used as part of a Combat or Shooting Attack, a Willpower Check may be made for the Model that will use this Weapon to make attacks. If it is successful then the Characteristic listed as X is doubled (if that Characteristic is AP, then the AP is instead changed to AP 2). If a double is rolled when making this Willpower Check then the Model using the Weapon to make attacks suffers Perils of the Warp.",
+            "configurable": true
         }
     },
     "groups": {
@@ -38853,6 +39056,51 @@
                 }
             ],
             "requirementText": "Requires a Master of Signals in a Command slot"
+        },
+        "daemonic-manifestation": {
+            "id": "daemonic-manifestation",
+            "name": "Daemonic Manifestation",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["heavy-assault"],
+                    "source": {
+                        "faction": "daemons-of-the-ruinstorm",
+                        "subFactions": "any"
+                    },
+                    "units": {
+                        "unitIds": ["ruinstorm-daemon-brutes"]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "source": {
+                        "faction": "daemons-of-the-ruinstorm",
+                        "subFactions": "any"
+                    },
+                    "units": {
+                        "unitIds": ["ruinstorm-daemon-brutes"]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "source": {
+                        "faction": "daemons-of-the-ruinstorm",
+                        "subFactions": "any"
+                    },
+                    "units": {
+                        "unitIds": ["ruinstorm-daemon-brutes"]
+                    }
+                }
+            ],
+            "requires": [
+                {
+                    "units": "@traitor-esoterists",
+                    "count": 1
+                }
+            ],
+            "requirementText": "Requires an Esoterist Unit with the Traitor Allegiance selected to fill a Command Force Organisation Slot",
+            "description": "When an Esoterist Unit with the Traitor Allegiance is selected to fill a Command Force Organisation Slot, then the Player may choose to add one Daemonic Manifestation Auxiliary Detachment to the Army instead of the options available in the Crusade Force Organisation Chart. Heavy Assault Slots in this Detachment may only be used to select Ruinstorm Daemon Brute Units from the Daemons of the Ruinstorm Army List."
         },
         "veteran-cadre": {
             "id": "veteran-cadre",
@@ -39827,6 +40075,21 @@
                     }
                 ]
             }
+        },
+        "traitor-esoterists": {
+            "id": "traitor-esoterists",
+            "name": "Esoterists with the Traitor Allegiance",
+            "match": {
+                "unitIds": [
+                    "esoterist",
+                    "esoterist-in-terminator-armour",
+                    "esoterist-in-tartaros-terminator-armour",
+                    "esoterist-with-jump-pack",
+                    "mounted-esoterist",
+                    "esoterist-on-scimitar-jetbike"
+                ],
+                "traits": ["Traitor"]
+            }
         }
     },
     "slotOptions": {
@@ -39917,6 +40180,52 @@
                     }
                 }
             ]
+        },
+        "true-believers": {
+            "id": "true-believers",
+            "name": "True Believers",
+            "text": "All Models in the Unit selected to fill the Prime Slot gain the Malefic Sub-Type. Only for a Unit (excluding Vehicle Units) with the Traitor Allegiance.",
+            "slotTag": "prime",
+            "units": {
+                "traits": ["Traitor"],
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["vehicle"]
+                        }
+                    }
+                ]
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Malefic"]
+                }
+            ]
+        },
+        "interdiction-cadres": {
+            "id": "interdiction-cadres",
+            "name": "Interdiction Cadres",
+            "text": "All Models in a Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage gain the Concealed Positions and Expendable (1) Special Rules. Only for a Tactical Squad or Despoiler Squad.",
+            "slotTag": "prime",
+            "units": {
+                "unitIds": ["tactical-squad", "despoiler-squad"]
+            },
+            "effects": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "concealed-positions"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "expendable",
+                        "value": "1"
+                    }
+                }
+            ]
         }
     },
     "listRules": {
@@ -39934,7 +40243,7 @@
             "id": "primary-no-slot-prime-advantages",
             "scope": "list",
             "when": {
-                "if": "(main.count(group:pride-of-the-legion) == 0 and main.count(group:sky-hunter-phalanx) == 0 and main.count(group:armoured-spearhead) == 0 and main.count(group:orbital-drop-assault) == 0) or list.count(trait:logistical) + list.count(trait:clade-operative) + list.count(trait:cult-operative) + list.count(trait:the-iron-clad) + list.count(trait:rewards-of-treachery) + list.count(trait:logisticae) + list.count(trait:paragon-of-malevolence) == 0",
+                "if": "(main.count(group:pride-of-the-legion) == 0 and main.count(group:sky-hunter-phalanx) == 0 and main.count(group:armoured-spearhead) == 0 and main.count(group:orbital-drop-assault) == 0) or list.count(trait:logistical) + list.count(trait:clade-operative) + list.count(trait:cult-operative) + list.count(trait:the-iron-clad) + list.count(trait:rewards-of-treachery) + list.count(trait:logisticae) + list.count(trait:paragon-of-malevolence) + list.count(trait:exemplars-of-the-legion) == 0",
                 "message": "With the Pride of the Legion, Sky-Hunter Phalanx, Armoured Spearhead or Orbital Drop Assault Primary Detachment, Prime Advantages which add additional Battlefield Role Slots may not be selected"
             }
         },

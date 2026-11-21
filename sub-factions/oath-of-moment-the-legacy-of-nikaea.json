@@ -1,0 +1,162 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-the-legacy-of-nikaea",
+    "version": "1.0.0",
+    "name": "Oath of Moment: The Legacy of Nikaea",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Some Blackshields embraced the psychic powers that had once been forbidden – such warbands were dangerous in battle but prone to self-destruction as they abused their power. Models with this Special Rule and specific Traits gain a Psychic Discipline. Any Model with the Blackshields Trait and the Sergeant, Champion, Specialist or Command Sub-Type in a Detachment with this Oath of Moment gains the Psyker Trait. Furthermore, such Models gain the following Psychic Discipline (if such a Model already has the Psyker Trait and access to other Psychic Disciplines, they retain those in addition to this Psychic Discipline):",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields)",
+        "message": "Blackshields Detachments only"
+    },
+    "units": {},
+    "weapons": {},
+    "equipment": {
+        "malignant-discipline": {
+            "id": "malignant-discipline",
+            "name": "Malignant",
+            "text": "A Model with the Malignant Discipline gains the following benefits: the Malignant Special Rule; the Warp Torrent Psychic Weapon; the ‘Malignant’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Warp Torrent - Torrent",
+                        "stats": {
+                            "r": "12",
+                            "fp": "4",
+                            "rs": "5",
+                            "ap": "4",
+                            "d": "1"
+                        },
+                        "traits": ["Assault"],
+                        "specialRules": [
+                            {
+                                "id": "deflagrate",
+                                "value": "5"
+                            },
+                            {
+                                "id": "overload",
+                                "value": "1"
+                            },
+                            {
+                                "id": "force",
+                                "value": "FP"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Warp Torrent - Malignant",
+                        "stats": {
+                            "r": "12",
+                            "fp": "1",
+                            "rs": "5",
+                            "ap": "2",
+                            "d": "2"
+                        },
+                        "traits": ["Assault"],
+                        "specialRules": [
+                            {
+                                "id": "deflagrate",
+                                "value": "5"
+                            },
+                            {
+                                "id": "overload",
+                                "value": "2"
+                            },
+                            {
+                                "id": "force",
+                                "value": "RS"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "upgrades": {
+        "malignant-discipline": {
+            "id": "malignant-discipline",
+            "name": "Malignant Discipline",
+            "description": "Any Model with the Blackshields Trait and the Sergeant, Champion, Specialist or Command Sub-Type in a Detachment with this Oath of Moment gains the Psyker Trait and the Malignant Psychic Discipline.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "malignant": {
+                    "id": "malignant",
+                    "name": "Malignant",
+                    "cost": {
+                        "points": 0
+                    },
+                    "equipmentRefs": ["malignant-discipline"]
+                }
+            },
+            "default": "malignant"
+        }
+    },
+    "specialRules": {
+        "oath-of-moment-the-legacy-of-nikaea": {
+            "id": "oath-of-moment-the-legacy-of-nikaea",
+            "name": "Oath of Moment: The Legacy of Nikaea",
+            "text": "Some Blackshields embraced the psychic powers that had once been forbidden – such warbands were dangerous in battle but prone to self-destruction as they abused their power. Models with this Special Rule and specific Traits gain a Psychic Discipline. Any Model with the Blackshields Trait and the Sergeant, Champion, Specialist or Command Sub-Type in a Detachment with this Oath of Moment gains the Psyker Trait. Furthermore, such Models gain the following Psychic Discipline (if such a Model already has the Psyker Trait and access to other Psychic Disciplines, they retain those in addition to this Psychic Discipline):"
+        },
+        "malignant": {
+            "id": "malignant",
+            "name": "Malignant",
+            "text": "When a Unit that includes any Models with this Special Rule suffers Perils of the Warp and gets a result of Warp Rupture, all Models with this Special Rule in that Unit have their Willpower Characteristic set to 5 while resolving that incident of Perils of the Warp."
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "oath-of-moment-the-legacy-of-nikaea": {
+            "id": "oath-of-moment-the-legacy-of-nikaea",
+            "name": "Oath of Moment: The Legacy of Nikaea",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "oath-of-moment-the-legacy-of-nikaea"
+                    }
+                }
+            ]
+        },
+        "legacy-of-nikaea-malignant": {
+            "id": "legacy-of-nikaea-malignant",
+            "name": "Malignant Discipline",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["sergeant", "champion", "specialist", "command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "malignant-discipline"
+                },
+                {
+                    "kind": "trait",
+                    "add": ["Psyker", "Malignant"]
+                },
+                {
+                    "kind": "specialRule",
+                    "profiles": {
+                        "anyOf": [
+                            "sergeant",
+                            "champion",
+                            "specialist",
+                            "command"
+                        ]
+                    },
+                    "rule": {
+                        "id": "malignant"
+                    }
+                }
+            ]
+        }
+    }
+}

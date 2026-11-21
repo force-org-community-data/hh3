@@ -1,0 +1,600 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "shattered-legions-emperors-children",
+    "version": "1.0.0",
+    "name": "Emperor’s Children (Shattered Legions)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "shattered-legions",
+    "description": "Emperor’s Children selected for a Shattered Legions Army: the Unparalleled Skill Mutable Tactics benefit, the Armoury of the Emperor’s Children (options a Legion adds to the shared Legion wargear lists are not included), the Exemplars of the Legion Prime Advantage for Emperor’s Children Units, and Saul Tarvitz as a Commander of the Shattered Legions.",
+    "when": {
+        "if": "contingent.is(subfaction:shattered-legions)",
+        "message": "Shattered Legions Armies only"
+    },
+    "units": {
+        "saul-tarvitz": {
+            "id": "saul-tarvitz",
+            "name": "Saul Tarvitz",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 215
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "saul-tarvitz",
+                    "name": "Saul Tarvitz",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "hatred",
+                            "value": "Traitor"
+                        },
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        },
+                        {
+                            "id": "a-brother-betrayed"
+                        }
+                    ]
+                }
+            ],
+            "traits": [
+                "Loyalist",
+                "Emperor’s Children",
+                "Master of the Legion"
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "charnabal-broadsword"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "nemesis-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "charnabal-broadsword": {
+            "id": "charnabal-broadsword",
+            "name": "Charnabal broadsword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Charnabal broadsword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Charnabal"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "duellists-edge",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "phoenix-power-spear": {
+            "id": "phoenix-power-spear",
+            "name": "Phoenix power spear",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Phoenix power spear",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "D"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "sonic-lance": {
+            "id": "sonic-lance",
+            "name": "Sonic lance",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Sonic lance",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "2",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Sonic", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "sonic-shriekers": {
+            "id": "sonic-shriekers",
+            "name": "sonic shriekers",
+            "text": "When a Unit that includes any Models with sonic shriekers makes a Charge Move, the Target Unit of that Charge cannot be selected to make Reactions until the Charge Procedure has been completed."
+        }
+    },
+    "upgrades": {
+        "emperors-children-phoenix-power-spears-power-lance": {
+            "id": "emperors-children-phoenix-power-spears-power-lance",
+            "name": "Phoenix Power Spear",
+            "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-lance-to-phoenix-power-spear": {
+                    "id": "power-lance-to-phoenix-power-spear",
+                    "name": "Power lance to Phoenix power spear",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "phoenix-power-spear"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "emperors-children-phoenix-power-spears-power-maul": {
+            "id": "emperors-children-phoenix-power-spears-power-maul",
+            "name": "Phoenix Power Spear",
+            "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-maul-to-phoenix-power-spear": {
+                    "id": "power-maul-to-phoenix-power-spear",
+                    "name": "Power maul to Phoenix power spear",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "phoenix-power-spear"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "emperors-children-phoenix-power-spears-power-axe": {
+            "id": "emperors-children-phoenix-power-spears-power-axe",
+            "name": "Phoenix Power Spear",
+            "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-axe-to-phoenix-power-spear": {
+                    "id": "power-axe-to-phoenix-power-spear",
+                    "name": "Power axe to Phoenix power spear",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "phoenix-power-spear"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "emperors-children-phoenix-power-spears": {
+            "id": "emperors-children-phoenix-power-spears",
+            "name": "Phoenix Power Spear",
+            "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-sword-to-phoenix-power-spear": {
+                    "id": "power-sword-to-phoenix-power-spear",
+                    "name": "Power sword to Phoenix power spear",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "phoenix-power-spear"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "emperors-children-surgical-augments": {
+            "id": "emperors-children-surgical-augments",
+            "name": "Surgical Augments",
+            "description": "Any Model with the Command or Champion Sub-Type and the Emperor's Children and Traitor Traits may have one of the following selected for it: sonic shriekers, sonic lance.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "sonic-shriekers": {
+                    "id": "sonic-shriekers",
+                    "name": "Sonic shriekers",
+                    "cost": {
+                        "points": 15
+                    },
+                    "equipmentRefs": ["sonic-shriekers"],
+                    "when": {
+                        "if": "choice(allegiance) == traitor",
+                        "message": "Traitor units only"
+                    }
+                },
+                "sonic-lance": {
+                    "id": "sonic-lance",
+                    "name": "Sonic lance",
+                    "cost": {
+                        "points": 10
+                    },
+                    "weaponRefs": ["sonic-lance"],
+                    "when": {
+                        "if": "choice(allegiance) == traitor",
+                        "message": "Traitor units only"
+                    }
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        },
+        "a-brother-betrayed": {
+            "id": "a-brother-betrayed",
+            "name": "A Brother Betrayed",
+            "text": "This Gambit allows Saul Tarvitz to gain benefits when fighting specific opponents. While a Model with this Special Rule is in a Challenge with an enemy Model with the Emperor’s Children, World Eaters, Sons of Horus or Death Guard Traits, its Controlling Player can select the following Gambit: Bite of the Betrayed: This Gambit can only be selected during the first Face-Off Step of a Challenge. If this Gambit is selected, until this Challenge ends, modify this Model’s Weapon Skill, Strength and Toughness Characteristics by +1."
+        },
+        "impact": {
+            "id": "impact",
+            "name": "Impact",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "mutable-tactics-emperors-children": {
+            "id": "mutable-tactics-emperors-children",
+            "name": "Unparalleled Skill (Mutable Tactics)",
+            "text": "The IIIrd Legion have an affinity for single combat, and are a match for any other Legion’s warriors. Those who fight alongside them learn much from their perfect bladecraft. A Hit Test result of 4+ is always successful for Models subject to this benefit. If the Emperor’s Children Legion was selected for this Army’s Shattered Legions Trait, when making a Hit Test for a Melee Attack for a Model from that Army subject to the Mutable Tactics Special Rule, a result of 4+ is always successful."
+        },
+        "legion-specialists": {
+            "id": "legion-specialists",
+            "name": "Legion Specialists",
+            "text": "If Models in this Unit would benefit from the Mutable Tactics Legion Tactica, they may only benefit from the bonus related to their Legion whose Trait was replaced as part of the Exemplars of the Legion Prime Advantage."
+        }
+    },
+    "groups": {},
+    "slotOptions": {
+        "exemplars-of-the-legion-emperors-children": {
+            "id": "exemplars-of-the-legion-emperors-children",
+            "name": "Exemplars of the Legion (Emperor’s Children)",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. The Slot added may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War. Each Unit selected to fill such a Slot must be from the Legiones Astartes Army List, not include any Models that have the Unique Sub-Type, and have a Faction Trait that matches the Legion represented by the Model that was selected to fill the Slot with this Prime Advantage. All Models in any of these Units have their Faction Trait replaced with ‘Shattered Legions’ and have the Legion Specialists Special Rule. Only for a Unit with the Command Battlefield Role in a Shattered Legions Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "roles": ["command"]
+            },
+            "when": {
+                "if": "contingent.is(subfaction:shattered-legions)",
+                "message": "Shattered Legions Detachments only"
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Exemplars of the Legion"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "retinue",
+                        "elites",
+                        "war-engine",
+                        "troop",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "legiones-astartes",
+                        "subFactions": ["emperors-children"]
+                    },
+                    "units": {
+                        "exclude": [
+                            {
+                                "profiles": {
+                                    "anyOf": ["Unique"]
+                                }
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": [
+                                    "Legiones Astartes",
+                                    "Emperor’s Children"
+                                ],
+                                "to": "Shattered Legions"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "legion-specialists"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "shattered-legions-emperors-children-mutable-tactics": {
+            "id": "shattered-legions-emperors-children-mutable-tactics",
+            "name": "Unparalleled Skill (Mutable Tactics)",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "mutable-tactics-emperors-children"
+                    }
+                }
+            ]
+        },
+        "shattered-legions-emperors-children-surgical-augments": {
+            "id": "shattered-legions-emperors-children-surgical-augments",
+            "name": "Surgical Augments",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "emperors-children-surgical-augments"
+                }
+            ]
+        },
+        "shattered-legions-emperors-children-phoenix-power-spears": {
+            "id": "shattered-legions-emperors-children-phoenix-power-spears",
+            "name": "Phoenix Power Spear",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "emperors-children-phoenix-power-spears"
+                }
+            ]
+        },
+        "shattered-legions-emperors-children-phoenix-power-spears-power-axe": {
+            "id": "shattered-legions-emperors-children-phoenix-power-spears-power-axe",
+            "name": "Phoenix Power Spear",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "emperors-children-phoenix-power-spears-power-axe"
+                }
+            ]
+        },
+        "shattered-legions-emperors-children-phoenix-power-spears-power-maul": {
+            "id": "shattered-legions-emperors-children-phoenix-power-spears-power-maul",
+            "name": "Phoenix Power Spear",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "emperors-children-phoenix-power-spears-power-maul"
+                }
+            ]
+        },
+        "shattered-legions-emperors-children-phoenix-power-spears-power-lance": {
+            "id": "shattered-legions-emperors-children-phoenix-power-spears-power-lance",
+            "name": "Phoenix Power Spear",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "emperors-children-phoenix-power-spears-power-lance"
+                }
+            ]
+        }
+    }
+}

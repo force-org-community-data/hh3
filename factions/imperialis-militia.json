@@ -10553,7 +10553,32 @@
         "biomancy": {
             "id": "biomancy",
             "name": "Biomancy",
-            "text": "A Model with the Biomancy Discipline gains the following benefits: the Impact (Strength) Special Rule; the Biomantic Rage Psychic Power; the Biomantic Slam Psychic Weapon; the ‘Biomancer’ Trait."
+            "text": "A Model with the Biomancy Discipline gains the following benefits: the Impact (Strength) Special Rule; the Biomantic Rage Psychic Power; the Biomantic Slam Psychic Weapon; the ‘Biomancer’ Trait.",
+            "weapon": {
+                "template": "melee",
+                "profiles": [
+                    {
+                        "name": "Biomantic Slam",
+                        "stats": {
+                            "im": "3",
+                            "am": "1",
+                            "sm": "12",
+                            "ap": "2",
+                            "d": "2"
+                        },
+                        "traits": ["Melee", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "armourbane"
+                            },
+                            {
+                                "id": "force",
+                                "value": "Damage"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "divination": {
             "id": "divination",
@@ -10615,7 +10640,54 @@
         "pyromancy": {
             "id": "pyromancy",
             "name": "Pyromancy",
-            "text": "A Model with the Pyromancy Discipline gains the following benefits: the Explodes (4+) Special Rule; the Wildfire Psychic Weapon; the Conflagration Psychic Weapon; the ‘Pyromancer’ Trait."
+            "text": "A Model with the Pyromancy Discipline gains the following benefits: the Explodes (4+) Special Rule; the Wildfire Psychic Weapon; the Conflagration Psychic Weapon; the ‘Pyromancer’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Wildfire",
+                        "stats": {
+                            "r": "18",
+                            "fp": "1",
+                            "rs": "4",
+                            "ap": "4",
+                            "d": "1"
+                        },
+                        "traits": ["Ranged", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "panic",
+                                "value": "1"
+                            },
+                            {
+                                "id": "blast",
+                                "value": "5\""
+                            },
+                            {
+                                "id": "force",
+                                "value": "Strength"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Conflagration",
+                        "stats": {
+                            "r": "-1",
+                            "fp": "6+D3",
+                            "rs": "5",
+                            "ap": "4",
+                            "d": "1"
+                        },
+                        "traits": ["Melee", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "deflagrate",
+                                "value": "5"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "searchlights": {
             "id": "searchlights",
@@ -10630,12 +10702,60 @@
         "telekinesis": {
             "id": "telekinesis",
             "name": "Telekinesis",
-            "text": "A Model with the Telekinesis Discipline gains the following benefits: the Shrouded (4+) Special Rule; the Force Barrier Psychic Reaction; the Immovable Force Psychic Weapon; the ‘Telekine’ Trait."
+            "text": "A Model with the Telekinesis Discipline gains the following benefits: the Shrouded (4+) Special Rule; the Force Barrier Psychic Reaction; the Immovable Force Psychic Weapon; the ‘Telekine’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Immovable Force",
+                        "stats": {
+                            "r": "18",
+                            "fp": "3",
+                            "rs": "6",
+                            "ap": "4",
+                            "d": "1"
+                        },
+                        "traits": ["Ranged", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "pinning",
+                                "value": "2"
+                            },
+                            {
+                                "id": "force",
+                                "value": "Firepower"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "telepathy": {
             "id": "telepathy",
             "name": "Telepathy",
-            "text": "A Model with the Telepathy Discipline gains the following benefits: the Fear (1) Special Rule; the Mind-burst Psychic Power; the Cursed Whispers Psychic Weapon; the ‘Telepath’ Trait."
+            "text": "A Model with the Telepathy Discipline gains the following benefits: the Fear (1) Special Rule; the Mind-burst Psychic Power; the Cursed Whispers Psychic Weapon; the ‘Telepath’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Cursed Whispers",
+                        "stats": {
+                            "r": "18",
+                            "fp": "2D6",
+                            "rs": "3",
+                            "ap": "-",
+                            "d": "1"
+                        },
+                        "traits": ["Ranged", "Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "stun",
+                                "value": "-"
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     },
     "upgrades": {

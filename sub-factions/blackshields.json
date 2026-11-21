@@ -1,0 +1,162 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "blackshields",
+    "version": "1.0.0",
+    "name": "Blackshields",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "description": "The Blackshields Trait replaces the [Legiones Astartes] Trait. Only Units from the Legiones Astartes Army List that do not have a specific variant of the [Legiones Astartes] Trait (no Legion-specific Units) may be selected for a Detachment with the Blackshields Trait, and it may not include Models with another Legion Trait. Each Blackshields Primary Detachment may select two Oaths of Moment and each Allied Detachment one (the Oaths of Moment pick).",
+    "units": {
+        "endryd-haar": {
+            "id": "endryd-haar",
+            "name": "Endryd Haar",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "endryd-haar",
+                    "name": "Endryd Haar",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "5",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Command", "Unique"],
+                    "specialRules": [
+                        {
+                            "id": "fangs-of-the-emperor"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "World Eaters"
+                        },
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Blackshields", "Master of the Legion"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "archaeotech-pistol"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "terrawatt-pattern-power-gauntlet"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "terrawatt-pattern-power-gauntlet": {
+            "id": "terrawatt-pattern-power-gauntlet",
+            "name": "Terrawatt-pattern power gauntlet",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Terrawatt-pattern power gauntlet",
+                    "stats": {
+                        "im": "2",
+                        "am": "-1",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {},
+    "specialRules": {
+        "bastard-sons-of-fate": {
+            "id": "bastard-sons-of-fate",
+            "name": "Bastard Sons of Fate",
+            "text": "While affected by any of the Pinned, Suppressed or Stunned Battlefield Statuses, a Model with the Blackshields Trait gains a bonus of +1 to their Toughness and Strength Characteristics. If affected by more than one such Battlefield Status then this bonus is increased to +2."
+        },
+        "fangs-of-the-emperor": {
+            "id": "fangs-of-the-emperor",
+            "name": "Fangs of the Emperor",
+            "text": "All Units in the same Primary Detachment as Endryd Haar gain the Infiltrate (12) Special Rule. If Endryd Haar is selected as the only High Command Choice in a Primary Detachment, then all Units from that Primary Detachment that are composed entirely of Models with the Blackshields Trait, the Infantry Type and that do not have any variant of the Bulky (X) Special Rule gain the Infiltrate (12) Special Rule."
+        },
+        "hatred": {
+            "id": "hatred",
+            "name": "Hatred",
+            "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
+            "configurable": true
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "blackshields-trait": {
+            "id": "blackshields-trait",
+            "name": "Blackshields Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "replace": {
+                        "from": ["Legiones Astartes"],
+                        "to": "Blackshields"
+                    }
+                }
+            ]
+        },
+        "bastard-sons-of-fate-all": {
+            "id": "bastard-sons-of-fate-all",
+            "name": "Bastard Sons of Fate",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "bastard-sons-of-fate"
+                    }
+                }
+            ]
+        }
+    }
+}

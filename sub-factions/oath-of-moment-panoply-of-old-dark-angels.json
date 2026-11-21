@@ -1,0 +1,190 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-dark-angels",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (Dark Angels)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: Dark Angels. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-warriors) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-imperial-fists) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-night-lords) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-blood-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-hands) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-world-eaters) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-thousand-sons) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-word-bearers) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-salamanders) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-raven-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-alpha-legion)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {
+        "terranic-greatsword": {
+            "id": "terranic-greatsword",
+            "name": "Terranic greatsword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Terranic greatsword",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Sword of the Order"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "calibanite-warblade": {
+            "id": "calibanite-warblade",
+            "name": "Calibanite warblade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Calibanite warblade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Sword of the Order"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {
+        "dark-angels-terranic-greatsword": {
+            "id": "dark-angels-terranic-greatsword",
+            "name": "Terranic Greatsword",
+            "description": "Any Model with the Command or Champion Sub-Type and the Dark Angels Trait may have its power fist exchanged for one Terranic greatsword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-fist-to-terranic-greatsword": {
+                    "id": "power-fist-to-terranic-greatsword",
+                    "name": "Power fist to Terranic greatsword",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-fist"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "terranic-greatsword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-fist",
+                    "count": 1
+                }
+            ]
+        },
+        "dark-angels-blades-of-the-first-legion": {
+            "id": "dark-angels-blades-of-the-first-legion",
+            "name": "Blades of the First Legion",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Dark Angels Trait may have its power sword exchanged for one Calibanite warblade.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "blades-of-the-first-legion": {
+                    "id": "blades-of-the-first-legion",
+                    "name": "Power sword to Calibanite warblade",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "calibanite-warblade"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {},
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-dark-angels-blades-of-the-first-legion": {
+            "id": "panoply-of-old-dark-angels-blades-of-the-first-legion",
+            "name": "Blades of the First Legion",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "dark-angels-blades-of-the-first-legion"
+                }
+            ]
+        },
+        "panoply-of-old-dark-angels-terranic-greatsword": {
+            "id": "panoply-of-old-dark-angels-terranic-greatsword",
+            "name": "Terranic Greatsword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "dark-angels-terranic-greatsword"
+                }
+            ]
+        }
+    }
+}

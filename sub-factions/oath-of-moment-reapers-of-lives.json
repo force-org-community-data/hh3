@@ -1,0 +1,54 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-reapers-of-lives",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Reapers of Lives",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "No longer governed by the laws of the Imperium, which even Horus himself had cast aside, some bands of Blackshields fought solely to cause more death and suffering. Whether out of spite, misplaced anger or perverse enjoyment, these warriors sought to deepen the chaos around them, to drag the Imperium into an even deeper despair. Units that include mostly Models with this Special Rule score Victory Points when used to destroy enemy Units. All Models with the Blackshields Trait in a Detachment with this Oath of Moment lose any variants of the Line (X) or Vanguard (X) Special Rule they may have, and may not thereafter gain any version of Line (X) or Vanguard (X) from any source, and a Unit that includes any Models with this Oath of Moment may not Control or Contest Objectives, or score Victory Points from any other Primary or Secondary Objective. Instead the Controlling Player of a Detachment with this Oath of Moment gains D3 Victory Points for each enemy Unit entirely Removed as Casualties as part of a Shooting Attack made for any Unit that includes a majority of Models with this Oath of Moment or as part of a Combat which includes any Models with this Oath of Moment under that Player’s Control. If the Unit with this Oath of Moment is a Model with the Vehicle Type, only 1 Victory Point is scored instead. If the enemy Unit whose destruction triggers this Special Rule includes any Models with the Expendable (X) Special Rule, then the number of Victory Points scored for this Special Rule is reduced by the value of X on that variant of the Expendable (X) Special Rule, to a minimum of 0. This Oath of Moment may not be selected if the Detachment already has the Spoils of Victory or Blade of the Just Oaths of Moment.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-the-spoils-of-victory) and not contingent.is(subfaction:oath-of-moment-the-blade-of-the-just)",
+        "message": "Blackshields Detachments only; not with The Spoils of Victory or The Blade of the Just"
+    },
+    "units": {},
+    "weapons": {},
+    "equipment": {},
+    "upgrades": {},
+    "specialRules": {
+        "oath-of-moment-reapers-of-lives": {
+            "id": "oath-of-moment-reapers-of-lives",
+            "name": "Oath of Moment: Reapers of Lives",
+            "text": "No longer governed by the laws of the Imperium, which even Horus himself had cast aside, some bands of Blackshields fought solely to cause more death and suffering. Whether out of spite, misplaced anger or perverse enjoyment, these warriors sought to deepen the chaos around them, to drag the Imperium into an even deeper despair. Units that include mostly Models with this Special Rule score Victory Points when used to destroy enemy Units. All Models with the Blackshields Trait in a Detachment with this Oath of Moment lose any variants of the Line (X) or Vanguard (X) Special Rule they may have, and may not thereafter gain any version of Line (X) or Vanguard (X) from any source, and a Unit that includes any Models with this Oath of Moment may not Control or Contest Objectives, or score Victory Points from any other Primary or Secondary Objective. Instead the Controlling Player of a Detachment with this Oath of Moment gains D3 Victory Points for each enemy Unit entirely Removed as Casualties as part of a Shooting Attack made for any Unit that includes a majority of Models with this Oath of Moment or as part of a Combat which includes any Models with this Oath of Moment under that Player’s Control. If the Unit with this Oath of Moment is a Model with the Vehicle Type, only 1 Victory Point is scored instead. If the enemy Unit whose destruction triggers this Special Rule includes any Models with the Expendable (X) Special Rule, then the number of Victory Points scored for this Special Rule is reduced by the value of X on that variant of the Expendable (X) Special Rule, to a minimum of 0. This Oath of Moment may not be selected if the Detachment already has the Spoils of Victory or Blade of the Just Oaths of Moment."
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "oath-of-moment-reapers-of-lives": {
+            "id": "oath-of-moment-reapers-of-lives",
+            "name": "Oath of Moment: Reapers of Lives",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "oath-of-moment-reapers-of-lives"
+                    }
+                }
+            ]
+        },
+        "reapers-of-lives-no-line": {
+            "id": "reapers-of-lives-no-line",
+            "name": "Reapers of Lives",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "remove": ["line", "vanguard"]
+                }
+            ]
+        }
+    }
+}
