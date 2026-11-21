@@ -40220,7 +40220,7 @@
                     "roles": ["fast-attack"]
                 }
             ],
-            "description": "Replaces the Crusade Primary Detachment. Benefits: Prime Slots in this Detachment may have the Skilled Riders Prime Advantage selected for them. Restrictions: Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following additional Detachments may be selected: First Strike, Combat Pioneer, Lord of War. Every Unit in an Army with this Primary Detachment must only include Models with the Antigrav or Flyer Sub-Type or begin the Battle Embarked on a Transport with the Flyer Sub-Type; any other Units may not be Deployed and are Removed as Casualties (checked by count: such Units, Command and High Command Units aside, may not outnumber the Flyer Transports, since each Transport carries one Unit and the Characters joined to it).",
+            "description": "Replaces the Crusade Primary Detachment. Benefits: Prime Slots in this Detachment may have the Skilled Riders Prime Advantage selected for them. Restrictions: Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following additional Detachments may be selected: First Strike, Combat Pioneer, Lord of War. Every Unit in an Army with this Primary Detachment must only include Models with the Antigrav or Flyer Sub-Type or begin the Battle Embarked on a Transport with the Flyer Sub-Type; any other Units may not be Deployed and are Removed as Casualties (checked by count: such Units, Command and High Command Units aside, may not outnumber the Flyer Transports, since each Transport carries one Unit and the Characters joined to it). Walkers are also counted against Dreadclaws and Kharybdis (one each) and Thunderhawk Gunships and Sokar Stormbirds (two each), and Vehicles other than Rhinos and Land Raider Carriers or Exploratores (carried by a Thunderhawk Transporter, or a Rhino by a Sokar Stormbird) are flagged.",
             "addedSlotRoles": []
         },
         "armoured-spearhead": {
@@ -40555,7 +40555,7 @@
                     }
                 }
             ],
-            "description": "Replaces the Crusade Primary Detachment. Recommended for pre-arranged games only. Benefits: for each non-Vehicle Unit in an Army using this Primary Detachment, one Transport or Heavy Transport Slot may be added to this Detachment. Restrictions: Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following other Detachments may be selected: Tactical Support, First Strike (maximum of 1), Shock Assault, Heavy Support, Warlord, Lord of War. All Units must use the Orbital Drop Protocols deployment method: Units with the Deep Strike or Orbital Assault Vehicle Special Rule start in Reserves, Units with the Flyer Sub-Type in Aerial Reserves, and every other Unit (with any Models joined to it) must start Embarked on a Transport in Reserves or Aerial Reserves or is Destroyed; Models with the Orbital Assault Vehicle Special Rule and the Transport Sub-Type without an Embarked Unit are Destroyed. Checked by count: Units without Deep Strike, Orbital Assault Vehicle or the Flyer Sub-Type (Command and High Command Units aside) may not outnumber the Transports with the Flyer Sub-Type, Deep Strike or Orbital Assault Vehicle.",
+            "description": "Replaces the Crusade Primary Detachment. Recommended for pre-arranged games only. Benefits: for each non-Vehicle Unit in an Army using this Primary Detachment, one Transport or Heavy Transport Slot may be added to this Detachment. Restrictions: Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following other Detachments may be selected: Tactical Support, First Strike (maximum of 1), Shock Assault, Heavy Support, Warlord, Lord of War. All Units must use the Orbital Drop Protocols deployment method: Units with the Deep Strike or Orbital Assault Vehicle Special Rule start in Reserves, Units with the Flyer Sub-Type in Aerial Reserves, and every other Unit (with any Models joined to it) must start Embarked on a Transport in Reserves or Aerial Reserves or is Destroyed; Models with the Orbital Assault Vehicle Special Rule and the Transport Sub-Type without an Embarked Unit are Destroyed. Checked by count: Units without Deep Strike, Orbital Assault Vehicle or the Flyer Sub-Type (Command and High Command Units aside) may not outnumber the Transports with the Flyer Sub-Type, Deep Strike or Orbital Assault Vehicle. Also checked by count: Walkers against Dreadnought Drop Pods, Dreadclaws, Kharybdis (one each) and Thunderhawk Gunships and Sokar Stormbirds (two each); Units with Bulky Models against Transports without Light Transport; Vehicles other than Rhinos and Land Raider Carriers or Exploratores (carried by a Thunderhawk Transporter, or a Rhino by a Sokar Stormbird) are flagged; and Drop Pods and Dreadnought Drop Pods may not outnumber the Units (Walkers) to fill them. Not checked: Transport Capacity and the Bulky (6)/(7) limits.",
             "addedSlotRoles": []
         }
     },
@@ -40719,6 +40719,151 @@
                     "esoterist-on-scimitar-jetbike"
                 ],
                 "traits": ["Traitor"]
+            }
+        },
+        "orbital-drop-riders": {
+            "id": "orbital-drop-riders",
+            "name": "Units that must begin Embarked under the Orbital Drop Protocols",
+            "match": {
+                "exclude": [
+                    {
+                        "specialRules": [
+                            "deep-strike",
+                            "orbital-assault-vehicle"
+                        ]
+                    },
+                    {
+                        "profiles": {
+                            "anyOf": ["flyer"]
+                        }
+                    }
+                ]
+            }
+        },
+        "orbital-drop-walker-passengers": {
+            "id": "orbital-drop-walker-passengers",
+            "name": "Walkers that must begin Embarked under the Orbital Drop Protocols",
+            "match": {
+                "profiles": {
+                    "anyOf": ["walker"]
+                },
+                "exclude": [
+                    {
+                        "specialRules": [
+                            "deep-strike",
+                            "orbital-assault-vehicle"
+                        ]
+                    },
+                    {
+                        "profiles": {
+                            "anyOf": ["flyer"]
+                        }
+                    },
+                    {
+                        "roles": ["command", "high-command"]
+                    }
+                ]
+            }
+        },
+        "orbital-drop-bulky-passengers": {
+            "id": "orbital-drop-bulky-passengers",
+            "name": "Non-Walker, non-Vehicle Units with Bulky that must begin Embarked under the Orbital Drop Protocols",
+            "match": {
+                "specialRules": ["bulky"],
+                "exclude": [
+                    {
+                        "specialRules": [
+                            "deep-strike",
+                            "orbital-assault-vehicle"
+                        ]
+                    },
+                    {
+                        "profiles": {
+                            "anyOf": ["flyer"]
+                        }
+                    },
+                    {
+                        "roles": ["command", "high-command"]
+                    },
+                    {
+                        "profiles": {
+                            "anyOf": ["walker", "vehicle"]
+                        }
+                    }
+                ]
+            }
+        },
+        "orbital-drop-stranded-vehicles": {
+            "id": "orbital-drop-stranded-vehicles",
+            "name": "Vehicles no Transport can carry under the Orbital Drop Protocols",
+            "match": {
+                "profiles": {
+                    "anyOf": ["vehicle"]
+                },
+                "exclude": [
+                    {
+                        "specialRules": [
+                            "deep-strike",
+                            "orbital-assault-vehicle"
+                        ]
+                    },
+                    {
+                        "profiles": {
+                            "anyOf": ["flyer"]
+                        }
+                    },
+                    {
+                        "unitIds": [
+                            "rhino",
+                            "land-raider-carrier",
+                            "land-raider-explorator"
+                        ]
+                    }
+                ]
+            }
+        },
+        "orbital-assault-transports": {
+            "id": "orbital-assault-transports",
+            "name": "Transports with the Orbital Assault Vehicle Special Rule",
+            "match": {
+                "profiles": {
+                    "anyOf": ["transport"]
+                },
+                "specialRules": ["orbital-assault-vehicle"]
+            }
+        },
+        "sky-hunter-walker-passengers": {
+            "id": "sky-hunter-walker-passengers",
+            "name": "Walkers that must begin Embarked on a Flyer Transport",
+            "match": {
+                "profiles": {
+                    "anyOf": ["walker"],
+                    "noneOf": ["antigrav", "flyer"]
+                },
+                "exclude": [
+                    {
+                        "roles": ["command", "high-command"]
+                    }
+                ]
+            }
+        },
+        "sky-hunter-stranded-vehicles": {
+            "id": "sky-hunter-stranded-vehicles",
+            "name": "Vehicles no Flyer Transport can carry",
+            "match": {
+                "profiles": {
+                    "anyOf": ["vehicle"],
+                    "noneOf": ["antigrav", "flyer"]
+                },
+                "exclude": [
+                    {
+                        "unitIds": [
+                            "rhino",
+                            "land-raider-carrier",
+                            "land-raider-explorator"
+                        ]
+                    }
+                ]
             }
         }
     },
@@ -40976,6 +41121,33 @@
                 "message": "With the Sky-Hunter Phalanx Primary Detachment, each Unit with a Model that is neither Antigrav nor a Flyer (Command and High Command Units aside) must begin Embarked on its own Flyer Transport: take at least as many Flyer Transports as such Units"
             }
         },
+        "sky-hunter-phalanx-walkers": {
+            "kind": "expression",
+            "id": "sky-hunter-phalanx-walkers",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:sky-hunter-phalanx) == 0 or list.count(@sky-hunter-walker-passengers) <= list.count(unit:dreadclaw-drop-pod) + list.count(unit:kharybdis-assault-claw) + 2 * (list.count(unit:thunderhawk-gunship) + list.count(unit:sokar-stormbird))",
+                "message": "With the Sky-Hunter Phalanx Primary Detachment, each Walker must begin Embarked on a Flyer Transport: a Dreadclaw or Kharybdis carries one, a Thunderhawk Gunship or Sokar Stormbird two (Bulky limits of 6 or 7 are not checked)"
+            }
+        },
+        "sky-hunter-phalanx-vehicles": {
+            "kind": "expression",
+            "id": "sky-hunter-phalanx-vehicles",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:sky-hunter-phalanx) == 0 or list.count(@sky-hunter-stranded-vehicles) == 0",
+                "message": "With the Sky-Hunter Phalanx Primary Detachment, a Vehicle that is neither Antigrav nor a Flyer is Removed as a Casualty unless it is a Rhino or a Land Raider Carrier or Explorator carried by a Thunderhawk Transporter"
+            }
+        },
+        "sky-hunter-phalanx-carried-vehicles": {
+            "kind": "expression",
+            "id": "sky-hunter-phalanx-carried-vehicles",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:sky-hunter-phalanx) == 0 or (list.count(unit:land-raider-carrier) + list.count(unit:land-raider-explorator)) <= list.count(unit:thunderhawk-transporter) and list.count(unit:rhino) + 2 * (list.count(unit:land-raider-carrier) + list.count(unit:land-raider-explorator)) <= 2 * list.count(unit:thunderhawk-transporter) + list.count(unit:sokar-stormbird)",
+                "message": "With the Sky-Hunter Phalanx Primary Detachment, a Thunderhawk Transporter carries two Rhinos or one Land Raider Carrier or Explorator, and a Sokar Stormbird one Rhino: take enough for the Rhinos and Land Raiders"
+            }
+        },
         "orbital-drop-assault-transports": {
             "kind": "expression",
             "id": "orbital-drop-assault-transports",
@@ -40983,6 +41155,51 @@
             "when": {
                 "if": "main.count(group:orbital-drop-assault) == 0 or list.count(@orbital-drop-passengers) <= list.count(@flyer-transports) + list.count(@orbital-drop-transports)",
                 "message": "With the Orbital Drop Assault Primary Detachment, each Unit without Deep Strike, Orbital Assault Vehicle or the Flyer Sub-Type (Command and High Command Units aside) must begin Embarked on its own Transport with the Flyer Sub-Type, Deep Strike or Orbital Assault Vehicle: take at least as many such Transports as such Units"
+            }
+        },
+        "orbital-drop-assault-walkers": {
+            "kind": "expression",
+            "id": "orbital-drop-assault-walkers",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:orbital-drop-assault) == 0 or list.count(@orbital-drop-walker-passengers) <= list.count(unit:dreadnought-drop-pod) + list.count(unit:dreadclaw-drop-pod) + list.count(unit:kharybdis-assault-claw) + 2 * (list.count(unit:thunderhawk-gunship) + list.count(unit:sokar-stormbird))",
+                "message": "With the Orbital Drop Assault Primary Detachment, each Walker must begin Embarked: a Dreadnought Drop Pod, Dreadclaw or Kharybdis carries one, a Thunderhawk Gunship or Sokar Stormbird two (Bulky limits of 6 or 7 are not checked)"
+            }
+        },
+        "orbital-drop-assault-bulky": {
+            "kind": "expression",
+            "id": "orbital-drop-assault-bulky",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:orbital-drop-assault) == 0 or list.count(@orbital-drop-bulky-passengers) <= list.count(unit:dreadclaw-drop-pod) + list.count(unit:kharybdis-assault-claw) + list.count(unit:caestus-assault-ram) + list.count(unit:storm-eagle) + list.count(unit:thunderhawk-gunship) + list.count(unit:sokar-stormbird) + list.count(unit:thunderhawk-transporter) and list.count(@orbital-drop-bulky-passengers) + list.count(@orbital-drop-walker-passengers) <= list.count(unit:dreadnought-drop-pod) + list.count(unit:dreadclaw-drop-pod) + list.count(unit:kharybdis-assault-claw) + list.count(unit:caestus-assault-ram) + list.count(unit:storm-eagle) + list.count(unit:thunderhawk-gunship) + list.count(unit:sokar-stormbird) + list.count(unit:thunderhawk-transporter) + list.count(unit:thunderhawk-gunship) + list.count(unit:sokar-stormbird)",
+                "message": "With the Orbital Drop Assault Primary Detachment, Units with Bulky Models cannot use Drop Pods or Termites (Light Transport): take enough Dreadclaws, Kharybdis or Flyer Transports for them and the Walkers"
+            }
+        },
+        "orbital-drop-assault-vehicles": {
+            "kind": "expression",
+            "id": "orbital-drop-assault-vehicles",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:orbital-drop-assault) == 0 or list.count(@orbital-drop-stranded-vehicles) == 0",
+                "message": "With the Orbital Drop Assault Primary Detachment, a Vehicle without Deep Strike, Orbital Assault Vehicle or the Flyer Sub-Type is Destroyed unless it is a Rhino or a Land Raider Carrier or Explorator carried by a Thunderhawk Transporter"
+            }
+        },
+        "orbital-drop-assault-carried-vehicles": {
+            "kind": "expression",
+            "id": "orbital-drop-assault-carried-vehicles",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:orbital-drop-assault) == 0 or (list.count(unit:land-raider-carrier) + list.count(unit:land-raider-explorator)) <= list.count(unit:thunderhawk-transporter) and list.count(unit:rhino) + 2 * (list.count(unit:land-raider-carrier) + list.count(unit:land-raider-explorator)) <= 2 * list.count(unit:thunderhawk-transporter) + list.count(unit:sokar-stormbird)",
+                "message": "With the Orbital Drop Assault Primary Detachment, a Thunderhawk Transporter carries two Rhinos or one Land Raider Carrier or Explorator, and a Sokar Stormbird one Rhino: take enough for the Rhinos and Land Raiders"
+            }
+        },
+        "orbital-drop-assault-empty-pods": {
+            "kind": "expression",
+            "id": "orbital-drop-assault-empty-pods",
+            "scope": "list",
+            "when": {
+                "if": "main.count(group:orbital-drop-assault) == 0 or list.count(@orbital-assault-transports) <= list.count(@orbital-drop-riders) and list.count(unit:dreadnought-drop-pod) <= list.count(@orbital-drop-walker-passengers)",
+                "message": "With the Orbital Drop Assault Primary Detachment, a Drop Pod or Dreadnought Drop Pod with no Unit Embarked on it is Destroyed: take no more of them than Units to carry (Dreadnought Drop Pods: Walkers)"
             }
         }
     }
