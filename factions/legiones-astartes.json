@@ -40569,11 +40569,15 @@
                 }
             }
         },
-        "logistical-not-war-engine": {
-            "id": "logistical-not-war-engine",
-            "name": "Logistical Benefit Units outside a War-engine Slot",
+        "added-slot-not-war-engine": {
+            "id": "added-slot-not-war-engine",
+            "name": "Units in a Slot a Prime Advantage added, outside a War-engine Slot",
             "match": {
-                "traits": ["Logistical"],
+                "traits": [
+                    "Logistical",
+                    "Rewards of Treachery",
+                    "Paragon of Malevolence"
+                ],
                 "exclude": [
                     {
                         "roles": ["war-engine"]
@@ -40877,7 +40881,7 @@
             "id": "fury-of-the-ancients-slot-prime-advantages",
             "scope": "list",
             "when": {
-                "if": "main.count(group:fury-of-the-ancients) == 0 or list.count(@logistical-not-war-engine) + list.count(trait:clade-operative) + list.count(trait:cult-operative) + list.count(trait:rewards-of-treachery) + list.count(trait:logisticae) + list.count(trait:paragon-of-malevolence) == 0",
+                "if": "main.count(group:fury-of-the-ancients) == 0 or list.count(@added-slot-not-war-engine) + list.count(trait:clade-operative) + list.count(trait:cult-operative) + list.count(trait:logisticae) == 0",
                 "message": "With the Fury of the Ancients Primary Detachment, Prime Advantages which add additional Battlefield Role Slots may only add War-engine Slots"
             }
         },
