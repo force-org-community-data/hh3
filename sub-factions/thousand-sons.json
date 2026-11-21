@@ -42,6 +42,14 @@
                     "specialRules": [
                         {
                             "id": "arch-magister-of-the-corvidae"
+                        },
+                        {
+                            "id": "hatred",
+                            "value": "Psykers"
+                        },
+                        {
+                            "id": "duellists-edge",
+                            "value": "2"
                         }
                     ]
                 }
@@ -50,7 +58,10 @@
                 "Traitor",
                 "Thousand Sons",
                 "Psyker",
-                "Master of the Legion"
+                "Master of the Legion",
+                "Corvidae",
+                "Thaumaturge",
+                "Diviner"
             ],
             "defaultGear": [
                 {
@@ -68,6 +79,42 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "corvidae"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "fated-shots"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "paths-of-consequence"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "thaumaturgy"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "resurrection"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "tranquillity"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "divination"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "every-strike-foreseen"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "foresights-blessing"
                 }
             ],
             "limit": {
@@ -706,6 +753,14 @@
                     "id": "bolt-pistol",
                     "perModel": true,
                     "profileId": "khenetai-blade"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "bladeweaving"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "mindsong-of-blades"
                 }
             ],
             "upgrades": {
@@ -928,7 +983,12 @@
                 "Traitor",
                 "Thousand Sons",
                 "Psyker",
-                "Master of the Legion"
+                "Master of the Legion",
+                "Raptora",
+                "Pyrae",
+                "Pavoni",
+                "Corvidae",
+                "Athanaean"
             ],
             "defaultGear": [
                 {
@@ -938,6 +998,50 @@
                 {
                     "kind": "weapon",
                     "id": "psyfire-serpenta"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "raptora"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "kine-shield"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "pyrae"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "inferno-shield"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "pavoni"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "stoneform"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "corvidae"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "fated-shots"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "paths-of-consequence"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "athanaean"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "clarity"
                 }
             ],
             "upgrades": {
@@ -1931,6 +2035,10 @@
                     "kind": "weapon",
                     "id": "krak-grenades",
                     "perModel": true
+                },
+                {
+                    "kind": "equipment",
+                    "id": "aetheric-guidance"
                 }
             ],
             "upgrades": {
@@ -2955,7 +3063,191 @@
             ]
         }
     },
-    "equipment": {},
+    "equipment": {
+        "raptora": {
+            "id": "raptora",
+            "name": "Raptora",
+            "text": "All Models in a Unit with the Raptora Prosperine Arcana gain the following benefits: The Crushing Force Psychic Weapon; the Kine Shield Psychic Reaction; the ‘Raptora’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Crushing Force",
+                        "stats": {
+                            "r": "12",
+                            "fp": "1",
+                            "rs": "9",
+                            "ap": "4",
+                            "d": "2"
+                        },
+                        "traits": ["Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "armourbane"
+                            },
+                            {
+                                "id": "force",
+                                "value": "D"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "pyrae": {
+            "id": "pyrae",
+            "name": "Pyrae",
+            "text": "All Models in a Unit with the Pyrae Prosperine Arcana gain the following benefits: The Inferno Shield Psychic Power; the Burning Grasp Psychic Weapon; the ‘Pyrae’ Trait.",
+            "weapon": {
+                "template": "melee",
+                "profiles": [
+                    {
+                        "name": "Burning Grasp",
+                        "stats": {
+                            "im": "I",
+                            "am": "1",
+                            "sm": "8",
+                            "ap": "3",
+                            "d": "2"
+                        },
+                        "traits": ["Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "critical-hit",
+                                "value": "6+"
+                            },
+                            {
+                                "id": "breaching",
+                                "value": "5+"
+                            },
+                            {
+                                "id": "armourbane"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "pavoni": {
+            "id": "pavoni",
+            "name": "Pavoni",
+            "text": "All Models in a Unit with the Pavoni Prosperine Arcana gain the following benefits: The Stoneform Psychic Reaction; the Bloodboil Psychic Weapon; the ‘Pavoni’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Bloodboil",
+                        "stats": {
+                            "r": "12",
+                            "fp": "1",
+                            "rs": "4",
+                            "ap": "2",
+                            "d": "2"
+                        },
+                        "traits": ["Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "poisoned",
+                                "value": "2+"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "corvidae": {
+            "id": "corvidae",
+            "name": "Corvidae",
+            "text": "All Models in a Unit with the Corvidae Prosperine Arcana gain the following benefits: The Fated Shots Psychic Power; the Paths of Consequence Psychic Power; the ‘Corvidae’ Trait."
+        },
+        "athanaean": {
+            "id": "athanaean",
+            "name": "Athanaean",
+            "text": "All Models in a Unit with the Athanaean Prosperine Arcana gain the following benefits: The Emanation of Dread Psychic Weapon; the Clarity Psychic Power; the ‘Athanaean’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Emanation of Dread",
+                        "stats": {
+                            "r": "24",
+                            "fp": "3",
+                            "rs": "4",
+                            "ap": "-",
+                            "d": "1"
+                        },
+                        "traits": ["Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "panic",
+                                "value": "1"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "osiraean": {
+            "id": "osiraean",
+            "name": "Osiraean",
+            "text": "All Models in a Unit with the Osiraean Prosperine Arcana gain the following benefits: The Psychometry Psychic Power; the Machine Empathy Psychic Power; the ‘Osiraean’ Trait."
+        },
+        "kine-shield": {
+            "id": "kine-shield",
+            "name": "Kine Shield",
+            "text": "Psychic Reaction (Blessing). This Psychic Reaction allows a Unit to gain a Shrouded Damage Mitigation Roll. Trigger: The Reactive Player may choose to declare a Kine Shield Psychic Reaction at the start of Step 3 of a Shooting Attack made by the Active Player that targets a Unit that includes at least one Model with the Raptora Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Kine Shield Psychic Reaction. This cost is paid if the Willpower Check is successful. If the Willpower Check fails, the cost is not paid. Focus: The Focus of this Psychic Reaction must be a Model with the Raptora Trait under the Reactive Player’s control, and must be a part of the Unit targeted by the Shooting Attack that triggered this Psychic Reaction. Target: The Target Unit must be the Unit that the Focus is part of, that is the target of the Shooting Attack that triggered the Reaction and must include only Models with the Thousand Sons Trait. Duration: If successfully Manifested the effects of this Psychic Reaction last until the end of the Sub-Phase in which it was declared. Process Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. If the Manifestation Check is successful, then all Models in the Target Unit gain a 4+ Shrouded Damage Mitigation Roll against any wounds inflicted. If the Manifestation Check fails then there is no further effect."
+        },
+        "inferno-shield": {
+            "id": "inferno-shield",
+            "name": "Inferno Shield",
+            "text": "Psychic Power (Blessing). This Psychic Power allows a Unit to inflict automatic hits onto a Unit that makes Melee Attacks against them. Trigger: The Active Player may choose to Manifest the Inferno Shield Psychic Power at the end of the Declare Weapons and Set Initiative Steps Step of a Combat. Focus: The Focus of the Power must be a Model with the Pyrae Trait and under the Active Player’s control, and must be part of a Unit in that Combat. Target: The Target Unit must be the Unit that the Focus is part of, and must only include models with the Thousand Sons Trait. Duration: If successfully Manifested, the effects of this Psychic Power last until the Combat is resolved. Process Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. If this Psychic Power is successfully Manifested, then all Models in the Target Unit gain the Inferno Shield Special Rule. If the Manifestation Check fails then there is no further effect. Inferno Shield At the end of each Initiative Step, each Unit that scored any Hits against a Unit that contains any Models with this Special Rule suffers D6 Hits with a Strength of 4, an AP of ‘-’ and a Damage of 1, allocated by that Unit’s Controlling Player."
+        },
+        "stoneform": {
+            "id": "stoneform",
+            "name": "Stoneform",
+            "text": "Psychic Reaction (Blessing). This Psychic Reaction boosts the Toughness Characteristic of the Reacting Unit. Trigger: The Reactive Player may choose to declare a Stoneform Psychic Reaction at the start of Step 3 of a Shooting Attack made by the Active Player that targets a Unit with at least one Model with the Pavoni Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Stoneform Psychic Reaction. This cost is paid if the Willpower Check is successful. If the Willpower Check fails, the cost is not paid. Focus: The Focus of this Psychic Reaction must be a Model with the Pavoni Trait under the Reactive Player’s control, and must be a part of the Unit targeted by the Shooting Attack that triggered this Psychic Reaction. Target: The Target Unit must be the Unit that the Focus is part of, and must only include models with the Thousand Sons Trait. Duration: If successfully Manifested, the effects of this Psychic Reaction last until the end of the Sub-Phase in which it was declared. Process Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. If the Manifestation Check is successful, then all Models in the Unit that is the target of the Blessing gain a bonus of +2 to their Toughness Characteristic. If the Manifestation Check fails then there is no further effect."
+        },
+        "fated-shots": {
+            "id": "fated-shots",
+            "name": "Fated Shots",
+            "text": "Psychic Power (Blessing). This Psychic Power improves the effectiveness of Ranged Attacks made by the Unit. Trigger: The Active Player may choose to Manifest the Fated Shots Psychic Power in the Shooting Phase, at the start of Step 4 of any Shooting Attack made by a Unit that includes at least one Model with the Corvidae Trait controlled by the Active Player. Focus: The Focus of the Power must be a Model with the Corvidae Trait that is part of the Unit making the Shooting Attack. Target: The Target Unit must be the Unit that the Focus is part of, and must only include models with the Thousand Sons Trait. Duration: If successfully Manifested, the effects of this Psychic Power last until the end of the Shooting Attack being resolved. Process Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. If the Manifestation Check is successful, then all ranged Weapons Models in the Target Unit have (excluding Weapons with the Blast (X) Special Rule) gain the Rending (5+) Special Rule. If the Manifestation Check fails then there is no further effect."
+        },
+        "paths-of-consequence": {
+            "id": "paths-of-consequence",
+            "name": "Paths of Consequence",
+            "text": "Psychic Power (Curse). This Power is used in the Start Phase and reduces the target’s Movement as well as causing it to suffer Dangerous Terrain Tests. Trigger: The Active Player may choose to Manifest the Paths of Consequence Psychic Power in the Effects Sub-Phase of the Start Phase. Focus: The Focus of the Power must be a Model with the Corvidae Trait and must be controlled by the Active Player. Target: The Target Unit must be a Unit under the control of the Reactive Player with at least one Model within 18\" of the Focus and with Line of Sight to the Focus. Duration: If successfully Manifested, the effects of this Psychic Curse last until the start of the Active Player’s next Turn. Process Once the Focus and Target Unit have been decided, the Target Unit’s Controlling Player makes a Resistance Check for that Unit. If the Resistance Check is failed, then all Models in the Target Unit suffer a penalty of -2 to their Movement Characteristic, to a minimum of 0. Furthermore, the first time a Model in the Target Unit Moves in a given Phase, it must take a Dangerous Terrain Test. If the Resistance Check succeeds then there is no further effect."
+        },
+        "clarity": {
+            "id": "clarity",
+            "name": "Clarity",
+            "text": "Psychic Power (Blessing). This Psychic Power allows the Controlling Player to remove a Tactical Status from the Unit. Trigger: The Active Player may choose to Manifest the Clarity Psychic Power in the Effects Sub-Phase of the Start Phase. Focus: The Focus of the Power must be a Model with the Athanaean Trait and under the Active Players control. Target: The Target Unit must be a Unit under the Active Player’s control, must have at least one Model within 18\" and with Line of Sight to the Focus, and must only include models with the Thousand Sons Trait. Duration: If successfully Manifested, the effects of this Psychic Power are resolved immediately. Process Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. If the Manifestation Check is successful, the Controlling Player may select a single Tactical Status any Model in the Target Unit has. This Tactical Status is immediately removed from every Model in the Target Unit. If the Manifestation Check fails then there is no further effect."
+        },
+        "psychometry": {
+            "id": "psychometry",
+            "name": "Psychometry",
+            "text": "Psychic Power (Blessing). This Psychic Power can be used in the Shooting Phase to decrease the value of the Overload (X) Special Rule on a Unit’s Weapons. Trigger: The Active Player may choose to Manifest the Psychometry Psychic Power in the Shooting Phase, at the start of Step 3 of any Shooting Attack made by a Unit that includes at least one Model with the Osiraean Trait controlled by the Active Player. Focus: The Focus of the Power must be a Model with the Osiraean Trait that is part of the Unit making the Shooting Attack. Target: The Target Unit must be the Unit that the Focus is part of. Duration: If successfully Manifested, the effects of this Psychic Power last until the end of the Shooting Attack being resolved. Process Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. If the Manifestation Check is successful, then the value of X of any version of the Overload (X) Special Rule on any Weapons of Models in the Target Unit is modified by -1. If this would modify the value of X to 0, then the Overload (X) Special Rule cannot come into effect for that Weapon for the duration of this Power. If the Manifestation Check fails then there is no further effect."
+        },
+        "machine-empathy": {
+            "id": "machine-empathy",
+            "name": "Machine Empathy",
+            "text": "Psychic Power (Blessing). This Psychic Power can be used in the Start Phase to restore a single Wound to a Unit. Trigger: The Active Player may choose to Manifest the Machine Empathy Psychic Power in the Effects Sub-Phase of the Start Phase. Focus: The Focus of the Power must be a Model with the Osiraean Trait and under the Active Player’s control. Target: The Target Model must be a single Model in the Unit that the Focus is part of. Duration: If successfully Manifested, the effects of this Psychic Power are resolved immediately. Process Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. If the Manifestation Check is successful, then the Target Model gains 1 Wound. This cannot increase the Target Model’s Wounds Characteristic above its Base Value. If the Manifestation Check fails then there is no further effect."
+        },
+        "bladeweaving": {
+            "id": "bladeweaving",
+            "name": "Bladeweaving",
+            "text": "Psychic Reaction (Blessing). This Psychic Reaction allows the Unit to gain an Invulnerable Saving Throw against Volley and Melee Attacks. Trigger: The Reactive Player may choose to declare a Bladeweaving Psychic Reaction in the Assault Phase, at the start of Step 4 of the Charge Process, if the Active Player declares a Charge targeting a Unit that includes at least one Model with the Khenetai Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Bladeweaving Psychic Reaction. This cost is paid if the Willpower Check is successful. If the Willpower Check fails, the cost is not paid. Focus: The Focus of this Psychic Reaction must be a Model with the Khenetai Trait under the Reactive Player’s control, and must be a part of the Unit targeted by the Charge that triggered this Psychic Reaction. Target: The Target Unit must be the Unit that is the target of the Charge that triggered the Reaction. Duration: If successfully Manifested, the effects of this Psychic Reaction last until the end of the Fight Sub-Phase in which it was declared. Process Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. If the Manifestation Check is successful, then all Models in the Unit that is the target of the Blessing gain a 5+ Invulnerable Saving Throw against any wounds inflicted. If the Manifestation Check fails then there is no further effect."
+        },
+        "mindsong-of-blades": {
+            "id": "mindsong-of-blades",
+            "name": "Mindsong of Blades",
+            "text": "Psychic Power (Blessing). This Psychic Power grants paired Achea force swords the Precision (5+) Special Rule. Trigger: The Active Player may choose to Manifest the Mindsong of Blades Psychic Power in the Assault Phase, at the start of the Declare Weapons and Set Initiative Steps Step of a Combat that includes a Unit with at least one Model with the Khenetai Trait. Focus: The Focus of the Power must be a Model with the Khenetai Trait that is part of a Unit that is in the Combat. Target: The Target Unit must be the Unit that the Focus is part of. Duration: If successfully Manifested, the effects of this Psychic Power last until the end of the Fight Sub-Phase being resolved. Process Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. If the Manifestation Check is successful, then all paired Achea force swords that Models in the Target Unit have gain the Precision (5+) Special Rule. If the Manifestation Check fails then there is no further effect."
+        },
+        "aetheric-guidance": {
+            "id": "aetheric-guidance",
+            "name": "Ætheric Guidance",
+            "text": "Psychic Power (Blessing). This Psychic Power improves the effectiveness of Ranged Attacks made by the Unit. Trigger: The Active Player may choose to Manifest the Ætheric Guidance Psychic Power in the Shooting Phase, at the start of Step 4 of any Shooting Attack made by a Unit that includes at least one Model with the Unattuned Trait controlled by the Active Player. Focus: The Focus of the Power must be a Model with the Unattuned Trait that is part of the Unit making the Shooting Attack. Target: The Target Unit must be the Unit that the Focus is part of, and must only include Models with the Thousand Sons Trait. Duration: If successfully Manifested, the effects of this Psychic Power last until the end of the Shooting Attack being resolved. Process 1. Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. 2. If the Manifestation Check is successful, then all ranged Weapons Models in the Target Unit have (excluding Weapons with the Blast (X) Special Rule) gain the Breaching (6+) Special Rule. 3. If the Manifestation Check fails then there is no further effect."
+        }
+    },
     "upgrades": {
         "thousand-sons-achea-pattern-force-swords": {
             "id": "thousand-sons-achea-pattern-force-swords",
@@ -3506,6 +3798,121 @@
                     ]
                 }
             }
+        },
+        "prosperine-arcana": {
+            "id": "prosperine-arcana",
+            "name": "Prosperine Arcana",
+            "description": "Each Unit with the Thousand Sons Trait (excluding Units that contain Models with the Vehicle or Automata Type or the Unique Sub-Type) can be given one Prosperine Arcana for +10 Points per Unit. Each Prosperine Arcana is a Psychic Discipline which Models in that Unit can use. If a Model Manifesting a Psychic Power, Psychic Weapon or Psychic Reaction gained from a Prosperine Arcana suffers the effects of Perils of the Warp, do not roll on the Perils of the Warp table. Instead, the Unit suffers D3 wounds, each with an AP of 2 and a Damage of 1 which ignore all Cover Saves and Damage Mitigation Rolls; Invulnerable Saves may be taken. If a Unit that has a Prosperine Arcana is granted a Psychic Weapon, only one Model in that Unit may use that Psychic Weapon each time that Unit is selected to make attacks as part of a Shooting Attack or a Combat. Osiraean is only for Saturnine Praetors, Centurions, Command Squads and Terminator Squads, and Units entirely of Walkers.",
+            "perModel": {
+                "type": "single",
+                "max": 1
+            },
+            "default": "none",
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "raptora": {
+                    "id": "raptora",
+                    "name": "Raptora",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["raptora", "kine-shield"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Raptora"]
+                        }
+                    ]
+                },
+                "pyrae": {
+                    "id": "pyrae",
+                    "name": "Pyrae",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pyrae", "inferno-shield"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Pyrae"]
+                        }
+                    ]
+                },
+                "pavoni": {
+                    "id": "pavoni",
+                    "name": "Pavoni",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["pavoni", "stoneform"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Pavoni"]
+                        }
+                    ]
+                },
+                "corvidae": {
+                    "id": "corvidae",
+                    "name": "Corvidae",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": [
+                        "corvidae",
+                        "fated-shots",
+                        "paths-of-consequence"
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Corvidae"]
+                        }
+                    ]
+                },
+                "athanaean": {
+                    "id": "athanaean",
+                    "name": "Athanaean",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["athanaean", "clarity"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Athanaean"]
+                        }
+                    ]
+                },
+                "osiraean": {
+                    "id": "osiraean",
+                    "name": "Osiraean",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": [
+                        "osiraean",
+                        "psychometry",
+                        "machine-empathy"
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Osiraean"]
+                        }
+                    ],
+                    "when": {
+                        "if": "unit.is(unit:praetor-in-saturnine-terminator-armour) or unit.is(unit:centurion-in-saturnine-terminator-armour) or unit.is(unit:saturnine-terminator-command-squad) or unit.is(unit:saturnine-terminator-squad) or unit.is(type:walker)",
+                        "message": "Saturnine Praetors, Centurions, Command Squads and Terminator Squads, and Walkers only"
+                    }
+                }
+            }
         }
     },
     "specialRules": {
@@ -3522,7 +3929,7 @@
         "warriors-of-the-khenetai": {
             "id": "warriors-of-the-khenetai",
             "name": "Warriors of the Khenetai",
-            "text": "Khenetai Blade Occult Models have a specific Prosperine Arcana. A Unit that includes Models with this Special Rule cannot have a Prosperine Arcana selected for it. Instead, they have the Khenetai Prosperine Arcana. This follows all the Rules for Prosperine Arcana. All Models in a Unit with the Khenetai Prosperine Arcana gains the following benefits: The Bladeweaving Psychic Reaction The Mindsong of Blades Psychic Power The ‘Khenetai’ Trait BLADEWEAVING (Psychic Reaction, Blessing) This Psychic Reaction allows the Unit to gain an Invulnerable Saving Throw against Volley and Melee Attacks. Trigger: The Reactive Player may choose to declare a Bladeweaving Psychic Reaction in the Assault Phase, at the start of Step 4 of the Charge Process, if the Active Player declares a Charge targeting a Unit that includes at least one Model with the Khenetai Trait. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Bladeweaving Psychic Reaction. This cost is paid if the Willpower Check is successful. If the Willpower Check fails, the cost is not paid. Focus: The Focus of this Psychic Reaction must be a Model with the Khenetai Trait under the Reactive Player’s control, and must be a part of the Unit targeted by the Charge that triggered this Psychic Reaction. Target: The Target Unit must be the Unit that is the target of the Charge that triggered the Reaction. Duration: If successfully Manifested, the effects of this Psychic Reaction last until the end of the Fight Sub-Phase in which it was declared. Process Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. If the Manifestation Check is successful, then all Models in the Unit that is the target of the Blessing gain a 5+ Invulnerable Saving Throw against any wounds inflicted. If the Manifestation Check fails then there is no further effect. MINDSONG OF BLADES (Psychic Power, Blessing) This Psychic Power grants paired Achea force swords the Precision (5+) Special Rule. Trigger: The Active Player may choose to Manifest the Mindsong of Blades Psychic Power in the Assault Phase, at the start of the Declare Weapons and Set Initiative Steps Step of a Combat that includes a Unit with at least one Model with the Khenetai Trait. Focus: The Focus of the Power must be a Model with the Khenetai Trait that is part of a Unit that is in the Combat. Target: The Target Unit must be the Unit that the Focus is part of. Duration: If successfully Manifested, the effects of this Psychic Power last until the end of the Fight Sub-Phase being resolved. Process Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. If the Manifestation Check is successful, then all paired Achea force swords that Models in the Target Unit have gain the Precision (5+) Special Rule. If the Manifestation Check fails then there is no further effect."
+            "text": "Khenetai Blade Occult Models have a specific Prosperine Arcana. A Unit that includes Models with this Special Rule cannot have a Prosperine Arcana selected for it. Instead, they have the Khenetai Prosperine Arcana. This follows all the Rules for Prosperine Arcana. All Models in a Unit with the Khenetai Prosperine Arcana gains the following benefits: The Bladeweaving Psychic Reaction The Mindsong of Blades Psychic Power The ‘Khenetai’ Trait."
         },
         "magister-of-dust": {
             "id": "magister-of-dust",
@@ -3557,7 +3964,7 @@
         "unattuned-practitioners": {
             "id": "unattuned-practitioners",
             "name": "Unattuned Practitioners",
-            "text": "Thousand Sons Inductii Models have a specific Prosperine Arcana. A Unit that includes Models with this Special Rule cannot have a Prosperine Arcana selected for it. Instead, they have the Unattuned Prosperine Arcana. This follows all the Rules for Prosperine Arcana. All Models in a Unit with the Unattuned Prosperine Arcana gain the following benefits: The Ætheric Guidance Psychic Power The ‘Unattuned’ Trait Ætheric Guidance (Psychic Power, Blessing) One of the simplest arcana, this allowed the practitioner to form a bond between mind and weapon, ensuring each shot found the weaknesses in their foe’s armour. This Psychic Power improves the effectiveness of Ranged Attacks made by the Unit. Trigger: The Active Player may choose to Manifest the Ætheric Guidance Psychic Power in the Shooting Phase, at the start of Step 4 of any Shooting Attack made by a Unit that includes at least one Model with the Unattuned Trait controlled by the Active Player. Focus: The Focus of the Power must be a Model with the Unattuned Trait that is part of the Unit making the Shooting Attack. Target: The Target Unit must be the Unit that the Focus is part of, and must only include Models with the Thousand Sons Trait. Duration: If successfully Manifested, the effects of this Psychic Power last until the end of the Shooting Attack being resolved. Process 1. Once the Focus and Target Unit have been decided, the Controlling Player of the Focus must make a Manifestation Check. 2. If the Manifestation Check is successful, then all ranged Weapons Models in the Target Unit have (excluding Weapons with the Blast (X) Special Rule) gain the Breaching (6+) Special Rule. 3. If the Manifestation Check fails then there is no further effect."
+            "text": "Thousand Sons Inductii Models have a specific Prosperine Arcana. A Unit that includes Models with this Special Rule cannot have a Prosperine Arcana selected for it. Instead, they have the Unattuned Prosperine Arcana. This follows all the Rules for Prosperine Arcana. All Models in a Unit with the Unattuned Prosperine Arcana gain the following benefits: The Ætheric Guidance Psychic Power The ‘Unattuned’ Trait."
         },
         "inductii": {
             "id": "inductii",
@@ -3788,6 +4195,32 @@
                 {
                     "kind": "addUpgrade",
                     "upgradeId": "thousand-sons-asphyx-bolters"
+                }
+            ]
+        },
+        "prosperine-arcana": {
+            "id": "prosperine-arcana",
+            "name": "Prosperine Arcana",
+            "selector": {
+                "traits": ["Thousand Sons"],
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["vehicle", "automata", "unique"]
+                        }
+                    },
+                    {
+                        "unitIds": [
+                            "khenetai-occult-cabal",
+                            "thousand-sons-inductii-squad"
+                        ]
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "prosperine-arcana"
                 }
             ]
         }
