@@ -95,11 +95,28 @@
                     "cost": {
                         "points": 20
                     },
-                    "equipmentRefs": ["telekinesis"],
+                    "equipmentRefs": ["telekinesis", "force-barrier"],
                     "effects": [
                         {
                             "kind": "trait",
                             "add": ["Psyker"]
+                        },
+                        {
+                            "kind": "specialRule",
+                            "profiles": {
+                                "anyOf": ["command", "champion"]
+                            },
+                            "rule": {
+                                "id": "shrouded",
+                                "value": "4+"
+                            }
+                        },
+                        {
+                            "kind": "trait",
+                            "profiles": {
+                                "anyOf": ["command", "champion"]
+                            },
+                            "add": ["Telekine"]
                         }
                     ]
                 },
@@ -109,11 +126,18 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["telepathy"],
+                    "equipmentRefs": ["telepathy", "mind-burst"],
                     "effects": [
                         {
                             "kind": "trait",
                             "add": ["Psyker"]
+                        },
+                        {
+                            "kind": "trait",
+                            "profiles": {
+                                "anyOf": ["command", "champion"]
+                            },
+                            "add": ["Telepath"]
                         }
                     ]
                 }

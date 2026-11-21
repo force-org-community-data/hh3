@@ -66,11 +66,28 @@
                     "cost": {
                         "points": 20
                     },
-                    "equipmentRefs": ["biomancy"],
+                    "equipmentRefs": ["biomancy", "biomantic-rage"],
                     "effects": [
                         {
                             "kind": "trait",
                             "add": ["Psyker"]
+                        },
+                        {
+                            "kind": "specialRule",
+                            "profiles": {
+                                "anyOf": ["command", "champion"]
+                            },
+                            "rule": {
+                                "id": "impact",
+                                "value": "Strength"
+                            }
+                        },
+                        {
+                            "kind": "trait",
+                            "profiles": {
+                                "anyOf": ["command", "champion"]
+                            },
+                            "add": ["Biomancer"]
                         }
                     ]
                 }
