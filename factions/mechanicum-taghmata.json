@@ -3,6 +3,7 @@
     "id": "mechanicum-taghmata",
     "version": "1.0.0",
     "name": "Mechanicum Taghmata",
+    "description": "Heterodoxists: In order to include any Units from the Renegades, Madmen and Visionaries section (Archmagos Draykavac, Archmagos Scoria, Blood Slaughterer, Brass Scorpion, Decimator, Kytan Daemon Engine) as part of any Primary Detachment or Allied Detachment, that Detachment must include at least one Model with the Heterodox Trait. If a Primary Detachment or Allied Detachment includes at least one Model with the Heterodox Trait then any Auxiliary or Apex Detachments linked to them may include those Units. The Controlling Player of a Model with the Cybertheurgist Trait may give that Model the Heterodox Trait at no additional cost, and may also give a Model with the Heterodox Trait the Malefic Sub-Type at no additional cost. A Model with the Heterodox Trait must have the Traitor Allegiance Trait. A Model with the Malagra Trait may not also have the Heterodox Trait.",
     "game": {
         "id": "hh3",
         "versions": ">=1.0.0 <2.0.0"
@@ -102,6 +103,37 @@
             "when": {
                 "if": "choice(allegiance) == traitor",
                 "message": "Traitor units only"
+            },
+            "upgrades": {
+                "heterodox-malefic": {
+                    "id": "heterodox-malefic",
+                    "name": "Malefic",
+                    "description": "A Model with the Heterodox Trait may be given the Malefic Sub-Type at no additional cost.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "malefic": {
+                            "id": "malefic",
+                            "name": "Malefic",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "unit.is(trait:heterodox)",
+                                "message": "Models with the Heterodox Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Malefic"]
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "scoria"
+                }
             }
         },
         "archmagos-on-abeyant": {
@@ -444,6 +476,64 @@
                     },
                     "multiSelect": true,
                     "profileId": "archmagos-on-abeyant"
+                },
+                "heterodox": {
+                    "id": "heterodox",
+                    "name": "Heterodox",
+                    "description": "The Controlling Player of a Model with the Cybertheurgist Trait may give that Model the Heterodox Trait at no additional cost. A Model with the Heterodox Trait must have the Traitor Allegiance, and a Model with the Malagra Trait may not also have the Heterodox Trait.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "heterodox": {
+                            "id": "heterodox",
+                            "name": "Heterodox",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "choice(allegiance) == traitor and not unit.is(trait:malagra)",
+                                "message": "Traitor Models without the Malagra Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Heterodox"]
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "archmagos-on-abeyant"
+                },
+                "heterodox-malefic": {
+                    "id": "heterodox-malefic",
+                    "name": "Malefic",
+                    "description": "A Model with the Heterodox Trait may be given the Malefic Sub-Type at no additional cost.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "malefic": {
+                            "id": "malefic",
+                            "name": "Malefic",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "unit.is(trait:heterodox)",
+                                "message": "Models with the Heterodox Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Malefic"]
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "archmagos-on-abeyant"
                 }
             }
         },
@@ -772,6 +862,64 @@
                         }
                     },
                     "multiSelect": true,
+                    "profileId": "archmagos"
+                },
+                "heterodox": {
+                    "id": "heterodox",
+                    "name": "Heterodox",
+                    "description": "The Controlling Player of a Model with the Cybertheurgist Trait may give that Model the Heterodox Trait at no additional cost. A Model with the Heterodox Trait must have the Traitor Allegiance, and a Model with the Malagra Trait may not also have the Heterodox Trait.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "heterodox": {
+                            "id": "heterodox",
+                            "name": "Heterodox",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "choice(allegiance) == traitor and not unit.is(trait:malagra)",
+                                "message": "Traitor Models without the Malagra Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Heterodox"]
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "archmagos"
+                },
+                "heterodox-malefic": {
+                    "id": "heterodox-malefic",
+                    "name": "Malefic",
+                    "description": "A Model with the Heterodox Trait may be given the Malefic Sub-Type at no additional cost.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "malefic": {
+                            "id": "malefic",
+                            "name": "Malefic",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "unit.is(trait:heterodox)",
+                                "message": "Models with the Heterodox Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Malefic"]
+                                }
+                            ]
+                        }
+                    },
                     "profileId": "archmagos"
                 }
             }
@@ -2763,6 +2911,64 @@
                     },
                     "default": "none",
                     "profileId": "magos-on-abeyant"
+                },
+                "heterodox": {
+                    "id": "heterodox",
+                    "name": "Heterodox",
+                    "description": "The Controlling Player of a Model with the Cybertheurgist Trait may give that Model the Heterodox Trait at no additional cost. A Model with the Heterodox Trait must have the Traitor Allegiance, and a Model with the Malagra Trait may not also have the Heterodox Trait.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "heterodox": {
+                            "id": "heterodox",
+                            "name": "Heterodox",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "choice(allegiance) == traitor and not unit.is(trait:malagra)",
+                                "message": "Traitor Models without the Malagra Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Heterodox"]
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "magos-on-abeyant"
+                },
+                "heterodox-malefic": {
+                    "id": "heterodox-malefic",
+                    "name": "Malefic",
+                    "description": "A Model with the Heterodox Trait may be given the Malefic Sub-Type at no additional cost.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "malefic": {
+                            "id": "malefic",
+                            "name": "Malefic",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "unit.is(trait:heterodox)",
+                                "message": "Models with the Heterodox Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Malefic"]
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "magos-on-abeyant"
                 }
             }
         },
@@ -3041,6 +3247,64 @@
                         }
                     },
                     "default": "none",
+                    "profileId": "magos"
+                },
+                "heterodox": {
+                    "id": "heterodox",
+                    "name": "Heterodox",
+                    "description": "The Controlling Player of a Model with the Cybertheurgist Trait may give that Model the Heterodox Trait at no additional cost. A Model with the Heterodox Trait must have the Traitor Allegiance, and a Model with the Malagra Trait may not also have the Heterodox Trait.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "heterodox": {
+                            "id": "heterodox",
+                            "name": "Heterodox",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "choice(allegiance) == traitor and not unit.is(trait:malagra)",
+                                "message": "Traitor Models without the Malagra Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Heterodox"]
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "magos"
+                },
+                "heterodox-malefic": {
+                    "id": "heterodox-malefic",
+                    "name": "Malefic",
+                    "description": "A Model with the Heterodox Trait may be given the Malefic Sub-Type at no additional cost.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "malefic": {
+                            "id": "malefic",
+                            "name": "Malefic",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "unit.is(trait:heterodox)",
+                                "message": "Models with the Heterodox Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Malefic"]
+                                }
+                            ]
+                        }
+                    },
                     "profileId": "magos"
                 }
             }
@@ -4416,6 +4680,64 @@
                     },
                     "default": "none",
                     "profileId": "tech-priest"
+                },
+                "heterodox": {
+                    "id": "heterodox",
+                    "name": "Heterodox",
+                    "description": "The Controlling Player of a Model with the Cybertheurgist Trait may give that Model the Heterodox Trait at no additional cost. A Model with the Heterodox Trait must have the Traitor Allegiance, and a Model with the Malagra Trait may not also have the Heterodox Trait.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "heterodox": {
+                            "id": "heterodox",
+                            "name": "Heterodox",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "choice(allegiance) == traitor and not unit.is(trait:malagra)",
+                                "message": "Traitor Models without the Malagra Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Heterodox"]
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "tech-priest"
+                },
+                "heterodox-malefic": {
+                    "id": "heterodox-malefic",
+                    "name": "Malefic",
+                    "description": "A Model with the Heterodox Trait may be given the Malefic Sub-Type at no additional cost.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "malefic": {
+                            "id": "malefic",
+                            "name": "Malefic",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "unit.is(trait:heterodox)",
+                                "message": "Models with the Heterodox Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Malefic"]
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "tech-priest"
                 }
             }
         },
@@ -5586,6 +5908,37 @@
             "when": {
                 "if": "choice(allegiance) == traitor",
                 "message": "Traitor units only"
+            },
+            "upgrades": {
+                "heterodox-malefic": {
+                    "id": "heterodox-malefic",
+                    "name": "Malefic",
+                    "description": "A Model with the Heterodox Trait may be given the Malefic Sub-Type at no additional cost.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "malefic": {
+                            "id": "malefic",
+                            "name": "Malefic",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "unit.is(trait:heterodox)",
+                                "message": "Models with the Heterodox Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Malefic"]
+                                }
+                            ]
+                        }
+                    },
+                    "profileId": "draykavac"
+                }
             }
         },
         "archmagos-draykavac-on-abeyant": {
@@ -5726,6 +6079,35 @@
                         }
                     },
                     "default": "graviton-gun",
+                    "profileId": "draykavac-on-abeyant"
+                },
+                "heterodox-malefic": {
+                    "id": "heterodox-malefic",
+                    "name": "Malefic",
+                    "description": "A Model with the Heterodox Trait may be given the Malefic Sub-Type at no additional cost.",
+                    "perModel": {
+                        "type": "single"
+                    },
+                    "multiSelect": true,
+                    "options": {
+                        "malefic": {
+                            "id": "malefic",
+                            "name": "Malefic",
+                            "cost": {
+                                "points": 0
+                            },
+                            "when": {
+                                "if": "unit.is(trait:heterodox)",
+                                "message": "Models with the Heterodox Trait only"
+                            },
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "add": ["Malefic"]
+                                }
+                            ]
+                        }
+                    },
                     "profileId": "draykavac-on-abeyant"
                 }
             },
@@ -10664,6 +11046,21 @@
                     }
                 ]
             }
+        },
+        "renegades-madmen-and-visionaries": {
+            "id": "renegades-madmen-and-visionaries",
+            "name": "Renegades, Madmen and Visionaries",
+            "match": {
+                "unitIds": [
+                    "archmagos-draykavac",
+                    "archmagos-draykavac-on-abeyant",
+                    "archmagos-scoria",
+                    "blood-slaughterer",
+                    "brass-scorpion",
+                    "decimator",
+                    "kytan-daemon-engine"
+                ]
+            }
         }
     },
     "slotOptions": {
@@ -10797,6 +11194,15 @@
             "when": {
                 "if": "(group.has(@arcana-archimandrite) ? 1 : 0) + (group.has(@arcana-cybernetica) ? 1 : 0) + (group.has(@arcana-lacrymaerta) ? 1 : 0) + (group.has(@arcana-macrotek) ? 1 : 0) + (group.has(@arcana-malagra) ? 1 : 0) + (group.has(@arcana-myrmidax) ? 1 : 0) + (group.has(@arcana-reductor) ? 1 : 0) <= 1",
                 "message": "Models in an Auxiliary or Apex Detachment must all follow the same High Tech Arcana (Logistical Benefit slots excepted)"
+            }
+        },
+        "heterodoxists": {
+            "kind": "expression",
+            "id": "heterodoxists",
+            "scope": "group",
+            "when": {
+                "if": "not group.has(@renegades-madmen-and-visionaries) or contingent.count(trait:heterodox) >= 1",
+                "message": "Renegades, Madmen and Visionaries Units need a Model with the Heterodox Trait in their Primary or Allied Detachment"
             }
         }
     }

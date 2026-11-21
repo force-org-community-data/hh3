@@ -1,0 +1,254 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-raven-guard",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (Raven Guard)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: Raven Guard. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-dark-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-warriors) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-imperial-fists) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-night-lords) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-blood-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-hands) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-world-eaters) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-thousand-sons) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-word-bearers) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-salamanders) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-alpha-legion)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {
+        "pair-of-ravens-talons": {
+            "id": "pair-of-ravens-talons",
+            "name": "Pair of Raven’s Talons",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Pair of Raven’s Talons",
+                    "stats": {
+                        "im": "I",
+                        "am": "+2",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "IM"
+                        },
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "ravens-talon": {
+            "id": "ravens-talon",
+            "name": "Raven’s Talon",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Raven’s Talon",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "IM"
+                        },
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "corvid-pattern-jump-pack": {
+            "id": "corvid-pattern-jump-pack",
+            "name": "Corvid Pattern Jump Pack",
+            "text": "Any Model from the following list with the Raven Guard Trait may have one Corvid pattern jump pack selected for it for +10 Points per Model. Praetor with Jump Pack Centurion with Jump Pack Optae with Jump Pack Moritat A Model with a Corvid pattern jump pack has their Movement Characteristic set to 14 and replaces any instance of the Bulky (X) Special Rule with Bulky (3). Each time a Dangerous Terrain Test is made for a Model with a Corvid pattern jump pack, that Test is automatically passed."
+        }
+    },
+    "upgrades": {
+        "raven-guard-corvid-pattern-jump-pack": {
+            "id": "raven-guard-corvid-pattern-jump-pack",
+            "name": "Corvid Pattern Jump Pack",
+            "description": "Any Praetor with Jump Pack, Centurion with Jump Pack, Optae with Jump Pack or Moritat with the Raven Guard Trait may have one Corvid pattern jump pack selected for it (Movement 14).",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "corvid-pattern-jump-pack": {
+                    "id": "corvid-pattern-jump-pack",
+                    "name": "Corvid Pattern Jump Pack",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["corvid-pattern-jump-pack"],
+                    "effects": [
+                        {
+                            "kind": "stat",
+                            "changes": [
+                                {
+                                    "stat": "m",
+                                    "op": "set",
+                                    "value": "14"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "raven-guard-ravens-talons-pair-of-lightning-claws": {
+            "id": "raven-guard-ravens-talons-pair-of-lightning-claws",
+            "name": "Pair of Raven’s Talons",
+            "description": "Any Model with the Command Sub-Type and the Raven Guard Trait may have its lightning claw exchanged for one Raven’s Talon, or its pair of lightning claws exchanged for one pair of Raven’s Talons.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "pair-of-lightning-claws-to-pair-of-ravens-talons": {
+                    "id": "pair-of-lightning-claws-to-pair-of-ravens-talons",
+                    "name": "Pair of lightning claws to pair of Raven’s Talons",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "pair-of-lightning-claws"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "pair-of-ravens-talons"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "pair-of-lightning-claws",
+                    "count": 1
+                }
+            ]
+        },
+        "raven-guard-ravens-talons": {
+            "id": "raven-guard-ravens-talons",
+            "name": "Raven’s Talon",
+            "description": "Any Model with the Command Sub-Type and the Raven Guard Trait may have its lightning claw exchanged for one Raven’s Talon, or its pair of lightning claws exchanged for one pair of Raven’s Talons.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "lightning-claw-to-ravens-talon": {
+                    "id": "lightning-claw-to-ravens-talon",
+                    "name": "Lightning claw to Raven’s Talon",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "lightning-claw"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "ravens-talon"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "lightning-claw",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {
+        "impact": {
+            "id": "impact",
+            "name": "Impact",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-raven-guard-ravens-talons": {
+            "id": "panoply-of-old-raven-guard-ravens-talons",
+            "name": "Raven’s Talon",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "raven-guard-ravens-talons"
+                }
+            ]
+        },
+        "panoply-of-old-raven-guard-ravens-talons-pair-of-lightning-claws": {
+            "id": "panoply-of-old-raven-guard-ravens-talons-pair-of-lightning-claws",
+            "name": "Pair of Raven’s Talons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "raven-guard-ravens-talons-pair-of-lightning-claws"
+                }
+            ]
+        },
+        "panoply-of-old-raven-guard-corvid-pattern-jump-pack": {
+            "id": "panoply-of-old-raven-guard-corvid-pattern-jump-pack",
+            "name": "Corvid Pattern Jump Pack",
+            "selector": {
+                "unitIds": [
+                    "praetor-with-jump-pack",
+                    "centurion-with-jump-pack",
+                    "optae-with-jump-pack",
+                    "moritat"
+                ],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "raven-guard-corvid-pattern-jump-pack"
+                }
+            ]
+        }
+    }
+}

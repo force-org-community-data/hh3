@@ -1,0 +1,353 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "shattered-legions-iron-warriors",
+    "version": "1.0.0",
+    "name": "Iron Warriors (Shattered Legions)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "shattered-legions",
+    "description": "Iron Warriors selected for a Shattered Legions Army: the Accustomed to Devastation Mutable Tactics benefit, the Armoury of the Iron Warriors (options a Legion adds to the shared Legion wargear lists are not included), the Exemplars of the Legion Prime Advantage for Iron Warriors Units.",
+    "when": {
+        "if": "contingent.is(subfaction:shattered-legions)",
+        "message": "Shattered Legions Armies only"
+    },
+    "units": {},
+    "weapons": {
+        "shrapnel-bolter": {
+            "id": "shrapnel-bolter",
+            "name": "Shrapnel bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Shrapnel bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "shrapnel-pistol": {
+            "id": "shrapnel-pistol",
+            "name": "Shrapnel pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Shrapnel pistol",
+                    "stats": {
+                        "r": "10",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "graviton-crusher": {
+            "id": "graviton-crusher",
+            "name": "Graviton crusher",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Graviton crusher",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {
+        "iron-warriors-shrapnel-bolters": {
+            "id": "iron-warriors-shrapnel-bolters",
+            "name": "Shrapnel Bolters",
+            "description": "In any Unit entirely composed of Models with the Iron Warriors Trait, every Model in that Unit may have its bolter exchanged for one shrapnel bolter.",
+            "perModel": {
+                "type": "every"
+            },
+            "options": {
+                "bolter-to-shrapnel-bolter": {
+                    "id": "bolter-to-shrapnel-bolter",
+                    "name": "Bolter to shrapnel bolter",
+                    "cost": {
+                        "points": 3
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "shrapnel-bolter"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "iron-warriors-shrapnel-weapons": {
+            "id": "iron-warriors-shrapnel-weapons",
+            "name": "Shrapnel Pistols",
+            "description": "In any Unit entirely composed of Models with the Iron Warriors Trait, every Model in that Unit may have its bolt pistol exchanged for one shrapnel pistol.",
+            "perModel": {
+                "type": "every"
+            },
+            "options": {
+                "bolt-pistol-to-shrapnel-pistol": {
+                    "id": "bolt-pistol-to-shrapnel-pistol",
+                    "name": "Bolt pistol to shrapnel pistol",
+                    "cost": {
+                        "points": 2
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "shrapnel-pistol"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "iron-warriors-graviton-crushers": {
+            "id": "iron-warriors-graviton-crushers",
+            "name": "Graviton Crushers",
+            "description": "Any Model with the Iron Warriors Trait and the Command or Champion Sub-Type may have a thunder hammer exchanged for a graviton crusher.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "thunder-hammer-to-graviton-crusher": {
+                    "id": "thunder-hammer-to-graviton-crusher",
+                    "name": "Thunder hammer to graviton crusher",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "thunder-hammer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "graviton-crusher"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "thunder-hammer",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {
+        "mutable-tactics-iron-warriors": {
+            "id": "mutable-tactics-iron-warriors",
+            "name": "Accustomed to Devastation (Mutable Tactics)",
+            "text": "The warriors of the IVth Legion stand firm in the face of even the most savage fusillade, their silent stoicism an inspiration to those who fight by their side. A Leadership Check result of 9 or less is always successful for Models subject to this benefit in the Shooting Phase. If the Iron Warriors Legion was selected for this Army’s Shattered Legions Trait, when making a Leadership Check in the Morale Sub-Phase for a Unit from that Army subject to the Mutable Tactics Special Rule, a result of 9 or less is always successful."
+        },
+        "legion-specialists": {
+            "id": "legion-specialists",
+            "name": "Legion Specialists",
+            "text": "If Models in this Unit would benefit from the Mutable Tactics Legion Tactica, they may only benefit from the bonus related to their Legion whose Trait was replaced as part of the Exemplars of the Legion Prime Advantage."
+        }
+    },
+    "groups": {},
+    "slotOptions": {
+        "exemplars-of-the-legion-iron-warriors": {
+            "id": "exemplars-of-the-legion-iron-warriors",
+            "name": "Exemplars of the Legion (Iron Warriors)",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. The Slot added may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War. Each Unit selected to fill such a Slot must be from the Legiones Astartes Army List, not include any Models that have the Unique Sub-Type, and have a Faction Trait that matches the Legion represented by the Model that was selected to fill the Slot with this Prime Advantage. All Models in any of these Units have their Faction Trait replaced with ‘Shattered Legions’ and have the Legion Specialists Special Rule. Only for a Unit with the Command Battlefield Role in a Shattered Legions Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "roles": ["command"]
+            },
+            "when": {
+                "if": "contingent.is(subfaction:shattered-legions)",
+                "message": "Shattered Legions Detachments only"
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Exemplars of the Legion"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "retinue",
+                        "elites",
+                        "war-engine",
+                        "troop",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "legiones-astartes",
+                        "subFactions": ["iron-warriors"]
+                    },
+                    "units": {
+                        "exclude": [
+                            {
+                                "profiles": {
+                                    "anyOf": ["Unique"]
+                                }
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Legiones Astartes", "Iron Warriors"],
+                                "to": "Shattered Legions"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "legion-specialists"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "shattered-legions-iron-warriors-mutable-tactics": {
+            "id": "shattered-legions-iron-warriors-mutable-tactics",
+            "name": "Accustomed to Devastation (Mutable Tactics)",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "mutable-tactics-iron-warriors"
+                    }
+                }
+            ]
+        },
+        "shattered-legions-iron-warriors-graviton-crushers": {
+            "id": "shattered-legions-iron-warriors-graviton-crushers",
+            "name": "Graviton Crushers",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-warriors-graviton-crushers"
+                }
+            ]
+        },
+        "shattered-legions-iron-warriors-shrapnel-weapons": {
+            "id": "shattered-legions-iron-warriors-shrapnel-weapons",
+            "name": "Shrapnel Weapons",
+            "selector": {
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-warriors-shrapnel-weapons"
+                }
+            ]
+        },
+        "shattered-legions-iron-warriors-shrapnel-bolters": {
+            "id": "shattered-legions-iron-warriors-shrapnel-bolters",
+            "name": "Shrapnel Bolters",
+            "selector": {
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-warriors-shrapnel-bolters"
+                }
+            ]
+        }
+    }
+}

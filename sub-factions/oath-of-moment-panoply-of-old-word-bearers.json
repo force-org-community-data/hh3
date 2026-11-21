@@ -1,0 +1,70 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-word-bearers",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (Word Bearers)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: Word Bearers. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-dark-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-warriors) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-imperial-fists) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-night-lords) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-blood-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-hands) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-world-eaters) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-thousand-sons) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-salamanders) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-raven-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-alpha-legion)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {},
+    "equipment": {
+        "burning-lore": {
+            "id": "burning-lore",
+            "name": "Burning Lore",
+            "text": "Word Bearers Models may gain the Psyker Trait and a specific Psychic Discipline. Any Model with the High Command Battlefield Role and Word Bearers Trait may be given the Psyker Trait and the Anathemata Psychic Discipline for +40 Points per Model."
+        }
+    },
+    "upgrades": {
+        "word-bearers-burning-lore": {
+            "id": "word-bearers-burning-lore",
+            "name": "Burning Lore",
+            "description": "Any Model with the High Command Battlefield Role and Word Bearers Trait may be given the Psyker Trait and the Anathemata Psychic Discipline.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "burning-lore": {
+                    "id": "burning-lore",
+                    "name": "Burning Lore",
+                    "cost": {
+                        "points": 40
+                    },
+                    "equipmentRefs": ["burning-lore"]
+                }
+            }
+        }
+    },
+    "specialRules": {},
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-word-bearers-burning-lore": {
+            "id": "panoply-of-old-word-bearers-burning-lore",
+            "name": "Burning Lore",
+            "selector": {
+                "roles": ["high-command"],
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "word-bearers-burning-lore"
+                }
+            ]
+        }
+    }
+}

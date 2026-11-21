@@ -1,0 +1,125 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-alone-and-forgotten",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Alone and Forgotten",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "In many cases, Space Marine forces abandoned and betrayed during the Horus Heresy were reduced to just a few combathardened survivors. Heroes with no purpose left but to fight and die, warriors from which the war had taken everything they held dear. Such forgotten heroes were drawn to each other, and swore binding oaths to find for themselves a worthy place to die in combat. A Detachment with this Oath of Moment may only have Command Choices selected for it, but gains bonuses for those Units in Combat. A Detachment that has this Oath of Moment may only include Command Choices. All Troops Slots in a Primary or Allied Detachment with this Oath of Moment, or any Auxiliary Detachment attached to such a Detachment, are replaced with Command Slots. However, the only Units that may be chosen to fill Command Slots in a Primary or Allied Detachment with this Oath of Moment, or any Detachments linked to them, are Centurions or Centurions in Terminator Armour. All Command Choices selected for a Detachment with this Oath of Moment gain +1 to their Base Wounds Characteristic and may add +1 to one of the following Characteristics (each Model may have a different Characteristic selected): Willpower, Cool, or Intelligence. All Centurions and Centurions in Terminator Armour selected as part of a Detachment with this Oath of Moment gain the Heedless and To Fight and Die Alone Special Rule: Not modelled: Troops Slots are not turned into Command Slots, and the +1 to Willpower, Cool or Intelligence each Command Choice may take.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields)",
+        "message": "Blackshields Detachments only"
+    },
+    "units": {},
+    "weapons": {},
+    "equipment": {},
+    "upgrades": {},
+    "specialRules": {
+        "oath-of-moment-alone-and-forgotten": {
+            "id": "oath-of-moment-alone-and-forgotten",
+            "name": "Oath of Moment: Alone and Forgotten",
+            "text": "In many cases, Space Marine forces abandoned and betrayed during the Horus Heresy were reduced to just a few combathardened survivors. Heroes with no purpose left but to fight and die, warriors from which the war had taken everything they held dear. Such forgotten heroes were drawn to each other, and swore binding oaths to find for themselves a worthy place to die in combat. A Detachment with this Oath of Moment may only have Command Choices selected for it, but gains bonuses for those Units in Combat. A Detachment that has this Oath of Moment may only include Command Choices. All Troops Slots in a Primary or Allied Detachment with this Oath of Moment, or any Auxiliary Detachment attached to such a Detachment, are replaced with Command Slots. However, the only Units that may be chosen to fill Command Slots in a Primary or Allied Detachment with this Oath of Moment, or any Detachments linked to them, are Centurions or Centurions in Terminator Armour. All Command Choices selected for a Detachment with this Oath of Moment gain +1 to their Base Wounds Characteristic and may add +1 to one of the following Characteristics (each Model may have a different Characteristic selected): Willpower, Cool, or Intelligence. All Centurions and Centurions in Terminator Armour selected as part of a Detachment with this Oath of Moment gain the Heedless and To Fight and Die Alone Special Rule:"
+        },
+        "to-fight-and-die-alone": {
+            "id": "to-fight-and-die-alone",
+            "name": "To Fight and Die Alone",
+            "text": "Some warriors fight not for victory or even survival, but simply to earn a death in combat. Such warriors cannot accept suicide or simple execution, they seek an enemy that can best them in open combat. A Model with this Special Rule cannot join Units, but gains bonuses when fighting alone. A Model with this Special Rule may not join any other Unit, nor may it be joined by another Model. While part of a Combat where this Model is the only Model the Controlling Player controls in that Combat: The Controlling Player gains a bonus of +1 to their Combat Resolution Score for each wound lost by that Model in that Combat Round. If a Model with this Special Rule issues or accepts a Challenge, its Controlling Player scores 1 Victory Point. Neither Player may score any Victory Points for this Model being Removed as a Casualty."
+        },
+        "heedless": {
+            "id": "heedless",
+            "name": "Heedless",
+            "text": "A Unit that includes any Models with this Special Rule cannot claim Objectives. A Unit that includes any Models with this Special Rule cannot Control or Contest any Objective Marker - this overrides any other Rule or Special Rule that may apply to the Unit regardless of the source of the Rule or effect."
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "oath-of-moment-alone-and-forgotten": {
+            "id": "oath-of-moment-alone-and-forgotten",
+            "name": "Oath of Moment: Alone and Forgotten",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "oath-of-moment-alone-and-forgotten"
+                    }
+                }
+            ]
+        },
+        "alone-and-forgotten-wounds": {
+            "id": "alone-and-forgotten-wounds",
+            "name": "Alone and Forgotten",
+            "selector": {
+                "roles": ["command"]
+            },
+            "actions": [
+                {
+                    "kind": "stat",
+                    "changes": [
+                        {
+                            "stat": "w",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        "alone-and-forgotten-centurions": {
+            "id": "alone-and-forgotten-centurions",
+            "name": "To Fight and Die Alone",
+            "selector": {
+                "unitIds": [
+                    "centurion-in-saturnine-terminator-armour",
+                    "centurion-in-terminator-armour",
+                    "centurion-in-tartaros-terminator-armour",
+                    "centurion",
+                    "centurion-with-jump-pack",
+                    "centurion-on-scimitar-jetbike",
+                    "mounted-centurion"
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "heedless"
+                    }
+                },
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "to-fight-and-die-alone"
+                    }
+                }
+            ]
+        }
+    },
+    "listRules": {
+        "alone-and-forgotten-command-only": {
+            "kind": "count",
+            "id": "alone-and-forgotten-command-only",
+            "units": {
+                "exclude": [
+                    {
+                        "unitIds": [
+                            "centurion-in-saturnine-terminator-armour",
+                            "centurion-in-terminator-armour",
+                            "centurion-in-tartaros-terminator-armour",
+                            "centurion",
+                            "centurion-with-jump-pack",
+                            "centurion-on-scimitar-jetbike",
+                            "mounted-centurion"
+                        ]
+                    }
+                ]
+            },
+            "scope": "contingent",
+            "max": 0,
+            "message": "A Detachment with the Alone and Forgotten Oath of Moment may only include Centurions and Centurions in Terminator Armour"
+        }
+    }
+}

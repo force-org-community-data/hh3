@@ -1,0 +1,648 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-world-eaters",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (World Eaters)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: World Eaters. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-dark-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-warriors) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-imperial-fists) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-night-lords) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-blood-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-hands) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-thousand-sons) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-word-bearers) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-salamanders) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-raven-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-alpha-legion)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {
+        "meteor-hammer": {
+            "id": "meteor-hammer",
+            "name": "Meteor hammer",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Meteor hammer",
+                    "stats": {
+                        "im": "I",
+                        "am": "-1",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "IM"
+                        }
+                    ]
+                }
+            ]
+        },
+        "excoriator-chainaxe": {
+            "id": "excoriator-chainaxe",
+            "name": "Excoriator chainaxe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Excoriator chainaxe",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "paired-falax-blades": {
+            "id": "paired-falax-blades",
+            "name": "Paired falax blades",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Paired falax blades",
+                    "stats": {
+                        "im": "I",
+                        "am": "+2",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "barb-hook-lash": {
+            "id": "barb-hook-lash",
+            "name": "Barb-hook lash",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Barb-hook lash",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "phage",
+                            "value": "S"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {
+        "world-eaters-caedere-weapons-power-lance": {
+            "id": "world-eaters-caedere-weapons-power-lance",
+            "name": "Caedere Weapons",
+            "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one Caedere weapon (meteor hammer, Excoriator chainaxe, paired falax blades or barb-hook lash).",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-lance-to-meteor-hammer": {
+                    "id": "power-lance-to-meteor-hammer",
+                    "name": "Power lance to meteor hammer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "meteor-hammer"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-excoriator-chainaxe": {
+                    "id": "power-lance-to-excoriator-chainaxe",
+                    "name": "Power lance to Excoriator chainaxe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "excoriator-chainaxe"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-paired-falax-blades": {
+                    "id": "power-lance-to-paired-falax-blades",
+                    "name": "Power lance to paired falax blades",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "paired-falax-blades"
+                            }
+                        }
+                    ]
+                },
+                "power-lance-to-barb-hook-lash": {
+                    "id": "power-lance-to-barb-hook-lash",
+                    "name": "Power lance to barb-hook lash",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "barb-hook-lash"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "world-eaters-caedere-weapons-power-maul": {
+            "id": "world-eaters-caedere-weapons-power-maul",
+            "name": "Caedere Weapons",
+            "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one Caedere weapon (meteor hammer, Excoriator chainaxe, paired falax blades or barb-hook lash).",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-maul-to-meteor-hammer": {
+                    "id": "power-maul-to-meteor-hammer",
+                    "name": "Power maul to meteor hammer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "meteor-hammer"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-excoriator-chainaxe": {
+                    "id": "power-maul-to-excoriator-chainaxe",
+                    "name": "Power maul to Excoriator chainaxe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "excoriator-chainaxe"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-paired-falax-blades": {
+                    "id": "power-maul-to-paired-falax-blades",
+                    "name": "Power maul to paired falax blades",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "paired-falax-blades"
+                            }
+                        }
+                    ]
+                },
+                "power-maul-to-barb-hook-lash": {
+                    "id": "power-maul-to-barb-hook-lash",
+                    "name": "Power maul to barb-hook lash",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "barb-hook-lash"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "world-eaters-caedere-weapons-power-axe": {
+            "id": "world-eaters-caedere-weapons-power-axe",
+            "name": "Caedere Weapons",
+            "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one Caedere weapon (meteor hammer, Excoriator chainaxe, paired falax blades or barb-hook lash).",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-axe-to-meteor-hammer": {
+                    "id": "power-axe-to-meteor-hammer",
+                    "name": "Power axe to meteor hammer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "meteor-hammer"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-excoriator-chainaxe": {
+                    "id": "power-axe-to-excoriator-chainaxe",
+                    "name": "Power axe to Excoriator chainaxe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "excoriator-chainaxe"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-paired-falax-blades": {
+                    "id": "power-axe-to-paired-falax-blades",
+                    "name": "Power axe to paired falax blades",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "paired-falax-blades"
+                            }
+                        }
+                    ]
+                },
+                "power-axe-to-barb-hook-lash": {
+                    "id": "power-axe-to-barb-hook-lash",
+                    "name": "Power axe to barb-hook lash",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "barb-hook-lash"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "world-eaters-caedere-weapons": {
+            "id": "world-eaters-caedere-weapons",
+            "name": "Caedere Weapons",
+            "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one Caedere weapon (meteor hammer, Excoriator chainaxe, paired falax blades or barb-hook lash).",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-sword-to-meteor-hammer": {
+                    "id": "power-sword-to-meteor-hammer",
+                    "name": "Power sword to meteor hammer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "meteor-hammer"
+                            }
+                        }
+                    ]
+                },
+                "power-sword-to-excoriator-chainaxe": {
+                    "id": "power-sword-to-excoriator-chainaxe",
+                    "name": "Power sword to Excoriator chainaxe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "excoriator-chainaxe"
+                            }
+                        }
+                    ]
+                },
+                "power-sword-to-paired-falax-blades": {
+                    "id": "power-sword-to-paired-falax-blades",
+                    "name": "Power sword to paired falax blades",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "paired-falax-blades"
+                            }
+                        }
+                    ]
+                },
+                "power-sword-to-barb-hook-lash": {
+                    "id": "power-sword-to-barb-hook-lash",
+                    "name": "Power sword to barb-hook lash",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "barb-hook-lash"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "world-eaters-blades-of-the-fighting-pits": {
+            "id": "world-eaters-blades-of-the-fighting-pits",
+            "name": "Blades of the Fighting Pits",
+            "description": "In any Unit entirely composed of Models with the World Eaters Trait, any Model may have its chainsword exchanged for one chainaxe.",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "chainsword-to-chainaxe": {
+                    "id": "chainsword-to-chainaxe",
+                    "name": "Chainsword to chainaxe",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "chainsword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "chainaxe"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none"
+        }
+    },
+    "specialRules": {
+        "impact": {
+            "id": "impact",
+            "name": "Impact",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-world-eaters-blades-of-the-fighting-pits": {
+            "id": "panoply-of-old-world-eaters-blades-of-the-fighting-pits",
+            "name": "Blades of the Fighting Pits",
+            "selector": {
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "world-eaters-blades-of-the-fighting-pits"
+                }
+            ]
+        },
+        "panoply-of-old-world-eaters-caedere-weapons": {
+            "id": "panoply-of-old-world-eaters-caedere-weapons",
+            "name": "Caedere Weapons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "world-eaters-caedere-weapons"
+                }
+            ]
+        },
+        "panoply-of-old-world-eaters-caedere-weapons-power-axe": {
+            "id": "panoply-of-old-world-eaters-caedere-weapons-power-axe",
+            "name": "Caedere Weapons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "world-eaters-caedere-weapons-power-axe"
+                }
+            ]
+        },
+        "panoply-of-old-world-eaters-caedere-weapons-power-maul": {
+            "id": "panoply-of-old-world-eaters-caedere-weapons-power-maul",
+            "name": "Caedere Weapons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "world-eaters-caedere-weapons-power-maul"
+                }
+            ]
+        },
+        "panoply-of-old-world-eaters-caedere-weapons-power-lance": {
+            "id": "panoply-of-old-world-eaters-caedere-weapons-power-lance",
+            "name": "Caedere Weapons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "world-eaters-caedere-weapons-power-lance"
+                }
+            ]
+        }
+    }
+}

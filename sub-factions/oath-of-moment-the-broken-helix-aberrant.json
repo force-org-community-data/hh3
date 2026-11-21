@@ -1,0 +1,106 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-the-broken-helix-aberrant",
+    "version": "1.0.0",
+    "name": "Oath of Moment: The Broken Helix (Aberrant)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Unable to claim recruits from the fiefdoms of old, some warbands of the Blackshields turned to fouler means to fill their dwindling ranks – the old sin of gene-cloning or crude progenoid replication. Denied the training camps of Terra or the complex hypnoindoctrination forced upon the recruits of the later Legions, the warriors they produced had none of the discipline that had once been the pride of the Space Marine Legions, but instead bore terrible mutations and scars as the mark of their forbidden origins. For each Unit that includes any Models with this Special Rule, the Controlling Player must choose from one of two possible options that grant new Special Rules that replace existing ones. A Model with the Blackshields Trait in a Detachment with this Oath of Moment, loses all variants of the following Special Rules and may not thereafter gain any version of Line (X) or Vanguard (X) from any source: Fury of the Legion Line (X) Vanguard (X) Instead, such Models gain one of the following two Special Rules, chosen by the Controlling Player – all Models in a Detachment with this Oath of Moment must have the same Special Rule selected for them:",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-the-broken-helix-clone)",
+        "message": "Blackshields Detachments only; one Broken Helix choice per Detachment"
+    },
+    "units": {},
+    "weapons": {},
+    "equipment": {},
+    "upgrades": {},
+    "specialRules": {
+        "oath-of-moment-the-broken-helix-aberrant": {
+            "id": "oath-of-moment-the-broken-helix-aberrant",
+            "name": "Oath of Moment: The Broken Helix (Aberrant)",
+            "text": "Unable to claim recruits from the fiefdoms of old, some warbands of the Blackshields turned to fouler means to fill their dwindling ranks – the old sin of gene-cloning or crude progenoid replication. Denied the training camps of Terra or the complex hypnoindoctrination forced upon the recruits of the later Legions, the warriors they produced had none of the discipline that had once been the pride of the Space Marine Legions, but instead bore terrible mutations and scars as the mark of their forbidden origins. For each Unit that includes any Models with this Special Rule, the Controlling Player must choose from one of two possible options that grant new Special Rules that replace existing ones. A Model with the Blackshields Trait in a Detachment with this Oath of Moment, loses all variants of the following Special Rules and may not thereafter gain any version of Line (X) or Vanguard (X) from any source: Fury of the Legion Line (X) Vanguard (X) Instead, such Models gain one of the following two Special Rules, chosen by the Controlling Player – all Models in a Detachment with this Oath of Moment must have the same Special Rule selected for them:"
+        },
+        "aberrant": {
+            "id": "aberrant",
+            "name": "Aberrant",
+            "text": "Forced replication of the progenoid is a dangerous endeavour, for it always results in unintended mutation of the recipient and increases the chance of fatal rejection tenfold. Those that survive implantation will be half-mad beasts, little more than weapons to be unleashed upon the foe. Models with this Special Rule must reduce certain Advanced Characteristics, but gain increased combat powers. All Models with this Special Rule that do not also have the Command, Champion, Specialist or Sergeant Sub-Types must reduce their Leadership, Willpower, Intelligence and Cool Characteristics by 1, but increase their Strength and Attacks Characteristics by 1. Furthermore, a Unit that includes any Models with this Special Rule and begins the Assault Phase with any Model in that Unit within 12\" of an enemy Model must declare a Charge targeting the Unit that includes that enemy Model – even if they cannot reach the Target Unit."
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "oath-of-moment-the-broken-helix-aberrant": {
+            "id": "oath-of-moment-the-broken-helix-aberrant",
+            "name": "Oath of Moment: The Broken Helix (Aberrant)",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "oath-of-moment-the-broken-helix-aberrant"
+                    }
+                }
+            ]
+        },
+        "broken-helix-aberrant": {
+            "id": "broken-helix-aberrant",
+            "name": "Aberrant",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "remove": ["fury-of-the-legion", "line", "vanguard"],
+                    "rule": {
+                        "id": "aberrant"
+                    }
+                },
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "noneOf": [
+                            "command",
+                            "champion",
+                            "specialist",
+                            "sergeant",
+                            "vehicle"
+                        ]
+                    },
+                    "changes": [
+                        {
+                            "stat": "ld",
+                            "op": "add",
+                            "value": -1
+                        },
+                        {
+                            "stat": "wp",
+                            "op": "add",
+                            "value": -1
+                        },
+                        {
+                            "stat": "in",
+                            "op": "add",
+                            "value": -1
+                        },
+                        {
+                            "stat": "cl",
+                            "op": "add",
+                            "value": -1
+                        },
+                        {
+                            "stat": "s",
+                            "op": "add",
+                            "value": 1
+                        },
+                        {
+                            "stat": "a",
+                            "op": "add",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

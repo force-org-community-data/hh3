@@ -1,0 +1,260 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-iron-warriors",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (Iron Warriors)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: Iron Warriors. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-dark-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-imperial-fists) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-night-lords) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-blood-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-hands) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-world-eaters) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-thousand-sons) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-word-bearers) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-salamanders) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-raven-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-alpha-legion)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {
+        "shrapnel-bolter": {
+            "id": "shrapnel-bolter",
+            "name": "Shrapnel bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Shrapnel bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "shrapnel-pistol": {
+            "id": "shrapnel-pistol",
+            "name": "Shrapnel pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Shrapnel pistol",
+                    "stats": {
+                        "r": "10",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "graviton-crusher": {
+            "id": "graviton-crusher",
+            "name": "Graviton crusher",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Graviton crusher",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {
+        "iron-warriors-shrapnel-bolters": {
+            "id": "iron-warriors-shrapnel-bolters",
+            "name": "Shrapnel Bolters",
+            "description": "In any Unit entirely composed of Models with the Iron Warriors Trait, every Model in that Unit may have its bolter exchanged for one shrapnel bolter.",
+            "perModel": {
+                "type": "every"
+            },
+            "options": {
+                "bolter-to-shrapnel-bolter": {
+                    "id": "bolter-to-shrapnel-bolter",
+                    "name": "Bolter to shrapnel bolter",
+                    "cost": {
+                        "points": 3
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "shrapnel-bolter"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "iron-warriors-shrapnel-weapons": {
+            "id": "iron-warriors-shrapnel-weapons",
+            "name": "Shrapnel Pistols",
+            "description": "In any Unit entirely composed of Models with the Iron Warriors Trait, every Model in that Unit may have its bolt pistol exchanged for one shrapnel pistol.",
+            "perModel": {
+                "type": "every"
+            },
+            "options": {
+                "bolt-pistol-to-shrapnel-pistol": {
+                    "id": "bolt-pistol-to-shrapnel-pistol",
+                    "name": "Bolt pistol to shrapnel pistol",
+                    "cost": {
+                        "points": 2
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "shrapnel-pistol"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "iron-warriors-graviton-crushers": {
+            "id": "iron-warriors-graviton-crushers",
+            "name": "Graviton Crushers",
+            "description": "Any Model with the Iron Warriors Trait and the Command or Champion Sub-Type may have a thunder hammer exchanged for a graviton crusher.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "thunder-hammer-to-graviton-crusher": {
+                    "id": "thunder-hammer-to-graviton-crusher",
+                    "name": "Thunder hammer to graviton crusher",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "thunder-hammer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "graviton-crusher"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "thunder-hammer",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {},
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-iron-warriors-graviton-crushers": {
+            "id": "panoply-of-old-iron-warriors-graviton-crushers",
+            "name": "Graviton Crushers",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-warriors-graviton-crushers"
+                }
+            ]
+        },
+        "panoply-of-old-iron-warriors-shrapnel-weapons": {
+            "id": "panoply-of-old-iron-warriors-shrapnel-weapons",
+            "name": "Shrapnel Weapons",
+            "selector": {
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-warriors-shrapnel-weapons"
+                }
+            ]
+        },
+        "panoply-of-old-iron-warriors-shrapnel-bolters": {
+            "id": "panoply-of-old-iron-warriors-shrapnel-bolters",
+            "name": "Shrapnel Bolters",
+            "selector": {
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-warriors-shrapnel-bolters"
+                }
+            ]
+        }
+    }
+}

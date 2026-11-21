@@ -1,0 +1,22 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "legiones-hereticus",
+    "version": "1.0.0",
+    "name": "Legiones Hereticus",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "rite-of-war",
+    "description": "Rite of War: Legiones Hereticus, for Emperor’s Children and World Eaters Armies with the Traitor Allegiance. It replaces the Legion’s Legiones Astartes Rite of War: Emperor’s Children Models gain Lords of Profligacy instead of Flawless Execution, and World Eaters Models gain The Nails’ Bite instead of Violence Incarnate.",
+    "when": {
+        "if": "choice(allegiance) == traitor and (contingent.is(subfaction:emperors-children) or contingent.is(subfaction:world-eaters))",
+        "message": "Only for Traitor Emperor’s Children or World Eaters"
+    },
+    "units": {},
+    "weapons": {},
+    "equipment": {},
+    "upgrades": {},
+    "specialRules": {},
+    "groups": {}
+}

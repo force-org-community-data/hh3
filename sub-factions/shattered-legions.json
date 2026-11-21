@@ -1,0 +1,102 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "shattered-legions",
+    "version": "1.0.0",
+    "name": "Shattered Legions",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "description": "The Shattered Legions Trait is a Faction Trait selected instead of one of the eighteen Legion Faction Traits, with the Rite of War: The Legions Shattered. Select two or three Legions in the Shattered Legions: Legions pick; they set the Mutable Tactics benefits, which Legion Armouries Models may use (each Model only from one of them), the Exemplars of the Legion Prime Advantage and which Commanders of the Shattered Legions may be selected.",
+    "units": {},
+    "weapons": {},
+    "equipment": {},
+    "upgrades": {},
+    "groups": {},
+    "specialRules": {
+        "mutable-tactics": {
+            "id": "mutable-tactics",
+            "name": "Mutable Tactics",
+            "text": "Models with the Shattered Legions Trait have variable bonuses from this Special Rule based on which Legions have been selected for the Army. Models subject to this Special Rule gain a benefit for each Legion that is selected for this Army’s Shattered Legions Detachments. If only two Legions were selected, Models subject to this Special Rule also have the Bound in Blood benefit."
+        },
+        "bound-in-blood": {
+            "id": "bound-in-blood",
+            "name": "Bound in Blood",
+            "text": "Models from this Army subject to the Mutable Tactics Special Rule modify their Leadership and Cool Characteristics by +1 during the second and third Battle Turn, and by +2 during the fourth and any subsequent Battle Turns. Only if two Legions were selected for the Shattered Legions Trait."
+        }
+    },
+    "unitModifiers": {
+        "shattered-legions-trait": {
+            "id": "shattered-legions-trait",
+            "name": "Shattered Legions Trait",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "trait",
+                    "replace": {
+                        "from": [
+                            "Legiones Astartes",
+                            "Dark Angels",
+                            "Emperor’s Children",
+                            "Iron Warriors",
+                            "White Scars",
+                            "Space Wolves",
+                            "Imperial Fists",
+                            "Night Lords",
+                            "Blood Angels",
+                            "Iron Hands",
+                            "World Eaters",
+                            "Ultramarines",
+                            "Death Guard",
+                            "Thousand Sons",
+                            "Sons of Horus",
+                            "Word Bearers",
+                            "Salamanders",
+                            "Raven Guard",
+                            "Alpha Legion"
+                        ],
+                        "to": "Shattered Legions"
+                    }
+                }
+            ]
+        },
+        "mutable-tactics-all": {
+            "id": "mutable-tactics-all",
+            "name": "Mutable Tactics",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "mutable-tactics"
+                    }
+                }
+            ]
+        },
+        "bound-in-blood-all": {
+            "id": "bound-in-blood-all",
+            "name": "Bound in Blood",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "bound-in-blood"
+                    },
+                    "when": {
+                        "if": "(contingent.is(subfaction:shattered-legions-dark-angels) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-emperors-children) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-iron-warriors) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-white-scars) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-space-wolves) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-imperial-fists) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-night-lords) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-blood-angels) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-iron-hands) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-world-eaters) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-ultramarines) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-death-guard) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-thousand-sons) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-sons-of-horus) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-word-bearers) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-salamanders) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-raven-guard) ? 1 : 0) + (contingent.is(subfaction:shattered-legions-alpha-legion) ? 1 : 0) == 2",
+                        "message": "Only with two Legions selected"
+                    }
+                }
+            ]
+        }
+    }
+}

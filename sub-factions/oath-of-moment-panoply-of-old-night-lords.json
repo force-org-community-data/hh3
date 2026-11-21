@@ -1,0 +1,587 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-night-lords",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (Night Lords)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: Night Lords. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-dark-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-warriors) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-imperial-fists) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-blood-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-hands) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-world-eaters) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-thousand-sons) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-word-bearers) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-salamanders) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-raven-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-alpha-legion)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {
+        "headsmans-axe": {
+            "id": "headsmans-axe",
+            "name": "Headsman’s axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Headsman’s axe",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "chainglaive": {
+            "id": "chainglaive",
+            "name": "Chainglaive",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Chainglaive",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Chain"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "trophies-of-judgement": {
+            "id": "trophies-of-judgement",
+            "name": "Trophies Of Judgement",
+            "text": "Any Model with the Command or Champion Sub-Type and the Night Lords Trait may have Trophies of Judgement selected for it for +10 Points per Model. Trophies of Judgement A Model with Trophies of Judgement has the Fear (1) Special Rule."
+        }
+    },
+    "upgrades": {
+        "night-lords-headsmans-axe-power-lance": {
+            "id": "night-lords-headsmans-axe-power-lance",
+            "name": "Headsman’s Axe",
+            "description": "Any Model with the Night Lords Trait and the Command Sub-Type may have a power weapon exchanged for a headsman's axe.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-lance-to-headsmans-axe": {
+                    "id": "power-lance-to-headsmans-axe",
+                    "name": "Power lance to headsman’s axe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "headsmans-axe"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "night-lords-headsmans-axe-power-maul": {
+            "id": "night-lords-headsmans-axe-power-maul",
+            "name": "Headsman’s Axe",
+            "description": "Any Model with the Night Lords Trait and the Command Sub-Type may have a power weapon exchanged for a headsman's axe.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-maul-to-headsmans-axe": {
+                    "id": "power-maul-to-headsmans-axe",
+                    "name": "Power maul to headsman’s axe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "headsmans-axe"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "night-lords-headsmans-axe-power-axe": {
+            "id": "night-lords-headsmans-axe-power-axe",
+            "name": "Headsman’s Axe",
+            "description": "Any Model with the Night Lords Trait and the Command Sub-Type may have a power weapon exchanged for a headsman's axe.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-axe-to-headsmans-axe": {
+                    "id": "power-axe-to-headsmans-axe",
+                    "name": "Power axe to headsman’s axe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "headsmans-axe"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "night-lords-headsmans-axe": {
+            "id": "night-lords-headsmans-axe",
+            "name": "Headsman’s Axe",
+            "description": "Any Model with the Night Lords Trait and the Command Sub-Type may have a power weapon exchanged for a headsman's axe.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-sword-to-headsmans-axe": {
+                    "id": "power-sword-to-headsmans-axe",
+                    "name": "Power sword to headsman’s axe",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "headsmans-axe"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "night-lords-trophies-of-judgement": {
+            "id": "night-lords-trophies-of-judgement",
+            "name": "Trophies of Judgement",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "trophies-of-judgement": {
+                    "id": "trophies-of-judgement",
+                    "name": "Trophies of Judgement",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["trophies-of-judgement"]
+                }
+            }
+        },
+        "night-lords-nostraman-chain-weapons-power-lance": {
+            "id": "night-lords-nostraman-chain-weapons-power-lance",
+            "name": "Chainglaive",
+            "description": "Any Model with the Night Lords Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a chainglaive.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-lance-to-chainglaive": {
+                    "id": "power-lance-to-chainglaive",
+                    "name": "Power lance to chainglaive",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "chainglaive"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "night-lords-nostraman-chain-weapons-power-maul": {
+            "id": "night-lords-nostraman-chain-weapons-power-maul",
+            "name": "Chainglaive",
+            "description": "Any Model with the Night Lords Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a chainglaive.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-maul-to-chainglaive": {
+                    "id": "power-maul-to-chainglaive",
+                    "name": "Power maul to chainglaive",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "chainglaive"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "night-lords-nostraman-chain-weapons-power-axe": {
+            "id": "night-lords-nostraman-chain-weapons-power-axe",
+            "name": "Chainglaive",
+            "description": "Any Model with the Night Lords Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a chainglaive.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-axe-to-chainglaive": {
+                    "id": "power-axe-to-chainglaive",
+                    "name": "Power axe to chainglaive",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "chainglaive"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "night-lords-nostraman-chain-weapons": {
+            "id": "night-lords-nostraman-chain-weapons",
+            "name": "Chainglaive",
+            "description": "Any Model with the Night Lords Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a chainglaive.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-sword-to-chainglaive": {
+                    "id": "power-sword-to-chainglaive",
+                    "name": "Power sword to chainglaive",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "chainglaive"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {},
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-night-lords-nostraman-chain-weapons": {
+            "id": "panoply-of-old-night-lords-nostraman-chain-weapons",
+            "name": "Chainglaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-nostraman-chain-weapons"
+                }
+            ]
+        },
+        "panoply-of-old-night-lords-nostraman-chain-weapons-power-axe": {
+            "id": "panoply-of-old-night-lords-nostraman-chain-weapons-power-axe",
+            "name": "Chainglaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-nostraman-chain-weapons-power-axe"
+                }
+            ]
+        },
+        "panoply-of-old-night-lords-nostraman-chain-weapons-power-maul": {
+            "id": "panoply-of-old-night-lords-nostraman-chain-weapons-power-maul",
+            "name": "Chainglaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-nostraman-chain-weapons-power-maul"
+                }
+            ]
+        },
+        "panoply-of-old-night-lords-nostraman-chain-weapons-power-lance": {
+            "id": "panoply-of-old-night-lords-nostraman-chain-weapons-power-lance",
+            "name": "Chainglaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-nostraman-chain-weapons-power-lance"
+                }
+            ]
+        },
+        "panoply-of-old-night-lords-trophies-of-judgement": {
+            "id": "panoply-of-old-night-lords-trophies-of-judgement",
+            "name": "Trophies of Judgement",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-trophies-of-judgement"
+                }
+            ]
+        },
+        "panoply-of-old-night-lords-headsmans-axe": {
+            "id": "panoply-of-old-night-lords-headsmans-axe",
+            "name": "Headsman’s Axe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-headsmans-axe"
+                }
+            ]
+        },
+        "panoply-of-old-night-lords-headsmans-axe-power-axe": {
+            "id": "panoply-of-old-night-lords-headsmans-axe-power-axe",
+            "name": "Headsman’s Axe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-headsmans-axe-power-axe"
+                }
+            ]
+        },
+        "panoply-of-old-night-lords-headsmans-axe-power-maul": {
+            "id": "panoply-of-old-night-lords-headsmans-axe-power-maul",
+            "name": "Headsman’s Axe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-headsmans-axe-power-maul"
+                }
+            ]
+        },
+        "panoply-of-old-night-lords-headsmans-axe-power-lance": {
+            "id": "panoply-of-old-night-lords-headsmans-axe-power-lance",
+            "name": "Headsman’s Axe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "night-lords-headsmans-axe-power-lance"
+                }
+            ]
+        }
+    }
+}

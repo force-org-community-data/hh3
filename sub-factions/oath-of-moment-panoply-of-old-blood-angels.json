@@ -1,0 +1,721 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-blood-angels",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (Blood Angels)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: Blood Angels. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-dark-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-warriors) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-imperial-fists) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-night-lords) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-hands) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-world-eaters) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-thousand-sons) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-word-bearers) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-salamanders) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-raven-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-alpha-legion)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {
+        "iliastus-assault-cannon": {
+            "id": "iliastus-assault-cannon",
+            "name": "Iliastus Assault Cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Sustained fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Maximal fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "5",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "twin-iliastus-assault-cannon": {
+            "id": "twin-iliastus-assault-cannon",
+            "name": "Twin Iliastus assault cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Sustained fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "6",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Maximal fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "8",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "spear-of-perdition": {
+            "id": "spear-of-perdition",
+            "name": "Spear of Perdition",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Spear of Perdition",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "maul-of-perdition": {
+            "id": "maul-of-perdition",
+            "name": "Maul of Perdition",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Maul of Perdition",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "axe-of-perdition": {
+            "id": "axe-of-perdition",
+            "name": "Axe of Perdition",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Axe of Perdition",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "blade-of-perdition": {
+            "id": "blade-of-perdition",
+            "name": "Blade of Perdition",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Blade of Perdition",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power", "Flame"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "aflame",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        "inferno-pistol": {
+            "id": "inferno-pistol",
+            "name": "Inferno Pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Inferno pistol",
+                    "stats": {
+                        "r": "6",
+                        "fp": "1",
+                        "rs": "8",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Melta"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "melta",
+                            "value": "3"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {
+        "blood-angels-leviathan-iliastus-assault-cannons": {
+            "id": "blood-angels-leviathan-iliastus-assault-cannons",
+            "name": "Heavy flamers to two Iliastus assault cannons",
+            "description": "Any Leviathan Dreadnought with the Blood Angels Trait may have both its heavy flamers exchanged for two Iliastus assault cannon.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "two-iliastus-assault-cannons": {
+                    "id": "two-iliastus-assault-cannons",
+                    "name": "Two Iliastus assault cannons",
+                    "cost": {
+                        "points": 30
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "heavy-flamer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "iliastus-assault-cannon"
+                            }
+                        },
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "heavy-flamer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "iliastus-assault-cannon"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "blood-angels-twin-iliastus-assault-cannon": {
+            "id": "blood-angels-twin-iliastus-assault-cannon",
+            "name": "Turret Mounted Predator cannon to twin Iliastus assault cannon",
+            "description": "Any Predator with the Blood Angels Trait may have its Turret Mounted Predator cannon exchanged for one Turret Mounted twin Iliastus assault cannon.",
+            "perModel": {
+                "type": "single"
+            },
+            "multiSelect": true,
+            "options": {
+                "twin-iliastus-assault-cannon": {
+                    "id": "twin-iliastus-assault-cannon",
+                    "name": "Twin Iliastus assault cannon",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "predator-cannon"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "twin-iliastus-assault-cannon"
+                            }
+                        }
+                    ]
+                }
+            },
+            "gearNote": "Turret Mounted"
+        },
+        "blood-angels-iliastus-assault-cannon": {
+            "id": "blood-angels-iliastus-assault-cannon",
+            "name": "Iliastus Assault Cannon",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "iliastus-assault-cannon": {
+                    "id": "iliastus-assault-cannon",
+                    "name": "Iliastus Assault Cannon",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "heavy-flamer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "iliastus-assault-cannon"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none",
+            "description": "Any Model with the Blood Angels Trait from either a Veteran Tactical Squad or a Centurion Command Squad, and any Cataphractii Terminator with the Blood Angels Trait, may have its heavy flamer exchanged for one Iliastus assault cannon."
+        },
+        "blood-angels-perdition-weapons-power-lance": {
+            "id": "blood-angels-perdition-weapons-power-lance",
+            "name": "Spear of Perdition",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Blood Angels Trait may have its power sword, power axe, power spear or power maul exchanged for one Blade of Perdition, one Axe of Perdition, one Spear of Perdition or one Maul of Perdition.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-lance-to-spear-of-perdition": {
+                    "id": "power-lance-to-spear-of-perdition",
+                    "name": "Power lance to Spear of Perdition",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "spear-of-perdition"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "blood-angels-perdition-weapons-power-maul": {
+            "id": "blood-angels-perdition-weapons-power-maul",
+            "name": "Maul of Perdition",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Blood Angels Trait may have its power sword, power axe, power spear or power maul exchanged for one Blade of Perdition, one Axe of Perdition, one Spear of Perdition or one Maul of Perdition.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-maul-to-maul-of-perdition": {
+                    "id": "power-maul-to-maul-of-perdition",
+                    "name": "Power maul to Maul of Perdition",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "maul-of-perdition"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "blood-angels-perdition-weapons-power-axe": {
+            "id": "blood-angels-perdition-weapons-power-axe",
+            "name": "Axe of Perdition",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Blood Angels Trait may have its power sword, power axe, power spear or power maul exchanged for one Blade of Perdition, one Axe of Perdition, one Spear of Perdition or one Maul of Perdition.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-axe-to-axe-of-perdition": {
+                    "id": "power-axe-to-axe-of-perdition",
+                    "name": "Power axe to Axe of Perdition",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "axe-of-perdition"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "blood-angels-perdition-weapons": {
+            "id": "blood-angels-perdition-weapons",
+            "name": "Blade of Perdition",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Blood Angels Trait may have its power sword, power axe, power spear or power maul exchanged for one Blade of Perdition, one Axe of Perdition, one Spear of Perdition or one Maul of Perdition.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-sword-to-blade-of-perdition": {
+                    "id": "power-sword-to-blade-of-perdition",
+                    "name": "Power sword to Blade of Perdition",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "blade-of-perdition"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "blood-angels-inferno-pistol": {
+            "id": "blood-angels-inferno-pistol",
+            "name": "Inferno Pistol",
+            "perModel": {
+                "type": "some"
+            },
+            "options": {
+                "none": {
+                    "id": "none",
+                    "name": "None",
+                    "cost": {
+                        "points": 0
+                    }
+                },
+                "inferno-pistol": {
+                    "id": "inferno-pistol",
+                    "name": "Inferno Pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "plasma-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "inferno-pistol"
+                            }
+                        }
+                    ]
+                }
+            },
+            "default": "none",
+            "description": "Any Model with the Blood Angels Trait may have its plasma pistol exchanged for one inferno pistol."
+        }
+    },
+    "specialRules": {
+        "aflame": {
+            "id": "aflame",
+            "name": "Aflame",
+            "text": "A Weapon with this Special Rule causes additional modifiers to a Target’s Leadership Characteristic. If a Melee Attack made for a Weapon or Model with this Special Rule inflicts one or more wounds on a Target Unit, regardless of whether any Damage is inflicted, until the end of the Phase, that Unit is considered to be ‘aflame’. If the Controlling Player of a Unit that is aflame is required to make a Leadership Check during that Phase for a Combat that includes that Unit, the value of X on this Special Rule is applied as an additional negative modifier to the Leadership Characteristic being used for that Check.",
+            "configurable": true
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-blood-angels-inferno-pistol": {
+            "id": "panoply-of-old-blood-angels-inferno-pistol",
+            "name": "Inferno Pistol",
+            "selector": {
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-inferno-pistol"
+                }
+            ]
+        },
+        "panoply-of-old-blood-angels-perdition-weapons": {
+            "id": "panoply-of-old-blood-angels-perdition-weapons",
+            "name": "Blade of Perdition",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-perdition-weapons"
+                }
+            ]
+        },
+        "panoply-of-old-blood-angels-perdition-weapons-power-axe": {
+            "id": "panoply-of-old-blood-angels-perdition-weapons-power-axe",
+            "name": "Axe of Perdition",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-perdition-weapons-power-axe"
+                }
+            ]
+        },
+        "panoply-of-old-blood-angels-perdition-weapons-power-maul": {
+            "id": "panoply-of-old-blood-angels-perdition-weapons-power-maul",
+            "name": "Maul of Perdition",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-perdition-weapons-power-maul"
+                }
+            ]
+        },
+        "panoply-of-old-blood-angels-perdition-weapons-power-lance": {
+            "id": "panoply-of-old-blood-angels-perdition-weapons-power-lance",
+            "name": "Spear of Perdition",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-perdition-weapons-power-lance"
+                }
+            ]
+        },
+        "panoply-of-old-blood-angels-iliastus-assault-cannon": {
+            "id": "panoply-of-old-blood-angels-iliastus-assault-cannon",
+            "name": "Iliastus Assault Cannon",
+            "selector": {
+                "unitIds": [
+                    "veteran-tactical-squad",
+                    "centurion-command-squad",
+                    "cataphractii-terminator-squad"
+                ],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-iliastus-assault-cannon"
+                }
+            ]
+        },
+        "panoply-of-old-blood-angels-twin-iliastus-assault-cannon": {
+            "id": "panoply-of-old-blood-angels-twin-iliastus-assault-cannon",
+            "name": "Twin Iliastus Assault Cannon",
+            "selector": {
+                "unitIds": ["predator"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-twin-iliastus-assault-cannon"
+                }
+            ]
+        },
+        "panoply-of-old-blood-angels-leviathan-iliastus-assault-cannons": {
+            "id": "panoply-of-old-blood-angels-leviathan-iliastus-assault-cannons",
+            "name": "Leviathan Iliastus Assault Cannons",
+            "selector": {
+                "unitIds": ["leviathan-dreadnought"],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "blood-angels-leviathan-iliastus-assault-cannons"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,218 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-iron-hands",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (Iron Hands)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: Iron Hands. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-dark-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-warriors) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-imperial-fists) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-night-lords) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-blood-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-world-eaters) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-thousand-sons) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-word-bearers) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-salamanders) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-raven-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-alpha-legion)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {
+        "graviton-pistol": {
+            "id": "graviton-pistol",
+            "name": "Graviton pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Graviton pistol",
+                    "stats": {
+                        "r": "12",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "gorgon-pattern-terminator-armour": {
+            "id": "gorgon-pattern-terminator-armour",
+            "name": "Gorgon Pattern Terminator Armour",
+            "text": "A Model with Gorgon Terminator Armour gains the Heavy Sub-Type and the Feel No Pain (5+) Special Rule."
+        },
+        "armatus-necrotechnika": {
+            "id": "armatus-necrotechnika",
+            "name": "Armatus Necrotechnika",
+            "text": "Vehicles may decrease the Target Number of Repair Tests if Models were Removed as Casualties from nearby Units. Any Model with the Iron Hands Trait and the Vehicle Type may have Armatus Necrotechnika selected for it for +10 Points per Model. A Model with Armatus Necrotechnika gains the Auto-Repair (5+) Special Rule. Additionally, if any Models were Removed as Casualties from a Unit that has any Models within 6\" of a Model with Armatus Necrotechnika during the same Turn as a Repair Roll is made for that Model, the Controlling Player can add 1 to the result of the Repair Roll."
+        }
+    },
+    "upgrades": {
+        "iron-hands-gorgon-terminator-armour": {
+            "id": "iron-hands-gorgon-terminator-armour",
+            "name": "Gorgon Terminator Armour",
+            "description": "Iron Father and the Tartaros Praetor, Centurion, Warmonger, Librarian, Esoterist, Legion Champion, Chaplain, Herald, Siege Breaker, Forge Lord, Primus Medicae, Delegatus and Mortificator can have Gorgon Terminator Armour selected for them for +30 Points per Model. A Model with Gorgon Terminator Armour gains the Heavy Sub-Type and the Feel No Pain (5+) Special Rule and the Gorgon pattern Terminator Armour Wargear item.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "gorgon-terminator-armour": {
+                    "id": "gorgon-terminator-armour",
+                    "name": "Gorgon Terminator Armour",
+                    "cost": {
+                        "points": 30
+                    },
+                    "equipmentRefs": ["gorgon-pattern-terminator-armour"],
+                    "effects": [
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "feel-no-pain",
+                                "value": "5+"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "iron-hands-graviton-pistol": {
+            "id": "iron-hands-graviton-pistol",
+            "name": "Graviton Pistol",
+            "description": "Any Model with the Command or Champion Sub-Type and the Iron Hands Trait may have its plasma pistol exchanged for one graviton pistol.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "graviton-pistol": {
+                    "id": "graviton-pistol",
+                    "name": "Plasma pistol to graviton pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "plasma-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "graviton-pistol"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "plasma-pistol",
+                    "count": 1
+                }
+            ]
+        },
+        "iron-hands-armatus-necrotechnika": {
+            "id": "iron-hands-armatus-necrotechnika",
+            "name": "Armatus Necrotechnika",
+            "description": "Any Model with the Iron Hands Trait and the Vehicle Type may have Armatus Necrotechnika selected for it.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "armatus-necrotechnika": {
+                    "id": "armatus-necrotechnika",
+                    "name": "Armatus Necrotechnika",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["armatus-necrotechnika"]
+                }
+            }
+        }
+    },
+    "specialRules": {},
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-iron-hands-armatus-necrotechnika": {
+            "id": "panoply-of-old-iron-hands-armatus-necrotechnika",
+            "name": "Armatus Necrotechnika",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-hands-armatus-necrotechnika"
+                }
+            ]
+        },
+        "panoply-of-old-iron-hands-graviton-pistol": {
+            "id": "panoply-of-old-iron-hands-graviton-pistol",
+            "name": "Graviton Pistol",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-hands-graviton-pistol"
+                }
+            ]
+        },
+        "panoply-of-old-iron-hands-gorgon-terminator-armour": {
+            "id": "panoply-of-old-iron-hands-gorgon-terminator-armour",
+            "name": "Gorgon Terminator Armour",
+            "selector": {
+                "unitIds": [
+                    "praetor-in-tartaros-terminator-armour",
+                    "centurion-in-tartaros-terminator-armour",
+                    "warmonger-in-tartaros-terminator-armour",
+                    "librarian-in-tartaros-terminator-armour",
+                    "esoterist-in-tartaros-terminator-armour",
+                    "legion-champion-in-tartaros-terminator-armour",
+                    "chaplain-in-tartaros-terminator-armour",
+                    "herald-in-tartaros-terminator-armour",
+                    "siege-breaker-in-tartaros-terminator-armour",
+                    "forge-lord-in-tartaros-terminator-armour",
+                    "primus-medicae-in-tartaros-terminator-armour",
+                    "delegatus-in-tartaros-terminator-armour",
+                    "mortificator-in-tartaros-terminator-armour"
+                ],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-hands-gorgon-terminator-armour"
+                }
+            ]
+        }
+    }
+}

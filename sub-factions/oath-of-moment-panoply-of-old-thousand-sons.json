@@ -1,0 +1,431 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-thousand-sons",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (Thousand Sons)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: Thousand Sons. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-dark-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-warriors) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-imperial-fists) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-night-lords) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-blood-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-hands) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-world-eaters) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-word-bearers) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-salamanders) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-raven-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-alpha-legion)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {
+        "asphyx-bolter": {
+            "id": "asphyx-bolter",
+            "name": "Asphyx bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Asphyx bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "asphyx-pistol": {
+            "id": "asphyx-pistol",
+            "name": "Asphyx pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Asphyx pistol",
+                    "stats": {
+                        "r": "8",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "achea-pattern-force-sword": {
+            "id": "achea-pattern-force-sword",
+            "name": "Achea pattern force sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Achea pattern force sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {
+        "thousand-sons-asphyx-bolters": {
+            "id": "thousand-sons-asphyx-bolters",
+            "name": "Asphyx Bolters",
+            "description": "In any Unit entirely composed of Models with the Thousand Sons Trait, every Model in that Unit may have its bolter exchanged for one asphyx bolter.",
+            "perModel": {
+                "type": "every"
+            },
+            "options": {
+                "bolter-to-asphyx-bolter": {
+                    "id": "bolter-to-asphyx-bolter",
+                    "name": "Bolter to asphyx bolter",
+                    "cost": {
+                        "points": 3
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "asphyx-bolter"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "thousand-sons-asphyx-weapons": {
+            "id": "thousand-sons-asphyx-weapons",
+            "name": "Asphyx Pistols",
+            "description": "In any Unit entirely composed of Models with the Thousand Sons Trait, every Model in that Unit may have its bolt pistol exchanged for one asphyx pistol.",
+            "perModel": {
+                "type": "every"
+            },
+            "options": {
+                "bolt-pistol-to-asphyx-pistol": {
+                    "id": "bolt-pistol-to-asphyx-pistol",
+                    "name": "Bolt pistol to asphyx pistol",
+                    "cost": {
+                        "points": 2
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "asphyx-pistol"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "thousand-sons-achea-pattern-force-swords-power-lance": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-lance",
+            "name": "Achea Pattern Force Sword",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-lance-to-achea-pattern-force-sword": {
+                    "id": "power-lance-to-achea-pattern-force-sword",
+                    "name": "Power lance to Achea pattern force sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords-power-maul": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-maul",
+            "name": "Achea Pattern Force Sword",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-maul-to-achea-pattern-force-sword": {
+                    "id": "power-maul-to-achea-pattern-force-sword",
+                    "name": "Power maul to Achea pattern force sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords-power-axe": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-axe",
+            "name": "Achea Pattern Force Sword",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-axe-to-achea-pattern-force-sword": {
+                    "id": "power-axe-to-achea-pattern-force-sword",
+                    "name": "Power axe to Achea pattern force sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords": {
+            "id": "thousand-sons-achea-pattern-force-swords",
+            "name": "Achea Pattern Force Sword",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-sword-to-achea-pattern-force-sword": {
+                    "id": "power-sword-to-achea-pattern-force-sword",
+                    "name": "Power sword to Achea pattern force sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {},
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-thousand-sons-achea-pattern-force-swords": {
+            "id": "panoply-of-old-thousand-sons-achea-pattern-force-swords",
+            "name": "Achea Pattern Force Sword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-achea-pattern-force-swords"
+                }
+            ]
+        },
+        "panoply-of-old-thousand-sons-achea-pattern-force-swords-power-axe": {
+            "id": "panoply-of-old-thousand-sons-achea-pattern-force-swords-power-axe",
+            "name": "Achea Pattern Force Sword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-axe"
+                }
+            ]
+        },
+        "panoply-of-old-thousand-sons-achea-pattern-force-swords-power-maul": {
+            "id": "panoply-of-old-thousand-sons-achea-pattern-force-swords-power-maul",
+            "name": "Achea Pattern Force Sword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-maul"
+                }
+            ]
+        },
+        "panoply-of-old-thousand-sons-achea-pattern-force-swords-power-lance": {
+            "id": "panoply-of-old-thousand-sons-achea-pattern-force-swords-power-lance",
+            "name": "Achea Pattern Force Sword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-lance"
+                }
+            ]
+        },
+        "panoply-of-old-thousand-sons-asphyx-weapons": {
+            "id": "panoply-of-old-thousand-sons-asphyx-weapons",
+            "name": "Asphyx Weapons",
+            "selector": {
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-asphyx-weapons"
+                }
+            ]
+        },
+        "panoply-of-old-thousand-sons-asphyx-bolters": {
+            "id": "panoply-of-old-thousand-sons-asphyx-bolters",
+            "name": "Asphyx Bolters",
+            "selector": {
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-asphyx-bolters"
+                }
+            ]
+        }
+    }
+}

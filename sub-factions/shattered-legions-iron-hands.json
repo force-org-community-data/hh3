@@ -1,0 +1,432 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "shattered-legions-iron-hands",
+    "version": "1.0.0",
+    "name": "Iron Hands (Shattered Legions)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "shattered-legions",
+    "description": "Iron Hands selected for a Shattered Legions Army: the Iron Resolve Mutable Tactics benefit, the Armoury of the Iron Hands (options a Legion adds to the shared Legion wargear lists are not included), the Exemplars of the Legion Prime Advantage for Iron Hands Units, and Shadrak Meduson as a Commander of the Shattered Legions.",
+    "when": {
+        "if": "contingent.is(subfaction:shattered-legions)",
+        "message": "Shattered Legions Armies only"
+    },
+    "units": {
+        "shadrak-meduson": {
+            "id": "shadrak-meduson",
+            "name": "Shadrak Meduson",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 175
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "shadrak-meduson",
+                    "name": "Shadrak Meduson",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "9",
+                        "in": "9",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "battlesmith",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Iron Hands", "Master of the Legion"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "storms-wrath"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "albian-power-gladius"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "servo-arm"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "storms-wrath": {
+            "id": "storms-wrath",
+            "name": "Storm’s Wrath",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Storm’s Wrath",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "albian-power-gladius": {
+            "id": "albian-power-gladius",
+            "name": "Albian Power Gladius",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Albian Power Gladius",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "graviton-pistol": {
+            "id": "graviton-pistol",
+            "name": "Graviton pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Graviton pistol",
+                    "stats": {
+                        "r": "12",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "gorgon-pattern-terminator-armour": {
+            "id": "gorgon-pattern-terminator-armour",
+            "name": "Gorgon Pattern Terminator Armour",
+            "text": "A Model with Gorgon Terminator Armour gains the Heavy Sub-Type and the Feel No Pain (5+) Special Rule."
+        },
+        "armatus-necrotechnika": {
+            "id": "armatus-necrotechnika",
+            "name": "Armatus Necrotechnika",
+            "text": "Vehicles may decrease the Target Number of Repair Tests if Models were Removed as Casualties from nearby Units. Any Model with the Iron Hands Trait and the Vehicle Type may have Armatus Necrotechnika selected for it for +10 Points per Model. A Model with Armatus Necrotechnika gains the Auto-Repair (5+) Special Rule. Additionally, if any Models were Removed as Casualties from a Unit that has any Models within 6\" of a Model with Armatus Necrotechnika during the same Turn as a Repair Roll is made for that Model, the Controlling Player can add 1 to the result of the Repair Roll."
+        }
+    },
+    "upgrades": {
+        "iron-hands-gorgon-terminator-armour": {
+            "id": "iron-hands-gorgon-terminator-armour",
+            "name": "Gorgon Terminator Armour",
+            "description": "Iron Father and the Tartaros Praetor, Centurion, Warmonger, Librarian, Esoterist, Legion Champion, Chaplain, Herald, Siege Breaker, Forge Lord, Primus Medicae, Delegatus and Mortificator can have Gorgon Terminator Armour selected for them for +30 Points per Model. A Model with Gorgon Terminator Armour gains the Heavy Sub-Type and the Feel No Pain (5+) Special Rule and the Gorgon pattern Terminator Armour Wargear item.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "gorgon-terminator-armour": {
+                    "id": "gorgon-terminator-armour",
+                    "name": "Gorgon Terminator Armour",
+                    "cost": {
+                        "points": 30
+                    },
+                    "equipmentRefs": ["gorgon-pattern-terminator-armour"],
+                    "effects": [
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "feel-no-pain",
+                                "value": "5+"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "iron-hands-graviton-pistol": {
+            "id": "iron-hands-graviton-pistol",
+            "name": "Graviton Pistol",
+            "description": "Any Model with the Command or Champion Sub-Type and the Iron Hands Trait may have its plasma pistol exchanged for one graviton pistol.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "graviton-pistol": {
+                    "id": "graviton-pistol",
+                    "name": "Plasma pistol to graviton pistol",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "plasma-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "graviton-pistol"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "plasma-pistol",
+                    "count": 1
+                }
+            ]
+        },
+        "iron-hands-armatus-necrotechnika": {
+            "id": "iron-hands-armatus-necrotechnika",
+            "name": "Armatus Necrotechnika",
+            "description": "Any Model with the Iron Hands Trait and the Vehicle Type may have Armatus Necrotechnika selected for it.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "armatus-necrotechnika": {
+                    "id": "armatus-necrotechnika",
+                    "name": "Armatus Necrotechnika",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["armatus-necrotechnika"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "mutable-tactics-iron-hands": {
+            "id": "mutable-tactics-iron-hands",
+            "name": "Iron Resolve (Mutable Tactics)",
+            "text": "The warriors of the Xth Legion are expert at enduring short-ranged barrages of fire, shielding their allies with their own resilient bodies and augmented armour. Models subject to this benefit gain the Feel No Pain (4+) Special Rule against Volley Attacks. If the Iron Hands Legion was selected for this Army’s Shattered Legions Trait, when any attacks as part of a Volley Attack are allocated, if the Target Model is a Model from that Army subject to the Mutable Tactics Special Rule, that Model has the Feel No Pain (4+) Special Rule until that attack is resolved."
+        },
+        "legion-specialists": {
+            "id": "legion-specialists",
+            "name": "Legion Specialists",
+            "text": "If Models in this Unit would benefit from the Mutable Tactics Legion Tactica, they may only benefit from the bonus related to their Legion whose Trait was replaced as part of the Exemplars of the Legion Prime Advantage."
+        }
+    },
+    "groups": {},
+    "slotOptions": {
+        "exemplars-of-the-legion-iron-hands": {
+            "id": "exemplars-of-the-legion-iron-hands",
+            "name": "Exemplars of the Legion (Iron Hands)",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. The Slot added may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War. Each Unit selected to fill such a Slot must be from the Legiones Astartes Army List, not include any Models that have the Unique Sub-Type, and have a Faction Trait that matches the Legion represented by the Model that was selected to fill the Slot with this Prime Advantage. All Models in any of these Units have their Faction Trait replaced with ‘Shattered Legions’ and have the Legion Specialists Special Rule. Only for a Unit with the Command Battlefield Role in a Shattered Legions Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "roles": ["command"]
+            },
+            "when": {
+                "if": "contingent.is(subfaction:shattered-legions)",
+                "message": "Shattered Legions Detachments only"
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Exemplars of the Legion"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "retinue",
+                        "elites",
+                        "war-engine",
+                        "troop",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "legiones-astartes",
+                        "subFactions": ["iron-hands"]
+                    },
+                    "units": {
+                        "exclude": [
+                            {
+                                "profiles": {
+                                    "anyOf": ["Unique"]
+                                }
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Legiones Astartes", "Iron Hands"],
+                                "to": "Shattered Legions"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "legion-specialists"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "shattered-legions-iron-hands-mutable-tactics": {
+            "id": "shattered-legions-iron-hands-mutable-tactics",
+            "name": "Iron Resolve (Mutable Tactics)",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "mutable-tactics-iron-hands"
+                    }
+                }
+            ]
+        },
+        "shattered-legions-iron-hands-armatus-necrotechnika": {
+            "id": "shattered-legions-iron-hands-armatus-necrotechnika",
+            "name": "Armatus Necrotechnika",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-hands-armatus-necrotechnika"
+                }
+            ]
+        },
+        "shattered-legions-iron-hands-graviton-pistol": {
+            "id": "shattered-legions-iron-hands-graviton-pistol",
+            "name": "Graviton Pistol",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-hands-graviton-pistol"
+                }
+            ]
+        },
+        "shattered-legions-iron-hands-gorgon-terminator-armour": {
+            "id": "shattered-legions-iron-hands-gorgon-terminator-armour",
+            "name": "Gorgon Terminator Armour",
+            "selector": {
+                "unitIds": [
+                    "praetor-in-tartaros-terminator-armour",
+                    "centurion-in-tartaros-terminator-armour",
+                    "warmonger-in-tartaros-terminator-armour",
+                    "librarian-in-tartaros-terminator-armour",
+                    "esoterist-in-tartaros-terminator-armour",
+                    "legion-champion-in-tartaros-terminator-armour",
+                    "chaplain-in-tartaros-terminator-armour",
+                    "herald-in-tartaros-terminator-armour",
+                    "siege-breaker-in-tartaros-terminator-armour",
+                    "forge-lord-in-tartaros-terminator-armour",
+                    "primus-medicae-in-tartaros-terminator-armour",
+                    "delegatus-in-tartaros-terminator-armour",
+                    "mortificator-in-tartaros-terminator-armour"
+                ],
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "iron-hands-gorgon-terminator-armour"
+                }
+            ]
+        }
+    }
+}

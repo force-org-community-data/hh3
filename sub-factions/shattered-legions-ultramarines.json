@@ -1,0 +1,247 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "shattered-legions-ultramarines",
+    "version": "1.0.0",
+    "name": "Ultramarines (Shattered Legions)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "shattered-legions",
+    "description": "Ultramarines selected for a Shattered Legions Army: the Methodical Fighters Mutable Tactics benefit, the Armoury of the Ultramarines (options a Legion adds to the shared Legion wargear lists are not included), the Exemplars of the Legion Prime Advantage for Ultramarines Units.",
+    "when": {
+        "if": "contingent.is(subfaction:shattered-legions)",
+        "message": "Shattered Legions Armies only"
+    },
+    "units": {},
+    "weapons": {
+        "legatine-axe": {
+            "id": "legatine-axe",
+            "name": "Legatine axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Legatine axe",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "argyrum-pattern-boarding-shield": {
+            "id": "argyrum-pattern-boarding-shield",
+            "name": "Argyrum Pattern Boarding Shield",
+            "text": "This Wargear provides an enhanced save against attacks made in close combat. Any Model with the Command or Champion Sub-Type and the Ultramarines Trait have one Argyrum pattern boarding shield selected for it for +15 Points per Model. A Model with a Argyrum pattern boarding shield has a 5+ Invulnerable Save, increasing to a 4+ Invulnerable Save against Wounds inflicted by Melee Weapons. In addition, it gains the Shield Trait and the Heavy Sub-Type."
+        }
+    },
+    "upgrades": {
+        "ultramarines-argyrum-pattern-boarding-shield": {
+            "id": "ultramarines-argyrum-pattern-boarding-shield",
+            "name": "Argyrum Pattern Boarding Shield",
+            "description": "Any Model with the Command or Champion Sub-Type and the Ultramarines Trait may have one Argyrum pattern boarding shield selected for it.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "argyrum-pattern-boarding-shield": {
+                    "id": "argyrum-pattern-boarding-shield",
+                    "name": "Argyrum Pattern Boarding Shield",
+                    "cost": {
+                        "points": 15
+                    },
+                    "equipmentRefs": ["argyrum-pattern-boarding-shield"]
+                }
+            }
+        },
+        "ultramarines-legatine-axe": {
+            "id": "ultramarines-legatine-axe",
+            "name": "Legatine Axe",
+            "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Ultramarines Trait may have its power axe exchanged for one Legatine axe.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "legatine-axe": {
+                    "id": "legatine-axe",
+                    "name": "Power axe to Legatine axe",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "legatine-axe"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {
+        "mutable-tactics-ultramarines": {
+            "id": "mutable-tactics-ultramarines",
+            "name": "Methodical Fighters (Mutable Tactics)",
+            "text": "Acting in concert with their fellows, the sons of Ultramar execute complex attack patterns in unity, allowing the enemy fewer opportunities to strike back. Shooting Attacks made as part of a Reaction that target a Unit that includes any Models subject to this benefit must be made as Snap Shots. If the Ultramarines Legion was selected for this Army’s Shattered Legions Trait, when an enemy Unit makes a Shooting Attack as part of a Reaction that Targets a Unit that includes any Models from that Army subject to the Mutable Tactics Special Rule, attacks made as part of that Shooting Attack are made as Snap Shots."
+        },
+        "legion-specialists": {
+            "id": "legion-specialists",
+            "name": "Legion Specialists",
+            "text": "If Models in this Unit would benefit from the Mutable Tactics Legion Tactica, they may only benefit from the bonus related to their Legion whose Trait was replaced as part of the Exemplars of the Legion Prime Advantage."
+        }
+    },
+    "groups": {},
+    "slotOptions": {
+        "exemplars-of-the-legion-ultramarines": {
+            "id": "exemplars-of-the-legion-ultramarines",
+            "name": "Exemplars of the Legion (Ultramarines)",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. The Slot added may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War. Each Unit selected to fill such a Slot must be from the Legiones Astartes Army List, not include any Models that have the Unique Sub-Type, and have a Faction Trait that matches the Legion represented by the Model that was selected to fill the Slot with this Prime Advantage. All Models in any of these Units have their Faction Trait replaced with ‘Shattered Legions’ and have the Legion Specialists Special Rule. Only for a Unit with the Command Battlefield Role in a Shattered Legions Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "roles": ["command"]
+            },
+            "when": {
+                "if": "contingent.is(subfaction:shattered-legions)",
+                "message": "Shattered Legions Detachments only"
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Exemplars of the Legion"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "retinue",
+                        "elites",
+                        "war-engine",
+                        "troop",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "legiones-astartes",
+                        "subFactions": ["ultramarines"]
+                    },
+                    "units": {
+                        "exclude": [
+                            {
+                                "profiles": {
+                                    "anyOf": ["Unique"]
+                                }
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Legiones Astartes", "Ultramarines"],
+                                "to": "Shattered Legions"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "legion-specialists"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "shattered-legions-ultramarines-mutable-tactics": {
+            "id": "shattered-legions-ultramarines-mutable-tactics",
+            "name": "Methodical Fighters (Mutable Tactics)",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "mutable-tactics-ultramarines"
+                    }
+                }
+            ]
+        },
+        "shattered-legions-ultramarines-legatine-axe": {
+            "id": "shattered-legions-ultramarines-legatine-axe",
+            "name": "Legatine Axe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "ultramarines-legatine-axe"
+                }
+            ]
+        },
+        "shattered-legions-ultramarines-argyrum-pattern-boarding-shield": {
+            "id": "shattered-legions-ultramarines-argyrum-pattern-boarding-shield",
+            "name": "Argyrum Pattern Boarding Shield",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "ultramarines-argyrum-pattern-boarding-shield"
+                }
+            ]
+        }
+    }
+}

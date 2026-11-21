@@ -1,0 +1,523 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-the-weapons-of-desperation",
+    "version": "1.0.0",
+    "name": "Oath of Moment: The Weapons of Desperation",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "This band of Legiones Astartes warriors makes no use of the common weapons of their brethren, whether having purposefully cast them aside as tainted by the sins of their fellows or having been imprisoned and forcefully deprived of them. Returned to the fight, they are forced to make use of lesser weaponry, wielding mortal longarms as though they were but pistols and making desperation into a virtue. For amid the ceaseless carnage of the Horus Heresy, even the least of weapons fed the slaughter taking place on battlefields across the galaxy. A Model with this Special Rule must swap bolters and bolt pistols for other Weapons. All Models with the Blackshields Trait in a Detachment with this Oath of Moment must exchange all bolters and bolt pistols for a Weapon from the Weapons of Desperation list shown below (and such bolters and bolt pistols may not be exchanged for Weapons from any other lists). All Weapon exchanges required by this Oath of Moment are Free. Not enforced: that every bolter and bolt pistol must be exchanged, and that only one Model in every three may take a reclaimed melee weapon or reclaimed heavy stubber.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields)",
+        "message": "Blackshields Detachments only"
+    },
+    "units": {},
+    "weapons": {
+        "reclaimed-autogun": {
+            "id": "reclaimed-autogun",
+            "name": "Reclaimed autogun",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Reclaimed autogun",
+                    "stats": {
+                        "r": "18",
+                        "fp": "3",
+                        "rs": "3",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Auto", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        }
+                    ]
+                }
+            ]
+        },
+        "reclaimed-autopistol": {
+            "id": "reclaimed-autopistol",
+            "name": "Reclaimed autopistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Reclaimed autopistol",
+                    "stats": {
+                        "r": "9",
+                        "fp": "3",
+                        "rs": "3",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Auto", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        }
+                    ]
+                }
+            ]
+        },
+        "reclaimed-lasgun": {
+            "id": "reclaimed-lasgun",
+            "name": "Reclaimed lasgun",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Reclaimed lasgun",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "3",
+                        "ap": "6",
+                        "d": "1"
+                    },
+                    "traits": ["Las", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        }
+                    ]
+                }
+            ]
+        },
+        "reclaimed-laspistol": {
+            "id": "reclaimed-laspistol",
+            "name": "Reclaimed laspistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Reclaimed laspistol",
+                    "stats": {
+                        "r": "12",
+                        "fp": "2",
+                        "rs": "3",
+                        "ap": "6",
+                        "d": "1"
+                    },
+                    "traits": ["Las", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        }
+                    ]
+                }
+            ]
+        },
+        "reclaimed-shotgun": {
+            "id": "reclaimed-shotgun",
+            "name": "Reclaimed shotgun",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Reclaimed shotgun",
+                    "stats": {
+                        "r": "12",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Auto", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "stun",
+                            "value": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "reclaimed-heavy-stubber": {
+            "id": "reclaimed-heavy-stubber",
+            "name": "Reclaimed heavy stubber",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Reclaimed heavy stubber",
+                    "stats": {
+                        "r": "36",
+                        "fp": "5",
+                        "rs": "4",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Auto", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "suppressive",
+                            "value": "0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "reclaimed-melee-weapon": {
+            "id": "reclaimed-melee-weapon",
+            "name": "Reclaimed melee weapon",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Reclaimed melee weapon",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": [],
+                    "specialRules": [
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {
+        "weapons-of-desperation-bolter": {
+            "id": "weapons-of-desperation-bolter",
+            "name": "Weapons of Desperation (Bolter)",
+            "description": "All Models with the Blackshields Trait in a Detachment with this Oath of Moment must exchange all bolters and bolt pistols for a Weapon from the Weapons of Desperation list. All such exchanges are Free. In any Unit only one Model in every three may select a reclaimed melee weapon or reclaimed heavy stubber.",
+            "perModel": {
+                "type": "some"
+            },
+            "multiSelect": true,
+            "options": {
+                "reclaimed-autogun": {
+                    "id": "reclaimed-autogun",
+                    "name": "Reclaimed autogun",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-autogun"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-autopistol": {
+                    "id": "reclaimed-autopistol",
+                    "name": "Reclaimed autopistol",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-autopistol"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-lasgun": {
+                    "id": "reclaimed-lasgun",
+                    "name": "Reclaimed lasgun",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-lasgun"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-laspistol": {
+                    "id": "reclaimed-laspistol",
+                    "name": "Reclaimed laspistol",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-laspistol"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-shotgun": {
+                    "id": "reclaimed-shotgun",
+                    "name": "Reclaimed shotgun",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-shotgun"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-heavy-stubber": {
+                    "id": "reclaimed-heavy-stubber",
+                    "name": "Reclaimed heavy stubber",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-heavy-stubber"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-melee-weapon": {
+                    "id": "reclaimed-melee-weapon",
+                    "name": "Reclaimed melee weapon",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-melee-weapon"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "weapons-of-desperation-bolt-pistol": {
+            "id": "weapons-of-desperation-bolt-pistol",
+            "name": "Weapons of Desperation (Bolt pistol)",
+            "description": "All Models with the Blackshields Trait in a Detachment with this Oath of Moment must exchange all bolters and bolt pistols for a Weapon from the Weapons of Desperation list. All such exchanges are Free. In any Unit only one Model in every three may select a reclaimed melee weapon or reclaimed heavy stubber.",
+            "perModel": {
+                "type": "some"
+            },
+            "multiSelect": true,
+            "options": {
+                "reclaimed-autogun": {
+                    "id": "reclaimed-autogun",
+                    "name": "Reclaimed autogun",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-autogun"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-autopistol": {
+                    "id": "reclaimed-autopistol",
+                    "name": "Reclaimed autopistol",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-autopistol"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-lasgun": {
+                    "id": "reclaimed-lasgun",
+                    "name": "Reclaimed lasgun",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-lasgun"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-laspistol": {
+                    "id": "reclaimed-laspistol",
+                    "name": "Reclaimed laspistol",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-laspistol"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-shotgun": {
+                    "id": "reclaimed-shotgun",
+                    "name": "Reclaimed shotgun",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-shotgun"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-heavy-stubber": {
+                    "id": "reclaimed-heavy-stubber",
+                    "name": "Reclaimed heavy stubber",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-heavy-stubber"
+                            }
+                        }
+                    ]
+                },
+                "reclaimed-melee-weapon": {
+                    "id": "reclaimed-melee-weapon",
+                    "name": "Reclaimed melee weapon",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "reclaimed-melee-weapon"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "oath-of-moment-the-weapons-of-desperation": {
+            "id": "oath-of-moment-the-weapons-of-desperation",
+            "name": "Oath of Moment: The Weapons of Desperation",
+            "text": "This band of Legiones Astartes warriors makes no use of the common weapons of their brethren, whether having purposefully cast them aside as tainted by the sins of their fellows or having been imprisoned and forcefully deprived of them. Returned to the fight, they are forced to make use of lesser weaponry, wielding mortal longarms as though they were but pistols and making desperation into a virtue. For amid the ceaseless carnage of the Horus Heresy, even the least of weapons fed the slaughter taking place on battlefields across the galaxy. A Model with this Special Rule must swap bolters and bolt pistols for other Weapons. All Models with the Blackshields Trait in a Detachment with this Oath of Moment must exchange all bolters and bolt pistols for a Weapon from the Weapons of Desperation list shown below (and such bolters and bolt pistols may not be exchanged for Weapons from any other lists). All Weapon exchanges required by this Oath of Moment are Free."
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "oath-of-moment-the-weapons-of-desperation": {
+            "id": "oath-of-moment-the-weapons-of-desperation",
+            "name": "Oath of Moment: The Weapons of Desperation",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "oath-of-moment-the-weapons-of-desperation"
+                    }
+                }
+            ]
+        },
+        "weapons-of-desperation-bolter": {
+            "id": "weapons-of-desperation-bolter",
+            "name": "Weapons of Desperation (Bolter)",
+            "selector": {
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "weapons-of-desperation-bolter"
+                }
+            ]
+        },
+        "weapons-of-desperation-bolt-pistol": {
+            "id": "weapons-of-desperation-bolt-pistol",
+            "name": "Weapons of Desperation (Bolt pistol)",
+            "selector": {
+                "profiles": {}
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "weapons-of-desperation-bolt-pistol"
+                }
+            ]
+        }
+    }
+}

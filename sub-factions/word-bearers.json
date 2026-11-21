@@ -1339,6 +1339,12 @@
                         },
                         {
                             "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "diabolism-discipline"
+                        },
+                        {
+                            "id": "damned"
                         }
                     ]
                 }
@@ -1348,6 +1354,10 @@
                 {
                     "kind": "equipment",
                     "id": "force-weapons"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "hellfire"
                 }
             ],
             "upgrades": {
@@ -1427,6 +1437,12 @@
                         },
                         {
                             "id": "implacable-advance"
+                        },
+                        {
+                            "id": "diabolism-discipline"
+                        },
+                        {
+                            "id": "damned"
                         }
                     ]
                 }
@@ -1436,6 +1452,10 @@
                 {
                     "kind": "equipment",
                     "id": "force-weapons"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "hellfire"
                 }
             ],
             "upgrades": {
@@ -1507,7 +1527,15 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "diabolism-discipline"
+                        },
+                        {
+                            "id": "damned"
+                        }
+                    ]
                 }
             ],
             "traits": ["Traitor", "Word Bearers", "Psyker", "Diabolist"],
@@ -1523,6 +1551,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "hellfire"
                 }
             ],
             "upgrades": {
@@ -1594,6 +1626,12 @@
                         },
                         {
                             "id": "deep-strike"
+                        },
+                        {
+                            "id": "diabolism-discipline"
+                        },
+                        {
+                            "id": "damned"
                         }
                     ]
                 }
@@ -1611,6 +1649,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "hellfire"
                 }
             ],
             "upgrades": {
@@ -1989,6 +2031,12 @@
                         },
                         {
                             "id": "outflank"
+                        },
+                        {
+                            "id": "diabolism-discipline"
+                        },
+                        {
+                            "id": "damned"
                         }
                     ]
                 }
@@ -2010,6 +2058,10 @@
                 {
                     "kind": "weapon",
                     "id": "twin-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "hellfire"
                 }
             ],
             "upgrades": {
@@ -2112,6 +2164,12 @@
                         },
                         {
                             "id": "deep-strike"
+                        },
+                        {
+                            "id": "diabolism-discipline"
+                        },
+                        {
+                            "id": "damned"
                         }
                     ]
                 }
@@ -2129,6 +2187,10 @@
                 {
                     "kind": "weapon",
                     "id": "krak-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "hellfire"
                 }
             ],
             "upgrades": {
@@ -3553,6 +3615,37 @@
                     ]
                 }
             ]
+        },
+        "hellfire": {
+            "id": "hellfire",
+            "name": "Hellfire",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Hellfire",
+                    "stats": {
+                        "r": "12",
+                        "fp": "D3",
+                        "rs": "7",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Psychic", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "deflagrate"
+                        },
+                        {
+                            "id": "force",
+                            "value": "D"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {
@@ -4113,12 +4206,6 @@
             "name": "Flesh Harvester",
             "text": "A Model with this Special Rule can gain Flesh Harvest Points. A Model with this Special Rule gains 1 Flesh Harvest point each time a Unit that includes that Model is selected to Consolidate, if any enemy Models in that Combat had the Infantry or Cavalry Type. If a Model with the Paragon Type was Removed as a Casualty during that Combat, the Model with this Special Rule gains 2 Flesh Harvest Points instead. If a Model with any Flesh Harvest Points is Removed as a Casualty, any Flesh Harvest Points that Model has are lost. During the Decide Victor Step, at the end of the Battle, the Controlling Player of any Models with the Flesh Harvester Special Rule scores a number of Victory Points equal to the number of Flesh Harvest Points that any one of those Models, selected by the Controlling Player, currently has."
         },
-        "force": {
-            "id": "force",
-            "name": "Force",
-            "text": "A Weapon with this Special Rule may double a Characteristic with a Willpower Check, but may suffer Perils of the Warp. When selected to be used as part of a Combat or Shooting Attack, a Willpower Check may be made for the Model that will use this Weapon to make attacks. If it is successful then the Characteristic listed as X is doubled (if that Characteristic is AP, then the AP is instead changed to AP 2). If a double is rolled when making this Willpower Check then the Model using the Weapon to make attacks suffers Perils of the Warp.",
-            "configurable": true
-        },
         "unwavering-conviction": {
             "id": "unwavering-conviction",
             "name": "Unwavering Conviction",
@@ -4134,6 +4221,16 @@
             "id": "binder-of-souls",
             "name": "Binder of Souls",
             "text": "Zardu Layak has specific Psychic Powers. A Model with this Special Rule gains the Soul Binding Psychic Power and the Breach the Veil Psychic Power. SOUL BINDING (Psychic Power, Curse) Trigger: The Active Player may choose to Manifest the Soul Binding Psychic Power in the Assault Phase, at the start of the Declare Weapons and Set Initiative Steps Step of the Fight Sub-Phase. Focus: The Focus of the Power must be a Zardu Layak Model. Target: The Target Unit must be an enemy Unit in the same Combat as the Focus Model. Duration: If successfully Manifested, the effects of this Psychic Power last until the end of the Make Final Pile-in Moves Step of that Combat. Process Once the Focus and Target Unit have been decided, the Target Unit’s Controlling Player makes a Resistance Check for that Unit. If the Resistance Check is failed, the Controlling Player of the Focus Model can select one Model with a Willpower Characteristic of 7 or less from the Target Unit. For the Duration of this Psychic Power, the selected Model is considered to be under the control of the Controlling Player of the Focus of this Power. If the Resistance Check succeeds then there is no further effect."
+        },
+        "diabolism-discipline": {
+            "id": "diabolism-discipline",
+            "name": "Diabolism Discipline",
+            "text": "A Model with the Diabolism Discipline gains the following benefits: the Fear (1) Special Rule; the Hellfire Psychic Weapon; the Dark Channeling Psychic Power; the ‘Diabolist’ Trait. Dark Channeling (Psychic Power, Blessing): manifested at the start of the Fight Sub-Phase of the Controlling Player’s Assault Phase; the Focus must be a Model with the Diabolist Trait and the Target a friendly Unit within 12\" and in Line of Sight of the Focus that is entirely composed of Models with the Word Bearers Trait. If the Manifestation Check is successful, all Models in the Target Unit gain the Aflame (1) and Feel No Pain (6+) Special Rules until the end of the Assault Phase."
+        },
+        "damned": {
+            "id": "damned",
+            "name": "Damned",
+            "text": "A Model with this Special Rule can join Units that have the Malefic Sub-Type. A Model with this Special Rule can join Units with the Malefic Sub-Type as if it had that Sub-Type and while part of such a Unit, is treated as having that Sub-Type."
         }
     },
     "groups": {
@@ -4160,6 +4257,49 @@
             "when": {
                 "if": "choice(allegiance) == traitor",
                 "message": "Traitor armies only"
+            }
+        },
+        "daemonic-manifestation": {
+            "id": "daemonic-manifestation",
+            "name": "Daemonic Manifestation",
+            "type": "auxiliary",
+            "slots": [
+                {
+                    "roles": ["heavy-assault"],
+                    "source": {
+                        "faction": "daemons-of-the-ruinstorm",
+                        "subFactions": "any"
+                    },
+                    "units": {
+                        "unitIds": ["ruinstorm-daemon-brutes"]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "source": {
+                        "faction": "daemons-of-the-ruinstorm",
+                        "subFactions": "any"
+                    },
+                    "units": {
+                        "unitIds": ["ruinstorm-daemon-brutes"]
+                    }
+                },
+                {
+                    "roles": ["heavy-assault"],
+                    "source": {
+                        "faction": "daemons-of-the-ruinstorm",
+                        "subFactions": "any"
+                    },
+                    "units": {
+                        "unitIds": ["ruinstorm-daemon-brutes"]
+                    }
+                }
+            ],
+            "requirementText": "Requires an Esoterist Unit with the Traitor Allegiance in a Command Force Organisation Slot, or Erebus (Harbinger of Chaos) in the Primary Detachment",
+            "description": "When an Esoterist Unit with the Traitor Allegiance is selected to fill a Command Force Organisation Slot, then the Player may choose to add one Daemonic Manifestation Auxiliary Detachment to the Army instead of the options available in the Crusade Force Organisation Chart. Heavy Assault Slots in this Detachment may only be used to select Ruinstorm Daemon Brute Units from the Daemons of the Ruinstorm Army List.",
+            "when": {
+                "if": "contingent.count(@traitor-esoterists) >= 1 or contingent.count(unit:erebus) >= 1",
+                "message": "Requires a Traitor Esoterist, or Erebus in the Primary Detachment"
             }
         }
     },
@@ -4262,6 +4402,10 @@
         {
             "kind": "equipment",
             "id": "saturnine-teleport-synchroniser"
+        },
+        {
+            "kind": "groups",
+            "id": "daemonic-manifestation"
         }
     ]
 }

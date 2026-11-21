@@ -1,0 +1,96 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-the-broken-helix-clone",
+    "version": "1.0.0",
+    "name": "Oath of Moment: The Broken Helix (Clone)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Unable to claim recruits from the fiefdoms of old, some warbands of the Blackshields turned to fouler means to fill their dwindling ranks – the old sin of gene-cloning or crude progenoid replication. Denied the training camps of Terra or the complex hypnoindoctrination forced upon the recruits of the later Legions, the warriors they produced had none of the discipline that had once been the pride of the Space Marine Legions, but instead bore terrible mutations and scars as the mark of their forbidden origins. For each Unit that includes any Models with this Special Rule, the Controlling Player must choose from one of two possible options that grant new Special Rules that replace existing ones. A Model with the Blackshields Trait in a Detachment with this Oath of Moment, loses all variants of the following Special Rules and may not thereafter gain any version of Line (X) or Vanguard (X) from any source: Fury of the Legion Line (X) Vanguard (X) Instead, such Models gain one of the following two Special Rules, chosen by the Controlling Player – all Models in a Detachment with this Oath of Moment must have the same Special Rule selected for them:",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-the-broken-helix-aberrant)",
+        "message": "Blackshields Detachments only; one Broken Helix choice per Detachment"
+    },
+    "units": {},
+    "weapons": {},
+    "equipment": {},
+    "upgrades": {},
+    "specialRules": {
+        "oath-of-moment-the-broken-helix-clone": {
+            "id": "oath-of-moment-the-broken-helix-clone",
+            "name": "Oath of Moment: The Broken Helix (Clone)",
+            "text": "Unable to claim recruits from the fiefdoms of old, some warbands of the Blackshields turned to fouler means to fill their dwindling ranks – the old sin of gene-cloning or crude progenoid replication. Denied the training camps of Terra or the complex hypnoindoctrination forced upon the recruits of the later Legions, the warriors they produced had none of the discipline that had once been the pride of the Space Marine Legions, but instead bore terrible mutations and scars as the mark of their forbidden origins. For each Unit that includes any Models with this Special Rule, the Controlling Player must choose from one of two possible options that grant new Special Rules that replace existing ones. A Model with the Blackshields Trait in a Detachment with this Oath of Moment, loses all variants of the following Special Rules and may not thereafter gain any version of Line (X) or Vanguard (X) from any source: Fury of the Legion Line (X) Vanguard (X) Instead, such Models gain one of the following two Special Rules, chosen by the Controlling Player – all Models in a Detachment with this Oath of Moment must have the same Special Rule selected for them:"
+        },
+        "clone": {
+            "id": "clone",
+            "name": "Clone",
+            "text": "Cloning, though efficient, quickly reduces the stock produced to stumbling drones all but incapable of independent thought. Such deviancy can produce vast armies, but they are but poor copies of the original. Models with this Special Rule must reduce certain Advanced Characteristics, but gain increased resilience. All Models with this Special Rule that do not also have the Command, Champion, Specialist or Sergeant Sub-Types must reduce their Leadership, Willpower, Intelligence and Cool Characteristics by 1. Furthermore, a Unit that includes any Models with this Special Rule cannot make Reactions or Advanced Reactions, but gains a Damage Mitigation Test of 5+ – known as a Cloned Resilience Damage Mitigation Roll."
+        }
+    },
+    "groups": {},
+    "unitModifiers": {
+        "oath-of-moment-the-broken-helix-clone": {
+            "id": "oath-of-moment-the-broken-helix-clone",
+            "name": "Oath of Moment: The Broken Helix (Clone)",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "oath-of-moment-the-broken-helix-clone"
+                    }
+                }
+            ]
+        },
+        "broken-helix-clone": {
+            "id": "broken-helix-clone",
+            "name": "Clone",
+            "selector": {},
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "remove": ["fury-of-the-legion", "line", "vanguard"],
+                    "rule": {
+                        "id": "clone"
+                    }
+                },
+                {
+                    "kind": "stat",
+                    "profiles": {
+                        "noneOf": [
+                            "command",
+                            "champion",
+                            "specialist",
+                            "sergeant",
+                            "vehicle"
+                        ]
+                    },
+                    "changes": [
+                        {
+                            "stat": "ld",
+                            "op": "add",
+                            "value": -1
+                        },
+                        {
+                            "stat": "wp",
+                            "op": "add",
+                            "value": -1
+                        },
+                        {
+                            "stat": "in",
+                            "op": "add",
+                            "value": -1
+                        },
+                        {
+                            "stat": "cl",
+                            "op": "add",
+                            "value": -1
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,524 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "shattered-legions-thousand-sons",
+    "version": "1.0.0",
+    "name": "Thousand Sons (Shattered Legions)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "shattered-legions",
+    "description": "Thousand Sons selected for a Shattered Legions Army: the Conjured Illusions Mutable Tactics benefit, the Armoury of the Thousand Sons (options a Legion adds to the shared Legion wargear lists are not included), the Exemplars of the Legion Prime Advantage for Thousand Sons Units.",
+    "when": {
+        "if": "contingent.is(subfaction:shattered-legions)",
+        "message": "Shattered Legions Armies only"
+    },
+    "units": {},
+    "weapons": {
+        "asphyx-bolter": {
+            "id": "asphyx-bolter",
+            "name": "Asphyx bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Asphyx bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "asphyx-pistol": {
+            "id": "asphyx-pistol",
+            "name": "Asphyx pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Asphyx pistol",
+                    "stats": {
+                        "r": "8",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "rending",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "achea-pattern-force-sword": {
+            "id": "achea-pattern-force-sword",
+            "name": "Achea pattern force sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Achea pattern force sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {
+        "thousand-sons-asphyx-bolters": {
+            "id": "thousand-sons-asphyx-bolters",
+            "name": "Asphyx Bolters",
+            "description": "In any Unit entirely composed of Models with the Thousand Sons Trait, every Model in that Unit may have its bolter exchanged for one asphyx bolter.",
+            "perModel": {
+                "type": "every"
+            },
+            "options": {
+                "bolter-to-asphyx-bolter": {
+                    "id": "bolter-to-asphyx-bolter",
+                    "name": "Bolter to asphyx bolter",
+                    "cost": {
+                        "points": 3
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolter"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "asphyx-bolter"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "thousand-sons-asphyx-weapons": {
+            "id": "thousand-sons-asphyx-weapons",
+            "name": "Asphyx Pistols",
+            "description": "In any Unit entirely composed of Models with the Thousand Sons Trait, every Model in that Unit may have its bolt pistol exchanged for one asphyx pistol.",
+            "perModel": {
+                "type": "every"
+            },
+            "options": {
+                "bolt-pistol-to-asphyx-pistol": {
+                    "id": "bolt-pistol-to-asphyx-pistol",
+                    "name": "Bolt pistol to asphyx pistol",
+                    "cost": {
+                        "points": 2
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "bolt-pistol"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "asphyx-pistol"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "thousand-sons-achea-pattern-force-swords-power-lance": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-lance",
+            "name": "Achea Pattern Force Sword",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-lance-to-achea-pattern-force-sword": {
+                    "id": "power-lance-to-achea-pattern-force-sword",
+                    "name": "Power lance to Achea pattern force sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords-power-maul": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-maul",
+            "name": "Achea Pattern Force Sword",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-maul-to-achea-pattern-force-sword": {
+                    "id": "power-maul-to-achea-pattern-force-sword",
+                    "name": "Power maul to Achea pattern force sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords-power-axe": {
+            "id": "thousand-sons-achea-pattern-force-swords-power-axe",
+            "name": "Achea Pattern Force Sword",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-axe-to-achea-pattern-force-sword": {
+                    "id": "power-axe-to-achea-pattern-force-sword",
+                    "name": "Power axe to Achea pattern force sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "thousand-sons-achea-pattern-force-swords": {
+            "id": "thousand-sons-achea-pattern-force-swords",
+            "name": "Achea Pattern Force Sword",
+            "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-sword-to-achea-pattern-force-sword": {
+                    "id": "power-sword-to-achea-pattern-force-sword",
+                    "name": "Power sword to Achea pattern force sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "achea-pattern-force-sword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {
+        "mutable-tactics-thousand-sons": {
+            "id": "mutable-tactics-thousand-sons",
+            "name": "Conjured Illusions (Mutable Tactics)",
+            "text": "The sons of Magnus are able to create psychic facsimiles of themselves, distracting their foes as they break away, granting themselves and their fellows time to rally and regroup. Enemy Units cannot Pursue a Unit that contains Models subject to this benefit. If the Thousand Sons Legion was selected for this Army’s Shattered Legions Trait, enemy Units cannot have the Pursue Aftermath option selected for them if any Units that had the Fall Back option selected for them include any Models from that Army subject to the Mutable Tactics Special Rule."
+        },
+        "legion-specialists": {
+            "id": "legion-specialists",
+            "name": "Legion Specialists",
+            "text": "If Models in this Unit would benefit from the Mutable Tactics Legion Tactica, they may only benefit from the bonus related to their Legion whose Trait was replaced as part of the Exemplars of the Legion Prime Advantage."
+        }
+    },
+    "groups": {},
+    "slotOptions": {
+        "exemplars-of-the-legion-thousand-sons": {
+            "id": "exemplars-of-the-legion-thousand-sons",
+            "name": "Exemplars of the Legion (Thousand Sons)",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. The Slot added may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War. Each Unit selected to fill such a Slot must be from the Legiones Astartes Army List, not include any Models that have the Unique Sub-Type, and have a Faction Trait that matches the Legion represented by the Model that was selected to fill the Slot with this Prime Advantage. All Models in any of these Units have their Faction Trait replaced with ‘Shattered Legions’ and have the Legion Specialists Special Rule. Only for a Unit with the Command Battlefield Role in a Shattered Legions Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "roles": ["command"]
+            },
+            "when": {
+                "if": "contingent.is(subfaction:shattered-legions)",
+                "message": "Shattered Legions Detachments only"
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Exemplars of the Legion"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "retinue",
+                        "elites",
+                        "war-engine",
+                        "troop",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "legiones-astartes",
+                        "subFactions": ["thousand-sons"]
+                    },
+                    "units": {
+                        "exclude": [
+                            {
+                                "profiles": {
+                                    "anyOf": ["Unique"]
+                                }
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Legiones Astartes", "Thousand Sons"],
+                                "to": "Shattered Legions"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "legion-specialists"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "shattered-legions-thousand-sons-mutable-tactics": {
+            "id": "shattered-legions-thousand-sons-mutable-tactics",
+            "name": "Conjured Illusions (Mutable Tactics)",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "mutable-tactics-thousand-sons"
+                    }
+                }
+            ]
+        },
+        "shattered-legions-thousand-sons-achea-pattern-force-swords": {
+            "id": "shattered-legions-thousand-sons-achea-pattern-force-swords",
+            "name": "Achea Pattern Force Sword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-achea-pattern-force-swords"
+                }
+            ]
+        },
+        "shattered-legions-thousand-sons-achea-pattern-force-swords-power-axe": {
+            "id": "shattered-legions-thousand-sons-achea-pattern-force-swords-power-axe",
+            "name": "Achea Pattern Force Sword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-axe"
+                }
+            ]
+        },
+        "shattered-legions-thousand-sons-achea-pattern-force-swords-power-maul": {
+            "id": "shattered-legions-thousand-sons-achea-pattern-force-swords-power-maul",
+            "name": "Achea Pattern Force Sword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-maul"
+                }
+            ]
+        },
+        "shattered-legions-thousand-sons-achea-pattern-force-swords-power-lance": {
+            "id": "shattered-legions-thousand-sons-achea-pattern-force-swords-power-lance",
+            "name": "Achea Pattern Force Sword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-lance"
+                }
+            ]
+        },
+        "shattered-legions-thousand-sons-asphyx-weapons": {
+            "id": "shattered-legions-thousand-sons-asphyx-weapons",
+            "name": "Asphyx Weapons",
+            "selector": {
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-asphyx-weapons"
+                }
+            ]
+        },
+        "shattered-legions-thousand-sons-asphyx-bolters": {
+            "id": "shattered-legions-thousand-sons-asphyx-bolters",
+            "name": "Asphyx Bolters",
+            "selector": {
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "thousand-sons-asphyx-bolters"
+                }
+            ]
+        }
+    }
+}

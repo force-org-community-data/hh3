@@ -1,0 +1,163 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "shattered-legions-word-bearers",
+    "version": "1.0.0",
+    "name": "Word Bearers (Shattered Legions)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "shattered-legions",
+    "description": "Word Bearers selected for a Shattered Legions Army: the Zealous Devotion Mutable Tactics benefit, the Armoury of the Word Bearers (options a Legion adds to the shared Legion wargear lists are not included), the Exemplars of the Legion Prime Advantage for Word Bearers Units.",
+    "when": {
+        "if": "contingent.is(subfaction:shattered-legions)",
+        "message": "Shattered Legions Armies only"
+    },
+    "units": {},
+    "weapons": {},
+    "equipment": {
+        "burning-lore": {
+            "id": "burning-lore",
+            "name": "Burning Lore",
+            "text": "Word Bearers Models may gain the Psyker Trait and a specific Psychic Discipline. Any Model with the High Command Battlefield Role and Word Bearers Trait may be given the Psyker Trait and the Anathemata Psychic Discipline for +40 Points per Model."
+        }
+    },
+    "upgrades": {
+        "word-bearers-burning-lore": {
+            "id": "word-bearers-burning-lore",
+            "name": "Burning Lore",
+            "description": "Any Model with the High Command Battlefield Role and Word Bearers Trait may be given the Psyker Trait and the Anathemata Psychic Discipline.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "burning-lore": {
+                    "id": "burning-lore",
+                    "name": "Burning Lore",
+                    "cost": {
+                        "points": 40
+                    },
+                    "equipmentRefs": ["burning-lore"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "mutable-tactics-word-bearers": {
+            "id": "mutable-tactics-word-bearers",
+            "name": "Zealous Devotion (Mutable Tactics)",
+            "text": "The Word Bearers’ belief in their cause drives them forward, inspiring even the most intractable allies. When making a Charge Roll for a Unit that includes Models subject to this benefit, three Dice are rolled and the lowest two discarded. If the Word Bearers Legion was selected for this Army’s Shattered Legions Trait, when making a Charge Roll for a Unit that includes any Models from that Army subject to the Mutable Tactics Special Rule, the Controlling Player rolls one additional Dice and discards the two Dice with the lowest results."
+        },
+        "legion-specialists": {
+            "id": "legion-specialists",
+            "name": "Legion Specialists",
+            "text": "If Models in this Unit would benefit from the Mutable Tactics Legion Tactica, they may only benefit from the bonus related to their Legion whose Trait was replaced as part of the Exemplars of the Legion Prime Advantage."
+        }
+    },
+    "groups": {},
+    "slotOptions": {
+        "exemplars-of-the-legion-word-bearers": {
+            "id": "exemplars-of-the-legion-word-bearers",
+            "name": "Exemplars of the Legion (Word Bearers)",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. The Slot added may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War. Each Unit selected to fill such a Slot must be from the Legiones Astartes Army List, not include any Models that have the Unique Sub-Type, and have a Faction Trait that matches the Legion represented by the Model that was selected to fill the Slot with this Prime Advantage. All Models in any of these Units have their Faction Trait replaced with ‘Shattered Legions’ and have the Legion Specialists Special Rule. Only for a Unit with the Command Battlefield Role in a Shattered Legions Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "roles": ["command"]
+            },
+            "when": {
+                "if": "contingent.is(subfaction:shattered-legions)",
+                "message": "Shattered Legions Detachments only"
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Exemplars of the Legion"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "retinue",
+                        "elites",
+                        "war-engine",
+                        "troop",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "legiones-astartes",
+                        "subFactions": ["word-bearers"]
+                    },
+                    "units": {
+                        "exclude": [
+                            {
+                                "profiles": {
+                                    "anyOf": ["Unique"]
+                                }
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Legiones Astartes", "Word Bearers"],
+                                "to": "Shattered Legions"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "legion-specialists"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "shattered-legions-word-bearers-mutable-tactics": {
+            "id": "shattered-legions-word-bearers-mutable-tactics",
+            "name": "Zealous Devotion (Mutable Tactics)",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "mutable-tactics-word-bearers"
+                    }
+                }
+            ]
+        },
+        "shattered-legions-word-bearers-burning-lore": {
+            "id": "shattered-legions-word-bearers-burning-lore",
+            "name": "Burning Lore",
+            "selector": {
+                "roles": ["high-command"],
+                "profiles": {},
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "word-bearers-burning-lore"
+                }
+            ]
+        }
+    }
+}

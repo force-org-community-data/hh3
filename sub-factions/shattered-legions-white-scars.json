@@ -1,0 +1,494 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "shattered-legions-white-scars",
+    "version": "1.0.0",
+    "name": "White Scars (Shattered Legions)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "shattered-legions",
+    "description": "White Scars selected for a Shattered Legions Army: the Swift of Action Mutable Tactics benefit, the Armoury of the White Scars (options a Legion adds to the shared Legion wargear lists are not included), the Exemplars of the Legion Prime Advantage for White Scars Units, and Hibou Khan as a Commander of the Shattered Legions.",
+    "when": {
+        "if": "contingent.is(subfaction:shattered-legions)",
+        "message": "Shattered Legions Armies only"
+    },
+    "units": {
+        "hibou-khan": {
+            "id": "hibou-khan",
+            "name": "Hibou Khan",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 165
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "hibou-khan",
+                    "name": "Hibou Khan",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "8",
+                        "wp": "8",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Unique", "Command"],
+                    "specialRules": [
+                        {
+                            "id": "officer-of-the-line",
+                            "value": "2"
+                        },
+                        {
+                            "id": "seeker-of-atonement"
+                        },
+                        {
+                            "id": "expendable",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "White Scars"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "the-breath-of-the-storm"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "the-breath-of-the-storm": {
+            "id": "the-breath-of-the-storm",
+            "name": "The Breath of the Storm",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "The Breath of the Storm",
+                    "stats": {
+                        "im": "+1",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "power-glaive": {
+            "id": "power-glaive",
+            "name": "Power glaive",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Power glaive",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "AP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {
+        "white-scars-power-glaive-power-lance": {
+            "id": "white-scars-power-glaive-power-lance",
+            "name": "Power Glaive",
+            "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-lance-to-power-glaive": {
+                    "id": "power-lance-to-power-glaive",
+                    "name": "Power lance to power glaive",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-glaive"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "white-scars-power-glaive-power-maul": {
+            "id": "white-scars-power-glaive-power-maul",
+            "name": "Power Glaive",
+            "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-maul-to-power-glaive": {
+                    "id": "power-maul-to-power-glaive",
+                    "name": "Power maul to power glaive",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-glaive"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "white-scars-power-glaive-power-axe": {
+            "id": "white-scars-power-glaive-power-axe",
+            "name": "Power Glaive",
+            "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-axe-to-power-glaive": {
+                    "id": "power-axe-to-power-glaive",
+                    "name": "Power axe to power glaive",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-glaive"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "white-scars-power-glaive": {
+            "id": "white-scars-power-glaive",
+            "name": "Power Glaive",
+            "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-sword-to-power-glaive": {
+                    "id": "power-sword-to-power-glaive",
+                    "name": "Power sword to power glaive",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-glaive"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "specialRules": {
+        "seeker-of-atonement": {
+            "id": "seeker-of-atonement",
+            "name": "Seeker of Atonement",
+            "text": "This Gambit allows Hibou Khan to avoid being Removed as a Casualty. While a Model with this Special Rule is engaged in a Challenge, its Controlling Player can select the following Gambit: Seeker of Atonement: While this Gambit is selected, if this Model is reduced to 0 Wounds in Step 4 of the Strike Step, its Controlling Player can roll a Dice. On a result of 4+, this Model is not Removed as a Casualty but instead remains Engaged in the Challenge with a Wounds Characteristic of 1 and its Controlling Player gains Challenge Advantage."
+        },
+        "impact": {
+            "id": "impact",
+            "name": "Impact",
+            "text": "On a successful Charge, a Model with the Impact (X) Special Rule temporarily increases a Characteristic by 1. If a Unit that includes any Models with the Impact (X) Special Rule or any Models that have any Weapons with the Impact (X) Special Rule, and that Unit makes a successful Charge, then this Special Rule is triggered. Once triggered, until the end of that Assault Phase, when making Melee Attacks for Models in that Unit, each Model or Weapon that is selected for one of those Models, that has a variant of this Special Rule gains a modifier of +1 to any Characteristics that is the value of X.",
+            "configurable": true
+        },
+        "mutable-tactics-white-scars": {
+            "id": "mutable-tactics-white-scars",
+            "name": "Swift of Action (Mutable Tactics)",
+            "text": "The White Scars fight ever on the front foot, able to swiftly take advantage of any opportunity they may create. Those who fight alongside them soon learn to capitalise on even the briefest opening. Models subject to this benefit have their Initiative modified by +1 while making Set-up Moves or Rushing. If the White Scars Legion was selected for this Army’s Shattered Legions Trait, when a Unit that only includes Models subject to the Mutable Tactics Special Rule makes a Set-up Move or is selected to Rush, modify the Initiative Characteristic of Models in that Unit by +1 until the end of that Sub-Phase."
+        },
+        "legion-specialists": {
+            "id": "legion-specialists",
+            "name": "Legion Specialists",
+            "text": "If Models in this Unit would benefit from the Mutable Tactics Legion Tactica, they may only benefit from the bonus related to their Legion whose Trait was replaced as part of the Exemplars of the Legion Prime Advantage."
+        }
+    },
+    "groups": {},
+    "slotOptions": {
+        "exemplars-of-the-legion-white-scars": {
+            "id": "exemplars-of-the-legion-white-scars",
+            "name": "Exemplars of the Legion (White Scars)",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. The Slot added may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War. Each Unit selected to fill such a Slot must be from the Legiones Astartes Army List, not include any Models that have the Unique Sub-Type, and have a Faction Trait that matches the Legion represented by the Model that was selected to fill the Slot with this Prime Advantage. All Models in any of these Units have their Faction Trait replaced with ‘Shattered Legions’ and have the Legion Specialists Special Rule. Only for a Unit with the Command Battlefield Role in a Shattered Legions Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "roles": ["command"]
+            },
+            "when": {
+                "if": "contingent.is(subfaction:shattered-legions)",
+                "message": "Shattered Legions Detachments only"
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Exemplars of the Legion"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "retinue",
+                        "elites",
+                        "war-engine",
+                        "troop",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "legiones-astartes",
+                        "subFactions": ["white-scars"]
+                    },
+                    "units": {
+                        "exclude": [
+                            {
+                                "profiles": {
+                                    "anyOf": ["Unique"]
+                                }
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Legiones Astartes", "White Scars"],
+                                "to": "Shattered Legions"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "legion-specialists"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "shattered-legions-white-scars-mutable-tactics": {
+            "id": "shattered-legions-white-scars-mutable-tactics",
+            "name": "Swift of Action (Mutable Tactics)",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "mutable-tactics-white-scars"
+                    }
+                }
+            ]
+        },
+        "shattered-legions-white-scars-power-glaive": {
+            "id": "shattered-legions-white-scars-power-glaive",
+            "name": "Power Glaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "white-scars-power-glaive"
+                }
+            ]
+        },
+        "shattered-legions-white-scars-power-glaive-power-axe": {
+            "id": "shattered-legions-white-scars-power-glaive-power-axe",
+            "name": "Power Glaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "white-scars-power-glaive-power-axe"
+                }
+            ]
+        },
+        "shattered-legions-white-scars-power-glaive-power-maul": {
+            "id": "shattered-legions-white-scars-power-glaive-power-maul",
+            "name": "Power Glaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "white-scars-power-glaive-power-maul"
+                }
+            ]
+        },
+        "shattered-legions-white-scars-power-glaive-power-lance": {
+            "id": "shattered-legions-white-scars-power-glaive-power-lance",
+            "name": "Power Glaive",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "white-scars-power-glaive-power-lance"
+                }
+            ]
+        }
+    }
+}

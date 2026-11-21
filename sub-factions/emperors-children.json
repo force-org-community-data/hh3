@@ -3309,6 +3309,31 @@
                     "kind": "specialRule",
                     "rule": {
                         "id": "flawless-execution"
+                    },
+                    "when": {
+                        "if": "not contingent.is(subfaction:legiones-hereticus)",
+                        "message": "Not with the Legiones Hereticus Rite of War"
+                    }
+                }
+            ]
+        },
+        "lords-of-profligacy-all": {
+            "id": "lords-of-profligacy-all",
+            "name": "Lords of Profligacy",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "lords-of-profligacy"
+                    },
+                    "when": {
+                        "if": "contingent.is(subfaction:legiones-hereticus)",
+                        "message": "Legiones Hereticus Rite of War only"
                     }
                 }
             ]

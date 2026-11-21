@@ -1,0 +1,665 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "shattered-legions-salamanders",
+    "version": "1.0.0",
+    "name": "Salamanders (Shattered Legions)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "shattered-legions",
+    "description": "Salamanders selected for a Shattered Legions Army: the Scions of the Flame Mutable Tactics benefit, the Armoury of the Salamanders (options a Legion adds to the shared Legion wargear lists are not included), the Exemplars of the Legion Prime Advantage for Salamanders Units.",
+    "when": {
+        "if": "contingent.is(subfaction:shattered-legions)",
+        "message": "Shattered Legions Armies only"
+    },
+    "units": {},
+    "weapons": {
+        "forge-crafted-hand-flamer": {
+            "id": "forge-crafted-hand-flamer",
+            "name": "Forge-crafted hand flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Forge-crafted hand flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "-",
+                        "d": "2"
+                    },
+                    "traits": ["Flame", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "pistol"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-thunder-hammer": {
+            "id": "forge-crafted-thunder-hammer",
+            "name": "Forge-crafted thunder hammer",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted thunder hammer",
+                    "stats": {
+                        "im": "-2",
+                        "am": "+1",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "forge-crafted-power-fist": {
+            "id": "forge-crafted-power-fist",
+            "name": "Forge-crafted power fist",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power fist",
+                    "stats": {
+                        "im": "-3",
+                        "am": "A",
+                        "sm": "+4",
+                        "ap": "2",
+                        "d": "3"
+                    },
+                    "traits": ["Power"]
+                }
+            ]
+        },
+        "forge-crafted-power-lance": {
+            "id": "forge-crafted-power-lance",
+            "name": "Forge-crafted power lance",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power lance",
+                    "stats": {
+                        "im": "+1",
+                        "am": "+1",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "precision",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-power-maul": {
+            "id": "forge-crafted-power-maul",
+            "name": "Forge-crafted power maul",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power maul",
+                    "stats": {
+                        "im": "-1",
+                        "am": "+1",
+                        "sm": "+2",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-power-axe": {
+            "id": "forge-crafted-power-axe",
+            "name": "Forge-crafted power axe",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power axe",
+                    "stats": {
+                        "im": "-1",
+                        "am": "+1",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "forge-crafted-power-sword": {
+            "id": "forge-crafted-power-sword",
+            "name": "Forge-crafted power sword",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Forge-crafted power sword",
+                    "stats": {
+                        "im": "I",
+                        "am": "+1",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {
+        "drakenscale": {
+            "id": "drakenscale",
+            "name": "Drakenscale",
+            "text": "Drakenscale reduces the Damage of wounds inflicted by Weapons with specific Traits. Any Model with the Command or Champion Sub-Type and the Salamanders Trait may have Drakenscale selected for it for +10 Points per Model. Wounds with the Flame, Plasma, Melta or Volkite Trait allocated to a Model with Drakenscale have their Damage Characteristic set to 1."
+        }
+    },
+    "upgrades": {
+        "salamanders-forge-crafted-flame-weapons": {
+            "id": "salamanders-forge-crafted-flame-weapons",
+            "name": "Forge-crafted Flame Weapons",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-flame-weapons": {
+                    "id": "forge-crafted-flame-weapons",
+                    "name": "Forge-crafted Flame Weapons",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "hand-flamer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-hand-flamer"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "hand-flamer",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-thunder-hammer": {
+            "id": "salamanders-forge-crafted-thunder-hammer",
+            "name": "Forge-crafted Thunder Hammer",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-thunder-hammer": {
+                    "id": "forge-crafted-thunder-hammer",
+                    "name": "Forge-crafted Thunder Hammer",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "thunder-hammer"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-thunder-hammer"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "thunder-hammer",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-fist": {
+            "id": "salamanders-forge-crafted-power-fist",
+            "name": "Forge-crafted Power Fist",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-fist": {
+                    "id": "forge-crafted-power-fist",
+                    "name": "Forge-crafted Power Fist",
+                    "cost": {
+                        "points": 10
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-fist"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-fist"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-fist",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-lance": {
+            "id": "salamanders-forge-crafted-power-lance",
+            "name": "Forge-crafted Power Lance",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-lance": {
+                    "id": "forge-crafted-power-lance",
+                    "name": "Forge-crafted Power Lance",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-lance"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-maul": {
+            "id": "salamanders-forge-crafted-power-maul",
+            "name": "Forge-crafted Power Maul",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-maul": {
+                    "id": "forge-crafted-power-maul",
+                    "name": "Forge-crafted Power Maul",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-maul"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-axe": {
+            "id": "salamanders-forge-crafted-power-axe",
+            "name": "Forge-crafted Power Axe",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-axe": {
+                    "id": "forge-crafted-power-axe",
+                    "name": "Forge-crafted Power Axe",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-axe"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-forge-crafted-power-sword": {
+            "id": "salamanders-forge-crafted-power-sword",
+            "name": "Forge-crafted Power Sword",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "forge-crafted-power-sword": {
+                    "id": "forge-crafted-power-sword",
+                    "name": "Forge-crafted Power Sword",
+                    "cost": {
+                        "points": 5
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "forge-crafted-power-sword"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "salamanders-drakenscale": {
+            "id": "salamanders-drakenscale",
+            "name": "Drakenscale",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "drakenscale": {
+                    "id": "drakenscale",
+                    "name": "Drakenscale",
+                    "cost": {
+                        "points": 10
+                    },
+                    "equipmentRefs": ["drakenscale"]
+                }
+            }
+        }
+    },
+    "specialRules": {
+        "mutable-tactics-salamanders": {
+            "id": "mutable-tactics-salamanders",
+            "name": "Scions of the Flame (Mutable Tactics)",
+            "text": "The sons of Nocturne know well that fire is a gift, and not to be feared. As they stand firm against its touch, so too do their allies. Models subject to this benefit are not affected by the Panic (X) Special Rule on Flame weapons. If the Salamanders Legion was selected for this Army’s Shattered Legions Trait, a Unit that includes a Model from that Army subject to the Mutable Tactics Special Rule is unaffected by any variant of the Panic (X) Special Rule on Weapons with the Flame Trait."
+        },
+        "legion-specialists": {
+            "id": "legion-specialists",
+            "name": "Legion Specialists",
+            "text": "If Models in this Unit would benefit from the Mutable Tactics Legion Tactica, they may only benefit from the bonus related to their Legion whose Trait was replaced as part of the Exemplars of the Legion Prime Advantage."
+        }
+    },
+    "groups": {},
+    "slotOptions": {
+        "exemplars-of-the-legion-salamanders": {
+            "id": "exemplars-of-the-legion-salamanders",
+            "name": "Exemplars of the Legion (Salamanders)",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Unit selected to fill a Prime Force Organisation Slot with this Prime Advantage. The Slot added may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War. Each Unit selected to fill such a Slot must be from the Legiones Astartes Army List, not include any Models that have the Unique Sub-Type, and have a Faction Trait that matches the Legion represented by the Model that was selected to fill the Slot with this Prime Advantage. All Models in any of these Units have their Faction Trait replaced with ‘Shattered Legions’ and have the Legion Specialists Special Rule. Only for a Unit with the Command Battlefield Role in a Shattered Legions Detachment.",
+            "slotTag": "prime",
+            "units": {
+                "roles": ["command"]
+            },
+            "when": {
+                "if": "contingent.is(subfaction:shattered-legions)",
+                "message": "Shattered Legions Detachments only"
+            },
+            "effects": [
+                {
+                    "kind": "trait",
+                    "add": ["Exemplars of the Legion"]
+                },
+                {
+                    "kind": "slot",
+                    "roleChoices": [
+                        "retinue",
+                        "elites",
+                        "war-engine",
+                        "troop",
+                        "support",
+                        "transport",
+                        "heavy-assault",
+                        "heavy-transport",
+                        "armour",
+                        "recon",
+                        "fast-attack"
+                    ],
+                    "source": {
+                        "faction": "legiones-astartes",
+                        "subFactions": ["salamanders"]
+                    },
+                    "units": {
+                        "exclude": [
+                            {
+                                "profiles": {
+                                    "anyOf": ["Unique"]
+                                }
+                            }
+                        ]
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "replace": {
+                                "from": ["Legiones Astartes", "Salamanders"],
+                                "to": "Shattered Legions"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "legion-specialists"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "unitModifiers": {
+        "shattered-legions-salamanders-mutable-tactics": {
+            "id": "shattered-legions-salamanders-mutable-tactics",
+            "name": "Scions of the Flame (Mutable Tactics)",
+            "selector": {
+                "profiles": {
+                    "noneOf": ["vehicle"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "specialRule",
+                    "rule": {
+                        "id": "mutable-tactics-salamanders"
+                    }
+                }
+            ]
+        },
+        "shattered-legions-salamanders-drakenscale": {
+            "id": "shattered-legions-salamanders-drakenscale",
+            "name": "Drakenscale",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-drakenscale"
+                }
+            ]
+        },
+        "shattered-legions-salamanders-forge-crafted-power-sword": {
+            "id": "shattered-legions-salamanders-forge-crafted-power-sword",
+            "name": "Forge-crafted Power Sword",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-sword"
+                }
+            ]
+        },
+        "shattered-legions-salamanders-forge-crafted-power-axe": {
+            "id": "shattered-legions-salamanders-forge-crafted-power-axe",
+            "name": "Forge-crafted Power Axe",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-axe"
+                }
+            ]
+        },
+        "shattered-legions-salamanders-forge-crafted-power-maul": {
+            "id": "shattered-legions-salamanders-forge-crafted-power-maul",
+            "name": "Forge-crafted Power Maul",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-maul"
+                }
+            ]
+        },
+        "shattered-legions-salamanders-forge-crafted-power-lance": {
+            "id": "shattered-legions-salamanders-forge-crafted-power-lance",
+            "name": "Forge-crafted Power Lance",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-lance"
+                }
+            ]
+        },
+        "shattered-legions-salamanders-forge-crafted-power-fist": {
+            "id": "shattered-legions-salamanders-forge-crafted-power-fist",
+            "name": "Forge-crafted Power Fist",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist", "sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-power-fist"
+                }
+            ]
+        },
+        "shattered-legions-salamanders-forge-crafted-thunder-hammer": {
+            "id": "shattered-legions-salamanders-forge-crafted-thunder-hammer",
+            "name": "Forge-crafted Thunder Hammer",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "specialist"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-thunder-hammer"
+                }
+            ]
+        },
+        "shattered-legions-salamanders-forge-crafted-flame-weapons": {
+            "id": "shattered-legions-salamanders-forge-crafted-flame-weapons",
+            "name": "Forge-crafted Flame Weapons",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["sergeant"]
+                }
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "salamanders-forge-crafted-flame-weapons"
+                }
+            ]
+        }
+    }
+}

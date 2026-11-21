@@ -1,0 +1,350 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "oath-of-moment-panoply-of-old-alpha-legion",
+    "version": "1.0.0",
+    "name": "Oath of Moment: Panoply of Old (Alpha Legion)",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "group": "oaths-of-moment",
+    "description": "Though every Blackshield has cast away the oaths that once bound them, some retained the wargear of their Legion. These relics of the Great Crusade would no longer be used to fight for the glory of the Primarchs, but for the bitter grudges of the cast-out. A Unit that includes Models with this Special Rule may make use of Wargear upgrades from a single Legion Armoury. For each Detachment with this Oath of Moment, the Controlling Player must select a single Legion Trait. All Units in that Detachment may make use of any Armoury of the Legion Wargear upgrades. This does not include any Rules or options from the chosen Legion’s Rites of War or any Prime Advantages – only options which replace Wargear. For the purposes of selecting Wargear upgrades only, all Models in the Detachment for which this Oath of Moment is selected are considered to have the Faction Trait of Legion chosen as part of this Oath of Moment. Legion chosen: Alpha Legion. Options a Legion adds to the shared Legion wargear lists are not included.",
+    "when": {
+        "if": "contingent.is(subfaction:blackshields) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-dark-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-emperors-children) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-warriors) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-white-scars) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-space-wolves) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-imperial-fists) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-night-lords) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-blood-angels) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-iron-hands) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-world-eaters) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-ultramarines) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-death-guard) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-thousand-sons) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-sons-of-horus) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-word-bearers) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-salamanders) and not contingent.is(subfaction:oath-of-moment-panoply-of-old-raven-guard)",
+        "message": "Blackshields Detachments only; one Panoply of Old per Detachment"
+    },
+    "units": {},
+    "weapons": {
+        "power-dagger": {
+            "id": "power-dagger",
+            "name": "Power Dagger",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Power dagger",
+                    "stats": {
+                        "im": "+2",
+                        "am": "A",
+                        "sm": "-1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "venom-spheres": {
+            "id": "venom-spheres",
+            "name": "Venom Spheres",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Venom spheres",
+                    "stats": {
+                        "r": "8",
+                        "fp": "1",
+                        "rs": "1",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "4+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {
+        "alpha-legion-power-daggers-power-lance": {
+            "id": "alpha-legion-power-daggers-power-lance",
+            "name": "Power Dagger",
+            "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-lance-to-power-dagger": {
+                    "id": "power-lance-to-power-dagger",
+                    "name": "Power lance to power dagger",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-lance"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-dagger"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-lance",
+                    "count": 1
+                }
+            ]
+        },
+        "alpha-legion-power-daggers-power-maul": {
+            "id": "alpha-legion-power-daggers-power-maul",
+            "name": "Power Dagger",
+            "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-maul-to-power-dagger": {
+                    "id": "power-maul-to-power-dagger",
+                    "name": "Power maul to power dagger",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-maul"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-dagger"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-maul",
+                    "count": 1
+                }
+            ]
+        },
+        "alpha-legion-power-daggers-power-axe": {
+            "id": "alpha-legion-power-daggers-power-axe",
+            "name": "Power Dagger",
+            "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-axe-to-power-dagger": {
+                    "id": "power-axe-to-power-dagger",
+                    "name": "Power axe to power dagger",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-axe"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-dagger"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-axe",
+                    "count": 1
+                }
+            ]
+        },
+        "alpha-legion-power-daggers": {
+            "id": "alpha-legion-power-daggers",
+            "name": "Power Dagger",
+            "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "power-sword-to-power-dagger": {
+                    "id": "power-sword-to-power-dagger",
+                    "name": "Power sword to power dagger",
+                    "cost": {
+                        "points": 0
+                    },
+                    "swaps": [
+                        {
+                            "from": {
+                                "kind": "weapon",
+                                "id": "power-sword"
+                            },
+                            "to": {
+                                "kind": "weapon",
+                                "id": "power-dagger"
+                            }
+                        }
+                    ]
+                }
+            },
+            "limitBy": [
+                {
+                    "kind": "weapon",
+                    "id": "power-sword",
+                    "count": 1
+                }
+            ]
+        },
+        "alpha-legion-venom-spheres": {
+            "id": "alpha-legion-venom-spheres",
+            "name": "Venom Spheres",
+            "description": "Any Model with the Alpha Legion Trait and the Command or Champion Sub-Type may be given venom spheres.",
+            "perModel": {
+                "type": "single"
+            },
+            "options": {
+                "venom-spheres": {
+                    "id": "venom-spheres",
+                    "name": "Venom Spheres",
+                    "cost": {
+                        "points": 5
+                    },
+                    "weaponRefs": ["venom-spheres"]
+                }
+            }
+        }
+    },
+    "specialRules": {},
+    "groups": {},
+    "unitModifiers": {
+        "panoply-of-old-alpha-legion-venom-spheres": {
+            "id": "panoply-of-old-alpha-legion-venom-spheres",
+            "name": "Venom Spheres",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "alpha-legion-venom-spheres"
+                }
+            ]
+        },
+        "panoply-of-old-alpha-legion-power-daggers": {
+            "id": "panoply-of-old-alpha-legion-power-daggers",
+            "name": "Power Dagger",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "alpha-legion-power-daggers"
+                }
+            ]
+        },
+        "panoply-of-old-alpha-legion-power-daggers-power-axe": {
+            "id": "panoply-of-old-alpha-legion-power-daggers-power-axe",
+            "name": "Power Dagger",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "alpha-legion-power-daggers-power-axe"
+                }
+            ]
+        },
+        "panoply-of-old-alpha-legion-power-daggers-power-maul": {
+            "id": "panoply-of-old-alpha-legion-power-daggers-power-maul",
+            "name": "Power Dagger",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "alpha-legion-power-daggers-power-maul"
+                }
+            ]
+        },
+        "panoply-of-old-alpha-legion-power-daggers-power-lance": {
+            "id": "panoply-of-old-alpha-legion-power-daggers-power-lance",
+            "name": "Power Dagger",
+            "selector": {
+                "profiles": {
+                    "anyOf": ["command", "champion", "sergeant"]
+                },
+                "exclude": [
+                    {
+                        "profiles": {
+                            "anyOf": ["Unique"]
+                        }
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "addUpgrade",
+                    "upgradeId": "alpha-legion-power-daggers-power-lance"
+                }
+            ]
+        }
+    }
+}

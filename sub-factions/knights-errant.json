@@ -1,0 +1,289 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/gh/Force-Organization-Army-Builder/fo_data_validator@2/schema/sub-faction.schema.json",
+    "id": "knights-errant",
+    "version": "1.0.0",
+    "name": "Knights-Errant",
+    "parent": {
+        "faction": "legiones-astartes",
+        "versions": ">=1.0.0 <2.0.0"
+    },
+    "description": "The Knights-Errant Trait is a Faction Trait in the same manner as the [Legiones Astartes] Trait and the Legion Traits that can replace it. Units with the Knights-Errant Faction Trait may only be included in a Detachment with other Units with the same Trait, so a Knights-Errant Detachment may only hold Nathaniel Garro and Tylos Rubio.",
+    "when": {
+        "if": "choice(allegiance) == loyalist",
+        "message": "Knights-Errant are Loyalist only"
+    },
+    "units": {
+        "nathaniel-garro": {
+            "id": "nathaniel-garro",
+            "name": "Nathaniel Garro",
+            "role": "high-command",
+            "type": "infantry",
+            "cost": {
+                "points": 160
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "nathaniel-garro",
+                    "name": "Nathaniel Garro",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "6",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "4",
+                        "i": "5",
+                        "a": "5",
+                        "ld": "10",
+                        "cl": "9",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "4+"
+                    },
+                    "tags": ["Specialist", "Unique"],
+                    "specialRules": [
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ],
+            "traits": ["Loyalist", "Knights-Errant"],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "libertas"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "paragon-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        },
+        "tylos-rubio": {
+            "id": "tylos-rubio",
+            "name": "Tylos Rubio",
+            "role": "command",
+            "type": "infantry",
+            "cost": {
+                "points": 130
+            },
+            "modelCount": 1,
+            "profiles": [
+                {
+                    "id": "tylos-rubio",
+                    "name": "Tylos Rubio",
+                    "template": "model",
+                    "stats": {
+                        "m": "7",
+                        "ws": "5",
+                        "bs": "5",
+                        "s": "4",
+                        "t": "4",
+                        "w": "3",
+                        "i": "5",
+                        "a": "4",
+                        "ld": "10",
+                        "cl": "8",
+                        "wp": "10",
+                        "in": "8",
+                        "sav": "2+",
+                        "inv": "5+"
+                    },
+                    "tags": ["Specialist", "Unique"],
+                    "specialRules": [
+                        {
+                            "id": "eternal-warrior",
+                            "value": "1"
+                        },
+                        {
+                            "id": "echoes-of-fate"
+                        }
+                    ]
+                }
+            ],
+            "traits": [
+                "Loyalist",
+                "Psyker",
+                "Knights-Errant",
+                "Telepath",
+                "Diviner"
+            ],
+            "defaultGear": [
+                {
+                    "kind": "weapon",
+                    "id": "polaris"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "paragon-bolter"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "bolt-pistol"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "frag-grenades"
+                },
+                {
+                    "kind": "weapon",
+                    "id": "krak-grenades"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "telepathy"
+                },
+                {
+                    "kind": "equipment",
+                    "id": "divination"
+                }
+            ],
+            "limit": {
+                "max": 1,
+                "scope": "list",
+                "message": "Unique"
+            },
+            "when": {
+                "if": "choice(allegiance) == loyalist",
+                "message": "Loyalist units only"
+            }
+        }
+    },
+    "weapons": {
+        "libertas": {
+            "id": "libertas",
+            "name": "Libertas",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Libertas",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "critical-hit",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "duellists-edge",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "polaris": {
+            "id": "polaris",
+            "name": "Polaris",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Polaris",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+1",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Force"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "force",
+                            "value": "D"
+                        }
+                    ]
+                }
+            ]
+        },
+        "paragon-bolter": {
+            "id": "paragon-bolter",
+            "name": "Paragon Bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Paragon Bolter",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "equipment": {},
+    "upgrades": {},
+    "groups": {},
+    "specialRules": {
+        "echoes-of-fate": {
+            "id": "echoes-of-fate",
+            "name": "Echoes of Fate",
+            "text": "A Model with this Special Rule has the Telepathy and Divination Psychic Disciplines."
+        }
+    },
+    "unitModifiers": {
+        "knights-errant-only": {
+            "id": "knights-errant-only",
+            "name": "Knights-Errant only",
+            "selector": {
+                "exclude": [
+                    {
+                        "traits": ["Knights-Errant"]
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "kind": "unavailable",
+                    "message": "A Knights-Errant Detachment may only include Units with the Knights-Errant Trait"
+                }
+            ]
+        }
+    }
+}
