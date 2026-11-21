@@ -3152,51 +3152,81 @@
         },
         "yeomanry-mesnie": {
             "id": "yeomanry-mesnie",
-            "name": "Yeomanry Mesnie (Solar Auxilia)",
+            "name": "Yeomanry Mesnie",
             "type": "household-additional",
             "slots": [
                 {
                     "roles": ["troop"],
-                    "source": {
-                        "faction": "solar-auxilia"
-                    }
+                    "source": [
+                        {
+                            "faction": "solar-auxilia"
+                        },
+                        {
+                            "faction": "imperialis-militia"
+                        }
+                    ]
                 },
                 {
                     "roles": ["elites"],
-                    "source": {
-                        "faction": "solar-auxilia"
-                    }
+                    "source": [
+                        {
+                            "faction": "solar-auxilia"
+                        },
+                        {
+                            "faction": "imperialis-militia"
+                        }
+                    ]
                 },
                 {
                     "roles": ["heavy-transport"],
-                    "source": {
-                        "faction": "solar-auxilia"
-                    }
+                    "source": [
+                        {
+                            "faction": "solar-auxilia"
+                        },
+                        {
+                            "faction": "imperialis-militia"
+                        }
+                    ]
                 },
                 {
                     "roles": ["troop"],
-                    "source": {
-                        "faction": "solar-auxilia"
-                    }
+                    "source": [
+                        {
+                            "faction": "solar-auxilia"
+                        },
+                        {
+                            "faction": "imperialis-militia"
+                        }
+                    ]
                 },
                 {
                     "roles": ["recon"],
-                    "source": {
-                        "faction": "solar-auxilia"
-                    }
+                    "source": [
+                        {
+                            "faction": "solar-auxilia"
+                        },
+                        {
+                            "faction": "imperialis-militia"
+                        }
+                    ]
                 },
                 {
                     "roles": ["heavy-transport"],
-                    "source": {
-                        "faction": "solar-auxilia"
-                    }
+                    "source": [
+                        {
+                            "faction": "solar-auxilia"
+                        },
+                        {
+                            "faction": "imperialis-militia"
+                        }
+                    ]
                 }
             ],
             "effects": [
                 {
                     "kind": "trait",
                     "replace": {
-                        "from": ["Solar Auxilia"],
+                        "from": ["Solar Auxilia", "Imperialis Militia"],
                         "to": "Questoris Imperialis"
                     },
                     "when": {
@@ -3207,7 +3237,7 @@
                 {
                     "kind": "trait",
                     "replace": {
-                        "from": ["Solar Auxilia"],
+                        "from": ["Solar Auxilia", "Imperialis Militia"],
                         "to": "Questoris Mechanicum"
                     },
                     "when": {
@@ -3218,7 +3248,7 @@
                 {
                     "kind": "trait",
                     "replace": {
-                        "from": ["Solar Auxilia"],
+                        "from": ["Solar Auxilia", "Imperialis Militia"],
                         "to": "Questoris Mendicant"
                     },
                     "when": {
@@ -3227,90 +3257,9 @@
                     }
                 }
             ],
-            "max": "contingent.count(trait:lord-scion) + (contingent.is(subfaction:questoris-imperialis) ? 1 : 0) - contingent.count(group:yeomanry-mesnie-imperialis-militia)",
+            "max": "contingent.count(trait:lord-scion) + (contingent.is(subfaction:questoris-imperialis) ? 1 : 0)",
             "requirementText": "One for each Unit with the Lord Scion Household Rank Prime Advantage; an Army with the Imperial House Household Paradigm may add one more without it",
-            "description": "Units selected to fill Slots in this Detachment must be selected from the Solar Auxilia Army List found in Liber Auxilia or the Imperials Militia Army List (in any combination). Models selected as part of this Detachment replace their Solar Auxilia or Imperialis Militia Trait with the [Questoris Familia] Faction Trait."
-        },
-        "yeomanry-mesnie-imperialis-militia": {
-            "id": "yeomanry-mesnie-imperialis-militia",
-            "name": "Yeomanry Mesnie (Imperialis Militia)",
-            "type": "household-additional",
-            "slots": [
-                {
-                    "roles": ["troop"],
-                    "source": {
-                        "faction": "imperialis-militia"
-                    }
-                },
-                {
-                    "roles": ["elites"],
-                    "source": {
-                        "faction": "imperialis-militia"
-                    }
-                },
-                {
-                    "roles": ["heavy-transport"],
-                    "source": {
-                        "faction": "imperialis-militia"
-                    }
-                },
-                {
-                    "roles": ["troop"],
-                    "source": {
-                        "faction": "imperialis-militia"
-                    }
-                },
-                {
-                    "roles": ["recon"],
-                    "source": {
-                        "faction": "imperialis-militia"
-                    }
-                },
-                {
-                    "roles": ["heavy-transport"],
-                    "source": {
-                        "faction": "imperialis-militia"
-                    }
-                }
-            ],
-            "effects": [
-                {
-                    "kind": "trait",
-                    "replace": {
-                        "from": ["Imperialis Militia"],
-                        "to": "Questoris Imperialis"
-                    },
-                    "when": {
-                        "if": "contingent.is(subfaction:questoris-imperialis)",
-                        "message": "Questoris Imperialis Households only"
-                    }
-                },
-                {
-                    "kind": "trait",
-                    "replace": {
-                        "from": ["Imperialis Militia"],
-                        "to": "Questoris Mechanicum"
-                    },
-                    "when": {
-                        "if": "contingent.is(subfaction:questoris-mechanicum)",
-                        "message": "Questoris Mechanicum Households only"
-                    }
-                },
-                {
-                    "kind": "trait",
-                    "replace": {
-                        "from": ["Imperialis Militia"],
-                        "to": "Questoris Mendicant"
-                    },
-                    "when": {
-                        "if": "contingent.is(subfaction:questoris-mendicant)",
-                        "message": "Questoris Mendicant Households only"
-                    }
-                }
-            ],
-            "max": "contingent.count(trait:lord-scion) + (contingent.is(subfaction:questoris-imperialis) ? 1 : 0) - contingent.count(group:yeomanry-mesnie)",
-            "requirementText": "One for each Unit with the Lord Scion Household Rank Prime Advantage; an Army with the Imperial House Household Paradigm may add one more without it",
-            "description": "Units selected to fill Slots in this Detachment must be selected from the Solar Auxilia Army List found in Liber Auxilia or the Imperials Militia Army List (in any combination). Models selected as part of this Detachment replace their Solar Auxilia or Imperialis Militia Trait with the [Questoris Familia] Faction Trait."
+            "description": "Units selected to fill Slots in this Detachment must be selected from the Solar Auxilia Army List found in Liber Auxilia or the Imperialis Militia Army List (in any combination). Models selected as part of this Detachment replace their Solar Auxilia or Imperialis Militia Trait with the [Questoris Familia] Faction Trait."
         }
     },
     "slotOptions": {
