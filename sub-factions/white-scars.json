@@ -3806,11 +3806,17 @@
                 },
                 {
                     "roles": ["retinue", "elites"],
-                    "units": "@sky-hunter-retinue-or-golden-keshig"
+                    "unitWhen": {
+                        "if": "unit.is(role:retinue) or unit.is(unit:golden-keshig)",
+                        "message": "Only Retinue Units or Golden Keshig"
+                    }
                 },
                 {
                     "roles": ["retinue", "elites"],
-                    "units": "@sky-hunter-retinue-or-golden-keshig"
+                    "unitWhen": {
+                        "if": "unit.is(role:retinue) or unit.is(unit:golden-keshig)",
+                        "message": "Only Retinue Units or Golden Keshig"
+                    }
                 },
                 {
                     "roles": ["fast-attack", "support"],
@@ -3824,23 +3830,38 @@
                             }
                         }
                     ],
-                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                    "unitWhen": {
+                        "if": "unit.is(role:fast-attack) or unit.is(unit:kyzagan-assault-speeder)",
+                        "message": "Only Fast Attack Units or Kyzagan Assault Speeders"
+                    }
                 },
                 {
                     "roles": ["fast-attack", "support"],
-                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                    "unitWhen": {
+                        "if": "unit.is(role:fast-attack) or unit.is(unit:kyzagan-assault-speeder)",
+                        "message": "Only Fast Attack Units or Kyzagan Assault Speeders"
+                    }
                 },
                 {
                     "roles": ["fast-attack", "support"],
-                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                    "unitWhen": {
+                        "if": "unit.is(role:fast-attack) or unit.is(unit:kyzagan-assault-speeder)",
+                        "message": "Only Fast Attack Units or Kyzagan Assault Speeders"
+                    }
                 },
                 {
                     "roles": ["fast-attack", "support"],
-                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                    "unitWhen": {
+                        "if": "unit.is(role:fast-attack) or unit.is(unit:kyzagan-assault-speeder)",
+                        "message": "Only Fast Attack Units or Kyzagan Assault Speeders"
+                    }
                 },
                 {
                     "roles": ["fast-attack", "support"],
-                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                    "unitWhen": {
+                        "if": "unit.is(role:fast-attack) or unit.is(unit:kyzagan-assault-speeder)",
+                        "message": "Only Fast Attack Units or Kyzagan Assault Speeders"
+                    }
                 },
                 {
                     "roles": ["fast-attack", "support"],
@@ -3854,23 +3875,38 @@
                             }
                         }
                     ],
-                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                    "unitWhen": {
+                        "if": "unit.is(role:fast-attack) or unit.is(unit:kyzagan-assault-speeder)",
+                        "message": "Only Fast Attack Units or Kyzagan Assault Speeders"
+                    }
                 },
                 {
                     "roles": ["fast-attack", "support"],
-                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                    "unitWhen": {
+                        "if": "unit.is(role:fast-attack) or unit.is(unit:kyzagan-assault-speeder)",
+                        "message": "Only Fast Attack Units or Kyzagan Assault Speeders"
+                    }
                 },
                 {
                     "roles": ["fast-attack", "support"],
-                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                    "unitWhen": {
+                        "if": "unit.is(role:fast-attack) or unit.is(unit:kyzagan-assault-speeder)",
+                        "message": "Only Fast Attack Units or Kyzagan Assault Speeders"
+                    }
                 },
                 {
                     "roles": ["fast-attack", "support"],
-                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                    "unitWhen": {
+                        "if": "unit.is(role:fast-attack) or unit.is(unit:kyzagan-assault-speeder)",
+                        "message": "Only Fast Attack Units or Kyzagan Assault Speeders"
+                    }
                 },
                 {
                     "roles": ["fast-attack", "support"],
-                    "units": "@sky-hunter-fast-attack-or-kyzagan"
+                    "unitWhen": {
+                        "if": "unit.is(role:fast-attack) or unit.is(unit:kyzagan-assault-speeder)",
+                        "message": "Only Fast Attack Units or Kyzagan Assault Speeders"
+                    }
                 }
             ],
             "description": "Replaces the Crusade Primary Detachment. Benefits: Prime Slots in this Detachment may have the Skilled Riders Prime Advantage selected for them. Restrictions: Prime Advantages which add additional Battlefield Role Slots to a Detachment may not be selected. Only the following additional Detachments may be selected: First Strike, Combat Pioneer, Lord of War. Every Unit in an Army with this Primary Detachment must only include Models with the Antigrav or Flyer Sub-Type or begin the Battle Embarked on a Transport with the Flyer Sub-Type; any other Units may not be Deployed and are Removed as Casualties (checked by count: such Units, Command and High Command Units aside, may not outnumber the Flyer Transports, since each Transport carries one Unit and the Characters joined to it). White Scars: any number of Retinue Slots may each be exchanged for one Elites Slot that may only be filled with Golden Keshig Units, and any number of Fast Attack Slots may each be exchanged for one Support Slot that may only be filled with Kyzagan Assault Speeder Units.",
@@ -4027,44 +4063,5 @@
             "id": "sky-hunter-phalanx"
         }
     ],
-    "selectors": {
-        "sky-hunter-retinue-or-golden-keshig": {
-            "id": "sky-hunter-retinue-or-golden-keshig",
-            "name": "Retinue Units or Golden Keshig",
-            "match": {
-                "exclude": [
-                    {
-                        "roles": ["elites"],
-                        "unitIds": [
-                            "seeker-squad",
-                            "veteran-assault-squad",
-                            "veteran-breacher-squad",
-                            "veteran-heavy-support-squad",
-                            "veteran-tactical-squad"
-                        ]
-                    }
-                ]
-            }
-        },
-        "sky-hunter-fast-attack-or-kyzagan": {
-            "id": "sky-hunter-fast-attack-or-kyzagan",
-            "name": "Fast Attack Units or Kyzagan Assault Speeders",
-            "match": {
-                "exclude": [
-                    {
-                        "roles": ["support"],
-                        "unitIds": [
-                            "apothecary",
-                            "araknae-quad-accelerator-platform",
-                            "deathstorm-drop-pod",
-                            "heavy-support-squad",
-                            "rapier-battery",
-                            "tactical-support-squad",
-                            "techmarine"
-                        ]
-                    }
-                ]
-            }
-        }
-    }
+    "selectors": {}
 }
