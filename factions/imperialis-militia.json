@@ -7400,7 +7400,26 @@
                             "cost": {
                                 "points": 20
                             },
-                            "equipmentRefs": ["biomancy"]
+                            "equipmentRefs": ["biomancy", "biomantic-rage"],
+                            "effects": [
+                                {
+                                    "kind": "specialRule",
+                                    "profiles": {
+                                        "anyOf": ["sergeant"]
+                                    },
+                                    "rule": {
+                                        "id": "impact",
+                                        "value": "Strength"
+                                    }
+                                },
+                                {
+                                    "kind": "trait",
+                                    "profiles": {
+                                        "anyOf": ["sergeant"]
+                                    },
+                                    "add": ["Biomancer"]
+                                }
+                            ]
                         },
                         "pyromancy": {
                             "id": "pyromancy",
@@ -7408,7 +7427,26 @@
                             "cost": {
                                 "points": 10
                             },
-                            "equipmentRefs": ["pyromancy"]
+                            "equipmentRefs": ["pyromancy"],
+                            "effects": [
+                                {
+                                    "kind": "specialRule",
+                                    "profiles": {
+                                        "anyOf": ["sergeant"]
+                                    },
+                                    "rule": {
+                                        "id": "explodes",
+                                        "value": "4+"
+                                    }
+                                },
+                                {
+                                    "kind": "trait",
+                                    "profiles": {
+                                        "anyOf": ["sergeant"]
+                                    },
+                                    "add": ["Pyromancer"]
+                                }
+                            ]
                         },
                         "telekinesis": {
                             "id": "telekinesis",
@@ -7416,7 +7454,26 @@
                             "cost": {
                                 "points": 10
                             },
-                            "equipmentRefs": ["telekinesis"]
+                            "equipmentRefs": ["telekinesis", "force-barrier"],
+                            "effects": [
+                                {
+                                    "kind": "specialRule",
+                                    "profiles": {
+                                        "anyOf": ["sergeant"]
+                                    },
+                                    "rule": {
+                                        "id": "shrouded",
+                                        "value": "4+"
+                                    }
+                                },
+                                {
+                                    "kind": "trait",
+                                    "profiles": {
+                                        "anyOf": ["sergeant"]
+                                    },
+                                    "add": ["Telekine"]
+                                }
+                            ]
                         },
                         "divination": {
                             "id": "divination",
@@ -7424,7 +7481,30 @@
                             "cost": {
                                 "points": 10
                             },
-                            "equipmentRefs": ["divination"]
+                            "equipmentRefs": [
+                                "divination",
+                                "every-strike-foreseen",
+                                "foresights-blessing"
+                            ],
+                            "effects": [
+                                {
+                                    "kind": "specialRule",
+                                    "profiles": {
+                                        "anyOf": ["sergeant"]
+                                    },
+                                    "rule": {
+                                        "id": "duellists-edge",
+                                        "value": "2"
+                                    }
+                                },
+                                {
+                                    "kind": "trait",
+                                    "profiles": {
+                                        "anyOf": ["sergeant"]
+                                    },
+                                    "add": ["Diviner"]
+                                }
+                            ]
                         },
                         "telepathy": {
                             "id": "telepathy",
@@ -7432,7 +7512,16 @@
                             "cost": {
                                 "points": 10
                             },
-                            "equipmentRefs": ["telepathy"]
+                            "equipmentRefs": ["telepathy", "mind-burst"],
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "profiles": {
+                                        "anyOf": ["sergeant"]
+                                    },
+                                    "add": ["Telepath"]
+                                }
+                            ]
                         },
                         "anathemata": {
                             "id": "anathemata",
@@ -7440,7 +7529,20 @@
                             "cost": {
                                 "points": 10
                             },
-                            "equipmentRefs": ["anathemata"]
+                            "equipmentRefs": [
+                                "anathemata",
+                                "breach-the-veil",
+                                "seal-the-veil"
+                            ],
+                            "effects": [
+                                {
+                                    "kind": "trait",
+                                    "profiles": {
+                                        "anyOf": ["sergeant"]
+                                    },
+                                    "add": ["Anathemata"]
+                                }
+                            ]
                         }
                     },
                     "default": "none",
@@ -10543,7 +10645,33 @@
         "anathemata": {
             "id": "anathemata",
             "name": "Anathemata",
-            "text": "A Model with the Anathemata Discipline gains the following benefits: The Fear (1) Special Rule. The Void Darts Psychic Weapon. If the Model has the Loyalist Trait, it can use the Seal the Veil Psychic Reaction. If the Model has the Traitor Trait, it can use the Breach the Veil Psychic Power. The ‘Anathemata’ Trait."
+            "text": "A Model with the Anathemata Discipline gains the following benefits: The Fear (1) Special Rule. The Void Darts Psychic Weapon. If the Model has the Loyalist Trait, it can use the Seal the Veil Psychic Reaction. If the Model has the Traitor Trait, it can use the Breach the Veil Psychic Power. The ‘Anathemata’ Trait.",
+            "weapon": {
+                "template": "ranged",
+                "profiles": [
+                    {
+                        "name": "Void Darts",
+                        "stats": {
+                            "r": "18",
+                            "fp": "D6",
+                            "rs": "5",
+                            "ap": "4",
+                            "d": "1"
+                        },
+                        "traits": ["Psychic"],
+                        "specialRules": [
+                            {
+                                "id": "shred",
+                                "value": "5+"
+                            },
+                            {
+                                "id": "force",
+                                "value": "D"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "assault-shield": {
             "id": "assault-shield",
@@ -10756,6 +10884,41 @@
                     }
                 ]
             }
+        },
+        "biomantic-rage": {
+            "id": "biomantic-rage",
+            "name": "Biomantic Rage",
+            "text": "Psychic Power (Blessing). This Power is used in the Charge Sub-Phase to add a bonus to a Unit’s Strength and Toughness. Trigger: The Active Player may choose to Manifest the Biomantic Rage Psychic Power in the Charge Sub-Phase, at Step 4 of the Charge process before any Unit makes a Volley Attack. Focus: The Focus of the Power must be a Model with the Biomancer Trait under the Active Player’s control, and must be either part of the Unit making a Charge or within 18\" and with Line of Sight to one or more Models in that Unit. Target: The Target Unit must be the Unit currently selected and in the process of making a Charge. Duration: If successfully Manifested, the effects of this Psychic Power last until the end of the current Assault Phase. Process Once the Focus and Target Unit have been decided, make a Manifestation Check. If the Manifestation Check is successful, then no Volley Attack may be made for the Target Unit, but all Models in the Target Unit gain a bonus of +2 to their Strength and Toughness Characteristics. If the Manifestation Check fails then there is no further effect."
+        },
+        "every-strike-foreseen": {
+            "id": "every-strike-foreseen",
+            "name": "Every Strike Foreseen",
+            "text": "Gambit. If this Gambit is selected, the Controlling Player must make a Willpower Check for the Model using this Gambit. If the Check is successful then in the Strike Step of the Challenge any Hit Tests made for this Model are successful on a result of 2+ regardless of the Weapon Skill Characteristics of the Models involved in the Challenge. If the Willpower Check is not successful then Hit Tests are made as normal. Note that this Willpower Check cannot inflict Perils of the Warp."
+        },
+        "foresights-blessing": {
+            "id": "foresights-blessing",
+            "name": "Foresight’s Blessing",
+            "text": "Psychic Power (Blessing). This Power is used as part of a Shooting Attack to grant a Unit the Precision (5+) Special Rule. Trigger: The Active Player may choose to Manifest the Foresight’s Blessing Psychic Power in the Shooting Phase, at Step 4 of any Shooting Attack made by the Active Player. Focus: The Focus of the Power must be a Model with the Diviner Trait under the Active Player’s control, and must be either part of the Unit making the Shooting Attack or within 18\" and with Line of Sight to one or more Models in that Unit. Target: The Target Unit must be the Unit currently selected and in the process of making a Shooting Attack. Duration: If successfully Manifested, the effects of this Psychic Power last until the end of the Shooting Attack being resolved. Process Once the Focus and Target Unit have been decided, make a Manifestation Check. If the Manifestation Check is successful, then all Models in the Target Unit gain the Precision (5+) Special Rule. If the Manifestation Check fails then there is no further effect."
+        },
+        "force-barrier": {
+            "id": "force-barrier",
+            "name": "Force Barrier",
+            "text": "Psychic Reaction. This Power can be used in either the Shooting or Assault Phase and grants a Shrouded Damage Mitigation Test. Trigger: The Reactive Player may choose to declare a Force Barrier Psychic Reaction in either the Assault Phase, at the start of Step 4 of the Charge Process, or in the Shooting Phase, at the start of Step 3 of a Shooting Attack made by the Active Player. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Force Barrier Psychic Reaction - this cost paid as soon as the declaration is made. Focus: The Focus of this Psychic Reaction must be a Model with the Telekine Trait under the Reactive Player’s control, and must be a part of the Unit targeted by the Charge or Shooting Attack that triggers this Psychic Reaction. Target: The Target Unit must be the Unit that is the target of the Shooting Attack or Charge that triggered the Reaction. Duration: If successfully Manifested, the effects of this Psychic Reaction last until the end of the Sub-Phase in which it was declared. Process Once the Focus and Target Unit have been decided, make a Manifestation Check. If the Manifestation Check is successful, then all Models in the Target Unit gain a 3+ Shrouded Damage Mitigation Test against any wounds inflicted during a Volley or Shooting Attack. If the Manifestation Check fails then there is no further effect."
+        },
+        "mind-burst": {
+            "id": "mind-burst",
+            "name": "Mind-burst",
+            "text": "Psychic Power (Curse). This Power is used in the Movement Phase and can force the target to Fall Back or become Routed. Trigger: The Active Player may choose to Manifest the Mind-burst Psychic Power in the Movement Phase, when selecting a Unit under their control that includes at least one Model with the Telepath Trait to move and before any move is made for that Unit. Focus: The Focus of the Power must be a Model with the Telepath Trait that is part of the Unit that was selected to move. Target: The Target Unit must be a Unit under the control of the Reactive Player with at least one Model within 18\" of the Focus and with Line of Sight to the Focus. The target may not be a Unit that is Locked in Combat or otherwise ineligible to be the target of a Shooting Attack and may not include any Models with the Vehicle Type. Duration: If successfully Manifested, the effects of this Psychic Power are resolved immediately. Process Once the Focus and Target Unit have been decided, the Target Unit’s Controlling Player makes a Resistance Check for that Unit. If the Resistance Check is failed, then all Statuses are removed from all Models in the Target Unit, and then the Target Unit must immediately make a Fall Back Move. Once that Fall Back Move has been resolved, a Leadership Check must be made for the Target Unit by its Controlling Player, this Check may not be modified by any effect or Special Rule. If the Leadership Check is successful, then there is no further effect, if it is unsuccessful then all Models in the Target Unit gain the Routed Status. If the Resistance Check succeeds then there is no further effect to the Target Unit. Regardless of whether the Resistance Check succeeds or fails, the Unit that includes the Focus of this Psychic Power may not make a move or Rush in this Movement Phase."
+        },
+        "breach-the-veil": {
+            "id": "breach-the-veil",
+            "name": "Breach the Veil",
+            "text": "Psychic Power (Blessing). Only a Model with the Traitor Trait may use this Psychic Power. Trigger: The Active Player may choose to Manifest the Breach the Veil Psychic Power at the start of the Reserves Sub-Phase of their Movement Phase. Focus: The Focus of the Power must be a Model with the Anathemata Trait and under the Active Player’s control. Target: This Psychic Power does not have a Target. Duration: If successfully Manifested, the effects of this Psychic Power last until the end of this Reserves Sub-Phase. Process Once the Focus has been decided, make a Manifestation Check. If the Manifestation Check is successful, the Active Player can select one Unit from a Daemonic Manifestation Detachment from the same Army as the Focus that is in Reserves. Reserve Rolls made for that Unit are automatically successful for the duration of this Psychic Power."
+        },
+        "seal-the-veil": {
+            "id": "seal-the-veil",
+            "name": "Seal the Veil",
+            "text": "Psychic Reaction (Curse). Only a Model with the Loyalist Trait may use this Psychic Reaction. Trigger: The Reactive Player may choose to declare a Seal the Veil Psychic Reaction at the start of Step 3 of the Charge Procedure for a Charge declared by the Active Player for a Unit which includes any Models with the Malefic Sub-Type. Cost: The Reactive Player must spend 1 point of their Reaction Allotment to declare a Seal the Veil Psychic Reaction, this cost paid as soon as the declaration is made. Focus: The Focus of this Psychic Reaction must be a Model with the Anathemata Trait and under the Reactive Player’s Control, and must be a part of the Unit targeted by the Charge that triggered this Psychic Reaction. Target: The Target Unit must be the Unit that is making the Charge that triggered the Reaction. Duration: If successfully Manifested, the effects of this Psychic Reaction are resolved immediately. Process Once the Focus and Target Unit have been decided, the Target Unit’s Controlling Player makes a Resistance Check for that Unit. If the Resistance Check is failed, then the Target Unit cannot make a Set-Up Move of more than 1\", and when a Charge Roll is made for that Unit in Step 5 of the Charge Procedure, the highest Dice is discarded instead of the lowest."
         }
     },
     "upgrades": {
@@ -11882,6 +12045,18 @@
             "id": "vanguard",
             "name": "Vanguard",
             "text": "A Unit that includes Models with this Special Rule can score Victory Points for destroying enemy Units. The Controlling Player of a Unit that includes a majority of Models with the Vanguard (X) Special Rule scores Victory Points equal to the value of X when: An enemy Unit that is within 3\" of an Objective Marker, or was within 3\" of an Objective Marker at the start of the Player Turn has its last model Removed as a Casualty by an attack made by that Unit. An enemy Unit that is within 3\" of an Objective Marker, or was within 3\" of an Objective Marker at the start of the Player Turn gains the Routed Tactical Status while in a Combat with that Unit. The Vanguard (X) Special Rule may only be used to score Victory Points once per Objective per Player Turn. If a Unit includes Models with different values of X for this Special Rule, the Controlling Player may select which one is used. A Unit that includes a majority of Models with the Vanguard (X) Special Rule may only ever score 1 Victory Point for Controlling an Objective, regardless of that Objective’s value or any other bonuses.",
+            "configurable": true
+        },
+        "explodes": {
+            "id": "explodes",
+            "name": "Explodes",
+            "text": "A Model with this Special Rule can explode and cause Hits to nearby Models and Units. Before a Model with the Explodes (X) Special Rule is Removed as a Casualty, the Controlling Player must roll a Dice. If the result of that roll equals or exceeds the value of X attached to this variant of the Explodes (X) Special Rule, the Model explodes. Every Unit with one or more Models within 6\" of an exploding Model suffers a number of Hits equal to the Base Wounds Characteristic or Base Hull Points Characteristic of the exploding Model. Each such Hit has a Strength of 8, an AP of ‘-’ and a Damage of 1. Once all Hits caused by this Special Rule have been resolved, the Model with the Explodes (X) Special Rule is Removed as a Casualty as normal.",
+            "configurable": true
+        },
+        "shrouded": {
+            "id": "shrouded",
+            "name": "Shrouded",
+            "text": "Shrouded (X) is a Damage Mitigation Test that may be taken in addition to a Saving Throw. A Model with the Shrouded (X) Special Rule gains a Shrouded Damage Mitigation Test that may be used in Step 9 of the Shooting Attack process to discard Wounds allocated to the Model. A Damage Mitigation Test may be made after and in addition to a Saving Throw. The Target Number for a Shrouded Damage Mitigation Test is the value of X attached to the specific variant of the Special Rule. A Shrouded Damage Mitigation Test may not be made against wounds inflicted by a Melee Weapon.",
             "configurable": true
         }
     },
