@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Paragon of Metal is only offered to Units made entirely of Automata, as its rule says; Magi, Tech-priests, the Armiger Moirax and vehicles that take the Cybernetica High Tech Arcana were offered it.
 - Legion Auxiliary Detachments unlocked by a Command choice (Veteran Cadre, Recon Demi-Company, Storm Battery, Dreadnought Talon, Maelstrom Sentry Battery, Daemonic Manifestation) allow one per unlocking Unit, like the Questoris Detachments, and every variant of the unlocking Unit counts (a Legion Champion with Jump Pack, a Siege Breaker on Scimitar Jetbike, a Mortificator in Tartaros Terminator Armour…); only the plain variant did. Word Bearers add one more Daemonic Manifestation with Erebus. The Hammer of Olympia and Medusan Vanguard requirement texts name their Units.
 - The 18 Solar Auxilia Legiones Auxilia designations no longer carry their Advanced Reaction as a special rule (Advanced Reactions are left out of this data; the Legion restriction is each designation’s `when`).
 - The core Prime Advantages carry their rules text, and Master Sergeant and Logistical Benefit are limited to once per Detachment (Master Sergeant marks its unit with a Master Sergeant trait for this). The eight Questoris Household Ranks limited to once per Army say so in their text.
