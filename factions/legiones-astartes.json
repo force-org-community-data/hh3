@@ -39721,15 +39721,8 @@
                     }
                 }
             ],
-            "requires": [
-                {
-                    "units": {
-                        "unitIds": ["master-of-signals"]
-                    },
-                    "count": 1
-                }
-            ],
-            "requirementText": "Requires a Master of Signals in a Command slot"
+            "requirementText": "One for each Master of Signals in a Command slot",
+            "max": "contingent.count(@masters-of-signals)"
         },
         "daemonic-manifestation": {
             "id": "daemonic-manifestation",
@@ -39767,13 +39760,8 @@
                     }
                 }
             ],
-            "requires": [
-                {
-                    "units": "@traitor-esoterists",
-                    "count": 1
-                }
-            ],
-            "requirementText": "Requires an Esoterist Unit with the Traitor Allegiance selected to fill a Command Force Organisation Slot",
+            "requirementText": "One for each Esoterist Unit with the Traitor Allegiance in a Command slot",
+            "max": "contingent.count(@traitor-esoterists)",
             "description": "When an Esoterist Unit with the Traitor Allegiance is selected to fill a Command Force Organisation Slot, then the Player may choose to add one Daemonic Manifestation Auxiliary Detachment to the Army instead of the options available in the Crusade Force Organisation Chart. Heavy Assault Slots in this Detachment may only be used to select Ruinstorm Daemon Brute Units from the Daemons of the Ruinstorm Army List."
         },
         "veteran-cadre": {
@@ -39791,15 +39779,8 @@
                     "roles": ["heavy-transport"]
                 }
             ],
-            "requires": [
-                {
-                    "units": {
-                        "unitIds": ["legion-champion"]
-                    },
-                    "count": 1
-                }
-            ],
-            "requirementText": "Requires a Legion Champion in a Command slot"
+            "requirementText": "One for each Legion Champion in a Command slot",
+            "max": "contingent.count(@legion-champions)"
         },
         "apothecarion-delegation": {
             "id": "apothecarion-delegation",
@@ -39917,15 +39898,8 @@
                     "roles": ["fast-attack"]
                 }
             ],
-            "requires": [
-                {
-                    "units": {
-                        "unitIds": ["vigilator"]
-                    },
-                    "count": 1
-                }
-            ],
-            "requirementText": "Requires a Vigilator in a Command slot"
+            "requirementText": "One for each Vigilator in a Command slot",
+            "max": "contingent.count(unit:vigilator)"
         },
         "storm-battery": {
             "id": "storm-battery",
@@ -39957,15 +39931,8 @@
                     }
                 }
             ],
-            "requires": [
-                {
-                    "units": {
-                        "unitIds": ["siege-breaker"]
-                    },
-                    "count": 1
-                }
-            ],
-            "requirementText": "Requires a Siege Breaker in a Command slot"
+            "requirementText": "One for each Siege Breaker in a Command slot",
+            "max": "contingent.count(@siege-breakers)"
         },
         "dreadnought-talon": {
             "id": "dreadnought-talon",
@@ -39991,18 +39958,8 @@
                     }
                 }
             ],
-            "requires": [
-                {
-                    "units": {
-                        "unitIds": [
-                            "mortificator",
-                            "mortificator-in-terminator-armour"
-                        ]
-                    },
-                    "count": 1
-                }
-            ],
-            "requirementText": "Requires a Mortificator or Mortificator in Terminator Armour in a Command slot"
+            "requirementText": "One for each Mortificator in a Command slot",
+            "max": "contingent.count(@mortificators)"
         },
         "pride-of-the-legion": {
             "id": "pride-of-the-legion",
@@ -40912,6 +40869,57 @@
                             "land-raider-explorator"
                         ]
                     }
+                ]
+            }
+        },
+        "legion-champions": {
+            "id": "legion-champions",
+            "name": "Legion Champions",
+            "match": {
+                "unitIds": [
+                    "legion-champion-in-terminator-armour",
+                    "legion-champion-in-tartaros-terminator-armour",
+                    "legion-champion-with-jump-pack",
+                    "legion-champion",
+                    "mounted-legion-champion",
+                    "legion-champion-on-scimitar-jetbike"
+                ]
+            }
+        },
+        "masters-of-signals": {
+            "id": "masters-of-signals",
+            "name": "Masters of Signals",
+            "match": {
+                "unitIds": [
+                    "master-of-signals-with-jump-pack",
+                    "master-of-signals",
+                    "mounted-master-of-signals",
+                    "master-of-signals-on-scimitar-jetbike"
+                ]
+            }
+        },
+        "siege-breakers": {
+            "id": "siege-breakers",
+            "name": "Siege Breakers",
+            "match": {
+                "unitIds": [
+                    "mounted-siege-breaker",
+                    "siege-breaker-on-scimitar-jetbike",
+                    "siege-breaker-in-terminator-armour",
+                    "siege-breaker-in-tartaros-terminator-armour",
+                    "siege-breaker-with-jump-pack",
+                    "siege-breaker"
+                ]
+            }
+        },
+        "mortificators": {
+            "id": "mortificators",
+            "name": "Mortificators",
+            "match": {
+                "unitIds": [
+                    "mortificator-in-terminator-armour",
+                    "mortificator-in-tartaros-terminator-armour",
+                    "mortificator"
                 ]
             }
         }
