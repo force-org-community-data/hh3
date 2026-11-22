@@ -774,6 +774,26 @@
                 "if": "choice(allegiance) == traitor or list.count(trait:cult-operative) == 0",
                 "message": "Cult Operative may only be selected in an Army with the Traitor Allegiance"
             }
+        },
+        "master-sergeant-once-per-detachment": {
+            "kind": "count",
+            "id": "master-sergeant-once-per-detachment",
+            "units": {
+                "traits": ["Master Sergeant"]
+            },
+            "scope": "group",
+            "max": 1,
+            "message": "Master Sergeant may only be selected once per Detachment"
+        },
+        "logistical-benefit-once-per-detachment": {
+            "kind": "count",
+            "id": "logistical-benefit-once-per-detachment",
+            "units": {
+                "traits": ["Logistical"]
+            },
+            "scope": "group",
+            "max": 1,
+            "message": "Logistical Benefit may only be selected once per Detachment"
         }
     },
     "groups": {
@@ -1064,7 +1084,7 @@
         "master-sergeant": {
             "id": "master-sergeant",
             "name": "Master Sergeant",
-            "text": "",
+            "text": "One Model in the Unit selected to fill the Prime Slot that has the Sergeant Sub-Type gains +1 to its Attacks, Weapon Skill and Leadership Characteristics and the Champion Sub-Type (if it already has the Champion Sub-Type it instead increases its Leadership by an additional +1). This Advantage may only be selected once per Detachment.",
             "slotTag": "prime",
             "effects": [
                 {
@@ -1089,13 +1109,17 @@
                             "value": 1
                         }
                     ]
+                },
+                {
+                    "kind": "trait",
+                    "add": ["Master Sergeant"]
                 }
             ]
         },
         "combat-veterans": {
             "id": "combat-veterans",
             "name": "Combat Veterans",
-            "text": "",
+            "text": "All Models in the Unit selected to fill the Prime Slot gain a bonus of +1 to their Leadership, Cool, Intelligence and Willpower Characteristics to a maximum of 10 (this includes only Models selected as part of the Unit, not Models that later join the Unit either before or during a Battle).",
             "slotTag": "prime",
             "effects": [
                 {
@@ -1123,7 +1147,7 @@
         "paragon-of-battle": {
             "id": "paragon-of-battle",
             "name": "Paragon of Battle",
-            "text": "",
+            "text": "One Model in the Unit selected to fill the Prime Slot that has the Command Sub-Type gains a bonus of +1 to its Attacks, Weapon Skill and Ballistic Skill Characteristics.",
             "slotTag": "prime",
             "slotRoles": ["command"],
             "effects": [
@@ -1153,7 +1177,7 @@
         "special-assignment": {
             "id": "special-assignment",
             "name": "Special Assignment",
-            "text": "",
+            "text": "This Prime Advantage may only be selected for a Command Slot. A Command Slot for which this Prime Advantage is selected may be filled by a High Command Unit, but remains a Command Slot. Moreover, no additional Detachments of any kind may be selected due to this Slot regardless of their Battlefield Role or any Special Rules that the Unit selected to fill the Slot may have.",
             "slotTag": "prime",
             "slotRoles": ["command"],
             "effects": [
@@ -1173,7 +1197,7 @@
         "logistical-benefit": {
             "id": "logistical-benefit",
             "name": "Logistical Benefit",
-            "text": "",
+            "text": "Add one additional Force Organisation Slot to the Detachment that includes the Prime Slot, this Slot may be of any Battlefield Role other than High Command, Command, Warlord or Lord of War. This Advantage may only be selected once per Detachment.",
             "slotTag": "prime",
             "effects": [
                 {
@@ -1205,7 +1229,9 @@
             "name": "Clade Operative",
             "text": "Add three additional slots of the Support Battlefield Role to the Detachment that includes the Prime Slot with this Prime Advantage. These Force Organisation Slots may only be filled by Units selected from the Divisio Assassinorum Army List. This Prime Advantage may only be selected for a single Force Organisation Slot in an Army’s Primary Detachment.",
             "slotTag": "prime",
-            "units": { "traits": ["Loyalist"] },
+            "units": {
+                "traits": ["Loyalist"]
+            },
             "effects": [
                 {
                     "kind": "trait",
@@ -1237,7 +1263,9 @@
             "name": "Cult Operative",
             "text": "Add one additional Support Force Organisation Slot to the Detachment that includes the Prime Slot with this Prime Advantage. This Force Organisation Slot may only be filled by a Unit selected from the Cults Abominatio Army List. This Prime Advantage may only be selected for a single Force Organisation Slot in an Army’s Primary Detachment.",
             "slotTag": "prime",
-            "units": { "traits": ["Traitor"] },
+            "units": {
+                "traits": ["Traitor"]
+            },
             "effects": [
                 {
                     "kind": "trait",
