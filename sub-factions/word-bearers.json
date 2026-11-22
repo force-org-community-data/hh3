@@ -4347,12 +4347,9 @@
                     }
                 }
             ],
-            "requirementText": "Requires an Esoterist Unit with the Traitor Allegiance in a Command Force Organisation Slot, or Erebus (Harbinger of Chaos) in the Primary Detachment",
-            "description": "When an Esoterist Unit with the Traitor Allegiance is selected to fill a Command Force Organisation Slot, then the Player may choose to add one Daemonic Manifestation Auxiliary Detachment to the Army instead of the options available in the Crusade Force Organisation Chart. Heavy Assault Slots in this Detachment may only be used to select Ruinstorm Daemon Brute Units from the Daemons of the Ruinstorm Army List.",
-            "when": {
-                "if": "contingent.count(@traitor-esoterists) >= 1 or root.count(unit:erebus) >= 1",
-                "message": "Requires a Traitor Esoterist, or Erebus in the Primary Detachment"
-            }
+            "requirementText": "One for each Esoterist Unit with the Traitor Allegiance in a Command slot, and one more with Erebus (Harbinger of Chaos) in the Primary Detachment",
+            "max": "contingent.count(@traitor-esoterists) + (root.count(unit:erebus) >= 1 ? 1 : 0)",
+            "description": "When an Esoterist Unit with the Traitor Allegiance is selected to fill a Command Force Organisation Slot, then the Player may choose to add one Daemonic Manifestation Auxiliary Detachment to the Army instead of the options available in the Crusade Force Organisation Chart. Heavy Assault Slots in this Detachment may only be used to select Ruinstorm Daemon Brute Units from the Daemons of the Ruinstorm Army List."
         }
     },
     "slotOptions": {
