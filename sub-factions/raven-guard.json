@@ -186,7 +186,15 @@
                     "profiles": {
                         "chooser-of-the-slain": 1
                     },
-                    "min": 1
+                    "min": 1,
+                    "max": "unit.models() >= 10 ? 2 : 1",
+                    "cost": {
+                        "points": 5
+                    },
+                    "replaces": {
+                        "block": "dark-fury",
+                        "profile": "dark-fury"
+                    }
                 },
                 {
                     "id": "dark-fury",
@@ -194,8 +202,8 @@
                     "profiles": {
                         "dark-fury": 1
                     },
-                    "min": 4,
-                    "max": 9,
+                    "min": 5,
+                    "max": 10,
                     "cost": {
                         "points": 30
                     }
@@ -252,29 +260,6 @@
                 }
             ],
             "upgrades": {
-                "option-1": {
-                    "id": "option-1",
-                    "name": "Chooser of the Slain",
-                    "description": "If this Unit has 10 Models, one Dark Fury may be replaced with a Chooser of the Slain.",
-                    "perModel": {
-                        "type": "single"
-                    },
-                    "options": {
-                        "chooser-of-the-slain": {
-                            "id": "chooser-of-the-slain",
-                            "name": "Chooser of the Slain",
-                            "cost": {
-                                "points": 5
-                            },
-                            "when": {
-                                "if": "unit.models() >= 10",
-                                "message": "Only if this Unit has 10 Models"
-                            },
-                            "equipmentRefs": ["chooser-of-the-slain"]
-                        }
-                    },
-                    "multiSelect": true
-                },
                 "option-2": {
                     "id": "option-2",
                     "name": "Chooser of the Slain Melta bombs",
@@ -1637,11 +1622,6 @@
             "id": "corvid-pattern-jump-pack",
             "name": "Corvid Pattern Jump Pack",
             "text": "Any Model from the following list with the Raven Guard Trait may have one Corvid pattern jump pack selected for it for +10 Points per Model. Praetor with Jump Pack Centurion with Jump Pack Optae with Jump Pack Moritat A Model with a Corvid pattern jump pack has their Movement Characteristic set to 14 and replaces any instance of the Bulky (X) Special Rule with Bulky (3). Each time a Dangerous Terrain Test is made for a Model with a Corvid pattern jump pack, that Test is automatically passed."
-        },
-        "chooser-of-the-slain": {
-            "id": "chooser-of-the-slain",
-            "name": "Chooser of the Slain",
-            "text": "One Dark Fury in this Unit is replaced with a second Chooser of the Slain, which has a Leadership Characteristic of 9 and the Sergeant Sub-Type. Only if this Unit has 10 Models."
         }
     },
     "upgrades": {
