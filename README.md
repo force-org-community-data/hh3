@@ -27,7 +27,7 @@ You need [Node.js](https://nodejs.org) 22 or newer and git.
     npm ci
     ```
 
-2. Edit the JSON files. The [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.9.0/docs/data_authoring_guide.md) explains the file kinds, ids, costs, upgrades and expressions; [docs/editor-setup.md](docs/editor-setup.md) sets up schema hints in your editor.
+2. Edit the JSON files. The [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.11.0/docs/data_authoring_guide.md) explains the file kinds, ids, costs, upgrades and expressions; [docs/editor-setup.md](docs/editor-setup.md) sets up schema hints in your editor.
 3. Check your change until it reports `0 errors`:
 
     ```bash
@@ -62,4 +62,4 @@ Pin a tag to stay on a fixed release, or use a branch to try a pull request's ch
 - [Editor setup](docs/editor-setup.md)
 - [Using this repo with the app](docs/using-with-the-app.md)
 - [Review checklist](docs/review-checklist.md)
-- Validator: [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.9.0/docs/data_authoring_guide.md), [data schema spec](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.9.0/docs/specs/data_schema_spec_2026-10-17.md), [expression language spec](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.9.0/docs/specs/expression_language_spec_2026-10-17.md)
+- Validator: [data authoring guide](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.11.0/docs/data_authoring_guide.md), [data schema spec](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.11.0/docs/specs/data_schema_spec_2026-10-17.md), [expression language spec](https://github.com/Force-Organization-Army-Builder/fo_data_validator/blob/v2.11.0/docs/specs/expression_language_spec_2026-10-17.md)

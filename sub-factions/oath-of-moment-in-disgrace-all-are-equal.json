@@ -70,25 +70,48 @@
             },
             "effects": [
                 {
-                    "kind": "stat",
+                    "kind": "model",
                     "profiles": {
                         "anyOf": ["sergeant"]
                     },
-                    "changes": [
+                    "effects": [
                         {
-                            "stat": "a",
-                            "op": "add",
-                            "value": 1
+                            "kind": "stat",
+                            "changes": [
+                                {
+                                    "stat": "a",
+                                    "op": "add",
+                                    "value": 1
+                                },
+                                {
+                                    "stat": "ws",
+                                    "op": "add",
+                                    "value": 1
+                                },
+                                {
+                                    "stat": "ld",
+                                    "op": "add",
+                                    "value": 1
+                                }
+                            ]
                         },
                         {
-                            "stat": "ws",
-                            "op": "add",
-                            "value": 1
+                            "kind": "stat",
+                            "changes": [
+                                {
+                                    "stat": "ld",
+                                    "op": "add",
+                                    "value": 1
+                                }
+                            ],
+                            "when": {
+                                "if": "profile.is(tag:champion)",
+                                "message": "Already a Champion: +1 more Leadership"
+                            }
                         },
                         {
-                            "stat": "ld",
-                            "op": "add",
-                            "value": 1
+                            "kind": "subType",
+                            "add": ["champion"]
                         }
                     ]
                 }
