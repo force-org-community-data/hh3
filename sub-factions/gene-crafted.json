@@ -42,6 +42,28 @@
                     "rule": {
                         "id": "gene-crafted"
                     }
+                },
+                {
+                    "kind": "subType",
+                    "profiles": {
+                        "anyOf": ["infantry"]
+                    },
+                    "add": ["light"],
+                    "when": {
+                        "if": "not profile.is(tag:heavy)",
+                        "message": "Heavy models lose Heavy instead"
+                    }
+                },
+                {
+                    "kind": "subType",
+                    "profiles": {
+                        "anyOf": ["heavy"]
+                    },
+                    "remove": ["heavy"],
+                    "when": {
+                        "if": "profile.is(type:infantry)",
+                        "message": "Infantry only"
+                    }
                 }
             ]
         },
@@ -64,6 +86,17 @@
                     "rule": {
                         "id": "gene-crafted"
                     }
+                },
+                {
+                    "kind": "subType",
+                    "profiles": {
+                        "anyOf": ["sergeant"]
+                    },
+                    "add": ["light"],
+                    "when": {
+                        "if": "profile.is(type:infantry)",
+                        "message": "Infantry only"
+                    }
                 }
             ]
         },
@@ -81,6 +114,17 @@
                     },
                     "rule": {
                         "id": "gene-crafted"
+                    }
+                },
+                {
+                    "kind": "subType",
+                    "profiles": {
+                        "noneOf": ["sergeant"]
+                    },
+                    "add": ["light"],
+                    "when": {
+                        "if": "profile.is(type:infantry)",
+                        "message": "Infantry only"
                     }
                 }
             ]
