@@ -5471,6 +5471,9 @@
                         },
                         {
                             "id": "slow-and-purposeful"
+                        },
+                        {
+                            "id": "consul-delegatus"
                         }
                     ]
                 }
@@ -5605,6 +5608,9 @@
                         },
                         {
                             "id": "implacable-advance"
+                        },
+                        {
+                            "id": "consul-delegatus"
                         }
                     ]
                 }
@@ -5731,7 +5737,12 @@
                         "sav": "2+",
                         "inv": "5+"
                     },
-                    "tags": ["Command"]
+                    "tags": ["Command"],
+                    "specialRules": [
+                        {
+                            "id": "consul-delegatus"
+                        }
+                    ]
                 }
             ],
             "defaultGear": [
@@ -5940,6 +5951,9 @@
                         },
                         {
                             "id": "deep-strike"
+                        },
+                        {
+                            "id": "consul-delegatus"
                         }
                     ]
                 }
@@ -15157,6 +15171,9 @@
                         },
                         {
                             "id": "outflank"
+                        },
+                        {
+                            "id": "consul-delegatus"
                         }
                     ]
                 }
@@ -15316,6 +15333,9 @@
                         },
                         {
                             "id": "deep-strike"
+                        },
+                        {
+                            "id": "consul-delegatus"
                         }
                     ]
                 }
@@ -39646,6 +39666,14 @@
             "name": "Hatred",
             "text": "The Hatred (X) Special Rule grants bonuses against enemies of a specific Faction, Type or Trait. When Locked in Combat, or Engaged in a Challenge, with any enemy Models that have the Type or Trait that is the value of X, then all Models with this variant of the Hatred (X) Special Rule gain a bonus of +1 to all Wound Tests made in that Combat.",
             "configurable": true
+        },
+        "consul-delegatus": {
+            "id": "consul-delegatus",
+            "name": "Consul-Delegatus",
+            "text": "An Army may not include more than one Model with this Special Rule. If a Model with this Special Rule is selected to fill a Command Slot in any Detachment in the Crusade Force Organisation Chart, then the Controlling Player may select one Apex Detachment instead of the Auxiliary Detachment usually granted by filling a Command Slot. Additionally, a Model with this Special Rule counts as being a High Command Choice for the purposes of any version of the Slay the Warlord (X) Secondary Objective.",
+            "grants": {
+                "apex": "slot.is(role:command) ? 1 : 0"
+            }
         }
     },
     "groups": {
@@ -41313,6 +41341,16 @@
                 "if": "main.count(group:orbital-drop-assault) == 0 or list.count(@orbital-assault-transports) <= list.count(@orbital-drop-riders) and list.count(unit:dreadnought-drop-pod) <= list.count(@orbital-drop-walker-passengers)",
                 "message": "With the Orbital Drop Assault Primary Detachment, a Drop Pod or Dreadnought Drop Pod with no Unit Embarked on it is Destroyed: take no more of them than Units to carry (Dreadnought Drop Pods: Walkers)"
             }
+        },
+        "consul-delegatus-once-per-army": {
+            "kind": "count",
+            "id": "consul-delegatus-once-per-army",
+            "units": {
+                "specialRules": ["consul-delegatus"]
+            },
+            "scope": "list",
+            "max": 1,
+            "message": "An Army may not include more than one Model with the Consul-Delegatus Special Rule"
         }
     }
 }
