@@ -362,7 +362,11 @@
                             "cost": {
                                 "points": 20
                             },
-                            "equipmentRefs": ["phosphex-shells"]
+                            "equipmentRefs": ["phosphex-shells"],
+                            "when": {
+                                "if": "list.count(@siege-breakers) >= 1",
+                                "message": "Needs a Siege Breaker in the Army"
+                            }
                         }
                     },
                     "multiSelect": true,
@@ -23459,22 +23463,34 @@
                 },
                 "option-2": {
                     "id": "option-2",
-                    "name": "Quad launcher upgrade",
-                    "description": "If your Army includes a Siege Breaker Model with the same Faction Trait as the Models in this Unit, any Rapier Carrier with a quad launcher in this Unit may...",
+                    "name": "Phosphex canister shot",
+                    "description": "If your Army includes a Siege Breaker Model with the same Faction Trait as the Models in this Unit, any Rapier Carrier with a quad launcher in this Unit may also have phosphex canister shot.",
                     "perModel": {
                         "type": "single"
                     },
                     "options": {
-                        "take": {
-                            "id": "take",
-                            "name": "Quad launcher upgrade",
+                        "phosphex-canister-shot": {
+                            "id": "phosphex-canister-shot",
+                            "name": "phosphex canister shot",
                             "cost": {
                                 "points": 15
+                            },
+                            "equipmentRefs": ["phosphex-canister-shot"],
+                            "when": {
+                                "if": "list.count(@siege-breakers) >= 1",
+                                "message": "Needs a Siege Breaker in the Army"
                             }
                         }
                     },
                     "multiSelect": true,
-                    "profileId": "rapier-carrier"
+                    "profileId": "rapier-carrier",
+                    "limitBy": [
+                        {
+                            "kind": "weapon",
+                            "id": "quad-launcher",
+                            "count": 1
+                        }
+                    ]
                 }
             },
             "traits": ["Legiones Astartes"]
@@ -36040,6 +36056,39 @@
                             "id": "armourbane"
                         }
                     ]
+                },
+                {
+                    "name": "Phosphex canister shot*",
+                    "stats": {
+                        "r": "24",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Phosphex"],
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "barrage",
+                            "value": "1"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "3+"
+                        },
+                        {
+                            "id": "panic",
+                            "value": "3"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        }
+                    ]
                 }
             ]
         },
@@ -38392,6 +38441,11 @@
                     }
                 ]
             }
+        },
+        "phosphex-canister-shot": {
+            "id": "phosphex-canister-shot",
+            "name": "phosphex canister shot",
+            "text": "Phosphex canister shot lets this Model’s quad launcher use its Phosphex canister shot* profile, which it may only use if this Model has phosphex canister shot."
         }
     },
     "upgrades": {
@@ -41033,7 +41087,8 @@
                     "kind": "subType",
                     "add": ["malefic"]
                 }
-            ]
+            ],
+            "category": "true-believers"
         },
         "interdiction-cadres": {
             "id": "interdiction-cadres",
