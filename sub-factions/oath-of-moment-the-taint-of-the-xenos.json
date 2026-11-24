@@ -14,14 +14,98 @@
         "message": "Blackshields Detachments only"
     },
     "units": {},
-    "weapons": {},
+    "weapons": {
+        "deathlock": {
+            "id": "deathlock",
+            "name": "Deathlock",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Deathlock",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Xenos"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "doomlock": {
+            "id": "doomlock",
+            "name": "Doomlock",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Doomlock",
+                    "stats": {
+                        "r": "9",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Xenos", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "halo-blade": {
+            "id": "halo-blade",
+            "name": "Halo blade",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Halo blade",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "+2",
+                        "ap": "2",
+                        "d": "1"
+                    },
+                    "traits": ["Xenos"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "5+"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "equipment": {},
     "upgrades": {},
     "specialRules": {
         "oath-of-moment-the-taint-of-the-xenos": {
             "id": "oath-of-moment-the-taint-of-the-xenos",
             "name": "Oath of Moment: The Taint of the Xenos",
-            "text": "There exist many terrifyingly powerful xenos technology weapons encountered during the Great Crusade, which, though incredibly effective, have been declared prohibited by the Mechanicum and Emperor alike for their detrimental effects on the body and mind of a human wielder. The desperation of certain Blackshields forces, however, has overcome such concerns. Any Unit that includes Models with this Special Rule may select additional options as part of certain weapons lists. When selecting Weapons for Models with the Blackshields Trait in a Detachment with this Oath of Moment, the following Weapons are considered part of the Legion Special Weapons list, with a Deathlock costing +15 Points and a Doomlock +10 Points: Deathlock (18\" FP2 RS6 AP2 D1, Shred (6+), Overload (2), Xenos); Doomlock (9\" FP2 RS6 AP2 D1, Pistol, Shred (6+), Overload (2), Xenos, Assault); Halo blade (I A +2 AP2 D1, Shred (5+), Xenos)."
+            "text": "There exist many terrifyingly powerful xenos technology weapons encountered during the Great Crusade, which, though incredibly effective, have been declared prohibited by the Mechanicum and Emperor alike for their detrimental effects on the body and mind of a human wielder. The desperation of certain Blackshields forces, however, has overcome such concerns. Any Unit that includes Models with this Special Rule may select additional options as part of certain weapons lists. When selecting Weapons for Models with the Blackshields Trait in a Detachment with this Oath of Moment, the Deathlock (+15 Points) and Doomlock (+10 Points) are considered part of the Legion Special Weapons list, and the Halo blade (+15 Points) part of the Legion Officer Wargear list."
         }
     },
     "groups": {},
@@ -38,6 +122,36 @@
                     }
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-special-weapons": {
+            "deathlock": {
+                "id": "deathlock",
+                "name": "Deathlock",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["deathlock"]
+            },
+            "doomlock": {
+                "id": "doomlock",
+                "name": "Doomlock",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["doomlock"]
+            }
+        },
+        "legion-officer-wargear": {
+            "halo-blade": {
+                "id": "halo-blade",
+                "name": "Halo blade",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["halo-blade"]
+            }
         }
     }
 }

@@ -187,6 +187,59 @@
                     ]
                 }
             ]
+        },
+        "iliastus-assault-cannon": {
+            "id": "iliastus-assault-cannon",
+            "name": "Iliastus Assault Cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Sustained fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Maximal fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "5",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {
@@ -197,8 +250,8 @@
         }
     },
     "upgrades": {
-        "imperial-fists-decurion-sagittar-sicaran": {
-            "id": "imperial-fists-decurion-sagittar-sicaran",
+        "shattered-imperial-fists-decurion-sagittar-sicaran": {
+            "id": "shattered-imperial-fists-decurion-sagittar-sicaran",
             "name": "Decurion Sagittar",
             "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Imperial Fists Trait that has no Pintle Mounted Weapons. A Model with this upgrade gains a Pintle Mounted Iliastus assault cannon and an augury scanner; that Iliastus assault cannon gains the Skyfire and Precision (6+) Special Rules. No Unit may have more than one Legiones Decurion upgrade.",
             "perModel": {
@@ -218,8 +271,16 @@
                         {
                             "kind": "trait",
                             "add": ["Legiones Decurion"]
+                        },
+                        {
+                            "kind": "trait",
+                            "add": ["Imperial Fists Armoury"]
                         }
-                    ]
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "replaces": ["option-3"],
@@ -248,8 +309,8 @@
             },
             "gearNote": "Pintle Mounted"
         },
-        "imperial-fists-decurion-sagittar-kratos-assault-tank": {
-            "id": "imperial-fists-decurion-sagittar-kratos-assault-tank",
+        "shattered-imperial-fists-decurion-sagittar-kratos-assault-tank": {
+            "id": "shattered-imperial-fists-decurion-sagittar-kratos-assault-tank",
             "name": "Decurion Sagittar",
             "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Imperial Fists Trait that has no Pintle Mounted Weapons. A Model with this upgrade gains a Pintle Mounted Iliastus assault cannon and an augury scanner; that Iliastus assault cannon gains the Skyfire and Precision (6+) Special Rules. No Unit may have more than one Legiones Decurion upgrade.",
             "perModel": {
@@ -269,8 +330,16 @@
                         {
                             "kind": "trait",
                             "add": ["Legiones Decurion"]
+                        },
+                        {
+                            "kind": "trait",
+                            "add": ["Imperial Fists Armoury"]
                         }
-                    ]
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "replaces": ["option-5"],
@@ -290,8 +359,8 @@
             },
             "gearNote": "Pintle Mounted"
         },
-        "imperial-fists-decurion-sagittar-predator": {
-            "id": "imperial-fists-decurion-sagittar-predator",
+        "shattered-imperial-fists-decurion-sagittar-predator": {
+            "id": "shattered-imperial-fists-decurion-sagittar-predator",
             "name": "Decurion Sagittar",
             "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Imperial Fists Trait that has no Pintle Mounted Weapons. A Model with this upgrade gains a Pintle Mounted Iliastus assault cannon and an augury scanner; that Iliastus assault cannon gains the Skyfire and Precision (6+) Special Rules. No Unit may have more than one Legiones Decurion upgrade.",
             "perModel": {
@@ -311,8 +380,16 @@
                         {
                             "kind": "trait",
                             "add": ["Legiones Decurion"]
+                        },
+                        {
+                            "kind": "trait",
+                            "add": ["Imperial Fists Armoury"]
                         }
-                    ]
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "replaces": ["option-3"],
@@ -332,8 +409,8 @@
             },
             "gearNote": "Pintle Mounted"
         },
-        "imperial-fists-vigil-pattern-storm-shield-cataphractii": {
-            "id": "imperial-fists-vigil-pattern-storm-shield-cataphractii",
+        "shattered-imperial-fists-vigil-pattern-storm-shield-cataphractii": {
+            "id": "shattered-imperial-fists-vigil-pattern-storm-shield-cataphractii",
             "name": "Vigil Pattern Storm Shield",
             "description": "Any Model with the Imperial Fists Trait in a Cataphractii Terminator Command Squad or Cataphractii Terminator Squad may have its combi-bolter exchanged for one Vigil pattern storm shield.",
             "perModel": {
@@ -364,13 +441,23 @@
                                 "id": "vigil-pattern-storm-shield"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Imperial Fists Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "default": "none"
         },
-        "imperial-fists-vigil-pattern-storm-shield-tartaros": {
-            "id": "imperial-fists-vigil-pattern-storm-shield-tartaros",
+        "shattered-imperial-fists-vigil-pattern-storm-shield-tartaros": {
+            "id": "shattered-imperial-fists-vigil-pattern-storm-shield-tartaros",
             "name": "Vigil Pattern Storm Shield",
             "description": "Any Model with the Imperial Fists Trait in a Tartaros Terminator Command Squad or Tartaros Terminator Squad may have its combi-bolter exchanged for one Vigil pattern storm shield.",
             "perModel": {
@@ -401,13 +488,23 @@
                                 "id": "vigil-pattern-storm-shield"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Imperial Fists Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "default": "none"
         },
-        "imperial-fists-vigil-pattern-storm-shield-combat-shield": {
-            "id": "imperial-fists-vigil-pattern-storm-shield-combat-shield",
+        "shattered-imperial-fists-vigil-pattern-storm-shield-combat-shield": {
+            "id": "shattered-imperial-fists-vigil-pattern-storm-shield-combat-shield",
             "name": "Vigil Pattern Storm Shield",
             "description": "Any Model with the Command Sub-Type and the Imperial Fists Trait may have its boarding shield or a combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model or its combat shield exchanged for one Vigil pattern storm shield for +10 Points per Model.",
             "perModel": {
@@ -431,7 +528,17 @@
                                 "id": "vigil-pattern-storm-shield"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Imperial Fists Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -442,8 +549,8 @@
                 }
             ]
         },
-        "imperial-fists-vigil-pattern-storm-shield-combi-bolter": {
-            "id": "imperial-fists-vigil-pattern-storm-shield-combi-bolter",
+        "shattered-imperial-fists-vigil-pattern-storm-shield-combi-bolter": {
+            "id": "shattered-imperial-fists-vigil-pattern-storm-shield-combi-bolter",
             "name": "Vigil Pattern Storm Shield",
             "description": "Any Model with the Command Sub-Type and the Imperial Fists Trait may have its boarding shield or a combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model or its combat shield exchanged for one Vigil pattern storm shield for +10 Points per Model.",
             "perModel": {
@@ -467,7 +574,17 @@
                                 "id": "vigil-pattern-storm-shield"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Imperial Fists Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -478,8 +595,8 @@
                 }
             ]
         },
-        "imperial-fists-vigil-pattern-storm-shield": {
-            "id": "imperial-fists-vigil-pattern-storm-shield",
+        "shattered-imperial-fists-vigil-pattern-storm-shield": {
+            "id": "shattered-imperial-fists-vigil-pattern-storm-shield",
             "name": "Vigil Pattern Storm Shield",
             "description": "Any Model with the Command Sub-Type and the Imperial Fists Trait may have its boarding shield or a combi-bolter exchanged for one Vigil pattern storm shield for +5 Points per Model or its combat shield exchanged for one Vigil pattern storm shield for +10 Points per Model.",
             "perModel": {
@@ -503,7 +620,17 @@
                                 "id": "vigil-pattern-storm-shield"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Imperial Fists Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -514,8 +641,8 @@
                 }
             ]
         },
-        "imperial-fists-solarite-power-gauntlet": {
-            "id": "imperial-fists-solarite-power-gauntlet",
+        "shattered-imperial-fists-solarite-power-gauntlet": {
+            "id": "shattered-imperial-fists-solarite-power-gauntlet",
             "name": "Solarite Power Gauntlet",
             "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Imperial Fists Trait may have its power fist exchanged for one Solarite power gauntlet.",
             "perModel": {
@@ -539,7 +666,17 @@
                                 "id": "solarite-power-gauntlet"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Imperial Fists Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -584,8 +721,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-imperial-fists)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Imperial Fists (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -675,7 +812,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "imperial-fists-solarite-power-gauntlet"
+                    "upgradeId": "shattered-imperial-fists-solarite-power-gauntlet"
                 }
             ]
         },
@@ -697,7 +834,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield"
+                    "upgradeId": "shattered-imperial-fists-vigil-pattern-storm-shield"
                 }
             ]
         },
@@ -719,7 +856,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-combi-bolter"
+                    "upgradeId": "shattered-imperial-fists-vigil-pattern-storm-shield-combi-bolter"
                 }
             ]
         },
@@ -741,7 +878,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-combat-shield"
+                    "upgradeId": "shattered-imperial-fists-vigil-pattern-storm-shield-combat-shield"
                 }
             ]
         },
@@ -758,7 +895,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-tartaros"
+                    "upgradeId": "shattered-imperial-fists-vigil-pattern-storm-shield-tartaros"
                 }
             ]
         },
@@ -775,7 +912,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "imperial-fists-vigil-pattern-storm-shield-cataphractii"
+                    "upgradeId": "shattered-imperial-fists-vigil-pattern-storm-shield-cataphractii"
                 }
             ]
         },
@@ -789,7 +926,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "imperial-fists-decurion-sagittar-predator"
+                    "upgradeId": "shattered-imperial-fists-decurion-sagittar-predator"
                 }
             ]
         },
@@ -803,7 +940,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "imperial-fists-decurion-sagittar-kratos-assault-tank"
+                    "upgradeId": "shattered-imperial-fists-decurion-sagittar-kratos-assault-tank"
                 }
             ]
         },
@@ -817,9 +954,74 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "imperial-fists-decurion-sagittar-sicaran"
+                    "upgradeId": "shattered-imperial-fists-decurion-sagittar-sicaran"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-heavy-weapons": {
+            "shattered-imperial-fists-iliastus-assault-cannon": {
+                "id": "shattered-imperial-fists-iliastus-assault-cannon",
+                "name": "Iliastus assault cannon",
+                "cost": {
+                    "points": 20
+                },
+                "weaponRefs": ["iliastus-assault-cannon"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Imperial Fists Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-pintle-weapons": {
+            "shattered-imperial-fists-pintle-mounted-iliastus-assault-cannon": {
+                "id": "shattered-imperial-fists-pintle-mounted-iliastus-assault-cannon",
+                "name": "Iliastus assault cannon",
+                "cost": {
+                    "points": 20
+                },
+                "weaponRefs": ["iliastus-assault-cannon"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Imperial Fists Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-sponson-weapons": {
+            "shattered-imperial-fists-two-sponson-mounted-iliastus-assault-cannon": {
+                "id": "shattered-imperial-fists-two-sponson-mounted-iliastus-assault-cannon",
+                "name": "Two Iliastus assault cannons",
+                "cost": {
+                    "points": 30
+                },
+                "weaponRefs": [
+                    "iliastus-assault-cannon",
+                    "iliastus-assault-cannon"
+                ],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Imperial Fists Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-imperial-fists)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
         }
     }
 }

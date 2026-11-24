@@ -42,12 +42,144 @@
                     ]
                 }
             ]
+        },
+        "alchem-combi-flamer": {
+            "id": "alchem-combi-flamer",
+            "name": "Alchem combi-flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Bolter (Primary)",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                },
+                {
+                    "name": "Alchem flamer (Secondary)",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        },
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                }
+            ]
+        },
+        "alchem-caster": {
+            "id": "alchem-caster",
+            "name": "Alchem Caster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Alchem caster",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "heavy-alchem-flamer": {
+            "id": "heavy-alchem-flamer",
+            "name": "Heavy Alchem Flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Heavy Alchem Flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "alchem-flamer": {
+            "id": "alchem-flamer",
+            "name": "Alchem flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Alchem flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {},
     "upgrades": {
-        "death-guard-power-scythe-power-fist": {
-            "id": "death-guard-power-scythe-power-fist",
+        "shattered-death-guard-power-scythe-power-fist": {
+            "id": "shattered-death-guard-power-scythe-power-fist",
             "name": "Power Scythe",
             "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one power scythe for +10 Points per Model or its power fist exchanged for one power scythe for +5 Points.",
             "perModel": {
@@ -71,7 +203,17 @@
                                 "id": "power-scythe"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Death Guard Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -82,8 +224,8 @@
                 }
             ]
         },
-        "death-guard-power-scythe-power-lance": {
-            "id": "death-guard-power-scythe-power-lance",
+        "shattered-death-guard-power-scythe-power-lance": {
+            "id": "shattered-death-guard-power-scythe-power-lance",
             "name": "Power Scythe",
             "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one power scythe for +10 Points per Model or its power fist exchanged for one power scythe for +5 Points.",
             "perModel": {
@@ -107,7 +249,17 @@
                                 "id": "power-scythe"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Death Guard Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -118,8 +270,8 @@
                 }
             ]
         },
-        "death-guard-power-scythe-power-maul": {
-            "id": "death-guard-power-scythe-power-maul",
+        "shattered-death-guard-power-scythe-power-maul": {
+            "id": "shattered-death-guard-power-scythe-power-maul",
             "name": "Power Scythe",
             "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one power scythe for +10 Points per Model or its power fist exchanged for one power scythe for +5 Points.",
             "perModel": {
@@ -143,7 +295,17 @@
                                 "id": "power-scythe"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Death Guard Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -154,8 +316,8 @@
                 }
             ]
         },
-        "death-guard-power-scythe-power-axe": {
-            "id": "death-guard-power-scythe-power-axe",
+        "shattered-death-guard-power-scythe-power-axe": {
+            "id": "shattered-death-guard-power-scythe-power-axe",
             "name": "Power Scythe",
             "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one power scythe for +10 Points per Model or its power fist exchanged for one power scythe for +5 Points.",
             "perModel": {
@@ -179,7 +341,17 @@
                                 "id": "power-scythe"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Death Guard Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -190,8 +362,8 @@
                 }
             ]
         },
-        "death-guard-power-scythe": {
-            "id": "death-guard-power-scythe",
+        "shattered-death-guard-power-scythe": {
+            "id": "shattered-death-guard-power-scythe",
             "name": "Power Scythe",
             "description": "Any Model with the Command, Champion, Specialist or Sergeant Sub-Type may have its power weapon exchanged for one power scythe for +10 Points per Model or its power fist exchanged for one power scythe for +5 Points.",
             "perModel": {
@@ -215,7 +387,17 @@
                                 "id": "power-scythe"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Death Guard Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -250,8 +432,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-death-guard)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Death Guard (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -341,7 +523,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "death-guard-power-scythe"
+                    "upgradeId": "shattered-death-guard-power-scythe"
                 }
             ]
         },
@@ -363,7 +545,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "death-guard-power-scythe-power-axe"
+                    "upgradeId": "shattered-death-guard-power-scythe-power-axe"
                 }
             ]
         },
@@ -385,7 +567,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "death-guard-power-scythe-power-maul"
+                    "upgradeId": "shattered-death-guard-power-scythe-power-maul"
                 }
             ]
         },
@@ -407,7 +589,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "death-guard-power-scythe-power-lance"
+                    "upgradeId": "shattered-death-guard-power-scythe-power-lance"
                 }
             ]
         },
@@ -429,9 +611,151 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "death-guard-power-scythe-power-fist"
+                    "upgradeId": "shattered-death-guard-power-scythe-power-fist"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-combi-weapons": {
+            "shattered-death-guard-alchem-combi-flamer": {
+                "id": "shattered-death-guard-alchem-combi-flamer",
+                "name": "Alchem combi-flamer",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["alchem-combi-flamer"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Death Guard Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-pistols": {
+            "shattered-death-guard-alchem-caster": {
+                "id": "shattered-death-guard-alchem-caster",
+                "name": "Alchem caster",
+                "cost": {
+                    "points": 5
+                },
+                "weaponRefs": ["alchem-caster"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Death Guard Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-heavy-weapons": {
+            "shattered-death-guard-heavy-alchem-flamer": {
+                "id": "shattered-death-guard-heavy-alchem-flamer",
+                "name": "Heavy alchem flamer",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["heavy-alchem-flamer"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Death Guard Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-pintle-weapons": {
+            "shattered-death-guard-pintle-mounted-heavy-alchem-flamer": {
+                "id": "shattered-death-guard-pintle-mounted-heavy-alchem-flamer",
+                "name": "Heavy alchem flamer",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["heavy-alchem-flamer"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Death Guard Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-sponson-weapons": {
+            "shattered-death-guard-two-sponson-mounted-heavy-alchem-flamers": {
+                "id": "shattered-death-guard-two-sponson-mounted-heavy-alchem-flamers",
+                "name": "Two heavy alchem flamers",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["heavy-alchem-flamer", "heavy-alchem-flamer"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Death Guard Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-special-weapons": {
+            "shattered-death-guard-alchem-flamer": {
+                "id": "shattered-death-guard-alchem-flamer",
+                "name": "Alchem flamer",
+                "cost": {
+                    "points": 5
+                },
+                "weaponRefs": ["alchem-flamer"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Death Guard Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-officer-wargear": {
+            "shattered-death-guard-alchem-caster": {
+                "id": "shattered-death-guard-alchem-caster",
+                "name": "Alchem caster",
+                "cost": {
+                    "points": 5
+                },
+                "weaponRefs": ["alchem-caster"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Death Guard Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-death-guard)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
         }
     }
 }

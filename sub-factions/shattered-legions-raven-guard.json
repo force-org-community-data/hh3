@@ -88,8 +88,8 @@
         }
     },
     "upgrades": {
-        "raven-guard-corvid-pattern-jump-pack": {
-            "id": "raven-guard-corvid-pattern-jump-pack",
+        "shattered-raven-guard-corvid-pattern-jump-pack": {
+            "id": "shattered-raven-guard-corvid-pattern-jump-pack",
             "name": "Corvid Pattern Jump Pack",
             "description": "Any Praetor with Jump Pack, Centurion with Jump Pack, Optae with Jump Pack or Moritat with the Raven Guard Trait may have one Corvid pattern jump pack selected for it (Movement 14).",
             "perModel": {
@@ -113,13 +113,21 @@
                                     "value": "14"
                                 }
                             ]
+                        },
+                        {
+                            "kind": "trait",
+                            "add": ["Raven Guard Armoury"]
                         }
-                    ]
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-raven-guard)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             }
         },
-        "raven-guard-ravens-talons-pair-of-lightning-claws": {
-            "id": "raven-guard-ravens-talons-pair-of-lightning-claws",
+        "shattered-raven-guard-ravens-talons-pair-of-lightning-claws": {
+            "id": "shattered-raven-guard-ravens-talons-pair-of-lightning-claws",
             "name": "Pair of Raven’s Talons",
             "description": "Any Model with the Command Sub-Type and the Raven Guard Trait may have its lightning claw exchanged for one Raven’s Talon, or its pair of lightning claws exchanged for one pair of Raven’s Talons.",
             "perModel": {
@@ -143,7 +151,17 @@
                                 "id": "pair-of-ravens-talons"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Raven Guard Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-raven-guard)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -154,8 +172,8 @@
                 }
             ]
         },
-        "raven-guard-ravens-talons": {
-            "id": "raven-guard-ravens-talons",
+        "shattered-raven-guard-ravens-talons": {
+            "id": "shattered-raven-guard-ravens-talons",
             "name": "Raven’s Talon",
             "description": "Any Model with the Command Sub-Type and the Raven Guard Trait may have its lightning claw exchanged for one Raven’s Talon, or its pair of lightning claws exchanged for one pair of Raven’s Talons.",
             "perModel": {
@@ -179,7 +197,17 @@
                                 "id": "ravens-talon"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Raven Guard Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-raven-guard)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -214,8 +242,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-raven-guard)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Raven Guard (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -298,7 +326,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "raven-guard-ravens-talons"
+                    "upgradeId": "shattered-raven-guard-ravens-talons"
                 }
             ]
         },
@@ -313,7 +341,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "raven-guard-ravens-talons-pair-of-lightning-claws"
+                    "upgradeId": "shattered-raven-guard-ravens-talons-pair-of-lightning-claws"
                 }
             ]
         },
@@ -332,7 +360,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "raven-guard-corvid-pattern-jump-pack"
+                    "upgradeId": "shattered-raven-guard-corvid-pattern-jump-pack"
                 }
             ]
         }

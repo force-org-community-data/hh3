@@ -92,12 +92,67 @@
                     ]
                 }
             ]
+        },
+        "graviton-mace": {
+            "id": "graviton-mace",
+            "name": "Graviton mace",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Graviton mace",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        }
+                    ]
+                }
+            ]
+        },
+        "shrapnel-cannon": {
+            "id": "shrapnel-cannon",
+            "name": "Shrapnel cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Shrapnel cannon",
+                    "stats": {
+                        "r": "36",
+                        "fp": "3",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {},
     "upgrades": {
-        "iron-warriors-shrapnel-bolters": {
-            "id": "iron-warriors-shrapnel-bolters",
+        "shattered-iron-warriors-shrapnel-bolters": {
+            "id": "shattered-iron-warriors-shrapnel-bolters",
             "name": "Shrapnel Bolters",
             "description": "In any Unit entirely composed of Models with the Iron Warriors Trait, every Model in that Unit may have its bolter exchanged for one shrapnel bolter.",
             "perModel": {
@@ -121,12 +176,22 @@
                                 "id": "shrapnel-bolter"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Iron Warriors Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-iron-warriors)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             }
         },
-        "iron-warriors-shrapnel-weapons": {
-            "id": "iron-warriors-shrapnel-weapons",
+        "shattered-iron-warriors-shrapnel-weapons": {
+            "id": "shattered-iron-warriors-shrapnel-weapons",
             "name": "Shrapnel Pistols",
             "description": "In any Unit entirely composed of Models with the Iron Warriors Trait, every Model in that Unit may have its bolt pistol exchanged for one shrapnel pistol.",
             "perModel": {
@@ -150,12 +215,22 @@
                                 "id": "shrapnel-pistol"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Iron Warriors Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-iron-warriors)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             }
         },
-        "iron-warriors-graviton-crushers": {
-            "id": "iron-warriors-graviton-crushers",
+        "shattered-iron-warriors-graviton-crushers": {
+            "id": "shattered-iron-warriors-graviton-crushers",
             "name": "Graviton Crushers",
             "description": "Any Model with the Iron Warriors Trait and the Command or Champion Sub-Type may have a thunder hammer exchanged for a graviton crusher.",
             "perModel": {
@@ -179,7 +254,17 @@
                                 "id": "graviton-crusher"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Iron Warriors Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-iron-warriors)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -214,8 +299,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-iron-warriors)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Iron Warriors (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -305,7 +390,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "iron-warriors-graviton-crushers"
+                    "upgradeId": "shattered-iron-warriors-graviton-crushers"
                 }
             ]
         },
@@ -325,7 +410,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "iron-warriors-shrapnel-weapons"
+                    "upgradeId": "shattered-iron-warriors-shrapnel-weapons"
                 }
             ]
         },
@@ -345,9 +430,111 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "iron-warriors-shrapnel-bolters"
+                    "upgradeId": "shattered-iron-warriors-shrapnel-bolters"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-sergeant-melee-weapons": {
+            "shattered-iron-warriors-graviton-mace": {
+                "id": "shattered-iron-warriors-graviton-mace",
+                "name": "Graviton mace",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["graviton-mace"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Iron Warriors Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-iron-warriors)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-heavy-weapons": {
+            "shattered-iron-warriors-shrapnel-cannon": {
+                "id": "shattered-iron-warriors-shrapnel-cannon",
+                "name": "Shrapnel cannon",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["shrapnel-cannon"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Iron Warriors Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-iron-warriors)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-pintle-weapons": {
+            "shattered-iron-warriors-pintle-mounted-shrapnel-cannon": {
+                "id": "shattered-iron-warriors-pintle-mounted-shrapnel-cannon",
+                "name": "Shrapnel cannon",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["shrapnel-cannon"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Iron Warriors Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-iron-warriors)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-sponson-weapons": {
+            "shattered-iron-warriors-two-sponson-mounted-shrapnel-cannon": {
+                "id": "shattered-iron-warriors-two-sponson-mounted-shrapnel-cannon",
+                "name": "Two shrapnel cannons",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["shrapnel-cannon", "shrapnel-cannon"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Iron Warriors Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-iron-warriors)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-officer-wargear": {
+            "shattered-iron-warriors-graviton-mace": {
+                "id": "shattered-iron-warriors-graviton-mace",
+                "name": "Graviton mace",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["graviton-mace"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Iron Warriors Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-iron-warriors)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
         }
     }
 }

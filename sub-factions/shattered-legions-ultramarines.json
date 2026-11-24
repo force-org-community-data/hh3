@@ -48,8 +48,8 @@
         }
     },
     "upgrades": {
-        "ultramarines-argyrum-pattern-boarding-shield": {
-            "id": "ultramarines-argyrum-pattern-boarding-shield",
+        "shattered-ultramarines-argyrum-pattern-boarding-shield": {
+            "id": "shattered-ultramarines-argyrum-pattern-boarding-shield",
             "name": "Argyrum Pattern Boarding Shield",
             "description": "Any Model with the Command or Champion Sub-Type and the Ultramarines Trait may have one Argyrum pattern boarding shield selected for it.",
             "perModel": {
@@ -62,12 +62,22 @@
                     "cost": {
                         "points": 15
                     },
-                    "equipmentRefs": ["argyrum-pattern-boarding-shield"]
+                    "equipmentRefs": ["argyrum-pattern-boarding-shield"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Ultramarines Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-ultramarines)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             }
         },
-        "ultramarines-legatine-axe": {
-            "id": "ultramarines-legatine-axe",
+        "shattered-ultramarines-legatine-axe": {
+            "id": "shattered-ultramarines-legatine-axe",
             "name": "Legatine Axe",
             "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Ultramarines Trait may have its power axe exchanged for one Legatine axe.",
             "perModel": {
@@ -91,7 +101,17 @@
                                 "id": "legatine-axe"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Ultramarines Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-ultramarines)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -126,8 +146,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-ultramarines)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Ultramarines (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -217,7 +237,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "ultramarines-legatine-axe"
+                    "upgradeId": "shattered-ultramarines-legatine-axe"
                 }
             ]
         },
@@ -239,7 +259,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "ultramarines-argyrum-pattern-boarding-shield"
+                    "upgradeId": "shattered-ultramarines-argyrum-pattern-boarding-shield"
                 }
             ]
         }

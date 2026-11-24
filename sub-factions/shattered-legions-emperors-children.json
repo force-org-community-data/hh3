@@ -181,6 +181,34 @@
                     ]
                 }
             ]
+        },
+        "phoenix-rapier": {
+            "id": "phoenix-rapier",
+            "name": "Phoenix rapier",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Phoenix rapier",
+                    "stats": {
+                        "im": "I",
+                        "am": "A",
+                        "sm": "S",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "impact",
+                            "value": "D"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {
@@ -191,8 +219,8 @@
         }
     },
     "upgrades": {
-        "emperors-children-phoenix-power-spears-power-lance": {
-            "id": "emperors-children-phoenix-power-spears-power-lance",
+        "shattered-emperors-children-phoenix-power-spears-power-lance": {
+            "id": "shattered-emperors-children-phoenix-power-spears-power-lance",
             "name": "Phoenix Power Spear",
             "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
             "perModel": {
@@ -216,7 +244,17 @@
                                 "id": "phoenix-power-spear"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Emperor’s Children Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-emperors-children)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -227,8 +265,8 @@
                 }
             ]
         },
-        "emperors-children-phoenix-power-spears-power-maul": {
-            "id": "emperors-children-phoenix-power-spears-power-maul",
+        "shattered-emperors-children-phoenix-power-spears-power-maul": {
+            "id": "shattered-emperors-children-phoenix-power-spears-power-maul",
             "name": "Phoenix Power Spear",
             "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
             "perModel": {
@@ -252,7 +290,17 @@
                                 "id": "phoenix-power-spear"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Emperor’s Children Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-emperors-children)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -263,8 +311,8 @@
                 }
             ]
         },
-        "emperors-children-phoenix-power-spears-power-axe": {
-            "id": "emperors-children-phoenix-power-spears-power-axe",
+        "shattered-emperors-children-phoenix-power-spears-power-axe": {
+            "id": "shattered-emperors-children-phoenix-power-spears-power-axe",
             "name": "Phoenix Power Spear",
             "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
             "perModel": {
@@ -288,7 +336,17 @@
                                 "id": "phoenix-power-spear"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Emperor’s Children Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-emperors-children)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -299,8 +357,8 @@
                 }
             ]
         },
-        "emperors-children-phoenix-power-spears": {
-            "id": "emperors-children-phoenix-power-spears",
+        "shattered-emperors-children-phoenix-power-spears": {
+            "id": "shattered-emperors-children-phoenix-power-spears",
             "name": "Phoenix Power Spear",
             "description": "Any Model with the Emperor's Children Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a Phoenix power spear.",
             "perModel": {
@@ -324,7 +382,17 @@
                                 "id": "phoenix-power-spear"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Emperor’s Children Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-emperors-children)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -335,8 +403,8 @@
                 }
             ]
         },
-        "emperors-children-surgical-augments": {
-            "id": "emperors-children-surgical-augments",
+        "shattered-emperors-children-surgical-augments": {
+            "id": "shattered-emperors-children-surgical-augments",
             "name": "Surgical Augments",
             "description": "Any Model with the Command or Champion Sub-Type and the Emperor's Children and Traitor Traits may have one of the following selected for it: sonic shriekers, sonic lance.",
             "perModel": {
@@ -351,9 +419,15 @@
                     },
                     "equipmentRefs": ["sonic-shriekers"],
                     "when": {
-                        "if": "choice(allegiance) == traitor",
-                        "message": "Traitor units only"
-                    }
+                        "if": "(choice(allegiance) == traitor) and not unit.is(@shattered-other-armouries-emperors-children)",
+                        "message": "Traitor units only; Each Model may only use one Legion Armoury: this Unit already uses another"
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Emperor’s Children Armoury"]
+                        }
+                    ]
                 },
                 "sonic-lance": {
                     "id": "sonic-lance",
@@ -363,9 +437,15 @@
                     },
                     "weaponRefs": ["sonic-lance"],
                     "when": {
-                        "if": "choice(allegiance) == traitor",
-                        "message": "Traitor units only"
-                    }
+                        "if": "(choice(allegiance) == traitor) and not unit.is(@shattered-other-armouries-emperors-children)",
+                        "message": "Traitor units only; Each Model may only use one Legion Armoury: this Unit already uses another"
+                    },
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Emperor’s Children Armoury"]
+                        }
+                    ]
                 }
             }
         }
@@ -398,8 +478,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-emperors-children)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Emperor’s Children (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -492,7 +572,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "emperors-children-surgical-augments"
+                    "upgradeId": "shattered-emperors-children-surgical-augments"
                 }
             ]
         },
@@ -514,7 +594,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "emperors-children-phoenix-power-spears"
+                    "upgradeId": "shattered-emperors-children-phoenix-power-spears"
                 }
             ]
         },
@@ -536,7 +616,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "emperors-children-phoenix-power-spears-power-axe"
+                    "upgradeId": "shattered-emperors-children-phoenix-power-spears-power-axe"
                 }
             ]
         },
@@ -558,7 +638,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "emperors-children-phoenix-power-spears-power-maul"
+                    "upgradeId": "shattered-emperors-children-phoenix-power-spears-power-maul"
                 }
             ]
         },
@@ -580,9 +660,51 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "emperors-children-phoenix-power-spears-power-lance"
+                    "upgradeId": "shattered-emperors-children-phoenix-power-spears-power-lance"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-sergeant-melee-weapons": {
+            "shattered-emperors-children-phoenix-rapier": {
+                "id": "shattered-emperors-children-phoenix-rapier",
+                "name": "Phoenix rapier",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["phoenix-rapier"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Emperor’s Children Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-emperors-children)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-officer-wargear": {
+            "shattered-emperors-children-phoenix-rapier": {
+                "id": "shattered-emperors-children-phoenix-rapier",
+                "name": "Phoenix rapier",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["phoenix-rapier"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Emperor’s Children Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-emperors-children)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
         }
     }
 }

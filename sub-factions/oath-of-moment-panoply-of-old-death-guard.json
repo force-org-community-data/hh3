@@ -42,6 +42,138 @@
                     ]
                 }
             ]
+        },
+        "alchem-combi-flamer": {
+            "id": "alchem-combi-flamer",
+            "name": "Alchem combi-flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Bolter (Primary)",
+                    "stats": {
+                        "r": "24",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                },
+                {
+                    "name": "Alchem flamer (Secondary)",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        },
+                        {
+                            "id": "limited",
+                            "value": "1"
+                        },
+                        {
+                            "id": "combi"
+                        }
+                    ]
+                }
+            ]
+        },
+        "alchem-caster": {
+            "id": "alchem-caster",
+            "name": "Alchem Caster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Alchem caster",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "3",
+                        "ap": "-",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "heavy-alchem-flamer": {
+            "id": "heavy-alchem-flamer",
+            "name": "Heavy Alchem Flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Heavy Alchem Flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault"],
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "alchem-flamer": {
+            "id": "alchem-flamer",
+            "name": "Alchem flamer",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Alchem flamer",
+                    "stats": {
+                        "r": "Template",
+                        "fp": "1",
+                        "rs": "4",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "specialRules": [
+                        {
+                            "id": "template"
+                        },
+                        {
+                            "id": "poisoned",
+                            "value": "2+"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {},
@@ -339,6 +471,78 @@
                     "upgradeId": "death-guard-power-scythe-power-fist"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-combi-weapons": {
+            "alchem-combi-flamer": {
+                "id": "alchem-combi-flamer",
+                "name": "Alchem combi-flamer",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["alchem-combi-flamer"]
+            }
+        },
+        "legion-pistols": {
+            "alchem-caster": {
+                "id": "alchem-caster",
+                "name": "Alchem caster",
+                "cost": {
+                    "points": 5
+                },
+                "weaponRefs": ["alchem-caster"]
+            }
+        },
+        "legion-heavy-weapons": {
+            "heavy-alchem-flamer": {
+                "id": "heavy-alchem-flamer",
+                "name": "Heavy alchem flamer",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["heavy-alchem-flamer"]
+            }
+        },
+        "legion-pintle-weapons": {
+            "pintle-mounted-heavy-alchem-flamer": {
+                "id": "pintle-mounted-heavy-alchem-flamer",
+                "name": "Heavy alchem flamer",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["heavy-alchem-flamer"]
+            }
+        },
+        "legion-sponson-weapons": {
+            "two-sponson-mounted-heavy-alchem-flamers": {
+                "id": "two-sponson-mounted-heavy-alchem-flamers",
+                "name": "Two heavy alchem flamers",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["heavy-alchem-flamer", "heavy-alchem-flamer"]
+            }
+        },
+        "legion-special-weapons": {
+            "alchem-flamer": {
+                "id": "alchem-flamer",
+                "name": "Alchem flamer",
+                "cost": {
+                    "points": 5
+                },
+                "weaponRefs": ["alchem-flamer"]
+            }
+        },
+        "legion-officer-wargear": {
+            "alchem-caster": {
+                "id": "alchem-caster",
+                "name": "Alchem caster",
+                "cost": {
+                    "points": 5
+                },
+                "weaponRefs": ["alchem-caster"]
+            }
         }
     }
 }

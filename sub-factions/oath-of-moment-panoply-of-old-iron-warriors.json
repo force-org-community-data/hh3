@@ -92,6 +92,61 @@
                     ]
                 }
             ]
+        },
+        "graviton-mace": {
+            "id": "graviton-mace",
+            "name": "Graviton mace",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Graviton mace",
+                    "stats": {
+                        "im": "-1",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "3",
+                        "d": "1"
+                    },
+                    "traits": ["Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "armourbane"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        }
+                    ]
+                }
+            ]
+        },
+        "shrapnel-cannon": {
+            "id": "shrapnel-cannon",
+            "name": "Shrapnel cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Shrapnel cannon",
+                    "stats": {
+                        "r": "36",
+                        "fp": "3",
+                        "rs": "5",
+                        "ap": "5",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "pinning",
+                            "value": "0"
+                        },
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {},
@@ -255,6 +310,58 @@
                     "upgradeId": "iron-warriors-shrapnel-bolters"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-sergeant-melee-weapons": {
+            "graviton-mace": {
+                "id": "graviton-mace",
+                "name": "Graviton mace",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["graviton-mace"]
+            }
+        },
+        "legion-heavy-weapons": {
+            "shrapnel-cannon": {
+                "id": "shrapnel-cannon",
+                "name": "Shrapnel cannon",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["shrapnel-cannon"]
+            }
+        },
+        "legion-pintle-weapons": {
+            "pintle-mounted-shrapnel-cannon": {
+                "id": "pintle-mounted-shrapnel-cannon",
+                "name": "Shrapnel cannon",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["shrapnel-cannon"]
+            }
+        },
+        "legion-sponson-weapons": {
+            "two-sponson-mounted-shrapnel-cannon": {
+                "id": "two-sponson-mounted-shrapnel-cannon",
+                "name": "Two shrapnel cannons",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["shrapnel-cannon", "shrapnel-cannon"]
+            }
+        },
+        "legion-officer-wargear": {
+            "graviton-mace": {
+                "id": "graviton-mace",
+                "name": "Graviton mace",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["graviton-mace"]
+            }
         }
     }
 }

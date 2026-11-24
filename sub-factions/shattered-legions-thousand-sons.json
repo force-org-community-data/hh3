@@ -89,12 +89,91 @@
                     ]
                 }
             ]
+        },
+        "aether-fire-pistol": {
+            "id": "aether-fire-pistol",
+            "name": "Æther-fire pistol",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Æther-fire pistol",
+                    "stats": {
+                        "r": "10",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Assault", "Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "pistol"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "aether-fire-cannon": {
+            "id": "aether-fire-cannon",
+            "name": "Æther-fire cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Æther-fire cannon",
+                    "stats": {
+                        "r": "24",
+                        "fp": "1",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Psychic", "Assault"],
+                    "specialRules": [
+                        {
+                            "id": "blast",
+                            "value": "3\""
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "aether-fire-blaster": {
+            "id": "aether-fire-blaster",
+            "name": "Æther-fire blaster",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Æther-fire blaster",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "2"
+                    },
+                    "traits": ["Psychic"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {},
     "upgrades": {
-        "thousand-sons-asphyx-bolters": {
-            "id": "thousand-sons-asphyx-bolters",
+        "shattered-thousand-sons-asphyx-bolters": {
+            "id": "shattered-thousand-sons-asphyx-bolters",
             "name": "Asphyx Bolters",
             "description": "In any Unit entirely composed of Models with the Thousand Sons Trait, every Model in that Unit may have its bolter exchanged for one asphyx bolter.",
             "perModel": {
@@ -118,12 +197,22 @@
                                 "id": "asphyx-bolter"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Thousand Sons Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-thousand-sons)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             }
         },
-        "thousand-sons-asphyx-weapons": {
-            "id": "thousand-sons-asphyx-weapons",
+        "shattered-thousand-sons-asphyx-weapons": {
+            "id": "shattered-thousand-sons-asphyx-weapons",
             "name": "Asphyx Pistols",
             "description": "In any Unit entirely composed of Models with the Thousand Sons Trait, every Model in that Unit may have its bolt pistol exchanged for one asphyx pistol.",
             "perModel": {
@@ -147,12 +236,22 @@
                                 "id": "asphyx-pistol"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Thousand Sons Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-thousand-sons)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             }
         },
-        "thousand-sons-achea-pattern-force-swords-power-lance": {
-            "id": "thousand-sons-achea-pattern-force-swords-power-lance",
+        "shattered-thousand-sons-achea-pattern-force-swords-power-lance": {
+            "id": "shattered-thousand-sons-achea-pattern-force-swords-power-lance",
             "name": "Achea Pattern Force Sword",
             "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
             "perModel": {
@@ -176,7 +275,17 @@
                                 "id": "achea-pattern-force-sword"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Thousand Sons Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-thousand-sons)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -187,8 +296,8 @@
                 }
             ]
         },
-        "thousand-sons-achea-pattern-force-swords-power-maul": {
-            "id": "thousand-sons-achea-pattern-force-swords-power-maul",
+        "shattered-thousand-sons-achea-pattern-force-swords-power-maul": {
+            "id": "shattered-thousand-sons-achea-pattern-force-swords-power-maul",
             "name": "Achea Pattern Force Sword",
             "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
             "perModel": {
@@ -212,7 +321,17 @@
                                 "id": "achea-pattern-force-sword"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Thousand Sons Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-thousand-sons)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -223,8 +342,8 @@
                 }
             ]
         },
-        "thousand-sons-achea-pattern-force-swords-power-axe": {
-            "id": "thousand-sons-achea-pattern-force-swords-power-axe",
+        "shattered-thousand-sons-achea-pattern-force-swords-power-axe": {
+            "id": "shattered-thousand-sons-achea-pattern-force-swords-power-axe",
             "name": "Achea Pattern Force Sword",
             "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
             "perModel": {
@@ -248,7 +367,17 @@
                                 "id": "achea-pattern-force-sword"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Thousand Sons Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-thousand-sons)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -259,8 +388,8 @@
                 }
             ]
         },
-        "thousand-sons-achea-pattern-force-swords": {
-            "id": "thousand-sons-achea-pattern-force-swords",
+        "shattered-thousand-sons-achea-pattern-force-swords": {
+            "id": "shattered-thousand-sons-achea-pattern-force-swords",
             "name": "Achea Pattern Force Sword",
             "description": "Any Model with the Thousand Sons Trait and the Command or Champion Sub-Type may have its power weapon exchanged for one Achea pattern force sword.",
             "perModel": {
@@ -284,7 +413,17 @@
                                 "id": "achea-pattern-force-sword"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Thousand Sons Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-thousand-sons)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -319,8 +458,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-thousand-sons)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Thousand Sons (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -410,7 +549,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "thousand-sons-achea-pattern-force-swords"
+                    "upgradeId": "shattered-thousand-sons-achea-pattern-force-swords"
                 }
             ]
         },
@@ -432,7 +571,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-axe"
+                    "upgradeId": "shattered-thousand-sons-achea-pattern-force-swords-power-axe"
                 }
             ]
         },
@@ -454,7 +593,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-maul"
+                    "upgradeId": "shattered-thousand-sons-achea-pattern-force-swords-power-maul"
                 }
             ]
         },
@@ -476,7 +615,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "thousand-sons-achea-pattern-force-swords-power-lance"
+                    "upgradeId": "shattered-thousand-sons-achea-pattern-force-swords-power-lance"
                 }
             ]
         },
@@ -496,7 +635,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "thousand-sons-asphyx-weapons"
+                    "upgradeId": "shattered-thousand-sons-asphyx-weapons"
                 }
             ]
         },
@@ -516,9 +655,91 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "thousand-sons-asphyx-bolters"
+                    "upgradeId": "shattered-thousand-sons-asphyx-bolters"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-pistols": {
+            "shattered-thousand-sons-aether-fire-pistol": {
+                "id": "shattered-thousand-sons-aether-fire-pistol",
+                "name": "Æther-fire pistol",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["aether-fire-pistol"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Thousand Sons Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-thousand-sons)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-heavy-weapons": {
+            "shattered-thousand-sons-aether-fire-cannon": {
+                "id": "shattered-thousand-sons-aether-fire-cannon",
+                "name": "Æther-fire cannon",
+                "cost": {
+                    "points": 20
+                },
+                "weaponRefs": ["aether-fire-cannon"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Thousand Sons Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-thousand-sons)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-special-weapons": {
+            "shattered-thousand-sons-aether-fire-blaster": {
+                "id": "shattered-thousand-sons-aether-fire-blaster",
+                "name": "Æther-fire blaster",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["aether-fire-blaster"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Thousand Sons Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-thousand-sons)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
+        },
+        "legion-officer-wargear": {
+            "shattered-thousand-sons-aether-fire-pistol": {
+                "id": "shattered-thousand-sons-aether-fire-pistol",
+                "name": "Æther-fire pistol",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["aether-fire-pistol"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Thousand Sons Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-thousand-sons)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
         }
     }
 }

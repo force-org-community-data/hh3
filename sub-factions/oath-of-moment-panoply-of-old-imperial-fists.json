@@ -105,6 +105,59 @@
                     ]
                 }
             ]
+        },
+        "iliastus-assault-cannon": {
+            "id": "iliastus-assault-cannon",
+            "name": "Iliastus Assault Cannon",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Sustained fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Maximal fire",
+                    "stats": {
+                        "r": "24",
+                        "fp": "5",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Auto"],
+                    "specialRules": [
+                        {
+                            "id": "heavy",
+                            "value": "FP"
+                        },
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {
@@ -635,6 +688,41 @@
                     "upgradeId": "imperial-fists-decurion-sagittar-sicaran"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-heavy-weapons": {
+            "iliastus-assault-cannon": {
+                "id": "iliastus-assault-cannon",
+                "name": "Iliastus assault cannon",
+                "cost": {
+                    "points": 20
+                },
+                "weaponRefs": ["iliastus-assault-cannon"]
+            }
+        },
+        "legion-pintle-weapons": {
+            "pintle-mounted-iliastus-assault-cannon": {
+                "id": "pintle-mounted-iliastus-assault-cannon",
+                "name": "Iliastus assault cannon",
+                "cost": {
+                    "points": 20
+                },
+                "weaponRefs": ["iliastus-assault-cannon"]
+            }
+        },
+        "legion-sponson-weapons": {
+            "two-sponson-mounted-iliastus-assault-cannon": {
+                "id": "two-sponson-mounted-iliastus-assault-cannon",
+                "name": "Two Iliastus assault cannons",
+                "cost": {
+                    "points": 30
+                },
+                "weaponRefs": [
+                    "iliastus-assault-cannon",
+                    "iliastus-assault-cannon"
+                ]
+            }
         }
     }
 }

@@ -224,8 +224,8 @@
         }
     },
     "upgrades": {
-        "sons-of-horus-decurion-lanius-sicaran": {
-            "id": "sons-of-horus-decurion-lanius-sicaran",
+        "shattered-sons-of-horus-decurion-lanius-sicaran": {
+            "id": "shattered-sons-of-horus-decurion-lanius-sicaran",
             "name": "Decurion Lanius",
             "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Sons of Horus Trait that has no Pintle Mounted Weapons. A Model with this upgrade has a Pintle Mounted Banestrike bolt cannon and gains the Brutal Enforcement Special Rule.",
             "perModel": {
@@ -245,8 +245,16 @@
                         {
                             "kind": "trait",
                             "add": ["Legiones Decurion"]
+                        },
+                        {
+                            "kind": "trait",
+                            "add": ["Sons of Horus Armoury"]
                         }
-                    ]
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-sons-of-horus)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "replaces": ["option-3"],
@@ -275,8 +283,8 @@
             },
             "gearNote": "Pintle Mounted"
         },
-        "sons-of-horus-decurion-lanius-kratos-assault-tank": {
-            "id": "sons-of-horus-decurion-lanius-kratos-assault-tank",
+        "shattered-sons-of-horus-decurion-lanius-kratos-assault-tank": {
+            "id": "shattered-sons-of-horus-decurion-lanius-kratos-assault-tank",
             "name": "Decurion Lanius",
             "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Sons of Horus Trait that has no Pintle Mounted Weapons. A Model with this upgrade has a Pintle Mounted Banestrike bolt cannon and gains the Brutal Enforcement Special Rule.",
             "perModel": {
@@ -296,8 +304,16 @@
                         {
                             "kind": "trait",
                             "add": ["Legiones Decurion"]
+                        },
+                        {
+                            "kind": "trait",
+                            "add": ["Sons of Horus Armoury"]
                         }
-                    ]
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-sons-of-horus)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "replaces": ["option-5"],
@@ -317,8 +333,8 @@
                 "requiredAnd": false
             }
         },
-        "sons-of-horus-decurion-lanius-predator": {
-            "id": "sons-of-horus-decurion-lanius-predator",
+        "shattered-sons-of-horus-decurion-lanius-predator": {
+            "id": "shattered-sons-of-horus-decurion-lanius-predator",
             "name": "Decurion Lanius",
             "description": "May be purchased for a Predator, Kratos Assault Tank or Sicaran (twin accelerator autocannon or punisher rotary cannon only) with the Sons of Horus Trait that has no Pintle Mounted Weapons. A Model with this upgrade has a Pintle Mounted Banestrike bolt cannon and gains the Brutal Enforcement Special Rule.",
             "perModel": {
@@ -338,8 +354,16 @@
                         {
                             "kind": "trait",
                             "add": ["Legiones Decurion"]
+                        },
+                        {
+                            "kind": "trait",
+                            "add": ["Sons of Horus Armoury"]
                         }
-                    ]
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-sons-of-horus)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "replaces": ["option-3"],
@@ -359,8 +383,8 @@
                 "requiredAnd": false
             }
         },
-        "sons-of-horus-banestrike-bolters-veterans": {
-            "id": "sons-of-horus-banestrike-bolters-veterans",
+        "shattered-sons-of-horus-banestrike-bolters-veterans": {
+            "id": "shattered-sons-of-horus-banestrike-bolters-veterans",
             "name": "Banestrike Bolters",
             "description": "Any Model in a Veteran Tactical Squad with the Sons of Horus Trait may have its bolter exchanged for one banestrike bolter.",
             "perModel": {
@@ -391,13 +415,23 @@
                                 "id": "banestrike-bolter"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Sons of Horus Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-sons-of-horus)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "default": "none"
         },
-        "sons-of-horus-banestrike-bolters-seekers": {
-            "id": "sons-of-horus-banestrike-bolters-seekers",
+        "shattered-sons-of-horus-banestrike-bolters-seekers": {
+            "id": "shattered-sons-of-horus-banestrike-bolters-seekers",
             "name": "Banestrike Bolters",
             "description": "Any Model in a Seeker Squad with the Sons of Horus Trait may have its kraken bolter exchanged for one banestrike bolter.",
             "perModel": {
@@ -428,13 +462,23 @@
                                 "id": "banestrike-bolter"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Sons of Horus Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-sons-of-horus)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "default": "none"
         },
-        "sons-of-horus-carsoran-power-axes": {
-            "id": "sons-of-horus-carsoran-power-axes",
+        "shattered-sons-of-horus-carsoran-power-axes": {
+            "id": "shattered-sons-of-horus-carsoran-power-axes",
             "name": "Carsoran Power Axes",
             "description": "Any Model with the Sons of Horus Trait may have its power axe exchanged for one Carsoran power axe or one Carsoran power tabar.",
             "perModel": {
@@ -465,7 +509,17 @@
                                 "id": "carsoran-power-axe"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Sons of Horus Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-sons-of-horus)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 },
                 "power-axe-to-carsoran-power-tabar": {
                     "id": "power-axe-to-carsoran-power-tabar",
@@ -484,13 +538,23 @@
                                 "id": "carsoran-power-tabar"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Sons of Horus Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-sons-of-horus)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "default": "none"
         },
-        "sons-of-horus-banestrike-bolters-combi-bolter": {
-            "id": "sons-of-horus-banestrike-bolters-combi-bolter",
+        "shattered-sons-of-horus-banestrike-bolters-combi-bolter": {
+            "id": "shattered-sons-of-horus-banestrike-bolters-combi-bolter",
             "name": "Banestrike Combi-bolter",
             "description": "Any Model with the Sons of Horus Trait and the Command or Champion Sub-Type may have its bolter exchanged for one banestrike bolter, or its combi-bolter exchanged for one banestrike combi-bolter.",
             "perModel": {
@@ -514,7 +578,17 @@
                                 "id": "banestrike-combi-bolter"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Sons of Horus Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-sons-of-horus)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -525,8 +599,8 @@
                 }
             ]
         },
-        "sons-of-horus-banestrike-bolters": {
-            "id": "sons-of-horus-banestrike-bolters",
+        "shattered-sons-of-horus-banestrike-bolters": {
+            "id": "shattered-sons-of-horus-banestrike-bolters",
             "name": "Banestrike Bolter",
             "description": "Any Model with the Sons of Horus Trait and the Command or Champion Sub-Type may have its bolter exchanged for one banestrike bolter, or its combi-bolter exchanged for one banestrike combi-bolter.",
             "perModel": {
@@ -550,7 +624,17 @@
                                 "id": "banestrike-bolter"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Sons of Horus Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-sons-of-horus)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -590,8 +674,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-sons-of-horus)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Sons of Horus (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -681,7 +765,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "sons-of-horus-banestrike-bolters"
+                    "upgradeId": "shattered-sons-of-horus-banestrike-bolters"
                 }
             ]
         },
@@ -703,7 +787,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "sons-of-horus-banestrike-bolters-combi-bolter"
+                    "upgradeId": "shattered-sons-of-horus-banestrike-bolters-combi-bolter"
                 }
             ]
         },
@@ -723,7 +807,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "sons-of-horus-carsoran-power-axes"
+                    "upgradeId": "shattered-sons-of-horus-carsoran-power-axes"
                 }
             ]
         },
@@ -737,7 +821,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "sons-of-horus-banestrike-bolters-seekers"
+                    "upgradeId": "shattered-sons-of-horus-banestrike-bolters-seekers"
                 }
             ]
         },
@@ -751,7 +835,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "sons-of-horus-banestrike-bolters-veterans"
+                    "upgradeId": "shattered-sons-of-horus-banestrike-bolters-veterans"
                 }
             ]
         },
@@ -765,7 +849,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "sons-of-horus-decurion-lanius-predator"
+                    "upgradeId": "shattered-sons-of-horus-decurion-lanius-predator"
                 }
             ]
         },
@@ -779,7 +863,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "sons-of-horus-decurion-lanius-kratos-assault-tank"
+                    "upgradeId": "shattered-sons-of-horus-decurion-lanius-kratos-assault-tank"
                 }
             ]
         },
@@ -793,7 +877,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "sons-of-horus-decurion-lanius-sicaran"
+                    "upgradeId": "shattered-sons-of-horus-decurion-lanius-sicaran"
                 }
             ]
         }
