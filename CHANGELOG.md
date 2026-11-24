@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Mechanicum Arcana Benefices change the model's profile where their rule says so. The Engram of Authority (Archimandrite) gives +1 Leadership and Cool. The Strength of Ages (Myrmidax) gives +1 Wounds, Battle Meditation, Implacable Advance, Bulky (3) (a Magos or Archmagos on Abeyant goes from Bulky (7) to (10) instead), the Heavy Sub-Type and, without the Command Sub-Type, the Champion Sub-Type. The other five Benefices only work during play and stay as rule text.
 - Rapier Battery: the +15 Points option for Rapier Carriers with a quad launcher gives phosphex canister shot, which unlocks the quad launcher's new Phosphex canister shot* profile (it gave nothing). It and the Arquitor Bombard's phosphex shells need a Siege Breaker in the Army.
 - Blood Angels Sanguinary Guard: the Legion standard and power weapon option takes away the perdition weapon as well as the bolt pistol.
 - Every Delegatus (all six variants, and Alpha Legion's Autilon Skorr) has the Consul-Delegatus rule: one per Army, and in a Command Slot it also grants an Apex Point, so it may unlock an Apex Detachment instead of an Auxiliary one. Only Autilon Skorr had it.
