@@ -9963,6 +9963,21 @@
                             "rule": {
                                 "id": "the-engram-of-authority"
                             }
+                        },
+                        {
+                            "kind": "stat",
+                            "changes": [
+                                {
+                                    "stat": "ld",
+                                    "op": "add",
+                                    "value": 1
+                                },
+                                {
+                                    "stat": "cl",
+                                    "op": "add",
+                                    "value": 1
+                                }
+                            ]
                         }
                     ]
                 },
@@ -10072,6 +10087,69 @@
                             "kind": "specialRule",
                             "rule": {
                                 "id": "the-strength-of-ages"
+                            }
+                        },
+                        {
+                            "kind": "stat",
+                            "changes": [
+                                {
+                                    "stat": "w",
+                                    "op": "add",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "battle-meditation"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "implacable-advance"
+                            },
+                            "when": {
+                                "if": "not (unit.is(unit:magos-on-abeyant) or unit.is(unit:archmagos-on-abeyant))",
+                                "message": "Already has Implacable Advance"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "rule": {
+                                "id": "bulky",
+                                "value": "3"
+                            },
+                            "when": {
+                                "if": "not (unit.is(unit:magos-on-abeyant) or unit.is(unit:archmagos-on-abeyant))",
+                                "message": "Already has Bulky (X): +3 instead"
+                            }
+                        },
+                        {
+                            "kind": "specialRule",
+                            "replace": {
+                                "from": ["bulky"],
+                                "to": {
+                                    "id": "bulky",
+                                    "value": "10"
+                                }
+                            },
+                            "when": {
+                                "if": "unit.is(unit:magos-on-abeyant) or unit.is(unit:archmagos-on-abeyant)",
+                                "message": "Bulky (7) +3"
+                            }
+                        },
+                        {
+                            "kind": "subType",
+                            "add": ["heavy"]
+                        },
+                        {
+                            "kind": "subType",
+                            "add": ["champion"],
+                            "when": {
+                                "if": "not unit.is(tag:command)",
+                                "message": "Not for Models with the Command Sub-Type"
                             }
                         }
                     ]
