@@ -66,12 +66,60 @@
                     ]
                 }
             ]
+        },
+        "banestrike-bolter": {
+            "id": "banestrike-bolter",
+            "name": "Banestrike bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
+        },
+        "banestrike-combi-bolter": {
+            "id": "banestrike-combi-bolter",
+            "name": "Banestrike Combi-bolter",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Banestrike combi-bolter",
+                    "stats": {
+                        "r": "18",
+                        "fp": "4",
+                        "rs": "4",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Bolt"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {},
     "upgrades": {
-        "alpha-legion-power-daggers-power-lance": {
-            "id": "alpha-legion-power-daggers-power-lance",
+        "shattered-alpha-legion-power-daggers-power-lance": {
+            "id": "shattered-alpha-legion-power-daggers-power-lance",
             "name": "Power Dagger",
             "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
             "perModel": {
@@ -95,7 +143,17 @@
                                 "id": "power-dagger"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Alpha Legion Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-alpha-legion)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -106,8 +164,8 @@
                 }
             ]
         },
-        "alpha-legion-power-daggers-power-maul": {
-            "id": "alpha-legion-power-daggers-power-maul",
+        "shattered-alpha-legion-power-daggers-power-maul": {
+            "id": "shattered-alpha-legion-power-daggers-power-maul",
             "name": "Power Dagger",
             "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
             "perModel": {
@@ -131,7 +189,17 @@
                                 "id": "power-dagger"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Alpha Legion Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-alpha-legion)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -142,8 +210,8 @@
                 }
             ]
         },
-        "alpha-legion-power-daggers-power-axe": {
-            "id": "alpha-legion-power-daggers-power-axe",
+        "shattered-alpha-legion-power-daggers-power-axe": {
+            "id": "shattered-alpha-legion-power-daggers-power-axe",
             "name": "Power Dagger",
             "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
             "perModel": {
@@ -167,7 +235,17 @@
                                 "id": "power-dagger"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Alpha Legion Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-alpha-legion)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -178,8 +256,8 @@
                 }
             ]
         },
-        "alpha-legion-power-daggers": {
-            "id": "alpha-legion-power-daggers",
+        "shattered-alpha-legion-power-daggers": {
+            "id": "shattered-alpha-legion-power-daggers",
             "name": "Power Dagger",
             "description": "Any Model with the Alpha Legion Trait and the Command, Champion or Sergeant Sub-Type may have its power weapon exchanged for one power dagger.",
             "perModel": {
@@ -203,7 +281,17 @@
                                 "id": "power-dagger"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Alpha Legion Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-alpha-legion)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -214,8 +302,8 @@
                 }
             ]
         },
-        "alpha-legion-venom-spheres": {
-            "id": "alpha-legion-venom-spheres",
+        "shattered-alpha-legion-venom-spheres": {
+            "id": "shattered-alpha-legion-venom-spheres",
             "name": "Venom Spheres",
             "description": "Any Model with the Alpha Legion Trait and the Command or Champion Sub-Type may be given venom spheres.",
             "perModel": {
@@ -228,7 +316,17 @@
                     "cost": {
                         "points": 5
                     },
-                    "weaponRefs": ["venom-spheres"]
+                    "weaponRefs": ["venom-spheres"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Alpha Legion Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-alpha-legion)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             }
         }
@@ -256,8 +354,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-alpha-legion)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Alpha Legion (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -347,7 +445,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "alpha-legion-venom-spheres"
+                    "upgradeId": "shattered-alpha-legion-venom-spheres"
                 }
             ]
         },
@@ -369,7 +467,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "alpha-legion-power-daggers"
+                    "upgradeId": "shattered-alpha-legion-power-daggers"
                 }
             ]
         },
@@ -391,7 +489,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "alpha-legion-power-daggers-power-axe"
+                    "upgradeId": "shattered-alpha-legion-power-daggers-power-axe"
                 }
             ]
         },
@@ -413,7 +511,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "alpha-legion-power-daggers-power-maul"
+                    "upgradeId": "shattered-alpha-legion-power-daggers-power-maul"
                 }
             ]
         },
@@ -435,9 +533,49 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "alpha-legion-power-daggers-power-lance"
+                    "upgradeId": "shattered-alpha-legion-power-daggers-power-lance"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-combi-weapons": {
+            "shattered-alpha-legion-banestrike-bolter": {
+                "id": "shattered-alpha-legion-banestrike-bolter",
+                "name": "Banestrike bolter",
+                "cost": {
+                    "points": 5
+                },
+                "weaponRefs": ["banestrike-bolter"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Alpha Legion Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-alpha-legion)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            },
+            "shattered-alpha-legion-banestrike-combi-bolter": {
+                "id": "shattered-alpha-legion-banestrike-combi-bolter",
+                "name": "Banestrike combi-bolter",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["banestrike-combi-bolter"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Alpha Legion Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-alpha-legion)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
         }
     }
 }

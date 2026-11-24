@@ -150,8 +150,8 @@
     },
     "equipment": {},
     "upgrades": {
-        "white-scars-power-glaive-power-lance": {
-            "id": "white-scars-power-glaive-power-lance",
+        "shattered-white-scars-power-glaive-power-lance": {
+            "id": "shattered-white-scars-power-glaive-power-lance",
             "name": "Power Glaive",
             "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
             "perModel": {
@@ -175,7 +175,17 @@
                                 "id": "power-glaive"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["White Scars Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-white-scars)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -186,8 +196,8 @@
                 }
             ]
         },
-        "white-scars-power-glaive-power-maul": {
-            "id": "white-scars-power-glaive-power-maul",
+        "shattered-white-scars-power-glaive-power-maul": {
+            "id": "shattered-white-scars-power-glaive-power-maul",
             "name": "Power Glaive",
             "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
             "perModel": {
@@ -211,7 +221,17 @@
                                 "id": "power-glaive"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["White Scars Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-white-scars)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -222,8 +242,8 @@
                 }
             ]
         },
-        "white-scars-power-glaive-power-axe": {
-            "id": "white-scars-power-glaive-power-axe",
+        "shattered-white-scars-power-glaive-power-axe": {
+            "id": "shattered-white-scars-power-glaive-power-axe",
             "name": "Power Glaive",
             "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
             "perModel": {
@@ -247,7 +267,17 @@
                                 "id": "power-glaive"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["White Scars Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-white-scars)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -258,8 +288,8 @@
                 }
             ]
         },
-        "white-scars-power-glaive": {
-            "id": "white-scars-power-glaive",
+        "shattered-white-scars-power-glaive": {
+            "id": "shattered-white-scars-power-glaive",
             "name": "Power Glaive",
             "description": "Any Model with the Command Sub-Type and the White Scars Trait may have its power weapon exchanged for one power glaive.",
             "perModel": {
@@ -283,7 +313,17 @@
                                 "id": "power-glaive"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["White Scars Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-white-scars)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -323,8 +363,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-white-scars)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the White Scars (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -414,7 +454,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "white-scars-power-glaive"
+                    "upgradeId": "shattered-white-scars-power-glaive"
                 }
             ]
         },
@@ -436,7 +476,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "white-scars-power-glaive-power-axe"
+                    "upgradeId": "shattered-white-scars-power-glaive-power-axe"
                 }
             ]
         },
@@ -458,7 +498,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "white-scars-power-glaive-power-maul"
+                    "upgradeId": "shattered-white-scars-power-glaive-power-maul"
                 }
             ]
         },
@@ -480,7 +520,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "white-scars-power-glaive-power-lance"
+                    "upgradeId": "shattered-white-scars-power-glaive-power-lance"
                 }
             ]
         }

@@ -170,6 +170,38 @@
                     ]
                 }
             ]
+        },
+        "graviton-shredder": {
+            "id": "graviton-shredder",
+            "name": "Graviton shredder",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Graviton shredder",
+                    "stats": {
+                        "r": "18",
+                        "fp": "2",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Assault", "Graviton"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        },
+                        {
+                            "id": "shock",
+                            "value": "Pinned"
+                        },
+                        {
+                            "id": "pinning",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {
@@ -185,8 +217,8 @@
         }
     },
     "upgrades": {
-        "iron-hands-gorgon-terminator-armour": {
-            "id": "iron-hands-gorgon-terminator-armour",
+        "shattered-iron-hands-gorgon-terminator-armour": {
+            "id": "shattered-iron-hands-gorgon-terminator-armour",
             "name": "Gorgon Terminator Armour",
             "description": "Iron Father and the Tartaros Praetor, Centurion, Warmonger, Librarian, Esoterist, Legion Champion, Chaplain, Herald, Siege Breaker, Forge Lord, Primus Medicae, Delegatus and Mortificator can have Gorgon Terminator Armour selected for them for +30 Points per Model. A Model with Gorgon Terminator Armour gains the Heavy Sub-Type and the Feel No Pain (5+) Special Rule and the Gorgon pattern Terminator Armour Wargear item.",
             "perModel": {
@@ -211,13 +243,21 @@
                         {
                             "kind": "subType",
                             "add": ["heavy"]
+                        },
+                        {
+                            "kind": "trait",
+                            "add": ["Iron Hands Armoury"]
                         }
-                    ]
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-iron-hands)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             }
         },
-        "iron-hands-graviton-pistol": {
-            "id": "iron-hands-graviton-pistol",
+        "shattered-iron-hands-graviton-pistol": {
+            "id": "shattered-iron-hands-graviton-pistol",
             "name": "Graviton Pistol",
             "description": "Any Model with the Command or Champion Sub-Type and the Iron Hands Trait may have its plasma pistol exchanged for one graviton pistol.",
             "perModel": {
@@ -241,7 +281,17 @@
                                 "id": "graviton-pistol"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Iron Hands Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-iron-hands)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -252,8 +302,8 @@
                 }
             ]
         },
-        "iron-hands-armatus-necrotechnika": {
-            "id": "iron-hands-armatus-necrotechnika",
+        "shattered-iron-hands-armatus-necrotechnika": {
+            "id": "shattered-iron-hands-armatus-necrotechnika",
             "name": "Armatus Necrotechnika",
             "description": "Any Model with the Iron Hands Trait and the Vehicle Type may have Armatus Necrotechnika selected for it.",
             "perModel": {
@@ -266,7 +316,17 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["armatus-necrotechnika"]
+                    "equipmentRefs": ["armatus-necrotechnika"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Iron Hands Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-iron-hands)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             }
         }
@@ -294,8 +354,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-iron-hands)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Iron Hands (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -378,7 +438,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "iron-hands-armatus-necrotechnika"
+                    "upgradeId": "shattered-iron-hands-armatus-necrotechnika"
                 }
             ]
         },
@@ -400,7 +460,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "iron-hands-graviton-pistol"
+                    "upgradeId": "shattered-iron-hands-graviton-pistol"
                 }
             ]
         },
@@ -428,9 +488,49 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "iron-hands-gorgon-terminator-armour"
+                    "upgradeId": "shattered-iron-hands-gorgon-terminator-armour"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-special-weapons": {
+            "shattered-iron-hands-graviton-gun": {
+                "id": "shattered-iron-hands-graviton-gun",
+                "name": "Graviton gun",
+                "cost": {
+                    "points": 10
+                },
+                "weaponRefs": ["graviton-gun"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Iron Hands Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-iron-hands)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            },
+            "shattered-iron-hands-graviton-shredder": {
+                "id": "shattered-iron-hands-graviton-shredder",
+                "name": "Graviton shredder",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["graviton-shredder"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Iron Hands Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-iron-hands)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
         }
     }
 }

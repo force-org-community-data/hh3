@@ -62,12 +62,57 @@
                     ]
                 }
             ]
+        },
+        "plasma-repeater": {
+            "id": "plasma-repeater",
+            "name": "Plasma repeater",
+            "template": "ranged",
+            "profiles": [
+                {
+                    "name": "Sustained fire",
+                    "stats": {
+                        "r": "12",
+                        "fp": "3",
+                        "rs": "5",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "6+"
+                        }
+                    ]
+                },
+                {
+                    "name": "Maximal fire",
+                    "stats": {
+                        "r": "12",
+                        "fp": "3",
+                        "rs": "6",
+                        "ap": "4",
+                        "d": "1"
+                    },
+                    "traits": ["Plasma"],
+                    "specialRules": [
+                        {
+                            "id": "breaching",
+                            "value": "5+"
+                        },
+                        {
+                            "id": "overload",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {},
     "upgrades": {
-        "dark-angels-terranic-greatsword": {
-            "id": "dark-angels-terranic-greatsword",
+        "shattered-dark-angels-terranic-greatsword": {
+            "id": "shattered-dark-angels-terranic-greatsword",
             "name": "Terranic Greatsword",
             "description": "Any Model with the Command or Champion Sub-Type and the Dark Angels Trait may have its power fist exchanged for one Terranic greatsword.",
             "perModel": {
@@ -91,7 +136,17 @@
                                 "id": "terranic-greatsword"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Dark Angels Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-dark-angels)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -102,8 +157,8 @@
                 }
             ]
         },
-        "dark-angels-blades-of-the-first-legion": {
-            "id": "dark-angels-blades-of-the-first-legion",
+        "shattered-dark-angels-blades-of-the-first-legion": {
+            "id": "shattered-dark-angels-blades-of-the-first-legion",
             "name": "Blades of the First Legion",
             "description": "Any Model with the Command, Champion or Sergeant Sub-Type and the Dark Angels Trait may have its power sword exchanged for one Calibanite warblade.",
             "perModel": {
@@ -127,7 +182,17 @@
                                 "id": "calibanite-warblade"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Dark Angels Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-dark-angels)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -162,8 +227,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-dark-angels)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Dark Angels (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -253,7 +318,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "dark-angels-blades-of-the-first-legion"
+                    "upgradeId": "shattered-dark-angels-blades-of-the-first-legion"
                 }
             ]
         },
@@ -275,9 +340,31 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "dark-angels-terranic-greatsword"
+                    "upgradeId": "shattered-dark-angels-terranic-greatsword"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-special-weapons": {
+            "shattered-dark-angels-plasma-repeater": {
+                "id": "shattered-dark-angels-plasma-repeater",
+                "name": "Plasma repeater",
+                "cost": {
+                    "points": 15
+                },
+                "weaponRefs": ["plasma-repeater"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Dark Angels Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-dark-angels)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
         }
     }
 }

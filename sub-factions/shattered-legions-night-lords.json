@@ -66,6 +66,30 @@
                     ]
                 }
             ]
+        },
+        "escaton-power-claw": {
+            "id": "escaton-power-claw",
+            "name": "Escaton Power Claw",
+            "template": "melee",
+            "profiles": [
+                {
+                    "name": "Escaton power claw",
+                    "stats": {
+                        "im": "-2",
+                        "am": "A",
+                        "sm": "+3",
+                        "ap": "2",
+                        "d": "2"
+                    },
+                    "traits": ["Power"],
+                    "specialRules": [
+                        {
+                            "id": "shred",
+                            "value": "6+"
+                        }
+                    ]
+                }
+            ]
         }
     },
     "equipment": {
@@ -76,8 +100,8 @@
         }
     },
     "upgrades": {
-        "night-lords-headsmans-axe-power-lance": {
-            "id": "night-lords-headsmans-axe-power-lance",
+        "shattered-night-lords-headsmans-axe-power-lance": {
+            "id": "shattered-night-lords-headsmans-axe-power-lance",
             "name": "Headsman’s Axe",
             "description": "Any Model with the Night Lords Trait and the Command Sub-Type may have a power weapon exchanged for a headsman's axe.",
             "perModel": {
@@ -101,7 +125,17 @@
                                 "id": "headsmans-axe"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Night Lords Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-night-lords)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -112,8 +146,8 @@
                 }
             ]
         },
-        "night-lords-headsmans-axe-power-maul": {
-            "id": "night-lords-headsmans-axe-power-maul",
+        "shattered-night-lords-headsmans-axe-power-maul": {
+            "id": "shattered-night-lords-headsmans-axe-power-maul",
             "name": "Headsman’s Axe",
             "description": "Any Model with the Night Lords Trait and the Command Sub-Type may have a power weapon exchanged for a headsman's axe.",
             "perModel": {
@@ -137,7 +171,17 @@
                                 "id": "headsmans-axe"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Night Lords Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-night-lords)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -148,8 +192,8 @@
                 }
             ]
         },
-        "night-lords-headsmans-axe-power-axe": {
-            "id": "night-lords-headsmans-axe-power-axe",
+        "shattered-night-lords-headsmans-axe-power-axe": {
+            "id": "shattered-night-lords-headsmans-axe-power-axe",
             "name": "Headsman’s Axe",
             "description": "Any Model with the Night Lords Trait and the Command Sub-Type may have a power weapon exchanged for a headsman's axe.",
             "perModel": {
@@ -173,7 +217,17 @@
                                 "id": "headsmans-axe"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Night Lords Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-night-lords)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -184,8 +238,8 @@
                 }
             ]
         },
-        "night-lords-headsmans-axe": {
-            "id": "night-lords-headsmans-axe",
+        "shattered-night-lords-headsmans-axe": {
+            "id": "shattered-night-lords-headsmans-axe",
             "name": "Headsman’s Axe",
             "description": "Any Model with the Night Lords Trait and the Command Sub-Type may have a power weapon exchanged for a headsman's axe.",
             "perModel": {
@@ -209,7 +263,17 @@
                                 "id": "headsmans-axe"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Night Lords Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-night-lords)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -220,8 +284,8 @@
                 }
             ]
         },
-        "night-lords-trophies-of-judgement": {
-            "id": "night-lords-trophies-of-judgement",
+        "shattered-night-lords-trophies-of-judgement": {
+            "id": "shattered-night-lords-trophies-of-judgement",
             "name": "Trophies of Judgement",
             "perModel": {
                 "type": "single"
@@ -233,12 +297,22 @@
                     "cost": {
                         "points": 10
                     },
-                    "equipmentRefs": ["trophies-of-judgement"]
+                    "equipmentRefs": ["trophies-of-judgement"],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Night Lords Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-night-lords)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             }
         },
-        "night-lords-nostraman-chain-weapons-power-lance": {
-            "id": "night-lords-nostraman-chain-weapons-power-lance",
+        "shattered-night-lords-nostraman-chain-weapons-power-lance": {
+            "id": "shattered-night-lords-nostraman-chain-weapons-power-lance",
             "name": "Chainglaive",
             "description": "Any Model with the Night Lords Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a chainglaive.",
             "perModel": {
@@ -262,7 +336,17 @@
                                 "id": "chainglaive"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Night Lords Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-night-lords)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -273,8 +357,8 @@
                 }
             ]
         },
-        "night-lords-nostraman-chain-weapons-power-maul": {
-            "id": "night-lords-nostraman-chain-weapons-power-maul",
+        "shattered-night-lords-nostraman-chain-weapons-power-maul": {
+            "id": "shattered-night-lords-nostraman-chain-weapons-power-maul",
             "name": "Chainglaive",
             "description": "Any Model with the Night Lords Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a chainglaive.",
             "perModel": {
@@ -298,7 +382,17 @@
                                 "id": "chainglaive"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Night Lords Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-night-lords)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -309,8 +403,8 @@
                 }
             ]
         },
-        "night-lords-nostraman-chain-weapons-power-axe": {
-            "id": "night-lords-nostraman-chain-weapons-power-axe",
+        "shattered-night-lords-nostraman-chain-weapons-power-axe": {
+            "id": "shattered-night-lords-nostraman-chain-weapons-power-axe",
             "name": "Chainglaive",
             "description": "Any Model with the Night Lords Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a chainglaive.",
             "perModel": {
@@ -334,7 +428,17 @@
                                 "id": "chainglaive"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Night Lords Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-night-lords)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -345,8 +449,8 @@
                 }
             ]
         },
-        "night-lords-nostraman-chain-weapons": {
-            "id": "night-lords-nostraman-chain-weapons",
+        "shattered-night-lords-nostraman-chain-weapons": {
+            "id": "shattered-night-lords-nostraman-chain-weapons",
             "name": "Chainglaive",
             "description": "Any Model with the Night Lords Trait and the Command, Champion or Sergeant Sub-Type may have a power weapon exchanged for a chainglaive.",
             "perModel": {
@@ -370,7 +474,17 @@
                                 "id": "chainglaive"
                             }
                         }
-                    ]
+                    ],
+                    "effects": [
+                        {
+                            "kind": "trait",
+                            "add": ["Night Lords Armoury"]
+                        }
+                    ],
+                    "when": {
+                        "if": "not unit.is(@shattered-other-armouries-night-lords)",
+                        "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                    }
                 }
             },
             "limitBy": [
@@ -405,8 +519,8 @@
                 "roles": ["command"]
             },
             "when": {
-                "if": "contingent.is(subfaction:shattered-legions)",
-                "message": "Shattered Legions Detachments only"
+                "if": "(contingent.is(subfaction:shattered-legions)) and not unit.is(@shattered-other-armouries-night-lords)",
+                "message": "Shattered Legions Detachments only; only for a Model representing the Night Lords (no other Legion Armoury)"
             },
             "effects": [
                 {
@@ -496,7 +610,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "night-lords-nostraman-chain-weapons"
+                    "upgradeId": "shattered-night-lords-nostraman-chain-weapons"
                 }
             ]
         },
@@ -518,7 +632,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "night-lords-nostraman-chain-weapons-power-axe"
+                    "upgradeId": "shattered-night-lords-nostraman-chain-weapons-power-axe"
                 }
             ]
         },
@@ -540,7 +654,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "night-lords-nostraman-chain-weapons-power-maul"
+                    "upgradeId": "shattered-night-lords-nostraman-chain-weapons-power-maul"
                 }
             ]
         },
@@ -562,7 +676,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "night-lords-nostraman-chain-weapons-power-lance"
+                    "upgradeId": "shattered-night-lords-nostraman-chain-weapons-power-lance"
                 }
             ]
         },
@@ -584,7 +698,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "night-lords-trophies-of-judgement"
+                    "upgradeId": "shattered-night-lords-trophies-of-judgement"
                 }
             ]
         },
@@ -606,7 +720,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "night-lords-headsmans-axe"
+                    "upgradeId": "shattered-night-lords-headsmans-axe"
                 }
             ]
         },
@@ -628,7 +742,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "night-lords-headsmans-axe-power-axe"
+                    "upgradeId": "shattered-night-lords-headsmans-axe-power-axe"
                 }
             ]
         },
@@ -650,7 +764,7 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "night-lords-headsmans-axe-power-maul"
+                    "upgradeId": "shattered-night-lords-headsmans-axe-power-maul"
                 }
             ]
         },
@@ -672,9 +786,31 @@
             "actions": [
                 {
                     "kind": "addUpgrade",
-                    "upgradeId": "night-lords-headsmans-axe-power-lance"
+                    "upgradeId": "shattered-night-lords-headsmans-axe-power-lance"
                 }
             ]
+        }
+    },
+    "addOptions": {
+        "legion-officer-wargear": {
+            "shattered-night-lords-escaton-power-claw": {
+                "id": "shattered-night-lords-escaton-power-claw",
+                "name": "Escaton power claw",
+                "cost": {
+                    "points": 25
+                },
+                "weaponRefs": ["escaton-power-claw"],
+                "effects": [
+                    {
+                        "kind": "trait",
+                        "add": ["Night Lords Armoury"]
+                    }
+                ],
+                "when": {
+                    "if": "not unit.is(@shattered-other-armouries-night-lords)",
+                    "message": "Each Model may only use one Legion Armoury: this Unit already uses another"
+                }
+            }
         }
     }
 }
